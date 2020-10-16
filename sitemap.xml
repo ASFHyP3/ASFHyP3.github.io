@@ -1,59 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://ASFHyP3.github.io/</loc>
-     <lastmod>2020-10-15</lastmod>
+     <lastmod>2020-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://ASFHyP3.github.io/getting_started/</loc>
-     <lastmod>2020-10-15</lastmod>
+     <lastmod>2020-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://ASFHyP3.github.io/vertex/</loc>
-     <lastmod>2020-10-15</lastmod>
+     <lastmod>2020-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://ASFHyP3.github.io/sdk/</loc>
-     <lastmod>2020-10-15</lastmod>
+     <lastmod>2020-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://ASFHyP3.github.io/api/</loc>
-     <lastmod>2020-10-15</lastmod>
+     <lastmod>2020-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://ASFHyP3.github.io/products/</loc>
-     <lastmod>2020-10-15</lastmod>
+     <lastmod>2020-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://ASFHyP3.github.io/guides/rtc_user/</loc>
-     <lastmod>2020-10-15</lastmod>
+     <lastmod>2020-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://ASFHyP3.github.io/guides/rtc_atbd/</loc>
-     <lastmod>2020-10-15</lastmod>
+     <lastmod>2020-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://ASFHyP3.github.io/gis_tools/</loc>
-     <lastmod>2020-10-15</lastmod>
+     <lastmod>2020-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://ASFHyP3.github.io/hyp3lib/</loc>
-     <lastmod>2020-10-15</lastmod>
+     <lastmod>2020-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://ASFHyP3.github.io/plugins/</loc>
-     <lastmod>2020-10-15</lastmod>
+     <lastmod>2020-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://ASFHyP3.github.io/plugins/gamma/</loc>
-     <lastmod>2020-10-15</lastmod>
+     <lastmod>2020-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://ASFHyP3.github.io/plugins/autoRIFT/</loc>
-     <lastmod>2020-10-15</lastmod>
+     <lastmod>2020-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://ASFHyP3.github.io/contributing/</loc>
-     <lastmod>2020-10-15</lastmod>
+     <lastmod>2020-10-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://ASFHyP3.github.io/CODE_OF_CONDUCT/</loc>
+     <lastmod>2020-10-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

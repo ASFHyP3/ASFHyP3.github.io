@@ -100,36 +100,6 @@
       
     </div>
     
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-      </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
     
       <div class="md-header-nav__source">
         
@@ -484,10 +454,64 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Contributing
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
     <a href="./" class="md-nav__link md-nav__link--active">
       Contributing
     </a>
     
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#issues-and-pull-requests-are-welcome" class="md-nav__link">
+    Issues and Pull Requests are welcome
+  </a>
+  
+    <nav class="md-nav" aria-label="Issues and Pull Requests are welcome">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pull-request-guidelines" class="md-nav__link">
+    Pull Request Guidelines
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../CODE_OF_CONDUCT/" class="md-nav__link">
+      Code of Conduct
+    </a>
   </li>
 
     
@@ -508,6 +532,34 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#issues-and-pull-requests-are-welcome" class="md-nav__link">
+    Issues and Pull Requests are welcome
+  </a>
+  
+    <nav class="md-nav" aria-label="Issues and Pull Requests are welcome">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pull-request-guidelines" class="md-nav__link">
+    Pull Request Guidelines
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -524,6 +576,49 @@
                 
                 
                 <h1 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h1>
+<p>Thank you for your interest in helping make custom on-demand SAR processing accessible!</p>
+<p>We're excited you would like to contribute to HyP3! Whether you're finding bugs, 
+adding new features, fixing anything broken, or improving documentation, get 
+started by submitting an issue or pull request!</p>
+<p>Please read or <a href="../CODE_OF_CONDUCT/">Code of Conduct</a> before contributing.</p>
+<h2 id="issues-and-pull-requests-are-welcome">Issues and Pull Requests are welcome<a class="headerlink" href="#issues-and-pull-requests-are-welcome" title="Permanent link">&para;</a></h2>
+<p>If you have any questions or ideas, or notice any problems or bugs, and want to open an issue, great!
+We recommend first <a href="https://github.com/issues?q=is%3Aopen+is%3Aissue+org%3AASFHyP3">searching our open issues</a>
+to see if the issue has already been submitted (we may already be working on it!). If you think your 
+issue is new, you're welcome to <a href="https://github.com/ASFHyP3/ASFHyP3/issues/new">create a new issue</a> in our
+general issues tracker. If you know the specific repository that your issue pertains to, you can use its 
+issues tracker (see our repositories list below).</p>
+<p>Found a typo, know how to fix a bug, want to update the docs, want to add a new feature? Even better!
+The smaller the PR, the easier it is to review and test and the more likely it is to be successful.
+For major contributions, consider opening an issue describing the contribution so we can help guide
+and breakup the work into digestible pieces.</p>
+<h3 id="pull-request-guidelines">Pull Request Guidelines<a class="headerlink" href="#pull-request-guidelines" title="Permanent link">&para;</a></h3>
+<p>We ask that you follow these guidelines with your contributions</p>
+<h4>Style</h4>
+<p>We generally follow python community standards (<a href="https://pep8.org/">PEP8</a>), except we allow line 
+lengths up to 120 characters. We recommend trying to keep lines 80--100 characters long, but allow 
+up to 120 when it improves readability.</p>
+<h4>Documentation</h4>
+<p>We are working to improve our documentation!</p>
+<p>For all public-facing functions/methods (not 
+<a href="https://www.python.org/dev/peps/pep-0008/#naming-conventions">marked internal use</a>), 
+please include <a href="https://google.github.io/styleguide/pyguide.html#221-type-annotated-code">type hints</a> 
+(when reasonable) and a <a href="https://www.python.org/dev/peps/pep-0257/">docstring</a> 
+formatted <a href="https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings">Google style</a>.</p>
+<h4>Tests</h4>
+<p>All of the automated tests for the project need to pass before your submission will be accepted.</p>
+<p>If you add new functionality, please consider adding tests for that functionality as well.</p>
+<h4>Commits</h4>
+<ul>
+<li>Make small commits that show the individual changes you are making</li>
+<li>Write descriptive commit messages that explain your changes</li>
+</ul>
+<p>Example of a good commit message:</p>
+<pre><code>Improve contributing guidelines. Fixes #10
+
+Improve contributing docs and consolidate them in the standard location
+https://help.github.com/articles/setting-guidelines-for-repository-contributors/
+</code></pre>
                 
               
               
@@ -556,6 +651,20 @@
             </div>
           </a>
         
+        
+          <a href="../CODE_OF_CONDUCT/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Code of Conduct
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
         
       </nav>
     </div>
