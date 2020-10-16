@@ -9,24 +9,24 @@
         <meta name="description" content="The Alaska Satellite Facility's Hybrid Pluggable Processing Pipeline">
       
       
-        <link rel="canonical" href="https://ASFHyP3.github.io/gis_tools/">
+        <link rel="canonical" href="https://ASFHyP3.github.io/using/vertex/">
       
       
         <meta name="author" content="ASF APD/Tools Team">
       
-      <link rel="shortcut icon" href="../images/favicon.ico">
+      <link rel="shortcut icon" href="../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
     
     
       
-        <title>GIS Tools - HyP3</title>
+        <title>Vertex - HyP3</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.38780c08.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.38780c08.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.3f72e892.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f72e892.min.css">
         
       
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gis-tools" class="md-skip">
+        <a href="#radiometric-terrain-correction-for-sentinel-1-in-vertex" class="md-skip">
           Skip to content
         </a>
       
@@ -79,7 +79,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://ASFHyP3.github.io/" title="HyP3" class="md-header-nav__button md-logo" aria-label="HyP3">
       
-  <img src="../images/HyP3-graphic-only.png" alt="logo">
+  <img src="../../images/HyP3-graphic-only.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -93,7 +93,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              GIS Tools
+              Vertex
             
           </span>
         </div>
@@ -133,7 +133,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://ASFHyP3.github.io/" title="HyP3" class="md-nav__button md-logo" aria-label="HyP3">
       
-  <img src="../images/HyP3-graphic-only.png" alt="logo">
+  <img src="../../images/HyP3-graphic-only.png" alt="logo">
 
     </a>
     HyP3
@@ -160,7 +160,7 @@
 
 
   <li class="md-nav__item">
-    <a href=".." class="md-nav__link">
+    <a href="../.." class="md-nav__link">
       Home
     </a>
   </li>
@@ -172,7 +172,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../getting_started/" class="md-nav__link">
+    <a href="../../getting_started/" class="md-nav__link">
       Getting started
     </a>
   </li>
@@ -182,10 +182,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Using HyP3
@@ -203,11 +205,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../vertex/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Vertex
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       Vertex
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feedback" class="md-nav__link">
+    Feedback
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -267,7 +314,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../products/" class="md-nav__link">
+    <a href="../../products/" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -300,7 +347,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../guides/rtc_user/" class="md-nav__link">
+    <a href="../../guides/rtc_user/" class="md-nav__link">
       RTC Users Guide
     </a>
   </li>
@@ -312,7 +359,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../guides/rtc_atbd/" class="md-nav__link">
+    <a href="../../guides/rtc_atbd/" class="md-nav__link">
       RTC ATBD
     </a>
   </li>
@@ -332,12 +379,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       Other tools
@@ -355,56 +400,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        GIS Tools
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
-      GIS Tools
+  <li class="md-nav__item">
+    <a href="../../tools/arcgis_toolbox/" class="md-nav__link">
+      ArcGIS Toolbox
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#a-collection-of-gis-tools-for-working-with-higher-level-sar-products" class="md-nav__link">
-    A collection of GIS tools for working with higher-level SAR products
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#arcgis-toolbox" class="md-nav__link">
-    ArcGIS Toolbox
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -414,7 +414,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../hyp3lib/" class="md-nav__link">
+    <a href="../../tools/hyp3lib/" class="md-nav__link">
       hyp3lib
     </a>
   </li>
@@ -452,7 +452,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../plugins/" class="md-nav__link">
+    <a href="../../plugins/" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -464,7 +464,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../plugins/gamma/" class="md-nav__link">
+    <a href="../../plugins/gamma/" class="md-nav__link">
       HyP3 GAMMA
     </a>
   </li>
@@ -476,7 +476,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../plugins/autoRIFT/" class="md-nav__link">
+    <a href="../../plugins/autoRIFT/" class="md-nav__link">
       HyP3 autoRIFT
     </a>
   </li>
@@ -493,7 +493,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../contributing/" class="md-nav__link">
+    <a href="../../contributing/" class="md-nav__link">
       Contributing
     </a>
   </li>
@@ -505,7 +505,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../CODE_OF_CONDUCT/" class="md-nav__link">
+    <a href="../../CODE_OF_CONDUCT/" class="md-nav__link">
       Code of Conduct
     </a>
   </li>
@@ -535,15 +535,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#a-collection-of-gis-tools-for-working-with-higher-level-sar-products" class="md-nav__link">
-    A collection of GIS tools for working with higher-level SAR products
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#arcgis-toolbox" class="md-nav__link">
-    ArcGIS Toolbox
+  <a href="#feedback" class="md-nav__link">
+    Feedback
   </a>
   
 </li>
@@ -560,18 +560,44 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ASFHyP3/edit/master/docs/gis_tools.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ASFHyP3/edit/master/docs/using/vertex.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="gis-tools">GIS Tools<a class="headerlink" href="#gis-tools" title="Permanent link">&para;</a></h1>
-<h2 id="a-collection-of-gis-tools-for-working-with-higher-level-sar-products"><strong><em>A collection of GIS tools for working with higher-level SAR products</em></strong><a class="headerlink" href="#a-collection-of-gis-tools-for-working-with-higher-level-sar-products" title="Permanent link">&para;</a></h2>
-<h2 id="arcgis-toolbox">ArcGIS Toolbox<a class="headerlink" href="#arcgis-toolbox" title="Permanent link">&para;</a></h2>
-<p>The ASF_Tools ArcGIS Python Toolbox can be used with either ArcGIS Desktop or ArcGIS Pro, and contains tools that perform geoprocessing tasks useful for working with Synthetic Aperture Radar (SAR) data. The tools were designed to be used with Radiometric Terrain Corrected (RTC) SAR datasets, such as those generated by HyP3, but several of the tools have the potential to be used with a variety of rasters, including non-SAR datasets.</p>
-<p>More information and a download link is also provided on ASF's website:
-https://asf.alaska.edu/how-to/data-tools/gis-tools/</p>
-<p>The Toolbox is distributed as a zipped archive including the .pyt Toolbox script and associated .xml files. There is an XML file for the toolbox itself and one for each of the tools it contains. These XML files contain the metadata displayed in the item descriptions and tool help windows, and must be kept in the same directory as the Python Toolbox (.pyt) file, or the information they contain will no longer be accessible to ArcGIS.</p>
+                <h1 id="radiometric-terrain-correction-for-sentinel-1-in-vertex">Radiometric Terrain Correction for Sentinel-1 in Vertex<a class="headerlink" href="#radiometric-terrain-correction-for-sentinel-1-in-vertex" title="Permanent link">&para;</a></h1>
+<p>The Alaska Satellite Facility now offers Radiometric Terrain Correction of Sentinel-1 scenes through ASF Data Search - Vertex.  You can now submit scenes to be processed into normalized radar backscatter products on your behalf, avoiding the cost and complexity of performing such processing yourself.</p>
+<p>SAR datasets inherently contain geometric and radiometric distortions due to terrain being imaged by a side-looking instrument. Radiometric terrain correction (RTC) removes these distortions and creates analysis-ready data suitable for use in GIS applications. RTC processing is a required first step for many amplitude-based SAR applications.</p>
+<p>Sentinel-1 RTC products are generated by ASF's HyP3 processing platform leveraging GAMMA Software.  Products are distributed as UTM-projected GeoTIFFs with a pixel spacing of 30 meters. To learn more, visit the <a href="https://asf.alaska.edu/wp-content/uploads/2019/02/Sentinel_RTC_Users_Guide.pdf">ASF Sentinel-1 RTC Product Guide</a>.</p>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<p>To request RTC products, visit <a href="https://search.asf.alaska.edu">ASF Data Search - Vertex</a>.</p>
+<ol>
+<li>
+<p><strong>Select your scenes</strong> - RTC processing is available for Sentinel-1 GRD-H and SLC scenes with a beam mode of IW. When searching for Sentinel-1 scenes, an <em>Add RTC to On Demand queue</em> <img width="25" src="https://avatars1.githubusercontent.com/u/68247451" /> option appears for these files.</p>
+</li>
+<li>
+<p><strong>Submit your request</strong> - After selecting your scenes, access the  <em>On Demand</em> <img width="30" src="https://user-images.githubusercontent.com/17994518/95892024-588b9280-0d32-11eb-8734-f1a54a9d2a20.png" /> queue to submit your processing request. You may process up to 200 scenes per month.</p>
+</li>
+<li>
+<p><strong>Monitor your request</strong> - The new <em>On Demand Products</em> search type displays your running and completed requests. New requests typically require 20-60 minutes before a finished RTC product is available.</p>
+</li>
+<li>
+<p><strong>Download your data</strong> - Finished RTC products can be downloaded after an <em>On Demand Products</em> search either directly <img width="25" src="https://user-images.githubusercontent.com/17994518/95271858-6ea5ca00-07eb-11eb-9217-a280ca57a5e6.png" /> or via your download queue <img width="25" src="https://user-images.githubusercontent.com/17994518/95271856-6d749d00-07eb-11eb-81d8-365a6221e4f1.png" />. On Demand products are retained and available to download for two weeks after processing.</p>
+</li>
+</ol>
+<h2 id="feedback">Feedback<a class="headerlink" href="#feedback" title="Permanent link">&para;</a></h2>
+<p>ASF would love to hear from you! Let us know what you liked, didn't like, or what we can do better.</p>
+<ul>
+<li>
+<p>For data search and general feedback, <a href="https://fbm.earthdata.nasa.gov/tickets/new?app_name=ASF&amp;token=%242a%2412%24t0ZIDodY843bRbaRWUZ2QuCHt3JYlCRsfEhh6RY9DMCSjEAl0S96e">open a support ticket</a> or <a href="mailto:uso@asf.alaska.edu">email ASF User Services</a>.</p>
+</li>
+<li>
+<p>For RTC product and custom processing feedback, <a href="https://gitter.im/ASFHyP3/community">chat with us on gitter</a> or <a href="https://github.com/ASFHyP3/ASFHyP3/issues/new">open an issue</a>.</p>
+</li>
+<li>
+<p>Not sure which? <a href="mailto:uso@asf.alaska.edu">Email ASF User Services</a>.</p>
+</li>
+</ul>
                 
               
               
@@ -590,7 +616,7 @@ https://asf.alaska.edu/how-to/data-tools/gis-tools/</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../guides/rtc_atbd/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../getting_started/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -599,19 +625,19 @@ https://asf.alaska.edu/how-to/data-tools/gis-tools/</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                RTC ATBD
+                Getting started
               </div>
             </div>
           </a>
         
         
-          <a href="../hyp3lib/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../sdk/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                hyp3lib
+                SDK
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -664,15 +690,15 @@ https://asf.alaska.edu/how-to/data-tools/gis-tools/</p>
       
     </div>
     
-      <script src="../assets/javascripts/vendor.77e55a48.min.js"></script>
-      <script src="../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: "..",
+          base: "../..",
           features: ['navigation.instant'],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
