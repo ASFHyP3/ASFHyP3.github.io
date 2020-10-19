@@ -172,9 +172,45 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Home
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
     <a href="." class="md-nav__link md-nav__link--active">
       Home
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    How it Works
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact-us" class="md-nav__link">
+    Contact Us
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -494,6 +530,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    How it Works
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact-us" class="md-nav__link">
+    Contact Us
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -511,35 +569,33 @@
                 
                 <h1 id="asf-hyp3">ASF HyP3<a class="headerlink" href="#asf-hyp3" title="Permanent link">&para;</a></h1>
 <p><strong><em>Alaska Satellite Facility's Hybrid Pluggable Processing Pipeline</em></strong></p>
-<p>HyP3 is a system that addresses many of the issues that people face when processing 
-Synthetic Aperture Radar (SAR) imagery:</p>
+<p>HyP3 is a service for processing Synthetic Aperture Radar (SAR) imagery that addresses many common issues for users of
+SAR data:</p>
 <ul>
 <li>Most SAR datasets require at least some processing to remove distortions before they are analysis-ready</li>
 <li>SAR processing is computing-intensive</li>
 <li>Software for SAR processing is complicated to use and/or prohibitively expensive</li>
 <li>Producing analysis-ready SAR data has a steep learning curve that acts as a barrier to entry</li>
 </ul>
-<p>HyP3 solves these problems by providing a free service where people can request 
-SAR processing on-demand. These processing requests are picked up by automated 
-systems, which handle the complexity of SAR processing on behalf of the user. 
-HyP3 doesn't require users to have a lot of knowledge of SAR processing before 
-getting started; users only need to submit the input data, and set a few optional 
-parameters if desired. With HyP3, analysis-ready products are just a few clicks away.</p>
-<h1 id="how-it-works">How it Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h1>
-<p>HyP3 is made up of multiple parts, but they fall into roughly two categories: 
-Orchestration and Plugins. </p>
-<p>The Orchestration of HyP3 runs HyP3 plugins in the cloud and makes it easy for 
-users to request processing, monitor their requests, and download finished products
-without needing to manage any of the plugins. HyP3 Orchestration can be deployed 
-independently.</p>
-<p>Plugins are the workhorses of HyP3. They marshal the input data through complicated 
-SAR processing code to generate an output product. Plugins are container-based and 
-can also be used independently. </p>
-<h1 id="contact-us">Contact Us<a class="headerlink" href="#contact-us" title="Permanent link">&para;</a></h1>
+<p>HyP3 solves these problems by providing a free service where people can request SAR processing on-demand. These
+processing requests are picked up by automated systems, which handle the complexity of SAR processing on behalf of the
+user. HyP3 doesn't require users to have a lot of knowledge of SAR processing before getting started; users only need to
+submit the input data and set a few optional parameters if desired. With HyP3, analysis-ready products are just a few
+clicks away.</p>
+<h2 id="how-it-works">How it Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<p>HyP3 is built around three core concepts: Platform, Plugins, and Products.</p>
+<p>The HyP3 platform makes it easy for users to request processing, monitor their requests, and download processed
+products. The platform delegates each processing request to a plugin on the user's behalf. A deployment of the HyP3
+platform can be integrated with any number of plugins.</p>
+<p>Plugins are the workhorses of HyP3. Each plugin implements a particular SAR processing workflow.  When invoked, they
+marshal input data and generate an output product. Plugins are container-based and can be used independently of the
+platform.</p>
+<p>Products are the end result of processing, typically one or more data files.</p>
+<h2 id="contact-us">Contact Us<a class="headerlink" href="#contact-us" title="Permanent link">&para;</a></h2>
 <p>Want to talk about HyP3? We would love to hear from you!</p>
-<p>Found a bug? Want to request a feature? 
-<a href="https://github.com/ASFHyP3/ASFHyP3/issues/new">open an issue</a> </p>
-<p>General questions? Suggstions? Or just want to talk to the team? 
+<p>Found a bug? Want to request a feature?
+<a href="https://github.com/ASFHyP3/ASFHyP3/issues/new">open an issue</a></p>
+<p>General questions? Suggestions? Or just want to talk to the team?
 <a href="https://gitter.im/ASFHyP3/community">chat with us on gitter</a></p>
                 
               
