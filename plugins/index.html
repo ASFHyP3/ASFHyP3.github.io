@@ -282,16 +282,28 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../dems/" class="md-nav__link">
+      Digital Elevation Models
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
     
-    <label class="md-nav__link" for="nav-4-2">
+    <label class="md-nav__link" for="nav-4-3">
       Product guides
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Product guides" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-2">
+      <label class="md-nav__title" for="nav-4-3">
         <span class="md-nav__icon md-icon"></span>
         Product guides
       </label>
@@ -361,18 +373,6 @@
   <li class="md-nav__item">
     <a href="../tools/arcgis_toolbox/" class="md-nav__link">
       ArcGIS Toolbox
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../tools/hyp3lib/" class="md-nav__link">
-      hyp3lib
     </a>
   </li>
 
@@ -479,30 +479,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="gamma/" class="md-nav__link">
-      HyP3 GAMMA
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="autoRIFT/" class="md-nav__link">
-      HyP3 autoRIFT
-    </a>
   </li>
 
         
@@ -641,7 +617,7 @@ to help you build a plugin that conforms to the plugin requirements.</p>
 <p>In order to be supported by HyP3, a plugin must meet a few requirements:</p>
 <ul>
 <li>the plugin must be a Docker image that is hosted in a repository where HyP3 will be able to pull it</li>
-<li>he plugin's entrypoint must minimally accept the following arguments<ul>
+<li>the plugin's entrypoint must minimally accept the following arguments<ul>
 <li><code>--bucket BUCKET-NAME</code> where <code>BUCKET-NAME</code> is the name of an AWS S3 bucket that output products will be uploaded to</li>
 <li><code>--bucket-prefix BUCKET-PREFIX</code> where <code>BUCKET-PREFIX</code> is a string appended to the key of any file uploaded to AWS S3
 (this is effectively a subfolder in AWS S3)</li>
@@ -680,7 +656,7 @@ to help you build a plugin that conforms to the plugin requirements.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../tools/hyp3lib/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../tools/arcgis_toolbox/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -689,19 +665,19 @@ to help you build a plugin that conforms to the plugin requirements.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                hyp3lib
+                ArcGIS Toolbox
               </div>
             </div>
           </a>
         
         
-          <a href="gamma/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../contributing/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                HyP3 GAMMA
+                Contributing
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

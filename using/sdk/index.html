@@ -342,16 +342,28 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../../dems/" class="md-nav__link">
+      Digital Elevation Models
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
     
-    <label class="md-nav__link" for="nav-4-2">
+    <label class="md-nav__link" for="nav-4-3">
       Product guides
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Product guides" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-2">
+      <label class="md-nav__title" for="nav-4-3">
         <span class="md-nav__icon md-icon"></span>
         Product guides
       </label>
@@ -425,18 +437,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tools/hyp3lib/" class="md-nav__link">
-      hyp3lib
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -471,30 +471,6 @@
   <li class="md-nav__item">
     <a href="../../plugins/" class="md-nav__link">
       Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../plugins/gamma/" class="md-nav__link">
-      HyP3 GAMMA
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../plugins/autoRIFT/" class="md-nav__link">
-      HyP3 autoRIFT
     </a>
   </li>
 
@@ -595,33 +571,33 @@
 <p>A python wrapper around the HyP3 API</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <h3 id="the-hyp3-object">The HyP3 object<a class="headerlink" href="#the-hyp3-object" title="Permanent link">&para;</a></h3>
-<p>The HyP3 object interactions with the HyP3 API are done using an instance of the <code>HyP3</code> class</p>
-<pre><code class="language-python">from hyp3_sdk import HyP3
+<p>The HyP3 object interactions with the HyP3 API are done using an instance of the <code>HyP3</code> class
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">hyp3_sdk</span> <span class="kn">import</span> <span class="n">HyP3</span>
 
-api = HyP3()  # Must have credentials for urs.earthdata.nasa.gov in a .netrc file for this to work
-</code></pre>
-<p>If you want to use an API other then the one at <a href="https://hyp3-api.asf.alaska.edu">https://hyp3-api.asf.alaska.edu</a>, you may provide the URL (including scheme) as a parameter</p>
-<pre><code class="language-python">from hyp3_sdk import HyP3
+<span class="n">api</span> <span class="o">=</span> <span class="n">HyP3</span><span class="p">()</span>  <span class="c1"># Must have credentials for urs.earthdata.nasa.gov in a .netrc file for this to work</span>
+</code></pre></div>
+If you want to use an API other then the one at <a href="https://hyp3-api.asf.alaska.edu">https://hyp3-api.asf.alaska.edu</a>, you may provide the URL (including scheme) as a parameter
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">hyp3_sdk</span> <span class="kn">import</span> <span class="n">HyP3</span>
 
-api = HyP3('https://hyp3.example.com')
-</code></pre>
-<p>If you want to pass in a <a href="https://requests.readthedocs.io/en/latest/user/advanced/">Requests</a> <code>Session</code> object for the API to use, it must first be authenticated and then it can be passed into the API</p>
-<pre><code class="language-python">import requests
-from hyp3_sdk import HyP3
+<span class="n">api</span> <span class="o">=</span> <span class="n">HyP3</span><span class="p">(</span><span class="s1">&#39;https://hyp3.example.com&#39;</span><span class="p">)</span>
+</code></pre></div>
+If you want to pass in a <a href="https://requests.readthedocs.io/en/latest/user/advanced/">Requests</a> <code>Session</code> object for the API to use, it must first be authenticated and then it can be passed into the API
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">hyp3_sdk</span> <span class="kn">import</span> <span class="n">HyP3</span>
 
-session = requests.Session()
-session.get(...)  # Authenticate
+<span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>  <span class="c1"># Authenticate</span>
 
-api = HyP3(authenticated_session=session)
-</code></pre>
+<span class="n">api</span> <span class="o">=</span> <span class="n">HyP3</span><span class="p">(</span><span class="n">authenticated_session</span><span class="o">=</span><span class="n">session</span><span class="p">)</span>
+</code></pre></div></p>
 <h4>Getting jobs</h4>
-<p>The <code>get_jobs</code> method with request all jobs from the API and return them in a list of dictionaries</p>
-<pre><code class="language-python">from hyp3_sdk import HyP3
+<p>The <code>get_jobs</code> method with request all jobs from the API and return them in a list of dictionaries
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">hyp3_sdk</span> <span class="kn">import</span> <span class="n">HyP3</span>
 
-api = HyP3()
+<span class="n">api</span> <span class="o">=</span> <span class="n">HyP3</span><span class="p">()</span>
 
-response = api.get_jobs()
-</code></pre>
+<span class="n">response</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_jobs</span><span class="p">()</span>
+</code></pre></div></p>
 <h5>Parameters:</h5>
 <ul>
 <li><code>start</code>: <code>datetime</code> -&gt; requests only jobs submitted after given time</li>
@@ -630,15 +606,15 @@ response = api.get_jobs()
 <li><code>name</code>: <code>str</code> -&gt; requests only jobs that have this name</li>
 </ul>
 <h4>Submitting jobs</h4>
-<p>The <code>submit_jobs</code> method will submit jobs to the API for processing</p>
-<pre><code class="language-python">from hyp3_sdk import HyP3, make_rtc_gamma_job
+<p>The <code>submit_jobs</code> method will submit jobs to the API for processing
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">hyp3_sdk</span> <span class="kn">import</span> <span class="n">HyP3</span><span class="p">,</span> <span class="n">make_rtc_gamma_job</span>
 
-api = HyP3()
+<span class="n">api</span> <span class="o">=</span> <span class="n">HyP3</span><span class="p">()</span>
 
-jobs = [make_rtc_gamma_job('job_name', 'granule_name')]
+<span class="n">jobs</span> <span class="o">=</span> <span class="p">[</span><span class="n">make_rtc_gamma_job</span><span class="p">(</span><span class="s1">&#39;job_name&#39;</span><span class="p">,</span> <span class="s1">&#39;granule_name&#39;</span><span class="p">)]</span>
 
-response = api.submit_jobs(jobs)
-</code></pre>
+<span class="n">response</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">submit_jobs</span><span class="p">(</span><span class="n">jobs</span><span class="p">)</span>
+</code></pre></div></p>
 <h5>Parameters</h5>
 <ul>
 <li><code>jobs</code>: <code>list[Job]</code> -&gt; list of job objects to submit to API</li>

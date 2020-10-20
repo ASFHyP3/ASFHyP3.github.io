@@ -293,16 +293,28 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../../dems/" class="md-nav__link">
+      Digital Elevation Models
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
     
-    <label class="md-nav__link" for="nav-4-2">
+    <label class="md-nav__link" for="nav-4-3">
       Product guides
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Product guides" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-2">
+      <label class="md-nav__title" for="nav-4-3">
         <span class="md-nav__icon md-icon"></span>
         Product guides
       </label>
@@ -376,18 +388,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../tools/hyp3lib/" class="md-nav__link">
-      hyp3lib
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -422,30 +422,6 @@
   <li class="md-nav__item">
     <a href="../../plugins/" class="md-nav__link">
       Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../plugins/gamma/" class="md-nav__link">
-      HyP3 GAMMA
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../plugins/autoRIFT/" class="md-nav__link">
-      HyP3 autoRIFT
     </a>
   </li>
 
@@ -508,6 +484,21 @@
                 
                 
                 <h1 id="hyp3-api">HyP3 API<a class="headerlink" href="#hyp3-api" title="Permanent link">&para;</a></h1>
+<p>The HyP3 API is built on <a href="https://www.openapis.org/">OpenAPI</a> and <a href="https://swagger.io/">Swagger</a>. A friendly
+interface for exploring the API is available at:</p>
+<h4><a href="https://hyp3-api.asf.alaska.edu/ui/">https://hyp3-api.asf.alaska.edu/ui/</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">Authentication Required</p>
+<p>If you get a 401 response back you need to <a href="https://search.asf.alaska.edu/#/">sign in to Vertex</a> to get the <code>asf-urs</code> session cookie.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;detail&quot;</span><span class="p">:</span> <span class="s2">&quot;No authorization token provided&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">401</span><span class="p">,</span>
+  <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Unauthorized&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;about:blank&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><img alt="vertex sign in" src="../../images/vertex-sign-in.png" /></p>
+</div>
                 
               
               
