@@ -162,9 +162,28 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#usage">
-    Usage
+<a class="md-nav__link" href="#quickstart">
+    Quickstart
   </a>
+<nav aria-label="Quickstart" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#submitting-jobs">
+    Submitting Jobs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#finding-existing-jobs">
+    Finding Existing Jobs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operations-on-job-and-batch">
+    Operations on Job and Batch
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#sdk-api-reference">
@@ -383,9 +402,28 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#usage">
-    Usage
+<a class="md-nav__link" href="#quickstart">
+    Quickstart
   </a>
+<nav aria-label="Quickstart" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#submitting-jobs">
+    Submitting Jobs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#finding-existing-jobs">
+    Finding Existing Jobs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operations-on-job-and-batch">
+    Operations on Job and Batch
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#sdk-api-reference">
@@ -481,37 +519,61 @@
 <div class="md-content">
 <article class="md-content__inner md-typeset">
 <h1 id="hyp3-sdk">HyP3 SDK<a class="headerlink" href="#hyp3-sdk" title="Permanent link">¶</a></h1>
-<p>A python wrapper around the HyP3 API</p>
+<p>A python wrapper around the HyP3 API
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">hyp3_sdk</span> <span class="kn">import</span> <span class="n">HyP3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">hyp3</span> <span class="o">=</span> <span class="n">HyP3</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">'MyUsername'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'MyPassword'</span><span class="p">)</span>  
+<span class="o">&gt;&gt;&gt;</span> <span class="n">job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">submit_rtc_job</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'MyNewJob'</span><span class="p">,</span> <span class="n">granule</span><span class="o">=</span><span class="s1">'S1A_IW_SLC__1SSV_20150621T120220_20150621T120232_006471_008934_72D8'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">job</span><span class="o">.</span><span class="n">download_files</span><span class="p">()</span>
+</code></pre></div></p>
 <h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">¶</a></h2>
 <p>The HyP3 SDK can be installed via <code>pip</code>:</p>
 <div class="highlight"><pre><span></span><code>python -m pip install hyp3_sdk
 </code></pre></div>
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">¶</a></h2>
-<p>The HyP3 object interactions with the HyP3 API are done using an instance of the <code>HyP3</code> class
+<h2 id="quickstart">Quickstart<a class="headerlink" href="#quickstart" title="Permanent link">¶</a></h2>
+<p>There are 3 main classes that the SDK exposes:</p>
+<ul>
+<li><code>HyP3</code>: to perform HyP3 operations (find jobs, refresh job information, submitting new jobs)</li>
+<li><code>Job</code>: to perform operations on single jobs (downloading products, check status)</li>
+<li><code>Batch</code>: to perform operations on multiple jobs at once (downloading products, check status)</li>
+</ul>
+<p>An instance of the <code>HyP3</code> class will be needed to interact with the external HyP3 API.
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">hyp3_sdk</span> <span class="kn">import</span> <span class="n">HyP3</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">HyP3</span><span class="p">()</span>  <span class="c1"># Must have credentials for urs.earthdata.nasa.gov in a .netrc file for this to work</span>
-</code></pre></div>
-If you want to use an API other then the one at <code>https://hyp3-api.asf.alaska.edu</code>, you may provide 
-the URL (including scheme) as a parameter
-<div class="highlight"><pre><span></span><code><span class="n">api</span> <span class="o">=</span> <span class="n">HyP3</span><span class="p">(</span><span class="s1">'https://hyp3.example.com'</span><span class="p">)</span>
-</code></pre></div>
-If you want to pass in a <a href="https://requests.readthedocs.io/en/latest/user/advanced/">Requests</a> <code>Session</code>
-object for the API to use, it must first be authenticated and then it can be passed into the API
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
-<span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>  <span class="c1"># Authenticate</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">HyP3</span><span class="p">(</span><span class="n">authenticated_session</span><span class="o">=</span><span class="n">session</span><span class="p">)</span>
+<span class="c1"># Must either have credentials for urs.earthdata.nasa.gov in a .netrc</span>
+<span class="n">hyp3</span> <span class="o">=</span> <span class="n">HyP3</span><span class="p">()</span>
+<span class="c1"># or provide them in the username and password keyword args</span>
+<span class="n">hyp3</span> <span class="o">=</span> <span class="n">HyP3</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">'MyUsername'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'MyPassword'</span><span class="p">)</span>
 </code></pre></div></p>
-<p>The <code>submit_jobs</code> method will submit Job objects to the API for processing
-<div class="highlight"><pre><span></span><code><span class="n">jobs</span> <span class="o">=</span> <span class="p">[</span><span class="n">make_rtc_gamma_job</span><span class="p">(</span><span class="s1">'job_name'</span><span class="p">,</span> <span class="s1">'granule_name'</span><span class="p">)]</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">submit_jobs</span><span class="p">(</span><span class="n">jobs</span><span class="p">)</span>
+<h3 id="submitting-jobs">Submitting Jobs<a class="headerlink" href="#submitting-jobs" title="Permanent link">¶</a></h3>
+<p><code>hyp3</code> has member functions for submitting new jobs:
+<div class="highlight"><pre><span></span><code><span class="n">rtc_job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">submit_rtc_job</span><span class="p">(</span><span class="s1">'job_name'</span><span class="p">,</span> <span class="s1">'granule_id'</span><span class="p">)</span>
+<span class="n">insar_job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">submit_insar_job</span><span class="p">(</span><span class="s1">'job_name'</span><span class="p">,</span> <span class="s1">'reference_granule_id'</span><span class="p">,</span> <span class="s1">'secondary_granule_id'</span><span class="p">)</span>
+<span class="n">autorift_job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">submit_autorift_job</span><span class="p">(</span><span class="s1">'job_name'</span><span class="p">,</span> <span class="s1">'reference_granule_id'</span><span class="p">,</span> <span class="s1">'secondary_granule_id'</span><span class="p">)</span>
+</code></pre></div>
+Each of these functions will return an instance of the <code>Job</code> class that represents a new HyP3 job request.</p>
+<h3 id="finding-existing-jobs">Finding Existing Jobs<a class="headerlink" href="#finding-existing-jobs" title="Permanent link">¶</a></h3>
+<p>To find HyP3 jobs that were run previously, you can use the <code>hyp3.find_jobs()</code>
+<div class="highlight"><pre><span></span><code><span class="n">batch</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">find_jobs</span><span class="p">()</span>
+</code></pre></div>
+This will return a <code>Batch</code> instance representing all jobs owned by you. You can also pass parameters to 
+query to a specific set of jobs</p>
+<h3 id="operations-on-job-and-batch">Operations on Job and Batch<a class="headerlink" href="#operations-on-job-and-batch" title="Permanent link">¶</a></h3>
+<p>If your jobs are not complete you can use the HyP3 instance to update them, and wait from completion
+<div class="highlight"><pre><span></span><code><span class="n">batch</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">find_jobs</span><span class="p">()</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">job_or_batch</span><span class="o">.</span><span class="n">complete</span><span class="p">():</span>
+    <span class="c1"># to get updated information</span>
+    <span class="n">batch</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+    <span class="c1"># or to wait until completion and get updated information (which will take a fair bit)</span>
+    <span class="n">batch</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span> 
 </code></pre></div></p>
-<p>The <code>get_jobs</code> method will request all jobs from the API and return them in a list of dictionaries
-<div class="highlight"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_jobs</span><span class="p">()</span>
+<p>Once you have complete jobs you can download the products to your machine
+<div class="highlight"><pre><span></span><code><span class="n">batch</span><span class="o">.</span><span class="n">download_files</span><span class="p">()</span>
+</code></pre></div></p>
+<p>These operations also work on <code>Job</code> objects
+<div class="highlight"><pre><span></span><code><span class="n">job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">submit_rtc_job</span><span class="p">(</span><span class="s1">'MyJobName'</span><span class="p">,</span> <span class="s1">'S1A_IW_SLC__1SSV_20150621T120220_20150621T120232_006471_008934_72D8'</span><span class="p">)</span>
+<span class="n">job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">download_files</span><span class="p">()</span>
 </code></pre></div></p>
 <h2 id="sdk-api-reference">SDK API Reference<a class="headerlink" href="#sdk-api-reference" title="Permanent link">¶</a></h2>
 <div class="doc doc-object doc-module">
@@ -1324,7 +1386,7 @@ download_files<span class="p">(</span><span class="bp">self</span><span class="p
 <tbody>
 <tr>
 <td><code>location</code></td>
-<td><code>Path</code></td>
+<td><code>Union[pathlib.Path, str]</code></td>
 <td>
 <p>Directory location to put files into</p>
 </td>
@@ -1336,7 +1398,7 @@ download_files<span class="p">(</span><span class="bp">self</span><span class="p
 <details class="quote">
 <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
 <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+<pre><span></span><code><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
     <span class="sd">"""</span>
 <span class="sd">    Args:</span>
 <span class="sd">        location: Directory location to put files into</span>
@@ -1511,7 +1573,7 @@ download_files<span class="p">(</span><span class="bp">self</span><span class="p
 <tbody>
 <tr>
 <td><code>location</code></td>
-<td><code>Path</code></td>
+<td><code>Union[pathlib.Path, str]</code></td>
 <td>
 <p>Directory location to put files into</p>
 </td>
@@ -1523,13 +1585,14 @@ download_files<span class="p">(</span><span class="bp">self</span><span class="p
 <details class="quote">
 <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
 <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+<pre><span></span><code><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
     <span class="sd">"""</span>
 <span class="sd">    Args:</span>
 <span class="sd">        location: Directory location to put files into</span>
 
 <span class="sd">    Returns: list of Path objects to downloaded files</span>
 <span class="sd">    """</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">complete</span><span class="p">():</span>
         <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="s1">'Incomplete jobs cannot be downloaded'</span><span class="p">)</span>
     <span class="n">downloaded_files</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1587,7 +1650,7 @@ download_file<span class="p">(</span><span class="n">url</span><span class="p">,
 </tr>
 <tr>
 <td><code>filepath</code></td>
-<td><code>Path</code></td>
+<td><code>Union[pathlib.Path, str]</code></td>
 <td>
 <p>Location to place file into</p>
 </td>
@@ -1639,7 +1702,7 @@ download_file<span class="p">(</span><span class="n">url</span><span class="p">,
 <details class="quote">
 <summary>Source code in <code>hyp3_sdk/util.py</code></summary>
 <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">filepath</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">backoff_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<pre><span></span><code><span class="k">def</span> <span class="nf">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">filepath</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">backoff_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
     <span class="sd">"""Download a file</span>
 <span class="sd">    Args:</span>
 <span class="sd">        url: URL of the file to download</span>
@@ -1650,6 +1713,7 @@ download_file<span class="p">(</span><span class="n">url</span><span class="p">,
 <span class="sd">    Returns:</span>
 <span class="sd">        download_path: The path to the downloaded file</span>
 <span class="sd">    """</span>
+    <span class="n">filepath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
     <span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
     <span class="n">retry_strategy</span> <span class="o">=</span> <span class="n">Retry</span><span class="p">(</span>
         <span class="n">total</span><span class="o">=</span><span class="n">retries</span><span class="p">,</span>
