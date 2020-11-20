@@ -522,12 +522,15 @@
 <p>A python wrapper around the HyP3 API
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">hyp3_sdk</span> <span class="kn">import</span> <span class="n">HyP3</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">hyp3</span> <span class="o">=</span> <span class="n">HyP3</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">'MyUsername'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'MyPassword'</span><span class="p">)</span>  
-<span class="o">&gt;&gt;&gt;</span> <span class="n">job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">submit_rtc_job</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'MyNewJob'</span><span class="p">,</span> <span class="n">granule</span><span class="o">=</span><span class="s1">'S1A_IW_SLC__1SSV_20150621T120220_20150621T120232_006471_008934_72D8'</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">submit_rtc_job</span><span class="p">(</span><span class="n">granule</span><span class="o">=</span><span class="s1">'S1A_IW_SLC__1SSV_20150621T120220_20150621T120232_006471_008934_72D8'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'MyNewJob'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">job</span><span class="o">.</span><span class="n">download_files</span><span class="p">()</span>
 </code></pre></div></p>
 <h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">¶</a></h2>
-<p>The HyP3 SDK can be installed via <code>pip</code>:</p>
+<p>The HyP3 SDK can be installed via <a href="https://docs.conda.io/en/latest/index.html">Anaconda/Miniconda</a>:</p>
+<div class="highlight"><pre><span></span><code>conda install -c conda-forge hyp3_sdk
+</code></pre></div>
+<p>Or using <a href="https://pypi.org/project/hyp3-sdk/"><code>pip</code></a>:</p>
 <div class="highlight"><pre><span></span><code>python -m pip install hyp3_sdk
 </code></pre></div>
 <h2 id="quickstart">Quickstart<a class="headerlink" href="#quickstart" title="Permanent link">¶</a></h2>
@@ -547,9 +550,9 @@
 </code></pre></div></p>
 <h3 id="submitting-jobs">Submitting Jobs<a class="headerlink" href="#submitting-jobs" title="Permanent link">¶</a></h3>
 <p><code>hyp3</code> has member functions for submitting new jobs:
-<div class="highlight"><pre><span></span><code><span class="n">rtc_job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">submit_rtc_job</span><span class="p">(</span><span class="s1">'job_name'</span><span class="p">,</span> <span class="s1">'granule_id'</span><span class="p">)</span>
-<span class="n">insar_job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">submit_insar_job</span><span class="p">(</span><span class="s1">'job_name'</span><span class="p">,</span> <span class="s1">'reference_granule_id'</span><span class="p">,</span> <span class="s1">'secondary_granule_id'</span><span class="p">)</span>
-<span class="n">autorift_job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">submit_autorift_job</span><span class="p">(</span><span class="s1">'job_name'</span><span class="p">,</span> <span class="s1">'reference_granule_id'</span><span class="p">,</span> <span class="s1">'secondary_granule_id'</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">rtc_job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">submit_rtc_job</span><span class="p">(</span><span class="s1">'granule_id'</span><span class="p">,</span> <span class="s1">'job_name'</span><span class="p">)</span>
+<span class="n">insar_job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">submit_insar_job</span><span class="p">(</span><span class="s1">'reference_granule_id'</span><span class="p">,</span> <span class="s1">'secondary_granule_id'</span><span class="p">,</span> <span class="s1">'job_name'</span><span class="p">)</span>
+<span class="n">autorift_job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">submit_autorift_job</span><span class="p">(</span><span class="s1">'reference_granule_id'</span><span class="p">,</span> <span class="s1">'secondary_granule_id'</span><span class="p">,</span> <span class="s1">'job_name'</span><span class="p">)</span>
 </code></pre></div>
 Each of these functions will return an instance of the <code>Job</code> class that represents a new HyP3 job request.</p>
 <h3 id="finding-existing-jobs">Finding Existing Jobs<a class="headerlink" href="#finding-existing-jobs" title="Permanent link">¶</a></h3>
@@ -561,18 +564,18 @@ query to a specific set of jobs</p>
 <h3 id="operations-on-job-and-batch">Operations on Job and Batch<a class="headerlink" href="#operations-on-job-and-batch" title="Permanent link">¶</a></h3>
 <p>If your jobs are not complete you can use the HyP3 instance to update them, and wait from completion
 <div class="highlight"><pre><span></span><code><span class="n">batch</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">find_jobs</span><span class="p">()</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">job_or_batch</span><span class="o">.</span><span class="n">complete</span><span class="p">():</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">batch</span><span class="o">.</span><span class="n">complete</span><span class="p">():</span>
     <span class="c1"># to get updated information</span>
     <span class="n">batch</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
     <span class="c1"># or to wait until completion and get updated information (which will take a fair bit)</span>
-    <span class="n">batch</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span> 
+    <span class="n">batch</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
 </code></pre></div></p>
 <p>Once you have complete jobs you can download the products to your machine
 <div class="highlight"><pre><span></span><code><span class="n">batch</span><span class="o">.</span><span class="n">download_files</span><span class="p">()</span>
 </code></pre></div></p>
 <p>These operations also work on <code>Job</code> objects
-<div class="highlight"><pre><span></span><code><span class="n">job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">submit_rtc_job</span><span class="p">(</span><span class="s1">'MyJobName'</span><span class="p">,</span> <span class="s1">'S1A_IW_SLC__1SSV_20150621T120220_20150621T120232_006471_008934_72D8'</span><span class="p">)</span>
-<span class="n">job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">submit_rtc_job</span><span class="p">(</span><span class="s1">'S1A_IW_SLC__1SSV_20150621T120220_20150621T120232_006471_008934_72D8'</span><span class="p">,</span> <span class="s1">'MyJobName'</span><span class="p">)</span>
+<span class="n">job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
 <span class="n">job</span><span class="o">.</span><span class="n">download_files</span><span class="p">()</span>
 </code></pre></div></p>
 <h2 id="sdk-api-reference">SDK API Reference<a class="headerlink" href="#sdk-api-reference" title="Permanent link">¶</a></h2>
@@ -1370,7 +1373,7 @@ complete<span class="p">(</span><span class="bp">self</span><span class="p">)</s
 <div class="doc doc-object doc-method">
 <h4 class="doc doc-heading" data-toc-label="download_files()" id="hyp3_sdk.jobs.Batch.download_files">
 <code class="highlight language-python">
-download_files<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">)</span> </code>
+download_files<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span> </code>
 </h4>
 <div class="doc doc-contents">
 <p><strong>Parameters:</strong></p>
@@ -1390,7 +1393,7 @@ download_files<span class="p">(</span><span class="bp">self</span><span class="p
 <td>
 <p>Directory location to put files into</p>
 </td>
-<td><em>required</em></td>
+<td><code>''</code></td>
 </tr>
 </tbody>
 </table>
@@ -1398,7 +1401,7 @@ download_files<span class="p">(</span><span class="bp">self</span><span class="p
 <details class="quote">
 <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
 <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+<pre><span></span><code><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">''</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
     <span class="sd">"""</span>
 <span class="sd">    Args:</span>
 <span class="sd">        location: Directory location to put files into</span>
@@ -1557,7 +1560,7 @@ succeeded<span class="p">(</span><span class="bp">self</span><span class="p">)</
 <div class="doc doc-object doc-method">
 <h4 class="doc doc-heading" data-toc-label="download_files()" id="hyp3_sdk.jobs.Job.download_files">
 <code class="highlight language-python">
-download_files<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">)</span> </code>
+download_files<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span> </code>
 </h4>
 <div class="doc doc-contents">
 <p><strong>Parameters:</strong></p>
@@ -1577,7 +1580,7 @@ download_files<span class="p">(</span><span class="bp">self</span><span class="p
 <td>
 <p>Directory location to put files into</p>
 </td>
-<td><em>required</em></td>
+<td><code>''</code></td>
 </tr>
 </tbody>
 </table>
@@ -1585,7 +1588,7 @@ download_files<span class="p">(</span><span class="bp">self</span><span class="p
 <details class="quote">
 <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
 <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+<pre><span></span><code><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">''</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
     <span class="sd">"""</span>
 <span class="sd">    Args:</span>
 <span class="sd">        location: Directory location to put files into</span>
