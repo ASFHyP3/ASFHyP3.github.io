@@ -9,9 +9,9 @@
 <link href="https://hyp3-docs.asf.alaska.edu/using/sdk/" rel="canonical"/>
 <meta content="ASF APD/Tools Team" name="author"/>
 <link href="../../images/favicon.ico" rel="shortcut icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-6.1.6" name="generator"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-6.1.7" name="generator"/>
 <title>SDK - HyP3</title>
-<link href="../../assets/stylesheets/main.6910b76c.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.19753c6b.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.196e0c26.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
@@ -541,12 +541,13 @@
 <li><code>Batch</code>: to perform operations on multiple jobs at once (downloading products, check status)</li>
 </ul>
 <p>An instance of the <code>HyP3</code> class will be needed to interact with the external HyP3 API.
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">hyp3_sdk</span> <span class="kn">import</span> <span class="n">HyP3</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">hyp3_sdk</span> <span class="kn">import</span> <span class="n">HyP3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">hyp3</span> <span class="o">=</span> <span class="n">HyP3</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">'MyUsername'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'MyPassword'</span><span class="p">)</span>
 
-<span class="c1"># Must either have credentials for urs.earthdata.nasa.gov in a .netrc</span>
-<span class="n">hyp3</span> <span class="o">=</span> <span class="n">HyP3</span><span class="p">()</span>
-<span class="c1"># or provide them in the username and password keyword args</span>
-<span class="n">hyp3</span> <span class="o">=</span> <span class="n">HyP3</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">'MyUsername'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'MyPassword'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">granule</span> <span class="o">=</span> <span class="s1">'S1A_IW_SLC__1SSV_20150621T120220_20150621T120232_006471_008934_72D8'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">submit_rtc_job</span><span class="p">(</span><span class="n">granule</span><span class="o">=</span><span class="n">granule</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'MyNewJob'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">job</span> <span class="o">=</span> <span class="n">hyp3</span><span class="o">.</span><span class="n">watch</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">job</span><span class="o">.</span><span class="n">download_files</span><span class="p">()</span>
 </code></pre></div></p>
 <h3 id="submitting-jobs">Submitting Jobs<a class="headerlink" href="#submitting-jobs" title="Permanent link">¶</a></h3>
 <p><code>hyp3</code> has member functions for submitting new jobs:
@@ -694,6 +695,7 @@ Both username and password must be provided if either is provided.</p>
 <span class="sd">    """</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">api_url</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">get_authenticated_session</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'User-Agent'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">hyp3_sdk</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">hyp3_sdk</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">'</span><span class="p">})</span>
 </code></pre>
 </div>
 </details>
@@ -842,6 +844,8 @@ find_jobs<span class="p">(</span><span class="bp">self</span><span class="p">,</
     <span class="k">except</span> <span class="n">HTTPError</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Error while trying to query </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
     <span class="n">jobs</span> <span class="o">=</span> <span class="p">[</span><span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">job</span><span class="p">)</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'jobs'</span><span class="p">]]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">jobs</span><span class="p">:</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">'Found zero jobs'</span><span class="p">,</span> <span class="ne">UserWarning</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">Batch</span><span class="p">(</span><span class="n">jobs</span><span class="p">)</span>
 </code></pre>
 </div>
@@ -1373,7 +1377,7 @@ complete<span class="p">(</span><span class="bp">self</span><span class="p">)</s
 <div class="doc doc-object doc-method">
 <h4 class="doc doc-heading" data-toc-label="download_files()" id="hyp3_sdk.jobs.Batch.download_files">
 <code class="highlight language-python">
-download_files<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span> </code>
+download_files<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">'.'</span><span class="p">)</span> </code>
 </h4>
 <div class="doc doc-contents">
 <p><strong>Parameters:</strong></p>
@@ -1393,7 +1397,7 @@ download_files<span class="p">(</span><span class="bp">self</span><span class="p
 <td>
 <p>Directory location to put files into</p>
 </td>
-<td><code>''</code></td>
+<td><code>'.'</code></td>
 </tr>
 </tbody>
 </table>
@@ -1401,7 +1405,7 @@ download_files<span class="p">(</span><span class="bp">self</span><span class="p
 <details class="quote">
 <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
 <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">''</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+<pre><span></span><code><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'.'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
     <span class="sd">"""</span>
 <span class="sd">    Args:</span>
 <span class="sd">        location: Directory location to put files into</span>
@@ -1560,7 +1564,7 @@ succeeded<span class="p">(</span><span class="bp">self</span><span class="p">)</
 <div class="doc doc-object doc-method">
 <h4 class="doc doc-heading" data-toc-label="download_files()" id="hyp3_sdk.jobs.Job.download_files">
 <code class="highlight language-python">
-download_files<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span> </code>
+download_files<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">'.'</span><span class="p">)</span> </code>
 </h4>
 <div class="doc doc-contents">
 <p><strong>Parameters:</strong></p>
@@ -1580,7 +1584,7 @@ download_files<span class="p">(</span><span class="bp">self</span><span class="p
 <td>
 <p>Directory location to put files into</p>
 </td>
-<td><code>''</code></td>
+<td><code>'.'</code></td>
 </tr>
 </tbody>
 </table>
@@ -1588,7 +1592,7 @@ download_files<span class="p">(</span><span class="bp">self</span><span class="p
 <details class="quote">
 <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
 <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">''</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+<pre><span></span><code><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'.'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
     <span class="sd">"""</span>
 <span class="sd">    Args:</span>
 <span class="sd">        location: Directory location to put files into</span>
@@ -1862,8 +1866,8 @@ get_authenticated_session<span class="p">(</span><span class="n">username</span>
 </div>
 </footer>
 </div>
-<script src="../../assets/javascripts/vendor.fd16492e.min.js"></script>
-<script src="../../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+<script src="../../assets/javascripts/vendor.0ac82a11.min.js"></script>
+<script src="../../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
 <script>
         app = initialize({
           base: "../..",
