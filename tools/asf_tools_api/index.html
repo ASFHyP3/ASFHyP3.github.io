@@ -8,11 +8,19 @@
 <meta content="The Alaska Satellite Facility's Hybrid Pluggable Processing Pipeline" name="description"/>
 <link href="https://hyp3-docs.asf.alaska.edu/tools/asf_tools_api/" rel="canonical"/>
 <meta content="ASF APD/Tools Team" name="author"/>
-<link href="../../images/favicon.ico" rel="shortcut icon"/>
+<link href="../../assets/images/favicon.ico" rel="shortcut icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-6.1.7" name="generator"/>
 <title>API Reference - HyP3</title>
 <link href="../../assets/stylesheets/main.19753c6b.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.196e0c26.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/asf.css" rel="stylesheet"/>
+<script src="https://fbm.earthdata.nasa.gov/for/ASF/feedback.js" type="text/javascript"></script>
+<script type="text/javascript">
+ // This prevents the FBM flyout banner from appearing on the side of the page.
+feedback.init({showIcon: false});
+</script>
+<script data-current-daac="ASF DAAC" data-fbm-subject-line="How can we help you?" data-show-fbm="true" data-show-status="false" id="earthdata-tophat-script" src="https://cdn.earthdata.nasa.gov/tophat2/tophat2.js">
+</script>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
 <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
@@ -30,14 +38,41 @@
 </div>
 <div data-md-component="announce">
 </div>
+<!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+<!-- Mitigate bug: https://github.com/mkdocs/mkdocs/issues/2191 -->
+<!-- Application header -->
 <header class="md-header" data-md-component="header">
+<!-- Top-level navigation -->
 <nav aria-label="Header" class="md-header-nav md-grid">
+<!-- Link to home -->
 <a aria-label="HyP3" class="md-header-nav__button md-logo" href="https://hyp3-docs.asf.alaska.edu/" title="HyP3">
-<img alt="logo" src="../../images/HyP3-graphic-only.png"/>
+<img alt="logo" src="../../assets/images/ASFLogo-Blue2.png"/>
 </a>
+<!-- Button to open drawer -->
 <label class="md-header-nav__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
 </label>
+<!-- Header title -->
 <div class="md-header-nav__title" data-md-component="header-title">
 <div class="md-header-nav__ellipsis">
 <span class="md-header-nav__topic md-ellipsis">
@@ -50,34 +85,11 @@
           </span>
 </div>
 </div>
-<label class="md-header-nav__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
-</label>
-<div class="md-search" data-md-component="search" role="dialog">
-<label class="md-search__overlay" for="__search"></label>
-<div class="md-search__inner" role="search">
-<form class="md-search__form" name="search">
-<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
-<label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</label>
-<button aria-label="Clear" class="md-search__icon md-icon" data-md-component="search-reset" tabindex="-1" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
-</button>
-</form>
-<div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="">
-<div class="md-search-result" data-md-component="search-result">
-<div class="md-search-result__meta">
-            Initializing search
-          </div>
-<ol class="md-search-result__list"></ol>
+<!-- Button to open search dialogue -->
+<div class="expert-rec-search">
+<ci-search></ci-search>
 </div>
-</div>
-</div>
-</div>
-</div>
+<!-- Repository containing source -->
 <div class="md-header-nav__source">
 <a class="md-source" href="https://github.com/ASFHyP3" title="Go to repository">
 <div class="md-source__icon md-icon">
@@ -99,7 +111,7 @@
 <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
 <a aria-label="HyP3" class="md-nav__button md-logo" href="https://hyp3-docs.asf.alaska.edu/" title="HyP3">
-<img alt="logo" src="../../images/HyP3-graphic-only.png"/>
+<img alt="logo" src="../../assets/images/ASFLogo-Blue2.png"/>
 </a>
     HyP3
   </label>
@@ -1334,18 +1346,51 @@ write_cog<span class="p">(</span><span class="n">file_name</span><span class="p"
 </div>
 </a>
 </nav>
+<div class="md-grid">
+<div class="md-footer-container md-grid">
+<div class="md-footer-container-item">
+<img alt="ASF Logo" class="md-footer-logo" src="/assets/images/asf-logo-blue-nav.png"/>
+</div>
+<div class="md-footer-container-item md-about-us">
+<h1>About Us</h1>
+<p>
+              The Alaska Satellite Facility downlinks, processes, archives, and
+              distributes remote-sensing data to scientific users around the world.
+              ASF’s mission is to make remote-sensing data accessible.
+            </p>
+<p>
+<a href="https://asf.alaska.edu/about-asf/" target="_blank">
+                Read More
+              </a>
+</p>
+</div>
+<div class="md-footer-container-item md-contact-info">
+<h1>Contact Info</h1>
+<p>
+              Alaska Satellite Facility<br/>
+              2156 Koyukuk Drive<br/>
+              Fairbanks, AK 99775<br/>
+              (907) 474-5041<br/>
+              uso@asf.alaska.edu<br/>
+</p>
+<p>
+<a href="javascript:feedback.showForm();">Send Us A Message</a>
+</p>
+</div>
+</div>
+</div>
 </div>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-footer-copyright">
 <div class="md-footer-copyright__highlight">
             © 2020 Alaska Satellite Facility
-          </div>
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
-          Material for MkDocs
-        </a>
+              
+            <a class="md-footer-copyright-link" href="https://www.alaska.edu/nondiscrimination" target="_blank">
+              UA is an AA/EO employer and educational institution and prohibits
+              illegal discrimination against any individual
+            </a>
+</div>
 </div>
 <div class="md-footer-social">
 <a class="md-footer-social__link" href="https://twitter.com/Ak_Satellite" rel="noopener" target="_blank" title="twitter.com">
@@ -1370,5 +1415,6 @@ write_cog<span class="p">(</span><span class="n">file_name</span><span class="p"
           }, typeof search !== "undefined" && search)
         })
       </script>
+<script src="../../assets/javascripts/expert-rec-search.js"></script>
 </body>
 </html>
