@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://hyp3-docs.asf.alaska.edu/tools/asf_tools/">
-      
-      
         <meta name="author" content="ASF APD/Tools Team">
       
+      
+        <link rel="canonical" href="https://hyp3-docs.asf.alaska.edu/tools/asf_tools/">
+      
       <link rel="shortcut icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.1">
     
     
       
@@ -25,10 +25,10 @@
     
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.19753c6b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.73f7c429.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
         
       
     
@@ -53,7 +53,7 @@ feedback.init({showIcon: false});
     
       
         
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
@@ -61,12 +61,65 @@ feedback.init({showIcon: false});
     
     
     
-      
-        
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-991100-5","search.asf.alaska.edu"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+  
+    <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Google Analytics integration -->
+
+  
+
+<script type="application/javascript">
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+
+  /* Set up integration and send page view */
+  ga("create", "UA-991100-5", "search.asf.alaska.edu")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", function() {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+
+  /* Send page view on document switch (instant loading, custom event) */
+  document.addEventListener("DOMContentSwitch", function() {
+    ga("send", "pageview", document.location.pathname)
+  })
+</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
-      
-    
+  
+
     
   </head>
   
@@ -79,6 +132,7 @@ feedback.init({showIcon: false});
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
       
   
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -126,6 +180,16 @@ feedback.init({showIcon: false});
   <!-- Top-level navigation -->
   <nav class="md-header-nav md-grid" aria-label="Header">
 
+    
+      <!-- Link to ASF -->
+      <a
+        href="https://asf.alaska.edu/"
+        title="ASF"
+        class="md-header-nav__button md-logo"
+        aria-label="ASF"
+      >
+      <img src="../../assets/images/ASFLogo-Blue2.png" alt="logo" />
+    
     <!-- Link to home -->
     <a
       href="https://hyp3-docs.asf.alaska.edu/"
@@ -133,8 +197,31 @@ feedback.init({showIcon: false});
       class="md-header-nav__button md-logo"
       aria-label="HyP3"
     >
-      
-  <img src="../../assets/images/ASFLogo-Blue2.png" alt="logo">
+      <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Logo -->
+
+  <img src="../../images/HyP3-graphic-only.png" alt="logo" />
 
     </a>
 
@@ -159,11 +246,11 @@ feedback.init({showIcon: false});
       
     </div>
 
-    <!-- Button to open search dialogue -->
     
+     <!-- Search interface -->
       <div class="expert-rec-search">
-        <ci-search></ci-search>
-      </div>
+  <ci-search></ci-search>
+</div>
     
 
     <!-- Repository containing source -->
@@ -193,16 +280,43 @@ feedback.init({showIcon: false});
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
 
+
+
+
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://hyp3-docs.asf.alaska.edu/" title="HyP3" class="md-nav__button md-logo" aria-label="HyP3">
-      
-  <img src="../../assets/images/ASFLogo-Blue2.png" alt="logo">
+      <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Logo -->
+
+  <img src="../../images/HyP3-graphic-only.png" alt="logo" />
 
     </a>
     HyP3
@@ -228,6 +342,7 @@ feedback.init({showIcon: false});
       
 
 
+
   <li class="md-nav__item">
     <a href="../.." class="md-nav__link">
       Home
@@ -240,9 +355,13 @@ feedback.init({showIcon: false});
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+    
     <label class="md-nav__link" for="nav-2">
       <span class="md-nav__icon md-icon"></span>
       
@@ -270,6 +389,7 @@ feedback.init({showIcon: false});
           
 
 
+
   <li class="md-nav__item">
     <a href="../../using/vertex/" class="md-nav__link">
       Vertex
@@ -282,9 +402,13 @@ feedback.init({showIcon: false});
           
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" >
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" >
+    
     <label class="md-nav__link" for="nav-2-2">
       <span class="md-nav__icon md-icon"></span>
       
@@ -312,6 +436,7 @@ feedback.init({showIcon: false});
           
 
 
+
   <li class="md-nav__item">
     <a href="../../using/sdk_api/" class="md-nav__link">
       API Reference
@@ -327,6 +452,7 @@ feedback.init({showIcon: false});
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -346,9 +472,13 @@ feedback.init({showIcon: false});
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+    
     <label class="md-nav__link" for="nav-3">
       <span class="md-nav__icon md-icon"></span>
       
@@ -376,6 +506,7 @@ feedback.init({showIcon: false});
           
 
 
+
   <li class="md-nav__item">
     <a href="../../dems/" class="md-nav__link">
       Digital Elevation Models
@@ -388,9 +519,13 @@ feedback.init({showIcon: false});
           
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
+    
     <label class="md-nav__link" for="nav-3-2">
       <span class="md-nav__icon md-icon"></span>
       
@@ -412,6 +547,7 @@ feedback.init({showIcon: false});
           
 
 
+
   <li class="md-nav__item">
     <a href="../../guides/rtc_product_guide/" class="md-nav__link">
       RTC Product Guide
@@ -422,6 +558,7 @@ feedback.init({showIcon: false});
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -445,12 +582,16 @@ feedback.init({showIcon: false});
       
       
 
+
   
 
 
+  
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
     <label class="md-nav__link" for="nav-4">
       <span class="md-nav__icon md-icon"></span>
       
@@ -472,6 +613,7 @@ feedback.init({showIcon: false});
           
 
 
+
   <li class="md-nav__item">
     <a href="../arcgis_toolbox/" class="md-nav__link">
       ArcGIS Toolbox
@@ -483,12 +625,16 @@ feedback.init({showIcon: false});
           
           
 
+
   
 
 
+  
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" checked>
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" checked>
+    
     <label class="md-nav__link" for="nav-4-2">
       <span class="md-nav__icon md-icon"></span>
       
@@ -516,6 +662,7 @@ feedback.init({showIcon: false});
           
 
 
+
   <li class="md-nav__item">
     <a href="../asf_tools_api/" class="md-nav__link">
       API Reference
@@ -538,6 +685,7 @@ feedback.init({showIcon: false});
       
 
 
+
   <li class="md-nav__item">
     <a href="../../plugins/" class="md-nav__link">
       Plugins
@@ -550,6 +698,7 @@ feedback.init({showIcon: false});
       
 
 
+
   <li class="md-nav__item">
     <a href="../../contributing/" class="md-nav__link">
       Contributing
@@ -560,6 +709,7 @@ feedback.init({showIcon: false});
       
       
       
+
 
 
   <li class="md-nav__item">
@@ -576,7 +726,8 @@ feedback.init({showIcon: false});
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -653,9 +804,11 @@ potential to be used with a variety of rasters, including non-SAR datasets.</p>
 <p><code>asf_tools</code> can be installed via <a href="https://docs.conda.io/en/latest/index.html">Anaconda/Miniconda</a>:</p>
 <div class="highlight"><pre><span></span><code>conda install -c conda-forge asf_tools
 </code></pre></div>
+
 <p>Or using <a href="https://pypi.org/project/asf_tools/"><code>pip</code></a>:</p>
 <div class="highlight"><pre><span></span><code>python -m pip install asf_tools
 </code></pre></div>
+
 <h2 id="quick-usage">Quick Usage<a class="headerlink" href="#quick-usage" title="Permanent link">&para;</a></h2>
 <h3 id="local-resolution-weighted-composite">Local Resolution Weighted Composite<a class="headerlink" href="#local-resolution-weighted-composite" title="Permanent link">&para;</a></h3>
 <p>The <code>make_composite</code> tool allows you to create a local-resolution-weighted composite from a set of Sentinel-1 RTC
@@ -683,11 +836,42 @@ products (<a href="https://doi.org/10.1109/IGARSS.2012.6350465">D. Small, 2012</
         </div>
       </main>
       
-        
+        <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Application footer -->
 <footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
   
     <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+      <nav
+        class="md-footer-nav__inner md-grid"
+        aria-label="Footer"
+      >
+
+        <!-- Link to previous page -->
         
           <a href="../arcgis_toolbox/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
@@ -703,6 +887,8 @@ products (<a href="https://doi.org/10.1109/IGARSS.2012.6350465">D. Small, 2012</
             </div>
           </a>
         
+
+        <!-- Link to next page -->
         
           <a href="../asf_tools_api/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
@@ -719,6 +905,8 @@ products (<a href="https://doi.org/10.1109/IGARSS.2012.6350465">D. Small, 2012</
           </a>
         
       </nav>
+
+      <!-- ASF Footer information-->
       <div class="md-grid">
         <div class="md-footer-container md-grid">
           <div class="md-footer-container-item">
@@ -756,24 +944,65 @@ products (<a href="https://doi.org/10.1109/IGARSS.2012.6350465">D. Small, 2012</
       </div>
     </div>
   
+
+  <!-- Further information -->
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
+
+      <!-- Copyright and theme information -->
       <div class="md-footer-copyright">
-        
-          <div class="md-footer-copyright__highlight">
-            © 2020 Alaska Satellite Facility
-            &nbsp;&nbsp;
-            <a href="https://www.alaska.edu/nondiscrimination"
-               target="_blank"
-               class="md-footer-copyright-link">
-              UA is an AA/EO employer and educational institution and prohibits
-              illegal discrimination against any individual
-            </a>
-          </div>
-        
+        <div class="md-footer-copyright__highlight">
+          
+            &copy; <script type="text/javascript">
+                document.write(new Date().getFullYear());
+            </script>
+            Alaska Satellite Facility
+          
+          <!-- ASF non-discrimination disclaimer-->
+          &nbsp;&nbsp;
+          <a href="https://www.alaska.edu/nondiscrimination"
+             target="_blank"
+             class="md-footer-copyright-link">
+            UA is an AA/EO employer and educational institution and prohibits
+            illegal discrimination against any individual
+          </a>
+        </div>
       </div>
+
+      <!-- Social links -->
+      <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Social links in footer -->
+<div class="md-footer-social">
+    
       
-  <div class="md-footer-social">
+      
+        
+        
+      
+      <a href="https://www.facebook.com/AKSatellite" target="_blank" rel="noopener" title="www.facebook.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+      </a>
     
       
       
@@ -789,12 +1018,28 @@ products (<a href="https://doi.org/10.1109/IGARSS.2012.6350465">D. Small, 2012</
         
         
       
-      <a href="https://gitter.im/ASFHyP3/community" target="_blank" rel="noopener" title="gitter.im" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M66.4 322.5H16V0h50.4v322.5zM166.9 76.1h-50.4V512h50.4V76.1zm100.6 0h-50.4V512h50.4V76.1zM368 76h-50.4v247H368V76z"/></svg>
+      <a href="https://www.youtube.com/channel/UChCfI0oVWw4qDwEidnDskJQ" target="_blank" rel="noopener" title="www.youtube.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
       </a>
     
-  </div>
-
+    
+        
+          
+          
+            
+            
+          
+          <a
+            href="https://gitter.im/ASFHyP3/community"
+            target="_blank" rel="noopener"
+            title="gitter.im"
+            class="md-footer-social__link"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M66.4 322.5H16V0h50.4v322.5zM166.9 76.1h-50.4V512h50.4V76.1zm100.6 0h-50.4V512h50.4V76.1zM368 76h-50.4v247H368V76z"/></svg>
+          </a>
+        
+    
+</div>
     </div>
   </div>
 </footer>
@@ -802,15 +1047,15 @@ products (<a href="https://doi.org/10.1109/IGARSS.2012.6350465">D. Small, 2012</
     </div>
     
     
-      <script src="../../assets/javascripts/vendor.0ac82a11.min.js"></script>
-      <script src="../../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.08c56446.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6ced434e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: ['navigation.instant'],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

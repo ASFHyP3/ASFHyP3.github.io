@@ -19,8 +19,8 @@ a {
 }
 
 .md-header-nav__button.md-logo img {
-  width: 3.2rem;
-  height: auto;
+  height: 2.0rem;
+  width: auto;
   display: inline-block;
   margin-top: -7px;
 }
