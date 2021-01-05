@@ -9,7 +9,7 @@
 <meta content="ASF APD/Tools Team" name="author"/>
 <link href="https://hyp3-docs.asf.alaska.edu/using/sdk_api/" rel="canonical"/>
 <link href="../../assets/images/favicon.ico" rel="shortcut icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-6.2.1" name="generator"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-6.2.2" name="generator"/>
 <title>API Reference - HyP3</title>
 <link href="../../assets/stylesheets/main.73f7c429.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.39b8e14a.min.css" rel="stylesheet"/>
@@ -1921,8 +1921,10 @@ get_authenticated_session<span class="p">(</span><span class="n">username</span>
 <div class="md-footer-copyright">
 <div class="md-footer-copyright__highlight">
           
-            © <script type="text/javascript">
-                document.write(new Date().getFullYear());
+            © <span id="copyright-year"></span>
+<script type="text/javascript">
+                current_year = new Date().getFullYear();
+                document.getElementById("copyright-year").innerHTML=current_year;
             </script>
             Alaska Satellite Facility
           

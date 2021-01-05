@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://hyp3-docs.asf.alaska.edu/using/api/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -769,7 +769,6 @@ interface for exploring the API is available at:</p>
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;about:blank&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p><img alt="vertex sign in" src="../../images/vertex-sign-in.png" /></p>
 </div>
                 
@@ -901,8 +900,10 @@ interface for exploring the API is available at:</p>
       <div class="md-footer-copyright">
         <div class="md-footer-copyright__highlight">
           
-            &copy; <script type="text/javascript">
-                document.write(new Date().getFullYear());
+            &copy; <span id="copyright-year"></span>
+            <script type="text/javascript">
+                current_year = new Date().getFullYear();
+                document.getElementById("copyright-year").innerHTML=current_year;
             </script>
             Alaska Satellite Facility
           

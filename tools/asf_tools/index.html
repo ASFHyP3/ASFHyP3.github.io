@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://hyp3-docs.asf.alaska.edu/tools/asf_tools/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -804,11 +804,9 @@ potential to be used with a variety of rasters, including non-SAR datasets.</p>
 <p><code>asf_tools</code> can be installed via <a href="https://docs.conda.io/en/latest/index.html">Anaconda/Miniconda</a>:</p>
 <div class="highlight"><pre><span></span><code>conda install -c conda-forge asf_tools
 </code></pre></div>
-
 <p>Or using <a href="https://pypi.org/project/asf_tools/"><code>pip</code></a>:</p>
 <div class="highlight"><pre><span></span><code>python -m pip install asf_tools
 </code></pre></div>
-
 <h2 id="quick-usage">Quick Usage<a class="headerlink" href="#quick-usage" title="Permanent link">&para;</a></h2>
 <h3 id="local-resolution-weighted-composite">Local Resolution Weighted Composite<a class="headerlink" href="#local-resolution-weighted-composite" title="Permanent link">&para;</a></h3>
 <p>The <code>make_composite</code> tool allows you to create a local-resolution-weighted composite from a set of Sentinel-1 RTC
@@ -953,8 +951,10 @@ products (<a href="https://doi.org/10.1109/IGARSS.2012.6350465">D. Small, 2012</
       <div class="md-footer-copyright">
         <div class="md-footer-copyright__highlight">
           
-            &copy; <script type="text/javascript">
-                document.write(new Date().getFullYear());
+            &copy; <span id="copyright-year"></span>
+            <script type="text/javascript">
+                current_year = new Date().getFullYear();
+                document.getElementById("copyright-year").innerHTML=current_year;
             </script>
             Alaska Satellite Facility
           

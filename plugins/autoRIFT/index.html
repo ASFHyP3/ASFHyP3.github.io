@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://hyp3-docs.asf.alaska.edu/plugins/autoRIFT/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -795,8 +795,10 @@ feedback.init({showIcon: false});
       <div class="md-footer-copyright">
         <div class="md-footer-copyright__highlight">
           
-            &copy; <script type="text/javascript">
-                document.write(new Date().getFullYear());
+            &copy; <span id="copyright-year"></span>
+            <script type="text/javascript">
+                current_year = new Date().getFullYear();
+                document.getElementById("copyright-year").innerHTML=current_year;
             </script>
             Alaska Satellite Facility
           
