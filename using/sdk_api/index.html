@@ -476,6 +476,33 @@ feedback.init({showIcon: false});
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#hyp3_sdk.asf_search" class="md-nav__link">
+    asf_search
+  </a>
+  
+    <nav class="md-nav" aria-label="asf_search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.asf_search.get_metadata" class="md-nav__link">
+    get_metadata()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.asf_search.get_nearest_neighbors" class="md-nav__link">
+    get_nearest_neighbors()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hyp3_sdk.exceptions" class="md-nav__link">
     exceptions
   </a>
@@ -891,6 +918,33 @@ feedback.init({showIcon: false});
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#hyp3_sdk.asf_search" class="md-nav__link">
+    asf_search
+  </a>
+  
+    <nav class="md-nav" aria-label="asf_search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.asf_search.get_metadata" class="md-nav__link">
+    get_metadata()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.asf_search.get_nearest_neighbors" class="md-nav__link">
+    get_nearest_neighbors()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hyp3_sdk.exceptions" class="md-nav__link">
     exceptions
   </a>
@@ -1016,6 +1070,186 @@ feedback.init({showIcon: false});
 <div class="doc doc-contents first">
 <p>A python wrapper around the HyP3 API</p>
 <div class="doc doc-children">
+<div class="doc doc-object doc-module">
+<h2 class="doc doc-heading" id="hyp3_sdk.asf_search">
+
+        <code>asf_search</code>
+
+
+
+      <a class="headerlink" href="#hyp3_sdk.asf_search" title="Permanent link">&para;</a></h2>
+<div class="doc doc-contents ">
+<div class="doc doc-children">
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="hyp3_sdk.asf_search.get_metadata">
+
+<code class="highlight language-python"><span class="n">get_metadata</span><span class="p">(</span><span class="n">granules</span><span class="p">)</span></code>
+
+
+      <a class="headerlink" href="#hyp3_sdk.asf_search.get_metadata" title="Permanent link">&para;</a></h3>
+<div class="doc doc-contents ">
+<p>Get the metadata for a granule or list of granules</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>granules</code></td>
+<td><code>Union[str, Iterable[str]]</code></td>
+<td>
+<p>granule(s) to lookup metadata for</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Union[dict, List[dict]]</code></td>
+<td>
+<p>metadata: metadata for the granule(s)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>hyp3_sdk/asf_search.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">get_metadata</span><span class="p">(</span><span class="n">granules</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]]:</span>
+    <span class="sd">"""Get the metadata for a granule or list of granules</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        granules: granule(s) to lookup metadata for</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        metadata: metadata for the granule(s)</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">granules</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">granule_list</span> <span class="o">=</span> <span class="n">granules</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">granule_list</span> <span class="o">=</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">granules</span><span class="p">)</span>
+
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'output'</span><span class="p">:</span> <span class="s1">'jsonlite'</span><span class="p">,</span>
+        <span class="s1">'granule_list'</span><span class="p">:</span> <span class="n">granule_list</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">_SEARCH_API</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+
+    <span class="n">metadata</span> <span class="o">=</span> <span class="p">[</span><span class="n">result</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'results'</span><span class="p">]</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">[</span><span class="s1">'productType'</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'METADATA_'</span><span class="p">)]</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">granules</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">metadata</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">metadata</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="hyp3_sdk.asf_search.get_nearest_neighbors">
+
+<code class="highlight language-python"><span class="n">get_nearest_neighbors</span><span class="p">(</span><span class="n">granule</span><span class="p">,</span> <span class="n">max_neighbors</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></code>
+
+
+      <a class="headerlink" href="#hyp3_sdk.asf_search.get_nearest_neighbors" title="Permanent link">&para;</a></h3>
+<div class="doc doc-contents ">
+<p>Get a granules nearest neighbors from a temporal stack (backwards in time)</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>granule</code></td>
+<td><code>str</code></td>
+<td>
+<p>reference granule</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>max_neighbors</code></td>
+<td><code>int</code></td>
+<td>
+<p>maximum number of neighbors to return</p>
+</td>
+<td><code>2</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>List[dict]</code></td>
+<td>
+<p>neighbors: a list of neighbors sorted by time</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+          <summary>Source code in <code>hyp3_sdk/asf_search.py</code></summary>
+          <div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">get_nearest_neighbors</span><span class="p">(</span><span class="n">granule</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">max_neighbors</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+    <span class="sd">"""Get a granules nearest neighbors from a temporal stack (backwards in time)</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        granule: reference granule</span>
+<span class="sd">        max_neighbors: maximum number of neighbors to return</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        neighbors: a list of neighbors sorted by time</span>
+<span class="sd">    """</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'output'</span><span class="p">:</span> <span class="s1">'jsonlite'</span><span class="p">,</span>
+        <span class="s1">'master'</span><span class="p">:</span> <span class="n">granule</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">_BASLINE_API</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+    <span class="n">all_neighbors</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'results'</span><span class="p">]</span>
+    <span class="n">selected_neighbors</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">all_neighbors</span> <span class="k">if</span> <span class="n">n</span><span class="p">[</span><span class="s1">'temporalBaseline'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">selected_neighbors</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="n">k</span><span class="p">[</span><span class="s1">'temporalBaseline'</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">selected_neighbors</span><span class="p">[:</span><span class="n">max_neighbors</span><span class="p">]</span>
+</code></pre>
+</div>
+</details>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="doc doc-object doc-module">
 <h2 class="doc doc-heading" id="hyp3_sdk.exceptions">
 
@@ -2104,7 +2338,7 @@ Both username and password must be provided if either is provided.</p>
         <span class="n">filename</span> <span class="o">=</span> <span class="n">location</span> <span class="o">/</span> <span class="n">file</span><span class="p">[</span><span class="s1">'filename'</span><span class="p">]</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">downloaded_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">download_file</span><span class="p">(</span><span class="n">download_url</span><span class="p">,</span> <span class="n">filename</span><span class="p">))</span>
-        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">except</span> <span class="n">RequestException</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="s1">'unable to download file'</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">downloaded_files</span>
 </code></pre>
