@@ -60,6 +60,8 @@ feedback.init({showIcon: false});
     
     
     
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
     
   
     <!--
@@ -948,20 +950,43 @@ feedback.init({showIcon: false});
                 
                 
                 <h1 id="asf_tools-api-reference"><code>asf_tools</code> API Reference<a class="headerlink" href="#asf_tools-api-reference" title="Permanent link">&para;</a></h1>
-<div class="doc doc-object doc-module">
-<div class="doc doc-contents first">
-<p>Tools developed by ASF for working with SAR data</p>
-<div class="doc doc-children">
-<div class="doc doc-object doc-module">
-<h2 class="doc doc-heading" id="asf_tools.composite">
 
+
+  <div class="doc doc-object doc-module">
+
+
+    <div class="doc doc-contents first">
+
+      <p>Tools developed by ASF for working with SAR data</p>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-module">
+
+
+
+<h2 id="asf_tools.composite" class="doc doc-heading">
         <code>composite</code>
 
 
 
-      <a class="headerlink" href="#asf_tools.composite" title="Permanent link">&para;</a></h2>
-<div class="doc doc-contents ">
-<p>Create a local-resolution-weighted composite from Sentinel-1 RTC products.</p>
+<a href="#asf_tools.composite" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Create a local-resolution-weighted composite from Sentinel-1 RTC products.</p>
 <p>Create a local-resolution-weighted composite from a set of Sentinel-1 RTC
 products (D. Small, 2012). The local resolution, defined as the inverse of the
 local contributing (scattering) area, is used to weight each RTC products'
@@ -972,127 +997,142 @@ the number of rasters contributing to each composite pixel is created.</p>
 <p class="admonition-title">References</p>
 <p>David Small, 2012: https://doi.org/10.1109/IGARSS.2012.6350465</p>
 </div>
-<div class="doc doc-children">
-<div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="asf_tools.composite.epsg_to_wkt">
 
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="asf_tools.composite.epsg_to_wkt" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">epsg_to_wkt</span><span class="p">(</span><span class="n">epsg_code</span><span class="p">)</span></code>
 
 
-      <a class="headerlink" href="#asf_tools.composite.epsg_to_wkt" title="Permanent link">&para;</a></h3>
-<div class="doc doc-contents ">
-<p>Get the WKT representation of a projection from its EPSG code</p>
+<a href="#asf_tools.composite.epsg_to_wkt" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Get the WKT representation of a projection from its EPSG code</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>epsg_code</code></td>
-<td><code>int</code></td>
-<td>
-<p>The integer EPSG code</p>
-</td>
-<td><em>required</em></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>epsg_code</code></td>
+        <td><code>int</code></td>
+        <td><p>The integer EPSG code</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>str</code></td>
-<td>
-<p>wkt: The WKT representation of the projection</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>str</code></td>
+      <td><p>wkt: The WKT representation of the projection</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>asf_tools/composite.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">epsg_to_wkt</span><span class="p">(</span><span class="n">epsg_code</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="sd">"""Get the WKT representation of a projection from its EPSG code</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">epsg_to_wkt</span><span class="p">(</span><span class="n">epsg_code</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Get the WKT representation of a projection from its EPSG code</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        epsg_code: The integer EPSG code</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        wkt: The WKT representation of the projection</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">srs</span> <span class="o">=</span> <span class="n">osr</span><span class="o">.</span><span class="n">SpatialReference</span><span class="p">()</span>
     <span class="n">srs</span><span class="o">.</span><span class="n">ImportFromEPSG</span><span class="p">(</span><span class="n">epsg_code</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">srs</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">()</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="asf_tools.composite.get_area_raster">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="asf_tools.composite.get_area_raster" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">get_area_raster</span><span class="p">(</span><span class="n">raster</span><span class="p">)</span></code>
 
 
-      <a class="headerlink" href="#asf_tools.composite.get_area_raster" title="Permanent link">&para;</a></h3>
-<div class="doc doc-contents ">
-<p>Determine the path of the area raster for a given backscatter raster based on naming conventions for HyP3 RTC
+<a href="#asf_tools.composite.get_area_raster" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Determine the path of the area raster for a given backscatter raster based on naming conventions for HyP3 RTC
 products</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>raster</code></td>
-<td><code>str</code></td>
-<td>
-<p>path of the backscatter raster, e.g. S1A_IW_20181102T155531_DVP_RTC30_G_gpuned_5685_VV.tif</p>
-</td>
-<td><em>required</em></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>raster</code></td>
+        <td><code>str</code></td>
+        <td><p>path of the backscatter raster, e.g. S1A_IW_20181102T155531_DVP_RTC30_G_gpuned_5685_VV.tif</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>str</code></td>
-<td>
-<p>area_raster: path of the area raster, e.g. S1A_IW_20181102T155531_DVP_RTC30_G_gpuned_5685_area.tif</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>str</code></td>
+      <td><p>area_raster: path of the area raster, e.g. S1A_IW_20181102T155531_DVP_RTC30_G_gpuned_5685_area.tif</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>asf_tools/composite.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">get_area_raster</span><span class="p">(</span><span class="n">raster</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="sd">"""Determine the path of the area raster for a given backscatter raster based on naming conventions for HyP3 RTC</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_area_raster</span><span class="p">(</span><span class="n">raster</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Determine the path of the area raster for a given backscatter raster based on naming conventions for HyP3 RTC</span>
 <span class="sd">    products</span>
 
 <span class="sd">    Args:</span>
@@ -1100,134 +1140,140 @@ products</p>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        area_raster: path of the area raster, e.g. S1A_IW_20181102T155531_DVP_RTC30_G_gpuned_5685_area.tif</span>
-<span class="sd">    """</span>
-    <span class="k">return</span> <span class="s1">'_'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">raster</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'_'</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'area.tif'</span><span class="p">])</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="asf_tools.composite.get_epsg_code">
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">raster</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;area.tif&#39;</span><span class="p">])</span>
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="asf_tools.composite.get_epsg_code" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">get_epsg_code</span><span class="p">(</span><span class="n">info</span><span class="p">)</span></code>
 
 
-      <a class="headerlink" href="#asf_tools.composite.get_epsg_code" title="Permanent link">&para;</a></h3>
-<div class="doc doc-contents ">
-<p>Get the EPSG code from a GDAL Info dictionary</p>
+<a href="#asf_tools.composite.get_epsg_code" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Get the EPSG code from a GDAL Info dictionary</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>info</code></td>
-<td><code>dict</code></td>
-<td>
-<p>The dictionary returned by a gdal.Info call</p>
-</td>
-<td><em>required</em></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>info</code></td>
+        <td><code>dict</code></td>
+        <td><p>The dictionary returned by a gdal.Info call</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>int</code></td>
-<td>
-<p>epsg_code: The integer EPSG code</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>int</code></td>
+      <td><p>epsg_code: The integer EPSG code</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>asf_tools/composite.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">get_epsg_code</span><span class="p">(</span><span class="n">info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="sd">"""Get the EPSG code from a GDAL Info dictionary</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_epsg_code</span><span class="p">(</span><span class="n">info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Get the EPSG code from a GDAL Info dictionary</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        info: The dictionary returned by a gdal.Info call</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        epsg_code: The integer EPSG code</span>
-<span class="sd">    """</span>
-    <span class="n">proj</span> <span class="o">=</span> <span class="n">osr</span><span class="o">.</span><span class="n">SpatialReference</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">'coordinateSystem'</span><span class="p">][</span><span class="s1">'wkt'</span><span class="p">])</span>
-    <span class="n">epsg_code</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">proj</span><span class="o">.</span><span class="n">GetAttrValue</span><span class="p">(</span><span class="s1">'AUTHORITY'</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">proj</span> <span class="o">=</span> <span class="n">osr</span><span class="o">.</span><span class="n">SpatialReference</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;coordinateSystem&#39;</span><span class="p">][</span><span class="s1">&#39;wkt&#39;</span><span class="p">])</span>
+    <span class="n">epsg_code</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">proj</span><span class="o">.</span><span class="n">GetAttrValue</span><span class="p">(</span><span class="s1">&#39;AUTHORITY&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">epsg_code</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="asf_tools.composite.get_full_extent">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="asf_tools.composite.get_full_extent" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">get_full_extent</span><span class="p">(</span><span class="n">raster_info</span><span class="p">)</span></code>
 
 
-      <a class="headerlink" href="#asf_tools.composite.get_full_extent" title="Permanent link">&para;</a></h3>
-<div class="doc doc-contents ">
-<p>Determine the corner coordinates and geotransform for the full extent of a set of rasters</p>
+<a href="#asf_tools.composite.get_full_extent" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Determine the corner coordinates and geotransform for the full extent of a set of rasters</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>raster_info</code></td>
-<td><code>dict</code></td>
-<td>
-<p>A dictionary of gdal.Info results for the set of rasters</p>
-</td>
-<td><em>required</em></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>raster_info</code></td>
+        <td><code>dict</code></td>
+        <td><p>A dictionary of gdal.Info results for the set of rasters</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>upper_left</code></td>
-<td>
-<p>The upper left corner of the extent as a tuple
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>upper_left</code></td>
+      <td><p>The upper left corner of the extent as a tuple
 upper_right: The lower right corner of the extent as a tuple
-geotransform: The geotransform of the extent as a list</p>
-</td>
-</tr>
-</tbody>
+geotransform: The geotransform of the extent as a list</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>asf_tools/composite.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">get_full_extent</span><span class="p">(</span><span class="n">raster_info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
-    <span class="sd">"""Determine the corner coordinates and geotransform for the full extent of a set of rasters</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_full_extent</span><span class="p">(</span><span class="n">raster_info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Determine the corner coordinates and geotransform for the full extent of a set of rasters</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        raster_info: A dictionary of gdal.Info results for the set of rasters</span>
@@ -1236,98 +1282,101 @@ geotransform: The geotransform of the extent as a list</p>
 <span class="sd">        upper_left: The upper left corner of the extent as a tuple</span>
 <span class="sd">        upper_right: The lower right corner of the extent as a tuple</span>
 <span class="sd">        geotransform: The geotransform of the extent as a list</span>
-<span class="sd">    """</span>
-    <span class="n">upper_left_corners</span> <span class="o">=</span> <span class="p">[</span><span class="n">info</span><span class="p">[</span><span class="s1">'cornerCoordinates'</span><span class="p">][</span><span class="s1">'upperLeft'</span><span class="p">]</span> <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">raster_info</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
-    <span class="n">lower_right_corners</span> <span class="o">=</span> <span class="p">[</span><span class="n">info</span><span class="p">[</span><span class="s1">'cornerCoordinates'</span><span class="p">][</span><span class="s1">'lowerRight'</span><span class="p">]</span> <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">raster_info</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">upper_left_corners</span> <span class="o">=</span> <span class="p">[</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;cornerCoordinates&#39;</span><span class="p">][</span><span class="s1">&#39;upperLeft&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">raster_info</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+    <span class="n">lower_right_corners</span> <span class="o">=</span> <span class="p">[</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;cornerCoordinates&#39;</span><span class="p">][</span><span class="s1">&#39;lowerRight&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">raster_info</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
 
     <span class="n">ulx</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="n">ul</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">ul</span> <span class="ow">in</span> <span class="n">upper_left_corners</span><span class="p">])</span>
     <span class="n">uly</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">ul</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">ul</span> <span class="ow">in</span> <span class="n">upper_left_corners</span><span class="p">])</span>
     <span class="n">lrx</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">lr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">lr</span> <span class="ow">in</span> <span class="n">lower_right_corners</span><span class="p">])</span>
     <span class="n">lry</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="n">lr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">lr</span> <span class="ow">in</span> <span class="n">lower_right_corners</span><span class="p">])</span>
 
-    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Full extent raster upper left: (</span><span class="si">{</span><span class="n">ulx</span><span class="p">,</span> <span class="n">uly</span><span class="si">}</span><span class="s1">); lower right: (</span><span class="si">{</span><span class="n">lrx</span><span class="p">,</span> <span class="n">lry</span><span class="si">}</span><span class="s1">)'</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Full extent raster upper left: (</span><span class="si">{</span><span class="n">ulx</span><span class="p">,</span> <span class="n">uly</span><span class="si">}</span><span class="s1">); lower right: (</span><span class="si">{</span><span class="n">lrx</span><span class="p">,</span> <span class="n">lry</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
 
     <span class="n">trans</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">raster_info</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
         <span class="c1"># Only need info from any one raster</span>
-        <span class="n">trans</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s1">'geoTransform'</span><span class="p">]</span>
+        <span class="n">trans</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s1">&#39;geoTransform&#39;</span><span class="p">]</span>
         <span class="k">break</span>
 
     <span class="n">trans</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">ulx</span>
     <span class="n">trans</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">uly</span>
 
     <span class="k">return</span> <span class="p">(</span><span class="n">ulx</span><span class="p">,</span> <span class="n">uly</span><span class="p">),</span> <span class="p">(</span><span class="n">lrx</span><span class="p">,</span> <span class="n">lry</span><span class="p">),</span> <span class="n">trans</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="asf_tools.composite.get_target_epsg_code">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="asf_tools.composite.get_target_epsg_code" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">get_target_epsg_code</span><span class="p">(</span><span class="n">codes</span><span class="p">)</span></code>
 
 
-      <a class="headerlink" href="#asf_tools.composite.get_target_epsg_code" title="Permanent link">&para;</a></h3>
-<div class="doc doc-contents ">
-<p>Determine the target UTM EPSG projection for the output composite</p>
+<a href="#asf_tools.composite.get_target_epsg_code" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Determine the target UTM EPSG projection for the output composite</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>codes</code></td>
-<td><code>List[int]</code></td>
-<td>
-<p>List of UTM EPSG codes</p>
-</td>
-<td><em>required</em></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>codes</code></td>
+        <td><code>List[int]</code></td>
+        <td><p>List of UTM EPSG codes</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>int</code></td>
-<td>
-<p>target: UTM EPSG code</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>int</code></td>
+      <td><p>target: UTM EPSG code</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>asf_tools/composite.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">get_target_epsg_code</span><span class="p">(</span><span class="n">codes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="sd">"""Determine the target UTM EPSG projection for the output composite</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_target_epsg_code</span><span class="p">(</span><span class="n">codes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Determine the target UTM EPSG projection for the output composite</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        codes: List of UTM EPSG codes</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        target: UTM EPSG code</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># use median east/west UTM zone of all files, regardless of hemisphere</span>
     <span class="c1"># UTM EPSG codes for each hemisphere will look like:</span>
     <span class="c1">#   North: 326XX</span>
     <span class="c1">#   South: 327XX</span>
     <span class="n">valid_codes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">32601</span><span class="p">,</span> <span class="mi">32661</span><span class="p">))</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">32701</span><span class="p">,</span> <span class="mi">32761</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">bad_codes</span> <span class="o">:=</span> <span class="nb">set</span><span class="p">(</span><span class="n">codes</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">valid_codes</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Non UTM EPSG code encountered: </span><span class="si">{</span><span class="n">bad_codes</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Non UTM EPSG code encountered: </span><span class="si">{</span><span class="n">bad_codes</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
     <span class="n">hemispheres</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="o">//</span> <span class="mi">100</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">codes</span><span class="p">]</span>
     <span class="c1"># if even modes, choose lowest (North)</span>
@@ -1338,80 +1387,80 @@ geotransform: The geotransform of the extent as a list</p>
     <span class="n">target_zone</span> <span class="o">=</span> <span class="n">zones</span><span class="p">[(</span><span class="nb">len</span><span class="p">(</span><span class="n">zones</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
 
     <span class="k">return</span> <span class="n">target_hemisphere</span> <span class="o">+</span> <span class="n">target_zone</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="asf_tools.composite.make_composite">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="asf_tools.composite.make_composite" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">make_composite</span><span class="p">(</span><span class="n">out_name</span><span class="p">,</span> <span class="n">rasters</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 
-      <a class="headerlink" href="#asf_tools.composite.make_composite" title="Permanent link">&para;</a></h3>
-<div class="doc doc-contents ">
-<p>Creates a local-resolution-weighted composite from Sentinel-1 RTC products</p>
+<a href="#asf_tools.composite.make_composite" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Creates a local-resolution-weighted composite from Sentinel-1 RTC products</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>out_name</code></td>
-<td><code>str</code></td>
-<td>
-<p>The base name of the output GeoTIFFs</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>rasters</code></td>
-<td><code>List[str]</code></td>
-<td>
-<p>A list of file paths of the images to composite</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>resolution</code></td>
-<td><code>float</code></td>
-<td>
-<p>The pixel size for the output GeoTIFFs</p>
-</td>
-<td><code>None</code></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>out_name</code></td>
+        <td><code>str</code></td>
+        <td><p>The base name of the output GeoTIFFs</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>rasters</code></td>
+        <td><code>List[str]</code></td>
+        <td><p>A list of file paths of the images to composite</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>resolution</code></td>
+        <td><code>float</code></td>
+        <td><p>The pixel size for the output GeoTIFFs</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>out_raster</code></td>
-<td>
-<p>Path to the created composite backscatter GeoTIFF
-out_counts_raster: Path to the created GeoTIFF with counts of scenes contributing to each pixel</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>out_raster</code></td>
+      <td><p>Path to the created composite backscatter GeoTIFF
+out_counts_raster: Path to the created GeoTIFF with counts of scenes contributing to each pixel</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>asf_tools/composite.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">make_composite</span><span class="p">(</span><span class="n">out_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">rasters</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">resolution</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-    <span class="sd">"""Creates a local-resolution-weighted composite from Sentinel-1 RTC products</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">make_composite</span><span class="p">(</span><span class="n">out_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">rasters</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">resolution</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Creates a local-resolution-weighted composite from Sentinel-1 RTC products</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        out_name: The base name of the output GeoTIFFs</span>
@@ -1421,25 +1470,25 @@ out_counts_raster: Path to the created GeoTIFF with counts of scenes contributin
 <span class="sd">    Returns:</span>
 <span class="sd">        out_raster: Path to the created composite backscatter GeoTIFF</span>
 <span class="sd">        out_counts_raster: Path to the created GeoTIFF with counts of scenes contributing to each pixel</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">rasters</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Must specify at least one raster to composite'</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Must specify at least one raster to composite&#39;</span><span class="p">)</span>
 
     <span class="n">raster_info</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">raster</span> <span class="ow">in</span> <span class="n">rasters</span><span class="p">:</span>
-        <span class="n">raster_info</span><span class="p">[</span><span class="n">raster</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="n">raster</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">'json'</span><span class="p">)</span>
+        <span class="n">raster_info</span><span class="p">[</span><span class="n">raster</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="n">raster</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;json&#39;</span><span class="p">)</span>
         <span class="c1"># make sure gdal can read the area raster</span>
         <span class="n">gdal</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="n">get_area_raster</span><span class="p">(</span><span class="n">raster</span><span class="p">))</span>
 
     <span class="n">target_epsg_code</span> <span class="o">=</span> <span class="n">get_target_epsg_code</span><span class="p">([</span><span class="n">get_epsg_code</span><span class="p">(</span><span class="n">info</span><span class="p">)</span> <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">raster_info</span><span class="o">.</span><span class="n">values</span><span class="p">()])</span>
-    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Composite projection is EPSG:</span><span class="si">{</span><span class="n">target_epsg_code</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Composite projection is EPSG:</span><span class="si">{</span><span class="n">target_epsg_code</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">resolution</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">resolution</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">info</span><span class="p">[</span><span class="s1">'geoTransform'</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">raster_info</span><span class="o">.</span><span class="n">values</span><span class="p">()])</span>
-    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Composite resolution is </span><span class="si">{</span><span class="n">resolution</span><span class="si">}</span><span class="s1"> meters'</span><span class="p">)</span>
+        <span class="n">resolution</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;geoTransform&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">raster_info</span><span class="o">.</span><span class="n">values</span><span class="p">()])</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Composite resolution is </span><span class="si">{</span><span class="n">resolution</span><span class="si">}</span><span class="s1"> meters&#39;</span><span class="p">)</span>
 
     <span class="c1"># resample rasters to maximum resolution &amp; common UTM zone</span>
-    <span class="k">with</span> <span class="n">TemporaryDirectory</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="s1">'reprojected_'</span><span class="p">)</span> <span class="k">as</span> <span class="n">temp_dir</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">TemporaryDirectory</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;reprojected_&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">temp_dir</span><span class="p">:</span>
         <span class="n">raster_info</span> <span class="o">=</span> <span class="n">reproject_to_target</span><span class="p">(</span><span class="n">raster_info</span><span class="p">,</span> <span class="n">target_epsg_code</span><span class="o">=</span><span class="n">target_epsg_code</span><span class="p">,</span> <span class="n">target_resolution</span><span class="o">=</span><span class="n">resolution</span><span class="p">,</span>
                                           <span class="n">directory</span><span class="o">=</span><span class="n">temp_dir</span><span class="p">)</span>
 
@@ -1454,16 +1503,16 @@ out_counts_raster: Path to the created GeoTIFF with counts of scenes contributin
         <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">outputs</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">)</span>
 
         <span class="k">for</span> <span class="n">raster</span><span class="p">,</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">raster_info</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Processing raster </span><span class="si">{</span><span class="n">raster</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-            <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Raster upper left: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">'cornerCoordinates'</span><span class="p">][</span><span class="s1">'upperLeft'</span><span class="p">]</span><span class="si">}</span><span class="s2">; "</span>
-                      <span class="sa">f</span><span class="s2">"lower right: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">'cornerCoordinates'</span><span class="p">][</span><span class="s1">'lowerRight'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Processing raster </span><span class="si">{</span><span class="n">raster</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Raster upper left: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;cornerCoordinates&#39;</span><span class="p">][</span><span class="s1">&#39;upperLeft&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">; &quot;</span>
+                      <span class="sa">f</span><span class="s2">&quot;lower right: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;cornerCoordinates&#39;</span><span class="p">][</span><span class="s1">&#39;lowerRight&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
             <span class="n">values</span> <span class="o">=</span> <span class="n">read_as_array</span><span class="p">(</span><span class="n">raster</span><span class="p">)</span>
 
             <span class="n">area_raster</span> <span class="o">=</span> <span class="n">get_area_raster</span><span class="p">(</span><span class="n">raster</span><span class="p">)</span>
             <span class="n">areas</span> <span class="o">=</span> <span class="n">read_as_array</span><span class="p">(</span><span class="n">area_raster</span><span class="p">)</span>
 
-            <span class="n">ulx</span><span class="p">,</span> <span class="n">uly</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s1">'cornerCoordinates'</span><span class="p">][</span><span class="s1">'upperLeft'</span><span class="p">]</span>
+            <span class="n">ulx</span><span class="p">,</span> <span class="n">uly</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s1">&#39;cornerCoordinates&#39;</span><span class="p">][</span><span class="s1">&#39;upperLeft&#39;</span><span class="p">]</span>
             <span class="n">y_index_start</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">full_ul</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">uly</span><span class="p">)</span> <span class="o">//</span> <span class="n">resolution</span><span class="p">)</span>
             <span class="n">y_index_end</span> <span class="o">=</span> <span class="n">y_index_start</span> <span class="o">+</span> <span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
@@ -1471,7 +1520,7 @@ out_counts_raster: Path to the created GeoTIFF with counts of scenes contributin
             <span class="n">x_index_end</span> <span class="o">=</span> <span class="n">x_index_start</span> <span class="o">+</span> <span class="n">values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
             <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s1">'Placing values in output grid at </span><span class="si">{</span><span class="n">y_index_start</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">y_index_end</span><span class="si">}</span><span class="s1"> and </span><span class="si">{</span><span class="n">x_index_start</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">x_index_end</span><span class="si">}</span><span class="s1">'</span>
+                <span class="sa">f</span><span class="s1">&#39;Placing values in output grid at </span><span class="si">{</span><span class="n">y_index_start</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">y_index_end</span><span class="si">}</span><span class="s1"> and </span><span class="si">{</span><span class="n">x_index_start</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">x_index_end</span><span class="si">}</span><span class="s1">&#39;</span>
             <span class="p">)</span>
 
             <span class="n">mask</span> <span class="o">=</span> <span class="n">values</span> <span class="o">==</span> <span class="mi">0</span>
@@ -1488,78 +1537,79 @@ out_counts_raster: Path to the created GeoTIFF with counts of scenes contributin
     <span class="n">outputs</span> <span class="o">/=</span> <span class="n">weights</span>
     <span class="k">del</span> <span class="n">weights</span>
 
-    <span class="n">out_raster</span> <span class="o">=</span> <span class="n">write_cog</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">out_name</span><span class="si">}</span><span class="s1">.tif'</span><span class="p">,</span> <span class="n">outputs</span><span class="p">,</span> <span class="n">full_trans</span><span class="p">,</span> <span class="n">target_epsg_code</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">out_raster</span> <span class="o">=</span> <span class="n">write_cog</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">out_name</span><span class="si">}</span><span class="s1">.tif&#39;</span><span class="p">,</span> <span class="n">outputs</span><span class="p">,</span> <span class="n">full_trans</span><span class="p">,</span> <span class="n">target_epsg_code</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="k">del</span> <span class="n">outputs</span>
 
-    <span class="n">out_counts_raster</span> <span class="o">=</span> <span class="n">write_cog</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">out_name</span><span class="si">}</span><span class="s1">_counts.tif'</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">full_trans</span><span class="p">,</span> <span class="n">target_epsg_code</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Int16</span><span class="p">)</span>
+    <span class="n">out_counts_raster</span> <span class="o">=</span> <span class="n">write_cog</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">out_name</span><span class="si">}</span><span class="s1">_counts.tif&#39;</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">full_trans</span><span class="p">,</span> <span class="n">target_epsg_code</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Int16</span><span class="p">)</span>
     <span class="k">del</span> <span class="n">counts</span>
 
     <span class="k">return</span> <span class="n">out_raster</span><span class="p">,</span> <span class="n">out_counts_raster</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="asf_tools.composite.read_as_array">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="asf_tools.composite.read_as_array" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">read_as_array</span><span class="p">(</span><span class="n">raster</span><span class="p">,</span> <span class="n">band</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code>
 
 
-      <a class="headerlink" href="#asf_tools.composite.read_as_array" title="Permanent link">&para;</a></h3>
-<div class="doc doc-contents ">
-<p>Reads data from a raster image into memory</p>
+<a href="#asf_tools.composite.read_as_array" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Reads data from a raster image into memory</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>raster</code></td>
-<td><code>str</code></td>
-<td>
-<p>The file path to a raster image</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>band</code></td>
-<td><code>int</code></td>
-<td>
-<p>The raster band to read</p>
-</td>
-<td><code>1</code></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>raster</code></td>
+        <td><code>str</code></td>
+        <td><p>The file path to a raster image</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>band</code></td>
+        <td><code>int</code></td>
+        <td><p>The raster band to read</p></td>
+        <td><code>1</code></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>&lt;built-in function array&gt;</code></td>
-<td>
-<p>data: The raster pixel data as a numpy array</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>&lt;built-in function array&gt;</code></td>
+      <td><p>data: The raster pixel data as a numpy array</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>asf_tools/composite.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">read_as_array</span><span class="p">(</span><span class="n">raster</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">band</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
-    <span class="sd">"""Reads data from a raster image into memory</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">read_as_array</span><span class="p">(</span><span class="n">raster</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">band</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Reads data from a raster image into memory</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        raster: The file path to a raster image</span>
@@ -1567,93 +1617,90 @@ out_counts_raster: Path to the created GeoTIFF with counts of scenes contributin
 
 <span class="sd">    Returns:</span>
 <span class="sd">        data: The raster pixel data as a numpy array</span>
-<span class="sd">    """</span>
-    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Reading raster values from </span><span class="si">{</span><span class="n">raster</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Reading raster values from </span><span class="si">{</span><span class="n">raster</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">ds</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">raster</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="n">band</span><span class="p">)</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
     <span class="k">del</span> <span class="n">ds</span>  <span class="c1"># How to close w/ gdal</span>
     <span class="k">return</span> <span class="n">data</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="asf_tools.composite.reproject_to_target">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="asf_tools.composite.reproject_to_target" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">reproject_to_target</span><span class="p">(</span><span class="n">raster_info</span><span class="p">,</span> <span class="n">target_epsg_code</span><span class="p">,</span> <span class="n">target_resolution</span><span class="p">,</span> <span class="n">directory</span><span class="p">)</span></code>
 
 
-      <a class="headerlink" href="#asf_tools.composite.reproject_to_target" title="Permanent link">&para;</a></h3>
-<div class="doc doc-contents ">
-<p>Reprojects a set of raster images to a common projection and resolution</p>
+<a href="#asf_tools.composite.reproject_to_target" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Reprojects a set of raster images to a common projection and resolution</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>raster_info</code></td>
-<td><code>dict</code></td>
-<td>
-<p>A dictionary of gdal.Info results for the set of rasters</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>target_epsg_code</code></td>
-<td><code>int</code></td>
-<td>
-<p>The integer EPSG code for the target projection</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>target_resolution</code></td>
-<td><code>float</code></td>
-<td>
-<p>The target resolution</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>directory</code></td>
-<td><code>str</code></td>
-<td>
-<p>The directory in which to create the reprojected files</p>
-</td>
-<td><em>required</em></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>raster_info</code></td>
+        <td><code>dict</code></td>
+        <td><p>A dictionary of gdal.Info results for the set of rasters</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>target_epsg_code</code></td>
+        <td><code>int</code></td>
+        <td><p>The integer EPSG code for the target projection</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>target_resolution</code></td>
+        <td><code>float</code></td>
+        <td><p>The target resolution</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>directory</code></td>
+        <td><code>str</code></td>
+        <td><p>The directory in which to create the reprojected files</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>dict</code></td>
-<td>
-<p>target_raster_info: An updated dictionary of gdal.Info results for the reprojected files</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>dict</code></td>
+      <td><p>target_raster_info: An updated dictionary of gdal.Info results for the reprojected files</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>asf_tools/composite.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">reproject_to_target</span><span class="p">(</span><span class="n">raster_info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">target_epsg_code</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">target_resolution</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-    <span class="sd">"""Reprojects a set of raster images to a common projection and resolution</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">reproject_to_target</span><span class="p">(</span><span class="n">raster_info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">target_epsg_code</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">target_resolution</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Reprojects a set of raster images to a common projection and resolution</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        raster_info: A dictionary of gdal.Info results for the set of rasters</span>
@@ -1663,131 +1710,124 @@ out_counts_raster: Path to the created GeoTIFF with counts of scenes contributin
 
 <span class="sd">    Returns:</span>
 <span class="sd">        target_raster_info: An updated dictionary of gdal.Info results for the reprojected files</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">target_raster_info</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">raster</span><span class="p">,</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">raster_info</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="n">epsg_code</span> <span class="o">=</span> <span class="n">get_epsg_code</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
-        <span class="n">resolution</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s1">'geoTransform'</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">resolution</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s1">&#39;geoTransform&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">epsg_code</span> <span class="o">!=</span> <span class="n">target_epsg_code</span> <span class="ow">or</span> <span class="n">resolution</span> <span class="o">!=</span> <span class="n">target_resolution</span><span class="p">:</span>
-            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Reprojecting </span><span class="si">{</span><span class="n">raster</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Reprojecting </span><span class="si">{</span><span class="n">raster</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
             <span class="n">reprojected_raster</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">raster</span><span class="p">))</span>
             <span class="n">gdal</span><span class="o">.</span><span class="n">Warp</span><span class="p">(</span>
-                <span class="n">reprojected_raster</span><span class="p">,</span> <span class="n">raster</span><span class="p">,</span> <span class="n">dstSRS</span><span class="o">=</span><span class="sa">f</span><span class="s1">'EPSG:</span><span class="si">{</span><span class="n">target_epsg_code</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
+                <span class="n">reprojected_raster</span><span class="p">,</span> <span class="n">raster</span><span class="p">,</span> <span class="n">dstSRS</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;EPSG:</span><span class="si">{</span><span class="n">target_epsg_code</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
                 <span class="n">xRes</span><span class="o">=</span><span class="n">target_resolution</span><span class="p">,</span> <span class="n">yRes</span><span class="o">=</span><span class="n">target_resolution</span><span class="p">,</span> <span class="n">targetAlignedPixels</span><span class="o">=</span><span class="kc">True</span>
             <span class="p">)</span>
 
             <span class="n">area_raster</span> <span class="o">=</span> <span class="n">get_area_raster</span><span class="p">(</span><span class="n">raster</span><span class="p">)</span>
-            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Reprojecting </span><span class="si">{</span><span class="n">area_raster</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Reprojecting </span><span class="si">{</span><span class="n">area_raster</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
             <span class="n">reprojected_area_raster</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">area_raster</span><span class="p">))</span>
             <span class="n">gdal</span><span class="o">.</span><span class="n">Warp</span><span class="p">(</span>
-                <span class="n">reprojected_area_raster</span><span class="p">,</span> <span class="n">area_raster</span><span class="p">,</span> <span class="n">dstSRS</span><span class="o">=</span><span class="sa">f</span><span class="s1">'EPSG:</span><span class="si">{</span><span class="n">target_epsg_code</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
+                <span class="n">reprojected_area_raster</span><span class="p">,</span> <span class="n">area_raster</span><span class="p">,</span> <span class="n">dstSRS</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;EPSG:</span><span class="si">{</span><span class="n">target_epsg_code</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
                 <span class="n">xRes</span><span class="o">=</span><span class="n">target_resolution</span><span class="p">,</span> <span class="n">yRes</span><span class="o">=</span><span class="n">target_resolution</span><span class="p">,</span> <span class="n">targetAlignedPixels</span><span class="o">=</span><span class="kc">True</span>
             <span class="p">)</span>
 
-            <span class="n">target_raster_info</span><span class="p">[</span><span class="n">reprojected_raster</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="n">reprojected_raster</span><span class="p">,</span>  <span class="nb">format</span><span class="o">=</span><span class="s1">'json'</span><span class="p">)</span>
+            <span class="n">target_raster_info</span><span class="p">[</span><span class="n">reprojected_raster</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="n">reprojected_raster</span><span class="p">,</span>  <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;json&#39;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">'No need to reproject </span><span class="si">{</span><span class="n">raster</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;No need to reproject </span><span class="si">{</span><span class="n">raster</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
             <span class="n">target_raster_info</span><span class="p">[</span><span class="n">raster</span><span class="p">]</span> <span class="o">=</span> <span class="n">info</span>
 
     <span class="k">return</span> <span class="n">target_raster_info</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="asf_tools.composite.write_cog">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="asf_tools.composite.write_cog" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">write_cog</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">transform</span><span class="p">,</span> <span class="n">epsg_code</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 
-      <a class="headerlink" href="#asf_tools.composite.write_cog" title="Permanent link">&para;</a></h3>
-<div class="doc doc-contents ">
-<p>Creates a Cloud Optimized GeoTIFF</p>
+<a href="#asf_tools.composite.write_cog" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Creates a Cloud Optimized GeoTIFF</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>file_name</code></td>
-<td><code>str</code></td>
-<td>
-<p>The output file name</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>data</code></td>
-<td><code>ndarray</code></td>
-<td>
-<p>The raster data</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>transform</code></td>
-<td><code>List[float]</code></td>
-<td>
-<p>The geotransform for the output GeoTIFF</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>epsg_code</code></td>
-<td><code>int</code></td>
-<td>
-<p>The integer EPSG code for the output GeoTIFF projection</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>dtype</code></td>
-<td><code></code></td>
-<td>
-<p>The pixel data type for the output GeoTIFF</p>
-</td>
-<td><code>6</code></td>
-</tr>
-<tr>
-<td><code>nodata_value</code></td>
-<td><code></code></td>
-<td>
-<p>The NODATA value for the output Geotiff</p>
-</td>
-<td><code>None</code></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>file_name</code></td>
+        <td><code>str</code></td>
+        <td><p>The output file name</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>data</code></td>
+        <td><code>ndarray</code></td>
+        <td><p>The raster data</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>transform</code></td>
+        <td><code>List[float]</code></td>
+        <td><p>The geotransform for the output GeoTIFF</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>epsg_code</code></td>
+        <td><code>int</code></td>
+        <td><p>The integer EPSG code for the output GeoTIFF projection</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>dtype</code></td>
+        <td><code></code></td>
+        <td><p>The pixel data type for the output GeoTIFF</p></td>
+        <td><code>6</code></td>
+      </tr>
+      <tr>
+        <td><code>nodata_value</code></td>
+        <td><code></code></td>
+        <td><p>The NODATA value for the output Geotiff</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>file_name</code></td>
-<td>
-<p>The output file name</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>file_name</code></td>
+      <td><p>The output file name</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>asf_tools/composite.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">write_cog</span><span class="p">(</span><span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">transform</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">epsg_code</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">write_cog</span><span class="p">(</span><span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">transform</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">epsg_code</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
               <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Float32</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">"""Creates a Cloud Optimized GeoTIFF</span>
+    <span class="sd">&quot;&quot;&quot;Creates a Cloud Optimized GeoTIFF</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        file_name: The output file name</span>
@@ -1799,11 +1839,11 @@ out_counts_raster: Path to the created GeoTIFF with counts of scenes contributin
 
 <span class="sd">    Returns:</span>
 <span class="sd">        file_name: The output file name</span>
-<span class="sd">    """</span>
-    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Creating </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Creating </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
     <span class="k">with</span> <span class="n">NamedTemporaryFile</span><span class="p">()</span> <span class="k">as</span> <span class="n">temp_file</span><span class="p">:</span>
-        <span class="n">driver</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GetDriverByName</span><span class="p">(</span><span class="s1">'GTiff'</span><span class="p">)</span>
+        <span class="n">driver</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GetDriverByName</span><span class="p">(</span><span class="s1">&#39;GTiff&#39;</span><span class="p">)</span>
         <span class="n">temp_geotiff</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">Create</span><span class="p">(</span><span class="n">temp_file</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="p">)</span>
         <span class="n">temp_geotiff</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">WriteArray</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">nodata_value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -1811,23 +1851,37 @@ out_counts_raster: Path to the created GeoTIFF with counts of scenes contributin
         <span class="n">temp_geotiff</span><span class="o">.</span><span class="n">SetGeoTransform</span><span class="p">(</span><span class="n">transform</span><span class="p">)</span>
         <span class="n">temp_geotiff</span><span class="o">.</span><span class="n">SetProjection</span><span class="p">(</span><span class="n">epsg_to_wkt</span><span class="p">(</span><span class="n">epsg_code</span><span class="p">))</span>
 
-        <span class="n">driver</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GetDriverByName</span><span class="p">(</span><span class="s1">'COG'</span><span class="p">)</span>
-        <span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'COMPRESS=LZW'</span><span class="p">,</span> <span class="s1">'OVERVIEW_RESAMPLING=AVERAGE'</span><span class="p">,</span> <span class="s1">'NUM_THREADS=ALL_CPUS'</span><span class="p">,</span> <span class="s1">'BIGTIFF=YES'</span><span class="p">]</span>
+        <span class="n">driver</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GetDriverByName</span><span class="p">(</span><span class="s1">&#39;COG&#39;</span><span class="p">)</span>
+        <span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;COMPRESS=LZW&#39;</span><span class="p">,</span> <span class="s1">&#39;OVERVIEW_RESAMPLING=AVERAGE&#39;</span><span class="p">,</span> <span class="s1">&#39;NUM_THREADS=ALL_CPUS&#39;</span><span class="p">,</span> <span class="s1">&#39;BIGTIFF=YES&#39;</span><span class="p">]</span>
         <span class="n">driver</span><span class="o">.</span><span class="n">CreateCopy</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">temp_geotiff</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
 
         <span class="k">del</span> <span class="n">temp_geotiff</span>  <span class="c1"># How to close w/ gdal</span>
     <span class="k">return</span> <span class="n">file_name</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
                 
               
               

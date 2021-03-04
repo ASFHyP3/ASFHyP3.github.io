@@ -60,6 +60,8 @@ feedback.init({showIcon: false});
     
     
     
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
     
   
     <!--
@@ -1052,163 +1054,198 @@ feedback.init({showIcon: false});
                 
                 
                 <h1 id="hyp3_sdk-api-reference"><code>hyp3_sdk</code> API Reference<a class="headerlink" href="#hyp3_sdk-api-reference" title="Permanent link">&para;</a></h1>
-<div class="doc doc-object doc-module">
-<div class="doc doc-contents first">
-<p>A python wrapper around the HyP3 API</p>
-<div class="doc doc-children">
-<div class="doc doc-object doc-module">
-<h2 class="doc doc-heading" id="hyp3_sdk.asf_search">
 
+
+  <div class="doc doc-object doc-module">
+
+
+    <div class="doc doc-contents first">
+
+      <p>A python wrapper around the HyP3 API</p>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-module">
+
+
+
+<h2 id="hyp3_sdk.asf_search" class="doc doc-heading">
         <code>asf_search</code>
 
 
 
-      <a class="headerlink" href="#hyp3_sdk.asf_search" title="Permanent link">&para;</a></h2>
-<div class="doc doc-contents ">
-<div class="doc doc-children">
-<div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="hyp3_sdk.asf_search.get_metadata">
+<a href="#hyp3_sdk.asf_search" class="headerlink" title="Permanent link">&para;</a></h2>
 
+    <div class="doc doc-contents ">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="hyp3_sdk.asf_search.get_metadata" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">get_metadata</span><span class="p">(</span><span class="n">granules</span><span class="p">)</span></code>
 
 
-      <a class="headerlink" href="#hyp3_sdk.asf_search.get_metadata" title="Permanent link">&para;</a></h3>
-<div class="doc doc-contents ">
-<p>Get the metadata for a granule or list of granules</p>
+<a href="#hyp3_sdk.asf_search.get_metadata" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Get the metadata for a granule or list of granules</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>granules</code></td>
-<td><code>Union[str, Iterable[str]]</code></td>
-<td>
-<p>granule(s) to lookup metadata for</p>
-</td>
-<td><em>required</em></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>granules</code></td>
+        <td><code>Union[str, Iterable[str]]</code></td>
+        <td><p>granule(s) to lookup metadata for</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Union[dict, List[dict]]</code></td>
-<td>
-<p>metadata: metadata for the granule(s)</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Union[dict, List[dict]]</code></td>
+      <td><p>metadata: metadata for the granule(s)</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/asf_search.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">get_metadata</span><span class="p">(</span><span class="n">granules</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]]:</span>
-    <span class="sd">"""Get the metadata for a granule or list of granules</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_metadata</span><span class="p">(</span><span class="n">granules</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]]:</span>
+    <span class="sd">&quot;&quot;&quot;Get the metadata for a granule or list of granules</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        granules: granule(s) to lookup metadata for</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        metadata: metadata for the granule(s)</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">granules</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
         <span class="n">granule_list</span> <span class="o">=</span> <span class="n">granules</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">granule_list</span> <span class="o">=</span> <span class="s1">','</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">granules</span><span class="p">)</span>
+        <span class="n">granule_list</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">granules</span><span class="p">)</span>
 
     <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">'output'</span><span class="p">:</span> <span class="s1">'jsonlite'</span><span class="p">,</span>
-        <span class="s1">'granule_list'</span><span class="p">:</span> <span class="n">granule_list</span><span class="p">,</span>
+        <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="s1">&#39;jsonlite&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;granule_list&#39;</span><span class="p">:</span> <span class="n">granule_list</span><span class="p">,</span>
     <span class="p">}</span>
     <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">_SEARCH_API</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
     <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
 
-    <span class="n">metadata</span> <span class="o">=</span> <span class="p">[</span><span class="n">result</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'results'</span><span class="p">]</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">[</span><span class="s1">'productType'</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'METADATA_'</span><span class="p">)]</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="p">[</span><span class="n">result</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;results&#39;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;productType&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;METADATA_&#39;</span><span class="p">)]</span>
 
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">granules</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">metadata</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
     <span class="k">return</span> <span class="n">metadata</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="hyp3_sdk.asf_search.get_nearest_neighbors">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="hyp3_sdk.asf_search.get_nearest_neighbors" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">get_nearest_neighbors</span><span class="p">(</span><span class="n">granule</span><span class="p">,</span> <span class="n">max_neighbors</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></code>
 
 
-      <a class="headerlink" href="#hyp3_sdk.asf_search.get_nearest_neighbors" title="Permanent link">&para;</a></h3>
-<div class="doc doc-contents ">
-<p>Get a granules nearest neighbors from a temporal stack (backwards in time)</p>
+<a href="#hyp3_sdk.asf_search.get_nearest_neighbors" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Get a granules nearest neighbors from a temporal stack (backwards in time)</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>granule</code></td>
-<td><code>str</code></td>
-<td>
-<p>reference granule</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>max_neighbors</code></td>
-<td><code>int</code></td>
-<td>
-<p>maximum number of neighbors to return</p>
-</td>
-<td><code>2</code></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>granule</code></td>
+        <td><code>str</code></td>
+        <td><p>reference granule</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>max_neighbors</code></td>
+        <td><code>int</code></td>
+        <td><p>maximum number of neighbors to return</p></td>
+        <td><code>2</code></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>List[dict]</code></td>
-<td>
-<p>neighbors: a list of neighbors sorted by time</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>List[dict]</code></td>
+      <td><p>neighbors: a list of neighbors sorted by time</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/asf_search.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">get_nearest_neighbors</span><span class="p">(</span><span class="n">granule</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">max_neighbors</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
-    <span class="sd">"""Get a granules nearest neighbors from a temporal stack (backwards in time)</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_nearest_neighbors</span><span class="p">(</span><span class="n">granule</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">max_neighbors</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Get a granules nearest neighbors from a temporal stack (backwards in time)</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        granule: reference granule</span>
@@ -1216,272 +1253,362 @@ feedback.init({showIcon: false});
 
 <span class="sd">    Returns:</span>
 <span class="sd">        neighbors: a list of neighbors sorted by time</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">'output'</span><span class="p">:</span> <span class="s1">'jsonlite'</span><span class="p">,</span>
-        <span class="s1">'master'</span><span class="p">:</span> <span class="n">granule</span><span class="p">,</span>
+        <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="s1">&#39;jsonlite&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;master&#39;</span><span class="p">:</span> <span class="n">granule</span><span class="p">,</span>
     <span class="p">}</span>
     <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">_BASELINE_API</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
     <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-    <span class="n">all_neighbors</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'results'</span><span class="p">]</span>
-    <span class="n">selected_neighbors</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">all_neighbors</span> <span class="k">if</span> <span class="n">n</span><span class="p">[</span><span class="s1">'temporalBaseline'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span>
-    <span class="n">selected_neighbors</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="n">k</span><span class="p">[</span><span class="s1">'temporalBaseline'</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">all_neighbors</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;results&#39;</span><span class="p">]</span>
+    <span class="n">selected_neighbors</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">all_neighbors</span> <span class="k">if</span> <span class="n">n</span><span class="p">[</span><span class="s1">&#39;temporalBaseline&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">selected_neighbors</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="n">k</span><span class="p">[</span><span class="s1">&#39;temporalBaseline&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">selected_neighbors</span><span class="p">[:</span><span class="n">max_neighbors</span><span class="p">]</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="doc doc-object doc-module">
-<h2 class="doc doc-heading" id="hyp3_sdk.exceptions">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+  <div class="doc doc-object doc-module">
+
+
+
+<h2 id="hyp3_sdk.exceptions" class="doc doc-heading">
         <code>exceptions</code>
 
 
 
-      <a class="headerlink" href="#hyp3_sdk.exceptions" title="Permanent link">&para;</a></h2>
-<div class="doc doc-contents ">
-<p>Errors and exceptions to raise when the SDK runs into problems</p>
-<div class="doc doc-children">
-<div class="doc doc-object doc-class">
-<h3 class="doc doc-heading" id="hyp3_sdk.exceptions.AuthenticationError">
+<a href="#hyp3_sdk.exceptions" class="headerlink" title="Permanent link">&para;</a></h2>
 
+    <div class="doc doc-contents ">
+
+      <p>Errors and exceptions to raise when the SDK runs into problems</p>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h3 id="hyp3_sdk.exceptions.AuthenticationError" class="doc doc-heading">
         <code>AuthenticationError</code>
 
 
 
-      <a class="headerlink" href="#hyp3_sdk.exceptions.AuthenticationError" title="Permanent link">&para;</a></h3>
-<div class="doc doc-contents ">
-<p>Raise when authentication does not succeed</p>
-</div>
-</div>
-<div class="doc doc-object doc-class">
-<h3 class="doc doc-heading" id="hyp3_sdk.exceptions.HyP3Error">
+<a href="#hyp3_sdk.exceptions.AuthenticationError" class="headerlink" title="Permanent link">&para;</a></h3>
 
+    <div class="doc doc-contents ">
+
+      <p>Raise when authentication does not succeed</p>
+
+
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h3 id="hyp3_sdk.exceptions.HyP3Error" class="doc doc-heading">
         <code>HyP3Error</code>
 
 
 
-      <a class="headerlink" href="#hyp3_sdk.exceptions.HyP3Error" title="Permanent link">&para;</a></h3>
-<div class="doc doc-contents ">
-<p>Base Exception for Hyp3_sdk</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="doc doc-object doc-module">
-<h2 class="doc doc-heading" id="hyp3_sdk.hyp3">
+<a href="#hyp3_sdk.exceptions.HyP3Error" class="headerlink" title="Permanent link">&para;</a></h3>
 
+    <div class="doc doc-contents ">
+
+      <p>Base Exception for Hyp3_sdk</p>
+
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-module">
+
+
+
+<h2 id="hyp3_sdk.hyp3" class="doc doc-heading">
         <code>hyp3</code>
 
 
 
-      <a class="headerlink" href="#hyp3_sdk.hyp3" title="Permanent link">&para;</a></h2>
-<div class="doc doc-contents ">
-<div class="doc doc-children">
-<div class="doc doc-object doc-class">
-<h3 class="doc doc-heading" id="hyp3_sdk.hyp3.HyP3">
+<a href="#hyp3_sdk.hyp3" class="headerlink" title="Permanent link">&para;</a></h2>
 
+    <div class="doc doc-contents ">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h3 id="hyp3_sdk.hyp3.HyP3" class="doc doc-heading">
         <code>HyP3</code>
 
 
 
-      <a class="headerlink" href="#hyp3_sdk.hyp3.HyP3" title="Permanent link">&para;</a></h3>
-<div class="doc doc-contents ">
-<p>A python wrapper around the HyP3 API</p>
-<div class="doc doc-children">
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="__init__()" id="hyp3_sdk.hyp3.HyP3.__init__">
+<a href="#hyp3_sdk.hyp3.HyP3" class="headerlink" title="Permanent link">&para;</a></h3>
 
-<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_url</span><span class="o">=</span><span class="s1">'https://hyp3-api.asf.alaska.edu'</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+    <div class="doc doc-contents ">
+
+      <p>A python wrapper around the HyP3 API</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_url</span><span class="o">=</span><span class="s1">&#39;https://hyp3-api.asf.alaska.edu&#39;</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
   <span class="doc doc-properties">
       <small class="doc doc-property doc-property-special"><code>special</code></small>
   </span>
 
-      </h4>
-<div class="doc doc-contents ">
+<a href="#hyp3_sdk.hyp3.HyP3.__init__" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>api_url</code></td>
-<td><code>str</code></td>
-<td>
-<p>Address of the HyP3 API</p>
-</td>
-<td><code>'https://hyp3-api.asf.alaska.edu'</code></td>
-</tr>
-<tr>
-<td><code>username</code></td>
-<td><code>Optional</code></td>
-<td>
-<p>Username for authenticating to urs.earthdata.nasa.gov.
-Both username and password must be provided if either is provided.</p>
-</td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>password</code></td>
-<td><code>Optional</code></td>
-<td>
-<p>Password for authenticating to urs.earthdata.nasa.gov.
-Both username and password must be provided if either is provided.</p>
-</td>
-<td><code>None</code></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>api_url</code></td>
+        <td><code>str</code></td>
+        <td><p>Address of the HyP3 API</p></td>
+        <td><code>&#39;https://hyp3-api.asf.alaska.edu&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>username</code></td>
+        <td><code>Optional</code></td>
+        <td><p>Username for authenticating to urs.earthdata.nasa.gov.
+Both username and password must be provided if either is provided.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>password</code></td>
+        <td><code>Optional</code></td>
+        <td><p>Password for authenticating to urs.earthdata.nasa.gov.
+Both username and password must be provided if either is provided.</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">HYP3_PROD</span><span class="p">,</span> <span class="n">username</span><span class="p">:</span> <span class="n">Optional</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="n">Optional</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-    <span class="sd">"""</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">HYP3_PROD</span><span class="p">,</span> <span class="n">username</span><span class="p">:</span> <span class="n">Optional</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="n">Optional</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Args:</span>
 <span class="sd">        api_url: Address of the HyP3 API</span>
 <span class="sd">        username: Username for authenticating to urs.earthdata.nasa.gov.</span>
 <span class="sd">            Both username and password must be provided if either is provided.</span>
 <span class="sd">        password: Password for authenticating to urs.earthdata.nasa.gov.</span>
 <span class="sd">           Both username and password must be provided if either is provided.</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">api_url</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">get_authenticated_session</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'User-Agent'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">hyp3_sdk</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">hyp3_sdk</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">'</span><span class="p">})</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="check_quota()" id="hyp3_sdk.hyp3.HyP3.check_quota">
+    <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">hyp3_sdk</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">hyp3_sdk</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">})</span>
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.check_quota" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">check_quota</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
 
 
-      </h4>
-<div class="doc doc-contents ">
+<a href="#hyp3_sdk.hyp3.HyP3.check_quota" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>int</code></td>
-<td>
-<p>The number of jobs left in your quota</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>int</code></td>
+      <td><p>The number of jobs left in your quota</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">check_quota</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="sd">"""</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">check_quota</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns:</span>
 <span class="sd">        The number of jobs left in your quota</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">my_info</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">info</span><span class="p">[</span><span class="s1">'quota'</span><span class="p">][</span><span class="s1">'remaining'</span><span class="p">]</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="find_jobs()" id="hyp3_sdk.hyp3.HyP3.find_jobs">
+    <span class="k">return</span> <span class="n">info</span><span class="p">[</span><span class="s1">&#39;quota&#39;</span><span class="p">][</span><span class="s1">&#39;remaining&#39;</span><span class="p">]</span>
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.find_jobs" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">find_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 
-      </h4>
-<div class="doc doc-contents ">
-<p>Gets a Batch of jobs from HyP3 matching the provided search criteria</p>
+<a href="#hyp3_sdk.hyp3.HyP3.find_jobs" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Gets a Batch of jobs from HyP3 matching the provided search criteria</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>start</code></td>
-<td><code>Optional[datetime.datetime]</code></td>
-<td>
-<p>only jobs submitted after given time</p>
-</td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>end</code></td>
-<td><code>Optional[datetime.datetime]</code></td>
-<td>
-<p>only jobs submitted before given time</p>
-</td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>status</code></td>
-<td><code>Optional[str]</code></td>
-<td>
-<p>only jobs matching this status (SUCCEEDED, FAILED, RUNNING, PENDING)</p>
-</td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>name</code></td>
-<td><code>Optional[str]</code></td>
-<td>
-<p>only jobs with this name</p>
-</td>
-<td><code>None</code></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>start</code></td>
+        <td><code>Optional[datetime.datetime]</code></td>
+        <td><p>only jobs submitted after given time</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>end</code></td>
+        <td><code>Optional[datetime.datetime]</code></td>
+        <td><p>only jobs submitted before given time</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>status</code></td>
+        <td><code>Optional[str]</code></td>
+        <td><p>only jobs matching this status (SUCCEEDED, FAILED, RUNNING, PENDING)</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>Optional[str]</code></td>
+        <td><p>only jobs with this name</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Batch</code></td>
-<td>
-<p>A Batch object containing the found jobs</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Batch</code></td>
+      <td><p>A Batch object containing the found jobs</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">find_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">find_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
               <span class="n">status</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
-    <span class="sd">"""Gets a Batch of jobs from HyP3 matching the provided search criteria</span>
+    <span class="sd">&quot;&quot;&quot;Gets a Batch of jobs from HyP3 matching the provided search criteria</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        start: only jobs submitted after given time</span>
@@ -1491,221 +1618,228 @@ Both username and password must be provided if either is provided.</p>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A Batch object containing the found jobs</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">params</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="n">params</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
     <span class="k">if</span> <span class="n">start</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">params</span><span class="p">[</span><span class="s1">'start'</span><span class="p">]</span> <span class="o">=</span> <span class="n">start</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s1">'seconds'</span><span class="p">)</span>
+        <span class="n">params</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">start</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s1">&#39;seconds&#39;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">start</span><span class="o">.</span><span class="n">tzinfo</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">params</span><span class="p">[</span><span class="s1">'start'</span><span class="p">]</span> <span class="o">+=</span> <span class="s1">'Z'</span>
+            <span class="n">params</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="s1">&#39;Z&#39;</span>
     <span class="k">if</span> <span class="n">end</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">params</span><span class="p">[</span><span class="s1">'end'</span><span class="p">]</span> <span class="o">=</span> <span class="n">end</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s1">'seconds'</span><span class="p">)</span>
+        <span class="n">params</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">end</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s1">&#39;seconds&#39;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">end</span><span class="o">.</span><span class="n">tzinfo</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">params</span><span class="p">[</span><span class="s1">'end'</span><span class="p">]</span> <span class="o">+=</span> <span class="s1">'Z'</span>
+            <span class="n">params</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="s1">&#39;Z&#39;</span>
     <span class="k">if</span> <span class="n">status</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">params</span><span class="p">[</span><span class="s1">'status_code'</span><span class="p">]</span> <span class="o">=</span> <span class="n">status</span>
+        <span class="n">params</span><span class="p">[</span><span class="s1">&#39;status_code&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">status</span>
 
-    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">'/jobs'</span><span class="p">),</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/jobs&#39;</span><span class="p">),</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
     <span class="k">except</span> <span class="n">HTTPError</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Error while trying to query </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-    <span class="n">jobs</span> <span class="o">=</span> <span class="p">[</span><span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">job</span><span class="p">)</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'jobs'</span><span class="p">]]</span>
+        <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Error while trying to query </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">jobs</span> <span class="o">=</span> <span class="p">[</span><span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">job</span><span class="p">)</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;jobs&#39;</span><span class="p">]]</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">jobs</span><span class="p">:</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">'Found zero jobs'</span><span class="p">,</span> <span class="ne">UserWarning</span><span class="p">)</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Found zero jobs&#39;</span><span class="p">,</span> <span class="ne">UserWarning</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">Batch</span><span class="p">(</span><span class="n">jobs</span><span class="p">)</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="get_job_by_id()" id="hyp3_sdk.hyp3.HyP3.get_job_by_id">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.get_job_by_id" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">get_job_by_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_id</span><span class="p">)</span></code>
 
 
-      </h4>
-<div class="doc doc-contents ">
-<p>Get job by job ID</p>
+<a href="#hyp3_sdk.hyp3.HyP3.get_job_by_id" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Get job by job ID</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>job_id</code></td>
-<td><code>str</code></td>
-<td>
-<p>A job ID</p>
-</td>
-<td><em>required</em></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>job_id</code></td>
+        <td><code>str</code></td>
+        <td><p>A job ID</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Job</code></td>
-<td>
-<p>A Job object</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Job</code></td>
+      <td><p>A Job object</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">get_job_by_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Job</span><span class="p">:</span>
-    <span class="sd">"""Get job by job ID</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_job_by_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Job</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Get job by job ID</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        job_id: A job ID</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A Job object</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="sa">f</span><span class="s1">'/jobs/</span><span class="si">{</span><span class="n">job_id</span><span class="si">}</span><span class="s1">'</span><span class="p">))</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;/jobs/</span><span class="si">{</span><span class="n">job_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">))</span>
         <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
     <span class="k">except</span> <span class="n">RequestException</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Unable to get job by ID </span><span class="si">{</span><span class="n">job_id</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unable to get job by ID </span><span class="si">{</span><span class="n">job_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="my_info()" id="hyp3_sdk.hyp3.HyP3.my_info">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.my_info" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">my_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
 
 
-      </h4>
-<div class="doc doc-contents ">
+<a href="#hyp3_sdk.hyp3.HyP3.my_info" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>dict</code></td>
-<td>
-<p>Your user information</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>dict</code></td>
+      <td><p>Your user information</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">my_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-    <span class="sd">"""</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">my_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns:</span>
 <span class="sd">        Your user information</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">'/user'</span><span class="p">))</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/user&#39;</span><span class="p">))</span>
         <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
     <span class="k">except</span> <span class="n">HTTPError</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="s1">'Unable to get user information from API'</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="s1">&#39;Unable to get user information from API&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="prepare_autorift_job()" id="hyp3_sdk.hyp3.HyP3.prepare_autorift_job">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.prepare_autorift_job" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">prepare_autorift_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
   <span class="doc doc-properties">
       <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
   </span>
 
-      </h4>
-<div class="doc doc-contents ">
-<p>Submit an autoRIFT job</p>
+<a href="#hyp3_sdk.hyp3.HyP3.prepare_autorift_job" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Submit an autoRIFT job</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>granule1</code></td>
-<td><code>str</code></td>
-<td>
-<p>The first granule (scene) to use</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>granule2</code></td>
-<td><code>str</code></td>
-<td>
-<p>The second granule (scene) to use</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>name</code></td>
-<td><code>Optional[str]</code></td>
-<td>
-<p>A name for the job</p>
-</td>
-<td><code>None</code></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>granule1</code></td>
+        <td><code>str</code></td>
+        <td><p>The first granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>granule2</code></td>
+        <td><code>str</code></td>
+        <td><p>The second granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>Optional[str]</code></td>
+        <td><p>A name for the job</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>dict</code></td>
-<td>
-<p>A dictionary containing the prepared autoRIFT job</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>dict</code></td>
+      <td><p>A dictionary containing the prepared autoRIFT job</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="nd">@classmethod</span>
+          <div class="highlight"><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">prepare_autorift_job</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-    <span class="sd">"""Submit an autoRIFT job</span>
+    <span class="sd">&quot;&quot;&quot;Submit an autoRIFT job</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        granule1: The first granule (scene) to use</span>
@@ -1714,99 +1848,96 @@ Both username and password must be provided if either is provided.</p>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A dictionary containing the prepared autoRIFT job</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">'job_parameters'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'granules'</span><span class="p">:</span> <span class="p">[</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">]},</span>
-        <span class="s1">'job_type'</span><span class="p">:</span> <span class="s1">'AUTORIFT'</span><span class="p">,</span>
+        <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;granules&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">]},</span>
+        <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="s1">&#39;AUTORIFT&#39;</span><span class="p">,</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">job_dict</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="n">job_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
     <span class="k">return</span> <span class="n">job_dict</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="prepare_insar_job()" id="hyp3_sdk.hyp3.HyP3.prepare_insar_job">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.prepare_insar_job" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">prepare_insar_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-properties">
       <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
   </span>
 
-      </h4>
-<div class="doc doc-contents ">
-<p>Submit an InSAR job</p>
+<a href="#hyp3_sdk.hyp3.HyP3.prepare_insar_job" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Submit an InSAR job</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>granule1</code></td>
-<td><code>str</code></td>
-<td>
-<p>The first granule (scene) to use</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>granule2</code></td>
-<td><code>str</code></td>
-<td>
-<p>The second granule (scene) to use</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>name</code></td>
-<td><code>Optional[str]</code></td>
-<td>
-<p>A name for the job</p>
-</td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>**kwargs</code></td>
-<td><code></code></td>
-<td>
-<p>Extra job parameters specifying custom processing options</p>
-</td>
-<td><code>{}</code></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>granule1</code></td>
+        <td><code>str</code></td>
+        <td><p>The first granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>granule2</code></td>
+        <td><code>str</code></td>
+        <td><p>The second granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>Optional[str]</code></td>
+        <td><p>A name for the job</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>**kwargs</code></td>
+        <td><code></code></td>
+        <td><p>Extra job parameters specifying custom processing options</p></td>
+        <td><code>{}</code></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>dict</code></td>
-<td>
-<p>A dictionary containing the prepared InSAR job</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>dict</code></td>
+      <td><p>A dictionary containing the prepared InSAR job</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="nd">@classmethod</span>
+          <div class="highlight"><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">prepare_insar_job</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-    <span class="sd">"""Submit an InSAR job</span>
+    <span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        granule1: The first granule (scene) to use</span>
@@ -1816,91 +1947,90 @@ Both username and password must be provided if either is provided.</p>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A dictionary containing the prepared InSAR job</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">'job_parameters'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'granules'</span><span class="p">:</span> <span class="p">[</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">},</span>
-        <span class="s1">'job_type'</span><span class="p">:</span> <span class="s1">'INSAR_GAMMA'</span><span class="p">,</span>
+        <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;granules&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">},</span>
+        <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="s1">&#39;INSAR_GAMMA&#39;</span><span class="p">,</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">job_dict</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="n">job_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
     <span class="k">return</span> <span class="n">job_dict</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="prepare_rtc_job()" id="hyp3_sdk.hyp3.HyP3.prepare_rtc_job">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.prepare_rtc_job" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">prepare_rtc_job</span><span class="p">(</span><span class="n">granule</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
   <span class="doc doc-properties">
       <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
   </span>
 
-      </h4>
-<div class="doc doc-contents ">
-<p>Submit an RTC job</p>
+<a href="#hyp3_sdk.hyp3.HyP3.prepare_rtc_job" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Submit an RTC job</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>granule</code></td>
-<td><code>str</code></td>
-<td>
-<p>The granule (scene) to use</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>name</code></td>
-<td><code>Optional[str]</code></td>
-<td>
-<p>A name for the job</p>
-</td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>**kwargs</code></td>
-<td><code></code></td>
-<td>
-<p>Extra job parameters specifying custom processing options</p>
-</td>
-<td><code>{}</code></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>granule</code></td>
+        <td><code>str</code></td>
+        <td><p>The granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>Optional[str]</code></td>
+        <td><p>A name for the job</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>**kwargs</code></td>
+        <td><code></code></td>
+        <td><p>Extra job parameters specifying custom processing options</p></td>
+        <td><code>{}</code></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>dict</code></td>
-<td>
-<p>A dictionary containing the prepared RTC job</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>dict</code></td>
+      <td><p>A dictionary containing the prepared RTC job</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="nd">@classmethod</span>
+          <div class="highlight"><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">prepare_rtc_job</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">granule</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-    <span class="sd">"""Submit an RTC job</span>
+    <span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        granule: The granule (scene) to use</span>
@@ -1909,153 +2039,155 @@ Both username and password must be provided if either is provided.</p>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A dictionary containing the prepared RTC job</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">'job_parameters'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'granules'</span><span class="p">:</span> <span class="p">[</span><span class="n">granule</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">},</span>
-        <span class="s1">'job_type'</span><span class="p">:</span> <span class="s1">'RTC_GAMMA'</span><span class="p">,</span>
+        <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;granules&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">granule</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">},</span>
+        <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="s1">&#39;RTC_GAMMA&#39;</span><span class="p">,</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">job_dict</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="n">job_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
     <span class="k">return</span> <span class="n">job_dict</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="refresh()" id="hyp3_sdk.hyp3.HyP3.refresh">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.refresh" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_or_batch</span><span class="p">)</span></code>
 
 
-      </h4>
-<div class="doc doc-contents ">
-<p>Refresh each jobs' information</p>
+<a href="#hyp3_sdk.hyp3.HyP3.refresh" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Refresh each jobs' information</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>job_or_batch</code></td>
-<td><code>Union[hyp3_sdk.jobs.Batch, hyp3_sdk.jobs.Job]</code></td>
-<td>
-<p>A Batch of Job object to refresh</p>
-</td>
-<td><em>required</em></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>job_or_batch</code></td>
+        <td><code>Union[hyp3_sdk.jobs.Batch, hyp3_sdk.jobs.Job]</code></td>
+        <td><p>A Batch of Job object to refresh</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Union[hyp3_sdk.jobs.Batch, hyp3_sdk.jobs.Job]</code></td>
-<td>
-<p>A Batch or Job object with refreshed information</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Union[hyp3_sdk.jobs.Batch, hyp3_sdk.jobs.Job]</code></td>
+      <td><p>A Batch or Job object with refreshed information</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="nd">@singledispatchmethod</span>
+          <div class="highlight"><pre><span></span><code><span class="nd">@singledispatchmethod</span>
 <span class="k">def</span> <span class="nf">refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_or_batch</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Batch</span><span class="p">,</span> <span class="n">Job</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">Batch</span><span class="p">,</span> <span class="n">Job</span><span class="p">]:</span>
-    <span class="sd">"""Refresh each jobs' information</span>
+    <span class="sd">&quot;&quot;&quot;Refresh each jobs&#39; information</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        job_or_batch: A Batch of Job object to refresh</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A Batch or Job object with refreshed information</span>
-<span class="sd">    """</span>
-    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Cannot refresh </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">job_or_batch</span><span class="p">)</span><span class="si">}</span><span class="s1"> type object'</span><span class="p">)</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="submit_autorift_job()" id="hyp3_sdk.hyp3.HyP3.submit_autorift_job">
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Cannot refresh </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">job_or_batch</span><span class="p">)</span><span class="si">}</span><span class="s1"> type object&#39;</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.submit_autorift_job" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">submit_autorift_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 
-      </h4>
-<div class="doc doc-contents ">
-<p>Submit an autoRIFT job</p>
+<a href="#hyp3_sdk.hyp3.HyP3.submit_autorift_job" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Submit an autoRIFT job</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>granule1</code></td>
-<td><code>str</code></td>
-<td>
-<p>The first granule (scene) to use</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>granule2</code></td>
-<td><code>str</code></td>
-<td>
-<p>The second granule (scene) to use</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>name</code></td>
-<td><code>Optional[str]</code></td>
-<td>
-<p>A name for the job</p>
-</td>
-<td><code>None</code></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>granule1</code></td>
+        <td><code>str</code></td>
+        <td><p>The first granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>granule2</code></td>
+        <td><code>str</code></td>
+        <td><p>The second granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>Optional[str]</code></td>
+        <td><p>A name for the job</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Batch</code></td>
-<td>
-<p>A Batch object containing the autoRIFT job</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Batch</code></td>
+      <td><p>A Batch object containing the autoRIFT job</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">submit_autorift_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
-    <span class="sd">"""Submit an autoRIFT job</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">submit_autorift_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Submit an autoRIFT job</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        granule1: The first granule (scene) to use</span>
@@ -2064,90 +2196,87 @@ Both username and password must be provided if either is provided.</p>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A Batch object containing the autoRIFT job</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">job_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_autorift_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">submit_prepared_jobs</span><span class="p">(</span><span class="n">prepared_jobs</span><span class="o">=</span><span class="n">job_dict</span><span class="p">)</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="submit_insar_job()" id="hyp3_sdk.hyp3.HyP3.submit_insar_job">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.submit_insar_job" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">submit_insar_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
-      </h4>
-<div class="doc doc-contents ">
-<p>Submit an InSAR job</p>
+<a href="#hyp3_sdk.hyp3.HyP3.submit_insar_job" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Submit an InSAR job</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>granule1</code></td>
-<td><code>str</code></td>
-<td>
-<p>The first granule (scene) to use</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>granule2</code></td>
-<td><code>str</code></td>
-<td>
-<p>The second granule (scene) to use</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>name</code></td>
-<td><code>Optional[str]</code></td>
-<td>
-<p>A name for the job</p>
-</td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>**kwargs</code></td>
-<td><code></code></td>
-<td>
-<p>Extra job parameters specifying custom processing options</p>
-</td>
-<td><code>{}</code></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>granule1</code></td>
+        <td><code>str</code></td>
+        <td><p>The first granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>granule2</code></td>
+        <td><code>str</code></td>
+        <td><p>The second granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>Optional[str]</code></td>
+        <td><p>A name for the job</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>**kwargs</code></td>
+        <td><code></code></td>
+        <td><p>Extra job parameters specifying custom processing options</p></td>
+        <td><code>{}</code></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Batch</code></td>
-<td>
-<p>A Batch object containing the InSAR job</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Batch</code></td>
+      <td><p>A Batch object containing the InSAR job</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">submit_insar_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
-    <span class="sd">"""Submit an InSAR job</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">submit_insar_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        granule1: The first granule (scene) to use</span>
@@ -2157,161 +2286,163 @@ Both username and password must be provided if either is provided.</p>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A Batch object containing the InSAR job</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">job_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_insar_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">submit_prepared_jobs</span><span class="p">(</span><span class="n">prepared_jobs</span><span class="o">=</span><span class="n">job_dict</span><span class="p">)</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="submit_prepared_jobs()" id="hyp3_sdk.hyp3.HyP3.submit_prepared_jobs">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.submit_prepared_jobs" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">submit_prepared_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prepared_jobs</span><span class="p">)</span></code>
 
 
-      </h4>
-<div class="doc doc-contents ">
-<p>Submit a prepared job dictionary, or list of prepared job dictionaries</p>
+<a href="#hyp3_sdk.hyp3.HyP3.submit_prepared_jobs" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Submit a prepared job dictionary, or list of prepared job dictionaries</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>prepared_jobs</code></td>
-<td><code>Union[dict, List[dict]]</code></td>
-<td>
-<p>A prepared job dictionary, or list of prepared job dictionaries</p>
-</td>
-<td><em>required</em></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>prepared_jobs</code></td>
+        <td><code>Union[dict, List[dict]]</code></td>
+        <td><p>A prepared job dictionary, or list of prepared job dictionaries</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Batch</code></td>
-<td>
-<p>A Batch object containing the submitted job(s)</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Batch</code></td>
+      <td><p>A Batch object containing the submitted job(s)</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">submit_prepared_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prepared_jobs</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
-    <span class="sd">"""Submit a prepared job dictionary, or list of prepared job dictionaries</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">submit_prepared_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prepared_jobs</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Submit a prepared job dictionary, or list of prepared job dictionaries</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        prepared_jobs: A prepared job dictionary, or list of prepared job dictionaries</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A Batch object containing the submitted job(s)</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prepared_jobs</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-        <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'jobs'</span><span class="p">:</span> <span class="p">[</span><span class="n">prepared_jobs</span><span class="p">]}</span>
+        <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;jobs&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">prepared_jobs</span><span class="p">]}</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'jobs'</span><span class="p">:</span> <span class="n">prepared_jobs</span><span class="p">}</span>
+        <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;jobs&#39;</span><span class="p">:</span> <span class="n">prepared_jobs</span><span class="p">}</span>
 
-    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">'/jobs'</span><span class="p">),</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/jobs&#39;</span><span class="p">),</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
     <span class="k">except</span> <span class="n">HTTPError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
 
     <span class="n">batch</span> <span class="o">=</span> <span class="n">Batch</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">'jobs'</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;jobs&#39;</span><span class="p">]:</span>
         <span class="n">batch</span> <span class="o">+=</span> <span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">batch</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="submit_rtc_job()" id="hyp3_sdk.hyp3.HyP3.submit_rtc_job">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.submit_rtc_job" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">submit_rtc_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
-      </h4>
-<div class="doc doc-contents ">
-<p>Submit an RTC job</p>
+<a href="#hyp3_sdk.hyp3.HyP3.submit_rtc_job" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Submit an RTC job</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>granule</code></td>
-<td><code>str</code></td>
-<td>
-<p>The granule (scene) to use</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>name</code></td>
-<td><code>Optional[str]</code></td>
-<td>
-<p>A name for the job</p>
-</td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>**kwargs</code></td>
-<td><code></code></td>
-<td>
-<p>Extra job parameters specifying custom processing options</p>
-</td>
-<td><code>{}</code></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>granule</code></td>
+        <td><code>str</code></td>
+        <td><p>The granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>Optional[str]</code></td>
+        <td><p>A name for the job</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>**kwargs</code></td>
+        <td><code></code></td>
+        <td><p>Extra job parameters specifying custom processing options</p></td>
+        <td><code>{}</code></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Batch</code></td>
-<td>
-<p>A Batch object containing the RTC job</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Batch</code></td>
+      <td><p>A Batch object containing the RTC job</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">submit_rtc_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
-    <span class="sd">"""Submit an RTC job</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">submit_rtc_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        granule: The granule (scene) to use</span>
@@ -2320,83 +2451,82 @@ Both username and password must be provided if either is provided.</p>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A Batch object containing the RTC job</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">job_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_rtc_job</span><span class="p">(</span><span class="n">granule</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">submit_prepared_jobs</span><span class="p">(</span><span class="n">prepared_jobs</span><span class="o">=</span><span class="n">job_dict</span><span class="p">)</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="watch()" id="hyp3_sdk.hyp3.HyP3.watch">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.watch" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">watch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_or_batch</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10800</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span></code>
 
 
-      </h4>
-<div class="doc doc-contents ">
-<p>Watch jobs until they complete</p>
+<a href="#hyp3_sdk.hyp3.HyP3.watch" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Watch jobs until they complete</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>job_or_batch</code></td>
-<td><code>Union[hyp3_sdk.jobs.Batch, hyp3_sdk.jobs.Job]</code></td>
-<td>
-<p>A Batch or Job object of jobs to watch</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>timeout</code></td>
-<td><code>int</code></td>
-<td>
-<p>How long to wait until exiting in seconds</p>
-</td>
-<td><code>10800</code></td>
-</tr>
-<tr>
-<td><code>interval</code></td>
-<td><code>Union[int, float]</code></td>
-<td>
-<p>How often to check for updates in seconds</p>
-</td>
-<td><code>60</code></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>job_or_batch</code></td>
+        <td><code>Union[hyp3_sdk.jobs.Batch, hyp3_sdk.jobs.Job]</code></td>
+        <td><p>A Batch or Job object of jobs to watch</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>timeout</code></td>
+        <td><code>int</code></td>
+        <td><p>How long to wait until exiting in seconds</p></td>
+        <td><code>10800</code></td>
+      </tr>
+      <tr>
+        <td><code>interval</code></td>
+        <td><code>Union[int, float]</code></td>
+        <td><p>How often to check for updates in seconds</p></td>
+        <td><code>60</code></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code></code></td>
-<td>
-<p>A Batch or Job object with refreshed watched jobs</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code></code></td>
+      <td><p>A Batch or Job object with refreshed watched jobs</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="nd">@singledispatchmethod</span>
+          <div class="highlight"><pre><span></span><code><span class="nd">@singledispatchmethod</span>
 <span class="k">def</span> <span class="nf">watch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_or_batch</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Batch</span><span class="p">,</span> <span class="n">Job</span><span class="p">],</span> <span class="n">timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10800</span><span class="p">,</span> <span class="n">interval</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mi">60</span><span class="p">):</span>
-    <span class="sd">"""Watch jobs until they complete</span>
+    <span class="sd">&quot;&quot;&quot;Watch jobs until they complete</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        job_or_batch: A Batch or Job object of jobs to watch</span>
@@ -2405,53 +2535,113 @@ Both username and password must be provided if either is provided.</p>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A Batch or Job object with refreshed watched jobs</span>
-<span class="sd">    """</span>
-    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Cannot watch </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">job_or_batch</span><span class="p">)</span><span class="si">}</span><span class="s1"> type object'</span><span class="p">)</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="doc doc-object doc-module">
-<h2 class="doc doc-heading" id="hyp3_sdk.jobs">
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Cannot watch </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">job_or_batch</span><span class="p">)</span><span class="si">}</span><span class="s1"> type object&#39;</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-module">
+
+
+
+<h2 id="hyp3_sdk.jobs" class="doc doc-heading">
         <code>jobs</code>
 
 
 
-      <a class="headerlink" href="#hyp3_sdk.jobs" title="Permanent link">&para;</a></h2>
-<div class="doc doc-contents ">
-<div class="doc doc-children">
-<div class="doc doc-object doc-class">
-<h3 class="doc doc-heading" id="hyp3_sdk.jobs.Batch">
+<a href="#hyp3_sdk.jobs" class="headerlink" title="Permanent link">&para;</a></h2>
 
+    <div class="doc doc-contents ">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h3 id="hyp3_sdk.jobs.Batch" class="doc doc-heading">
         <code>Batch</code>
 
 
 
-      <a class="headerlink" href="#hyp3_sdk.jobs.Batch" title="Permanent link">&para;</a></h3>
-<div class="doc doc-contents ">
-<div class="doc doc-children">
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="any_expired()" id="hyp3_sdk.jobs.Batch.any_expired">
+<a href="#hyp3_sdk.jobs.Batch" class="headerlink" title="Permanent link">&para;</a></h3>
 
+    <div class="doc doc-contents ">
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.jobs.Batch.any_expired" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">any_expired</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
 
 
-      </h4>
-<div class="doc doc-contents ">
-<p>Check succeeded jobs for expiration</p>
-<details class="quote">
+<a href="#hyp3_sdk.jobs.Batch.any_expired" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Check succeeded jobs for expiration</p>
+
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">any_expired</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-    <span class="sd">"""Check succeeded jobs for expiration"""</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">any_expired</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Check succeeded jobs for expiration&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">job</span><span class="o">.</span><span class="n">expired</span><span class="p">():</span>
@@ -2459,175 +2649,182 @@ Both username and password must be provided if either is provided.</p>
         <span class="k">except</span> <span class="n">HyP3Error</span><span class="p">:</span>
             <span class="k">continue</span>
     <span class="k">return</span> <span class="kc">False</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="complete()" id="hyp3_sdk.jobs.Batch.complete">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.jobs.Batch.complete" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">complete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
 
 
-      </h4>
-<div class="doc doc-contents ">
-<p>Returns: True if all jobs are complete, otherwise returns False</p>
-<details class="quote">
+<a href="#hyp3_sdk.jobs.Batch.complete" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Returns: True if all jobs are complete, otherwise returns False</p>
+
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">complete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-    <span class="sd">"""</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">complete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns: True if all jobs are complete, otherwise returns False</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">job</span><span class="o">.</span><span class="n">complete</span><span class="p">():</span>
             <span class="k">return</span> <span class="kc">False</span>
     <span class="k">return</span> <span class="kc">True</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="download_files()" id="hyp3_sdk.jobs.Batch.download_files">
+</code></pre></div>
+        </details>
+    </div>
 
-<code class="highlight language-python"><span class="n">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">'.'</span><span class="p">,</span> <span class="n">create</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+  </div>
 
 
-      </h4>
-<div class="doc doc-contents ">
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.jobs.Batch.download_files" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">create</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.jobs.Batch.download_files" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>location</code></td>
-<td><code>Union[pathlib.Path, str]</code></td>
-<td>
-<p>Directory location to put files into</p>
-</td>
-<td><code>'.'</code></td>
-</tr>
-<tr>
-<td><code>create</code></td>
-<td><code>bool</code></td>
-<td>
-<p>Create <code>location</code> if it does not point to an existing directory</p>
-</td>
-<td><code>True</code></td>
-</tr>
-</tbody>
-</table>
-<p>Returns: list of Path objects to downloaded files</p>
-<details class="quote">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>location</code></td>
+        <td><code>Union[pathlib.Path, str]</code></td>
+        <td><p>Directory location to put files into</p></td>
+        <td><code>&#39;.&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>create</code></td>
+        <td><code>bool</code></td>
+        <td><p>Create <code>location</code> if it does not point to an existing directory</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
+</table>      <p>Returns: list of Path objects to downloaded files</p>
+
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'.'</span><span class="p">,</span> <span class="n">create</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
-    <span class="sd">"""</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">create</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Args:</span>
 <span class="sd">        location: Directory location to put files into</span>
 <span class="sd">        create: Create `location` if it does not point to an existing directory</span>
 
 <span class="sd">    Returns: list of Path objects to downloaded files</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">downloaded_files</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">downloaded_files</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">download_files</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="n">create</span><span class="p">))</span>
         <span class="k">except</span> <span class="n">HyP3Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Warning: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">. Skipping download for </span><span class="si">{</span><span class="n">job</span><span class="si">}</span><span class="s1">.'</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Warning: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">. Skipping download for </span><span class="si">{</span><span class="n">job</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">downloaded_files</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="filter_jobs()" id="hyp3_sdk.jobs.Batch.filter_jobs">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.jobs.Batch.filter_jobs" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">filter_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">succeeded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">running</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">failed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_expired</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 
-      </h4>
-<div class="doc doc-contents ">
-<p>Filter jobs by status. By default, only succeeded and still running jobs will be in the returned batch.</p>
+<a href="#hyp3_sdk.jobs.Batch.filter_jobs" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Filter jobs by status. By default, only succeeded and still running jobs will be in the returned batch.</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>succeeded</code></td>
-<td><code>bool</code></td>
-<td>
-<p>Include all succeeded jobs</p>
-</td>
-<td><code>True</code></td>
-</tr>
-<tr>
-<td><code>running</code></td>
-<td><code>bool</code></td>
-<td>
-<p>Include all running jobs</p>
-</td>
-<td><code>True</code></td>
-</tr>
-<tr>
-<td><code>failed</code></td>
-<td><code>bool</code></td>
-<td>
-<p>Include all failed jobs</p>
-</td>
-<td><code>False</code></td>
-</tr>
-<tr>
-<td><code>include_expired</code></td>
-<td><code>bool</code></td>
-<td>
-<p>Include expired jobs in the result</p>
-</td>
-<td><code>True</code></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>succeeded</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include all succeeded jobs</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>running</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include all running jobs</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>failed</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include all failed jobs</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_expired</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include expired jobs in the result</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Batch</code></td>
-<td>
-<p>batch: A batch object containing jobs matching all the selected statuses</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Batch</code></td>
+      <td><p>batch: A batch object containing jobs matching all the selected statuses</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">filter_jobs</span><span class="p">(</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">filter_jobs</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">succeeded</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">running</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">failed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">include_expired</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'Batch'</span><span class="p">:</span>
-    <span class="sd">"""Filter jobs by status. By default, only succeeded and still running jobs will be in the returned batch.</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Batch&#39;</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Filter jobs by status. By default, only succeeded and still running jobs will be in the returned batch.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        succeeded: Include all succeeded jobs</span>
@@ -2638,7 +2835,7 @@ Both username and password must be provided if either is provided.</p>
 
 <span class="sd">    Returns:</span>
 <span class="sd">         batch: A batch object containing jobs matching all the selected statuses</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">filtered_jobs</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">:</span>
@@ -2653,105 +2850,144 @@ Both username and password must be provided if either is provided.</p>
             <span class="n">filtered_jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">Batch</span><span class="p">(</span><span class="n">filtered_jobs</span><span class="p">)</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="succeeded()" id="hyp3_sdk.jobs.Batch.succeeded">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.jobs.Batch.succeeded" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">succeeded</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
 
 
-      </h4>
-<div class="doc doc-contents ">
-<p>Returns: True if all jobs have succeeded, otherwise returns False</p>
-<details class="quote">
+<a href="#hyp3_sdk.jobs.Batch.succeeded" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Returns: True if all jobs have succeeded, otherwise returns False</p>
+
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">succeeded</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-    <span class="sd">"""</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">succeeded</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns: True if all jobs have succeeded, otherwise returns False</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">job</span><span class="o">.</span><span class="n">succeeded</span><span class="p">():</span>
             <span class="k">return</span> <span class="kc">False</span>
     <span class="k">return</span> <span class="kc">True</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="doc doc-object doc-class">
-<h3 class="doc doc-heading" id="hyp3_sdk.jobs.Job">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h3 id="hyp3_sdk.jobs.Job" class="doc doc-heading">
         <code>Job</code>
 
 
 
-      <a class="headerlink" href="#hyp3_sdk.jobs.Job" title="Permanent link">&para;</a></h3>
-<div class="doc doc-contents ">
-<div class="doc doc-children">
-<div class="doc doc-object doc-method">
-<h4 class="doc doc-heading" data-toc-label="download_files()" id="hyp3_sdk.jobs.Job.download_files">
+<a href="#hyp3_sdk.jobs.Job" class="headerlink" title="Permanent link">&para;</a></h3>
 
-<code class="highlight language-python"><span class="n">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">'.'</span><span class="p">,</span> <span class="n">create</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+    <div class="doc doc-contents ">
 
 
-      </h4>
-<div class="doc doc-contents ">
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.jobs.Job.download_files" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">create</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.jobs.Job.download_files" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>location</code></td>
-<td><code>Union[pathlib.Path, str]</code></td>
-<td>
-<p>Directory location to put files into</p>
-</td>
-<td><code>'.'</code></td>
-</tr>
-<tr>
-<td><code>create</code></td>
-<td><code>bool</code></td>
-<td>
-<p>Create <code>location</code> if it does not point to an existing directory</p>
-</td>
-<td><code>True</code></td>
-</tr>
-</tbody>
-</table>
-<p>Returns: list of Path objects to downloaded files</p>
-<details class="quote">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>location</code></td>
+        <td><code>Union[pathlib.Path, str]</code></td>
+        <td><p>Directory location to put files into</p></td>
+        <td><code>&#39;.&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>create</code></td>
+        <td><code>bool</code></td>
+        <td><p>Create <code>location</code> if it does not point to an existing directory</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
+</table>      <p>Returns: list of Path objects to downloaded files</p>
+
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'.'</span><span class="p">,</span> <span class="n">create</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
-    <span class="sd">"""</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">create</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Args:</span>
 <span class="sd">        location: Directory location to put files into</span>
 <span class="sd">        create: Create `location` if it does not point to an existing directory</span>
 
 <span class="sd">    Returns: list of Path objects to downloaded files</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">location</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">succeeded</span><span class="p">():</span>
-        <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Only succeeded jobs can be downloaded; job is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s1">.'</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Only succeeded jobs can be downloaded; job is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">expired</span><span class="p">():</span>
-        <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Expired jobs cannot be downloaded; '</span>
-                        <span class="sa">f</span><span class="s1">'job expired </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s2">"seconds"</span><span class="p">)</span><span class="si">}</span><span class="s1">.'</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Expired jobs cannot be downloaded; &#39;</span>
+                        <span class="sa">f</span><span class="s1">&#39;job expired </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s2">&quot;seconds&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">create</span><span class="p">:</span>
         <span class="n">location</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -2760,119 +2996,152 @@ Both username and password must be provided if either is provided.</p>
 
     <span class="n">downloaded_files</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">files</span><span class="p">:</span>
-        <span class="n">download_url</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="s1">'url'</span><span class="p">]</span>
-        <span class="n">filename</span> <span class="o">=</span> <span class="n">location</span> <span class="o">/</span> <span class="n">file</span><span class="p">[</span><span class="s1">'filename'</span><span class="p">]</span>
+        <span class="n">download_url</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">location</span> <span class="o">/</span> <span class="n">file</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">downloaded_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">download_file</span><span class="p">(</span><span class="n">download_url</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">10485760</span><span class="p">))</span>
         <span class="k">except</span> <span class="n">RequestException</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Unable to download file: </span><span class="si">{</span><span class="n">download_url</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unable to download file: </span><span class="si">{</span><span class="n">download_url</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">downloaded_files</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="doc doc-object doc-module">
-<h2 class="doc doc-heading" id="hyp3_sdk.util">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-module">
+
+
+
+<h2 id="hyp3_sdk.util" class="doc doc-heading">
         <code>util</code>
 
 
 
-      <a class="headerlink" href="#hyp3_sdk.util" title="Permanent link">&para;</a></h2>
-<div class="doc doc-contents ">
-<p>Extra utilities for working with HyP3</p>
-<div class="doc doc-children">
-<div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="hyp3_sdk.util.download_file">
+<a href="#hyp3_sdk.util" class="headerlink" title="Permanent link">&para;</a></h2>
 
+    <div class="doc doc-contents ">
+
+      <p>Extra utilities for working with HyP3</p>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="hyp3_sdk.util.download_file" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filepath</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">backoff_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code>
 
 
-      <a class="headerlink" href="#hyp3_sdk.util.download_file" title="Permanent link">&para;</a></h3>
-<div class="doc doc-contents ">
-<p>Download a file</p>
+<a href="#hyp3_sdk.util.download_file" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Download a file</p>
+
 <p><strong>Parameters:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>url</code></td>
-<td><code>str</code></td>
-<td>
-<p>URL of the file to download</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>filepath</code></td>
-<td><code>Union[pathlib.Path, str]</code></td>
-<td>
-<p>Location to place file into</p>
-</td>
-<td><em>required</em></td>
-</tr>
-<tr>
-<td><code>chunk_size</code></td>
-<td><code></code></td>
-<td>
-<p>Size to chunk the download into</p>
-</td>
-<td><code>None</code></td>
-</tr>
-<tr>
-<td><code>retries</code></td>
-<td><code></code></td>
-<td>
-<p>Number of retries to attempt</p>
-</td>
-<td><code>2</code></td>
-</tr>
-<tr>
-<td><code>backoff_factor</code></td>
-<td><code></code></td>
-<td>
-<p>Factor for calculating time between retries</p>
-</td>
-<td><code>1</code></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>url</code></td>
+        <td><code>str</code></td>
+        <td><p>URL of the file to download</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>filepath</code></td>
+        <td><code>Union[pathlib.Path, str]</code></td>
+        <td><p>Location to place file into</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>chunk_size</code></td>
+        <td><code></code></td>
+        <td><p>Size to chunk the download into</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>retries</code></td>
+        <td><code></code></td>
+        <td><p>Number of retries to attempt</p></td>
+        <td><code>2</code></td>
+      </tr>
+      <tr>
+        <td><code>backoff_factor</code></td>
+        <td><code></code></td>
+        <td><p>Factor for calculating time between retries</p></td>
+        <td><code>1</code></td>
+      </tr>
+  </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Path</code></td>
-<td>
-<p>download_path: The path to the downloaded file</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Path</code></td>
+      <td><p>download_path: The path to the downloaded file</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/util.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">filepath</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">backoff_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
-    <span class="sd">"""Download a file</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">filepath</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">backoff_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Download a file</span>
 <span class="sd">    Args:</span>
 <span class="sd">        url: URL of the file to download</span>
 <span class="sd">        filepath: Location to place file into</span>
@@ -2881,7 +3150,7 @@ Both username and password must be provided if either is provided.</p>
 <span class="sd">        backoff_factor: Factor for calculating time between retries</span>
 <span class="sd">    Returns:</span>
 <span class="sd">        download_path: The path to the downloaded file</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">filepath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
     <span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
     <span class="n">retry_strategy</span> <span class="o">=</span> <span class="n">Retry</span><span class="p">(</span>
@@ -2890,59 +3159,64 @@ Both username and password must be provided if either is provided.</p>
         <span class="n">status_forcelist</span><span class="o">=</span><span class="p">[</span><span class="mi">429</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">502</span><span class="p">,</span> <span class="mi">503</span><span class="p">,</span> <span class="mi">504</span><span class="p">],</span>
     <span class="p">)</span>
 
-    <span class="n">session</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">'https://'</span><span class="p">,</span> <span class="n">HTTPAdapter</span><span class="p">(</span><span class="n">max_retries</span><span class="o">=</span><span class="n">retry_strategy</span><span class="p">))</span>
-    <span class="n">session</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">'http://'</span><span class="p">,</span> <span class="n">HTTPAdapter</span><span class="p">(</span><span class="n">max_retries</span><span class="o">=</span><span class="n">retry_strategy</span><span class="p">))</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;https://&#39;</span><span class="p">,</span> <span class="n">HTTPAdapter</span><span class="p">(</span><span class="n">max_retries</span><span class="o">=</span><span class="n">retry_strategy</span><span class="p">))</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;http://&#39;</span><span class="p">,</span> <span class="n">HTTPAdapter</span><span class="p">(</span><span class="n">max_retries</span><span class="o">=</span><span class="n">retry_strategy</span><span class="p">))</span>
 
     <span class="k">with</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
         <span class="n">s</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-        <span class="k">with</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">wrapattr</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">),</span> <span class="s1">'write'</span><span class="p">,</span> <span class="n">miniters</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">filepath</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-                           <span class="n">total</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'content-length'</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">wrapattr</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">),</span> <span class="s1">&#39;write&#39;</span><span class="p">,</span> <span class="n">miniters</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">filepath</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                           <span class="n">total</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;content-length&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="n">chunk_size</span><span class="p">):</span>
                 <span class="k">if</span> <span class="n">chunk</span><span class="p">:</span>
                     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
     <span class="n">session</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
     <span class="k">return</span> <span class="n">filepath</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-function">
-<h3 class="doc doc-heading" id="hyp3_sdk.util.get_authenticated_session">
+</code></pre></div>
+        </details>
+    </div>
 
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="hyp3_sdk.util.get_authenticated_session" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">get_authenticated_session</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span></code>
 
 
-      <a class="headerlink" href="#hyp3_sdk.util.get_authenticated_session" title="Permanent link">&para;</a></h3>
-<div class="doc doc-contents ">
-<p>logs into hyp3 using credentials for urs.earthdata.nasa.gov from provided credentails or a .netrc file.</p>
+<a href="#hyp3_sdk.util.get_authenticated_session" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>logs into hyp3 using credentials for urs.earthdata.nasa.gov from provided credentails or a .netrc file.</p>
+
 <p><strong>Returns:</strong></p>
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Session</code></td>
-<td>
-<p>An authenticated Session object from the requests library</p>
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Session</code></td>
+      <td><p>An authenticated Session object from the requests library</p></td>
+    </tr>
+  </tbody>
 </table>
-<details class="quote">
+        <details class="quote">
           <summary>Source code in <code>hyp3_sdk/util.py</code></summary>
-          <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">get_authenticated_session</span><span class="p">(</span><span class="n">username</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">:</span>
-    <span class="sd">"""logs into hyp3 using credentials for urs.earthdata.nasa.gov from provided credentails or a .netrc file.</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_authenticated_session</span><span class="p">(</span><span class="n">username</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;logs into hyp3 using credentials for urs.earthdata.nasa.gov from provided credentails or a .netrc file.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        An authenticated Session object from the requests library</span>
-<span class="sd">    """</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">hyp3_sdk</span><span class="o">.</span><span class="n">TESTING</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">s</span>
@@ -2951,27 +3225,41 @@ Both username and password must be provided if either is provided.</p>
             <span class="n">response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">AUTH_URL</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">))</span>
             <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
         <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">AuthenticationError</span><span class="p">(</span><span class="s1">'Was not able to authenticate with credentials provided</span><span class="se">\n</span><span class="s1">'</span>
-                                      <span class="s1">'This could be due to invalid credentials or a connection error.'</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">AuthenticationError</span><span class="p">(</span><span class="s1">&#39;Was not able to authenticate with credentials provided</span><span class="se">\n</span><span class="s1">&#39;</span>
+                                      <span class="s1">&#39;This could be due to invalid credentials or a connection error.&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">AUTH_URL</span><span class="p">)</span>
             <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
         <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">AuthenticationError</span><span class="p">(</span><span class="s1">'Was not able to authenticate with .netrc file and no credentials provided</span><span class="se">\n</span><span class="s1">'</span>
-                                      <span class="s1">'This could be due to invalid credentials in .netrc or a connection error.'</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">AuthenticationError</span><span class="p">(</span><span class="s1">&#39;Was not able to authenticate with .netrc file and no credentials provided</span><span class="se">\n</span><span class="s1">&#39;</span>
+                                      <span class="s1">&#39;This could be due to invalid credentials in .netrc or a connection error.&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">s</span>
-</code></pre>
-</div>
-</details>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
                 
               
               

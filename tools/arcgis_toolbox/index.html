@@ -60,6 +60,8 @@ feedback.init({showIcon: false});
     
     
     
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
     
   
     <!--
@@ -867,15 +869,15 @@ feedback.init({showIcon: false});
 <p>The <a href="https://asf.alaska.edu/how-to/data-tools/gis-tools/">ASF_Tools ArcGIS Python Toolbox</a> can be used with either ArcGIS Desktop or ArcGIS Pro, and contains tools that perform geoprocessing tasks useful for working with Synthetic Aperture Radar (SAR) data. The tools were designed to be used with <a href="https://asfhyp3.github.io/using/vertex">Sentinel-1 Radiometric Terrain Corrected (RTC) SAR datasets</a>, such as those available on-demand using ASF's <a href="https://search.asf.alaska.edu/">Data Search - Vertex</a> portal, but several of the tools have the potential to be used with a variety of rasters, including non-SAR datasets.</p>
 <p>The Toolbox is distributed as a zipped archive including the .pyt Toolbox script and associated .xml files. There is an XML file for the toolbox itself and one for each of the tools it contains. These XML files contain the metadata displayed in the item descriptions and tool help windows in ArcGIS, and must be kept in the same directory as the Python Toolbox (.pyt) file, or the information they contain will no longer be accessible.</p>
 <h3 id="toolbox-contents">Toolbox Contents<a class="headerlink" href="#toolbox-contents" title="Permanent link">&para;</a></h3>
-<h4>Unzip Files Tool</h4>
+<h4 id="unzip-files-tool">Unzip Files Tool<a class="headerlink" href="#unzip-files-tool" title="Permanent link">&para;</a></h4>
 <p>This tool assists in file management when downloading .zip files from ASF. It could be used to extract to a specified location any zip files with an additional internal directory containing the individual files. The tool deletes the original zip files once they are extracted, and is especially helpful when dealing with file paths that are so long that they are beyond the maximum allowed in default Windows unzip utilities.</p>
-<h4>Scale Conversion Tool</h4>
+<h4 id="scale-conversion-tool">Scale Conversion Tool<a class="headerlink" href="#scale-conversion-tool" title="Permanent link">&para;</a></h4>
 <p>This tool converts pixel values in calibrated SAR datasets (such as RTC rasters) from power or amplitude scale into power, amplitude or dB scale. This is an application specific to SAR data values/scales.</p>
-<h4>Reclassify RTC Tool</h4>
+<h4 id="reclassify-rtc-tool">Reclassify RTC Tool<a class="headerlink" href="#reclassify-rtc-tool" title="Permanent link">&para;</a></h4>
 <p>This tool generates a raster that includes only those pixels below a user-defined threshold value, and is designed for isolating water pixels. While intended for RTC files in dB scale, this tool could be used for any application where the user is interested in generating a spatial mask for values below a given threshold in a single-band raster.</p>
-<h4>Log Difference Tool</h4>
+<h4 id="log-difference-tool">Log Difference Tool<a class="headerlink" href="#log-difference-tool" title="Permanent link">&para;</a></h4>
 <p>This tool compares two rasters by calculating the log difference on a pixel-by-pixel basis to identify areas where backscatter values have changed over time. While intended for RTC files in amplitude scale, this tool could be used to compare the pixel values of any two single-band rasters, as long as there are no negative values (NoData values will be returned for pixels with a negative number in either of the datasets).</p>
-<h4>RGB Decomposition Tool</h4>
+<h4 id="rgb-decomposition-tool">RGB Decomposition Tool<a class="headerlink" href="#rgb-decomposition-tool" title="Permanent link">&para;</a></h4>
 <p>This tool generates an RGB image using the co- and cross-polarized datasets from an RTC product. Input datasets can be in either amplitude or power scale, and the primary polarization can be either vertical (VV/VH) or horizontal (HH/HV). <a href="https://github.com/ASFHyP3/hyp3-lib/blob/develop/docs/rgb_decomposition.md">Additional documentation</a> is available regarding the calculations used and the interpretation of these false-color images.</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <p>Users must have either ArcGIS Desktop (ArcMap) or ArcGIS Pro installed and licensed on their computer. The Toolbox has been tested with Desktop versions 10.6.1 and 10.7.1 and Pro versions 2.4.2, 2.5.x and 2.6.1, but it may work with earlier versions as well.</p>
@@ -885,7 +887,7 @@ feedback.init({showIcon: false});
 <li>Download the zip file and extract the contents to any directory accessible by the computer running ArcGIS.</li>
 <li>
 <p>Ensure that the Spatial Analyst extension is licensed and enabled.</p>
-<h5>ArcGIS Desktop (ArcMap)</h5>
+<h5 id="arcgis-desktop-arcmap">ArcGIS Desktop (ArcMap)<a class="headerlink" href="#arcgis-desktop-arcmap" title="Permanent link">&para;</a></h5>
 <ul>
 <li>Click on the Customize menu in ArcMap and select Extensions… </li>
 <li>Check the box next to Spatial Analyst and click the Close button at the bottom of the Extensions window. <ul>
@@ -893,7 +895,7 @@ feedback.init({showIcon: false});
 </ul>
 </li>
 </ul>
-<h5>ArcGIS Pro</h5>
+<h5 id="arcgis-pro">ArcGIS Pro<a class="headerlink" href="#arcgis-pro" title="Permanent link">&para;</a></h5>
 <ul>
 <li>Click on the Project tab and select the Licensing tab. </li>
 <li>In the list of Esri Extensions, scroll down to verify that the Spatial Analyst is licensed and enabled. <ul>
@@ -918,8 +920,8 @@ feedback.init({showIcon: false});
 <p><em>Note that output products are not automatically added to a project by default. You must navigate to them in the Catalog window/pane/view (or using the Add Data dialog) and add them to your project if desired.</em></p>
 <h3 id="tool-help">Tool Help<a class="headerlink" href="#tool-help" title="Permanent link">&para;</a></h3>
 <p>The XML files included in the zip file are accessed when a user views the metadata for the toolbox, individual tools, or even different fields within the tool dialog.</p>
-<h4>Accessing Help from within the Tool Dialog Box</h4>
-<h5>ArcGIS Desktop</h5>
+<h4 id="accessing-help-from-within-the-tool-dialog-box">Accessing Help from within the Tool Dialog Box<a class="headerlink" href="#accessing-help-from-within-the-tool-dialog-box" title="Permanent link">&para;</a></h4>
+<h5 id="arcgis-desktop">ArcGIS Desktop<a class="headerlink" href="#arcgis-desktop" title="Permanent link">&para;</a></h5>
 <ul>
 <li>Click on the Show Help button at the bottom of the tool window to open the help panel. <ul>
 <li>This panel will display information about the tool in general if no field is activated. </li>
@@ -928,17 +930,17 @@ feedback.init({showIcon: false});
 </li>
 <li>Click on the Tool Help button at the bottom of the Help pane to open another window that displays most of the information that would be displayed in the tool’s Item Description. </li>
 </ul>
-<h5>ArcGIS Pro</h5>
+<h5 id="arcgis-pro_1">ArcGIS Pro<a class="headerlink" href="#arcgis-pro_1" title="Permanent link">&para;</a></h5>
 <ul>
 <li>When you hover over any of the parameter fields in the tool dialog, a blue i appears. Hover over or click the blue i icon to view helpful tips specific to that parameter.</li>
 <li>Hover over the blue question mark at the top of the geoprocessing pane to display information about the tool. Click on it to open the full tool description in a browser window. </li>
 </ul>
-<h4>Accessing Help from the Catalog Interface</h4>
-<h5>ArcGIS Desktop</h5>
+<h4 id="accessing-help-from-the-catalog-interface">Accessing Help from the Catalog Interface<a class="headerlink" href="#accessing-help-from-the-catalog-interface" title="Permanent link">&para;</a></h4>
+<h5 id="arcgis-desktop_1">ArcGIS Desktop<a class="headerlink" href="#arcgis-desktop_1" title="Permanent link">&para;</a></h5>
 <p>ArcCatalog displays the information contained in the xml metadata files in the Description tab for the toolbox and each tool.</p>
 <p>In the ArcMap Catalog window, the Item Description for the toolbox or any of its constituent tools displays the xml content.
 - Right-click the toolbox or tool in the Catalog window and select Item Description to view the information.</p>
-<h5>ArcGIS Pro</h5>
+<h5 id="arcgis-pro_2">ArcGIS Pro<a class="headerlink" href="#arcgis-pro_2" title="Permanent link">&para;</a></h5>
 <p>The xml metadata is displayed in the Metadata tab in the Catalog view.
 - Right-click a tool in the Catalog pane and select View Metadata to open the Metadata tab for the item in the Catalog view.<br />
 <strong><em>OR</em></strong>
