@@ -513,6 +513,13 @@ feedback.init({showIcon: false});
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#hyp3_sdk.exceptions.ASFSearchError" class="md-nav__link">
+    ASFSearchError
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#hyp3_sdk.exceptions.AuthenticationError" class="md-nav__link">
     AuthenticationError
   </a>
@@ -948,6 +955,13 @@ feedback.init({showIcon: false});
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#hyp3_sdk.exceptions.ASFSearchError" class="md-nav__link">
+    ASFSearchError
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#hyp3_sdk.exceptions.AuthenticationError" class="md-nav__link">
     AuthenticationError
   </a>
@@ -1171,7 +1185,7 @@ feedback.init({showIcon: false});
         <span class="s1">&#39;granule_list&#39;</span><span class="p">:</span> <span class="n">granule_list</span><span class="p">,</span>
     <span class="p">}</span>
     <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">_SEARCH_API</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+    <span class="n">_raise_for_search_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
 
     <span class="n">metadata</span> <span class="o">=</span> <span class="p">[</span><span class="n">result</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;results&#39;</span><span class="p">]</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;productType&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;METADATA_&#39;</span><span class="p">)]</span>
@@ -1200,7 +1214,7 @@ feedback.init({showIcon: false});
 
     <div class="doc doc-contents ">
 
-      <p>Get a granules nearest neighbors from a temporal stack (backwards in time)</p>
+      <p>Get a Sentinel-1 granule's nearest neighbors from a temporal stack (backwards in time)</p>
 
 <p><strong>Parameters:</strong></p>
 <table>
@@ -1245,7 +1259,7 @@ feedback.init({showIcon: false});
         <details class="quote">
           <summary>Source code in <code>hyp3_sdk/asf_search.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_nearest_neighbors</span><span class="p">(</span><span class="n">granule</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">max_neighbors</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;Get a granules nearest neighbors from a temporal stack (backwards in time)</span>
+    <span class="sd">&quot;&quot;&quot;Get a Sentinel-1 granule&#39;s nearest neighbors from a temporal stack (backwards in time)</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        granule: reference granule</span>
@@ -1255,16 +1269,33 @@ feedback.init({showIcon: false});
 <span class="sd">        neighbors: a list of neighbors sorted by time</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="s1">&#39;jsonlite&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;master&#39;</span><span class="p">:</span> <span class="n">granule</span><span class="p">,</span>
+        <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>  <span class="c1"># jsonlite doesn&#39;t include centerLat/centerLon</span>
+        <span class="s1">&#39;platform&#39;</span><span class="p">:</span> <span class="s1">&#39;S1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;granule_list&#39;</span><span class="p">:</span> <span class="n">granule</span><span class="p">,</span>
     <span class="p">}</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">_BASELINE_API</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-    <span class="n">all_neighbors</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;results&#39;</span><span class="p">]</span>
-    <span class="n">selected_neighbors</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">all_neighbors</span> <span class="k">if</span> <span class="n">n</span><span class="p">[</span><span class="s1">&#39;temporalBaseline&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span>
-    <span class="n">selected_neighbors</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="n">k</span><span class="p">[</span><span class="s1">&#39;temporalBaseline&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">_SEARCH_API</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">_raise_for_search_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    <span class="n">references</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">r</span><span class="p">[</span><span class="s1">&#39;processingLevel&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;METADATA_&#39;</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">references</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">ASFSearchError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Reference Sentinel-1 granule </span><span class="si">{</span><span class="n">granule</span><span class="si">}</span><span class="s1"> could not be found&#39;</span><span class="p">)</span>
+    <span class="n">reference</span> <span class="o">=</span> <span class="n">references</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-    <span class="k">return</span> <span class="n">selected_neighbors</span><span class="p">[:</span><span class="n">max_neighbors</span><span class="p">]</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="s1">&#39;jsonlite&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;platform&#39;</span><span class="p">:</span> <span class="s1">&#39;S1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;intersectsWith&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;POINT (</span><span class="si">{</span><span class="n">reference</span><span class="p">[</span><span class="s2">&quot;centerLon&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">reference</span><span class="p">[</span><span class="s2">&quot;centerLat&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">[</span><span class="s1">&#39;startTime&#39;</span><span class="p">],</span>  <span class="c1"># includes reference scene</span>
+        <span class="s1">&#39;beamMode&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">[</span><span class="s1">&#39;beamMode&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;flightDirection&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">[</span><span class="s1">&#39;flightDirection&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;processingLevel&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">[</span><span class="s1">&#39;processingLevel&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;relativeOrbit&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">[</span><span class="s1">&#39;relativeOrbit&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;polarization&#39;</span><span class="p">:</span> <span class="n">_get_matching_polarizations</span><span class="p">(</span><span class="n">reference</span><span class="p">[</span><span class="s1">&#39;polarization&#39;</span><span class="p">]),</span>
+        <span class="s1">&#39;lookDirection&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">[</span><span class="s1">&#39;lookDirection&#39;</span><span class="p">],</span>
+    <span class="p">}</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">_SEARCH_API</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">_raise_for_search_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    <span class="n">neighbors</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;results&#39;</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;startTime&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">neighbors</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">max_neighbors</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
 </code></pre></div>
         </details>
     </div>
@@ -1314,6 +1345,29 @@ feedback.init({showIcon: false});
 
 
 
+<h3 id="hyp3_sdk.exceptions.ASFSearchError" class="doc doc-heading">
+        <code>ASFSearchError</code>
+
+
+
+<a href="#hyp3_sdk.exceptions.ASFSearchError" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Raise for errors when using the ASF Search module</p>
+
+
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
 <h3 id="hyp3_sdk.exceptions.AuthenticationError" class="doc doc-heading">
         <code>AuthenticationError</code>
 
@@ -1346,7 +1400,7 @@ feedback.init({showIcon: false});
 
     <div class="doc doc-contents ">
 
-      <p>Base Exception for Hyp3_sdk</p>
+      <p>Base Exception for the HyP3 SDK</p>
 
 
 
@@ -1427,7 +1481,7 @@ feedback.init({showIcon: false});
 
 
 <h4 id="hyp3_sdk.hyp3.HyP3.__init__" class="doc doc-heading">
-<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_url</span><span class="o">=</span><span class="s1">&#39;https://hyp3-api.asf.alaska.edu&#39;</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_url</span><span class="o">=</span><span class="s1">&#39;https://hyp3-api.asf.alaska.edu&#39;</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
   <span class="doc doc-properties">
       <small class="doc doc-property doc-property-special"><code>special</code></small>
@@ -1457,32 +1511,48 @@ feedback.init({showIcon: false});
       </tr>
       <tr>
         <td><code>username</code></td>
-        <td><code>Optional</code></td>
-        <td><p>Username for authenticating to urs.earthdata.nasa.gov.
+        <td><code>Optional[str]</code></td>
+        <td><p>Username for authenticating to <code>urs.earthdata.nasa.gov</code>.
 Both username and password must be provided if either is provided.</p></td>
         <td><code>None</code></td>
       </tr>
       <tr>
         <td><code>password</code></td>
-        <td><code>Optional</code></td>
-        <td><p>Password for authenticating to urs.earthdata.nasa.gov.
+        <td><code>Optional[str]</code></td>
+        <td><p>Password for authenticating to <code>urs.earthdata.nasa.gov</code>.
 Both username and password must be provided if either is provided.</p></td>
         <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>prompt</code></td>
+        <td><code>bool</code></td>
+        <td><p>Prompt for username and/or password interactively when they
+are not provided as keyword parameters</p></td>
+        <td><code>False</code></td>
       </tr>
   </tbody>
 </table>
         <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">HYP3_PROD</span><span class="p">,</span> <span class="n">username</span><span class="p">:</span> <span class="n">Optional</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="n">Optional</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">HYP3_PROD</span><span class="p">,</span> <span class="n">username</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+             <span class="n">prompt</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Args:</span>
 <span class="sd">        api_url: Address of the HyP3 API</span>
-<span class="sd">        username: Username for authenticating to urs.earthdata.nasa.gov.</span>
+<span class="sd">        username: Username for authenticating to `urs.earthdata.nasa.gov`.</span>
 <span class="sd">            Both username and password must be provided if either is provided.</span>
-<span class="sd">        password: Password for authenticating to urs.earthdata.nasa.gov.</span>
-<span class="sd">           Both username and password must be provided if either is provided.</span>
+<span class="sd">        password: Password for authenticating to `urs.earthdata.nasa.gov`.</span>
+<span class="sd">            Both username and password must be provided if either is provided.</span>
+<span class="sd">        prompt: Prompt for username and/or password interactively when they</span>
+<span class="sd">            are not provided as keyword parameters</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">api_url</span>
+
+    <span class="k">if</span> <span class="n">username</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">prompt</span><span class="p">:</span>
+        <span class="n">username</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;NASA Earthdata Login username: &#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">password</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">prompt</span><span class="p">:</span>
+        <span class="n">password</span> <span class="o">=</span> <span class="n">getpass</span><span class="p">(</span><span class="s1">&#39;NASA Earthdata Login password: &#39;</span><span class="p">)</span>
+
     <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">get_authenticated_session</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">hyp3_sdk</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">hyp3_sdk</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">})</span>
 </code></pre></div>
@@ -1634,10 +1704,8 @@ Both username and password must be provided if either is provided.</p></td>
         <span class="n">params</span><span class="p">[</span><span class="s1">&#39;status_code&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">status</span>
 
     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/jobs&#39;</span><span class="p">),</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-    <span class="k">except</span> <span class="n">HTTPError</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Error while trying to query </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
     <span class="n">jobs</span> <span class="o">=</span> <span class="p">[</span><span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">job</span><span class="p">)</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;jobs&#39;</span><span class="p">]]</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">jobs</span><span class="p">:</span>
         <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Found zero jobs&#39;</span><span class="p">,</span> <span class="ne">UserWarning</span><span class="p">)</span>
@@ -1709,11 +1777,9 @@ Both username and password must be provided if either is provided.</p></td>
 <span class="sd">    Returns:</span>
 <span class="sd">        A Job object</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;/jobs/</span><span class="si">{</span><span class="n">job_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">))</span>
-        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-    <span class="k">except</span> <span class="n">RequestException</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unable to get job by ID </span><span class="si">{</span><span class="n">job_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;/jobs/</span><span class="si">{</span><span class="n">job_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">))</span>
+    <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
     <span class="k">return</span> <span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 </code></pre></div>
         </details>
@@ -1758,11 +1824,8 @@ Both username and password must be provided if either is provided.</p></td>
 <span class="sd">    Returns:</span>
 <span class="sd">        Your user information</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/user&#39;</span><span class="p">))</span>
-        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-    <span class="k">except</span> <span class="n">HTTPError</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="s1">&#39;Unable to get user information from API&#39;</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/user&#39;</span><span class="p">))</span>
+    <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre></div>
         </details>
@@ -1869,7 +1932,7 @@ Both username and password must be provided if either is provided.</p></td>
 
 
 <h4 id="hyp3_sdk.hyp3.HyP3.prepare_insar_job" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">prepare_insar_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">prepare_insar_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">)</span></code>
 
   <span class="doc doc-properties">
       <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
@@ -1911,10 +1974,23 @@ Both username and password must be provided if either is provided.</p></td>
         <td><code>None</code></td>
       </tr>
       <tr>
-        <td><code>**kwargs</code></td>
-        <td><code></code></td>
-        <td><p>Extra job parameters specifying custom processing options</p></td>
-        <td><code>{}</code></td>
+        <td><code>include_look_vectors</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the look vector theta and phi files in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_los_displacement</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include a GeoTIFF in the product package containing displacement values
+along the Line-Of-Sight (LOS)</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>looks</code></td>
+        <td><code>Literal[&#39;20x4&#39;, &#39;10x2&#39;]</code></td>
+        <td><p>Number of looks to take in range and azimuth</p></td>
+        <td><code>&#39;20x4&#39;</code></td>
       </tr>
   </tbody>
 </table>
@@ -1936,20 +2012,33 @@ Both username and password must be provided if either is provided.</p></td>
         <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="nd">@classmethod</span>
-<span class="k">def</span> <span class="nf">prepare_insar_job</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">prepare_insar_job</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span>
+                      <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                      <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                      <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                      <span class="n">include_look_vectors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                      <span class="n">include_los_displacement</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                      <span class="n">looks</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="s1">&#39;10x2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;20x4&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        granule1: The first granule (scene) to use</span>
 <span class="sd">        granule2: The second granule (scene) to use</span>
 <span class="sd">        name: A name for the job</span>
-<span class="sd">        **kwargs: Extra job parameters specifying custom processing options</span>
+<span class="sd">        include_look_vectors: Include the look vector theta and phi files in the product package</span>
+<span class="sd">        include_los_displacement: Include a GeoTIFF in the product package containing displacement values</span>
+<span class="sd">            along the Line-Of-Sight (LOS)</span>
+<span class="sd">        looks: Number of looks to take in range and azimuth</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A dictionary containing the prepared InSAR job</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">job_parameters</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="s1">&#39;granule1&#39;</span><span class="p">,</span> <span class="s1">&#39;granule2&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]:</span>
+        <span class="n">job_parameters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
     <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;granules&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">},</span>
+        <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;granules&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">],</span> <span class="o">**</span><span class="n">job_parameters</span><span class="p">},</span>
         <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="s1">&#39;INSAR_GAMMA&#39;</span><span class="p">,</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -1968,7 +2057,7 @@ Both username and password must be provided if either is provided.</p></td>
 
 
 <h4 id="hyp3_sdk.hyp3.HyP3.prepare_rtc_job" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">prepare_rtc_job</span><span class="p">(</span><span class="n">granule</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">prepare_rtc_job</span><span class="p">(</span><span class="n">granule</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dem_matching</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_rgb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_scattering_area</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">radiometry</span><span class="o">=</span><span class="s1">&#39;gamma0&#39;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s1">&#39;power&#39;</span><span class="p">,</span> <span class="n">speckle_filter</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
   <span class="doc doc-properties">
       <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
@@ -2004,10 +2093,60 @@ Both username and password must be provided if either is provided.</p></td>
         <td><code>None</code></td>
       </tr>
       <tr>
-        <td><code>**kwargs</code></td>
-        <td><code></code></td>
-        <td><p>Extra job parameters specifying custom processing options</p></td>
-        <td><code>{}</code></td>
+        <td><code>dem_matching</code></td>
+        <td><code>bool</code></td>
+        <td><p>Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_dem</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the DEM file in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_inc_map</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the incidence angle map in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_rgb</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include a false-color RGB decomposition in the product package for dual-pol granules
+(ignored for single-pol granules)</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_scattering_area</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the scattering area in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>radiometry</code></td>
+        <td><code>Literal[&#39;sigma0&#39;, &#39;gamma0&#39;]</code></td>
+        <td><p>Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area
+projected into the look direction (gamma0)</p></td>
+        <td><code>&#39;gamma0&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>resolution</code></td>
+        <td><code>Literal[30]</code></td>
+        <td><p>Desired output pixel spacing in meters</p></td>
+        <td><code>30</code></td>
+      </tr>
+      <tr>
+        <td><code>scale</code></td>
+        <td><code>Literal[&#39;amplitude&#39;, &#39;power&#39;]</code></td>
+        <td><p>Scale of output image; either power or amplitude</p></td>
+        <td><code>&#39;power&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>speckle_filter</code></td>
+        <td><code>bool</code></td>
+        <td><p>Apply an Enhanced Lee speckle filter</p></td>
+        <td><code>False</code></td>
       </tr>
   </tbody>
 </table>
@@ -2029,21 +2168,47 @@ Both username and password must be provided if either is provided.</p></td>
         <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="nd">@classmethod</span>
-<span class="k">def</span> <span class="nf">prepare_rtc_job</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">granule</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">prepare_rtc_job</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span>
+                    <span class="n">granule</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                    <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                    <span class="n">dem_matching</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                    <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                    <span class="n">include_inc_map</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                    <span class="n">include_rgb</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                    <span class="n">include_scattering_area</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                    <span class="n">radiometry</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;sigma0&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">,</span>
+                    <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+                    <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
+                    <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        granule: The granule (scene) to use</span>
 <span class="sd">        name: A name for the job</span>
-<span class="sd">        **kwargs: Extra job parameters specifying custom processing options</span>
+<span class="sd">        dem_matching: Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files</span>
+<span class="sd">        include_dem: Include the DEM file in the product package</span>
+<span class="sd">        include_inc_map: Include the incidence angle map in the product package</span>
+<span class="sd">        include_rgb: Include a false-color RGB decomposition in the product package for dual-pol granules</span>
+<span class="sd">            (ignored for single-pol granules)</span>
+<span class="sd">        include_scattering_area: Include the scattering area in the product package</span>
+<span class="sd">        radiometry: Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area</span>
+<span class="sd">            projected into the look direction (gamma0)</span>
+<span class="sd">        resolution: Desired output pixel spacing in meters</span>
+<span class="sd">        scale: Scale of output image; either power or amplitude</span>
+<span class="sd">        speckle_filter: Apply an Enhanced Lee speckle filter</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A dictionary containing the prepared RTC job</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">job_parameters</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;granule&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;cls&#39;</span><span class="p">]:</span>
+        <span class="n">job_parameters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
     <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;granules&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">granule</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">},</span>
+        <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;granules&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">granule</span><span class="p">],</span> <span class="o">**</span><span class="n">job_parameters</span><span class="p">},</span>
         <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="s1">&#39;RTC_GAMMA&#39;</span><span class="p">,</span>
     <span class="p">}</span>
+
     <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">job_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
     <span class="k">return</span> <span class="n">job_dict</span>
@@ -2212,7 +2377,7 @@ Both username and password must be provided if either is provided.</p></td>
 
 
 <h4 id="hyp3_sdk.hyp3.HyP3.submit_insar_job" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">submit_insar_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">submit_insar_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">)</span></code>
 
 
 <a href="#hyp3_sdk.hyp3.HyP3.submit_insar_job" class="headerlink" title="Permanent link">&para;</a></h4>
@@ -2251,10 +2416,23 @@ Both username and password must be provided if either is provided.</p></td>
         <td><code>None</code></td>
       </tr>
       <tr>
-        <td><code>**kwargs</code></td>
-        <td><code></code></td>
-        <td><p>Extra job parameters specifying custom processing options</p></td>
-        <td><code>{}</code></td>
+        <td><code>include_look_vectors</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the look vector theta and phi files in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_los_displacement</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include a GeoTIFF in the product package containing displacement values
+along the Line-Of-Sight (LOS)</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>looks</code></td>
+        <td><code>Literal[&#39;20x4&#39;, &#39;10x2&#39;]</code></td>
+        <td><p>Number of looks to take in range and azimuth</p></td>
+        <td><code>&#39;20x4&#39;</code></td>
       </tr>
   </tbody>
 </table>
@@ -2275,19 +2453,30 @@ Both username and password must be provided if either is provided.</p></td>
 </table>
         <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">submit_insar_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">submit_insar_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                     <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                     <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                     <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                     <span class="n">include_look_vectors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                     <span class="n">include_los_displacement</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                     <span class="n">looks</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="s1">&#39;10x2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;20x4&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        granule1: The first granule (scene) to use</span>
 <span class="sd">        granule2: The second granule (scene) to use</span>
 <span class="sd">        name: A name for the job</span>
-<span class="sd">        **kwargs: Extra job parameters specifying custom processing options</span>
+<span class="sd">        include_look_vectors: Include the look vector theta and phi files in the product package</span>
+<span class="sd">        include_los_displacement: Include a GeoTIFF in the product package containing displacement values</span>
+<span class="sd">            along the Line-Of-Sight (LOS)</span>
+<span class="sd">        looks: Number of looks to take in range and azimuth</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A Batch object containing the InSAR job</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">job_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_insar_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">arguments</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">arguments</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;self&#39;</span><span class="p">)</span>
+    <span class="n">job_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_insar_job</span><span class="p">(</span><span class="o">**</span><span class="n">arguments</span><span class="p">)</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">submit_prepared_jobs</span><span class="p">(</span><span class="n">prepared_jobs</span><span class="o">=</span><span class="n">job_dict</span><span class="p">)</span>
 </code></pre></div>
         </details>
@@ -2362,10 +2551,7 @@ Both username and password must be provided if either is provided.</p></td>
         <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;jobs&#39;</span><span class="p">:</span> <span class="n">prepared_jobs</span><span class="p">}</span>
 
     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/jobs&#39;</span><span class="p">),</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-    <span class="k">except</span> <span class="n">HTTPError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+    <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
 
     <span class="n">batch</span> <span class="o">=</span> <span class="n">Batch</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;jobs&#39;</span><span class="p">]:</span>
@@ -2384,7 +2570,7 @@ Both username and password must be provided if either is provided.</p></td>
 
 
 <h4 id="hyp3_sdk.hyp3.HyP3.submit_rtc_job" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">submit_rtc_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">submit_rtc_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dem_matching</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_rgb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_scattering_area</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">radiometry</span><span class="o">=</span><span class="s1">&#39;gamma0&#39;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s1">&#39;power&#39;</span><span class="p">,</span> <span class="n">speckle_filter</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 
 <a href="#hyp3_sdk.hyp3.HyP3.submit_rtc_job" class="headerlink" title="Permanent link">&para;</a></h4>
@@ -2417,10 +2603,60 @@ Both username and password must be provided if either is provided.</p></td>
         <td><code>None</code></td>
       </tr>
       <tr>
-        <td><code>**kwargs</code></td>
-        <td><code></code></td>
-        <td><p>Extra job parameters specifying custom processing options</p></td>
-        <td><code>{}</code></td>
+        <td><code>dem_matching</code></td>
+        <td><code>bool</code></td>
+        <td><p>Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_dem</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the DEM file in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_inc_map</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the incidence angle map in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_rgb</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include a false-color RGB decomposition in the product package for dual-pol granules
+(ignored for single-pol granules)</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_scattering_area</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the scattering area in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>radiometry</code></td>
+        <td><code>Literal[&#39;sigma0&#39;, &#39;gamma0&#39;]</code></td>
+        <td><p>Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area
+projected into the look direction (gamma0)</p></td>
+        <td><code>&#39;gamma0&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>resolution</code></td>
+        <td><code>Literal[30]</code></td>
+        <td><p>Desired output pixel spacing in meters</p></td>
+        <td><code>30</code></td>
+      </tr>
+      <tr>
+        <td><code>scale</code></td>
+        <td><code>Literal[&#39;amplitude&#39;, &#39;power&#39;]</code></td>
+        <td><p>Scale of output image; either power or amplitude</p></td>
+        <td><code>&#39;power&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>speckle_filter</code></td>
+        <td><code>bool</code></td>
+        <td><p>Apply an Enhanced Lee speckle filter</p></td>
+        <td><code>False</code></td>
       </tr>
   </tbody>
 </table>
@@ -2441,18 +2677,41 @@ Both username and password must be provided if either is provided.</p></td>
 </table>
         <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">submit_rtc_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">submit_rtc_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                   <span class="n">granule</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                   <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                   <span class="n">dem_matching</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                   <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                   <span class="n">include_inc_map</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                   <span class="n">include_rgb</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                   <span class="n">include_scattering_area</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                   <span class="n">radiometry</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;sigma0&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">,</span>
+                   <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+                   <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
+                   <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        granule: The granule (scene) to use</span>
 <span class="sd">        name: A name for the job</span>
-<span class="sd">        **kwargs: Extra job parameters specifying custom processing options</span>
+<span class="sd">        dem_matching: Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files</span>
+<span class="sd">        include_dem: Include the DEM file in the product package</span>
+<span class="sd">        include_inc_map: Include the incidence angle map in the product package</span>
+<span class="sd">        include_rgb: Include a false-color RGB decomposition in the product package for dual-pol granules</span>
+<span class="sd">            (ignored for single-pol granules)</span>
+<span class="sd">        include_scattering_area: Include the scattering area in the product package</span>
+<span class="sd">        radiometry: Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area</span>
+<span class="sd">            projected into the look direction (gamma0)</span>
+<span class="sd">        resolution: Desired output pixel spacing in meters</span>
+<span class="sd">        scale: Scale of output image; either power or amplitude</span>
+<span class="sd">        speckle_filter: Apply an Enhanced Lee speckle filter</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A Batch object containing the RTC job</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">job_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_rtc_job</span><span class="p">(</span><span class="n">granule</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">arguments</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+    <span class="n">arguments</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;self&#39;</span><span class="p">)</span>
+    <span class="n">job_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_rtc_job</span><span class="p">(</span><span class="o">**</span><span class="n">arguments</span><span class="p">)</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">submit_prepared_jobs</span><span class="p">(</span><span class="n">prepared_jobs</span><span class="o">=</span><span class="n">job_dict</span><span class="p">)</span>
 </code></pre></div>
         </details>
@@ -3000,7 +3259,7 @@ Both username and password must be provided if either is provided.</p></td>
         <span class="n">filename</span> <span class="o">=</span> <span class="n">location</span> <span class="o">/</span> <span class="n">file</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">downloaded_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">download_file</span><span class="p">(</span><span class="n">download_url</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">10485760</span><span class="p">))</span>
-        <span class="k">except</span> <span class="n">RequestException</span><span class="p">:</span>
+        <span class="k">except</span> <span class="n">HTTPError</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unable to download file: </span><span class="si">{</span><span class="n">download_url</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">downloaded_files</span>
 </code></pre></div>
@@ -3192,7 +3451,8 @@ Both username and password must be provided if either is provided.</p></td>
 
     <div class="doc doc-contents ">
 
-      <p>logs into hyp3 using credentials for urs.earthdata.nasa.gov from provided credentails or a .netrc file.</p>
+      <p>Log into HyP3 using credentials for <code>urs.earthdata.nasa.gov</code> from either the provided
+ credentials or a <code>.netrc</code> file.</p>
 
 <p><strong>Returns:</strong></p>
 <table>
@@ -3205,31 +3465,32 @@ Both username and password must be provided if either is provided.</p></td>
   <tbody>
     <tr>
       <td><code>Session</code></td>
-      <td><p>An authenticated Session object from the requests library</p></td>
+      <td><p>An authenticated HyP3 Session</p></td>
     </tr>
   </tbody>
 </table>
         <details class="quote">
           <summary>Source code in <code>hyp3_sdk/util.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_authenticated_session</span><span class="p">(</span><span class="n">username</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;logs into hyp3 using credentials for urs.earthdata.nasa.gov from provided credentails or a .netrc file.</span>
+    <span class="sd">&quot;&quot;&quot;Log into HyP3 using credentials for `urs.earthdata.nasa.gov` from either the provided</span>
+<span class="sd">     credentials or a `.netrc` file.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        An authenticated Session object from the requests library</span>
+<span class="sd">        An authenticated HyP3 Session</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">hyp3_sdk</span><span class="o">.</span><span class="n">TESTING</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">s</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">username</span> <span class="ow">and</span> <span class="n">password</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">username</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">password</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">AUTH_URL</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">))</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">AUTH_URL</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">))</span>
             <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
         <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">AuthenticationError</span><span class="p">(</span><span class="s1">&#39;Was not able to authenticate with credentials provided</span><span class="se">\n</span><span class="s1">&#39;</span>
                                       <span class="s1">&#39;This could be due to invalid credentials or a connection error.&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">AUTH_URL</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">AUTH_URL</span><span class="p">)</span>
             <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
         <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">AuthenticationError</span><span class="p">(</span><span class="s1">&#39;Was not able to authenticate with .netrc file and no credentials provided</span><span class="se">\n</span><span class="s1">&#39;</span>
