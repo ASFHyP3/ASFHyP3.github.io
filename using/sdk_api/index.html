@@ -2163,7 +2163,7 @@ along the Line-Of-Sight (LOS)</p></td>
 
 
 <h4 id="hyp3_sdk.hyp3.HyP3.prepare_rtc_job" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">prepare_rtc_job</span><span class="p">(</span><span class="n">granule</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dem_matching</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_rgb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_scattering_area</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">radiometry</span><span class="o">=</span><span class="s1">&#39;gamma0&#39;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s1">&#39;power&#39;</span><span class="p">,</span> <span class="n">speckle_filter</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">prepare_rtc_job</span><span class="p">(</span><span class="n">granule</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dem_matching</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_rgb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_scattering_area</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">radiometry</span><span class="o">=</span><span class="s1">&#39;gamma0&#39;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s1">&#39;power&#39;</span><span class="p">,</span> <span class="n">speckle_filter</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dem_name</span><span class="o">=</span><span class="s1">&#39;copernicus&#39;</span><span class="p">)</span></code>
 
   <span class="doc doc-properties">
       <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
@@ -2254,6 +2254,13 @@ projected into the look direction (gamma0)</p></td>
         <td><p>Apply an Enhanced Lee speckle filter</p></td>
         <td><code>False</code></td>
       </tr>
+      <tr>
+        <td><code>dem_name</code></td>
+        <td><code>Literal[&#39;copernicus&#39;, &#39;legacy&#39;]</code></td>
+        <td><p>Name of the DEM to use for processing.  <code>copernicus</code> will use the Copernicus GLO-30 Public DEM,
+while <code>legacy</code> will use the DEM with the best coverage from ASF's legacy SRTM/NED datasets.</p></td>
+        <td><code>&#39;copernicus&#39;</code></td>
+      </tr>
   </tbody>
 </table>
 <p><strong>Returns:</strong></p>
@@ -2285,7 +2292,8 @@ projected into the look direction (gamma0)</p></td>
                     <span class="n">radiometry</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;sigma0&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">,</span>
                     <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
                     <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
-                    <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+                    <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                    <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
 
 <span class="sd">    Args:</span>
@@ -2302,6 +2310,8 @@ projected into the look direction (gamma0)</p></td>
 <span class="sd">        resolution: Desired output pixel spacing in meters</span>
 <span class="sd">        scale: Scale of output image; either power or amplitude</span>
 <span class="sd">        speckle_filter: Apply an Enhanced Lee speckle filter</span>
+<span class="sd">        dem_name: Name of the DEM to use for processing.  `copernicus` will use the Copernicus GLO-30 Public DEM,</span>
+<span class="sd">            while `legacy` will use the DEM with the best coverage from ASF&#39;s legacy SRTM/NED datasets.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A dictionary containing the prepared RTC job</span>
@@ -2676,7 +2686,7 @@ along the Line-Of-Sight (LOS)</p></td>
 
 
 <h4 id="hyp3_sdk.hyp3.HyP3.submit_rtc_job" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">submit_rtc_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dem_matching</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_rgb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_scattering_area</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">radiometry</span><span class="o">=</span><span class="s1">&#39;gamma0&#39;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s1">&#39;power&#39;</span><span class="p">,</span> <span class="n">speckle_filter</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">submit_rtc_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dem_matching</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_rgb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_scattering_area</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">radiometry</span><span class="o">=</span><span class="s1">&#39;gamma0&#39;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s1">&#39;power&#39;</span><span class="p">,</span> <span class="n">speckle_filter</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dem_name</span><span class="o">=</span><span class="s1">&#39;copernicus&#39;</span><span class="p">)</span></code>
 
 
 <a href="#hyp3_sdk.hyp3.HyP3.submit_rtc_job" class="headerlink" title="Permanent link">&para;</a></h4>
@@ -2764,6 +2774,13 @@ projected into the look direction (gamma0)</p></td>
         <td><p>Apply an Enhanced Lee speckle filter</p></td>
         <td><code>False</code></td>
       </tr>
+      <tr>
+        <td><code>dem_name</code></td>
+        <td><code>Literal[&#39;copernicus&#39;, &#39;legacy&#39;]</code></td>
+        <td><p>Name of the DEM to use for processing.  <code>copernicus</code> will use the Copernicus GLO-30 Public DEM,
+while <code>legacy</code> will use the DEM with the best coverage from ASF's legacy SRTM/NED datasets.</p></td>
+        <td><code>&#39;copernicus&#39;</code></td>
+      </tr>
   </tbody>
 </table>
 <p><strong>Returns:</strong></p>
@@ -2794,7 +2811,8 @@ projected into the look direction (gamma0)</p></td>
                    <span class="n">radiometry</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;sigma0&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">,</span>
                    <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
                    <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
-                   <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+                   <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                   <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
 
 <span class="sd">    Args:</span>
@@ -2811,6 +2829,8 @@ projected into the look direction (gamma0)</p></td>
 <span class="sd">        resolution: Desired output pixel spacing in meters</span>
 <span class="sd">        scale: Scale of output image; either power or amplitude</span>
 <span class="sd">        speckle_filter: Apply an Enhanced Lee speckle filter</span>
+<span class="sd">        dem_name: Name of the DEM to use for processing.  `copernicus` will use the Copernicus GLO-30 Public DEM,</span>
+<span class="sd">            while `legacy` will use the DEM with the best coverage from ASF&#39;s legacy SRTM/NED datasets.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A Batch object containing the RTC job</span>
