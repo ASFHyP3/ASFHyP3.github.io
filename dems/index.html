@@ -141,7 +141,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#digital-elevation-models-dems" class="md-skip">
+        <a href="#digital-elevation-models" class="md-skip">
           Skip to content
         </a>
       
@@ -537,8 +537,6 @@ feedback.init({showIcon: false});
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           <span class="md-nav__icon md-icon"></span>
@@ -558,8 +556,6 @@ feedback.init({showIcon: false});
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -568,9 +564,29 @@ feedback.init({showIcon: false});
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dem-coverage" class="md-nav__link">
-    DEM Coverage
+  <a href="#digital-elevation-models" class="md-nav__link">
+    Digital Elevation Models
   </a>
+  
+    <nav class="md-nav" aria-label="Digital Elevation Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copernicus-dem-coming-soon" class="md-nav__link">
+    Copernicus DEM : Coming Soon
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-dems" class="md-nav__link">
+    Legacy DEMs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -808,8 +824,6 @@ feedback.init({showIcon: false});
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -818,9 +832,29 @@ feedback.init({showIcon: false});
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dem-coverage" class="md-nav__link">
-    DEM Coverage
+  <a href="#digital-elevation-models" class="md-nav__link">
+    Digital Elevation Models
   </a>
+  
+    <nav class="md-nav" aria-label="Digital Elevation Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copernicus-dem-coming-soon" class="md-nav__link">
+    Copernicus DEM : Coming Soon
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-dems" class="md-nav__link">
+    Legacy DEMs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -844,32 +878,43 @@ feedback.init({showIcon: false});
               
                 
                 
-                <h1 id="digital-elevation-models-dems">Digital Elevation Models (DEMs)<a class="headerlink" href="#digital-elevation-models-dems" title="Permanent link">&para;</a></h1>
-<p>ASF uses publicly-available Digital Elevation Models for processing SAR data.
-The DEM used will vary by scene location; the best available DEM with full
-coverage of the scene extent will be used for processing any given scene.</p>
-<h2 id="dem-coverage">DEM Coverage<a class="headerlink" href="#dem-coverage" title="Permanent link">&para;</a></h2>
-<p><img alt="DEM coverage map" src="../images/dem-coverage-map.png" title="Coverage of the various DEM sources used for terrain correction" /></p>
-<p>The source DEMs include:</p>
+                  <h1>Digital Elevation Models</h1>
+                
+                <h2 id="digital-elevation-models">Digital Elevation Models<a class="headerlink" href="#digital-elevation-models" title="Permanent link">&para;</a></h2>
+<p>The quality of the terrain corrections are directly related to the quality of the digital elevation models (DEMs) used in the process of geometrically and radiometrically correcting the SAR imagery. We use DEMs that are publicly available and have wide-ranging coverage. </p>
+<p>In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. With the public release of the GLO-30 Copernicus DEM, we are changing our default DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM. </p>
+<div class="admonition important">
+<p class="admonition-title">Copernicus DEM GLO-30 Public Coming Soon</p>
+<p>We are in the process of adding the <a href="https://spacedata.copernicus.eu/fr/dataset-details?articleId=394198">Copernicus DEM GLO-30 Public dataset</a> as our default DEM for RTC processing. The legacy DEM is still the default for <a href="https://search.asf.alaska.edu/#/?topic=onDemand">On-Demand RTC in Vertex</a> and using the <a href="https://hyp3-docs.asf.alaska.edu/using/api/">API</a>, but Copernicus DEM is now the default when using the newest version of the <a href="https://hyp3-docs.asf.alaska.edu/using/sdk/">SDK</a>. It will soon be the default DEM for the API and Vertex as well. Stay tuned!</p>
+</div>
+<p>Table 1 summarizes ASF's DEM sources. Note that in each case, the DEM is resampled to RTC spacing and reprojected to a UTM Zone (WGS84), and a geoid correction is applied before being used for RTC processing.</p>
 <table>
 <thead>
 <tr>
 <th>Resolution</th>
 <th>DEM</th>
-<th>Datum</th>
+<th>Vertical Datum</th>
 <th>Area</th>
 <th>Posting</th>
-<th>Sampling</th>
+<th>Priority</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>Medium</td>
+<td>GLO-30</td>
+<td>EGM2008</td>
+<td>Global</td>
+<td>1 arc second</td>
+<td>Default</td>
+</tr>
 <tr>
 <td>High</td>
 <td>NED13</td>
 <td>NAVD88</td>
 <td>CONUS, Hawaii, parts of Alaska</td>
 <td>1/3 arc seconds</td>
-<td>Resampled to product spacing, reprojected to WGS84 UTM</td>
+<td>1</td>
 </tr>
 <tr>
 <td>Medium</td>
@@ -877,60 +922,49 @@ coverage of the scene extent will be used for processing any given scene.</p>
 <td>EGM96</td>
 <td>60 N to 57 S latitude</td>
 <td>1 arc second</td>
-<td>Resampled to product spacing, reprojected to WGS84 UTM</td>
-</tr>
-<tr>
-<td>Medium</td>
-<td>SRTM US1</td>
-<td>EGM96</td>
-<td>CONUS, Hawaii, parts of Alaska</td>
-<td>1 arc second</td>
-<td>Resampled to product spacing, reprojected to WGS84 UTM</td>
+<td>2</td>
 </tr>
 <tr>
 <td>Medium</td>
 <td>NED1</td>
 <td>NAVD88</td>
-<td>CONUS, Hawaii, parts of Alaska, Canada, Mexico</td>
+<td>Canada</td>
 <td>1 arc second</td>
-<td>Resampled to product spacing, reprojected to WGS84 UTM</td>
+<td>3</td>
 </tr>
 <tr>
-<td>Medium</td>
+<td>Low</td>
 <td>NED2</td>
 <td>NAVD88</td>
-<td>Alaska</td>
+<td>Parts of Alaska</td>
 <td>2 arc seconds</td>
-<td>Resampled to product spacing, reprojected to WGS84 UTM</td>
+<td>4</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For terrain corrected products, the quality of the results is directly related
-to the quality of the digital elevation models (DEMs) used in the process of 
-geometrically and radiometrically correcting the SAR imagery.</p>
-</div>
-<p>The DEMs were pre-processed by ASF to a consistent raster format (GeoTIFF) from the
-original source formats: height (<code>*.hgt</code>), ESRI ArcGrid (<code>*.adf</code>), etc. Many of the
-NASA-provided DEMs were provided as orthometric heights with EGM96 vertical datum.
-These were converted by ASF to ellipsoid heights using the ASF
-<a href="https://asf.alaska.edu/how-to/data-tools/data-tools/#mapready" target="_blank">MapReady</a> tool named
-<code>geoid_adjust</code>. The pixel reference varied from the center (pixel as point) to a
-corner (pixel as area). For terrain corrected products, the GAMMA software uses
-pixel as area and adjusts DEM coordinates as needed. Where more than
-one DEM is available, the best-resolution DEM is used for processing. DEM coverage
-of at least 20% from a single DEM source is required for processing to proceed.</p>
-<!-- ## DEMs Under Evaluation
-
-ASF is currently working to make these DEMs available:
-
-- the Copernicus Land Monitoring Service EU-DEM (EUDEM)
-- the Greenland Ice sheet Mapping Project DEM (GIMP)
-- and the Reference Elevation Model of Antarctica DSM (REMA)
-- Interferometric Synthetic Aperture Radar (IFSAR) Digital Surface Model (DSM) 
-  and Digital Terrain Model (DTM) data for Alaska -->
-
+<p><em>Table 1: DEMs used for RTC processing. Note that the Copernicus 30 m DEM is the default, while the other four DEMs are only used if the legacy option is invoked.</em></p>
+<p>When ordering On-Demand RTC products, you can choose to include a copy of the DEM used for RTC processing in the RTC product package. This DEM copy is converted to 16-bit signed integer format, but is otherwise the same as the DEM used in the RTC process. Note that the height values will differ from the original source DEM in all cases, due to the geoid correction applied to prepare the DEM for use in RTC processing.</p>
+<h3 id="copernicus-dem-coming-soon">Copernicus DEM : Coming Soon<a class="headerlink" href="#copernicus-dem-coming-soon" title="Permanent link">&para;</a></h3>
+<p>The <a href="https://spacedata.copernicus.eu/fr/dataset-details?articleId=394198">GLO-30 Copernicus DEM</a> provides global coverage (with the current exception of an area covering Armenia and Azerbaijan, see Figure 3) at 30-m pixel spacing. When an RTC job is requested, we download the required DEM tiles from the Copernicus Digital Elevation Model (DEM) GLO-30 Public dataset available in the <a href="https://registry.opendata.aws/copernicus-dem/">Registry of Open Data on AWS</a>, managed by <a href="https://www.sinergise.com/">Sinergise</a>. We mosaic the tiles and reproject them to the appropriate UTM Zone for the location of the SAR granule to be processed, resampling them to match the pixel spacing and alignment of the RTC product. A geoid correction is applied before it is used for RTC processing.</p>
+<p>Figure 1 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and figure 2 details the land area currently not covered.</p>
+<p><img alt="Figure 1" src="../images/cop-coverage-map.png" title="Copernicus DEM GLO-30 coverage map" /></p>
+<p><em>Figure 1: Copernicus DEM GLO-30 coverage map</em></p>
+<p><img alt="Figure 2" src="../images/cop-missing-100.png" title="Detail of area currently not covered by Copernicus DEM GLO-30" /></p>
+<p><em>Figure 2: Detail of area currently not covered by Copernicus DEM GLO-30</em></p>
+<h3 id="legacy-dems">Legacy DEMs<a class="headerlink" href="#legacy-dems" title="Permanent link">&para;</a></h3>
+<p>The legacy DEMs were pre-processed by ASF to a consistent raster format (GeoTIFF) from the original source formats: height (*.hgt), ESRI ArcGrid (*.adf), etc. Many of the NASA-provided DEMs were provided as orthometric heights with EGM96 vertical datum. These were converted by ASF to ellipsoid heights using the ASF <a href="https://asf.alaska.edu/how-to/data-tools/data-tools/#mapready">MapReady</a> tool named <em>geoid_adjust</em>. The pixel reference varied from the center (pixel as point) to a corner (pixel as area). The GAMMA software, used to generate the terrain corrected products, uses pixel as area and adjusts DEM coordinates as needed. </p>
+<p>These processed DEM collections are stored by ASF in AWS. When an RTC job is requested, the best-available DEM covering the SAR granule is selected, and the necessary tiles are reprojected to a mosaic in the UTM Zone appropriate for the granule location.</p>
+<p>If legacy DEM processing is selected, one of the following DEMs will be used:</p>
+<ol>
+<li>The <a href="https://pubs.er.usgs.gov/publication/70201572">National Elevation Dataset (NED)</a> ⅓ arc second (about 10 m resolution) DEM covers the continental U.S. (CONUS), Hawaii, and parts of Alaska.</li>
+<li><a href="https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1-arc?qt-science_center_objects=0#qt-science_center_objects">Shuttle Radar Topography Mission (SRTM)</a> GL1 data at 30 m resolution is used where NED 13 is not available.  </li>
+<li>1 arc second NED gives coverage of Canada at about 30 m resolution. </li>
+<li>2 arc second NED (about 60 m) covers the remaining parts of Alaska above 60 degrees northern latitude.</li>
+</ol>
+<p>Since  more than one DEM may be available in legacy processing, DEMs are selected in priority order as listed in Table 1.  DEM coverage of at least 20% from a single DEM source is required for legacy processing to proceed.  In no case will the DEM selected be from more than one source; only the single best source of terrain height values is used for a given scene.  </p>
+<p>Figure 3 shows the coverage of the various legacy DEM sources. </p>
+<p><img alt="Figure 3" src="../images/dem-coverage-map.png" title="Coverage of the various legacy DEM sources used for terrain correction" /></p>
+<p><em>Figure 3: Coverage of the various legacy DEM sources used for terrain correction</em></p>
 <h2 id="special-use-dems">Special Use DEMs<a class="headerlink" href="#special-use-dems" title="Permanent link">&para;</a></h2>
 <p><a href="../products/#autorift-sdk-api-only">AutoRIFT</a>, a process developed by the <a href="https://its-live.jpl.nasa.gov/" target="_blank">NASA MEaSUREs ITS_LIVE</a>
 project, processes use a custom Greenland and Antarctica DEM with a 240 m resolution. The DEM,
