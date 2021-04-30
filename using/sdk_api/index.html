@@ -2038,7 +2038,7 @@ are not provided as keyword parameters</p></td>
 
 
 <h4 id="hyp3_sdk.hyp3.HyP3.prepare_insar_job" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">prepare_insar_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">prepare_insar_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">)</span></code>
 
   <span class="doc doc-properties">
       <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
@@ -2093,6 +2093,12 @@ along the Line-Of-Sight (LOS)</p></td>
         <td><code>False</code></td>
       </tr>
       <tr>
+        <td><code>include_inc_map</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the incidence angle map in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
         <td><code>looks</code></td>
         <td><code>Literal[&#39;20x4&#39;, &#39;10x2&#39;]</code></td>
         <td><p>Number of looks to take in range and azimuth</p></td>
@@ -2124,6 +2130,7 @@ along the Line-Of-Sight (LOS)</p></td>
                       <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                       <span class="n">include_look_vectors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                       <span class="n">include_los_displacement</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                      <span class="n">include_inc_map</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                       <span class="n">looks</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="s1">&#39;10x2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;20x4&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
 
@@ -2134,6 +2141,7 @@ along the Line-Of-Sight (LOS)</p></td>
 <span class="sd">        include_look_vectors: Include the look vector theta and phi files in the product package</span>
 <span class="sd">        include_los_displacement: Include a GeoTIFF in the product package containing displacement values</span>
 <span class="sd">            along the Line-Of-Sight (LOS)</span>
+<span class="sd">        include_inc_map: Include the incidence angle map in the product package</span>
 <span class="sd">        looks: Number of looks to take in range and azimuth</span>
 
 <span class="sd">    Returns:</span>
@@ -2493,7 +2501,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
 
 
 <h4 id="hyp3_sdk.hyp3.HyP3.submit_insar_job" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">submit_insar_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">submit_insar_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">)</span></code>
 
 
 <a href="#hyp3_sdk.hyp3.HyP3.submit_insar_job" class="headerlink" title="Permanent link">&para;</a></h4>
@@ -2545,6 +2553,12 @@ along the Line-Of-Sight (LOS)</p></td>
         <td><code>False</code></td>
       </tr>
       <tr>
+        <td><code>include_inc_map</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the incidence angle map in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
         <td><code>looks</code></td>
         <td><code>Literal[&#39;20x4&#39;, &#39;10x2&#39;]</code></td>
         <td><p>Number of looks to take in range and azimuth</p></td>
@@ -2575,6 +2589,7 @@ along the Line-Of-Sight (LOS)</p></td>
                      <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                      <span class="n">include_look_vectors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                      <span class="n">include_los_displacement</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                     <span class="n">include_inc_map</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                      <span class="n">looks</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="s1">&#39;10x2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;20x4&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
 
@@ -2585,6 +2600,7 @@ along the Line-Of-Sight (LOS)</p></td>
 <span class="sd">        include_look_vectors: Include the look vector theta and phi files in the product package</span>
 <span class="sd">        include_los_displacement: Include a GeoTIFF in the product package containing displacement values</span>
 <span class="sd">            along the Line-Of-Sight (LOS)</span>
+<span class="sd">        include_inc_map: Include the incidence angle map in the product package</span>
 <span class="sd">        looks: Number of looks to take in range and azimuth</span>
 
 <span class="sd">    Returns:</span>
