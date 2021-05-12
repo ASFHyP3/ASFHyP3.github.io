@@ -13,14 +13,14 @@
         <meta name="author" content="ASF APD/Tools Team">
       
       
-        <link rel="canonical" href="https://hyp3-docs.asf.alaska.edu/dems/">
+        <link rel="canonical" href="https://hyp3-docs.asf.alaska.edu/contact-snippet/">
       
       <link rel="shortcut icon" href="../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
-        <title>Digital Elevation Models - HyP3</title>
+        <title>Contact snippet - HyP3</title>
       
     
     
@@ -140,11 +140,6 @@ feedback.init({showIcon: false});
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#digital-elevation-models" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -241,7 +236,7 @@ feedback.init({showIcon: false});
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Digital Elevation Models
+              Contact snippet
             
           </span>
         </div>
@@ -682,14 +677,12 @@ feedback.init({showIcon: false});
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
       
       <label class="md-nav__link" for="nav-4">
         <span class="md-nav__icon md-icon"></span>
@@ -728,68 +721,11 @@ feedback.init({showIcon: false});
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          <span class="md-nav__icon md-icon"></span>
-          
-            <a href="./" class="md-nav__link md-nav__link--active"
-              style="margin: initial; padding: initial; pointer-events: initial">
-          
-            Digital Elevation Models
-          </a>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../dems/" class="md-nav__link">
         Digital Elevation Models
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#copernicus-dem" class="md-nav__link">
-    Copernicus DEM
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#legacy-dems" class="md-nav__link">
-    Legacy DEMs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#special-use-dems" class="md-nav__link">
-    Special Use DEMs
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1014,150 +950,19 @@ feedback.init({showIcon: false});
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#copernicus-dem" class="md-nav__link">
-    Copernicus DEM
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#legacy-dems" class="md-nav__link">
-    Legacy DEMs
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#special-use-dems" class="md-nav__link">
-    Special Use DEMs
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                <h1 id="digital-elevation-models">Digital Elevation Models<a class="headerlink" href="#digital-elevation-models" title="Permanent link">&para;</a></h1>
-<p>Digital Elevation Models are required when processing SAR data to higher-level products, such as the <a href="../products/#rtc">Radiometric Terrain Correction (RTC)</a> and <a href="../products/#insar">Interferometric SAR (InSAR)</a> products available <a href="https://search.asf.alaska.edu/#/?topic=onDemand">On Demand</a> from ASF. </p>
-<p>ASF uses DEMs that are publicly available and have wide-ranging coverage. In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. </p>
-<p>With the public release of the <a href="https://spacedata.copernicus.eu/documents/20126/0/GEO1988-CopernicusDEM-SPE-002_ProductHandbook_I1.00.pdf" target="blank">GLO-30 Copernicus DEM</a>, we have changed our default DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM. This is now the default DEM for processing RTC products, and the only option available for processing InSAR products. </p>
-<div class="admonition important">
-<p class="admonition-title">Copernicus DEM GLO-30 Now Available</p>
-<p>We have added the <a href="https://spacedata.copernicus.eu/fr/dataset-details?articleId=394198" target="blank">Copernicus DEM GLO-30 Public dataset</a> as our default DEM for RTC and InSAR processing. </p>
-<p>Processing using the legacy DEMs is still available as an option for RTC processing <a href="https://search.asf.alaska.edu/#/?topic=onDemand">On-Demand in Vertex</a> and when using the <a href="https://hyp3-docs.asf.alaska.edu/using/api/">API</a> or <a href="https://hyp3-docs.asf.alaska.edu/using/sdk/">SDK</a>, but we recommend using the Copernicus DEM whenever possible.</p>
-<p>When processing InSAR On Demand products, the Copernicus DEM is the only option available. The legacy DEMs are no longer supported for InSAR processing.</p>
-</div>
-<p>Table 1 summarizes ASF's DEM sources. Note that in all cases the DEM is reprojected to the UTM Zone (WGS84) appropriate for the granule location, and a geoid correction is applied before being used for processing. For RTC processing, the DEM is resampled to the pixel spacing of the output product. The Copernicus DEM is the only option available for InSAR processing, and the DEM is resampled to twice the pixel spacing of the output InSAR product (160 m for 20x4 looks, 80 m for 10x2 looks).</p>
-<table>
-<thead>
-<tr>
-<th>Resolution</th>
-<th>DEM</th>
-<th>Vertical Datum</th>
-<th>Area</th>
-<th>Posting</th>
-<th>Priority</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Medium</td>
-<td>GLO-30</td>
-<td>EGM2008</td>
-<td>Global</td>
-<td>1 arc second</td>
-<td>Default</td>
-</tr>
-<tr>
-<td>High</td>
-<td>NED13</td>
-<td>NAVD88</td>
-<td>CONUS, Hawaii, parts of Alaska</td>
-<td>1/3 arc seconds</td>
-<td>1</td>
-</tr>
-<tr>
-<td>Medium</td>
-<td>SRTMGL1</td>
-<td>EGM96</td>
-<td>60 N to 57 S latitude</td>
-<td>1 arc second</td>
-<td>2</td>
-</tr>
-<tr>
-<td>Medium</td>
-<td>NED1</td>
-<td>NAVD88</td>
-<td>Canada</td>
-<td>1 arc second</td>
-<td>3</td>
-</tr>
-<tr>
-<td>Low</td>
-<td>NED2</td>
-<td>NAVD88</td>
-<td>Parts of Alaska</td>
-<td>2 arc seconds</td>
-<td>4</td>
-</tr>
-</tbody>
-</table>
-<p><em>Table 1: DEMs used for On Demand processing. For RTC products, the Copernicus 30 m DEM is the default, while the other four DEMs are only used if the legacy option is invoked. The Copernicus DEM is the only option available when processing InSAR products.</em></p>
-<p>When ordering On-Demand products, you can choose to include a copy of the DEM used for processing in the output product package. For RTC products, this DEM copy is converted to 16-bit signed integer format, but is otherwise the same as the DEM used in the RTC process. For InSAR products, the DEM copy is output in 32-bit float format, and is upsampled from the DEM resolution used for processing to match the pixel spacing of the output InSAR products.</p>
-<p>Note that the height values will differ from the original source DEM in all cases, due to the geoid correction applied to prepare the DEM for use in SAR processing.</p>
-<h2 id="copernicus-dem">Copernicus DEM<a class="headerlink" href="#copernicus-dem" title="Permanent link">&para;</a></h2>
-<p>The <a href="https://spacedata.copernicus.eu/fr/dataset-details?articleId=394198" target="blank">GLO-30 Copernicus DEM</a> provides global coverage (with the current exception of an area covering Armenia and Azerbaijan, see Figure 2) at 30-m pixel spacing. When an On Demand job is requested, we download the required DEM tiles from the Copernicus Digital Elevation Model (DEM) GLO-30 Public dataset available in the <a href="https://registry.opendata.aws/copernicus-dem/" target="blank">Registry of Open Data on AWS</a>, managed by <a href="https://www.sinergise.com/" target="blank">Sinergise</a>. We mosaic the tiles and reproject them to the appropriate UTM Zone for the location of the SAR granule to be processed, resampling them as required for processing. A geoid correction is applied before it is used for On Demand processing.</p>
-<p>Figure 1 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and Figure 2 details the land area currently not covered.</p>
-<p><img alt="Figure 1" src="../images/cop-coverage-map.png" title="Copernicus DEM GLO-30 coverage map" /></p>
-<p><em>Figure 1: Copernicus DEM GLO-30 coverage map</em></p>
-<p><img alt="Figure 2" src="../images/cop-missing-100.png" title="Detail of area currently not covered by Copernicus DEM GLO-30" /></p>
-<p><em>Figure 2: Detail of area currently not covered by Copernicus DEM GLO-30</em></p>
-<h2 id="legacy-dems">Legacy DEMs<a class="headerlink" href="#legacy-dems" title="Permanent link">&para;</a></h2>
-<p>The legacy DEMs were pre-processed by ASF to a consistent raster format (GeoTIFF) from the original source formats: height (*.hgt), ESRI ArcGrid (*.adf), etc. Many of the NASA-provided DEMs were provided as orthometric heights with EGM96 vertical datum. These were converted by ASF to ellipsoid heights using the ASF <a href="https://asf.alaska.edu/how-to/data-tools/data-tools/#mapready" target="blank">MapReady</a> tool named <em>geoid_adjust</em>. The pixel reference varied from the center (pixel as point) to a corner (pixel as area). The GAMMA software, used to generate the terrain corrected products, uses pixel as area and adjusts DEM coordinates as needed. </p>
-<p>These processed DEM collections are stored by ASF in AWS. When an On Demand job is requested, the best-available DEM covering the SAR granule is selected, and the necessary tiles are reprojected to a mosaic in the UTM Zone appropriate for the granule location.</p>
-<p>If legacy DEM processing is selected, one of the following DEMs will be used:</p>
-<ol>
-<li>The <a href="https://pubs.er.usgs.gov/publication/70201572" target="blank">National Elevation Dataset (NED)</a> ⅓ arc second (about 10 m resolution) DEM covers the continental U.S. (CONUS), Hawaii, and parts of Alaska.</li>
-<li><a href="https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1-arc?qt-science_center_objects=0#qt-science_center_objects" target="blank">Shuttle Radar Topography Mission (SRTM)</a> GL1 data at 30 m resolution is used where NED 13 is not available.  </li>
-<li>1 arc second NED gives coverage of Canada at about 30 m resolution. </li>
-<li>2 arc second NED (about 60 m) covers the remaining parts of Alaska above 60 degrees northern latitude.</li>
-</ol>
-<p>Since more than one DEM may be available in legacy processing, DEMs are selected in priority order as listed in Table 1. DEM coverage of at least 20% from a single DEM source is required for legacy processing to proceed. In no case will the DEM selected be from more than one source; only the single best source of terrain height values is used for a given scene.  </p>
-<p>Figure 3 shows the coverage of the various legacy DEM sources. </p>
-<p><img alt="Figure 3" src="../images/dem-coverage-map.png" title="Coverage of the various legacy DEM sources used for terrain correction" /></p>
-<p><em>Figure 3: Coverage of the various legacy DEM sources used for terrain correction</em></p>
-<h2 id="special-use-dems">Special Use DEMs<a class="headerlink" href="#special-use-dems" title="Permanent link">&para;</a></h2>
-<p><a href="../products/#autorift" target="blank">AutoRIFT</a>, a process developed by the <a href="https://its-live.jpl.nasa.gov/" target="_blank">NASA MEaSUREs ITS_LIVE</a>
-project, processes use a custom Greenland and Antarctica DEM with a 240 m resolution. The DEM,
-associated process input files, and their details are available on the ITS_LIVE project website. </p>
+                  <h1>Contact snippet</h1>
+                
+                <p>Want to talk about HyP3? We would love to hear from you!</p>
+<p>Found a bug? Want to request a feature?
+<a href="https://github.com/ASFHyP3/ASFHyP3.github.io/issues/new" target="_blank">open an issue</a></p>
+<p>General questions? Suggestions? Or just want to talk to the team?
+<a href="https://gitter.im/ASFHyP3/community" target="_blank">chat with us on gitter</a></p>
                 
               
               
@@ -1198,85 +1003,6 @@ associated process input files, and their details are available on the ITS_LIVE 
 <footer class="md-footer">
 
   <!-- Link to previous and/or next page -->
-  
-    <div class="md-footer-nav">
-      <nav
-        class="md-footer-nav__inner md-grid"
-        aria-label="Footer"
-      >
-
-        <!-- Link to previous page -->
-        
-          <a href="../guides/introduction_to_sar/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Introduction to SAR
-              </div>
-            </div>
-          </a>
-        
-
-        <!-- Link to next page -->
-        
-          <a href="../tools/arcgis_toolbox/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                ArcGIS Toolbox
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-
-      <!-- ASF Footer information-->
-      <div class="md-grid">
-        <div class="md-footer-container md-grid">
-          <div class="md-footer-container-item">
-            <img src="../assets/images/asf-logo-blue-nav.png"
-                 alt="ASF Logo"
-                 class="md-footer-logo">
-          </div>
-          <div class="md-footer-container-item md-about-us">
-            <h1>About Us</h1>
-            <p>
-              The Alaska Satellite Facility downlinks, processes, archives, and
-              distributes remote-sensing data to scientific users around the world.
-              ASF’s mission is to make remote-sensing data accessible.
-            </p>
-            <p>
-              <a href="https://asf.alaska.edu/about-asf/" target="_blank">
-                Read More
-              </a>
-            </p>
-          </div>
-          <div class="md-footer-container-item md-contact-info">
-            <h1>Contact Info</h1>
-            <p>
-              Alaska Satellite Facility<br>
-              2156 Koyukuk Drive<br>
-              Fairbanks, AK 99775<br>
-              (907) 474-5041<br>
-              uso@asf.alaska.edu<br>
-            </p>
-            <p>
-              <a href="javascript:feedback.showForm();">Send Us A Message</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
   
 
   <!-- Further information -->
