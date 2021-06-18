@@ -1873,7 +1873,7 @@ feedback.init({showIcon: false});
 <p><em>Table 4: Image files in product package</em></p>
 <p>The RTC products (one for each available polarization) are generated as 32-bit floating-point single-band GeoTIFF files, as are the incidence angle and scattering area maps. The RGB Decomposition is a 3-band unsigned 8-bit GeoTIFF file, the layover/shadow mask is a single-band unsigned 8-bit GeoTIFF, and the DEM is a 16-bit unsigned integer GeoTIFF. The browse images (both grayscale and color) are generated in PNG format, and are each 2048 pixels wide. Finally, KMZ files suitable for viewing in Google Earth are included. Note that colorized products (RGB Decomposition GeoTIFF or color browse PNG) can only be created for dual-polarization (SDV and SDH) granules, not for single-polarization (SSV or SSH).</p>
 <h3 id="metadata-files">Metadata Files<a class="headerlink" href="#metadata-files" title="Permanent link">&para;</a></h3>
-<p>Along with each of the image files, there will be one or more metadata files.</p>
+<p>The product package also includes a number of metadata files.</p>
 <table>
 <thead>
 <tr>
@@ -1886,42 +1886,27 @@ feedback.init({showIcon: false});
 <tr>
 <td>.README.md.txt</td>
 <td>README file</td>
-<td>S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.README.md.txt</td>
+<td>S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.README.md.txt</td>
 </tr>
 <tr>
 <td>.log</td>
 <td>Log file of the processing steps</td>
-<td>S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.log</td>
+<td>S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.log</td>
 </tr>
 <tr>
 <td>.tif.xml</td>
-<td>ArcGIS compliant XML metadata</td>
-<td>S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_VV.tif.xml</td>
-</tr>
-<tr>
-<td>_rgb.tif.xml</td>
-<td>ArcGIS compliant XML metadata</td>
-<td>S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_VV_rgb.tif.xml</td>
+<td>ArcGIS compliant XML metadata for GeoTIFF files</td>
+<td>S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A<wbr>_VV.tif.xml</td>
 </tr>
 <tr>
 <td>.png.xml</td>
-<td>ArcGIS compliant XML metadata</td>
-<td>S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.png.xml</td>
-</tr>
-<tr>
-<td>_rgb.png.xml</td>
-<td>ArcGIS compliant XML metadata</td>
-<td>S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.png.xml</td>
+<td>ArcGIS compliant XML metadata for PNG files</td>
+<td>S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.png.xml</td>
 </tr>
 <tr>
 <td>.png.aux.xml</td>
-<td>Geolocation metadata for greyscale PNG browse image</td>
-<td>S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.png.aux.xml</td>
-</tr>
-<tr>
-<td>_rgb.png.aux.xml</td>
-<td>Geolocation metadata for color PNG browse image</td>
-<td>S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.png.aux.xml</td>
+<td>Geolocation metadata for PNG browse images</td>
+<td>S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.png.aux.xml</td>
 </tr>
 </tbody>
 </table>

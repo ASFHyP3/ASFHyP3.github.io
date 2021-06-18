@@ -1759,7 +1759,7 @@ feedback.init({showIcon: false});
 </table>
 <p><em>Table 2: Image files in product package</em></p>
 <h3 id="metadata-files">Metadata Files<a class="headerlink" href="#metadata-files" title="Permanent link">&para;</a></h3>
-<p>Along with the image files, there are currently two text files - the main readme and an important InSAR parameters file. Beyond this, there are two auxiliary xml format metadata files, one for each of the PNG browse images. These are all identified by their extensions, as shown in Table 3.</p>
+<p>The product package also includes a number of metadata files.</p>
 <table>
 <thead>
 <tr>
@@ -1770,23 +1770,165 @@ feedback.init({showIcon: false});
 </thead>
 <tbody>
 <tr>
-<td>png.aux.xml</td>
-<td>Geolocation information for png browse images</td>
-<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_color_phase.png.aux.xml</td>
-</tr>
-<tr>
-<td>.txt</td>
-<td>Useful metadata fields for the InSAR pair</td>
-<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>.txt</td>
-</tr>
-<tr>
 <td>.README.md.txt</td>
 <td>Main README file for GAMMA InSAR</td>
 <td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>.README.md.txt</td>
 </tr>
+<tr>
+<td>.txt</td>
+<td>Parameters and metadata for the InSAR pair</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>.txt</td>
+</tr>
+<tr>
+<td>.tif.xml</td>
+<td>ArcGIS compliant XML metadata for GeoTIFF files</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_unw_phase.tif.xml</td>
+</tr>
+<tr>
+<td>.png.xml</td>
+<td>ArcGIS compliant XML metadata for PNG files</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_color_phase.png.xml</td>
+</tr>
+<tr>
+<td>.png.aux.xml</td>
+<td>Geolocation information for png browse images</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_color_phase.png.aux.xml</td>
+</tr>
 </tbody>
 </table>
 <p><em>Table 3: Metadata files in product package</em></p>
+<h4 id="readme-file">README File<a class="headerlink" href="#readme-file" title="Permanent link">&para;</a></h4>
+<p>The text file with extension .README.md.txt explains the files included in the folder, and is customized to reflect that particular product. Users unfamiliar with InSAR products should start by reading this README file, which will give some background on each of the files included in the product folder.</p>
+<h4 id="insar-parameter-file">InSAR Parameter File<a class="headerlink" href="#insar-parameter-file" title="Permanent link">&para;</a></h4>
+<p>The text file with extension .txt includes processing parameters used to generate the InSAR product as well as metadata attributes for the InSAR pair.  These are detailed in Table 4.  </p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Possible Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reference Granule</td>
+<td>ESA granule name for reference scene. Always the data with the oldest timestamp.</td>
+<td>S1A<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20171111T150004<wbr>_20171111T150032<wbr>_019219<wbr>_0208AF<wbr>_EE89</td>
+</tr>
+<tr>
+<td>Secondary Granule</td>
+<td>ESA granule name for secondary scene. Always the data with the newest timestamp.</td>
+<td>S1B<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20171117T145926<wbr>_20171117T145953<wbr>_008323<wbr>_00EBAB<wbr>_AFB8</td>
+</tr>
+<tr>
+<td>Baseline</td>
+<td>Perpendicular baseline</td>
+<td>61.8974 meters</td>
+</tr>
+<tr>
+<td>UTCTime</td>
+<td>Time in the UTC time zone</td>
+<td>54004.989128 seconds</td>
+</tr>
+<tr>
+<td>Heading</td>
+<td>Spacecraft heading measured clockwise from north</td>
+<td>-13.0235756 degrees</td>
+</tr>
+<tr>
+<td>Spacecraft height</td>
+<td>Height of the spacecraft above nadir point</td>
+<td>699974.5329 meters</td>
+</tr>
+<tr>
+<td>Earth radius at nadir</td>
+<td>Ellipsoidal earth radius at the point directly below the satellite</td>
+<td>6371383.6099 meters</td>
+</tr>
+<tr>
+<td>Slant range near</td>
+<td>Distance from satellite to nearest point imaged</td>
+<td>799002.2677 meters</td>
+</tr>
+<tr>
+<td>Slant range center</td>
+<td>Distance from satellite to the center point imaged</td>
+<td>878813.0619 meters</td>
+</tr>
+<tr>
+<td>Slant range far</td>
+<td>Distance from satellite to furthest point imaged</td>
+<td>958623.8560 meters</td>
+</tr>
+<tr>
+<td>Range looks</td>
+<td>Number of looks taken in the range direction</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Azimuth looks</td>
+<td>Number of looks taken in the azimuth direction</td>
+<td>4</td>
+</tr>
+<tr>
+<td>InSAR phase filter</td>
+<td>Name of the phase filter used</td>
+<td>adf</td>
+</tr>
+<tr>
+<td>Phase filter parameter</td>
+<td>Dampening factor</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td>Resolution of output</td>
+<td>Pixel spacing for output products</td>
+<td>80 meters</td>
+</tr>
+<tr>
+<td>Range bandpass filter</td>
+<td>Range bandpass filter flag</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Azimuth bandpass filter</td>
+<td>Azimuth bandpass filter flag</td>
+<td>no</td>
+</tr>
+<tr>
+<td>DEM source</td>
+<td>DEM used in processing</td>
+<td>GLO-30</td>
+</tr>
+<tr>
+<td>DEM resolution</td>
+<td>Pixel spacing for DEM used to process this scene</td>
+<td>160 meters</td>
+</tr>
+<tr>
+<td>Unwrapping type</td>
+<td>Type of phase unwrapper used</td>
+<td>mcf</td>
+</tr>
+<tr>
+<td>Unwrapping threshold</td>
+<td>Minimum coherence required to unwrap a given pixel</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Speckle filtering</td>
+<td>Speckle filtering flag</td>
+<td>off</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 4: List of InSAR parameters included in the parameter text file</em></p>
+<h4 id="arcgis-compatible-xml-files">ArcGIS-Compatible XML Files<a class="headerlink" href="#arcgis-compatible-xml-files" title="Permanent link">&para;</a></h4>
+<p>There is an ArcGIS-compatible xml file for each raster in the product folder. When ArcGIS Desktop users view any of the rasters in ArcCatalog or the Catalog window in ArcMap, they can open the Item Description to view the contents of the associated xml file. ArcGIS Pro users can access the information from the Metadata tab. These files will not appear as separate items in ArcCatalog, though if you use Windows Explorer to look at the contents of the folder you will see them listed individually. Because each one is named identically to the product it describes (with the addition of the .xml extension), ArcGIS recognizes the appropriate file as the raster’s associated metadata, and integrates the metadata accordingly.</p>
+<p>ArcGIS users should take care not to change these xml files outside of the ArcGIS environment; changing the filename or content directly may render the files unreadable by ArcGIS.</p>
+<p>Those not using ArcGIS will still find the contents of these xml files useful, but will have to contend with the xml tagging when viewing the files as text or in a browser.</p>
+<h4 id="auxiliary-geolocation-files">Auxiliary Geolocation Files<a class="headerlink" href="#auxiliary-geolocation-files" title="Permanent link">&para;</a></h4>
+<p>Geolocation XML files (aux files) are included for each of the PNG browse images to allow for proper display in GIS platforms.</p>
 <h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
 <h3 id="baseline-calculation">Baseline Calculation<a class="headerlink" href="#baseline-calculation" title="Permanent link">&para;</a></h3>
 <p>The baseline is defined as the difference of the platform positions when a given area is imaged. HyP3 baselines are calculated using the best state vectors available. If precise orbits are not yet available for the input granules, restituted orbits will be used. The original predicted orbits are not used for InSAR processing in HyP3. <strong>If no restituted or precise state vectors are available, the process will not run.</strong></p>
