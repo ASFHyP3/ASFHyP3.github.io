@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://hyp3-docs.asf.alaska.edu/using/sdk_api/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-6.2.8">
     
     
       
@@ -2005,7 +2005,7 @@ are not provided as keyword parameters</p></td>
         <span class="k">if</span> <span class="n">param_value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">param_value</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
                 <span class="k">if</span> <span class="n">param_value</span><span class="o">.</span><span class="n">tzinfo</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                    <span class="n">param_value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span>
+                    <span class="n">param_value</span> <span class="o">=</span> <span class="n">param_value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span>
                 <span class="n">param_value</span> <span class="o">=</span> <span class="n">param_value</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s1">&#39;seconds&#39;</span><span class="p">)</span>
 
             <span class="n">params</span><span class="p">[</span><span class="n">param_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">param_value</span>
@@ -2020,8 +2020,6 @@ are not provided as keyword parameters</p></td>
         <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
         <span class="n">jobs</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">job</span><span class="p">)</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;jobs&#39;</span><span class="p">]])</span>
 
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">jobs</span><span class="p">:</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Found zero jobs&#39;</span><span class="p">,</span> <span class="ne">UserWarning</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">Batch</span><span class="p">(</span><span class="n">jobs</span><span class="p">)</span>
 </code></pre></div>
         </details>
@@ -3265,6 +3263,12 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
 
 
 
+
+
+
+
+
+
   <div class="doc doc-object doc-method">
 
 
@@ -3380,6 +3384,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
 <span class="sd">    Returns: list of Path objects to downloaded files</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">downloaded_files</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">tqdm</span> <span class="o">=</span> <span class="n">get_tqdm_progress_bar</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">downloaded_files</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">download_files</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="n">create</span><span class="p">))</span>
@@ -3805,6 +3810,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
 
     <span class="k">with</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
         <span class="n">s</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="n">tqdm</span> <span class="o">=</span> <span class="n">get_tqdm_progress_bar</span><span class="p">()</span>
         <span class="k">with</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">wrapattr</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">),</span> <span class="s1">&#39;write&#39;</span><span class="p">,</span> <span class="n">miniters</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">filepath</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
                            <span class="n">total</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;content-length&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="n">chunk_size</span><span class="p">):</span>
@@ -3883,6 +3889,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
     </div>
 
   </div>
+
 
 
 
