@@ -141,7 +141,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#hyp3_sdk-v120-api-reference" class="md-skip">
+        <a href="#hyp3_sdk-v130-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -614,8 +614,22 @@ feedback.init({showIcon: false});
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#hyp3_sdk.util.chunk" class="md-nav__link">
+    chunk()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#hyp3_sdk.util.download_file" class="md-nav__link">
     download_file()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.util.extract_zipped_product" class="md-nav__link">
+    extract_zipped_product()
   </a>
   
 </li>
@@ -1307,8 +1321,22 @@ feedback.init({showIcon: false});
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#hyp3_sdk.util.chunk" class="md-nav__link">
+    chunk()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#hyp3_sdk.util.download_file" class="md-nav__link">
     download_file()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.util.extract_zipped_product" class="md-nav__link">
+    extract_zipped_product()
   </a>
   
 </li>
@@ -1338,7 +1366,7 @@ feedback.init({showIcon: false});
               
                 
                 
-                <h1 id="hyp3_sdk-v120-api-reference"><code>hyp3_sdk</code> <em>v1.2.0</em> API Reference<a class="headerlink" href="#hyp3_sdk-v120-api-reference" title="Permanent link">&para;</a></h1>
+                <h1 id="hyp3_sdk-v130-api-reference"><code>hyp3_sdk</code> <em>v1.3.0</em> API Reference<a class="headerlink" href="#hyp3_sdk-v130-api-reference" title="Permanent link">&para;</a></h1>
 
 
   <div class="doc doc-object doc-module">
@@ -1851,7 +1879,7 @@ are not provided as keyword parameters</p></td>
 </table>
         <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">HYP3_PROD</span><span class="p">,</span> <span class="n">username</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">PROD_API</span><span class="p">,</span> <span class="n">username</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
              <span class="n">prompt</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Args:</span>
@@ -2315,7 +2343,7 @@ along the Line-Of-Sight (LOS)</p></td>
       <tr>
         <td><code>include_inc_map</code></td>
         <td><code>bool</code></td>
-        <td><p>Include the incidence angle map in the product package</p></td>
+        <td><p>Include the local and ellipsoidal incidence angle maps in the product package</p></td>
         <td><code>False</code></td>
       </tr>
       <tr>
@@ -2375,7 +2403,7 @@ along the Line-Of-Sight (LOS)</p></td>
 <span class="sd">        include_look_vectors: Include the look vector theta and phi files in the product package</span>
 <span class="sd">        include_los_displacement: Include a GeoTIFF in the product package containing displacement values</span>
 <span class="sd">            along the Line-Of-Sight (LOS)</span>
-<span class="sd">        include_inc_map: Include the incidence angle map in the product package</span>
+<span class="sd">        include_inc_map: Include the local and ellipsoidal incidence angle maps in the product package</span>
 <span class="sd">        looks: Number of looks to take in range and azimuth</span>
 <span class="sd">        include_dem: Include the digital elevation model GeoTIFF in the product package</span>
 <span class="sd">        include_wrapped_phase: Include the wrapped phase GeoTIFF in the product package</span>
@@ -2457,7 +2485,7 @@ along the Line-Of-Sight (LOS)</p></td>
       <tr>
         <td><code>include_inc_map</code></td>
         <td><code>bool</code></td>
-        <td><p>Include the incidence angle map in the product package</p></td>
+        <td><p>Include the local incidence angle map in the product package</p></td>
         <td><code>False</code></td>
       </tr>
       <tr>
@@ -2545,7 +2573,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
 <span class="sd">        name: A name for the job</span>
 <span class="sd">        dem_matching: Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files</span>
 <span class="sd">        include_dem: Include the DEM file in the product package</span>
-<span class="sd">        include_inc_map: Include the incidence angle map in the product package</span>
+<span class="sd">        include_inc_map: Include the local incidence angle map in the product package</span>
 <span class="sd">        include_rgb: Include a false-color RGB decomposition in the product package for dual-pol granules</span>
 <span class="sd">            (ignored for single-pol granules)</span>
 <span class="sd">        include_scattering_area: Include the scattering area in the product package</span>
@@ -2791,7 +2819,7 @@ along the Line-Of-Sight (LOS)</p></td>
       <tr>
         <td><code>include_inc_map</code></td>
         <td><code>bool</code></td>
-        <td><p>Include the incidence angle map in the product package</p></td>
+        <td><p>Include the local and ellipsoidal incidence angle maps in the product package</p></td>
         <td><code>False</code></td>
       </tr>
       <tr>
@@ -2850,7 +2878,7 @@ along the Line-Of-Sight (LOS)</p></td>
 <span class="sd">        include_look_vectors: Include the look vector theta and phi files in the product package</span>
 <span class="sd">        include_los_displacement: Include a GeoTIFF in the product package containing displacement values</span>
 <span class="sd">            along the Line-Of-Sight (LOS)</span>
-<span class="sd">        include_inc_map: Include the incidence angle map in the product package</span>
+<span class="sd">        include_inc_map: Include the local and ellipsoidal incidence angle maps in the product package</span>
 <span class="sd">        looks: Number of looks to take in range and azimuth</span>
 <span class="sd">        include_dem: Include the digital elevation model GeoTIFF in the product package</span>
 <span class="sd">        include_wrapped_phase: Include the wrapped phase GeoTIFF in the product package</span>
@@ -3001,7 +3029,7 @@ along the Line-Of-Sight (LOS)</p></td>
       <tr>
         <td><code>include_inc_map</code></td>
         <td><code>bool</code></td>
-        <td><p>Include the incidence angle map in the product package</p></td>
+        <td><p>Include the local incidence angle map in the product package</p></td>
         <td><code>False</code></td>
       </tr>
       <tr>
@@ -3088,7 +3116,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
 <span class="sd">        name: A name for the job</span>
 <span class="sd">        dem_matching: Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files</span>
 <span class="sd">        include_dem: Include the DEM file in the product package</span>
-<span class="sd">        include_inc_map: Include the incidence angle map in the product package</span>
+<span class="sd">        include_inc_map: Include the local incidence angle map in the product package</span>
 <span class="sd">        include_rgb: Include a false-color RGB decomposition in the product package for dual-pol granules</span>
 <span class="sd">            (ignored for single-pol granules)</span>
 <span class="sd">        include_scattering_area: Include the scattering area in the product package</span>
@@ -3731,6 +3759,67 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
 
 
 
+<h3 id="hyp3_sdk.util.chunk" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">chunk</span><span class="p">(</span><span class="n">itr</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.util.chunk" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Split a sequence into small chunks</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>itr</code></td>
+        <td><code>Sequence[Any]</code></td>
+        <td><p>A sequence object to chunk</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>n</code></td>
+        <td><code>int</code></td>
+        <td><p>Size of the chunks to return</p></td>
+        <td><code>200</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/util.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">chunk</span><span class="p">(</span><span class="n">itr</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">200</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Split a sequence into small chunks</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        itr: A sequence object to chunk</span>
+<span class="sd">        n: Size of the chunks to return</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;n must be a positive integer: </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">itr</span><span class="p">),</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">itr</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="n">n</span><span class="p">]</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
 <h3 id="hyp3_sdk.util.download_file" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filepath</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">backoff_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code>
 
@@ -3834,6 +3923,93 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
     <span class="n">session</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
     <span class="k">return</span> <span class="n">filepath</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="hyp3_sdk.util.extract_zipped_product" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_zipped_product</span><span class="p">(</span><span class="n">zip_file</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.util.extract_zipped_product" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Extract a zipped HyP3 product</p>
+<p>Extract a zipped HyP3 product to the same directory as the zipped HyP3 product, optionally
+deleting <code>zip file</code> afterward.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>zip_file</code></td>
+        <td><code>Union[str, pathlib.Path]</code></td>
+        <td><p>Zipped HyP3 product to extract</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>delete</code></td>
+        <td><code>bool</code></td>
+        <td><p>Delete <code>zip_file</code> after it has been extracted</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Path</code></td>
+      <td><p>Path to the HyP3 product folder containing the product files</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/util.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">extract_zipped_product</span><span class="p">(</span><span class="n">zip_file</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">delete</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Extract a zipped HyP3 product</span>
+
+<span class="sd">    Extract a zipped HyP3 product to the same directory as the zipped HyP3 product, optionally</span>
+<span class="sd">    deleting `zip file` afterward.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        zip_file: Zipped HyP3 product to extract</span>
+<span class="sd">        delete: Delete `zip_file` after it has been extracted</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Path to the HyP3 product folder containing the product files</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">zip_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">zip_file</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">ZipFile</span><span class="p">(</span><span class="n">zip_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">z</span><span class="p">:</span>
+        <span class="n">z</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">zip_file</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">delete</span><span class="p">:</span>
+        <span class="n">zip_file</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">zip_file</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="n">zip_file</span><span class="o">.</span><span class="n">stem</span>
 </code></pre></div>
         </details>
     </div>
