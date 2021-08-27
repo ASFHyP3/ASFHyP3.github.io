@@ -141,7 +141,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#hyp3_sdk-v131-api-reference" class="md-skip">
+        <a href="#hyp3_sdk-v132-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -1366,7 +1366,7 @@ feedback.init({showIcon: false});
               
                 
                 
-                <h1 id="hyp3_sdk-v131-api-reference"><code>hyp3_sdk</code> <em>v1.3.1</em> API Reference<a class="headerlink" href="#hyp3_sdk-v131-api-reference" title="Permanent link">&para;</a></h1>
+                <h1 id="hyp3_sdk-v132-api-reference"><code>hyp3_sdk</code> <em>v1.3.2</em> API Reference<a class="headerlink" href="#hyp3_sdk-v132-api-reference" title="Permanent link">&para;</a></h1>
 
 
   <div class="doc doc-object doc-module">
@@ -2286,7 +2286,7 @@ are not provided as keyword parameters</p></td>
 
 
 <h4 id="hyp3_sdk.hyp3.HyP3.prepare_insar_job" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">prepare_insar_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_wrapped_phase</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">prepare_insar_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_wrapped_phase</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">apply_water_mask</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
   <span class="doc doc-properties">
       <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
@@ -2364,6 +2364,13 @@ along the Line-Of-Sight (LOS)</p></td>
         <td><p>Include the wrapped phase GeoTIFF in the product package</p></td>
         <td><code>False</code></td>
       </tr>
+      <tr>
+        <td><code>apply_water_mask</code></td>
+        <td><code>bool</code></td>
+        <td><p>Sets pixels over coastal waters and large inland waterbodies
+as invalid for phase unwrapping</p></td>
+        <td><code>False</code></td>
+      </tr>
   </tbody>
 </table>
 <p><strong>Returns:</strong></p>
@@ -2393,7 +2400,8 @@ along the Line-Of-Sight (LOS)</p></td>
                       <span class="n">include_inc_map</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                       <span class="n">looks</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="s1">&#39;10x2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;20x4&#39;</span><span class="p">,</span>
                       <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                      <span class="n">include_wrapped_phase</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+                      <span class="n">include_wrapped_phase</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                      <span class="n">apply_water_mask</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
 
 <span class="sd">    Args:</span>
@@ -2407,7 +2415,8 @@ along the Line-Of-Sight (LOS)</p></td>
 <span class="sd">        looks: Number of looks to take in range and azimuth</span>
 <span class="sd">        include_dem: Include the digital elevation model GeoTIFF in the product package</span>
 <span class="sd">        include_wrapped_phase: Include the wrapped phase GeoTIFF in the product package</span>
-
+<span class="sd">        apply_water_mask: Sets pixels over coastal waters and large inland waterbodies</span>
+<span class="sd">            as invalid for phase unwrapping</span>
 <span class="sd">    Returns:</span>
 <span class="sd">        A dictionary containing the prepared InSAR job</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2765,7 +2774,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
 
 
 <h4 id="hyp3_sdk.hyp3.HyP3.submit_insar_job" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">submit_insar_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_wrapped_phase</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">submit_insar_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_wrapped_phase</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">apply_water_mask</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 
 <a href="#hyp3_sdk.hyp3.HyP3.submit_insar_job" class="headerlink" title="Permanent link">&para;</a></h4>
@@ -2840,6 +2849,13 @@ along the Line-Of-Sight (LOS)</p></td>
         <td><p>Include the wrapped phase GeoTIFF in the product package</p></td>
         <td><code>False</code></td>
       </tr>
+      <tr>
+        <td><code>apply_water_mask</code></td>
+        <td><code>bool</code></td>
+        <td><p>Sets pixels over coastal waters and large inland waterbodies
+as invalid for phase unwrapping</p></td>
+        <td><code>False</code></td>
+      </tr>
   </tbody>
 </table>
 <p><strong>Returns:</strong></p>
@@ -2868,7 +2884,8 @@ along the Line-Of-Sight (LOS)</p></td>
                      <span class="n">include_inc_map</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                      <span class="n">looks</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="s1">&#39;10x2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;20x4&#39;</span><span class="p">,</span>
                      <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                     <span class="n">include_wrapped_phase</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+                     <span class="n">include_wrapped_phase</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                     <span class="n">apply_water_mask</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
 
 <span class="sd">    Args:</span>
@@ -2882,6 +2899,8 @@ along the Line-Of-Sight (LOS)</p></td>
 <span class="sd">        looks: Number of looks to take in range and azimuth</span>
 <span class="sd">        include_dem: Include the digital elevation model GeoTIFF in the product package</span>
 <span class="sd">        include_wrapped_phase: Include the wrapped phase GeoTIFF in the product package</span>
+<span class="sd">        apply_water_mask: Sets pixels over coastal waters and large inland waterbodies</span>
+<span class="sd">            as invalid for phase unwrapping</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A Batch object containing the InSAR job</span>
