@@ -469,6 +469,18 @@ feedback.init({showIcon: false});
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/quota/" class="md-nav__link">
+        Processing Quota
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1296,8 +1308,8 @@ the number of rasters contributing to each composite pixel is created.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code>str</code></td>
-      <td><p>wkt: The WKT representation of the projection</p></td>
+      <td><code>wkt</code></td>
+      <td><p>The WKT representation of the projection</p></td>
     </tr>
   </tbody>
 </table>
@@ -1367,8 +1379,8 @@ products</p>
   </thead>
   <tbody>
     <tr>
-      <td><code>str</code></td>
-      <td><p>area_raster: path of the area raster, e.g. S1A_IW_20181102T155531_DVP_RTC30_G_gpuned_5685_area.tif</p></td>
+      <td><code>area_raster</code></td>
+      <td><p>path of the area raster, e.g. S1A_IW_20181102T155531_DVP_RTC30_G_gpuned_5685_area.tif</p></td>
     </tr>
   </tbody>
 </table>
@@ -1436,8 +1448,8 @@ products</p>
   </thead>
   <tbody>
     <tr>
-      <td><code>int</code></td>
-      <td><p>epsg_code: The integer EPSG code</p></td>
+      <td><code>epsg_code</code></td>
+      <td><p>The integer EPSG code</p></td>
     </tr>
   </tbody>
 </table>
@@ -1597,8 +1609,8 @@ geotransform: The geotransform of the extent as a list</p></td>
   </thead>
   <tbody>
     <tr>
-      <td><code>int</code></td>
-      <td><p>target: UTM EPSG code</p></td>
+      <td><code>target</code></td>
+      <td><p>UTM EPSG code</p></td>
     </tr>
   </tbody>
 </table>
@@ -1844,8 +1856,8 @@ out_counts_raster: Path to the created GeoTIFF with counts of scenes contributin
   </thead>
   <tbody>
     <tr>
-      <td><code>&lt;built-in function array&gt;</code></td>
-      <td><p>data: The raster pixel data as a numpy array</p></td>
+      <td><code>data</code></td>
+      <td><p>The raster pixel data as a numpy array</p></td>
     </tr>
   </tbody>
 </table>
@@ -1935,8 +1947,8 @@ out_counts_raster: Path to the created GeoTIFF with counts of scenes contributin
   </thead>
   <tbody>
     <tr>
-      <td><code>dict</code></td>
-      <td><p>target_raster_info: An updated dictionary of gdal.Info results for the reprojected files</p></td>
+      <td><code>target_raster_info</code></td>
+      <td><p>An updated dictionary of gdal.Info results for the reprojected files</p></td>
     </tr>
   </tbody>
 </table>
@@ -2039,13 +2051,13 @@ out_counts_raster: Path to the created GeoTIFF with counts of scenes contributin
       </tr>
       <tr>
         <td><code>dtype</code></td>
-        <td><code></code></td>
+        <td></td>
         <td><p>The pixel data type for the output GeoTIFF</p></td>
         <td><code>6</code></td>
       </tr>
       <tr>
         <td><code>nodata_value</code></td>
-        <td><code></code></td>
+        <td></td>
         <td><p>The NODATA value for the output Geotiff</p></td>
         <td><code>None</code></td>
       </tr>

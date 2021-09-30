@@ -672,6 +672,18 @@ feedback.init({showIcon: false});
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quota/" class="md-nav__link">
+        Processing Quota
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1458,8 +1470,8 @@ feedback.init({showIcon: false});
   </thead>
   <tbody>
     <tr>
-      <td><code>Union[dict, List[dict]]</code></td>
-      <td><p>metadata: metadata for the granule(s)</p></td>
+      <td><code>metadata</code></td>
+      <td><p>metadata for the granule(s)</p></td>
     </tr>
   </tbody>
 </table>
@@ -1550,8 +1562,8 @@ feedback.init({showIcon: false});
   </thead>
   <tbody>
     <tr>
-      <td><code>List[dict]</code></td>
-      <td><p>neighbors: a list of neighbors sorted by time</p></td>
+      <td><code>neighbors</code></td>
+      <td><p>a list of neighbors sorted by time</p></td>
     </tr>
   </tbody>
 </table>
@@ -1645,7 +1657,9 @@ feedback.init({showIcon: false});
 
 
 <h3 id="hyp3_sdk.exceptions.ASFSearchError" class="doc doc-heading">
-        <code>ASFSearchError</code>
+        <code>
+ASFSearchError            (<a title="hyp3_sdk.exceptions.HyP3SDKError" href="#hyp3_sdk.exceptions.HyP3SDKError">HyP3SDKError</a>)
+        </code>
 
 
 
@@ -1668,7 +1682,9 @@ feedback.init({showIcon: false});
 
 
 <h3 id="hyp3_sdk.exceptions.AuthenticationError" class="doc doc-heading">
-        <code>AuthenticationError</code>
+        <code>
+AuthenticationError            (<a title="hyp3_sdk.exceptions.HyP3SDKError" href="#hyp3_sdk.exceptions.HyP3SDKError">HyP3SDKError</a>)
+        </code>
 
 
 
@@ -1691,7 +1707,9 @@ feedback.init({showIcon: false});
 
 
 <h3 id="hyp3_sdk.exceptions.HyP3Error" class="doc doc-heading">
-        <code>HyP3Error</code>
+        <code>
+HyP3Error            (<a title="hyp3_sdk.exceptions.HyP3SDKError" href="#hyp3_sdk.exceptions.HyP3SDKError">HyP3SDKError</a>)
+        </code>
 
 
 
@@ -1714,7 +1732,9 @@ feedback.init({showIcon: false});
 
 
 <h3 id="hyp3_sdk.exceptions.HyP3SDKError" class="doc doc-heading">
-        <code>HyP3SDKError</code>
+        <code>
+HyP3SDKError            (<span title="Exception">Exception</span>)
+        </code>
 
 
 
@@ -1737,7 +1757,9 @@ feedback.init({showIcon: false});
 
 
 <h3 id="hyp3_sdk.exceptions.ServerError" class="doc doc-heading">
-        <code>ServerError</code>
+        <code>
+ServerError            (<a title="hyp3_sdk.exceptions.HyP3SDKError" href="#hyp3_sdk.exceptions.HyP3SDKError">HyP3SDKError</a>)
+        </code>
 
 
 
@@ -1798,7 +1820,8 @@ feedback.init({showIcon: false});
 
 
 <h3 id="hyp3_sdk.hyp3.HyP3" class="doc doc-heading">
-        <code>HyP3</code>
+        <code>
+HyP3        </code>
 
 
 
@@ -3297,7 +3320,8 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
 
 
 <h3 id="hyp3_sdk.jobs.Batch" class="doc doc-heading">
-        <code>Batch</code>
+        <code>
+Batch        </code>
 
 
 
@@ -3522,8 +3546,8 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
   </thead>
   <tbody>
     <tr>
-      <td><code>Batch</code></td>
-      <td><p>batch: A batch object containing jobs matching all the selected statuses</p></td>
+      <td><code>batch</code></td>
+      <td><p>A batch object containing jobs matching all the selected statuses</p></td>
     </tr>
   </tbody>
 </table>
@@ -3613,7 +3637,8 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
 
 
 <h3 id="hyp3_sdk.jobs.Job" class="doc doc-heading">
-        <code>Job</code>
+        <code>
+Job        </code>
 
 
 
@@ -3874,19 +3899,19 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
       </tr>
       <tr>
         <td><code>chunk_size</code></td>
-        <td><code></code></td>
+        <td></td>
         <td><p>Size to chunk the download into</p></td>
         <td><code>None</code></td>
       </tr>
       <tr>
         <td><code>retries</code></td>
-        <td><code></code></td>
+        <td></td>
         <td><p>Number of retries to attempt</p></td>
         <td><code>2</code></td>
       </tr>
       <tr>
         <td><code>backoff_factor</code></td>
-        <td><code></code></td>
+        <td></td>
         <td><p>Factor for calculating time between retries</p></td>
         <td><code>1</code></td>
       </tr>
@@ -3902,8 +3927,8 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
   </thead>
   <tbody>
     <tr>
-      <td><code>Path</code></td>
-      <td><p>download_path: The path to the downloaded file</p></td>
+      <td><code>download_path</code></td>
+      <td><p>The path to the downloaded file</p></td>
     </tr>
   </tbody>
 </table>
