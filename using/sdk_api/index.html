@@ -141,7 +141,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#hyp3_sdk-v140-api-reference" class="md-skip">
+        <a href="#hyp3_sdk-v141-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -1390,7 +1390,7 @@ feedback.init({showIcon: false});
               
                 
                 
-                <h1 id="hyp3_sdk-v140-api-reference"><code>hyp3_sdk</code> <em>v1.4.0</em> API Reference<a class="headerlink" href="#hyp3_sdk-v140-api-reference" title="Permanent link">&para;</a></h1>
+                <h1 id="hyp3_sdk-v141-api-reference"><code>hyp3_sdk</code> <em>v1.4.1</em> API Reference<a class="headerlink" href="#hyp3_sdk-v141-api-reference" title="Permanent link">&para;</a></h1>
 
 
   <div class="doc doc-object doc-module">
@@ -3991,8 +3991,8 @@ Job        </code>
 
     <span class="n">session</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;https://&#39;</span><span class="p">,</span> <span class="n">HTTPAdapter</span><span class="p">(</span><span class="n">max_retries</span><span class="o">=</span><span class="n">retry_strategy</span><span class="p">))</span>
     <span class="n">session</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;http://&#39;</span><span class="p">,</span> <span class="n">HTTPAdapter</span><span class="p">(</span><span class="n">max_retries</span><span class="o">=</span><span class="n">retry_strategy</span><span class="p">))</span>
-
-    <span class="k">with</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+    <span class="n">stream</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">chunk_size</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">True</span>
+    <span class="k">with</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="n">stream</span><span class="p">)</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
         <span class="n">s</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
         <span class="n">tqdm</span> <span class="o">=</span> <span class="n">get_tqdm_progress_bar</span><span class="p">()</span>
         <span class="k">with</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">wrapattr</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">),</span> <span class="s1">&#39;write&#39;</span><span class="p">,</span> <span class="n">miniters</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">filepath</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
