@@ -1681,6 +1681,12 @@ ASFSearchError            (<a title="hyp3_sdk.exceptions.HyP3SDKError" href="#hy
 
       <p>Raise for errors when using the ASF Search module</p>
 
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/exceptions.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ASFSearchError</span><span class="p">(</span><span class="n">HyP3SDKError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Raise for errors when using the ASF Search module&quot;&quot;&quot;</span>
+</code></pre></div>
+        </details>
 
 
     </div>
@@ -1706,6 +1712,12 @@ AuthenticationError            (<a title="hyp3_sdk.exceptions.HyP3SDKError" href
 
       <p>Raise when authentication does not succeed</p>
 
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/exceptions.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">AuthenticationError</span><span class="p">(</span><span class="n">HyP3SDKError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Raise when authentication does not succeed&quot;&quot;&quot;</span>
+</code></pre></div>
+        </details>
 
 
     </div>
@@ -1731,6 +1743,12 @@ HyP3Error            (<a title="hyp3_sdk.exceptions.HyP3SDKError" href="#hyp3_sd
 
       <p>Raise for errors when using the HyP3 module</p>
 
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/exceptions.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HyP3Error</span><span class="p">(</span><span class="n">HyP3SDKError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Raise for errors when using the HyP3 module&quot;&quot;&quot;</span>
+</code></pre></div>
+        </details>
 
 
     </div>
@@ -1756,6 +1774,12 @@ HyP3SDKError            (<span title="Exception">Exception</span>)
 
       <p>Base Exception for the HyP3 SDK</p>
 
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/exceptions.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HyP3SDKError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Base Exception for the HyP3 SDK&quot;&quot;&quot;</span>
+</code></pre></div>
+        </details>
 
 
     </div>
@@ -1781,6 +1805,12 @@ ServerError            (<a title="hyp3_sdk.exceptions.HyP3SDKError" href="#hyp3_
 
       <p>Raise when the HyP3 SDK encounters a server error</p>
 
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/exceptions.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ServerError</span><span class="p">(</span><span class="n">HyP3SDKError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Raise when the HyP3 SDK encounters a server error&quot;&quot;&quot;</span>
+</code></pre></div>
+        </details>
 
 
     </div>
@@ -1843,6 +1873,411 @@ HyP3        </code>
 
       <p>A python wrapper around the HyP3 API</p>
 
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">HyP3</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;A python wrapper around the HyP3 API&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">PROD_API</span><span class="p">,</span> <span class="n">username</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">prompt</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Args:</span>
+<span class="sd">            api_url: Address of the HyP3 API</span>
+<span class="sd">            username: Username for authenticating to `urs.earthdata.nasa.gov`.</span>
+<span class="sd">                Both username and password must be provided if either is provided.</span>
+<span class="sd">            password: Password for authenticating to `urs.earthdata.nasa.gov`.</span>
+<span class="sd">                Both username and password must be provided if either is provided.</span>
+<span class="sd">            prompt: Prompt for username and/or password interactively when they</span>
+<span class="sd">                are not provided as keyword parameters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">api_url</span>
+
+        <span class="k">if</span> <span class="n">username</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">prompt</span><span class="p">:</span>
+            <span class="n">username</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;NASA Earthdata Login username: &#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">password</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">prompt</span><span class="p">:</span>
+            <span class="n">password</span> <span class="o">=</span> <span class="n">getpass</span><span class="p">(</span><span class="s1">&#39;NASA Earthdata Login password: &#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">get_authenticated_session</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">hyp3_sdk</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">hyp3_sdk</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">})</span>
+
+    <span class="k">def</span> <span class="nf">find_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                  <span class="n">status_code</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                  <span class="n">job_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Gets a Batch of jobs from HyP3 matching the provided search criteria</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            start: only jobs submitted after given time</span>
+<span class="sd">            end: only jobs submitted before given time</span>
+<span class="sd">            status_code: only jobs matching this status (SUCCEEDED, FAILED, RUNNING, PENDING)</span>
+<span class="sd">            name: only jobs with this name</span>
+<span class="sd">            job_type: only jobs with this job_type</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A Batch object containing the found jobs</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">param_name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;status_code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;job_type&#39;</span><span class="p">):</span>
+            <span class="n">param_value</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">param_name</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">param_value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">param_value</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">param_value</span><span class="o">.</span><span class="n">tzinfo</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">param_value</span> <span class="o">=</span> <span class="n">param_value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span>
+                    <span class="n">param_value</span> <span class="o">=</span> <span class="n">param_value</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s1">&#39;seconds&#39;</span><span class="p">)</span>
+
+                <span class="n">params</span><span class="p">[</span><span class="n">param_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">param_value</span>
+
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/jobs&#39;</span><span class="p">),</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="n">jobs</span> <span class="o">=</span> <span class="p">[</span><span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">job</span><span class="p">)</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;jobs&#39;</span><span class="p">]]</span>
+
+        <span class="k">while</span> <span class="s1">&#39;next&#39;</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">():</span>
+            <span class="n">next_url</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;next&#39;</span><span class="p">]</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">next_url</span><span class="p">)</span>
+            <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+            <span class="n">jobs</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">job</span><span class="p">)</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;jobs&#39;</span><span class="p">]])</span>
+
+        <span class="k">return</span> <span class="n">Batch</span><span class="p">(</span><span class="n">jobs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_job_by_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Job</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Get job by job ID</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            job_id: A job ID</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A Job object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;/jobs/</span><span class="si">{</span><span class="n">job_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">))</span>
+        <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+    <span class="nd">@singledispatchmethod</span>
+    <span class="k">def</span> <span class="nf">watch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_or_batch</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Batch</span><span class="p">,</span> <span class="n">Job</span><span class="p">],</span> <span class="n">timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10800</span><span class="p">,</span>
+              <span class="n">interval</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mi">60</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">Batch</span><span class="p">,</span> <span class="n">Job</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Watch jobs until they complete</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            job_or_batch: A Batch or Job object of jobs to watch</span>
+<span class="sd">            timeout: How long to wait until exiting in seconds</span>
+<span class="sd">            interval: How often to check for updates in seconds</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A Batch or Job object with refreshed watched jobs</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Cannot watch </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">job_or_batch</span><span class="p">)</span><span class="si">}</span><span class="s1"> type object&#39;</span><span class="p">)</span>
+
+    <span class="nd">@watch</span><span class="o">.</span><span class="n">register</span>
+    <span class="k">def</span> <span class="nf">_watch_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">,</span> <span class="n">timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10800</span><span class="p">,</span> <span class="n">interval</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mi">60</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+        <span class="n">tqdm</span> <span class="o">=</span> <span class="n">get_tqdm_progress_bar</span><span class="p">()</span>
+        <span class="n">iterations_until_timeout</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">timeout</span> <span class="o">/</span> <span class="n">interval</span><span class="p">)</span>
+        <span class="n">bar_format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{l_bar}{bar}</span><span class="s1">| </span><span class="si">{n_fmt}</span><span class="s1">/</span><span class="si">{total_fmt}</span><span class="s1"> [</span><span class="si">{postfix[0]}</span><span class="s1">]&#39;</span>
+        <span class="k">with</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">batch</span><span class="p">),</span> <span class="n">bar_format</span><span class="o">=</span><span class="n">bar_format</span><span class="p">,</span> <span class="n">postfix</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;timeout in </span><span class="si">{</span><span class="n">timeout</span><span class="si">}</span><span class="s1"> s&#39;</span><span class="p">])</span> <span class="k">as</span> <span class="n">progress_bar</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations_until_timeout</span><span class="p">):</span>
+                <span class="n">batch</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span>
+
+                <span class="n">counts</span> <span class="o">=</span> <span class="n">batch</span><span class="o">.</span><span class="n">_count_statuses</span><span class="p">()</span>
+                <span class="n">complete</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="s1">&#39;SUCCEEDED&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">counts</span><span class="p">[</span><span class="s1">&#39;FAILED&#39;</span><span class="p">]</span>
+
+                <span class="n">progress_bar</span><span class="o">.</span><span class="n">postfix</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;timeout in </span><span class="si">{</span><span class="n">timeout</span> <span class="o">-</span> <span class="n">ii</span> <span class="o">*</span> <span class="n">interval</span><span class="si">}</span><span class="s1">s&#39;</span><span class="p">]</span>
+                <span class="c1"># to control n/total manually; update is n += value</span>
+                <span class="n">progress_bar</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="n">complete</span>
+                <span class="n">progress_bar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">batch</span><span class="o">.</span><span class="n">complete</span><span class="p">():</span>
+                    <span class="k">return</span> <span class="n">batch</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Timeout occurred while waiting for </span><span class="si">{</span><span class="n">batch</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="nd">@watch</span><span class="o">.</span><span class="n">register</span>
+    <span class="k">def</span> <span class="nf">_watch_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job</span><span class="p">:</span> <span class="n">Job</span><span class="p">,</span> <span class="n">timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10800</span><span class="p">,</span> <span class="n">interval</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mi">60</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Job</span><span class="p">:</span>
+        <span class="n">tqdm</span> <span class="o">=</span> <span class="n">get_tqdm_progress_bar</span><span class="p">()</span>
+        <span class="n">iterations_until_timeout</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">timeout</span> <span class="o">/</span> <span class="n">interval</span><span class="p">)</span>
+        <span class="n">bar_format</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{n_fmt}</span><span class="s1">/</span><span class="si">{total_fmt}</span><span class="s1"> [</span><span class="si">{postfix[0]}</span><span class="s1">]&#39;</span>
+        <span class="k">with</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bar_format</span><span class="o">=</span><span class="n">bar_format</span><span class="p">,</span> <span class="n">postfix</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;timeout in </span><span class="si">{</span><span class="n">timeout</span><span class="si">}</span><span class="s1"> s&#39;</span><span class="p">])</span> <span class="k">as</span> <span class="n">progress_bar</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations_until_timeout</span><span class="p">):</span>
+                <span class="n">job</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+                <span class="n">progress_bar</span><span class="o">.</span><span class="n">postfix</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;timeout in </span><span class="si">{</span><span class="n">timeout</span> <span class="o">-</span> <span class="n">ii</span> <span class="o">*</span> <span class="n">interval</span><span class="si">}</span><span class="s1">s&#39;</span><span class="p">]</span>
+                <span class="n">progress_bar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">complete</span><span class="p">()))</span>
+
+                <span class="k">if</span> <span class="n">job</span><span class="o">.</span><span class="n">complete</span><span class="p">():</span>
+                    <span class="k">return</span> <span class="n">job</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">HyP3Error</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Timeout occurred while waiting for </span><span class="si">{</span><span class="n">job</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="nd">@singledispatchmethod</span>
+    <span class="k">def</span> <span class="nf">refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_or_batch</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Batch</span><span class="p">,</span> <span class="n">Job</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">Batch</span><span class="p">,</span> <span class="n">Job</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Refresh each jobs&#39; information</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            job_or_batch: A Batch of Job object to refresh</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A Batch or Job object with refreshed information</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Cannot refresh </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">job_or_batch</span><span class="p">)</span><span class="si">}</span><span class="s1"> type object&#39;</span><span class="p">)</span>
+
+    <span class="nd">@refresh</span><span class="o">.</span><span class="n">register</span>
+    <span class="k">def</span> <span class="nf">_refresh_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">):</span>
+        <span class="n">jobs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">batch</span><span class="o">.</span><span class="n">jobs</span><span class="p">:</span>
+            <span class="n">jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">job</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">Batch</span><span class="p">(</span><span class="n">jobs</span><span class="p">)</span>
+
+    <span class="nd">@refresh</span><span class="o">.</span><span class="n">register</span>
+    <span class="k">def</span> <span class="nf">_refresh_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job</span><span class="p">:</span> <span class="n">Job</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_job_by_id</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">job_id</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">submit_prepared_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prepared_jobs</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Submit a prepared job dictionary, or list of prepared job dictionaries</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            prepared_jobs: A prepared job dictionary, or list of prepared job dictionaries</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A Batch object containing the submitted job(s)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prepared_jobs</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;jobs&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">prepared_jobs</span><span class="p">]}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;jobs&#39;</span><span class="p">:</span> <span class="n">prepared_jobs</span><span class="p">}</span>
+
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/jobs&#39;</span><span class="p">),</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+        <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+        <span class="n">batch</span> <span class="o">=</span> <span class="n">Batch</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;jobs&#39;</span><span class="p">]:</span>
+            <span class="n">batch</span> <span class="o">+=</span> <span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">batch</span>
+
+    <span class="k">def</span> <span class="nf">submit_autorift_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Submit an autoRIFT job</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            granule1: The first granule (scene) to use</span>
+<span class="sd">            granule2: The second granule (scene) to use</span>
+<span class="sd">            name: A name for the job</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A Batch object containing the autoRIFT job</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">job_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_autorift_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">submit_prepared_jobs</span><span class="p">(</span><span class="n">prepared_jobs</span><span class="o">=</span><span class="n">job_dict</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">prepare_autorift_job</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Submit an autoRIFT job</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            granule1: The first granule (scene) to use</span>
+<span class="sd">            granule2: The second granule (scene) to use</span>
+<span class="sd">            name: A name for the job</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A dictionary containing the prepared autoRIFT job</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;granules&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">]},</span>
+            <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="s1">&#39;AUTORIFT&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">job_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">return</span> <span class="n">job_dict</span>
+
+    <span class="k">def</span> <span class="nf">submit_rtc_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                       <span class="n">granule</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                       <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                       <span class="n">dem_matching</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                       <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                       <span class="n">include_inc_map</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                       <span class="n">include_rgb</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                       <span class="n">include_scattering_area</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                       <span class="n">radiometry</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;sigma0&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">,</span>
+                       <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+                       <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
+                       <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                       <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            granule: The granule (scene) to use</span>
+<span class="sd">            name: A name for the job</span>
+<span class="sd">            dem_matching: Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files</span>
+<span class="sd">            include_dem: Include the DEM file in the product package</span>
+<span class="sd">            include_inc_map: Include the local incidence angle map in the product package</span>
+<span class="sd">            include_rgb: Include a false-color RGB decomposition in the product package for dual-pol granules</span>
+<span class="sd">                (ignored for single-pol granules)</span>
+<span class="sd">            include_scattering_area: Include the scattering area in the product package</span>
+<span class="sd">            radiometry: Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area</span>
+<span class="sd">                projected into the look direction (gamma0)</span>
+<span class="sd">            resolution: Desired output pixel spacing in meters</span>
+<span class="sd">            scale: Scale of output image; either power or amplitude</span>
+<span class="sd">            speckle_filter: Apply an Enhanced Lee speckle filter</span>
+<span class="sd">            dem_name: Name of the DEM to use for processing.  `copernicus` will use the Copernicus GLO-30 Public DEM,</span>
+<span class="sd">                while `legacy` will use the DEM with the best coverage from ASF&#39;s legacy SRTM/NED datasets.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A Batch object containing the RTC job</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arguments</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+        <span class="n">arguments</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;self&#39;</span><span class="p">)</span>
+        <span class="n">job_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_rtc_job</span><span class="p">(</span><span class="o">**</span><span class="n">arguments</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">submit_prepared_jobs</span><span class="p">(</span><span class="n">prepared_jobs</span><span class="o">=</span><span class="n">job_dict</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">prepare_rtc_job</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span>
+                        <span class="n">granule</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                        <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                        <span class="n">dem_matching</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                        <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                        <span class="n">include_inc_map</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                        <span class="n">include_rgb</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                        <span class="n">include_scattering_area</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                        <span class="n">radiometry</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;sigma0&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">,</span>
+                        <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+                        <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
+                        <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                        <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            granule: The granule (scene) to use</span>
+<span class="sd">            name: A name for the job</span>
+<span class="sd">            dem_matching: Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files</span>
+<span class="sd">            include_dem: Include the DEM file in the product package</span>
+<span class="sd">            include_inc_map: Include the local incidence angle map in the product package</span>
+<span class="sd">            include_rgb: Include a false-color RGB decomposition in the product package for dual-pol granules</span>
+<span class="sd">                (ignored for single-pol granules)</span>
+<span class="sd">            include_scattering_area: Include the scattering area in the product package</span>
+<span class="sd">            radiometry: Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area</span>
+<span class="sd">                projected into the look direction (gamma0)</span>
+<span class="sd">            resolution: Desired output pixel spacing in meters</span>
+<span class="sd">            scale: Scale of output image; either power or amplitude</span>
+<span class="sd">            speckle_filter: Apply an Enhanced Lee speckle filter</span>
+<span class="sd">            dem_name: Name of the DEM to use for processing.  `copernicus` will use the Copernicus GLO-30 Public DEM,</span>
+<span class="sd">                while `legacy` will use the DEM with the best coverage from ASF&#39;s legacy SRTM/NED datasets.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A dictionary containing the prepared RTC job</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">job_parameters</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;granule&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;cls&#39;</span><span class="p">]:</span>
+            <span class="n">job_parameters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;granules&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">granule</span><span class="p">],</span> <span class="o">**</span><span class="n">job_parameters</span><span class="p">},</span>
+            <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="s1">&#39;RTC_GAMMA&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">job_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">return</span> <span class="n">job_dict</span>
+
+    <span class="k">def</span> <span class="nf">submit_insar_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                         <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                         <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                         <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                         <span class="n">include_look_vectors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                         <span class="n">include_los_displacement</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                         <span class="n">include_inc_map</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                         <span class="n">looks</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="s1">&#39;10x2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;20x4&#39;</span><span class="p">,</span>
+                         <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                         <span class="n">include_wrapped_phase</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                         <span class="n">apply_water_mask</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                         <span class="n">include_displacement_maps</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            granule1: The first granule (scene) to use</span>
+<span class="sd">            granule2: The second granule (scene) to use</span>
+<span class="sd">            name: A name for the job</span>
+<span class="sd">            include_look_vectors: Include the look vector theta and phi files in the product package</span>
+<span class="sd">            include_los_displacement: Include a GeoTIFF in the product package containing displacement values</span>
+<span class="sd">                along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of</span>
+<span class="sd">                `include_displacement_maps`, and will be removed in a future release.</span>
+<span class="sd">            include_inc_map: Include the local and ellipsoidal incidence angle maps in the product package</span>
+<span class="sd">            looks: Number of looks to take in range and azimuth</span>
+<span class="sd">            include_dem: Include the digital elevation model GeoTIFF in the product package</span>
+<span class="sd">            include_wrapped_phase: Include the wrapped phase GeoTIFF in the product package</span>
+<span class="sd">            apply_water_mask: Sets pixels over coastal waters and large inland waterbodies</span>
+<span class="sd">                as invalid for phase unwrapping</span>
+<span class="sd">            include_displacement_maps: Include displacement maps (line-of-sight and vertical) in the product package</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A Batch object containing the InSAR job</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arguments</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">arguments</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;self&#39;</span><span class="p">)</span>
+        <span class="n">job_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_insar_job</span><span class="p">(</span><span class="o">**</span><span class="n">arguments</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">submit_prepared_jobs</span><span class="p">(</span><span class="n">prepared_jobs</span><span class="o">=</span><span class="n">job_dict</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">prepare_insar_job</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span>
+                          <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                          <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                          <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                          <span class="n">include_look_vectors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                          <span class="n">include_los_displacement</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                          <span class="n">include_inc_map</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                          <span class="n">looks</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="s1">&#39;10x2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;20x4&#39;</span><span class="p">,</span>
+                          <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                          <span class="n">include_wrapped_phase</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                          <span class="n">apply_water_mask</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                          <span class="n">include_displacement_maps</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            granule1: The first granule (scene) to use</span>
+<span class="sd">            granule2: The second granule (scene) to use</span>
+<span class="sd">            name: A name for the job</span>
+<span class="sd">            include_look_vectors: Include the look vector theta and phi files in the product package</span>
+<span class="sd">            include_los_displacement: Include a GeoTIFF in the product package containing displacement values</span>
+<span class="sd">                along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of</span>
+<span class="sd">                `include_displacement_maps`, and will be removed in a future release.</span>
+<span class="sd">            include_inc_map: Include the local and ellipsoidal incidence angle maps in the product package</span>
+<span class="sd">            looks: Number of looks to take in range and azimuth</span>
+<span class="sd">            include_dem: Include the digital elevation model GeoTIFF in the product package</span>
+<span class="sd">            include_wrapped_phase: Include the wrapped phase GeoTIFF in the product package</span>
+<span class="sd">            apply_water_mask: Sets pixels over coastal waters and large inland waterbodies</span>
+<span class="sd">                as invalid for phase unwrapping</span>
+<span class="sd">            include_displacement_maps: Include displacement maps (line-of-sight and vertical) in the product package</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            A dictionary containing the prepared InSAR job</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">include_los_displacement</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;The include_los_displacement parameter has been deprecated in favor of &#39;</span>
+                          <span class="s1">&#39;include_displacement_maps, and will be removed in a future release.&#39;</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">)</span>
+
+        <span class="n">job_parameters</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="s1">&#39;granule1&#39;</span><span class="p">,</span> <span class="s1">&#39;granule2&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]:</span>
+            <span class="n">job_parameters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+        <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;granules&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">],</span> <span class="o">**</span><span class="n">job_parameters</span><span class="p">},</span>
+            <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="s1">&#39;INSAR_GAMMA&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">job_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">return</span> <span class="n">job_dict</span>
+
+    <span class="k">def</span> <span class="nf">my_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Your user information</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/user&#39;</span><span class="p">))</span>
+        <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">check_quota</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            The number of jobs left in your quota</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">my_info</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">info</span><span class="p">[</span><span class="s1">&#39;quota&#39;</span><span class="p">][</span><span class="s1">&#39;remaining&#39;</span><span class="p">]</span>
+</code></pre></div>
+        </details>
 
 
 
@@ -3366,6 +3801,147 @@ Batch        </code>
     <div class="doc doc-contents ">
 
 
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Batch</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jobs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Job</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">jobs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">jobs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span> <span class="o">=</span> <span class="n">jobs</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Job</span><span class="p">,</span> <span class="s1">&#39;Batch&#39;</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Batch</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">Batch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jobs</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">jobs</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Job</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">Batch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jobs</span> <span class="o">+</span> <span class="p">[</span><span class="n">other</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;unsupported operand type(s) for +: &#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39; and &#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__iadd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Job</span><span class="p">,</span> <span class="s1">&#39;Batch&#39;</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Batch</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span> <span class="o">+=</span> <span class="n">other</span><span class="o">.</span><span class="n">jobs</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Job</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span> <span class="o">+=</span> <span class="p">[</span><span class="n">other</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;unsupported operand type(s) for +=: &#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39; and &#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job</span><span class="p">:</span> <span class="n">Job</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s1">&#39;Batch&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">jobs</span>
+
+    <span class="k">def</span> <span class="fm">__delitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">Batch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">job</span><span class="p">:</span> <span class="n">Job</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">job</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">reprs</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">job</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">])</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Batch([</span><span class="si">{</span><span class="n">reprs</span><span class="si">}</span><span class="s1">])&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_count_statuses</span><span class="p">()</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s1"> HyP3 Jobs: &#39;</span> \
+               <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">count</span><span class="p">[</span><span class="s2">&quot;SUCCEEDED&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> succeeded, &#39;</span> \
+               <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">count</span><span class="p">[</span><span class="s2">&quot;FAILED&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> failed, &#39;</span> \
+               <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">count</span><span class="p">[</span><span class="s2">&quot;RUNNING&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> running, &#39;</span> \
+               <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">count</span><span class="p">[</span><span class="s2">&quot;PENDING&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> pending.&#39;</span>
+
+    <span class="k">def</span> <span class="nf">_count_statuses</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Counter</span><span class="p">([</span><span class="n">job</span><span class="o">.</span><span class="n">status_code</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">complete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns: True if all jobs are complete, otherwise returns False</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">job</span><span class="o">.</span><span class="n">complete</span><span class="p">():</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">succeeded</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns: True if all jobs have succeeded, otherwise returns False</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">job</span><span class="o">.</span><span class="n">succeeded</span><span class="p">():</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">create</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Args:</span>
+<span class="sd">            location: Directory location to put files into</span>
+<span class="sd">            create: Create `location` if it does not point to an existing directory</span>
+
+<span class="sd">        Returns: list of Path objects to downloaded files</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">downloaded_files</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">tqdm</span> <span class="o">=</span> <span class="n">get_tqdm_progress_bar</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">downloaded_files</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">download_files</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="n">create</span><span class="p">))</span>
+            <span class="k">except</span> <span class="n">HyP3SDKError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Warning: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">. Skipping download for </span><span class="si">{</span><span class="n">job</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">downloaded_files</span>
+
+    <span class="k">def</span> <span class="nf">any_expired</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Check succeeded jobs for expiration&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">job</span><span class="o">.</span><span class="n">expired</span><span class="p">():</span>
+                    <span class="k">return</span> <span class="kc">True</span>
+            <span class="k">except</span> <span class="n">HyP3SDKError</span><span class="p">:</span>
+                <span class="k">continue</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">filter_jobs</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">succeeded</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">running</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">failed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">include_expired</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Batch&#39;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Filter jobs by status. By default, only succeeded and still running jobs will be in the returned batch.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            succeeded: Include all succeeded jobs</span>
+<span class="sd">            running: Include all running jobs</span>
+<span class="sd">            failed: Include all failed jobs</span>
+<span class="sd">            include_expired: Include expired jobs in the result</span>
+
+
+<span class="sd">        Returns:</span>
+<span class="sd">             batch: A batch object containing jobs matching all the selected statuses</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">filtered_jobs</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">job</span><span class="o">.</span><span class="n">succeeded</span><span class="p">()</span> <span class="ow">and</span> <span class="n">succeeded</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">include_expired</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">job</span><span class="o">.</span><span class="n">expired</span><span class="p">():</span>
+                    <span class="n">filtered_jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+
+            <span class="k">elif</span> <span class="n">job</span><span class="o">.</span><span class="n">running</span><span class="p">()</span> <span class="ow">and</span> <span class="n">running</span><span class="p">:</span>
+                <span class="n">filtered_jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+
+            <span class="k">elif</span> <span class="n">job</span><span class="o">.</span><span class="n">failed</span><span class="p">()</span> <span class="ow">and</span> <span class="n">failed</span><span class="p">:</span>
+                <span class="n">filtered_jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">Batch</span><span class="p">(</span><span class="n">filtered_jobs</span><span class="p">)</span>
+</code></pre></div>
+        </details>
 
 
 
@@ -3683,6 +4259,133 @@ Job        </code>
     <div class="doc doc-contents ">
 
 
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Job</span><span class="p">:</span>
+    <span class="n">_attributes_for_resubmit</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;job_parameters&#39;</span><span class="p">,</span> <span class="s1">&#39;job_type&#39;</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">job_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">job_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">request_time</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span>
+            <span class="n">status_code</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">user_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+            <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">job_parameters</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">files</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">logs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">browse_images</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">thumbnail_images</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">expiration_time</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span> <span class="o">=</span> <span class="n">job_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">job_type</span> <span class="o">=</span> <span class="n">job_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">request_time</span> <span class="o">=</span> <span class="n">request_time</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="n">status_code</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user_id</span> <span class="o">=</span> <span class="n">user_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">job_parameters</span> <span class="o">=</span> <span class="n">job_parameters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">files</span> <span class="o">=</span> <span class="n">files</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logs</span> <span class="o">=</span> <span class="n">logs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">browse_images</span> <span class="o">=</span> <span class="n">browse_images</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">thumbnail_images</span> <span class="o">=</span> <span class="n">thumbnail_images</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span> <span class="o">=</span> <span class="n">expiration_time</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Job.from_dict(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span><span class="si">}</span><span class="s1">)&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;HyP3 </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">job_type</span><span class="si">}</span><span class="s1"> job </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s1">&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="vm">__dict__</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="n">input_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="n">expiration_time</span> <span class="o">=</span> <span class="n">parse_date</span><span class="p">(</span><span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;expiration_time&#39;</span><span class="p">])</span> <span class="k">if</span> <span class="n">input_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;expiration_time&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">Job</span><span class="p">(</span>
+            <span class="n">job_type</span><span class="o">=</span><span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;job_type&#39;</span><span class="p">],</span>
+            <span class="n">job_id</span><span class="o">=</span><span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;job_id&#39;</span><span class="p">],</span>
+            <span class="n">request_time</span><span class="o">=</span><span class="n">parse_date</span><span class="p">(</span><span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;request_time&#39;</span><span class="p">]),</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;status_code&#39;</span><span class="p">],</span>
+            <span class="n">user_id</span><span class="o">=</span><span class="n">input_dict</span><span class="p">[</span><span class="s1">&#39;user_id&#39;</span><span class="p">],</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">input_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">),</span>
+            <span class="n">job_parameters</span><span class="o">=</span><span class="n">input_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;job_parameters&#39;</span><span class="p">),</span>
+            <span class="n">files</span><span class="o">=</span><span class="n">input_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;files&#39;</span><span class="p">),</span>
+            <span class="n">logs</span><span class="o">=</span><span class="n">input_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;logs&#39;</span><span class="p">),</span>
+            <span class="n">browse_images</span><span class="o">=</span><span class="n">input_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;browse_images&#39;</span><span class="p">),</span>
+            <span class="n">thumbnail_images</span><span class="o">=</span><span class="n">input_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;thumbnail_images&#39;</span><span class="p">),</span>
+            <span class="n">expiration_time</span><span class="o">=</span><span class="n">expiration_time</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">for_resubmit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+        <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="n">for_resubmit</span><span class="p">:</span>
+            <span class="n">keys_to_process</span> <span class="o">=</span> <span class="n">Job</span><span class="o">.</span><span class="n">_attributes_for_resubmit</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">keys_to_process</span> <span class="o">=</span> <span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys_to_process</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
+                    <span class="n">job_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s1">&#39;seconds&#39;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">job_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+        <span class="k">return</span> <span class="n">job_dict</span>
+
+    <span class="k">def</span> <span class="nf">succeeded</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="s1">&#39;SUCCEEDED&#39;</span>
+
+    <span class="k">def</span> <span class="nf">failed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="s1">&#39;FAILED&#39;</span>
+
+    <span class="k">def</span> <span class="nf">complete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">succeeded</span><span class="p">()</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">failed</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">running</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">complete</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">expired</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">tz</span><span class="o">.</span><span class="n">UTC</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span>
+        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">HyP3SDKError</span><span class="p">(</span><span class="s1">&#39;Only SUCCEEDED jobs have an expiration time&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">create</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Args:</span>
+<span class="sd">            location: Directory location to put files into</span>
+<span class="sd">            create: Create `location` if it does not point to an existing directory</span>
+
+<span class="sd">        Returns: list of Path objects to downloaded files</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">location</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">succeeded</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">HyP3SDKError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Only succeeded jobs can be downloaded; job is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">expired</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="n">HyP3SDKError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Expired jobs cannot be downloaded; &#39;</span>
+                               <span class="sa">f</span><span class="s1">&#39;job expired </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s2">&quot;seconds&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">create</span><span class="p">:</span>
+            <span class="n">location</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">location</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">NotADirectoryError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">location</span><span class="p">))</span>
+
+        <span class="n">downloaded_files</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">files</span><span class="p">:</span>
+            <span class="n">download_url</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">location</span> <span class="o">/</span> <span class="n">file</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">downloaded_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">download_file</span><span class="p">(</span><span class="n">download_url</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">10485760</span><span class="p">))</span>
+            <span class="k">except</span> <span class="n">HTTPError</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">HyP3SDKError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unable to download file: </span><span class="si">{</span><span class="n">download_url</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">downloaded_files</span>
+</code></pre></div>
+        </details>
 
 
 

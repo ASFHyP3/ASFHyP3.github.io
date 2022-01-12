@@ -1283,32 +1283,65 @@ feedback.init({showIcon: false});
                 <h1 id="introduction-to-sar">Introduction to SAR<a class="headerlink" href="#introduction-to-sar" title="Permanent link">&para;</a></h1>
 <hr />
 <h2 id="how-sar-operates">How SAR Operates<a class="headerlink" href="#how-sar-operates" title="Permanent link">&para;</a></h2>
-<p>SAR is an active sensor that transmits pulses and listens for echoes, called backscatter. The backscatter is recorded in both phase and amplitude, with phase being used to determine the distance from the sensor to a target and amplitude yielding information about the roughness, geometry, wetness, and dielectric constant of that target.</p>
+<p>SAR is an active sensor that transmits pulses and listens for echoes, called backscatter. The backscatter is recorded in both phase and amplitude. The phase is used to determine the distance from the sensor to a target, and amplitude indicates the amount of the sent signal that returns to the sensor. Amplitude measurements provide information about the roughness, geometry, wetness, and dielectric constant of that target, while phase measurements are used for SAR interferometry.</p>
 <h3 id="propagation-of-em-waves">Propagation of EM Waves<a class="headerlink" href="#propagation-of-em-waves" title="Permanent link">&para;</a></h3>
-<p>At the most fundamental level, SAR transmits an encoded burst, called a chirp, of electro-magnetic energy (figure 1) and then listens for the return signal, called echoes.  The wavelength of this chirp is in the centimeter range, with X-band (~3 cm), C-band (~6 cm), and L-band (~23 cm) all in common use.</p>
-<p><img alt="Figure 1" src="../../images/microwave-emr.png" title="The spectrum of electro-magnetic radiation. SAR is imaged using microwave wavelengths (&#955; ≈ 3-23 cm)" /></p>
-<p><em>Figure 1: The spectrum of electro-magnetic radiation. SAR is imaged using microwave wavelengths (&#955; ≈ 3-23 cm).</em></p>
+<p>At the most fundamental level, SAR transmits an encoded burst, called a chirp, of electro-magnetic energy (Figure 1) and then listens for the return signal, called echoes.  The wavelength of this chirp is in the centimeter range, with X-band (~3 cm), C-band (~6 cm), and L-band (~23 cm) all in common use.</p>
+<p><img alt="Figure 1" src="../../images/microwave-emr.png" title="The spectrum of electro-magnetic radiation. SAR is imaged using microwave wavelengths" /></p>
+<p><em>Figure 1: The spectrum of electromagnetic radiation. SAR is imaged using microwave wavelengths. The microwave range extends from about 1 mm to 1 m in wavelength, with most radar applications using bands within the 3 mm to 30 cm range.</em></p>
 <h3 id="polarizations">Polarizations<a class="headerlink" href="#polarizations" title="Permanent link">&para;</a></h3>
-<p>Polarization refers to the direction of travel of an electromagnetic wave.  A horizontal wave is transmitted so that is oscillates in a plane parallel to the surface imaged, while vertical wave oscillates in a plane perpendicular to the surface imaged.</p>
-<p>Some SAR systems can transmit chirps with either a horizontal or vertical polarization.  In addition, some of these sensors can listen for either horizontal of vertical backscatter.  This gives rise to 4 different types of returns HH, HV, VV, and VH. Here the first letter is the transmit method and the second is the receive method, e.g. VH is a vertically polarized transmit signal with horizontally polarized echoes recorded.  These transmit and receive methods are displayed in figure 2.</p>
-<p>Polarimetry is an emerging field of SAR processing which is used in a number of applications such as measuring vegetation properties and changes of vegetation over time.  Additional applications include oceanography, geology, and disaster response.</p>
-<p><img alt="Figure 2" src="../../images/polarizations.png" title="SAR signals are transmitted either vertically or horizontally. Likewise, the sensor can listen for both horizontally and vertically returns." /></p>
-<p><em>Figure 2: SAR signals are transmitted either vertically (V) or horizontally (H). Likewise, the sensor can listen for both horizontally and vertically returns. This gives rise to four different polarization combinations - VV, VH, HH, and HV.</em></p>
+<p>Polarization refers to the direction of travel of an electromagnetic wave. A horizontal wave is transmitted so that it oscillates in a plane parallel to the surface imaged, while a vertical wave oscillates in a plane perpendicular to the surface imaged.</p>
+<p>There are four different polarization combinations commonly used by SAR sensors: VV, VH, HV and HH, as listed in Table 1. The first letter indicates the polarization used to transmit the signal, and the second letter indicates the polarization of the measured return, as illustrated in Figure 2.</p>
+<p><em>Table 1: SAR Polarizations</em></p>
+<table>
+<thead>
+<tr>
+<th>Polarization Code</th>
+<th>Transmit Signal Polarization</th>
+<th>Return Signal Polarization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VV</td>
+<td>Vertical</td>
+<td>Vertical</td>
+</tr>
+<tr>
+<td>VH</td>
+<td>Vertical</td>
+<td>Horizontal</td>
+</tr>
+<tr>
+<td>HV</td>
+<td>Horizontal</td>
+<td>Vertical</td>
+</tr>
+<tr>
+<td>HH</td>
+<td>Horizontal</td>
+<td>Horizontal</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Figure 2" src="../../images/polarizations_ASF_dashed.png" title="SAR signals are transmitted either vertically or horizontally. Likewise, the sensor can listen for either horizontally or vertically polarized returns." /></p>
+<p><em>Figure 2: SAR signals are transmitted and received either vertically (V) or horizontally (H). This gives the potential for four different polarization combinations (transmit listed first, receive second): VV, VH, HH, and HV. Credit: ASF</em></p>
+<p>Different SAR sensors have different polarization capabilities. Single-pol sensors send out a signal in one polarization and can only measure returns that are in that same polarization (VV or HH). Dual-pol sensors send out a signal in one polarization, but can measure returns that are in that same polarization (co-pol: VV or HH) as well as returns that are in the other polarization (cross-pol: VH or HV). Some SAR systems can transmit chirps with both a horizontal or vertical polarization and listen for both horizontal or vertical returns, giving full quad-pol capabilities (VV, VH, HV, HH).  </p>
+<p>Polarimetry is an emerging field of SAR processing which is used in a number of applications such as measuring vegetation properties and changes of vegetation over time. Additional applications include oceanography, geology, and disaster response.</p>
 <hr />
 <h2 id="backscatter-contributors">Backscatter Contributors<a class="headerlink" href="#backscatter-contributors" title="Permanent link">&para;</a></h2>
-<p>Many factors influence the backscatter received by the SAR sensor.  The wavelength used by the SAR influences the signal's penetration, and, thus, what is being imaged. Surface roughness will modulate the backscatter returns from nothing up to a strong return, decreasing or increasing the brightness of the resulting pixel. Scattering mechanisms like volume scattering or double bounce can strongly influence the brightness of the SAR image as well, sometimes resulting in total saturation by the received signal.</p>
+<p>Many factors influence the backscatter received by the SAR sensor. The wavelength used by the SAR influences the signal's penetration, and, thus, what is being imaged. Surface roughness will modulate the backscatter returns from nothing up to a strong return, decreasing or increasing the brightness of the resulting pixel. Scattering mechanisms like volume scattering or double bounce can strongly influence the brightness of the SAR image as well, sometimes resulting in total saturation by the received signal.</p>
 <h3 id="wavelength">Wavelength<a class="headerlink" href="#wavelength" title="Permanent link">&para;</a></h3>
-<p>The wavelength of the SAR system influences the amount of ground penetration that occurs. As shown in figure 3, X-band has the least penetration, scattering from the top of the canopy in vegetated areas.  All three bands will penetrate dry sand, with stronger returns from both C-band and L-band.  L-band has the most penetration overall, with returns from the ground in vegetated areas, strong returns from substances under dry alluvium, and deep penetration of ice and snow.</p>
+<p>The wavelength of the SAR system influences the amount of ground penetration that occurs. As shown in Figure 3, X-band has the least penetration, scattering from the top of the canopy in vegetated areas. All three bands will penetrate dry sand, with stronger returns from both C-band and L-band. L-band has the most penetration overall, with returns from the ground in vegetated areas, strong returns from substances under dry alluvium, and deep penetration of ice and snow.</p>
 <p><img alt="Figure 3" src="../../images/SAR_band_types.png" title="Effects of SAR band on penetration of surfaces.  The longer the wavelength, the deeper the penetration through most land types." /></p>
-<p><em>Figure 3: Effects of the SAR band on penetration of surfaces.  The longer the wavelength, the deeper the penetration through most land types. Credit: <a href="https://gis1.servirglobal.net/TrainingMaterials/SAR/Chp2Content.pdf">The SAR Handbook</a></em></p>
+<p><em>Figure 3: Effects of the SAR band on penetration of surfaces. The longer the wavelength, the deeper the penetration through most land types. Credit: <a href="https://gis1.servirglobal.net/TrainingMaterials/SAR/Chp2Content.pdf">The SAR Handbook</a></em></p>
 <h3 id="surface-roughness">Surface Roughness<a class="headerlink" href="#surface-roughness" title="Permanent link">&para;</a></h3>
-<p>The strength of the return, or backscatter, is partially based upon relative roughness of the surface imaged. The smoother the surface, the more reflection away from the sensor, while rough surfaces give a much stronger return towards the imaging platform. As can be seen in figure 4, if the height of the surface's roughness is less than 1/32 of the wavelength, mostly specular reflection occurs. If the height of the surface's roughness is greater than 1/2 the wavelength used, the echoes are scattered in all directions, giving a strong return back to the sensor.</p>
+<p>The strength of the return, or backscatter, is partially based upon relative roughness of the surface imaged. The smoother the surface, the more reflection away from the sensor, while rough surfaces give a much stronger return towards the imaging platform. As can be seen in Figure 4, if the height of the surface's roughness is less than 1/32 of the wavelength, mostly specular reflection occurs. If the height of the surface's roughness is greater than 1/2 the wavelength used, the echoes are scattered in all directions, giving a strong return back to the sensor.</p>
 <p><img alt="Figure 4" src="../../images/wavelength_vs_roughness.png" title="The amount of backscatter from a surface depends largely on the surface's roughness" /></p>
 <p><em>Figure 4: The amount of backscatter from a surface depends largely on the surface's roughness, with smooth surfaces getting the least returns and rough surfaces getting the strongest returns. Credit: <a href="https://gis1.servirglobal.net/TrainingMaterials/SAR/Chp2Content.pdf">The SAR Handbook</a></em></p>
 <h3 id="types-of-scattering">Types of Scattering<a class="headerlink" href="#types-of-scattering" title="Permanent link">&para;</a></h3>
 <p><img alt="Figure 5" src="../../images/scattering_types.png" title="Scattering mechanisms. Rough surfaces give bright returns due to the wide scattering.  Vegetated surfaces cause volumetric scattering, which has a darker return to the imaging platform.  Double bounce returns, found mostly in urban areas, give the brightest return, as the majority of the energy is re-directed back towards the sensor." /></p>
 <p><em>Figure 5: Scattering mechanisms. Rough surfaces give bright returns due to the wide scattering.  Vegetated surfaces cause volumetric scattering, which gives a darker return to the imaging platform.  Double bounce returns, found mostly in urban areas, give the brightest return, as the majority of the energy is re-directed back towards the sensor. Credit: <a href="https://gis1.servirglobal.net/TrainingMaterials/SAR/Chp2Content.pdf">The SAR Handbook</a></em></p>
-<p>The resolution of Sentinel-1 SAR images is roughly 10 m.  This means that a square of 10 meters on the ground is represented by a single pixel in the SAR image. The relative roughness of this patch of ground compared to the wavelength used will affect the backscatter strength (see figure 4).  However, there are additional types of bounce mechanisms beyond specular and diffuse, as shown in figure 5.  In vegetation, <em>volumetric</em> scattering occurs when signals bounce around inside the vegetation imaged.  The <em>double bounce</em> mechanism which occurs in urban areas and is exploited by corner reflectors, causes chirp to be reflected directly back to the sensor, causing a very strong backscatter.  Double bounce returns are so strong in some places that they cause over saturation of the sensor, resulting in visible sidelobes.  These sidelobes are evidenced by bright crosses surrounding the double bounce target.</p>
+<p>The resolution of Sentinel-1 SAR images is roughly 10 m.  This means that a square of 10 meters on the ground is represented by a single pixel in the SAR image. The relative roughness of this patch of ground compared to the wavelength used will affect the backscatter strength (see Figure 4).  However, there are additional types of bounce mechanisms beyond specular and diffuse, as shown in Figure 5.  In vegetation, <em>volumetric</em> scattering occurs when signals bounce around inside the vegetation imaged.  The <em>double bounce</em> mechanism which occurs in urban areas and is exploited by corner reflectors, causes chirp to be reflected directly back to the sensor, causing a very strong backscatter.  Double bounce returns are so strong in some places that they cause over saturation of the sensor, resulting in visible sidelobes.  These sidelobes are evidenced by bright crosses surrounding the double bounce target.</p>
 <hr />
 <h2 id="sar-scale">SAR Scale<a class="headerlink" href="#sar-scale" title="Permanent link">&para;</a></h2>
 <p>SAR backscatter are recorded in both return strength and phase.  Each pixel in a single-look complex SAR image represents these values as an imaginary number (I,Q).  To create the visible images we are used to looking at, the SAR image is <em>detected</em>.  This process calculates the square root of the sum of the squares of the I and Q values found in an SLC image, creating a so called intensity image.  This image is real valued, and, when calibrated, gives the absolute backscatter of the surface imaged.  Detected images can be stored using several different scales, including power, amplitude, and dB.  Note the default scale of Sentinel-1 RTC products from HyP3 is power. However, in some cases, it may be desirable to convert the actual pixel values to a different scale. Two other scales commonly used for SAR data are amplitude and dB.</p>
@@ -1323,7 +1356,7 @@ feedback.init({showIcon: false});
 <hr />
 <h2 id="geometric-distortions">Geometric Distortions<a class="headerlink" href="#geometric-distortions" title="Permanent link">&para;</a></h2>
 <p>There are a number of distortions inherent to SAR data due to the side-looking nature of the sensor, and these impacts will be more prevalent in areas with rugged terrain. The process of radiometric terrain correction addresses the geometric distortions that lead to geolocation errors in terrain features, and also normalizes the backscatter values based on the actual area contributing returns. This process generates an image that aligns well with other geospatial data and is suitable for GIS applications or time-series analysis.</p>
-<p>The key distortions present in SAR images are foreshortening, layover and shadow (figure 6).</p>
+<p>The key distortions present in SAR images are foreshortening, layover and shadow (Figure 6).</p>
 <p><img alt="Figure 6" src="../../images/sar_distortions.png" title="Distortions induced by side-looking SAR. Ground points a, b, c are ‘seen’ by radar as points a’, b’, c’ in the slant range." /></p>
 <p><em>Figure 6: Distortions induced by side-looking SAR. Ground points a, b, c are ‘seen’ by radar as points a’, b’, c’ in the slant range. Credit: Franz J. Meyer</em></p>
 <p>In the case of <strong>foreshortening</strong>, the backscatter from the front side of the mountain is compressed, with returns from a large area arriving back to the sensor at about the same time. This results in the front slope being displayed as a narrow, bright band.</p>
