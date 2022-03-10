@@ -1020,6 +1020,19 @@ feedback.init({showIcon: false});
     Install
   </a>
   
+    <nav class="md-nav" aria-label="Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-as-a-docker-container" class="md-nav__link">
+    Running as a Docker container
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1078,12 +1091,30 @@ potential to be used with a variety of rasters, including non-SAR datasets.</p>
 environments via <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html">Anaconda/Miniconda</a>.
 It is also possible to use <a href="https://docs.python.org/3/tutorial/venv.html">Python virtual environments</a>,
 but installation of non-python dependencies (e.g., <code>gdal</code>) can be challenging. </p>
-<p><code>asf_tools</code> can be installed into a conda environment with</p>
+<p><code>asf_tools</code> can be installed into a conda environment with:</p>
 <div class="highlight"><pre><span></span><code>conda install -c conda-forge asf_tools
 </code></pre></div>
-<p>or into a virtual environment with</p>
+<p>or into a virtual environment with:</p>
 <div class="highlight"><pre><span></span><code>python -m pip install asf_tools
 </code></pre></div>
+<h3 id="running-as-a-docker-container">Running as a Docker container<a class="headerlink" href="#running-as-a-docker-container" title="Permanent link">&para;</a></h3>
+<p>We also publish a <a href="https://docs.docker.com/get-started/">Docker</a> image for <code>asf_tools</code>, with all the dependencies
+pre-installed, to the GitHub Container Registry:
+<a href="https://github.com/ASFHyP3/asf-tools/pkgs/container/asf-tools">https://github.com/ASFHyP3/asf-tools/pkgs/container/asf-tools</a>.</p>
+<p>You can pull an image with the latest released version of <code>asf_tools</code>  with the command:
+<div class="highlight"><pre><span></span><code>docker pull ghcr.io/asfhyp3/asf-tools:latest
+</code></pre></div></p>
+<p>Or, the development version with: 
+<div class="highlight"><pre><span></span><code>docker pull ghcr.io/asfhyp3/asf-tools:test
+</code></pre></div></p>
+<p>And then run the container with:
+<div class="highlight"><pre><span></span><code>docker run --rm -it ghcr.io/asfhyp3/asf-tools:latest
+</code></pre></div>
+which will drop you into a <code>bash</code> shell inside the container with an active <code>asf-tools</code> conda environment. </p>
+<p>To move data between your local (host) machine and the container, you can mount a 
+<a href="https://docs.docker.com/storage/volumes/">volume</a> with:
+<div class="highlight"><pre><span></span><code>docker run --rm -it -v /path/to/data:/home/conda/data ghcr.io/asfhyp3/asf-tools:latest
+</code></pre></div></p>
 <h2 id="quick-usage">Quick Usage<a class="headerlink" href="#quick-usage" title="Permanent link">&para;</a></h2>
 <h3 id="local-resolution-weighted-composite">Local Resolution Weighted Composite<a class="headerlink" href="#local-resolution-weighted-composite" title="Permanent link">&para;</a></h3>
 <p>The <code>make_composite</code> tool allows you to create a local-resolution-weighted composite
