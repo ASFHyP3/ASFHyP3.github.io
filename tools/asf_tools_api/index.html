@@ -141,7 +141,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#asf_tools-v031-api-reference" class="md-skip">
+        <a href="#asf_tools-v033-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -1538,7 +1538,7 @@ feedback.init({showIcon: false});
               
                 
                 
-                <h1 id="asf_tools-v031-api-reference"><code>asf_tools</code> <em>v0.3.1</em> API Reference<a class="headerlink" href="#asf_tools-v031-api-reference" title="Permanent link">&para;</a></h1>
+                <h1 id="asf_tools-v033-api-reference"><code>asf_tools</code> <em>v0.3.3</em> API Reference<a class="headerlink" href="#asf_tools-v033-api-reference" title="Permanent link">&para;</a></h1>
 
 
   <div class="doc doc-object doc-module">
@@ -2743,7 +2743,7 @@ If <code>None</code>, the mean accumulation value is used</p></td>
 <span class="sd">            If `None`, the mean accumulation value is used</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">()</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="n">Pgrid</span><span class="p">()</span>
     <span class="n">grid</span><span class="o">.</span><span class="n">add_gridded_data</span><span class="p">(</span><span class="n">dem_array</span><span class="p">,</span> <span class="n">data_name</span><span class="o">=</span><span class="s1">&#39;dem&#39;</span><span class="p">,</span> <span class="n">affine</span><span class="o">=</span><span class="n">dem_affine</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">dem_crs</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span> <span class="n">mask</span><span class="o">=~</span><span class="n">basin_mask</span><span class="p">)</span>
 
     <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Filling depressions&#39;</span><span class="p">)</span>
