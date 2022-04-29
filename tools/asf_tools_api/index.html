@@ -141,7 +141,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#asf_tools-v033-api-reference" class="md-skip">
+        <a href="#asf_tools-v040-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -991,6 +991,33 @@ feedback.init({showIcon: false});
 </li>
       
         <li class="md-nav__item">
+  <a href="#asf_tools.flood_map" class="md-nav__link">
+    flood_map
+  </a>
+  
+    <nav class="md-nav" aria-label="flood_map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asf_tools.flood_map.logstat" class="md-nav__link">
+    logstat()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asf_tools.flood_map.make_flood_map" class="md-nav__link">
+    make_flood_map()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#asf_tools.hand" class="md-nav__link">
     hand
   </a>
@@ -1385,6 +1412,33 @@ feedback.init({showIcon: false});
 </li>
       
         <li class="md-nav__item">
+  <a href="#asf_tools.flood_map" class="md-nav__link">
+    flood_map
+  </a>
+  
+    <nav class="md-nav" aria-label="flood_map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asf_tools.flood_map.logstat" class="md-nav__link">
+    logstat()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asf_tools.flood_map.make_flood_map" class="md-nav__link">
+    make_flood_map()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#asf_tools.hand" class="md-nav__link">
     hand
   </a>
@@ -1538,7 +1592,7 @@ feedback.init({showIcon: false});
               
                 
                 
-                <h1 id="asf_tools-v033-api-reference"><code>asf_tools</code> <em>v0.3.3</em> API Reference<a class="headerlink" href="#asf_tools-v033-api-reference" title="Permanent link">&para;</a></h1>
+                <h1 id="asf_tools-v040-api-reference"><code>asf_tools</code> <em>v0.4.0</em> API Reference<a class="headerlink" href="#asf_tools-v040-api-reference" title="Permanent link">&para;</a></h1>
 
 
   <div class="doc doc-object doc-module">
@@ -2562,6 +2616,321 @@ out_counts_raster: Path to the created GeoTIFF with counts of scenes contributin
         <span class="n">dem_file_paths</span> <span class="o">=</span> <span class="n">vector</span><span class="o">.</span><span class="n">intersecting_feature_properties</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span> <span class="n">tile_features</span><span class="p">,</span> <span class="s1">&#39;file_path&#39;</span><span class="p">)</span>
 
         <span class="n">gdal</span><span class="o">.</span><span class="n">BuildVRT</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">vrt</span><span class="p">),</span> <span class="n">dem_file_paths</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-module">
+
+
+
+<h2 id="asf_tools.flood_map" class="doc doc-heading">
+        <code>flood_map</code>
+
+
+
+<a href="#asf_tools.flood_map" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Generate flood depth map from surface water extent map.</p>
+<p>Create a flood depth map from a surface water extent map and
+a HAND image. The HAND image must be pixel-aligned (same extent and size) to
+the water extent map, and the surface water extent map should be a byte GeoTIFF
+indicating water (true), not water (false). Flood depth maps are estimated
+using either a numerical, normalized median absolute deviation, logarithmic
+or iterative approach.</p>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="asf_tools.flood_map.logstat" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">logstat</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">func</span><span class="o">=&lt;</span><span class="n">function</span> <span class="n">nanstd</span> <span class="n">at</span> <span class="mh">0x7f39260964c0</span><span class="o">&gt;</span><span class="p">)</span></code>
+
+
+<a href="#asf_tools.flood_map.logstat" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Calculate a function in logarithmic scale and return in linear scale.
+INF values inside the data array are set to nan.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>data</code></td>
+        <td><code>ndarray</code></td>
+        <td><p>array of data</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>func</code></td>
+        <td><code>Callable</code></td>
+        <td><p>statistical function to calculate in logarithmic scale</p></td>
+        <td><code>&lt;function nanstd at 0x7f39260964c0&gt;</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>statistic</code></td>
+      <td><p>statistic of data in linear scale</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>asf_tools/flood_map.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">logstat</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot; Calculate a function in logarithmic scale and return in linear scale.</span>
+<span class="sd">        INF values inside the data array are set to nan.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            data: array of data</span>
+<span class="sd">            func: statistical function to calculate in logarithmic scale</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            statistic: statistic of data in linear scale</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ld</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">ld</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">ld</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="n">st</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">ld</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="asf_tools.flood_map.make_flood_map" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">make_flood_map</span><span class="p">(</span><span class="n">out_raster</span><span class="p">,</span> <span class="n">water_raster</span><span class="p">,</span> <span class="n">hand_raster</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="s1">&#39;iterative&#39;</span><span class="p">,</span> <span class="n">water_level_sigma</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">known_water_threshold</span><span class="o">=</span><span class="mf">30.0</span><span class="p">,</span> <span class="n">iterative_bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span></code>
+
+
+<a href="#asf_tools.flood_map.make_flood_map" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Create a flood depth map from a surface water extent map.</p>
+<p>WARNING: This functionality is still under active development and the products
+created using this function are likely to change in the future.</p>
+<p>Create a flood depth map from a single surface water extent map and
+a HAND image. The HAND image must be pixel-aligned to the surface water extent map.
+The the surface water extent map should be a byte GeoTIFF indicating water (true) and
+not water (false)</p>
+<p>Known perennial Global Surface-water data are produced under the Copernicus Programme (Pekel et al., 2016),
+and are included with surface-water detection maps when generating the flood depth product.</p>
+<p>Flood depth maps are estimated using one of the approaches:
+<em>Iterative: (Default) Basin hopping optimization method matches flooded areas to flood depth
+estimates given by the HAND layer. This is the most accurate method but also the
+most time-intensive.
+</em>Normalized Median Absolute Deviation (nmad): Uses a median operator to estimate
+the variation to increase robustness in the presence of outliers.
+<em>Logstat: Calculates the mean and standard deviation of HAND heights in the logarithmic
+domain to improve robustness for very non-Gaussian data distributions.
+</em>Numpy: Calculates statistics on a linear scale. Least robust to outliers and non-Gaussian
+distributions.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>out_raster</code></td>
+        <td><code>Union[str, pathlib.Path]</code></td>
+        <td><p>Flood depth GeoTIFF to create</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>water_raster</code></td>
+        <td><code>Union[str, pathlib.Path]</code></td>
+        <td><p>Surface water extent GeoTIFF</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>hand_raster</code></td>
+        <td><code>Union[str, pathlib.Path]</code></td>
+        <td><p>Height Above Nearest Drainage (HAND) GeoTIFF aligned to the surface water extent raster</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>estimator</code></td>
+        <td><code>str</code></td>
+        <td><p>Estimation approach for determining flood depth</p></td>
+        <td><code>&#39;iterative&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>water_level_sigma</code></td>
+        <td><code>float</code></td>
+        <td><p>Max water height used in logstat, nmad, and numpy estimations</p></td>
+        <td><code>3.0</code></td>
+      </tr>
+      <tr>
+        <td><code>known_water_threshold</code></td>
+        <td><code>float</code></td>
+        <td><p>Threshold for extracting the known water area in percent</p></td>
+        <td><code>30.0</code></td>
+      </tr>
+      <tr>
+        <td><code>iterative_bounds</code></td>
+        <td><code>Tuple[int, int]</code></td>
+        <td><p>Bounds on basin-hopping algorithm used in iterative estimation</p></td>
+        <td><code>(0, 15)</code></td>
+      </tr>
+  </tbody>
+</table>      <div class="admonition references">
+<p class="admonition-title">References</p>
+<p>Jean-Francios Pekel, Andrew Cottam, Noel Gorelik, Alan S. Belward. 2016. <a href="https://doi:10.1038/nature20584">https://doi:10.1038/nature20584</a></p>
+</div>
+
+        <details class="quote">
+          <summary>Source code in <code>asf_tools/flood_map.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">make_flood_map</span><span class="p">(</span><span class="n">out_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">water_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>
+                   <span class="n">hand_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">estimator</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;iterative&#39;</span><span class="p">,</span>
+                   <span class="n">water_level_sigma</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">3.</span><span class="p">,</span>
+                   <span class="n">known_water_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">30.</span><span class="p">,</span>
+                   <span class="n">iterative_bounds</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">)):</span>
+    <span class="sd">&quot;&quot;&quot;Create a flood depth map from a surface water extent map.</span>
+
+<span class="sd">    WARNING: This functionality is still under active development and the products</span>
+<span class="sd">    created using this function are likely to change in the future.</span>
+
+<span class="sd">    Create a flood depth map from a single surface water extent map and</span>
+<span class="sd">    a HAND image. The HAND image must be pixel-aligned to the surface water extent map.</span>
+<span class="sd">    The the surface water extent map should be a byte GeoTIFF indicating water (true) and</span>
+<span class="sd">    not water (false)</span>
+
+<span class="sd">    Known perennial Global Surface-water data are produced under the Copernicus Programme (Pekel et al., 2016),</span>
+<span class="sd">    and are included with surface-water detection maps when generating the flood depth product.</span>
+
+<span class="sd">    Flood depth maps are estimated using one of the approaches:</span>
+<span class="sd">    *Iterative: (Default) Basin hopping optimization method matches flooded areas to flood depth</span>
+<span class="sd">    estimates given by the HAND layer. This is the most accurate method but also the</span>
+<span class="sd">    most time-intensive.</span>
+<span class="sd">    *Normalized Median Absolute Deviation (nmad): Uses a median operator to estimate</span>
+<span class="sd">    the variation to increase robustness in the presence of outliers.</span>
+<span class="sd">    *Logstat: Calculates the mean and standard deviation of HAND heights in the logarithmic</span>
+<span class="sd">    domain to improve robustness for very non-Gaussian data distributions.</span>
+<span class="sd">    *Numpy: Calculates statistics on a linear scale. Least robust to outliers and non-Gaussian</span>
+<span class="sd">    distributions.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        out_raster: Flood depth GeoTIFF to create</span>
+<span class="sd">        water_raster: Surface water extent GeoTIFF</span>
+<span class="sd">        hand_raster: Height Above Nearest Drainage (HAND) GeoTIFF aligned to the surface water extent raster</span>
+<span class="sd">        estimator: Estimation approach for determining flood depth</span>
+<span class="sd">        water_level_sigma: Max water height used in logstat, nmad, and numpy estimations</span>
+<span class="sd">        known_water_threshold: Threshold for extracting the known water area in percent</span>
+<span class="sd">        iterative_bounds: Bounds on basin-hopping algorithm used in iterative estimation</span>
+
+<span class="sd">    References:</span>
+<span class="sd">        Jean-Francios Pekel, Andrew Cottam, Noel Gorelik, Alan S. Belward. 2016. &lt;https://doi:10.1038/nature20584&gt;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">info</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Info</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">water_raster</span><span class="p">),</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;json&#39;</span><span class="p">)</span>
+    <span class="n">epsg</span> <span class="o">=</span> <span class="n">get_epsg_code</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+    <span class="n">geotransform</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s1">&#39;geoTransform&#39;</span><span class="p">]</span>
+
+    <span class="n">hand_array</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">hand_raster</span><span class="p">),</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GA_ReadOnly</span><span class="p">)</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Fetching perennial flood data.&#39;</span><span class="p">)</span>
+    <span class="n">known_water_mask</span> <span class="o">=</span> <span class="n">get_waterbody</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="n">known_water_threshold</span><span class="p">)</span>
+
+    <span class="n">water_map</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">water_raster</span><span class="p">)</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+    <span class="n">flood_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bitwise_or</span><span class="p">(</span><span class="n">water_map</span><span class="p">,</span> <span class="n">known_water_mask</span><span class="p">)</span>
+
+    <span class="n">labeled_flood_mask</span><span class="p">,</span> <span class="n">num_labels</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">flood_mask</span><span class="p">)</span>
+    <span class="n">object_slices</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">find_objects</span><span class="p">(</span><span class="n">labeled_flood_mask</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Detected </span><span class="si">{</span><span class="n">num_labels</span><span class="si">}</span><span class="s1"> water bodies...&#39;</span><span class="p">)</span>
+
+    <span class="n">flood_depth</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">flood_mask</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">ll</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_labels</span><span class="p">):</span>  <span class="c1"># Skip first, largest label.</span>
+        <span class="n">slices</span> <span class="o">=</span> <span class="n">object_slices</span><span class="p">[</span><span class="n">ll</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">min0</span><span class="p">,</span> <span class="n">max0</span> <span class="o">=</span> <span class="n">slices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">slices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stop</span>
+        <span class="n">min1</span><span class="p">,</span> <span class="n">max1</span> <span class="o">=</span> <span class="n">slices</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">slices</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">stop</span>
+
+        <span class="n">flood_window</span> <span class="o">=</span> <span class="n">labeled_flood_mask</span><span class="p">[</span><span class="n">min0</span><span class="p">:</span><span class="n">max0</span><span class="p">,</span> <span class="n">min1</span><span class="p">:</span><span class="n">max1</span><span class="p">]</span>
+        <span class="n">hand_window</span> <span class="o">=</span> <span class="n">hand_array</span><span class="p">[</span><span class="n">min0</span><span class="p">:</span><span class="n">max0</span><span class="p">,</span> <span class="n">min1</span><span class="p">:</span><span class="n">max1</span><span class="p">]</span>
+
+        <span class="n">water_height</span> <span class="o">=</span> <span class="n">estimate_flood_depth</span><span class="p">(</span><span class="n">ll</span><span class="p">,</span> <span class="n">hand_window</span><span class="p">,</span> <span class="n">flood_window</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="n">estimator</span><span class="p">,</span>
+                                            <span class="n">water_level_sigma</span><span class="o">=</span><span class="n">water_level_sigma</span><span class="p">,</span> <span class="n">iterative_bounds</span><span class="o">=</span><span class="n">iterative_bounds</span><span class="p">)</span>
+
+        <span class="n">flood_depth_window</span> <span class="o">=</span> <span class="n">flood_depth</span><span class="p">[</span><span class="n">min0</span><span class="p">:</span><span class="n">max0</span><span class="p">,</span> <span class="n">min1</span><span class="p">:</span><span class="n">max1</span><span class="p">]</span>
+        <span class="n">flood_depth_window</span><span class="p">[</span><span class="n">flood_window</span> <span class="o">==</span> <span class="n">ll</span><span class="p">]</span> <span class="o">=</span> <span class="n">water_height</span> <span class="o">-</span> <span class="n">hand_window</span><span class="p">[</span><span class="n">flood_window</span> <span class="o">==</span> <span class="n">ll</span><span class="p">]</span>
+
+    <span class="n">flood_depth</span><span class="p">[</span><span class="n">flood_depth</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">write_cog</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_raster</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.tif&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;_</span><span class="si">{</span><span class="n">estimator</span><span class="si">}</span><span class="s1">_WaterDepth.tif&#39;</span><span class="p">),</span> <span class="n">flood_depth</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">geotransform</span><span class="p">,</span>
+              <span class="n">epsg_code</span><span class="o">=</span><span class="n">epsg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Float64</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">write_cog</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_raster</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.tif&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;_</span><span class="si">{</span><span class="n">estimator</span><span class="si">}</span><span class="s1">_FloodMask.tif&#39;</span><span class="p">),</span> <span class="n">flood_mask</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">geotransform</span><span class="p">,</span>
+              <span class="n">epsg_code</span><span class="o">=</span><span class="n">epsg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Byte</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="n">flood_mask</span><span class="p">[</span><span class="n">known_water_mask</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">flood_depth</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">bitwise_not</span><span class="p">(</span><span class="n">flood_mask</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">write_cog</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_raster</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.tif&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;_</span><span class="si">{</span><span class="n">estimator</span><span class="si">}</span><span class="s1">_FloodDepth.tif&#39;</span><span class="p">),</span> <span class="n">flood_depth</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">geotransform</span><span class="p">,</span>
+              <span class="n">epsg_code</span><span class="o">=</span><span class="n">epsg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Float64</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
