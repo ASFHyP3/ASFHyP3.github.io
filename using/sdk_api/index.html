@@ -141,7 +141,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#hyp3_sdk-v141-api-reference" class="md-skip">
+        <a href="#hyp3_sdk-v150-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -482,33 +482,6 @@ feedback.init({showIcon: false});
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#hyp3_sdk.asf_search" class="md-nav__link">
-    asf_search
-  </a>
-  
-    <nav class="md-nav" aria-label="asf_search">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hyp3_sdk.asf_search.get_metadata" class="md-nav__link">
-    get_metadata()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hyp3_sdk.asf_search.get_nearest_neighbors" class="md-nav__link">
-    get_nearest_neighbors()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#hyp3_sdk.exceptions" class="md-nav__link">
@@ -1262,33 +1235,6 @@ feedback.init({showIcon: false});
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hyp3_sdk.asf_search" class="md-nav__link">
-    asf_search
-  </a>
-  
-    <nav class="md-nav" aria-label="asf_search">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hyp3_sdk.asf_search.get_metadata" class="md-nav__link">
-    get_metadata()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hyp3_sdk.asf_search.get_nearest_neighbors" class="md-nav__link">
-    get_nearest_neighbors()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#hyp3_sdk.exceptions" class="md-nav__link">
     exceptions
   </a>
@@ -1437,7 +1383,7 @@ feedback.init({showIcon: false});
               
                 
                 
-                <h1 id="hyp3_sdk-v141-api-reference"><code>hyp3_sdk</code> <em>v1.4.1</em> API Reference<a class="headerlink" href="#hyp3_sdk-v141-api-reference" title="Permanent link">&para;</a></h1>
+                <h1 id="hyp3_sdk-v150-api-reference"><code>hyp3_sdk</code> <em>v1.5.0</em> API Reference<a class="headerlink" href="#hyp3_sdk-v150-api-reference" title="Permanent link">&para;</a></h1>
 
 
   <div class="doc doc-object doc-module">
@@ -1458,230 +1404,6 @@ feedback.init({showIcon: false});
 
 
 
-
-
-
-  <div class="doc doc-object doc-module">
-
-
-
-<h2 id="hyp3_sdk.asf_search" class="doc doc-heading">
-        <code>asf_search</code>
-
-
-
-<a href="#hyp3_sdk.asf_search" class="headerlink" title="Permanent link">&para;</a></h2>
-
-    <div class="doc doc-contents ">
-
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-  <div class="doc doc-object doc-function">
-
-
-
-<h3 id="hyp3_sdk.asf_search.get_metadata" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_metadata</span><span class="p">(</span><span class="n">granules</span><span class="p">)</span></code>
-
-
-<a href="#hyp3_sdk.asf_search.get_metadata" class="headerlink" title="Permanent link">&para;</a></h3>
-
-    <div class="doc doc-contents ">
-
-      <p>Get the metadata for a granule or list of granules</p>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>granules</code></td>
-        <td><code>Union[str, Iterable[str]]</code></td>
-        <td><p>granule(s) to lookup metadata for</p></td>
-        <td><em>required</em></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>metadata</code></td>
-      <td><p>metadata for the granule(s)</p></td>
-    </tr>
-  </tbody>
-</table>
-        <details class="quote">
-          <summary>Source code in <code>hyp3_sdk/asf_search.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_metadata</span><span class="p">(</span><span class="n">granules</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]]:</span>
-    <span class="sd">&quot;&quot;&quot;Get the metadata for a granule or list of granules</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        granules: granule(s) to lookup metadata for</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        metadata: metadata for the granule(s)</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">granules</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-        <span class="n">granule_list</span> <span class="o">=</span> <span class="n">granules</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">granule_list</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">granules</span><span class="p">)</span>
-
-    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="s1">&#39;jsonlite&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;granule_list&#39;</span><span class="p">:</span> <span class="n">granule_list</span><span class="p">,</span>
-    <span class="p">}</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">_SEARCH_API</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-    <span class="n">_raise_for_search_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-
-    <span class="n">metadata</span> <span class="o">=</span> <span class="p">[</span><span class="n">result</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;results&#39;</span><span class="p">]</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;productType&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;METADATA_&#39;</span><span class="p">)]</span>
-
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">granules</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">metadata</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-    <span class="k">return</span> <span class="n">metadata</span>
-</code></pre></div>
-        </details>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-function">
-
-
-
-<h3 id="hyp3_sdk.asf_search.get_nearest_neighbors" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_nearest_neighbors</span><span class="p">(</span><span class="n">granule</span><span class="p">,</span> <span class="n">max_neighbors</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></code>
-
-
-<a href="#hyp3_sdk.asf_search.get_nearest_neighbors" class="headerlink" title="Permanent link">&para;</a></h3>
-
-    <div class="doc doc-contents ">
-
-      <p>Get a Sentinel-1 granule's nearest neighbors from a temporal stack (backwards in time)</p>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>granule</code></td>
-        <td><code>str</code></td>
-        <td><p>reference granule</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
-        <td><code>max_neighbors</code></td>
-        <td><code>int</code></td>
-        <td><p>maximum number of neighbors to return</p></td>
-        <td><code>2</code></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>neighbors</code></td>
-      <td><p>a list of neighbors sorted by time</p></td>
-    </tr>
-  </tbody>
-</table>
-        <details class="quote">
-          <summary>Source code in <code>hyp3_sdk/asf_search.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_nearest_neighbors</span><span class="p">(</span><span class="n">granule</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">max_neighbors</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;Get a Sentinel-1 granule&#39;s nearest neighbors from a temporal stack (backwards in time)</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        granule: reference granule</span>
-<span class="sd">        max_neighbors: maximum number of neighbors to return</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        neighbors: a list of neighbors sorted by time</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>  <span class="c1"># jsonlite doesn&#39;t include centerLat/centerLon</span>
-        <span class="s1">&#39;platform&#39;</span><span class="p">:</span> <span class="s1">&#39;S1&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;granule_list&#39;</span><span class="p">:</span> <span class="n">granule</span><span class="p">,</span>
-    <span class="p">}</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">_SEARCH_API</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-    <span class="n">_raise_for_search_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-    <span class="n">references</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">r</span><span class="p">[</span><span class="s1">&#39;processingLevel&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;METADATA_&#39;</span><span class="p">)]</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">references</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">ASFSearchError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Reference Sentinel-1 granule </span><span class="si">{</span><span class="n">granule</span><span class="si">}</span><span class="s1"> could not be found&#39;</span><span class="p">)</span>
-    <span class="n">reference</span> <span class="o">=</span> <span class="n">references</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="s1">&#39;jsonlite&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;platform&#39;</span><span class="p">:</span> <span class="s1">&#39;S1&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;intersectsWith&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;POINT (</span><span class="si">{</span><span class="n">reference</span><span class="p">[</span><span class="s2">&quot;centerLon&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">reference</span><span class="p">[</span><span class="s2">&quot;centerLat&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">[</span><span class="s1">&#39;startTime&#39;</span><span class="p">],</span>  <span class="c1"># includes reference scene</span>
-        <span class="s1">&#39;beamMode&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">[</span><span class="s1">&#39;beamMode&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;flightDirection&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">[</span><span class="s1">&#39;flightDirection&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;processingLevel&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">[</span><span class="s1">&#39;processingLevel&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;relativeOrbit&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">[</span><span class="s1">&#39;relativeOrbit&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;polarization&#39;</span><span class="p">:</span> <span class="n">_get_matching_polarizations</span><span class="p">(</span><span class="n">reference</span><span class="p">[</span><span class="s1">&#39;polarization&#39;</span><span class="p">]),</span>
-        <span class="s1">&#39;lookDirection&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">[</span><span class="s1">&#39;lookDirection&#39;</span><span class="p">],</span>
-    <span class="p">}</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">_SEARCH_API</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-    <span class="n">_raise_for_search_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-    <span class="n">neighbors</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;results&#39;</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;startTime&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">neighbors</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">max_neighbors</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
-</code></pre></div>
-        </details>
-    </div>
-
-  </div>
-
-
-
-
-
-
-  </div>
-
-    </div>
-
-  </div>
 
 
 
@@ -4324,7 +4046,8 @@ Job        </code>
             <span class="n">logs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">browse_images</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">thumbnail_images</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="n">expiration_time</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">expiration_time</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">processing_time_in_seconds</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span> <span class="o">=</span> <span class="n">job_id</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">job_type</span> <span class="o">=</span> <span class="n">job_type</span>
@@ -4338,6 +4061,7 @@ Job        </code>
         <span class="bp">self</span><span class="o">.</span><span class="n">browse_images</span> <span class="o">=</span> <span class="n">browse_images</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">thumbnail_images</span> <span class="o">=</span> <span class="n">thumbnail_images</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span> <span class="o">=</span> <span class="n">expiration_time</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">processing_time_in_seconds</span> <span class="o">=</span> <span class="n">processing_time_in_seconds</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Job.from_dict(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span><span class="si">}</span><span class="s1">)&#39;</span>
@@ -4363,7 +4087,8 @@ Job        </code>
             <span class="n">logs</span><span class="o">=</span><span class="n">input_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;logs&#39;</span><span class="p">),</span>
             <span class="n">browse_images</span><span class="o">=</span><span class="n">input_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;browse_images&#39;</span><span class="p">),</span>
             <span class="n">thumbnail_images</span><span class="o">=</span><span class="n">input_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;thumbnail_images&#39;</span><span class="p">),</span>
-            <span class="n">expiration_time</span><span class="o">=</span><span class="n">expiration_time</span>
+            <span class="n">expiration_time</span><span class="o">=</span><span class="n">expiration_time</span><span class="p">,</span>
+            <span class="n">processing_time_in_seconds</span><span class="o">=</span><span class="n">input_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;processing_time_in_seconds&#39;</span><span class="p">),</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">for_resubmit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
@@ -4392,6 +4117,8 @@ Job        </code>
     <span class="k">def</span> <span class="nf">complete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">succeeded</span><span class="p">()</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">failed</span><span class="p">()</span>
 
+    <span class="c1"># TODO may want to update this to check if status code is actually RUNNING, because currently this also returns</span>
+    <span class="c1">#  true if status is PENDING</span>
     <span class="k">def</span> <span class="nf">running</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">complete</span><span class="p">()</span>
 
