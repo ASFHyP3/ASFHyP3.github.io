@@ -141,7 +141,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#hyp3_sdk-v150-api-reference" class="md-skip">
+        <a href="#hyp3_sdk-v151-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -1383,7 +1383,7 @@ feedback.init({showIcon: false});
               
                 
                 
-                <h1 id="hyp3_sdk-v150-api-reference"><code>hyp3_sdk</code> <em>v1.5.0</em> API Reference<a class="headerlink" href="#hyp3_sdk-v150-api-reference" title="Permanent link">&para;</a></h1>
+                <h1 id="hyp3_sdk-v151-api-reference"><code>hyp3_sdk</code> <em>v1.5.1</em> API Reference<a class="headerlink" href="#hyp3_sdk-v151-api-reference" title="Permanent link">&para;</a></h1>
 
 
   <div class="doc doc-object doc-module">
@@ -2038,10 +2038,10 @@ HyP3        </code>
         <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">check_quota</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">check_quota</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns:</span>
-<span class="sd">            The number of jobs left in your quota</span>
+<span class="sd">            The number of jobs left in your quota, or None if you have no quota</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">my_info</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">info</span><span class="p">[</span><span class="s1">&#39;quota&#39;</span><span class="p">][</span><span class="s1">&#39;remaining&#39;</span><span class="p">]</span>
@@ -2170,17 +2170,17 @@ are not provided as keyword parameters</p></td>
   </thead>
   <tbody>
     <tr>
-      <td><code>int</code></td>
-      <td><p>The number of jobs left in your quota</p></td>
+      <td><code>Optional[int]</code></td>
+      <td><p>The number of jobs left in your quota, or None if you have no quota</p></td>
     </tr>
   </tbody>
 </table>
         <details class="quote">
           <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">check_quota</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">check_quota</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns:</span>
-<span class="sd">        The number of jobs left in your quota</span>
+<span class="sd">        The number of jobs left in your quota, or None if you have no quota</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">my_info</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">info</span><span class="p">[</span><span class="s1">&#39;quota&#39;</span><span class="p">][</span><span class="s1">&#39;remaining&#39;</span><span class="p">]</span>
