@@ -141,7 +141,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#hyp3_sdk-v151-api-reference" class="md-skip">
+        <a href="#hyp3_sdk-v160-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -1383,7 +1383,7 @@ feedback.init({showIcon: false});
               
                 
                 
-                <h1 id="hyp3_sdk-v151-api-reference"><code>hyp3_sdk</code> <em>v1.5.1</em> API Reference<a class="headerlink" href="#hyp3_sdk-v151-api-reference" title="Permanent link">&para;</a></h1>
+                <h1 id="hyp3_sdk-v160-api-reference"><code>hyp3_sdk</code> <em>v1.6.0</em> API Reference<a class="headerlink" href="#hyp3_sdk-v160-api-reference" title="Permanent link">&para;</a></h1>
 
 
   <div class="doc doc-object doc-module">
@@ -4123,10 +4123,7 @@ Job        </code>
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">complete</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">expired</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">tz</span><span class="o">.</span><span class="n">UTC</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span>
-        <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">HyP3SDKError</span><span class="p">(</span><span class="s1">&#39;Only SUCCEEDED jobs have an expiration time&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">tz</span><span class="o">.</span><span class="n">UTC</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span>
 
     <span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">create</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;</span>
