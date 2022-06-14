@@ -388,22 +388,15 @@ feedback.init({showIcon: false});
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#using-vertex" class="md-nav__link">
-    Using Vertex
+  <a href="#web-access" class="md-nav__link">
+    Web Access
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-the-python-sdk" class="md-nav__link">
-    Using the Python SDK
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-the-api" class="md-nav__link">
-    Using the API
+  <a href="#programmatic-access" class="md-nav__link">
+    Programmatic Access
   </a>
   
 </li>
@@ -451,15 +444,21 @@ feedback.init({showIcon: false});
       <label class="md-nav__link" for="nav-2">
         <span class="md-nav__icon md-icon"></span>
         
-          Using HyP3
+          <a href="using/" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
         
+          Using HyP3
+        </a>
       </label>
       <nav class="md-nav" aria-label="Using HyP3" data-md-level="1">
         <label class="md-nav__title" for="nav-2">
           <span class="md-nav__icon md-icon"></span>
           
-            Using HyP3
+            <a href="using/" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
           
+            Using HyP3
+          </a>
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -469,7 +468,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank" class="md-nav__link">
+      <a href="using/vertex/" class="md-nav__link">
         Vertex
       </a>
     </li>
@@ -899,6 +898,18 @@ feedback.init({showIcon: false});
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://asf-daac.maps.arcgis.com/home/index.html" target="_blank" class="md-nav__link">
+        Story Map Tutorials
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1148,22 +1159,15 @@ feedback.init({showIcon: false});
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#using-vertex" class="md-nav__link">
-    Using Vertex
+  <a href="#web-access" class="md-nav__link">
+    Web Access
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-the-python-sdk" class="md-nav__link">
-    Using the Python SDK
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-the-api" class="md-nav__link">
-    Using the API
+  <a href="#programmatic-access" class="md-nav__link">
+    Programmatic Access
   </a>
   
 </li>
@@ -1216,23 +1220,21 @@ user. HyP3 doesn't require users to have a lot of knowledge of SAR processing be
 submit the input data and set a few optional parameters if desired. With HyP3, analysis-ready products are just a few
 clicks away.</p>
 <h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
-<h3 id="using-vertex">Using Vertex<a class="headerlink" href="#using-vertex" title="Permanent link">&para;</a></h3>
-<p><a href="https://search.asf.alaska.edu/" target="_blank">Vertex</a>, ASF's data search portal, is the easiest way to use HyP3.
-Vertex provides a friendly interface to request jobs and review previous jobs. Visit
-<a href="https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank">On Demand Processing in Vertex</a> to learn more.</p>
-<h3 id="using-the-python-sdk">Using the Python SDK<a class="headerlink" href="#using-the-python-sdk" title="Permanent link">&para;</a></h3>
-<p>The HyP3 SDK is a Python library for using HyP3 programmatically. It is available on both
-<a href="https://anaconda.org/conda-forge/hyp3_sdk" target="_blank">conda-forge</a> and
-<a href="https://pypi.org/project/hyp3-sdk/" target="_blank">PyPI</a>, and can be installed with either:
-<div class="highlight"><pre><span></span><code>conda install -c conda-forge hyp3_sdk
-</code></pre></div></p>
-<p>or
-<div class="highlight"><pre><span></span><code>python -m pip install hyp3_sdk
-</code></pre></div></p>
-<p>Visit <a href="using/sdk/">Using HyP3: SDK</a> to learn more.</p>
-<h3 id="using-the-api">Using the API<a class="headerlink" href="#using-the-api" title="Permanent link">&para;</a></h3>
-<p>The HyP3 web API is the backbone behind Vertex and the SDK. You may also use the API directly. Visit
-<a href="using/api/">Using HyP3: API</a> to learn more.</p>
+<p>On Demand products processed by HyP3 can be requested quickly and easily, either by
+using a web interface or programmatically.</p>
+<h3 id="web-access">Web Access<a class="headerlink" href="#web-access" title="Permanent link">&para;</a></h3>
+<p>ASF's Data Search Vertex portal provides a rich interface to explore Sentinel-1
+acquisitions and find images to submit for On Demand processing. It also provides
+tools for selecting pairs and stacks for InSAR analysis.</p>
+<ul>
+<li><a href="using/vertex/" title="Using Vertex">Vertex</a></li>
+</ul>
+<h3 id="programmatic-access">Programmatic Access<a class="headerlink" href="#programmatic-access" title="Permanent link">&para;</a></h3>
+<p>Requesting and downloading On Demand products can also be done programmatically:</p>
+<ul>
+<li><a href="using/sdk/" title="Using SDK">HyP3 SDK for Python</a></li>
+<li><a href="using/api/" title="Using API">HyP3 REST API</a></li>
+</ul>
 <h2 id="whats-new">What's New<a class="headerlink" href="#whats-new" title="Permanent link">&para;</a></h2>
 <p>Follow <a href="https://twitter.com/ASFHyP3">@ASFHyP3</a> on Twitter, or check our <a href="whats_new/">What's New</a> page,
 to keep up to date on all things HyP3!</p>
@@ -1242,6 +1244,7 @@ to keep up to date on all things HyP3!</p>
 <a href="https://github.com/ASFHyP3/ASFHyP3.github.io/issues/new" target="_blank">open an issue</a></p>
 <p>General questions? Suggestions? Or just want to talk to the team?
 <a href="https://gitter.im/ASFHyP3/community" target="_blank">chat with us on gitter</a></p>
+<p>You can also reach us by email through ASF User Services: <a href="mailto:uso@asf.alaska.edu" title="uso@asf.alaska.edu">Email ASF User Services</a></p>
                 
               
               
@@ -1294,13 +1297,13 @@ to keep up to date on all things HyP3!</p>
 
         <!-- Link to next page -->
         
-          <a href="using/sdk/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="using/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                SDK
+                Using HyP3
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
