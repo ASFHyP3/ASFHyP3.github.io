@@ -141,7 +141,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#hyp3_sdk-v161-api-reference" class="md-skip">
+        <a href="#hyp3_sdk-v170-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -1599,7 +1599,7 @@ feedback.init({showIcon: false});
               
                 
                 
-                <h1 id="hyp3_sdk-v161-api-reference"><code>hyp3_sdk</code> <em>v1.6.1</em> API Reference<a class="headerlink" href="#hyp3_sdk-v161-api-reference" title="Permanent link">&para;</a></h1>
+                <h1 id="hyp3_sdk-v170-api-reference"><code>hyp3_sdk</code> <em>v1.7.0</em> API Reference<a class="headerlink" href="#hyp3_sdk-v170-api-reference" title="Permanent link">&para;</a></h1>
 
 
 <div class="doc doc-object doc-module">
@@ -5368,7 +5368,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
             <span class="n">browse_images</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">thumbnail_images</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">expiration_time</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="n">processing_time_in_seconds</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">processing_times</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span> <span class="o">=</span> <span class="n">job_id</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">job_type</span> <span class="o">=</span> <span class="n">job_type</span>
@@ -5383,7 +5383,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
         <span class="bp">self</span><span class="o">.</span><span class="n">browse_images</span> <span class="o">=</span> <span class="n">browse_images</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">thumbnail_images</span> <span class="o">=</span> <span class="n">thumbnail_images</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span> <span class="o">=</span> <span class="n">expiration_time</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">processing_time_in_seconds</span> <span class="o">=</span> <span class="n">processing_time_in_seconds</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">processing_times</span> <span class="o">=</span> <span class="n">processing_times</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Job.from_dict(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span><span class="si">}</span><span class="s1">)&#39;</span>
@@ -5411,7 +5411,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
             <span class="n">browse_images</span><span class="o">=</span><span class="n">input_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;browse_images&#39;</span><span class="p">),</span>
             <span class="n">thumbnail_images</span><span class="o">=</span><span class="n">input_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;thumbnail_images&#39;</span><span class="p">),</span>
             <span class="n">expiration_time</span><span class="o">=</span><span class="n">expiration_time</span><span class="p">,</span>
-            <span class="n">processing_time_in_seconds</span><span class="o">=</span><span class="n">input_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;processing_time_in_seconds&#39;</span><span class="p">),</span>
+            <span class="n">processing_times</span><span class="o">=</span><span class="n">input_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;processing_times&#39;</span><span class="p">),</span>
         <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">for_resubmit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
