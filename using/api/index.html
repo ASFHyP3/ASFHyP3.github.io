@@ -1357,8 +1357,7 @@ A minimal job list for a single Sentinel-1 RTC job would look like:</p>
 <p>AutoRIFT supports processing Sentinel-1, Sentinel-2, or Landsat-8 Collection 2 pairs.</p>
 <ul>
 <li>Sentinel-1 jobs are submitted using <a href="https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/naming-conventions" target="_blank">ESA granule IDs</a></li>
-<li>Sentinel-2 jobs can be submitted using <a href="https://sentinel.esa.int/web/sentinel/user-guides/sentinel-2-msi/naming-convention" target="_blank">ESA granule IDs</a>
-  or <a href="https://registry.opendata.aws/sentinel-2/" target="_blank">Element 84 Earth Search IDs</a></li>
+<li>Sentinel-2 jobs are submitted using <a href="https://sentinel.esa.int/web/sentinel/user-guides/sentinel-2-msi/naming-convention" target="_blank">ESA granule IDs</a></li>
 <li>Landsat-8 Collection 2 jobs are submitted using <a href="https://www.usgs.gov/faqs/what-naming-convention-landsat-collection-2-level-1-and-level-2-scenes?qt-news_science_products=0#qt-news_science_products" target="_blank">USGS scene IDs</a></li>
 </ul>
 <p>To submit an example set of jobs including all supported missions, you could write a job list like:</p>
@@ -1384,16 +1383,6 @@ A minimal job list for a single Sentinel-1 RTC job would look like:</p>
 <span class="w">        </span><span class="p">]</span><span class="w"></span>
 <span class="w">      </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;autorift-example&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;job_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AUTORIFT&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;job_parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;granules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">          </span><span class="s2">&quot;S2B_22WEB_20200612_0_L1C&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="s2">&quot;S2A_22WEB_20200627_0_L1C&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="p">]</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
 <span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;autorift-example&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">      </span><span class="nt">&quot;job_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AUTORIFT&quot;</span><span class="p">,</span><span class="w"></span>
