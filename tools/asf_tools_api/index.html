@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://hyp3-docs.asf.alaska.edu/tools/asf_tools_api/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-6.2.8">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-6.2.8">
     
     
       
@@ -141,7 +141,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#asf_tools-v043-api-reference" class="md-skip">
+        <a href="#asf_tools-v044-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -1337,6 +1337,13 @@ feedback.init({showIcon: false});
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#asf_tools.water_map.format_raster_data" class="md-nav__link">
+    format_raster_data()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#asf_tools.water_map.make_water_map" class="md-nav__link">
     make_water_map()
   </a>
@@ -1853,6 +1860,13 @@ feedback.init({showIcon: false});
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#asf_tools.water_map.format_raster_data" class="md-nav__link">
+    format_raster_data()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#asf_tools.water_map.make_water_map" class="md-nav__link">
     make_water_map()
   </a>
@@ -1877,7 +1891,7 @@ feedback.init({showIcon: false});
               
                 
                 
-                <h1 id="asf_tools-v043-api-reference"><code>asf_tools</code> <em>v0.4.3</em> API Reference<a class="headerlink" href="#asf_tools-v043-api-reference" title="Permanent link">&para;</a></h1>
+                <h1 id="asf_tools-v044-api-reference"><code>asf_tools</code> <em>v0.4.4</em> API Reference<a class="headerlink" href="#asf_tools-v044-api-reference" title="Permanent link">&para;</a></h1>
 
 
 <div class="doc doc-object doc-module">
@@ -6299,6 +6313,50 @@ Maximization thresholding approach and refined using Fuzzy Logic.</p>
 
 
 
+<h3 id="asf_tools.water_map.format_raster_data" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">format_raster_data</span><span class="p">(</span><span class="n">raster</span><span class="p">,</span> <span class="n">padding_mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nodata</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">)</span></code>
+
+<a href="#asf_tools.water_map.format_raster_data" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Ensure raster data is uint8 and set the area outside the valid data to nodata</p>
+
+      <details class="quote">
+        <summary>Source code in <code>asf_tools/water_map.py</code></summary>
+        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">format_raster_data</span><span class="p">(</span><span class="n">raster</span><span class="p">,</span> <span class="n">padding_mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nodata</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Ensure raster data is uint8 and set the area outside the valid data to nodata</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">padding_mask</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">array</span> <span class="o">=</span> <span class="n">read_as_masked_array</span><span class="p">(</span><span class="n">raster</span><span class="p">)</span>
+        <span class="n">padding_mask</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">mask</span>
+    <span class="n">raster</span> <span class="o">=</span> <span class="n">raster</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="n">raster</span><span class="p">[</span><span class="n">padding_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">nodata</span>
+
+    <span class="k">return</span> <span class="n">raster</span>
+</code></pre></div>
+</td></tr></table>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
 <h3 id="asf_tools.water_map.make_water_map" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">make_water_map</span><span class="p">(</span><span class="n">out_raster</span><span class="p">,</span> <span class="n">vv_raster</span><span class="p">,</span> <span class="n">vh_raster</span><span class="p">,</span> <span class="n">hand_raster</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tile_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">max_vv_threshold</span><span class="o">=-</span><span class="mf">15.5</span><span class="p">,</span> <span class="n">max_vh_threshold</span><span class="o">=-</span><span class="mf">23.0</span><span class="p">,</span> <span class="n">hand_threshold</span><span class="o">=</span><span class="mf">15.0</span><span class="p">,</span> <span class="n">hand_fraction</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">membership_threshold</span><span class="o">=</span><span class="mf">0.45</span><span class="p">)</span></code>
 
@@ -6460,20 +6518,7 @@ thresholding</p></td>
 
       <details class="quote">
         <summary>Source code in <code>asf_tools/water_map.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">159</span>
-<span class="normal">160</span>
-<span class="normal">161</span>
-<span class="normal">162</span>
-<span class="normal">163</span>
-<span class="normal">164</span>
-<span class="normal">165</span>
-<span class="normal">166</span>
-<span class="normal">167</span>
-<span class="normal">168</span>
-<span class="normal">169</span>
-<span class="normal">170</span>
-<span class="normal">171</span>
-<span class="normal">172</span>
+        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">172</span>
 <span class="normal">173</span>
 <span class="normal">174</span>
 <span class="normal">175</span>
@@ -6596,7 +6641,24 @@ thresholding</p></td>
 <span class="normal">292</span>
 <span class="normal">293</span>
 <span class="normal">294</span>
-<span class="normal">295</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">make_water_map</span><span class="p">(</span><span class="n">out_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">vv_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">vh_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">make_water_map</span><span class="p">(</span><span class="n">out_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">vv_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">vh_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>
                    <span class="n">hand_raster</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">tile_shape</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
                    <span class="n">max_vv_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">15.5</span><span class="p">,</span> <span class="n">max_vh_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">23.0</span><span class="p">,</span>
                    <span class="n">hand_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">15.</span><span class="p">,</span> <span class="n">hand_fraction</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">membership_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.45</span><span class="p">):</span>
@@ -6676,10 +6738,12 @@ thresholding</p></td>
     <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Selected HAND tile candidates </span><span class="si">{</span><span class="n">hand_candidates</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
     <span class="n">selected_tiles</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">nodata</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span><span class="o">.</span><span class="n">max</span>
     <span class="n">water_extent_maps</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">max_db_threshold</span><span class="p">,</span> <span class="n">raster</span><span class="p">,</span> <span class="n">pol</span> <span class="ow">in</span> <span class="p">((</span><span class="n">max_vh_threshold</span><span class="p">,</span> <span class="n">vh_raster</span><span class="p">,</span> <span class="s1">&#39;VH&#39;</span><span class="p">),</span> <span class="p">(</span><span class="n">max_vv_threshold</span><span class="p">,</span> <span class="n">vv_raster</span><span class="p">,</span> <span class="s1">&#39;VV&#39;</span><span class="p">)):</span>
         <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Creating initial </span><span class="si">{</span><span class="n">pol</span><span class="si">}</span><span class="s1"> water extent map from </span><span class="si">{</span><span class="n">raster</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="n">array</span> <span class="o">=</span> <span class="n">read_as_masked_array</span><span class="p">(</span><span class="n">raster</span><span class="p">)</span>
+        <span class="n">padding_mask</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">mask</span>
         <span class="n">tiles</span> <span class="o">=</span> <span class="n">tile_array</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">tile_shape</span><span class="o">=</span><span class="n">tile_shape</span><span class="p">,</span> <span class="n">pad_value</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
         <span class="c1"># Masking less than zero only necessary for old HyP3/GAMMA products which sometimes returned negative powers</span>
         <span class="n">tiles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_less_equal</span><span class="p">(</span><span class="n">tiles</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>
@@ -6707,8 +6771,9 @@ thresholding</p></td>
         <span class="n">water_map</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_less_equal</span><span class="p">(</span><span class="n">gaussian_array</span><span class="p">,</span> <span class="n">gaussian_threshold</span><span class="p">)</span><span class="o">.</span><span class="n">mask</span>
         <span class="n">water_map</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="n">array</span><span class="o">.</span><span class="n">mask</span>
 
-        <span class="n">write_cog</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_raster</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.tif&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;_</span><span class="si">{</span><span class="n">pol</span><span class="si">}</span><span class="s1">_initial.tif&#39;</span><span class="p">),</span> <span class="n">water_map</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">out_transform</span><span class="p">,</span>
-                  <span class="n">epsg_code</span><span class="o">=</span><span class="n">out_epsg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Byte</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">write_cog</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_raster</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.tif&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;_</span><span class="si">{</span><span class="n">pol</span><span class="si">}</span><span class="s1">_initial.tif&#39;</span><span class="p">),</span>
+                  <span class="n">format_raster_data</span><span class="p">(</span><span class="n">water_map</span><span class="p">,</span> <span class="n">padding_mask</span><span class="p">,</span> <span class="n">nodata</span><span class="p">),</span>
+                  <span class="n">transform</span><span class="o">=</span><span class="n">out_transform</span><span class="p">,</span> <span class="n">epsg_code</span><span class="o">=</span><span class="n">out_epsg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Byte</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="n">nodata</span><span class="p">)</span>
 
         <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Refining initial </span><span class="si">{</span><span class="n">pol</span><span class="si">}</span><span class="s1"> water extent map using Fuzzy Logic&#39;</span><span class="p">)</span>
         <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="o">~</span><span class="n">water_map</span><span class="p">,</span> <span class="n">array</span><span class="p">)</span>
@@ -6720,8 +6785,9 @@ thresholding</p></td>
         <span class="p">)</span>
         <span class="n">water_map</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="n">array</span><span class="o">.</span><span class="n">mask</span>
 
-        <span class="n">write_cog</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_raster</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.tif&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;_</span><span class="si">{</span><span class="n">pol</span><span class="si">}</span><span class="s1">_fuzzy.tif&#39;</span><span class="p">),</span> <span class="n">water_map</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">out_transform</span><span class="p">,</span>
-                  <span class="n">epsg_code</span><span class="o">=</span><span class="n">out_epsg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Byte</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">write_cog</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_raster</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.tif&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;_</span><span class="si">{</span><span class="n">pol</span><span class="si">}</span><span class="s1">_fuzzy.tif&#39;</span><span class="p">),</span>
+                  <span class="n">format_raster_data</span><span class="p">(</span><span class="n">water_map</span><span class="p">,</span> <span class="n">padding_mask</span><span class="p">,</span> <span class="n">nodata</span><span class="p">),</span>
+                  <span class="n">transform</span><span class="o">=</span><span class="n">out_transform</span><span class="p">,</span> <span class="n">epsg_code</span><span class="o">=</span><span class="n">out_epsg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Byte</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="n">nodata</span><span class="p">)</span>
 
         <span class="n">water_extent_maps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">water_map</span><span class="p">)</span>
 
@@ -6731,8 +6797,8 @@ thresholding</p></td>
     <span class="n">combined_segments</span> <span class="o">=</span> <span class="n">measure</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">combined_water_map</span><span class="p">,</span> <span class="n">connectivity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">combined_water_map</span> <span class="o">=</span> <span class="n">remove_small_segments</span><span class="p">(</span><span class="n">combined_segments</span><span class="p">)</span>
 
-    <span class="n">write_cog</span><span class="p">(</span><span class="n">out_raster</span><span class="p">,</span> <span class="n">combined_water_map</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">out_transform</span><span class="p">,</span>
-              <span class="n">epsg_code</span><span class="o">=</span><span class="n">out_epsg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Byte</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">write_cog</span><span class="p">(</span><span class="n">out_raster</span><span class="p">,</span> <span class="n">format_raster_data</span><span class="p">(</span><span class="n">combined_water_map</span><span class="p">,</span> <span class="n">padding_mask</span><span class="p">,</span> <span class="n">nodata</span><span class="p">),</span> <span class="n">transform</span><span class="o">=</span><span class="n">out_transform</span><span class="p">,</span>
+              <span class="n">epsg_code</span><span class="o">=</span><span class="n">out_epsg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Byte</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="n">nodata</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
       </details>
