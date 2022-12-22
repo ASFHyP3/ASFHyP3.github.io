@@ -141,7 +141,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#hyp3_sdk-v171-api-reference" class="md-skip">
+        <a href="#hyp3_sdk-v172-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -1599,7 +1599,7 @@ feedback.init({showIcon: false});
               
                 
                 
-                <h1 id="hyp3_sdk-v171-api-reference"><code>hyp3_sdk</code> <em>v1.7.1</em> API Reference<a class="headerlink" href="#hyp3_sdk-v171-api-reference" title="Permanent link">&para;</a></h1>
+                <h1 id="hyp3_sdk-v172-api-reference"><code>hyp3_sdk</code> <em>v1.7.2</em> API Reference<a class="headerlink" href="#hyp3_sdk-v172-api-reference" title="Permanent link">&para;</a></h1>
 
 
 <div class="doc doc-object doc-module">
@@ -2924,7 +2924,7 @@ feedback.init({showIcon: false});
                        <span class="n">include_scattering_area</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                        <span class="n">radiometry</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;sigma0&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">,</span>
                        <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
-                       <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
+                       <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;decibel&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
                        <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                        <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
@@ -2941,7 +2941,7 @@ feedback.init({showIcon: false});
 <span class="sd">            radiometry: Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area</span>
 <span class="sd">                projected into the look direction (gamma0)</span>
 <span class="sd">            resolution: Desired output pixel spacing in meters</span>
-<span class="sd">            scale: Scale of output image; either power or amplitude</span>
+<span class="sd">            scale: Scale of output image; power, decibel or amplitude</span>
 <span class="sd">            speckle_filter: Apply an Enhanced Lee speckle filter</span>
 <span class="sd">            dem_name: Name of the DEM to use for processing.  `copernicus` will use the Copernicus GLO-30 Public DEM,</span>
 <span class="sd">                while `legacy` will use the DEM with the best coverage from ASF&#39;s legacy SRTM/NED datasets.</span>
@@ -2965,7 +2965,7 @@ feedback.init({showIcon: false});
                         <span class="n">include_scattering_area</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                         <span class="n">radiometry</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;sigma0&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">,</span>
                         <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
-                        <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
+                        <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;decibel&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
                         <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                         <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
@@ -2982,7 +2982,7 @@ feedback.init({showIcon: false});
 <span class="sd">            radiometry: Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area</span>
 <span class="sd">                projected into the look direction (gamma0)</span>
 <span class="sd">            resolution: Desired output pixel spacing in meters</span>
-<span class="sd">            scale: Scale of output image; either power or amplitude</span>
+<span class="sd">            scale: Scale of output image; power, decibel or amplitude</span>
 <span class="sd">            speckle_filter: Apply an Enhanced Lee speckle filter</span>
 <span class="sd">            dem_name: Name of the DEM to use for processing.  `copernicus` will use the Copernicus GLO-30 Public DEM,</span>
 <span class="sd">                while `legacy` will use the DEM with the best coverage from ASF&#39;s legacy SRTM/NED datasets.</span>
@@ -4135,9 +4135,9 @@ projected into the look direction (gamma0)</p></td>
         <tr>
           <td><code>scale</code></td>
           <td>
-                <code><span title="typing.Literal">Literal</span>[&#39;amplitude&#39;, &#39;power&#39;]</code>
+                <code><span title="typing.Literal">Literal</span>[&#39;amplitude&#39;, &#39;decibel&#39;, &#39;power&#39;]</code>
           </td>
-          <td><p>Scale of output image; either power or amplitude</p></td>
+          <td><p>Scale of output image; power, decibel or amplitude</p></td>
           <td>
                 <code>&#39;power&#39;</code>
           </td>
@@ -4244,7 +4244,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
                     <span class="n">include_scattering_area</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                     <span class="n">radiometry</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;sigma0&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">,</span>
                     <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
-                    <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
+                    <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;decibel&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
                     <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                     <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
@@ -4261,7 +4261,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
 <span class="sd">        radiometry: Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area</span>
 <span class="sd">            projected into the look direction (gamma0)</span>
 <span class="sd">        resolution: Desired output pixel spacing in meters</span>
-<span class="sd">        scale: Scale of output image; either power or amplitude</span>
+<span class="sd">        scale: Scale of output image; power, decibel or amplitude</span>
 <span class="sd">        speckle_filter: Apply an Enhanced Lee speckle filter</span>
 <span class="sd">        dem_name: Name of the DEM to use for processing.  `copernicus` will use the Copernicus GLO-30 Public DEM,</span>
 <span class="sd">            while `legacy` will use the DEM with the best coverage from ASF&#39;s legacy SRTM/NED datasets.</span>
@@ -4951,9 +4951,9 @@ projected into the look direction (gamma0)</p></td>
         <tr>
           <td><code>scale</code></td>
           <td>
-                <code><span title="typing.Literal">Literal</span>[&#39;amplitude&#39;, &#39;power&#39;]</code>
+                <code><span title="typing.Literal">Literal</span>[&#39;amplitude&#39;, &#39;decibel&#39;, &#39;power&#39;]</code>
           </td>
-          <td><p>Scale of output image; either power or amplitude</p></td>
+          <td><p>Scale of output image; power, decibel or amplitude</p></td>
           <td>
                 <code>&#39;power&#39;</code>
           </td>
@@ -5050,7 +5050,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
                    <span class="n">include_scattering_area</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                    <span class="n">radiometry</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;sigma0&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">,</span>
                    <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
-                   <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
+                   <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;decibel&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
                    <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                    <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
@@ -5067,7 +5067,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
 <span class="sd">        radiometry: Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area</span>
 <span class="sd">            projected into the look direction (gamma0)</span>
 <span class="sd">        resolution: Desired output pixel spacing in meters</span>
-<span class="sd">        scale: Scale of output image; either power or amplitude</span>
+<span class="sd">        scale: Scale of output image; power, decibel or amplitude</span>
 <span class="sd">        speckle_filter: Apply an Enhanced Lee speckle filter</span>
 <span class="sd">        dem_name: Name of the DEM to use for processing.  `copernicus` will use the Copernicus GLO-30 Public DEM,</span>
 <span class="sd">            while `legacy` will use the DEM with the best coverage from ASF&#39;s legacy SRTM/NED datasets.</span>
