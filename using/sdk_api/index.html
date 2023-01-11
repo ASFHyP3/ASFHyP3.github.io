@@ -141,7 +141,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#hyp3_sdk-v172-api-reference" class="md-skip">
+        <a href="#hyp3_sdk-v173-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -1599,7 +1599,7 @@ feedback.init({showIcon: false});
               
                 
                 
-                <h1 id="hyp3_sdk-v172-api-reference"><code>hyp3_sdk</code> <em>v1.7.2</em> API Reference<a class="headerlink" href="#hyp3_sdk-v172-api-reference" title="Permanent link">&para;</a></h1>
+                <h1 id="hyp3_sdk-v173-api-reference"><code>hyp3_sdk</code> <em>v1.7.3</em> API Reference<a class="headerlink" href="#hyp3_sdk-v173-api-reference" title="Permanent link">&para;</a></h1>
 
 
 <div class="doc doc-object doc-module">
@@ -1869,7 +1869,7 @@ feedback.init({showIcon: false});
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">downloaded_files</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">download_files</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="n">create</span><span class="p">))</span>
             <span class="k">except</span> <span class="n">HyP3SDKError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Warning: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">. Skipping download for </span><span class="si">{</span><span class="n">job</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Warning: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1"> Skipping download for </span><span class="si">{</span><span class="n">job</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">downloaded_files</span>
 
     <span class="k">def</span> <span class="nf">any_expired</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
@@ -2081,7 +2081,7 @@ feedback.init({showIcon: false});
         <span class="k">try</span><span class="p">:</span>
             <span class="n">downloaded_files</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">download_files</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="n">create</span><span class="p">))</span>
         <span class="k">except</span> <span class="n">HyP3SDKError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Warning: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">. Skipping download for </span><span class="si">{</span><span class="n">job</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Warning: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1"> Skipping download for </span><span class="si">{</span><span class="n">job</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">downloaded_files</span>
 </code></pre></div>
 </td></tr></table>
@@ -2923,7 +2923,7 @@ feedback.init({showIcon: false});
                        <span class="n">include_rgb</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                        <span class="n">include_scattering_area</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                        <span class="n">radiometry</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;sigma0&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">,</span>
-                       <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+                       <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
                        <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;decibel&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
                        <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                        <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
@@ -2964,7 +2964,7 @@ feedback.init({showIcon: false});
                         <span class="n">include_rgb</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                         <span class="n">include_scattering_area</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                         <span class="n">radiometry</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;sigma0&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">,</span>
-                        <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+                        <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
                         <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;decibel&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
                         <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                         <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
@@ -4125,7 +4125,7 @@ projected into the look direction (gamma0)</p></td>
         <tr>
           <td><code>resolution</code></td>
           <td>
-                <code><span title="typing.Literal">Literal</span>[30]</code>
+                <code><span title="typing.Literal">Literal</span>[10, 30]</code>
           </td>
           <td><p>Desired output pixel spacing in meters</p></td>
           <td>
@@ -4243,7 +4243,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
                     <span class="n">include_rgb</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                     <span class="n">include_scattering_area</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                     <span class="n">radiometry</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;sigma0&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">,</span>
-                    <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+                    <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
                     <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;decibel&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
                     <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                     <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
@@ -4941,7 +4941,7 @@ projected into the look direction (gamma0)</p></td>
         <tr>
           <td><code>resolution</code></td>
           <td>
-                <code><span title="typing.Literal">Literal</span>[30]</code>
+                <code><span title="typing.Literal">Literal</span>[10, 30]</code>
           </td>
           <td><p>Desired output pixel spacing in meters</p></td>
           <td>
@@ -5049,7 +5049,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
                    <span class="n">include_rgb</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                    <span class="n">include_scattering_area</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                    <span class="n">radiometry</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;sigma0&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">,</span>
-                   <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+                   <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
                    <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;decibel&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
                    <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                    <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
