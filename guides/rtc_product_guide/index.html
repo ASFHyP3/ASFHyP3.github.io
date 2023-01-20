@@ -830,8 +830,8 @@ feedback.init({showIcon: false});
 </li>
         
           <li class="md-nav__item">
-  <a href="#db-scale" class="md-nav__link">
-    dB Scale
+  <a href="#decibel-db-scale" class="md-nav__link">
+    Decibel (dB) Scale
   </a>
   
 </li>
@@ -1687,8 +1687,8 @@ feedback.init({showIcon: false});
 </li>
         
           <li class="md-nav__item">
-  <a href="#db-scale" class="md-nav__link">
-    dB Scale
+  <a href="#decibel-db-scale" class="md-nav__link">
+    Decibel (dB) Scale
   </a>
   
 </li>
@@ -1819,6 +1819,10 @@ feedback.init({showIcon: false});
 <p>ASF's <a href="https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank" title="Vertex On Demand Tutorial">Sentinel-1 On-Demand RTC</a> products are generated using <a href="https://gamma-rs.ch/" target="_blank" title="https://gamma-rs.ch">GAMMA Software</a>. Products are distributed as GeoTIFFs (one for each available polarization) projected to the appropriate UTM Zone for the location of the scene.</p>
 <p>A <a href="#digital-elevation-models" title="Jump to DEM Section of document">Digital Elevation Model (DEM)</a> is required for processing RTC. ASF uses the best publicly-available DEM with full coverage of the processing area. </p>
 <p>For a step-by-step tutorial on ordering On-Demand RTC Products using Vertex, visit our <a href="https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35" target="_blank" title="RTC On Demand! StoryMap">RTC On Demand! StoryMap</a>, which also includes links to sample workflows using Sentinel-1 RTC products for GIS applications.</p>
+<div class="admonition important">
+<p class="admonition-title">New RTC Processing Options Available</p>
+<p>On Demand Sentinel-1 RTC products can now be processed at <a href="#pixel-spacing" target="_blank" title="RTC Pixel Spacing Documentation">10-m pixel spacing</a>, and can be output in <a href="#sar-scales" target="_blank" title="SAR Scales Documentation">decibel (dB) scale</a>. </p>
+</div>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <h3 id="sentinel-1-mission">Sentinel-1 Mission<a class="headerlink" href="#sentinel-1-mission" title="Permanent link">&para;</a></h3>
 <p>The <a href="https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1" target="_blank" title="https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1">Sentinel-1 mission</a> collects C-band band SAR from a pair of polar-orbiting satellites launched by the European Space Agency (ESA) as part of the <a href="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions" target="_blank" title="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions">Copernicus program</a>. The Sentinel-1A satellite was launched April 3, 2014, and the Sentinel-1B satellite was launched April 25, 2016. The <a href="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite" target="_blank" title="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite">Sentinel-1B satellite no longer acquires data</a> as of December 23, 2021. </p>
@@ -1922,6 +1926,10 @@ feedback.init({showIcon: false});
 <p><img alt="Figure 4" src="../../images/dem-coverage-map.png" title="Coverage of the various legacy DEM sources used for terrain correction" /></p>
 <p><em>Figure 4: Coverage of the various legacy DEM sources used for terrain correction</em></p>
 <h2 id="pixel-spacing">Pixel Spacing<a class="headerlink" href="#pixel-spacing" title="Permanent link">&para;</a></h2>
+<div class="admonition important">
+<p class="admonition-title">On Demand Sentinel-1 RTC now available at 10-m pixel spacing</p>
+<p>There is now a pixel spacing processing option available for Sentinel-1 RTC products. Users can choose to output the RTC products at a pixel spacing of either 30 meters or 10 meters.</p>
+</div>
 <p>RTC products can be output either at 30-meter or 10-meter pixel spacing. In most cases, the input SAR image has a higher resolution than either of the RTC outputs. The 10-m RTC product will be closer to the resolution of the source SAR granule, but the 30-m RTC product has a much smaller file size. </p>
 <p>It is <em>much</em> faster to process and analyze 30-m RTC products, so it's a good idea to start with the coarser resolution option if possible. If the 30-m pixel spacing is not sufficient for your use case, try the larger 10-m RTC products. </p>
 <p>Keep in mind that the same DEM is used for processing both the 10-m and 30-m RTC products. By default, the DEM is the Copernicus Global DEM with a pixel spacing of 30 meters. The DEM is resampled to a pixel spacing of 10 meters when used for processing the 10-m RTC products, and the output DEM included in the 10-m RTC product package has a pixel spacing of 10 meters to match the output RTC product. <em>This does not indicate that the source DEM used for the 10-m products is of higher resolution.</em></p>
@@ -1935,7 +1943,7 @@ feedback.init({showIcon: false});
 <h3 id="radiometric-correction">Radiometric Correction<a class="headerlink" href="#radiometric-correction" title="Permanent link">&para;</a></h3>
 <p>During processing, a surface scattering area image for the scene is calculated and saved. This projected area image is used to create the RTC product - the SAR image is multiplied by the ratio of an ellipsoidal scattering image (used during calibration) and this scattering area image. Note that this image is always projected to gamma-nought (γ<sub>0</sub>). </p>
 <h3 id="geocoding">Geocoding<a class="headerlink" href="#geocoding" title="Permanent link">&para;</a></h3>
-<p>In a final step, the RTC product is geocoded into map-projected space. Thus, radiometric terrain correction results in a geocoded radiometrically calibrated multi-looked image with gamma-nought (γ<sub>0</sub>) power scale values by default, though there are options to process to sigma-nought (σ<sub>0</sub>) radiometry and amplitude scale.</p>
+<p>In a final step, the RTC product is geocoded into map-projected space. Thus, radiometric terrain correction results in a geocoded radiometrically calibrated multi-looked image with gamma-nought (γ<sub>0</sub>) power scale values by default, though there are options to process to sigma-nought (σ<sub>0</sub>) radiometry and amplitude or decibel (dB) scale.</p>
 <h3 id="post-processing">Post-Processing<a class="headerlink" href="#post-processing" title="Permanent link">&para;</a></h3>
 <p>After the terrain correction is completed, the RTC products are exported to GeoTIFF format. If the scene being processed is dual polarization, users have the option to add a full-resolution RGB Decomposition GeoTIFF to the RTC product package.  Side products including the DEM, layover shadow map, scattering area map, and incidence angle map are converted into GeoTIFF format. In addition, a README text file, browse images, item-specific ArcGIS-compatible XML metadata files, a log file, and a shapefile indicating the data extent are generated for the product.</p>
 <h2 id="product-packaging">Product Packaging<a class="headerlink" href="#product-packaging" title="Permanent link">&para;</a></h2>
@@ -2205,14 +2213,18 @@ feedback.init({showIcon: false});
 </table>
 <p><em>Table 6: Shapefile files and their extensions</em></p>
 <h2 id="sar-scales">SAR Scales<a class="headerlink" href="#sar-scales" title="Permanent link">&para;</a></h2>
+<div class="admonition important">
+<p class="admonition-title">On Demand Sentinel-1 RTC Products now available in dB scale</p>
+<p>Users can now choose to output Sentinel-1 RTC products in decibel (dB) scale. Previously, the only choices for output scale were power and amplitude. The default scale continues to be power.</p>
+</div>
 <h3 id="power-scale">Power Scale<a class="headerlink" href="#power-scale" title="Permanent link">&para;</a></h3>
 <p>Note that the default output of Sentinel-1 RTC products from HyP3 is in power scale. The values in this scale are generally very close to zero, so the dynamic range of the RTC image can be easily skewed by a few bright scatterers in the image. Power scale is appropriate for statistical analysis of the RTC dataset, but may not always be the best option for data visualization.</p>
 <p>When viewing an RTC image in power scale in a GIS environment, it may appear mostly or all black, and you may need to adjust the stretch to see features in the image. Often applying a stretch of 2 standard deviations, or setting the Min-Max stretch values to 0 and 0.3, will greatly improve the appearance of the image. You can adjust the stretch as desired to display your image to full advantage. Be aware that this does not change the actual pixel values.</p>
-<p>In some cases, it may be desirable to convert the actual pixel values to a different scale. Two other scales commonly used for SAR data are amplitude and dB.</p>
+<p>In some cases, it may be desirable to convert the actual pixel values to a different scale. Two other scales commonly used for SAR data are amplitude and decibel (dB).</p>
 <h3 id="amplitude-scale">Amplitude Scale<a class="headerlink" href="#amplitude-scale" title="Permanent link">&para;</a></h3>
 <p>Amplitude scale is the square root of the power scale values. This brightens the darker pixels and darkens the brighter pixels, narrowing the dynamic range of the image. In many cases, amplitude scale presents a pleasing grayscale display of RTC images. Amplitude scale works well for calculating log difference ratios (see <a href="#change-detection-using-rtc-data" title="Jump to Change Detection Using RTC Data section in document">Change Detection Using RTC Data</a>).</p>
-<h3 id="db-scale">dB Scale<a class="headerlink" href="#db-scale" title="Permanent link">&para;</a></h3>
-<p>The dB scale is calculated by multiplying 10 times the Log10 of the power scale values. This scale brightens the pixels, allowing for better differentiation among very dark pixels. When identifying water on the landscape, this is often a good scale to use; the water pixels generally remain very dark, while the terrestrial pixels are even brighter (see <a href="#identifying-surface-water" title="Jump to Identifying Surface Water section in document">Identifying Surface Water</a>).</p>
+<h3 id="decibel-db-scale">Decibel (dB) Scale<a class="headerlink" href="#decibel-db-scale" title="Permanent link">&para;</a></h3>
+<p>The decibel (dB) scale is calculated by multiplying 10 times the Log10 of the power scale values. This scale brightens the pixels, allowing for better differentiation among very dark pixels. When identifying water on the landscape, this is often a good scale to use; the water pixels generally remain very dark, while the terrestrial pixels are even brighter (see <a href="#identifying-surface-water" title="Jump to Identifying Surface Water section in document">Identifying Surface Water</a>).</p>
 <p>This scale is not always the best choice for general visualization of RTC products, as it can give a washed-out appearance, and because it is in a log scale, it is not appropriate for all types of statistical analyses.</p>
 <h2 id="rtc-use-examples">RTC Use Examples<a class="headerlink" href="#rtc-use-examples" title="Permanent link">&para;</a></h2>
 <p>The RTC products are presented as Cloud-Optimized GeoTIFFs (COGs), a user-friendly format that is GIS compatible. The products include pre-generated overviews, so users will not need to generate pyramids to display the images efficiently in a GIS environment.</p>
