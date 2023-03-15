@@ -141,7 +141,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#asf_tools-v050-api-reference" class="md-skip">
+        <a href="#asf_tools-v052-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -1891,7 +1891,7 @@ feedback.init({showIcon: false});
               
                 
                 
-                <h1 id="asf_tools-v050-api-reference"><code>asf_tools</code> <em>v0.5.0</em> API Reference<a class="headerlink" href="#asf_tools-v050-api-reference" title="Permanent link">&para;</a></h1>
+                <h1 id="asf_tools-v052-api-reference"><code>asf_tools</code> <em>v0.5.2</em> API Reference<a class="headerlink" href="#asf_tools-v052-api-reference" title="Permanent link">&para;</a></h1>
 
 
 <div class="doc doc-object doc-module">
@@ -3687,7 +3687,15 @@ distributions.</p>
 <span class="normal">221</span>
 <span class="normal">222</span>
 <span class="normal">223</span>
-<span class="normal">224</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">make_flood_map</span><span class="p">(</span><span class="n">out_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>  <span class="n">vv_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">make_flood_map</span><span class="p">(</span><span class="n">out_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>  <span class="n">vv_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>
                    <span class="n">water_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">hand_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>
                    <span class="n">estimator</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;iterative&#39;</span><span class="p">,</span>
                    <span class="n">water_level_sigma</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">3.</span><span class="p">,</span>
@@ -3748,6 +3756,7 @@ distributions.</p>
 
     <span class="n">vv_array</span> <span class="o">=</span> <span class="n">read_as_masked_array</span><span class="p">(</span><span class="n">vv_raster</span><span class="p">)</span>
     <span class="n">flood_mask</span><span class="p">[</span><span class="n">vv_array</span><span class="o">.</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">padding_mask</span> <span class="o">=</span> <span class="n">vv_array</span><span class="o">.</span><span class="n">mask</span>
     <span class="k">del</span> <span class="n">vv_array</span>
 
     <span class="n">labeled_flood_mask</span><span class="p">,</span> <span class="n">num_labels</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">flood_mask</span><span class="p">)</span>
@@ -3772,16 +3781,23 @@ distributions.</p>
 
     <span class="n">flood_depth</span><span class="p">[</span><span class="n">flood_depth</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 
+    <span class="n">nodata</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">flood_depth</span><span class="p">[</span><span class="n">padding_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">nodata</span>
+
+    <span class="n">floodmask_nodata</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span><span class="o">.</span><span class="n">max</span>
+    <span class="n">flood_mask_byte</span> <span class="o">=</span> <span class="n">flood_mask</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="n">flood_mask_byte</span><span class="p">[</span><span class="n">padding_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">floodmask_nodata</span>
+
     <span class="n">write_cog</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_raster</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.tif&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;_</span><span class="si">{</span><span class="n">estimator</span><span class="si">}</span><span class="s1">_WaterDepth.tif&#39;</span><span class="p">),</span> <span class="n">flood_depth</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">geotransform</span><span class="p">,</span>
-              <span class="n">epsg_code</span><span class="o">=</span><span class="n">epsg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Float64</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">write_cog</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_raster</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.tif&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;_</span><span class="si">{</span><span class="n">estimator</span><span class="si">}</span><span class="s1">_FloodMask.tif&#39;</span><span class="p">),</span> <span class="n">flood_mask</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">geotransform</span><span class="p">,</span>
-              <span class="n">epsg_code</span><span class="o">=</span><span class="n">epsg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Byte</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+              <span class="n">epsg_code</span><span class="o">=</span><span class="n">epsg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Float64</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="n">nodata</span><span class="p">)</span>
+    <span class="n">write_cog</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_raster</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.tif&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;_</span><span class="si">{</span><span class="n">estimator</span><span class="si">}</span><span class="s1">_FloodMask.tif&#39;</span><span class="p">),</span> <span class="n">flood_mask_byte</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">geotransform</span><span class="p">,</span>
+              <span class="n">epsg_code</span><span class="o">=</span><span class="n">epsg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Byte</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="n">floodmask_nodata</span><span class="p">)</span>
 
     <span class="n">flood_mask</span><span class="p">[</span><span class="n">known_water_mask</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">flood_depth</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">logical_not</span><span class="p">(</span><span class="n">flood_mask</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>
-
+    <span class="n">flood_depth</span><span class="p">[</span><span class="n">padding_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">nodata</span>
     <span class="n">write_cog</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_raster</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.tif&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;_</span><span class="si">{</span><span class="n">estimator</span><span class="si">}</span><span class="s1">_FloodDepth.tif&#39;</span><span class="p">),</span> <span class="n">flood_depth</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">geotransform</span><span class="p">,</span>
-              <span class="n">epsg_code</span><span class="o">=</span><span class="n">epsg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Float64</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+              <span class="n">epsg_code</span><span class="o">=</span><span class="n">epsg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Float64</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="n">nodata</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
       </details>
@@ -3931,7 +3947,7 @@ If <code>None</code>, the mean accumulation value is used</p></td>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">dem_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
         <span class="n">basin_mask</span><span class="p">,</span> <span class="n">basin_affine_tf</span><span class="p">,</span> <span class="n">basin_window</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">mask</span><span class="o">.</span><span class="n">raster_geometry_mask</span><span class="p">(</span>
-            <span class="n">src</span><span class="p">,</span> <span class="n">geometries</span><span class="p">,</span> <span class="n">all_touched</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">crop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pad_width</span><span class="o">=</span><span class="mi">1</span>
+            <span class="n">src</span><span class="p">,</span> <span class="n">geometries</span><span class="o">.</span><span class="n">geoms</span><span class="p">,</span> <span class="n">all_touched</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">crop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pad_width</span><span class="o">=</span><span class="mi">1</span>
         <span class="p">)</span>
         <span class="n">basin_array</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="n">basin_window</span><span class="p">)</span>
 
@@ -4567,7 +4583,7 @@ If <code>None</code>, the mean accumulation value is used</p></td>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">dem_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
         <span class="n">basin_mask</span><span class="p">,</span> <span class="n">basin_affine_tf</span><span class="p">,</span> <span class="n">basin_window</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">mask</span><span class="o">.</span><span class="n">raster_geometry_mask</span><span class="p">(</span>
-            <span class="n">src</span><span class="p">,</span> <span class="n">geometries</span><span class="p">,</span> <span class="n">all_touched</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">crop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pad_width</span><span class="o">=</span><span class="mi">1</span>
+            <span class="n">src</span><span class="p">,</span> <span class="n">geometries</span><span class="o">.</span><span class="n">geoms</span><span class="p">,</span> <span class="n">all_touched</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">crop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pad_width</span><span class="o">=</span><span class="mi">1</span>
         <span class="p">)</span>
         <span class="n">basin_array</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="n">basin_window</span><span class="p">)</span>
 
