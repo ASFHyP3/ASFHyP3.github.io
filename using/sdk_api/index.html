@@ -141,7 +141,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#hyp3_sdk-v210-api-reference" class="md-skip">
+        <a href="#hyp3_sdk-v211-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -1827,7 +1827,7 @@ feedback.init({showIcon: false});
               
                 
                 
-                <h1 id="hyp3_sdk-v210-api-reference"><code>hyp3_sdk</code> <em>v2.1.0</em> API Reference<a class="headerlink" href="#hyp3_sdk-v210-api-reference" title="Permanent link">&para;</a></h1>
+                <h1 id="hyp3_sdk-v211-api-reference"><code>hyp3_sdk</code> <em>v2.1.1</em> API Reference<a class="headerlink" href="#hyp3_sdk-v211-api-reference" title="Permanent link">&para;</a></h1>
 
 
 <div class="doc doc-object doc-module">
@@ -2982,27 +2982,27 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">hyp3_sdk</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">hyp3_sdk</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">})</span>
 
     <span class="k">def</span> <span class="nf">find_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                  <span class="n">user_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                   <span class="n">start</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                   <span class="n">end</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                   <span class="n">status_code</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                   <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                  <span class="n">job_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+                  <span class="n">job_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                  <span class="n">user_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Gets a Batch of jobs from HyP3 matching the provided search criteria</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            user_id: only jobs submitted by this user (defaults to the current user)</span>
 <span class="sd">            start: only jobs submitted after given time</span>
 <span class="sd">            end: only jobs submitted before given time</span>
 <span class="sd">            status_code: only jobs matching this status (SUCCEEDED, FAILED, RUNNING, PENDING)</span>
 <span class="sd">            name: only jobs with this name</span>
 <span class="sd">            job_type: only jobs with this job_type</span>
+<span class="sd">            user_id: only jobs submitted by this user (defaults to the current user)</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            A Batch object containing the found jobs</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="k">for</span> <span class="n">param_name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;status_code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;job_type&#39;</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">param_name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;status_code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;job_type&#39;</span><span class="p">,</span> <span class="s1">&#39;user_id&#39;</span><span class="p">):</span>
             <span class="n">param_value</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">param_name</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">param_value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">param_value</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
@@ -3559,7 +3559,7 @@ are not provided as keyword parameters</p></td>
 
 
 <h4 id="hyp3_sdk.hyp3.HyP3.find_jobs" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">find_jobs</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">job_type</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">find_jobs</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">job_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">user_id</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#hyp3_sdk.hyp3.HyP3.find_jobs" class="headerlink" title="Permanent link">&para;</a></h4>
 
@@ -3579,16 +3579,6 @@ are not provided as keyword parameters</p></td>
       </tr>
     </thead>
     <tbody>
-        <tr>
-          <td><code>user_id</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
-          </td>
-          <td><p>only jobs submitted by this user (defaults to the current user)</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
         <tr>
           <td><code>start</code></td>
           <td>
@@ -3635,6 +3625,16 @@ are not provided as keyword parameters</p></td>
                 <code><span title="typing.Optional">Optional</span>[str]</code>
           </td>
           <td><p>only jobs with this job_type</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>user_id</code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[str]</code>
+          </td>
+          <td><p>only jobs submitted by this user (defaults to the current user)</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -3704,27 +3704,27 @@ are not provided as keyword parameters</p></td>
 <span class="normal">88</span>
 <span class="normal">89</span>
 <span class="normal">90</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">find_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-              <span class="n">user_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
               <span class="n">start</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
               <span class="n">end</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
               <span class="n">status_code</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
               <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-              <span class="n">job_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+              <span class="n">job_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+              <span class="n">user_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Gets a Batch of jobs from HyP3 matching the provided search criteria</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        user_id: only jobs submitted by this user (defaults to the current user)</span>
 <span class="sd">        start: only jobs submitted after given time</span>
 <span class="sd">        end: only jobs submitted before given time</span>
 <span class="sd">        status_code: only jobs matching this status (SUCCEEDED, FAILED, RUNNING, PENDING)</span>
 <span class="sd">        name: only jobs with this name</span>
 <span class="sd">        job_type: only jobs with this job_type</span>
+<span class="sd">        user_id: only jobs submitted by this user (defaults to the current user)</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A Batch object containing the found jobs</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">for</span> <span class="n">param_name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;status_code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;job_type&#39;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">param_name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;status_code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;job_type&#39;</span><span class="p">,</span> <span class="s1">&#39;user_id&#39;</span><span class="p">):</span>
         <span class="n">param_value</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">param_name</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">param_value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">param_value</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
@@ -6577,27 +6577,27 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">hyp3_sdk</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">hyp3_sdk</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">})</span>
 
     <span class="k">def</span> <span class="nf">find_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                  <span class="n">user_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                   <span class="n">start</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                   <span class="n">end</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                   <span class="n">status_code</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                   <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-                  <span class="n">job_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+                  <span class="n">job_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                  <span class="n">user_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Gets a Batch of jobs from HyP3 matching the provided search criteria</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            user_id: only jobs submitted by this user (defaults to the current user)</span>
 <span class="sd">            start: only jobs submitted after given time</span>
 <span class="sd">            end: only jobs submitted before given time</span>
 <span class="sd">            status_code: only jobs matching this status (SUCCEEDED, FAILED, RUNNING, PENDING)</span>
 <span class="sd">            name: only jobs with this name</span>
 <span class="sd">            job_type: only jobs with this job_type</span>
+<span class="sd">            user_id: only jobs submitted by this user (defaults to the current user)</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            A Batch object containing the found jobs</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="k">for</span> <span class="n">param_name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;status_code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;job_type&#39;</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">param_name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;status_code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;job_type&#39;</span><span class="p">,</span> <span class="s1">&#39;user_id&#39;</span><span class="p">):</span>
             <span class="n">param_value</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">param_name</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">param_value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">param_value</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
@@ -7154,7 +7154,7 @@ are not provided as keyword parameters</p></td>
 
 
 <h5 id="hyp3_sdk.hyp3.HyP3.find_jobs" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">find_jobs</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">job_type</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">find_jobs</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">job_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">user_id</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#hyp3_sdk.hyp3.HyP3.find_jobs" class="headerlink" title="Permanent link">&para;</a></h5>
 
@@ -7174,16 +7174,6 @@ are not provided as keyword parameters</p></td>
       </tr>
     </thead>
     <tbody>
-        <tr>
-          <td><code>user_id</code></td>
-          <td>
-                <code><span title="typing.Optional">Optional</span>[str]</code>
-          </td>
-          <td><p>only jobs submitted by this user (defaults to the current user)</p></td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
         <tr>
           <td><code>start</code></td>
           <td>
@@ -7230,6 +7220,16 @@ are not provided as keyword parameters</p></td>
                 <code><span title="typing.Optional">Optional</span>[str]</code>
           </td>
           <td><p>only jobs with this job_type</p></td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>user_id</code></td>
+          <td>
+                <code><span title="typing.Optional">Optional</span>[str]</code>
+          </td>
+          <td><p>only jobs submitted by this user (defaults to the current user)</p></td>
           <td>
                 <code>None</code>
           </td>
@@ -7299,27 +7299,27 @@ are not provided as keyword parameters</p></td>
 <span class="normal">88</span>
 <span class="normal">89</span>
 <span class="normal">90</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">find_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-              <span class="n">user_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
               <span class="n">start</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
               <span class="n">end</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
               <span class="n">status_code</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
               <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-              <span class="n">job_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+              <span class="n">job_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+              <span class="n">user_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Gets a Batch of jobs from HyP3 matching the provided search criteria</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        user_id: only jobs submitted by this user (defaults to the current user)</span>
 <span class="sd">        start: only jobs submitted after given time</span>
 <span class="sd">        end: only jobs submitted before given time</span>
 <span class="sd">        status_code: only jobs matching this status (SUCCEEDED, FAILED, RUNNING, PENDING)</span>
 <span class="sd">        name: only jobs with this name</span>
 <span class="sd">        job_type: only jobs with this job_type</span>
+<span class="sd">        user_id: only jobs submitted by this user (defaults to the current user)</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A Batch object containing the found jobs</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">for</span> <span class="n">param_name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;status_code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;job_type&#39;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">param_name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;status_code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;job_type&#39;</span><span class="p">,</span> <span class="s1">&#39;user_id&#39;</span><span class="p">):</span>
         <span class="n">param_value</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">param_name</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">param_value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">param_value</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
