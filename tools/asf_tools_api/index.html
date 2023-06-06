@@ -1993,7 +1993,11 @@ the number of rasters contributing to each composite pixel is created.</p>
           <td>
                 <code>int</code>
           </td>
-          <td><p>The integer EPSG code</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The integer EPSG code</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2014,7 +2018,11 @@ the number of rasters contributing to each composite pixel is created.</p>
 <td><code>wkt</code></td>          <td>
                 <code>str</code>
           </td>
-          <td><p>The WKT representation of the projection</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The WKT representation of the projection</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2082,7 +2090,11 @@ products</p>
           <td>
                 <code>str</code>
           </td>
-          <td><p>path of the backscatter raster, e.g. S1A_IW_20181102T155531_DVP_RTC30_G_gpuned_5685_VV.tif</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>path of the backscatter raster, e.g. S1A_IW_20181102T155531_DVP_RTC30_G_gpuned_5685_VV.tif</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2103,7 +2115,11 @@ products</p>
 <td><code>area_raster</code></td>          <td>
                 <code>str</code>
           </td>
-          <td><p>path of the area raster, e.g. S1A_IW_20181102T155531_DVP_RTC30_G_gpuned_5685_area.tif</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>path of the area raster, e.g. S1A_IW_20181102T155531_DVP_RTC30_G_gpuned_5685_area.tif</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2168,7 +2184,11 @@ products</p>
           <td>
                 <code>dict</code>
           </td>
-          <td><p>The dictionary returned by a gdal.Info call</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The dictionary returned by a gdal.Info call</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2189,7 +2209,11 @@ products</p>
 <td><code>epsg_code</code></td>          <td>
                 <code>int</code>
           </td>
-          <td><p>The integer EPSG code</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The integer EPSG code</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2256,7 +2280,11 @@ products</p>
           <td>
                 <code>dict</code>
           </td>
-          <td><p>A dictionary of gdal.Info results for the set of rasters</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A dictionary of gdal.Info results for the set of rasters</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2276,17 +2304,29 @@ products</p>
         <tr>
 <td><code>upper_left</code></td>          <td>
           </td>
-          <td><p>The upper left corner of the extent as a tuple</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The upper left corner of the extent as a tuple</p>
+            </div>
+          </td>
         </tr>
         <tr>
 <td><code>upper_right</code></td>          <td>
           </td>
-          <td><p>The lower right corner of the extent as a tuple</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The lower right corner of the extent as a tuple</p>
+            </div>
+          </td>
         </tr>
         <tr>
 <td><code>geotransform</code></td>          <td>
           </td>
-          <td><p>The geotransform of the extent as a list</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The geotransform of the extent as a list</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2391,7 +2431,11 @@ products</p>
           <td>
                 <code><span title="typing.List">List</span>[int]</code>
           </td>
-          <td><p>List of UTM EPSG codes</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of UTM EPSG codes</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2412,7 +2456,11 @@ products</p>
 <td><code>target</code></td>          <td>
                 <code>int</code>
           </td>
-          <td><p>UTM EPSG code</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>UTM EPSG code</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2507,7 +2555,11 @@ products</p>
           <td>
                 <code>str</code>
           </td>
-          <td><p>The base name of the output GeoTIFFs</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The base name of the output GeoTIFFs</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2517,7 +2569,11 @@ products</p>
           <td>
                 <code><span title="typing.List">List</span>[str]</code>
           </td>
-          <td><p>A list of file paths of the images to composite</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A list of file paths of the images to composite</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2527,7 +2583,11 @@ products</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>The pixel size for the output GeoTIFFs</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The pixel size for the output GeoTIFFs</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -2547,12 +2607,20 @@ products</p>
         <tr>
 <td><code>out_raster</code></td>          <td>
           </td>
-          <td><p>Path to the created composite backscatter GeoTIFF</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Path to the created composite backscatter GeoTIFF</p>
+            </div>
+          </td>
         </tr>
         <tr>
 <td><code>out_counts_raster</code></td>          <td>
           </td>
-          <td><p>Path to the created GeoTIFF with counts of scenes contributing to each pixel</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Path to the created GeoTIFF with counts of scenes contributing to each pixel</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2765,7 +2833,11 @@ products</p>
           <td>
                 <code>str</code>
           </td>
-          <td><p>The file path to a raster image</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The file path to a raster image</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2775,7 +2847,11 @@ products</p>
           <td>
                 <code>int</code>
           </td>
-          <td><p>The raster band to read</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The raster band to read</p>
+            </div>
+          </td>
           <td>
                 <code>1</code>
           </td>
@@ -2796,7 +2872,11 @@ products</p>
 <td><code>data</code></td>          <td>
                 <code><span title="numpy">np</span>.<span title="numpy.array">array</span></code>
           </td>
-          <td><p>The raster pixel data as a numpy array</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The raster pixel data as a numpy array</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2869,7 +2949,11 @@ products</p>
           <td>
                 <code>dict</code>
           </td>
-          <td><p>A dictionary of gdal.Info results for the set of rasters</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A dictionary of gdal.Info results for the set of rasters</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2879,7 +2963,11 @@ products</p>
           <td>
                 <code>int</code>
           </td>
-          <td><p>The integer EPSG code for the target projection</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The integer EPSG code for the target projection</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2889,7 +2977,11 @@ products</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>The target resolution</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The target resolution</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2899,7 +2991,11 @@ products</p>
           <td>
                 <code>str</code>
           </td>
-          <td><p>The directory in which to create the reprojected files</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The directory in which to create the reprojected files</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -2920,7 +3016,11 @@ products</p>
 <td><code>target_raster_info</code></td>          <td>
                 <code>dict</code>
           </td>
-          <td><p>An updated dictionary of gdal.Info results for the reprojected files</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>An updated dictionary of gdal.Info results for the reprojected files</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3039,7 +3139,11 @@ products</p>
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>The output file name</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The output file name</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3049,7 +3153,11 @@ products</p>
           <td>
                 <code><span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span></code>
           </td>
-          <td><p>The raster data</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The raster data</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3059,7 +3167,11 @@ products</p>
           <td>
                 <code><span title="typing.List">List</span>[float]</code>
           </td>
-          <td><p>The geotransform for the output GeoTIFF</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The geotransform for the output GeoTIFF</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3069,7 +3181,11 @@ products</p>
           <td>
                 <code>int</code>
           </td>
-          <td><p>The integer EPSG code for the output GeoTIFF projection</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The integer EPSG code for the output GeoTIFF projection</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3078,7 +3194,11 @@ products</p>
           <td><code>dtype</code></td>
           <td>
           </td>
-          <td><p>The pixel data type for the output GeoTIFF</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The pixel data type for the output GeoTIFF</p>
+            </div>
+          </td>
           <td>
                 <code>gdal.GDT_Float32</code>
           </td>
@@ -3087,7 +3207,11 @@ products</p>
           <td><code>nodata_value</code></td>
           <td>
           </td>
-          <td><p>The NODATA value for the output Geotiff</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The NODATA value for the output Geotiff</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -3107,7 +3231,11 @@ products</p>
         <tr>
 <td><code>file_name</code></td>          <td>
           </td>
-          <td><p>The output file name</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The output file name</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3250,7 +3378,11 @@ products</p>
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>Path for the output VRT file</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Path for the output VRT file</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3260,7 +3392,11 @@ products</p>
           <td>
                 <code><span title="typing.Union">Union</span>[<span title="osgeo.ogr">ogr</span>.<span title="osgeo.ogr.Geometry">Geometry</span>, <span title="shapely.geometry.base.BaseGeometry">BaseGeometry</span>]</code>
           </td>
-          <td><p>Geometry in EPSG:4326 (lon/lat) projection for which to prepare a DEM mosaic</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Geometry in EPSG:4326 (lon/lat) projection for which to prepare a DEM mosaic</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3401,7 +3537,11 @@ INF values inside the data array are set to nan.</p>
           <td>
                 <code><span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span></code>
           </td>
-          <td><p>array of data</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>array of data</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3411,7 +3551,11 @@ INF values inside the data array are set to nan.</p>
           <td>
                 <code><span title="typing.Callable">Callable</span></code>
           </td>
-          <td><p>statistical function to calculate in logarithmic scale</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>statistical function to calculate in logarithmic scale</p>
+            </div>
+          </td>
           <td>
                 <code>np.nanstd</code>
           </td>
@@ -3432,7 +3576,11 @@ INF values inside the data array are set to nan.</p>
 <td><code>statistic</code></td>          <td>
                 <code><span title="typing.Union">Union</span>[<span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, float]</code>
           </td>
-          <td><p>statistic of data in linear scale</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>statistic of data in linear scale</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -3521,7 +3669,11 @@ distributions.</p>
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>Flood depth GeoTIFF to create</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Flood depth GeoTIFF to create</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3531,7 +3683,11 @@ distributions.</p>
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>Sentinel-1 RTC GeoTIFF, in power scale, with VV polarization</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Sentinel-1 RTC GeoTIFF, in power scale, with VV polarization</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3541,7 +3697,11 @@ distributions.</p>
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>Surface water extent GeoTIFF</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Surface water extent GeoTIFF</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3551,7 +3711,11 @@ distributions.</p>
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>Height Above Nearest Drainage (HAND) GeoTIFF aligned to the surface water extent raster</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Height Above Nearest Drainage (HAND) GeoTIFF aligned to the surface water extent raster</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3561,7 +3725,11 @@ distributions.</p>
           <td>
                 <code>str</code>
           </td>
-          <td><p>Estimation approach for determining flood depth</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Estimation approach for determining flood depth</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;iterative&#39;</code>
           </td>
@@ -3571,7 +3739,11 @@ distributions.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>Max water height used in logstat, nmad, and numpy estimations</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Max water height used in logstat, nmad, and numpy estimations</p>
+            </div>
+          </td>
           <td>
                 <code>3.0</code>
           </td>
@@ -3581,7 +3753,11 @@ distributions.</p>
           <td>
                 <code>float</code>
           </td>
-          <td><p>Threshold for extracting the known water area in percent</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Threshold for extracting the known water area in percent</p>
+            </div>
+          </td>
           <td>
                 <code>30.0</code>
           </td>
@@ -3591,7 +3767,11 @@ distributions.</p>
           <td>
                 <code><span title="typing.Tuple">Tuple</span>[int, int]</code>
           </td>
-          <td><p>Bounds on basin-hopping algorithm used in iterative estimation</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Bounds on basin-hopping algorithm used in iterative estimation</p>
+            </div>
+          </td>
           <td>
                 <code>(0, 15)</code>
           </td>
@@ -3880,7 +4060,11 @@ distributions.</p>
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>HAND GeoTIFF to create</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>HAND GeoTIFF to create</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3890,7 +4074,11 @@ distributions.</p>
           <td>
                 <code><span title="shapely.geometry.GeometryCollection">GeometryCollection</span></code>
           </td>
-          <td><p>watershed boundary (hydrobasin) polygons to calculate HAND over</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>watershed boundary (hydrobasin) polygons to calculate HAND over</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3900,7 +4088,11 @@ distributions.</p>
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>DEM raster covering (containing) <code>geometries</code></p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>DEM raster covering (containing) <code>geometries</code></p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -3910,8 +4102,12 @@ distributions.</p>
           <td>
                 <code><span title="typing.Optional">Optional</span>[int]</code>
           </td>
-          <td><p>Accumulation threshold for determining the drainage mask.
-If <code>None</code>, the mean accumulation value is used</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Accumulation threshold for determining the drainage mask.
+If <code>None</code>, the mean accumulation value is used</p>
+            </div>
+          </td>
           <td>
                 <code>100</code>
           </td>
@@ -4008,7 +4204,11 @@ covering the watershed boundaries (hydrobasins) defined in a vector file.</p>
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>HAND GeoTIFF to create</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>HAND GeoTIFF to create</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -4018,7 +4218,11 @@ covering the watershed boundaries (hydrobasins) defined in a vector file.</p>
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>Vector file of watershed boundary (hydrobasin) polygons to calculate HAND over</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Vector file of watershed boundary (hydrobasin) polygons to calculate HAND over</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -4028,8 +4232,12 @@ covering the watershed boundaries (hydrobasins) defined in a vector file.</p>
           <td>
                 <code><span title="typing.Optional">Optional</span>[int]</code>
           </td>
-          <td><p>Accumulation threshold for determining the drainage mask.
-If <code>None</code>, the mean accumulation value is used</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Accumulation threshold for determining the drainage mask.
+If <code>None</code>, the mean accumulation value is used</p>
+            </div>
+          </td>
           <td>
                 <code>100</code>
           </td>
@@ -4119,7 +4327,11 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>Path for the output VRT file</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Path for the output VRT file</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -4129,7 +4341,11 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
           <td>
                 <code><span title="typing.Union">Union</span>[<span title="osgeo.ogr">ogr</span>.<span title="osgeo.ogr.Geometry">Geometry</span>, <span title="shapely.geometry.base.BaseGeometry">BaseGeometry</span>]</code>
           </td>
-          <td><p>Geometry in EPSG:4326 (lon/lat) projection for which to prepare a HAND mosaic</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Geometry in EPSG:4326 (lon/lat) projection for which to prepare a HAND mosaic</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -4274,7 +4490,11 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
           <td><code>dem_array</code></td>
           <td>
           </td>
-          <td><p>DEM to calculate HAND for</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>DEM to calculate HAND for</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -4282,9 +4502,13 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
         <tr>
           <td><code>dem_crs</code></td>
           <td>
-                <code><span title="rasterio.mask">rasterio</span>.<span title="rasterio.mask.crs">crs</span>.<span title="rasterio.crs.CRS">CRS</span></code>
+                <code><span title="rasterio.mask">rasterio</span>.<span title="rasterio.mask.crs">crs</span>.<span title="rasterio.mask.crs.CRS">CRS</span></code>
           </td>
-          <td><p>DEM Coordinate Reference System (CRS)</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>DEM Coordinate Reference System (CRS)</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -4294,7 +4518,11 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
           <td>
                 <code><span title="rasterio.mask">rasterio</span>.<span title="rasterio.mask.Affine">Affine</span></code>
           </td>
-          <td><p>DEM Affine geotransform</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>DEM Affine geotransform</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -4303,8 +4531,12 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
           <td><code>basin_mask</code></td>
           <td>
           </td>
-          <td><p>Array of booleans indicating wither an element should be masked out (à la Numpy Masked Arrays:
-https://numpy.org/doc/stable/reference/maskedarray.generic.html#what-is-a-masked-array)</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Array of booleans indicating wither an element should be masked out (à la Numpy Masked Arrays:
+https://numpy.org/doc/stable/reference/maskedarray.generic.html#what-is-a-masked-array)</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -4314,8 +4546,12 @@ https://numpy.org/doc/stable/reference/maskedarray.generic.html#what-is-a-masked
           <td>
                 <code><span title="typing.Optional">Optional</span>[int]</code>
           </td>
-          <td><p>Accumulation threshold for determining the drainage mask.
-If <code>None</code>, the mean accumulation value is used</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Accumulation threshold for determining the drainage mask.
+If <code>None</code>, the mean accumulation value is used</p>
+            </div>
+          </td>
           <td>
                 <code>100</code>
           </td>
@@ -4516,7 +4752,11 @@ If <code>None</code>, the mean accumulation value is used</p></td>
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>HAND GeoTIFF to create</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>HAND GeoTIFF to create</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -4526,7 +4766,11 @@ If <code>None</code>, the mean accumulation value is used</p></td>
           <td>
                 <code><span title="shapely.geometry.GeometryCollection">GeometryCollection</span></code>
           </td>
-          <td><p>watershed boundary (hydrobasin) polygons to calculate HAND over</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>watershed boundary (hydrobasin) polygons to calculate HAND over</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -4536,7 +4780,11 @@ If <code>None</code>, the mean accumulation value is used</p></td>
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>DEM raster covering (containing) <code>geometries</code></p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>DEM raster covering (containing) <code>geometries</code></p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -4546,8 +4794,12 @@ If <code>None</code>, the mean accumulation value is used</p></td>
           <td>
                 <code><span title="typing.Optional">Optional</span>[int]</code>
           </td>
-          <td><p>Accumulation threshold for determining the drainage mask.
-If <code>None</code>, the mean accumulation value is used</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Accumulation threshold for determining the drainage mask.
+If <code>None</code>, the mean accumulation value is used</p>
+            </div>
+          </td>
           <td>
                 <code>100</code>
           </td>
@@ -4753,7 +5005,11 @@ covering the watershed boundaries (hydrobasins) defined in a vector file.</p>
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>HAND GeoTIFF to create</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>HAND GeoTIFF to create</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -4763,7 +5019,11 @@ covering the watershed boundaries (hydrobasins) defined in a vector file.</p>
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>Vector file of watershed boundary (hydrobasin) polygons to calculate HAND over</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Vector file of watershed boundary (hydrobasin) polygons to calculate HAND over</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -4773,8 +5033,12 @@ covering the watershed boundaries (hydrobasins) defined in a vector file.</p>
           <td>
                 <code><span title="typing.Optional">Optional</span>[int]</code>
           </td>
-          <td><p>Accumulation threshold for determining the drainage mask.
-If <code>None</code>, the mean accumulation value is used</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Accumulation threshold for determining the drainage mask.
+If <code>None</code>, the mean accumulation value is used</p>
+            </div>
+          </td>
           <td>
                 <code>100</code>
           </td>
@@ -4894,7 +5158,11 @@ If <code>None</code>, the mean accumulation value is used</p></td>
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>Path for the output HAND raster</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Path for the output HAND raster</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -4904,7 +5172,11 @@ If <code>None</code>, the mean accumulation value is used</p></td>
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>Path for the source raster</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Path for the source raster</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -4914,8 +5186,12 @@ If <code>None</code>, the mean accumulation value is used</p></td>
           <td>
                 <code>str</code>
           </td>
-          <td><p>Name of the resampling method to use. For available methods, see:
-https://gdal.org/programs/gdalwarp.html#cmdoption-gdalwarp-r</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the resampling method to use. For available methods, see:
+https://gdal.org/programs/gdalwarp.html#cmdoption-gdalwarp-r</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;lanczos&#39;</code>
           </td>
@@ -5011,7 +5287,11 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>Path for the output VRT file</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Path for the output VRT file</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -5021,7 +5301,11 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
           <td>
                 <code><span title="typing.Union">Union</span>[<span title="osgeo.ogr">ogr</span>.<span title="osgeo.ogr.Geometry">Geometry</span>, <span title="shapely.geometry.base.BaseGeometry">BaseGeometry</span>]</code>
           </td>
-          <td><p>Geometry in EPSG:4326 (lon/lat) projection for which to prepare a HAND mosaic</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Geometry in EPSG:4326 (lon/lat) projection for which to prepare a HAND mosaic</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -5242,7 +5526,11 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>The file path to a raster image</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The file path to a raster image</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -5252,7 +5540,11 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
           <td>
                 <code>int</code>
           </td>
-          <td><p>The raster band to read</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The raster band to read</p>
+            </div>
+          </td>
           <td>
                 <code>1</code>
           </td>
@@ -5271,9 +5563,13 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
     <tbody>
         <tr>
 <td><code>data</code></td>          <td>
-                <code><span title="numpy">np</span>.<span title="numpy.ma">ma</span>.<span title="np.ma.MaskedArray">MaskedArray</span></code>
+                <code><span title="numpy">np</span>.<span title="numpy.ma">ma</span>.<span title="numpy.ma.MaskedArray">MaskedArray</span></code>
           </td>
-          <td><p>The raster pixel data as a numpy MaskedArray</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The raster pixel data as a numpy MaskedArray</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -5387,7 +5683,11 @@ on a small tile that is likely to have a transition between water and not water.
           <td>
                 <code><span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span></code>
           </td>
-          <td><p>array of backscatter values for a tile from an RTC raster</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>array of backscatter values for a tile from an RTC raster</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -5397,9 +5697,13 @@ on a small tile that is likely to have a transition between water and not water.
           <td>
                 <code>int</code>
           </td>
-          <td><p>classify the tile into this many classes. Typically, three
+          <td>
+            <div class="doc-md-description">
+              <p>classify the tile into this many classes. Typically, three
 classes capture: (1) urban and bright slopes, (2) average brightness farmland,
-and (3) water, as is often seen in the US Midwest.</p></td>
+and (3) water, as is often seen in the US Midwest.</p>
+            </div>
+          </td>
           <td>
                 <code>3</code>
           </td>
@@ -5420,7 +5724,11 @@ and (3) water, as is often seen in the US Midwest.</p></td>
 <td><code>threshold</code></td>          <td>
                 <code>float</code>
           </td>
-          <td><p>threshold value that can be used to create a water extent map</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>threshold value that can be used to create a water extent map</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -5729,9 +6037,13 @@ tiles.shape
         <tr>
           <td><code>array</code></td>
           <td>
-                <code><span title="typing.Union">Union</span>[<span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, <span title="numpy">np</span>.<span title="numpy.ma">ma</span>.<span title="np.ma.MaskedArray">MaskedArray</span>]</code>
+                <code><span title="typing.Union">Union</span>[<span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, <span title="numpy">np</span>.<span title="numpy.ma">ma</span>.<span title="numpy.ma.MaskedArray">MaskedArray</span>]</code>
           </td>
-          <td><p>2D array to tile</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>2D array to tile</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -5741,7 +6053,11 @@ tiles.shape
           <td>
                 <code><span title="typing.Tuple">Tuple</span>[int, int]</code>
           </td>
-          <td><p>the shape of each tile</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the shape of each tile</p>
+            </div>
+          </td>
           <td>
                 <code>(200, 200)</code>
           </td>
@@ -5751,7 +6067,11 @@ tiles.shape
           <td>
                 <code>float</code>
           </td>
-          <td><p>right-bottom pad <code>a</code> with <code>pad</code> as needed so <code>a</code> is evenly divisible into tiles</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>right-bottom pad <code>a</code> with <code>pad</code> as needed so <code>a</code> is evenly divisible into tiles</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -5770,9 +6090,13 @@ tiles.shape
     <tbody>
         <tr>
           <td>
-                <code><span title="typing.Union">Union</span>[<span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, <span title="numpy">np</span>.<span title="numpy.ma">ma</span>.<span title="np.ma.MaskedArray">MaskedArray</span>]</code>
+                <code><span title="typing.Union">Union</span>[<span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, <span title="numpy">np</span>.<span title="numpy.ma">ma</span>.<span title="numpy.ma.MaskedArray">MaskedArray</span>]</code>
           </td>
-          <td><p>the tiled array</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the tiled array</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -5961,9 +6285,13 @@ array.shape
         <tr>
           <td><code>tiled_array</code></td>
           <td>
-                <code><span title="typing.Union">Union</span>[<span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, <span title="numpy">np</span>.<span title="numpy.ma">ma</span>.<span title="np.ma.MaskedArray">MaskedArray</span>]</code>
+                <code><span title="typing.Union">Union</span>[<span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, <span title="numpy">np</span>.<span title="numpy.ma">ma</span>.<span title="numpy.ma.MaskedArray">MaskedArray</span>]</code>
           </td>
-          <td><p>a tiled array</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>a tiled array</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -5973,9 +6301,13 @@ array.shape
           <td>
                 <code><span title="typing.Tuple">Tuple</span>[int, int]</code>
           </td>
-          <td><p>shape to untile the array to. If array_shape's size is smaller
+          <td>
+            <div class="doc-md-description">
+              <p>shape to untile the array to. If array_shape's size is smaller
 than the tiled array, <code>untile_array</code> will subset the tiled array assuming
-bottom right padding was added when tiling.</p></td>
+bottom right padding was added when tiling.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -5994,9 +6326,13 @@ bottom right padding was added when tiling.</p></td>
     <tbody>
         <tr>
           <td>
-                <code><span title="typing.Union">Union</span>[<span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, <span title="numpy">np</span>.<span title="numpy.ma">ma</span>.<span title="np.ma.MaskedArray">MaskedArray</span>]</code>
+                <code><span title="typing.Union">Union</span>[<span title="numpy">np</span>.<span title="numpy.ndarray">ndarray</span>, <span title="numpy">np</span>.<span title="numpy.ma">ma</span>.<span title="numpy.ma.MaskedArray">MaskedArray</span>]</code>
           </td>
-          <td><p>the untiled array</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>the untiled array</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -6260,7 +6596,11 @@ bottom right padding was added when tiling.</p></td>
           <td><code>**options</code></td>
           <td>
           </td>
-          <td><p>GDAL Config <code>option=value</code> keyword arguments.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>GDAL Config <code>option=value</code> keyword arguments.</p>
+            </div>
+          </td>
           <td>
                 <code>{}</code>
           </td>
@@ -6444,7 +6784,11 @@ from both masks, and the combined water map will be written to <code>out_raster<
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>Water map GeoTIFF to create</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Water map GeoTIFF to create</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -6454,7 +6798,11 @@ from both masks, and the combined water map will be written to <code>out_raster<
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>Sentinel-1 RTC GeoTIFF, in power scale, with VV polarization</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Sentinel-1 RTC GeoTIFF, in power scale, with VV polarization</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -6464,7 +6812,11 @@ from both masks, and the combined water map will be written to <code>out_raster<
           <td>
                 <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
           </td>
-          <td><p>Sentinel-1 RTC GeoTIFF, in power scale, with VH polarization</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Sentinel-1 RTC GeoTIFF, in power scale, with VH polarization</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -6474,7 +6826,11 @@ from both masks, and the combined water map will be written to <code>out_raster<
           <td>
                 <code><span title="typing.Optional">Optional</span>[<span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]]</code>
           </td>
-          <td><p>Height Above Nearest Drainage (HAND) GeoTIFF aligned to the RTC rasters</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Height Above Nearest Drainage (HAND) GeoTIFF aligned to the RTC rasters</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -6484,7 +6840,11 @@ from both masks, and the combined water map will be written to <code>out_raster<
           <td>
                 <code><span title="typing.Tuple">Tuple</span>[int, int]</code>
           </td>
-          <td><p>shape (height, width) in pixels to tile the image to</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>shape (height, width) in pixels to tile the image to</p>
+            </div>
+          </td>
           <td>
                 <code>(100, 100)</code>
           </td>
@@ -6494,7 +6854,11 @@ from both masks, and the combined water map will be written to <code>out_raster<
           <td>
                 <code>float</code>
           </td>
-          <td><p>Maximum threshold value to use for <code>vv_raster</code> in decibels (db)</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Maximum threshold value to use for <code>vv_raster</code> in decibels (db)</p>
+            </div>
+          </td>
           <td>
                 <code>-15.5</code>
           </td>
@@ -6504,7 +6868,11 @@ from both masks, and the combined water map will be written to <code>out_raster<
           <td>
                 <code>float</code>
           </td>
-          <td><p>Maximum threshold value to use for <code>vh_raster</code> in decibels (db)</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Maximum threshold value to use for <code>vh_raster</code> in decibels (db)</p>
+            </div>
+          </td>
           <td>
                 <code>-23.0</code>
           </td>
@@ -6514,8 +6882,12 @@ from both masks, and the combined water map will be written to <code>out_raster<
           <td>
                 <code>float</code>
           </td>
-          <td><p>The maximum height above nearest drainage in meters to consider
-a pixel valid</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The maximum height above nearest drainage in meters to consider
+a pixel valid</p>
+            </div>
+          </td>
           <td>
                 <code>15.0</code>
           </td>
@@ -6525,8 +6897,12 @@ a pixel valid</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>The minimum fraction of valid HAND pixels required in a tile for
-thresholding</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The minimum fraction of valid HAND pixels required in a tile for
+thresholding</p>
+            </div>
+          </td>
           <td>
                 <code>0.8</code>
           </td>
@@ -6536,7 +6912,11 @@ thresholding</p></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>The average membership to the fuzzy indicators required for a water pixel</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>The average membership to the fuzzy indicators required for a water pixel</p>
+            </div>
+          </td>
           <td>
                 <code>0.45</code>
           </td>
