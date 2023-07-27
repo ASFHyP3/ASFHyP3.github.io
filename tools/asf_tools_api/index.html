@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://hyp3-docs.asf.alaska.edu/tools/asf_tools_api/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-6.2.8">
+      <meta name="generator" content="mkdocs-1.5.0, mkdocs-material-6.2.8">
     
     
       
@@ -1932,7 +1932,7 @@ feedback.init({showIcon: false});
 
 
 <h2 id="asf_tools.composite" class="doc doc-heading">
-          <code>composite</code>
+            <code>composite</code>
 
 
 <a href="#asf_tools.composite" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -1963,6 +1963,7 @@ the number of rasters contributing to each composite pixel is created.</p>
 
 
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -1976,6 +1977,8 @@ the number of rasters contributing to each composite pixel is created.</p>
   <div class="doc doc-contents ">
   
       <p>Get the WKT representation of a projection from its EPSG code</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2005,6 +2008,8 @@ the number of rasters contributing to each composite pixel is created.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -2027,9 +2032,9 @@ the number of rasters contributing to each composite pixel is created.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/composite.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">44</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/composite.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">44</span>
 <span class="normal">45</span>
 <span class="normal">46</span>
 <span class="normal">47</span>
@@ -2054,10 +2059,11 @@ the number of rasters contributing to each composite pixel is created.</p>
     <span class="k">return</span> <span class="n">srs</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">()</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -2073,6 +2079,8 @@ the number of rasters contributing to each composite pixel is created.</p>
   
       <p>Determine the path of the area raster for a given backscatter raster based on naming conventions for HyP3 RTC
 products</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2102,6 +2110,8 @@ products</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -2124,9 +2134,9 @@ products</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/composite.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">86</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/composite.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">86</span>
 <span class="normal">87</span>
 <span class="normal">88</span>
 <span class="normal">89</span>
@@ -2149,10 +2159,11 @@ products</p>
     <span class="k">return</span> <span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">raster</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;area.tif&#39;</span><span class="p">])</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -2167,6 +2178,8 @@ products</p>
   <div class="doc doc-contents ">
   
       <p>Get the EPSG code from a GDAL Info dictionary</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2196,6 +2209,8 @@ products</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -2218,9 +2233,9 @@ products</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/composite.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">30</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/composite.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">30</span>
 <span class="normal">31</span>
 <span class="normal">32</span>
 <span class="normal">33</span>
@@ -2245,10 +2260,11 @@ products</p>
     <span class="k">return</span> <span class="n">epsg_code</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -2263,6 +2279,8 @@ products</p>
   <div class="doc doc-contents ">
   
       <p>Determine the corner coordinates and geotransform for the full extent of a set of rasters</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2291,6 +2309,8 @@ products</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -2331,9 +2351,9 @@ products</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/composite.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 99</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/composite.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 99</span>
 <span class="normal">100</span>
 <span class="normal">101</span>
 <span class="normal">102</span>
@@ -2396,10 +2416,11 @@ products</p>
     <span class="k">return</span> <span class="p">(</span><span class="n">ulx</span><span class="p">,</span> <span class="n">uly</span><span class="p">),</span> <span class="p">(</span><span class="n">lrx</span><span class="p">,</span> <span class="n">lry</span><span class="p">),</span> <span class="n">trans</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -2414,6 +2435,8 @@ products</p>
   <div class="doc doc-contents ">
   
       <p>Determine the target UTM EPSG projection for the output composite</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2443,6 +2466,8 @@ products</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -2465,9 +2490,9 @@ products</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/composite.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">58</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/composite.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">58</span>
 <span class="normal">59</span>
 <span class="normal">60</span>
 <span class="normal">61</span>
@@ -2520,10 +2545,11 @@ products</p>
     <span class="k">return</span> <span class="n">target_hemisphere</span> <span class="o">+</span> <span class="n">target_zone</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -2538,6 +2564,8 @@ products</p>
   <div class="doc doc-contents ">
   
       <p>Creates a local-resolution-weighted composite from Sentinel-1 RTC products</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2595,6 +2623,8 @@ products</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -2625,9 +2655,9 @@ products</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/composite.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">223</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/composite.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">223</span>
 <span class="normal">224</span>
 <span class="normal">225</span>
 <span class="normal">226</span>
@@ -2798,10 +2828,11 @@ products</p>
     <span class="k">return</span> <span class="n">out_raster</span><span class="p">,</span> <span class="n">out_counts_raster</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -2816,6 +2847,8 @@ products</p>
   <div class="doc doc-contents ">
   
       <p>Reads data from a raster image into memory</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -2859,6 +2892,8 @@ products</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -2881,9 +2916,9 @@ products</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/composite.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">172</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/composite.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">172</span>
 <span class="normal">173</span>
 <span class="normal">174</span>
 <span class="normal">175</span>
@@ -2914,10 +2949,11 @@ products</p>
     <span class="k">return</span> <span class="n">data</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -2932,6 +2968,8 @@ products</p>
   <div class="doc doc-contents ">
   
       <p>Reprojects a set of raster images to a common projection and resolution</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3003,6 +3041,8 @@ products</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -3025,9 +3065,9 @@ products</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/composite.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">132</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/composite.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">132</span>
 <span class="normal">133</span>
 <span class="normal">134</span>
 <span class="normal">135</span>
@@ -3104,10 +3144,11 @@ products</p>
     <span class="k">return</span> <span class="n">target_raster_info</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -3122,6 +3163,8 @@ products</p>
   <div class="doc doc-contents ">
   
       <p>Creates a Cloud Optimized GeoTIFF</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3200,7 +3243,7 @@ products</p>
             </div>
           </td>
           <td>
-                <code>gdal.GDT_Float32</code>
+                <code><span title="osgeo.gdal">gdal</span>.<span title="osgeo.gdal.GDT_Float32">GDT_Float32</span></code>
           </td>
         </tr>
         <tr>
@@ -3218,6 +3261,8 @@ products</p>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -3240,9 +3285,9 @@ products</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/composite.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">189</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/composite.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">189</span>
 <span class="normal">190</span>
 <span class="normal">191</span>
 <span class="normal">192</span>
@@ -3307,7 +3352,7 @@ products</p>
     <span class="k">return</span> <span class="n">file_name</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -3325,7 +3370,7 @@ products</p>
 
 
 <h2 id="asf_tools.dem" class="doc doc-heading">
-          <code>dem</code>
+            <code>dem</code>
 
 
 <a href="#asf_tools.dem" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -3337,6 +3382,7 @@ products</p>
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -3361,6 +3407,8 @@ products</p>
       <p>Create a DEM mosaic VRT covering a given geometry</p>
 <p>The DEM mosaic is assembled from the Copernicus GLO-30 DEM tiles that intersect the geometry.</p>
 <p>Note: <code>asf_tools</code> does not currently support geometries that cross the antimeridian.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3404,9 +3452,9 @@ products</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/dem.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">17</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/dem.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
@@ -3461,7 +3509,7 @@ products</p>
         <span class="n">gdal</span><span class="o">.</span><span class="n">BuildVRT</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">vrt</span><span class="p">),</span> <span class="n">dem_file_paths</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -3479,7 +3527,7 @@ products</p>
 
 
 <h2 id="asf_tools.flood_map" class="doc doc-heading">
-          <code>flood_map</code>
+            <code>flood_map</code>
 
 
 <a href="#asf_tools.flood_map" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -3506,6 +3554,7 @@ or iterative approach.</p>
 
 
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -3520,6 +3569,8 @@ or iterative approach.</p>
   
       <p>Calculate a function in logarithmic scale and return in linear scale.
 INF values inside the data array are set to nan.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3557,11 +3608,13 @@ INF values inside the data array are set to nan.</p>
             </div>
           </td>
           <td>
-                <code>np.nanstd</code>
+                <code><span title="numpy">np</span>.<span title="numpy.nanstd">nanstd</span></code>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -3585,9 +3638,9 @@ INF values inside the data array are set to nan.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/flood_map.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 88</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/flood_map.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 88</span>
 <span class="normal"> 89</span>
 <span class="normal"> 90</span>
 <span class="normal"> 91</span>
@@ -3616,10 +3669,11 @@ INF values inside the data array are set to nan.</p>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -3652,6 +3706,8 @@ the variation to increase robustness in the presence of outliers.
 domain to improve robustness for very non-Gaussian data distributions.
 </em>Numpy: Calculates statistics on a linear scale. Least robust to outliers and non-Gaussian
 distributions.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -3783,9 +3839,9 @@ distributions.</p>
   <summary>References</summary>
   <p>Jean-Francios Pekel, Andrew Cottam, Noel Gorelik, Alan S. Belward. 2016. <a href="https://doi:10.1038/nature20584">https://doi:10.1038/nature20584</a></p>
 </details>
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/flood_map.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">130</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/flood_map.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">130</span>
 <span class="normal">131</span>
 <span class="normal">132</span>
 <span class="normal">133</span>
@@ -3992,7 +4048,7 @@ distributions.</p>
               <span class="n">epsg_code</span><span class="o">=</span><span class="n">epsg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Float64</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="n">nodata</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -4010,7 +4066,7 @@ distributions.</p>
 
 
 <h2 id="asf_tools.hand" class="doc doc-heading">
-          <code>hand</code>
+            <code>hand</code>
 
 
 <a href="#asf_tools.hand" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -4020,6 +4076,7 @@ distributions.</p>
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -4043,6 +4100,8 @@ distributions.</p>
   
       <p>Calculate the Height Above Nearest Drainage (HAND) for watershed boundaries (hydrobasins).</p>
 <p>For watershed boundaries, see: https://www.hydrosheds.org/page/hydrobasins</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4115,9 +4174,9 @@ If <code>None</code>, the mean accumulation value is used</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/calculate.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">137</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/calculate.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">137</span>
 <span class="normal">138</span>
 <span class="normal">139</span>
 <span class="normal">140</span>
@@ -4166,10 +4225,11 @@ If <code>None</code>, the mean accumulation value is used</p>
         <span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4187,6 +4247,8 @@ If <code>None</code>, the mean accumulation value is used</p>
 <p>Make a Height Above Nearest Drainage (HAND) GeoTIFF from the Copernicus GLO-30 DEM
 covering the watershed boundaries (hydrobasins) defined in a vector file.</p>
 <p>For watershed boundaries, see: https://www.hydrosheds.org/page/hydrobasins</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4245,9 +4307,9 @@ If <code>None</code>, the mean accumulation value is used</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/calculate.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">163</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/calculate.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">163</span>
 <span class="normal">164</span>
 <span class="normal">165</span>
 <span class="normal">166</span>
@@ -4288,10 +4350,11 @@ If <code>None</code>, the mean accumulation value is used</p>
         <span class="n">calculate_hand_for_basins</span><span class="p">(</span><span class="n">out_raster</span><span class="p">,</span> <span class="n">geometries</span><span class="p">,</span> <span class="n">dem_vrt</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">acc_thresh</span><span class="o">=</span><span class="n">acc_thresh</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4310,6 +4373,8 @@ If <code>None</code>, the mean accumulation value is used</p>
 The Height Above Nearest Drainage (HAND) mosaic is assembled from the HAND tiles that intersect
 the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
 <p>Note: <code>asf_tools</code> does not currently support geometries that cross the antimeridian.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4353,9 +4418,9 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/prepare.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/prepare.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
@@ -4414,7 +4479,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
         <span class="n">gdal</span><span class="o">.</span><span class="n">BuildVRT</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">vrt</span><span class="p">),</span> <span class="n">hand_file_paths</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -4425,7 +4490,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
 
 
 <h3 id="asf_tools.hand.calculate" class="doc doc-heading">
-          <code>calculate</code>
+            <code>calculate</code>
 
 
 <a href="#asf_tools.hand.calculate" class="headerlink" title="Permanent link">&para;</a></h3>
@@ -4437,6 +4502,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -4475,6 +4541,8 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
     * Calculating HAND</p>
 <p>In the HAND calculation, NaNs inside the basin filled using <code>fill_hand</code></p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -4502,7 +4570,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
         <tr>
           <td><code>dem_crs</code></td>
           <td>
-                <code><span title="rasterio.mask">rasterio</span>.<span title="rasterio.mask.crs">crs</span>.<span title="rasterio.mask.crs.CRS">CRS</span></code>
+                <code>rasterio.<span title="rasterio.crs">crs</span>.<span title="rasterio.crs.CRS">CRS</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4516,7 +4584,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
         <tr>
           <td><code>dem_affine</code></td>
           <td>
-                <code><span title="rasterio.mask">rasterio</span>.<span title="rasterio.mask.Affine">Affine</span></code>
+                <code>rasterio.<span title="rasterio.Affine">Affine</span></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -4559,9 +4627,9 @@ If <code>None</code>, the mean accumulation value is used</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/calculate.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 58</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/calculate.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 58</span>
 <span class="normal"> 59</span>
 <span class="normal"> 60</span>
 <span class="normal"> 61</span>
@@ -4716,10 +4784,11 @@ If <code>None</code>, the mean accumulation value is used</p>
     <span class="k">return</span> <span class="n">hand</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4735,6 +4804,8 @@ If <code>None</code>, the mean accumulation value is used</p>
   
       <p>Calculate the Height Above Nearest Drainage (HAND) for watershed boundaries (hydrobasins).</p>
 <p>For watershed boundaries, see: https://www.hydrosheds.org/page/hydrobasins</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -4807,9 +4878,9 @@ If <code>None</code>, the mean accumulation value is used</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/calculate.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">137</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/calculate.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">137</span>
 <span class="normal">138</span>
 <span class="normal">139</span>
 <span class="normal">140</span>
@@ -4858,10 +4929,11 @@ If <code>None</code>, the mean accumulation value is used</p>
         <span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4880,9 +4952,9 @@ If <code>None</code>, the mean accumulation value is used</p>
 using a 2D Gaussian kernel. Here, HOND is defined as the DEM value less the HAND value. For the kernel, see:
 https://docs.astropy.org/en/stable/convolution/#using-astropy-s-convolution-to-replace-bad-data</p>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/calculate.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">41</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/calculate.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">41</span>
 <span class="normal">42</span>
 <span class="normal">43</span>
 <span class="normal">44</span>
@@ -4913,10 +4985,11 @@ https://docs.astropy.org/en/stable/convolution/#using-astropy-s-convolution-to-r
     <span class="k">return</span> <span class="n">hand</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4934,9 +5007,9 @@ https://docs.astropy.org/en/stable/convolution/#using-astropy-s-convolution-to-r
 <p>Replace NaNs with values interpolated from their neighbors using a 2D Gaussian
 kernel, see: https://docs.astropy.org/en/stable/convolution/#using-astropy-s-convolution-to-replace-bad-data</p>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/calculate.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">24</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/calculate.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">24</span>
 <span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>
@@ -4967,10 +5040,11 @@ kernel, see: https://docs.astropy.org/en/stable/convolution/#using-astropy-s-con
     <span class="k">return</span> <span class="n">array</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -4988,6 +5062,8 @@ kernel, see: https://docs.astropy.org/en/stable/convolution/#using-astropy-s-con
 <p>Make a Height Above Nearest Drainage (HAND) GeoTIFF from the Copernicus GLO-30 DEM
 covering the watershed boundaries (hydrobasins) defined in a vector file.</p>
 <p>For watershed boundaries, see: https://www.hydrosheds.org/page/hydrobasins</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5046,9 +5122,9 @@ If <code>None</code>, the mean accumulation value is used</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/calculate.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">163</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/calculate.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">163</span>
 <span class="normal">164</span>
 <span class="normal">165</span>
 <span class="normal">166</span>
@@ -5089,7 +5165,7 @@ If <code>None</code>, the mean accumulation value is used</p>
         <span class="n">calculate_hand_for_basins</span><span class="p">(</span><span class="n">out_raster</span><span class="p">,</span> <span class="n">geometries</span><span class="p">,</span> <span class="n">dem_vrt</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">acc_thresh</span><span class="o">=</span><span class="n">acc_thresh</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -5107,7 +5183,7 @@ If <code>None</code>, the mean accumulation value is used</p>
 
 
 <h3 id="asf_tools.hand.prepare" class="doc doc-heading">
-          <code>prepare</code>
+            <code>prepare</code>
 
 
 <a href="#asf_tools.hand.prepare" class="headerlink" title="Permanent link">&para;</a></h3>
@@ -5119,6 +5195,7 @@ If <code>None</code>, the mean accumulation value is used</p>
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -5141,6 +5218,8 @@ If <code>None</code>, the mean accumulation value is used</p>
   <div class="doc doc-contents ">
   
       <p>Create a HAND raster pixel-aligned to a source raster</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5199,9 +5278,9 @@ https://gdal.org/programs/gdalwarp.html#cmdoption-gdalwarp-r</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/prepare.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">52</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/prepare.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">52</span>
 <span class="normal">53</span>
 <span class="normal">54</span>
 <span class="normal">55</span>
@@ -5248,10 +5327,11 @@ https://gdal.org/programs/gdalwarp.html#cmdoption-gdalwarp-r</p>
                   <span class="n">resampleAlg</span><span class="o">=</span><span class="n">Resampling</span><span class="p">[</span><span class="n">resampling_method</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5270,6 +5350,8 @@ https://gdal.org/programs/gdalwarp.html#cmdoption-gdalwarp-r</p>
 The Height Above Nearest Drainage (HAND) mosaic is assembled from the HAND tiles that intersect
 the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
 <p>Note: <code>asf_tools</code> does not currently support geometries that cross the antimeridian.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5313,9 +5395,9 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/prepare.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/hand/prepare.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
@@ -5374,7 +5456,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
         <span class="n">gdal</span><span class="o">.</span><span class="n">BuildVRT</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">vrt</span><span class="p">),</span> <span class="n">hand_file_paths</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -5399,7 +5481,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
 
 
 <h2 id="asf_tools.raster" class="doc doc-heading">
-          <code>raster</code>
+            <code>raster</code>
 
 
 <a href="#asf_tools.raster" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -5409,6 +5491,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -5432,9 +5515,9 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
   
       <p>Convert calibrated raster scale between db, amplitude and power</p>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/raster.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">13</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/raster.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
 <span class="normal">16</span>
@@ -5491,10 +5574,11 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Cannot convert raster of scale </span><span class="si">{</span><span class="n">in_scale</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">out_scale</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -5509,6 +5593,8 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
   <div class="doc doc-contents ">
   
       <p>Reads data from a raster image into memory, masking invalid and NoData values</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5552,6 +5638,8 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -5574,9 +5662,9 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/raster.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">43</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/raster.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">43</span>
 <span class="normal">44</span>
 <span class="normal">45</span>
 <span class="normal">46</span>
@@ -5613,7 +5701,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
     <span class="k">return</span> <span class="n">data</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -5631,7 +5719,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
 
 
 <h2 id="asf_tools.threshold" class="doc doc-heading">
-          <code>threshold</code>
+            <code>threshold</code>
 
 
 <a href="#asf_tools.threshold" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -5641,6 +5729,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -5666,6 +5755,8 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
 <p>Thresholding works best when backscatter tiles are provided on a decibel scale
 to get Gaussian distribution that is scaled to a range of 0-255, and performed
 on a small tile that is likely to have a transition between water and not water.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -5711,6 +5802,8 @@ and (3) water, as is often seen in the US Midwest.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -5733,9 +5826,9 @@ and (3) water, as is often seen in the US Midwest.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/threshold.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 42</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/threshold.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 42</span>
 <span class="normal"> 43</span>
 <span class="normal"> 44</span>
 <span class="normal"> 45</span>
@@ -5936,7 +6029,7 @@ and (3) water, as is often seen in the US Midwest.</p>
     <span class="k">return</span> <span class="n">xvec</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">dx</span><span class="p">)]</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -5954,7 +6047,7 @@ and (3) water, as is often seen in the US Midwest.</p>
 
 
 <h2 id="asf_tools.tile" class="doc doc-heading">
-          <code>tile</code>
+            <code>tile</code>
 
 
 <a href="#asf_tools.tile" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -5964,6 +6057,7 @@ and (3) water, as is often seen in the US Midwest.</p>
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -6023,6 +6117,8 @@ tiles.shape
 </blockquote>
 </blockquote>
 </details>
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -6079,6 +6175,8 @@ tiles.shape
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -6101,9 +6199,9 @@ tiles.shape
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/tile.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 6</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/tile.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 6</span>
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
@@ -6224,10 +6322,11 @@ tiles.shape
     <span class="k">return</span> <span class="n">tiled</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6271,6 +6370,8 @@ array.shape
 </blockquote>
 </blockquote>
 </details>
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -6315,6 +6416,8 @@ bottom right padding was added when tiling.</p>
     </tbody>
   </table>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -6337,9 +6440,9 @@ bottom right padding was added when tiling.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/tile.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 68</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/tile.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 68</span>
 <span class="normal"> 69</span>
 <span class="normal"> 70</span>
 <span class="normal"> 71</span>
@@ -6458,7 +6561,7 @@ bottom right padding was added when tiling.</p>
     <span class="k">return</span> <span class="n">untiled</span><span class="p">[:</span><span class="n">array_rows</span><span class="p">,</span> <span class="p">:</span><span class="n">array_columns</span><span class="p">]</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -6476,7 +6579,7 @@ bottom right padding was added when tiling.</p>
 
 
 <h2 id="asf_tools.util" class="doc doc-heading">
-          <code>util</code>
+            <code>util</code>
 
 
 <a href="#asf_tools.util" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -6499,7 +6602,7 @@ bottom right padding was added when tiling.</p>
 
 
 <h3 id="asf_tools.util.GDALConfigManager" class="doc doc-heading">
-        <code>GDALConfigManager</code>
+          <code>GDALConfigManager</code>
 
 
 <a href="#asf_tools.util.GDALConfigManager" class="headerlink" title="Permanent link">&para;</a></h3>
@@ -6510,10 +6613,9 @@ bottom right padding was added when tiling.</p>
   
       <p>Context manager for setting GDAL config options temporarily</p>
 
-
-        <details class="quote">
-          <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/util.py</code></summary>
-          <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 6</span>
+            <details class="quote">
+              <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/util.py</code></summary>
+              <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 6</span>
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
@@ -6554,11 +6656,12 @@ bottom right padding was added when tiling.</p>
             <span class="n">gdal</span><span class="o">.</span><span class="n">SetConfigOption</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-        </details>
+            </details>
 
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -6580,6 +6683,8 @@ bottom right padding was added when tiling.</p>
 
   <div class="doc doc-contents ">
   
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -6608,9 +6713,9 @@ bottom right padding was added when tiling.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/util.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/util.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
@@ -6625,7 +6730,7 @@ bottom right padding was added when tiling.</p>
     <span class="bp">self</span><span class="o">.</span><span class="n">_previous_options</span> <span class="o">=</span> <span class="p">{}</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -6652,7 +6757,7 @@ bottom right padding was added when tiling.</p>
 
 
 <h2 id="asf_tools.water_map" class="doc doc-heading">
-          <code>water_map</code>
+            <code>water_map</code>
 
 
 <a href="#asf_tools.water_map" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -6677,6 +6782,7 @@ Maximization thresholding approach and refined using Fuzzy Logic.</p>
 
 
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -6691,9 +6797,9 @@ Maximization thresholding approach and refined using Fuzzy Logic.</p>
   
       <p>Ensure raster data is uint8 and set the area outside the valid data to nodata</p>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/water_map.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">136</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/water_map.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">136</span>
 <span class="normal">137</span>
 <span class="normal">138</span>
 <span class="normal">139</span>
@@ -6716,10 +6822,11 @@ Maximization thresholding approach and refined using Fuzzy Logic.</p>
     <span class="k">return</span> <span class="n">raster</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 <div class="doc doc-object doc-function">
 
@@ -6767,6 +6874,8 @@ as water pixels will:
 * have an average membership above the <code>membership_threshold</code> value.</p>
 <p>Finally, the VV and VH water masks will be combined to include all water pixels
 from both masks, and the combined water map will be written to <code>out_raster</code>.</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -6924,9 +7033,9 @@ thresholding</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/water_map.py</code></summary>
-        <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">174</span>
+          <details class="quote">
+            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.8/site-packages/asf_tools/water_map.py</code></summary>
+            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">174</span>
 <span class="normal">175</span>
 <span class="normal">176</span>
 <span class="normal">177</span>
@@ -7209,7 +7318,7 @@ thresholding</p>
               <span class="n">epsg_code</span><span class="o">=</span><span class="n">out_epsg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Byte</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="n">nodata</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
-      </details>
+          </details>
   </div>
 
 </div>

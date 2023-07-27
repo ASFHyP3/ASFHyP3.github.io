@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://hyp3-docs.asf.alaska.edu/guides/rtc_product_guide/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-6.2.8">
+      <meta name="generator" content="mkdocs-1.5.0, mkdocs-material-6.2.8">
     
     
       
@@ -2145,7 +2145,7 @@ feedback.init({showIcon: false});
 </tbody>
 </table>
 <p><em>Table 1: DEMs used for RTC processing. Note that the Copernicus 30 m DEM is the default, while the other four DEMs are only used if the legacy option is invoked.</em></p>
-<p>When ordering On-Demand RTC products, you can choose to <a href="#dem" title="Jump to Optional Files - DEM section in document">include a copy of the DEM used for RTC processing</a> in the RTC product package. This DEM copy is converted to 16-bit signed integer format, but is otherwise the same as the DEM used in the RTC process. Note that the height values will differ from the original source DEM in all cases, due to the geoid correction applied to prepare the DEM for use in RTC processing.</p>
+<p>When ordering On-Demand RTC products, you can choose to <a href="#dem" title="Jump to Optional Files - DEM section in document">include a copy of the DEM used for RTC processing</a> in the RTC product package. This DEM copy is converted to 16-bit signed integer format, but is otherwise the same as the DEM used in the RTC process. Pixel values indicate the elevation in meters. Note that the elevation values will differ from the original source DEM in all cases, due to the geoid correction applied to prepare the DEM for use in RTC processing.</p>
 <h3 id="copernicus-dem">Copernicus DEM<a class="headerlink" href="#copernicus-dem" title="Permanent link">&para;</a></h3>
 <p>The <a href="https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model" target="_blank" title="Copernicus DEM">GLO-30 Copernicus DEM</a> provides global coverage (with the current exception of an area covering Armenia and Azerbaijan, see Figure 3) at 30-m pixel spacing. When an RTC job is requested, we download the required DEM tiles from the Copernicus Digital Elevation Model (DEM) GLO-30 Public dataset available in the <a href="https://registry.opendata.aws/copernicus-dem/" target="_blank" title="https://registry.opendata.aws/copernicus-dem">Registry of Open Data on AWS</a>, managed by <a href="https://www.sinergise.com/" target="_blank" title="https://www.sinergise.com">Sinergise</a>. We mosaic the tiles and reproject them to the appropriate UTM Zone for the location of the SAR granule to be processed, resampling them to match the pixel spacing and alignment of the RTC product. A geoid correction is applied before it is used for RTC processing.</p>
 <p>Figure 2 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and Figure 3 details the land area currently not covered.</p>
@@ -2332,7 +2332,7 @@ feedback.init({showIcon: false});
 <p>In addition to the processing options, users can choose to add a number of ancillary files to the product package. These files are not included by default, as they increase the size of the product package and may not be of interest to all users. </p>
 <p>In Vertex, check the box in the "Include" section of the options to add these optional files to the product package. When using the HyP3 API or SDK, set the parameter to true.</p>
 <h4 id="dem">DEM<a class="headerlink" href="#dem" title="Permanent link">&para;</a></h4>
-<p>Set the <strong>include_dem</strong> parameter to true to include a copy of the DEM file used for RTC processing. This DEM is <em>not</em> generated from the Sentinel-1 data, but is the reference DEM used for the RTC calculations. Refer to the <a href="#digital-elevation-models" title="Jump to DEM section in document">Digital Elevation Models</a> section for more information on the DEMs we use for RTC processing.</p>
+<p>Set the <strong>include_dem</strong> parameter to true to include a copy of the DEM file used for RTC processing. This DEM is <em>not</em> generated from the Sentinel-1 data, but is the reference DEM used for the RTC calculations. Pixel values indicate the elevation in meters. Refer to the <a href="#digital-elevation-models" title="Jump to DEM section in document">Digital Elevation Models</a> section for more information on the DEMs we use for RTC processing.</p>
 <p>This DEM file is intended as a quick reference to aid in interpretation of the RTC image, and should not be used as a stand-alone DEM product. The DEM used for RTC processing has a geoid correction applied before it is used for RTC, so elevation values in this file will differ from the source DEM. </p>
 <p>The DEM is resampled to match the pixel spacing of the output product, so <strong>the pixel spacing of this file is not a reflection of the resolution of the source DEM.</strong> Refer to the readme file included in the RTC product package for details on the pixel spacing of the included DEM file.</p>
 <h4 id="incidence-angle-map">Incidence Angle Map<a class="headerlink" href="#incidence-angle-map" title="Permanent link">&para;</a></h4>
