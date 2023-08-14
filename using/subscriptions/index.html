@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://hyp3-docs.asf.alaska.edu/using/subscriptions/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.0, mkdocs-material-6.2.8">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-6.2.8">
     
     
       
@@ -502,50 +502,9 @@ feedback.init({showIcon: false});
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          <span class="md-nav__icon md-icon"></span>
-          
-            <a href="./" class="md-nav__link md-nav__link--active"
-              style="margin: initial; padding: initial; pointer-events: initial">
-          
-            Subscriptions
-          </a>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         Subscriptions
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#guidelines-for-using-subscriptions" class="md-nav__link">
-    Guidelines for Using Subscriptions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#accessing-subscriptions" class="md-nav__link">
-    Accessing Subscriptions
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -911,6 +870,18 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
+      <a href="../../tutorials/process-new-granules-for-search-parameters/" class="md-nav__link">
+        Process new granules for search parameters
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank" class="md-nav__link">
         InSAR time series with MintPy
       </a>
@@ -1164,28 +1135,6 @@ feedback.init({showIcon: false});
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#guidelines-for-using-subscriptions" class="md-nav__link">
-    Guidelines for Using Subscriptions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#accessing-subscriptions" class="md-nav__link">
-    Accessing Subscriptions
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1198,40 +1147,10 @@ feedback.init({showIcon: false});
                 
                 
                 <h1 id="subscriptions-in-hyp3">Subscriptions in HyP3<a class="headerlink" href="#subscriptions-in-hyp3" title="Permanent link">&para;</a></h1>
-<p>For monitoring applications, we provide a <a href="https://docs.asf.alaska.edu/vertex/manual/#subscriptions" target="_blank" title="https://docs.asf.alaska.edu/vertex/manual/#subscriptions">subscription service</a> for On Demand processing, which automatically processes new Sentinel-1 acquisitions as they appear in ASF's data holdings. </p>
-<p>To create a subscription, users define the following parameters:</p>
-<ul>
-<li>Geographic Area of Interest </li>
-<li>Search Filters (file type, direction, path, platform, etc.)</li>
-<li>On Demand processing type (InSAR, RTC)</li>
-<li>On Demand processing options</li>
-<li>Project Name</li>
-<li>Date range extending into the future</li>
-</ul>
-<p>As ASF receives new acquisitions that meet the search criteria for the subscription, they will automatically be submitted to HyP3 for On Demand processing using the defined parameters. </p>
-<p>This service is particularly useful for ongoing monitoring efforts where users need regular updates over an area of interest, and want to make sure that they process all available images for that area. Without a subscription, a user would need to periodically search to find new images acquired through time and manually submit them for processing.</p>
-<p>Subscriptions can be created and managed in the Vertex interface. Refer to the <a href="https://docs.asf.alaska.edu/vertex/manual/#subscriptions" target="_blank" title="https://docs.asf.alaska.edu/vertex/manual/#subscriptions">Vertex On Demand Subscription documentation</a> for more information.</p>
-<h2 id="guidelines-for-using-subscriptions">Guidelines for Using Subscriptions<a class="headerlink" href="#guidelines-for-using-subscriptions" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>Subscriptions are only necessary for applications that require imagery to be processed beyond the date of the initial search. If all of the images required for a project were acquired before the date of the search, they can be submitted directly for <a href="https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank" title="https://search.asf.alaska.edu/#/?topic=onDemand">On Demand processing</a>.</p>
-</li>
-<li>
-<p>Set an end date that is appropriate for your use case. You must define an end date; you cannot set an open-ended subscription. If your project extends beyond your original end date, you can change it, so there is no need to set it far into the future.</p>
-</li>
-<li>
-<p>Set your AOI to be as small and targeted as possible to minimize the number of granules submitted for processing. Consider applying additional filters to ensure that you are only processing the images you really want; it can be easy to exceed your processing quota if your parameters are set too broadly.  </p>
-</li>
-<li>
-<p>On Demand products are deleted from storage 14 days after they are generated. Make sure to download the products generated by your subscription on a regular basis so that they don't expire before you access them. </p>
-</li>
-<li>
-<p>Deactivate your subscription when you no longer need it. If you want to restart your monitoring effort later, you can reactivate your subscription or create a new one.</p>
-</li>
-</ol>
-<h2 id="accessing-subscriptions">Accessing Subscriptions<a class="headerlink" href="#accessing-subscriptions" title="Permanent link">&para;</a></h2>
-<p>Subscriptions can be created and managed in <a href="https://docs.asf.alaska.edu/vertex/manual/#subscriptions" target="_blank" title="https://docs.asf.alaska.edu/vertex/manual/#subscriptions">Vertex</a> and the <a href="https://hyp3-docs.asf.alaska.edu/using/api/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/api/">HyP3 API</a>. </p>
-<p>Stay tuned for subscription support in the HyP3 Python SDK!</p>
+<!-- TODO: change "deprecated" to "removed" per https://asfdaac.atlassian.net/browse/TOOL-2086 -->
+<p>HyP3 Subscriptions have been deprecated in favor of a more flexible approach.
+Please follow <a href="../../tutorials/process-new-granules-for-search-parameters/">these tutorials</a>
+to achieve subscription-like functionality using Jupyter notebooks.</p>
                 
               
               
