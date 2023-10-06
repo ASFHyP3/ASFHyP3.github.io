@@ -1,3 +1,4 @@
+<!-- Extends https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/base.html -->
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -9,14 +10,20 @@
         <meta name="description" content="The Alaska Satellite Facility's Hybrid Pluggable Processing Pipeline">
       
       
-      
         <meta name="author" content="ASF APD/Tools Team">
       
       
         <link rel="canonical" href="https://hyp3-docs.asf.alaska.edu/tools/asf_tools_api/">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-6.2.8">
+      
+        <link rel="prev" href="../asf_tools/">
+      
+      
+        <link rel="next" href="../../how_it_works/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
     
     
       
@@ -25,17 +32,18 @@
     
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
       
-        
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
-        
       
+
+
     
     <link rel="stylesheet" href="../../assets/stylesheets/asf.css">
 
     
 
+      
+    
 <script src="https://fbm.earthdata.nasa.gov/for/ASF/feedback.js" type="text/javascript"></script>
 <script type="text/javascript">
  // This prevents the FBM flyout banner from appearing on the side of the page.
@@ -53,87 +61,30 @@ feedback.init({showIcon: false});
     
       
         
+        
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
-  
-    <!--
-  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+      
 
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to
-  deal in the Software without restriction, including without limitation the
-  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-  sell copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-  IN THE SOFTWARE.
--->
-
-<!-- Google Analytics integration -->
-
-  
-
-<script type="application/javascript">
-  window.ga = window.ga || function() {
-    (ga.q = ga.q || []).push(arguments)
-  }
-  ga.l = +new Date
-
-  /* Set up integration and send page view */
-  ga("create", "UA-991100-5", "search.asf.alaska.edu")
-  ga("set", "anonymizeIp", true)
-  ga("send", "pageview")
-
-  /* Register handler to log search on blur */
-  document.addEventListener("DOMContentLoaded", function() {
-    if (document.forms.search) {
-      var query = document.forms.search.query
-      query.addEventListener("blur", function() {
-        if (this.value) {
-          var path = document.location.pathname;
-          ga("send", "pageview", path + "?q=" + this.value)
-        }
-      })
-    }
-  })
-
-  /* Send page view on document switch (instant loading, custom event) */
-  document.addEventListener("DOMContentSwitch", function() {
-    ga("send", "pageview", document.location.pathname)
-  })
-</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
-  
-
+    
+    
     
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
-      
+    <body dir="ltr">
   
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -150,8 +101,9 @@ feedback.init({showIcon: false});
       
     </div>
     
+    
       <!--
-  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to
@@ -172,97 +124,97 @@ feedback.init({showIcon: false});
   IN THE SOFTWARE.
 -->
 
-<!-- Mitigate bug: https://github.com/mkdocs/mkdocs/issues/2191 -->
+<!-- Adapted from https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/partials/header.html -->
+
+<!-- Determine classes -->
 
 
+  
 
-<!-- Application header -->
-<header class="md-header" data-md-component="header">
 
-  <!-- Top-level navigation -->
-  <nav class="md-header-nav md-grid" aria-label="Header">
+<!-- Header -->
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="Header"
+  >
 
     
-      <!-- Link to ASF -->
-      <a
-        href="https://asf.alaska.edu/"
-        title="ASF"
-        class="md-header-nav__button md-logo"
-        aria-label="ASF"
-      >
+    <!-- Link to ASF -->
+    <a
+      href="https://asf.alaska.edu/"
+      title="ASF"
+      class="md-header__button md-logo"
+      aria-label="ASF"
+      data-md-component="logo"
+    >
       <img src="../../assets/images/ASFLogo-Blue2.png" alt="logo" />
+    </a>
     
+
     <!-- Link to home -->
     <a
-      href="https://hyp3-docs.asf.alaska.edu/"
+      href="../.."
       title="HyP3"
-      class="md-header-nav__button md-logo"
+      class="md-header__button md-logo"
       aria-label="HyP3"
+      data-md-component="logo"
     >
-      <!--
-  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to
-  deal in the Software without restriction, including without limitation the
-  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-  sell copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-  IN THE SOFTWARE.
--->
-
-<!-- Logo -->
-
-  <img src="../../images/HyP3-graphic-only.png" alt="logo" />
+      
+  <img src="../../images/HyP3-graphic-only.png" alt="logo">
 
     </a>
 
     <!-- Button to open drawer -->
-    <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
 
     <!-- Header title -->
-    <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             HyP3
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               API Reference
             
           </span>
         </div>
-      
+      </div>
     </div>
 
+    <!-- Color palette toggle -->
     
-     <!-- Search interface -->
+
+    <!-- Site language selector -->
+    
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+
+      <!-- Search interface -->
       <div class="expert-rec-search">
   <ci-search></ci-search>
 </div>
     
 
-    <!-- Repository containing source -->
+    <!-- Repository information -->
     
-      <div class="md-header-nav__source">
-        
-<a href="https://github.com/ASFHyP3" title="Go to repository" class="md-source">
+      <div class="md-header__source">
+        <a href="https://github.com/ASFHyP3" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
   </div>
   <div class="md-source__repository">
     ASF HyP3
@@ -271,11 +223,16 @@ feedback.init({showIcon: false});
       </div>
     
   </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -283,53 +240,28 @@ feedback.init({showIcon: false});
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
 
 
 
-
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://hyp3-docs.asf.alaska.edu/" title="HyP3" class="md-nav__button md-logo" aria-label="HyP3">
-      <!--
-  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to
-  deal in the Software without restriction, including without limitation the
-  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-  sell copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-  IN THE SOFTWARE.
--->
-
-<!-- Logo -->
-
-  <img src="../../images/HyP3-graphic-only.png" alt="logo" />
+    <a href="../.." title="HyP3" class="md-nav__button md-logo" aria-label="HyP3" data-md-component="logo">
+      
+  <img src="../../images/HyP3-graphic-only.png" alt="logo">
 
     </a>
     HyP3
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/ASFHyP3" title="Go to repository" class="md-source">
+      <a href="https://github.com/ASFHyP3" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
   </div>
   <div class="md-source__repository">
     ASF HyP3
@@ -341,14 +273,18 @@ feedback.init({showIcon: false});
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        Home
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
       </a>
     </li>
   
@@ -356,624 +292,910 @@ feedback.init({showIcon: false});
     
       
       
-      
-
   
   
   
     
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
-      
-      <label class="md-nav__link" for="nav-2">
-        <span class="md-nav__icon md-icon"></span>
         
-          <a href="../../using/" class="md-nav__link"
-            style="margin: initial; padding: initial; pointer-events: initial">
         
-          Using HyP3
-        </a>
-      </label>
-      <nav class="md-nav" aria-label="Using HyP3" data-md-level="1">
-        <label class="md-nav__title" for="nav-2">
-          <span class="md-nav__icon md-icon"></span>
-          
-            <a href="../../using/" class="md-nav__link"
-              style="margin: initial; padding: initial; pointer-events: initial">
-          
-            Using HyP3
-          </a>
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
           
           
+          <div class="md-nav__link md-nav__container">
+            <a href="../../using/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Using HyP3
+  </span>
+  
+
+            </a>
             
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Using HyP3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../using/vertex/" class="md-nav__link">
-        Vertex
+        
+  
+  <span class="md-ellipsis">
+    Vertex
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" >
-      
-      <label class="md-nav__link" for="nav-2-2">
-        <span class="md-nav__icon md-icon"></span>
         
-          <a href="../../using/sdk/" class="md-nav__link"
-            style="margin: initial; padding: initial; pointer-events: initial">
         
-          SDK
-        </a>
-      </label>
-      <nav class="md-nav" aria-label="SDK" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-2">
-          <span class="md-nav__icon md-icon"></span>
-          
-            <a href="../../using/sdk/" class="md-nav__link"
-              style="margin: initial; padding: initial; pointer-events: initial">
-          
-            SDK
-          </a>
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
           
           
+          <div class="md-nav__link md-nav__container">
+            <a href="../../using/sdk/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    SDK
+  </span>
+  
+
+            </a>
             
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            SDK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank" class="md-nav__link">
-        Example Notebook
+        
+  
+  <span class="md-ellipsis">
+    Example Notebook
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../using/sdk_api/" class="md-nav__link">
-        API Reference
+        
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../using/api/" class="md-nav__link">
-        API
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../using/quota/" class="md-nav__link">
-        Processing Quota
+        
+  
+  <span class="md-ellipsis">
+    Processing Quota
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../using/subscriptions/" class="md-nav__link">
-        Subscriptions
+        
+  
+  <span class="md-ellipsis">
+    Subscriptions
+  </span>
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../products/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Products
+  </span>
+  
 
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
-      
-      <label class="md-nav__link" for="nav-3">
-        <span class="md-nav__icon md-icon"></span>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
-          <a href="../../products/" class="md-nav__link"
-            style="margin: initial; padding: initial; pointer-events: initial">
-        
-          Products
-        </a>
-      </label>
-      <nav class="md-nav" aria-label="Products" data-md-level="1">
-        <label class="md-nav__title" for="nav-3">
-          <span class="md-nav__icon md-icon"></span>
-          
-            <a href="../../products/" class="md-nav__link"
-              style="margin: initial; padding: initial; pointer-events: initial">
-          
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
             Products
-          </a>
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
+              
+                
   
   
   
     
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" >
-      
-      <label class="md-nav__link" for="nav-3-1">
-        <span class="md-nav__icon md-icon"></span>
         
-          <a href="../../guides/rtc_product_guide/" class="md-nav__link"
-            style="margin: initial; padding: initial; pointer-events: initial">
         
-          RTC
-        </a>
-      </label>
-      <nav class="md-nav" aria-label="RTC" data-md-level="2">
-        <label class="md-nav__title" for="nav-3-1">
-          <span class="md-nav__icon md-icon"></span>
-          
-            <a href="../../guides/rtc_product_guide/" class="md-nav__link"
-              style="margin: initial; padding: initial; pointer-events: initial">
-          
-            RTC
-          </a>
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
           
           
+          <div class="md-nav__link md-nav__container">
+            <a href="../../guides/rtc_product_guide/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    RTC
+  </span>
+  
+
+            </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            RTC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../guides/rtc_product_guide/" class="md-nav__link">
-        Product Guide
+        
+  
+  <span class="md-ellipsis">
+    Product Guide
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35" target="_blank" class="md-nav__link">
-        StoryMap
+        
+  
+  <span class="md-ellipsis">
+    StoryMap
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../guides/rtc_atbd/" class="md-nav__link">
-        Theoretical Basis
+        
+  
+  <span class="md-ellipsis">
+    Theoretical Basis
+  </span>
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
-      
-      <label class="md-nav__link" for="nav-3-2">
-        <span class="md-nav__icon md-icon"></span>
         
-          <a href="../../guides/insar_product_guide/" class="md-nav__link"
-            style="margin: initial; padding: initial; pointer-events: initial">
         
-          InSAR
-        </a>
-      </label>
-      <nav class="md-nav" aria-label="InSAR" data-md-level="2">
-        <label class="md-nav__title" for="nav-3-2">
-          <span class="md-nav__icon md-icon"></span>
-          
-            <a href="../../guides/insar_product_guide/" class="md-nav__link"
-              style="margin: initial; padding: initial; pointer-events: initial">
-          
-            InSAR
-          </a>
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
           
           
+          <div class="md-nav__link md-nav__container">
+            <a href="../../guides/insar_product_guide/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    InSAR
+  </span>
+  
+
+            </a>
             
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            InSAR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../guides/insar_product_guide/" class="md-nav__link">
-        Product Guide
+        
+  
+  <span class="md-ellipsis">
+    Product Guide
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3" target="_blank" class="md-nav__link">
-        StoryMap
+        
+  
+  <span class="md-ellipsis">
+    StoryMap
+  </span>
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="https://its-live.jpl.nasa.gov/" target="_blank" class="md-nav__link">
-        AutoRIFT
+        
+  
+  <span class="md-ellipsis">
+    AutoRIFT
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../usage_guidelines/" class="md-nav__link">
-        Usage Guidelines
+        
+  
+  <span class="md-ellipsis">
+    Usage Guidelines
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../sentinel1/" class="md-nav__link">
-        Sentinel-1 Mission
+        
+  
+  <span class="md-ellipsis">
+    Sentinel-1 Mission
+  </span>
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
   
   
   
     
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
-      
-      <label class="md-nav__link" for="nav-4">
-        <span class="md-nav__icon md-icon"></span>
         
-          <a href="../../guides/introduction_to_sar/" class="md-nav__link"
-            style="margin: initial; padding: initial; pointer-events: initial">
         
-          SAR Basics
-        </a>
-      </label>
-      <nav class="md-nav" aria-label="SAR Basics" data-md-level="1">
-        <label class="md-nav__title" for="nav-4">
-          <span class="md-nav__icon md-icon"></span>
-          
-            <a href="../../guides/introduction_to_sar/" class="md-nav__link"
-              style="margin: initial; padding: initial; pointer-events: initial">
-          
-            SAR Basics
-          </a>
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
           
           
+          <div class="md-nav__link md-nav__container">
+            <a href="../../guides/introduction_to_sar/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    SAR Basics
+  </span>
+  
+
+            </a>
             
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            SAR Basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../guides/introduction_to_sar/" class="md-nav__link">
-        Introduction to SAR
+        
+  
+  <span class="md-ellipsis">
+    Introduction to SAR
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../dems/" class="md-nav__link">
-        Digital Elevation Models
+        
+  
+  <span class="md-ellipsis">
+    Digital Elevation Models
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="https://asf.alaska.edu/information/sar-information/what-is-sar/#sar_faq" target="_blank" class="md-nav__link">
-        SAR FAQ
+        
+  
+  <span class="md-ellipsis">
+    SAR FAQ
+  </span>
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
   
   
   
     
+    
+    
+    
+    
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
-      
-      <label class="md-nav__link" for="nav-5">
-        <span class="md-nav__icon md-icon"></span>
         
-          <a href="../../tutorials/" class="md-nav__link"
-            style="margin: initial; padding: initial; pointer-events: initial">
         
-          Tutorials
-        </a>
-      </label>
-      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
-        <label class="md-nav__title" for="nav-5">
-          <span class="md-nav__icon md-icon"></span>
-          
-            <a href="../../tutorials/" class="md-nav__link"
-              style="margin: initial; padding: initial; pointer-events: initial">
-          
-            Tutorials
-          </a>
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
           
           
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tutorials/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            </a>
             
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank" class="md-nav__link">
-        Using HyP3 Python SDK
+        
+  
+  <span class="md-ellipsis">
+    Using HyP3 Python SDK
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb" target="_blank" class="md-nav__link">
-        Search another user's jobs
+        
+  
+  <span class="md-ellipsis">
+    Search another user's jobs
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../tutorials/process-new-granules-for-search-parameters/" class="md-nav__link">
-        Process new granules for search parameters
+        
+  
+  <span class="md-ellipsis">
+    Process new granules for search parameters
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank" class="md-nav__link">
-        InSAR time series with MintPy
+        
+  
+  <span class="md-ellipsis">
+    InSAR time series with MintPy
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="https://asf-daac.maps.arcgis.com/home/index.html" target="_blank" class="md-nav__link">
-        StoryMap Tutorials
+        
+  
+  <span class="md-ellipsis">
+    StoryMap Tutorials
+  </span>
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
   
   
     
   
   
+    
+    
+    
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
-      
-      <label class="md-nav__link" for="nav-6">
-        <span class="md-nav__icon md-icon"></span>
         
-          Other Tools
         
-      </label>
-      <nav class="md-nav" aria-label="Other Tools" data-md-level="1">
-        <label class="md-nav__title" for="nav-6">
-          <span class="md-nav__icon md-icon"></span>
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
           
-            Other Tools
-          
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
+  
+  <span class="md-ellipsis">
+    Other Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Other Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="../arcgis_toolbox/" class="md-nav__link">
-        ArcGIS Toolbox
+        
+  
+  <span class="md-ellipsis">
+    ArcGIS Toolbox
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
   
     
   
   
+    
+    
+    
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2" checked>
-      
-      <label class="md-nav__link" for="nav-6-2">
-        <span class="md-nav__icon md-icon"></span>
         
-          <a href="../asf_tools/" class="md-nav__link"
-            style="margin: initial; padding: initial; pointer-events: initial">
         
-          ASF Tools for Python
-        </a>
-      </label>
-      <nav class="md-nav" aria-label="ASF Tools for Python" data-md-level="2">
-        <label class="md-nav__title" for="nav-6-2">
-          <span class="md-nav__icon md-icon"></span>
-          
-            <a href="../asf_tools/" class="md-nav__link"
-              style="margin: initial; padding: initial; pointer-events: initial">
-          
-            ASF Tools for Python
-          </a>
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        
           
           
+          <div class="md-nav__link md-nav__container">
+            <a href="../asf_tools/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ASF Tools for Python
+  </span>
+  
+
+            </a>
             
+              
+              <label class="md-nav__link " for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            ASF Tools for Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
     
@@ -981,27 +1203,37 @@ feedback.init({showIcon: false});
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
       
         
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
           <span class="md-nav__icon md-icon"></span>
-          
-            <a href="./" class="md-nav__link md-nav__link--active"
-              style="margin: initial; padding: initial; pointer-events: initial">
-          
-            API Reference
-          </a>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        API Reference
+        
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
@@ -1011,7 +1243,7 @@ feedback.init({showIcon: false});
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#asf_tools" class="md-nav__link">
@@ -1393,112 +1625,160 @@ feedback.init({showIcon: false});
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
   
   
   
+    
+    
+    
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
-      
-      <label class="md-nav__link" for="nav-7">
-        <span class="md-nav__icon md-icon"></span>
         
-          Developers
         
-      </label>
-      <nav class="md-nav" aria-label="Developers" data-md-level="1">
-        <label class="md-nav__title" for="nav-7">
-          <span class="md-nav__icon md-icon"></span>
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
           
-            Developers
-          
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
+  
+  <span class="md-ellipsis">
+    Developers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../how_it_works/" class="md-nav__link">
-        Architecture
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../plugins/" class="md-nav__link">
-        Plugins
+        
+  
+  <span class="md-ellipsis">
+    Plugins
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../contributing/" class="md-nav__link">
-        Contributing
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
   
   
   
     <li class="md-nav__item">
       <a href="../../CODE_OF_CONDUCT/" class="md-nav__link">
-        Code of Conduct
+        
+  
+  <span class="md-ellipsis">
+    Code of Conduct
+  </span>
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../../whats_new/" class="md-nav__link">
-        What's New
+        
+  
+  <span class="md-ellipsis">
+    What's New
+  </span>
+  
+
       </a>
     </li>
   
@@ -1506,14 +1786,18 @@ feedback.init({showIcon: false});
     
       
       
-      
-
   
   
   
     <li class="md-nav__item">
       <a href="../../contact/" class="md-nav__link">
-        Contact Us
+        
+  
+  <span class="md-ellipsis">
+    Contact Us
+  </span>
+  
+
       </a>
     </li>
   
@@ -1527,11 +1811,13 @@ feedback.init({showIcon: false});
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
@@ -1541,7 +1827,7 @@ feedback.init({showIcon: false});
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#asf_tools" class="md-nav__link">
@@ -1924,12 +2210,14 @@ feedback.init({showIcon: false});
               </div>
             
           
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-                
-                <h1 id="asf_tools-v052-api-reference"><code>asf_tools</code> <em>v0.5.2</em> API Reference<a class="headerlink" href="#asf_tools-v052-api-reference" title="Permanent link">&para;</a></h1>
+                  
+
+
+<h1 id="asf_tools-v052-api-reference"><code>asf_tools</code> <em>v0.5.2</em> API Reference<a class="headerlink" href="#asf_tools-v052-api-reference" title="Permanent link">&para;</a></h1>
 
 
 <div class="doc doc-object doc-module">
@@ -2062,8 +2350,8 @@ the number of rasters contributing to each composite pixel is created.</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/composite.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">44</span>
+            <summary>Source code in <code>asf_tools/composite.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">44</span>
 <span class="normal">45</span>
 <span class="normal">46</span>
 <span class="normal">47</span>
@@ -2074,8 +2362,8 @@ the number of rasters contributing to each composite pixel is created.</p>
 <span class="normal">52</span>
 <span class="normal">53</span>
 <span class="normal">54</span>
-<span class="normal">55</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">epsg_to_wkt</span><span class="p">(</span><span class="n">epsg_code</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Get the WKT representation of a projection from its EPSG code</span>
+<span class="normal">55</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">epsg_to_wkt</span><span class="p">(</span><span class="n">epsg_code</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the WKT representation of a projection from its EPSG code</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        epsg_code: The integer EPSG code</span>
@@ -2086,8 +2374,7 @@ the number of rasters contributing to each composite pixel is created.</p>
     <span class="n">srs</span> <span class="o">=</span> <span class="n">osr</span><span class="o">.</span><span class="n">SpatialReference</span><span class="p">()</span>
     <span class="n">srs</span><span class="o">.</span><span class="n">ImportFromEPSG</span><span class="p">(</span><span class="n">epsg_code</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">srs</span><span class="o">.</span><span class="n">ExportToWkt</span><span class="p">()</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -2165,8 +2452,8 @@ products</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/composite.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">86</span>
+            <summary>Source code in <code>asf_tools/composite.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">86</span>
 <span class="normal">87</span>
 <span class="normal">88</span>
 <span class="normal">89</span>
@@ -2176,8 +2463,8 @@ products</p>
 <span class="normal">93</span>
 <span class="normal">94</span>
 <span class="normal">95</span>
-<span class="normal">96</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_area_raster</span><span class="p">(</span><span class="n">raster</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Determine the path of the area raster for a given backscatter raster based on naming conventions for HyP3 RTC</span>
+<span class="normal">96</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_area_raster</span><span class="p">(</span><span class="n">raster</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Determine the path of the area raster for a given backscatter raster based on naming conventions for HyP3 RTC</span>
 <span class="sd">    products</span>
 
 <span class="sd">    Args:</span>
@@ -2187,8 +2474,7 @@ products</p>
 <span class="sd">        area_raster: path of the area raster, e.g. S1A_IW_20181102T155531_DVP_RTC30_G_gpuned_5685_area.tif</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">raster</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;area.tif&#39;</span><span class="p">])</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -2265,8 +2551,8 @@ products</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/composite.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">30</span>
+            <summary>Source code in <code>asf_tools/composite.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">30</span>
 <span class="normal">31</span>
 <span class="normal">32</span>
 <span class="normal">33</span>
@@ -2277,8 +2563,8 @@ products</p>
 <span class="normal">38</span>
 <span class="normal">39</span>
 <span class="normal">40</span>
-<span class="normal">41</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_epsg_code</span><span class="p">(</span><span class="n">info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Get the EPSG code from a GDAL Info dictionary</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_epsg_code</span><span class="p">(</span><span class="n">info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the EPSG code from a GDAL Info dictionary</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        info: The dictionary returned by a gdal.Info call</span>
@@ -2289,8 +2575,7 @@ products</p>
     <span class="n">proj</span> <span class="o">=</span> <span class="n">osr</span><span class="o">.</span><span class="n">SpatialReference</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;coordinateSystem&#39;</span><span class="p">][</span><span class="s1">&#39;wkt&#39;</span><span class="p">])</span>
     <span class="n">epsg_code</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">proj</span><span class="o">.</span><span class="n">GetAttrValue</span><span class="p">(</span><span class="s1">&#39;AUTHORITY&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">epsg_code</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -2384,8 +2669,8 @@ products</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/composite.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 99</span>
+            <summary>Source code in <code>asf_tools/composite.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 99</span>
 <span class="normal">100</span>
 <span class="normal">101</span>
 <span class="normal">102</span>
@@ -2415,8 +2700,8 @@ products</p>
 <span class="normal">126</span>
 <span class="normal">127</span>
 <span class="normal">128</span>
-<span class="normal">129</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_full_extent</span><span class="p">(</span><span class="n">raster_info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Determine the corner coordinates and geotransform for the full extent of a set of rasters</span>
+<span class="normal">129</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_full_extent</span><span class="p">(</span><span class="n">raster_info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Determine the corner coordinates and geotransform for the full extent of a set of rasters</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        raster_info: A dictionary of gdal.Info results for the set of rasters</span>
@@ -2434,7 +2719,7 @@ products</p>
     <span class="n">lrx</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">lr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">lr</span> <span class="ow">in</span> <span class="n">lower_right_corners</span><span class="p">])</span>
     <span class="n">lry</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="n">lr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">lr</span> <span class="ow">in</span> <span class="n">lower_right_corners</span><span class="p">])</span>
 
-    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Full extent raster upper left: (</span><span class="si">{</span><span class="n">ulx</span><span class="p">,</span> <span class="n">uly</span><span class="si">}</span><span class="s1">); lower right: (</span><span class="si">{</span><span class="n">lrx</span><span class="p">,</span> <span class="n">lry</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Full extent raster upper left: (</span><span class="si">{</span><span class="n">ulx</span><span class="p">,</span><span class="w"> </span><span class="n">uly</span><span class="si">}</span><span class="s1">); lower right: (</span><span class="si">{</span><span class="n">lrx</span><span class="p">,</span><span class="w"> </span><span class="n">lry</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
 
     <span class="n">trans</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">raster_info</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
@@ -2446,8 +2731,7 @@ products</p>
     <span class="n">trans</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">uly</span>
 
     <span class="k">return</span> <span class="p">(</span><span class="n">ulx</span><span class="p">,</span> <span class="n">uly</span><span class="p">),</span> <span class="p">(</span><span class="n">lrx</span><span class="p">,</span> <span class="n">lry</span><span class="p">),</span> <span class="n">trans</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -2524,8 +2808,8 @@ products</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/composite.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">58</span>
+            <summary>Source code in <code>asf_tools/composite.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">58</span>
 <span class="normal">59</span>
 <span class="normal">60</span>
 <span class="normal">61</span>
@@ -2550,8 +2834,8 @@ products</p>
 <span class="normal">80</span>
 <span class="normal">81</span>
 <span class="normal">82</span>
-<span class="normal">83</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_target_epsg_code</span><span class="p">(</span><span class="n">codes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Determine the target UTM EPSG projection for the output composite</span>
+<span class="normal">83</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_target_epsg_code</span><span class="p">(</span><span class="n">codes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Determine the target UTM EPSG projection for the output composite</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        codes: List of UTM EPSG codes</span>
@@ -2576,8 +2860,7 @@ products</p>
     <span class="n">target_zone</span> <span class="o">=</span> <span class="n">zones</span><span class="p">[(</span><span class="nb">len</span><span class="p">(</span><span class="n">zones</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
 
     <span class="k">return</span> <span class="n">target_hemisphere</span> <span class="o">+</span> <span class="n">target_zone</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -2690,8 +2973,8 @@ products</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/composite.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">223</span>
+            <summary>Source code in <code>asf_tools/composite.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">223</span>
 <span class="normal">224</span>
 <span class="normal">225</span>
 <span class="normal">226</span>
@@ -2775,8 +3058,8 @@ products</p>
 <span class="normal">304</span>
 <span class="normal">305</span>
 <span class="normal">306</span>
-<span class="normal">307</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">make_composite</span><span class="p">(</span><span class="n">out_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">rasters</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">resolution</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Creates a local-resolution-weighted composite from Sentinel-1 RTC products</span>
+<span class="normal">307</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">make_composite</span><span class="p">(</span><span class="n">out_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">rasters</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">resolution</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates a local-resolution-weighted composite from Sentinel-1 RTC products</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        out_name: The base name of the output GeoTIFFs</span>
@@ -2860,8 +3143,7 @@ products</p>
     <span class="k">del</span> <span class="n">counts</span>
 
     <span class="k">return</span> <span class="n">out_raster</span><span class="p">,</span> <span class="n">out_counts_raster</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -2952,8 +3234,8 @@ products</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/composite.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">172</span>
+            <summary>Source code in <code>asf_tools/composite.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">172</span>
 <span class="normal">173</span>
 <span class="normal">174</span>
 <span class="normal">175</span>
@@ -2967,8 +3249,8 @@ products</p>
 <span class="normal">183</span>
 <span class="normal">184</span>
 <span class="normal">185</span>
-<span class="normal">186</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">read_as_array</span><span class="p">(</span><span class="n">raster</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">band</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Reads data from a raster image into memory</span>
+<span class="normal">186</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">read_as_array</span><span class="p">(</span><span class="n">raster</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">band</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reads data from a raster image into memory</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        raster: The file path to a raster image</span>
@@ -2982,8 +3264,7 @@ products</p>
     <span class="n">data</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="n">band</span><span class="p">)</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
     <span class="k">del</span> <span class="n">ds</span>  <span class="c1"># How to close w/ gdal</span>
     <span class="k">return</span> <span class="n">data</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -3102,8 +3383,8 @@ products</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/composite.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">132</span>
+            <summary>Source code in <code>asf_tools/composite.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">132</span>
 <span class="normal">133</span>
 <span class="normal">134</span>
 <span class="normal">135</span>
@@ -3140,8 +3421,8 @@ products</p>
 <span class="normal">166</span>
 <span class="normal">167</span>
 <span class="normal">168</span>
-<span class="normal">169</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">reproject_to_target</span><span class="p">(</span><span class="n">raster_info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">target_epsg_code</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">target_resolution</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Reprojects a set of raster images to a common projection and resolution</span>
+<span class="normal">169</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">reproject_to_target</span><span class="p">(</span><span class="n">raster_info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">target_epsg_code</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">target_resolution</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reprojects a set of raster images to a common projection and resolution</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        raster_info: A dictionary of gdal.Info results for the set of rasters</span>
@@ -3178,8 +3459,7 @@ products</p>
             <span class="n">target_raster_info</span><span class="p">[</span><span class="n">raster</span><span class="p">]</span> <span class="o">=</span> <span class="n">info</span>
 
     <span class="k">return</span> <span class="n">target_raster_info</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -3323,8 +3603,8 @@ products</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/composite.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">189</span>
+            <summary>Source code in <code>asf_tools/composite.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">189</span>
 <span class="normal">190</span>
 <span class="normal">191</span>
 <span class="normal">192</span>
@@ -3355,9 +3635,9 @@ products</p>
 <span class="normal">217</span>
 <span class="normal">218</span>
 <span class="normal">219</span>
-<span class="normal">220</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">write_cog</span><span class="p">(</span><span class="n">file_name</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">transform</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">epsg_code</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+<span class="normal">220</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">write_cog</span><span class="p">(</span><span class="n">file_name</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">transform</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">epsg_code</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
               <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Float32</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Creates a Cloud Optimized GeoTIFF</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates a Cloud Optimized GeoTIFF</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        file_name: The output file name</span>
@@ -3387,8 +3667,7 @@ products</p>
 
         <span class="k">del</span> <span class="n">temp_geotiff</span>  <span class="c1"># How to close w/ gdal</span>
     <span class="k">return</span> <span class="n">file_name</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -3492,8 +3771,8 @@ products</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/dem.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">17</span>
+            <summary>Source code in <code>asf_tools/dem.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
@@ -3519,8 +3798,8 @@ products</p>
 <span class="normal">40</span>
 <span class="normal">41</span>
 <span class="normal">42</span>
-<span class="normal">43</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">prepare_dem_vrt</span><span class="p">(</span><span class="n">vrt</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">geometry</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">,</span> <span class="n">BaseGeometry</span><span class="p">]):</span>
-    <span class="sd">&quot;&quot;&quot;Create a DEM mosaic VRT covering a given geometry</span>
+<span class="normal">43</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">prepare_dem_vrt</span><span class="p">(</span><span class="n">vrt</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">geometry</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">,</span> <span class="n">BaseGeometry</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a DEM mosaic VRT covering a given geometry</span>
 
 <span class="sd">    The DEM mosaic is assembled from the Copernicus GLO-30 DEM tiles that intersect the geometry.</span>
 
@@ -3546,8 +3825,7 @@ products</p>
         <span class="n">dem_file_paths</span> <span class="o">=</span> <span class="n">vector</span><span class="o">.</span><span class="n">intersecting_feature_properties</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span> <span class="n">tile_features</span><span class="p">,</span> <span class="s1">&#39;file_path&#39;</span><span class="p">)</span>
 
         <span class="n">gdal</span><span class="o">.</span><span class="n">BuildVRT</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">vrt</span><span class="p">),</span> <span class="n">dem_file_paths</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -3658,8 +3936,8 @@ INF values inside the data array are set to nan.</p>
     statistic: statistic of data in linear scale</p>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/flood_map.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 88</span>
+            <summary>Source code in <code>asf_tools/flood_map.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 88</span>
 <span class="normal"> 89</span>
 <span class="normal"> 90</span>
 <span class="normal"> 91</span>
@@ -3672,8 +3950,8 @@ INF values inside the data array are set to nan.</p>
 <span class="normal"> 98</span>
 <span class="normal"> 99</span>
 <span class="normal">100</span>
-<span class="normal">101</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">logstat</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot; Calculate a function in logarithmic scale and return in linear scale.</span>
+<span class="normal">101</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">logstat</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Calculate a function in logarithmic scale and return in linear scale.</span>
 <span class="sd">        INF values inside the data array are set to nan.</span>
 
 <span class="sd">        Args:</span>
@@ -3686,8 +3964,7 @@ INF values inside the data array are set to nan.</p>
     <span class="n">ld</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">ld</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
     <span class="n">st</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">ld</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -3860,8 +4137,8 @@ distributions.</p>
   <p>Jean-Francios Pekel, Andrew Cottam, Noel Gorelik, Alan S. Belward. 2016. <a href="https://doi:10.1038/nature20584">https://doi:10.1038/nature20584</a></p>
 </details>
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/flood_map.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">130</span>
+            <summary>Source code in <code>asf_tools/flood_map.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">130</span>
 <span class="normal">131</span>
 <span class="normal">132</span>
 <span class="normal">133</span>
@@ -3963,13 +4240,13 @@ distributions.</p>
 <span class="normal">229</span>
 <span class="normal">230</span>
 <span class="normal">231</span>
-<span class="normal">232</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">make_flood_map</span><span class="p">(</span><span class="n">out_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>  <span class="n">vv_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>
+<span class="normal">232</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">make_flood_map</span><span class="p">(</span><span class="n">out_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>  <span class="n">vv_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>
                    <span class="n">water_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">hand_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>
                    <span class="n">estimator</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;iterative&#39;</span><span class="p">,</span>
                    <span class="n">water_level_sigma</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">3.</span><span class="p">,</span>
                    <span class="n">known_water_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">30.</span><span class="p">,</span>
                    <span class="n">iterative_bounds</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">)):</span>
-    <span class="sd">&quot;&quot;&quot;Create a flood depth map from a surface water extent map.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a flood depth map from a surface water extent map.</span>
 
 <span class="sd">    WARNING: This functionality is still under active development and the products</span>
 <span class="sd">    created using this function are likely to change in the future.</span>
@@ -4066,8 +4343,7 @@ distributions.</p>
     <span class="n">flood_depth</span><span class="p">[</span><span class="n">padding_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">nodata</span>
     <span class="n">write_cog</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_raster</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.tif&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;_</span><span class="si">{</span><span class="n">estimator</span><span class="si">}</span><span class="s1">_FloodDepth.tif&#39;</span><span class="p">),</span> <span class="n">flood_depth</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">geotransform</span><span class="p">,</span>
               <span class="n">epsg_code</span><span class="o">=</span><span class="n">epsg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Float64</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="n">nodata</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -4197,8 +4473,8 @@ If <code>None</code>, the mean accumulation value is used</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/hand/calculate.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">137</span>
+            <summary>Source code in <code></code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">137</span>
 <span class="normal">138</span>
 <span class="normal">139</span>
 <span class="normal">140</span>
@@ -4221,9 +4497,9 @@ If <code>None</code>, the mean accumulation value is used</p>
 <span class="normal">157</span>
 <span class="normal">158</span>
 <span class="normal">159</span>
-<span class="normal">160</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">calculate_hand_for_basins</span><span class="p">(</span><span class="n">out_raster</span><span class="p">:</span>  <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">geometries</span><span class="p">:</span> <span class="n">GeometryCollection</span><span class="p">,</span>
+<span class="normal">160</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calculate_hand_for_basins</span><span class="p">(</span><span class="n">out_raster</span><span class="p">:</span>  <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">geometries</span><span class="p">:</span> <span class="n">GeometryCollection</span><span class="p">,</span>
                               <span class="n">dem_file</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">acc_thresh</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Calculate the Height Above Nearest Drainage (HAND) for watershed boundaries (hydrobasins).</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the Height Above Nearest Drainage (HAND) for watershed boundaries (hydrobasins).</span>
 
 <span class="sd">    For watershed boundaries, see: https://www.hydrosheds.org/page/hydrobasins</span>
 
@@ -4245,8 +4521,7 @@ If <code>None</code>, the mean accumulation value is used</p>
         <span class="n">write_cog</span><span class="p">(</span>
             <span class="n">out_raster</span><span class="p">,</span> <span class="n">hand</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">basin_affine_tf</span><span class="o">.</span><span class="n">to_gdal</span><span class="p">(),</span> <span class="n">epsg_code</span><span class="o">=</span><span class="n">src</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">to_epsg</span><span class="p">(),</span> <span class="n">nodata_value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>
         <span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -4331,8 +4606,8 @@ If <code>None</code>, the mean accumulation value is used</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/hand/calculate.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">163</span>
+            <summary>Source code in <code></code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">163</span>
 <span class="normal">164</span>
 <span class="normal">165</span>
 <span class="normal">166</span>
@@ -4351,8 +4626,8 @@ If <code>None</code>, the mean accumulation value is used</p>
 <span class="normal">179</span>
 <span class="normal">180</span>
 <span class="normal">181</span>
-<span class="normal">182</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">make_copernicus_hand</span><span class="p">(</span><span class="n">out_raster</span><span class="p">:</span>  <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">vector_file</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">acc_thresh</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Copernicus GLO-30 Height Above Nearest Drainage (HAND)</span>
+<span class="normal">182</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">make_copernicus_hand</span><span class="p">(</span><span class="n">out_raster</span><span class="p">:</span>  <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">vector_file</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">acc_thresh</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Copernicus GLO-30 Height Above Nearest Drainage (HAND)</span>
 
 <span class="sd">    Make a Height Above Nearest Drainage (HAND) GeoTIFF from the Copernicus GLO-30 DEM</span>
 <span class="sd">    covering the watershed boundaries (hydrobasins) defined in a vector file.</span>
@@ -4371,8 +4646,7 @@ If <code>None</code>, the mean accumulation value is used</p>
     <span class="k">with</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s1">&#39;.vrt&#39;</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">dem_vrt</span><span class="p">:</span>
         <span class="n">prepare_dem_vrt</span><span class="p">(</span><span class="n">dem_vrt</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">geometries</span><span class="p">)</span>
         <span class="n">calculate_hand_for_basins</span><span class="p">(</span><span class="n">out_raster</span><span class="p">,</span> <span class="n">geometries</span><span class="p">,</span> <span class="n">dem_vrt</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">acc_thresh</span><span class="o">=</span><span class="n">acc_thresh</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -4443,8 +4717,8 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/hand/prepare.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
+            <summary>Source code in <code></code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
@@ -4472,8 +4746,8 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
 <span class="normal">46</span>
 <span class="normal">47</span>
 <span class="normal">48</span>
-<span class="normal">49</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">prepare_hand_vrt</span><span class="p">(</span><span class="n">vrt</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">geometry</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">,</span> <span class="n">BaseGeometry</span><span class="p">]):</span>
-    <span class="sd">&quot;&quot;&quot;Prepare a HAND mosaic VRT covering a given geometry</span>
+<span class="normal">49</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">prepare_hand_vrt</span><span class="p">(</span><span class="n">vrt</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">geometry</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">,</span> <span class="n">BaseGeometry</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Prepare a HAND mosaic VRT covering a given geometry</span>
 
 <span class="sd">    Prepare a Height Above Nearest Drainage (HAND) virtual raster (VRT) covering a given geometry.</span>
 <span class="sd">    The Height Above Nearest Drainage (HAND) mosaic is assembled from the HAND tiles that intersect</span>
@@ -4501,8 +4775,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
         <span class="n">hand_file_paths</span> <span class="o">=</span> <span class="n">vector</span><span class="o">.</span><span class="n">intersecting_feature_properties</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span> <span class="n">tile_features</span><span class="p">,</span> <span class="s1">&#39;file_path&#39;</span><span class="p">)</span>
 
         <span class="n">gdal</span><span class="o">.</span><span class="n">BuildVRT</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">vrt</span><span class="p">),</span> <span class="n">hand_file_paths</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -4654,8 +4927,8 @@ If <code>None</code>, the mean accumulation value is used</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/hand/calculate.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 58</span>
+            <summary>Source code in <code>asf_tools/hand/calculate.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 58</span>
 <span class="normal"> 59</span>
 <span class="normal"> 60</span>
 <span class="normal"> 61</span>
@@ -4731,9 +5004,9 @@ If <code>None</code>, the mean accumulation value is used</p>
 <span class="normal">131</span>
 <span class="normal">132</span>
 <span class="normal">133</span>
-<span class="normal">134</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">calculate_hand</span><span class="p">(</span><span class="n">dem_array</span><span class="p">,</span> <span class="n">dem_affine</span><span class="p">:</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">Affine</span><span class="p">,</span> <span class="n">dem_crs</span><span class="p">:</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">CRS</span><span class="p">,</span> <span class="n">basin_mask</span><span class="p">,</span>
+<span class="normal">134</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calculate_hand</span><span class="p">(</span><span class="n">dem_array</span><span class="p">,</span> <span class="n">dem_affine</span><span class="p">:</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">Affine</span><span class="p">,</span> <span class="n">dem_crs</span><span class="p">:</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">CRS</span><span class="p">,</span> <span class="n">basin_mask</span><span class="p">,</span>
                    <span class="n">acc_thresh</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Calculate the Height Above Nearest Drainage (HAND)</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the Height Above Nearest Drainage (HAND)</span>
 
 <span class="sd">     Calculate the Height Above Nearest Drainage (HAND) using pySHEDS library. Because HAND</span>
 <span class="sd">     is tied to watershed boundaries (hydrobasins), clipped/cut basins will produce weird edge</span>
@@ -4808,8 +5081,7 @@ If <code>None</code>, the mean accumulation value is used</p>
     <span class="c1"># TODO: also mask ocean pixels here?</span>
 
     <span class="k">return</span> <span class="n">hand</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -4906,8 +5178,8 @@ If <code>None</code>, the mean accumulation value is used</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/hand/calculate.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">137</span>
+            <summary>Source code in <code>asf_tools/hand/calculate.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">137</span>
 <span class="normal">138</span>
 <span class="normal">139</span>
 <span class="normal">140</span>
@@ -4930,9 +5202,9 @@ If <code>None</code>, the mean accumulation value is used</p>
 <span class="normal">157</span>
 <span class="normal">158</span>
 <span class="normal">159</span>
-<span class="normal">160</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">calculate_hand_for_basins</span><span class="p">(</span><span class="n">out_raster</span><span class="p">:</span>  <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">geometries</span><span class="p">:</span> <span class="n">GeometryCollection</span><span class="p">,</span>
+<span class="normal">160</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">calculate_hand_for_basins</span><span class="p">(</span><span class="n">out_raster</span><span class="p">:</span>  <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">geometries</span><span class="p">:</span> <span class="n">GeometryCollection</span><span class="p">,</span>
                               <span class="n">dem_file</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">acc_thresh</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Calculate the Height Above Nearest Drainage (HAND) for watershed boundaries (hydrobasins).</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the Height Above Nearest Drainage (HAND) for watershed boundaries (hydrobasins).</span>
 
 <span class="sd">    For watershed boundaries, see: https://www.hydrosheds.org/page/hydrobasins</span>
 
@@ -4954,8 +5226,7 @@ If <code>None</code>, the mean accumulation value is used</p>
         <span class="n">write_cog</span><span class="p">(</span>
             <span class="n">out_raster</span><span class="p">,</span> <span class="n">hand</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">basin_affine_tf</span><span class="o">.</span><span class="n">to_gdal</span><span class="p">(),</span> <span class="n">epsg_code</span><span class="o">=</span><span class="n">src</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">to_epsg</span><span class="p">(),</span> <span class="n">nodata_value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>
         <span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -4981,8 +5252,8 @@ using a 2D Gaussian kernel. Here, HOND is defined as the DEM value less the HAND
 https://docs.astropy.org/en/stable/convolution/#using-astropy-s-convolution-to-replace-bad-data</p>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/hand/calculate.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">41</span>
+            <summary>Source code in <code>asf_tools/hand/calculate.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">41</span>
 <span class="normal">42</span>
 <span class="normal">43</span>
 <span class="normal">44</span>
@@ -4996,8 +5267,8 @@ https://docs.astropy.org/en/stable/convolution/#using-astropy-s-convolution-to-r
 <span class="normal">52</span>
 <span class="normal">53</span>
 <span class="normal">54</span>
-<span class="normal">55</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">fill_hand</span><span class="p">(</span><span class="n">hand</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">dem</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Replace NaNs in a HAND array with values interpolated from their neighbor&#39;s HOND</span>
+<span class="normal">55</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">fill_hand</span><span class="p">(</span><span class="n">hand</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">dem</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Replace NaNs in a HAND array with values interpolated from their neighbor&#39;s HOND</span>
 
 <span class="sd">    Replace NaNs in a HAND array with values interpolated from their neighbor&#39;s HOND (height of nearest drainage)</span>
 <span class="sd">    using a 2D Gaussian kernel. Here, HOND is defined as the DEM value less the HAND value. For the kernel, see:</span>
@@ -5011,8 +5282,7 @@ https://docs.astropy.org/en/stable/convolution/#using-astropy-s-convolution-to-r
     <span class="n">hand</span><span class="p">[</span><span class="n">hand</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="k">return</span> <span class="n">hand</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -5037,8 +5307,8 @@ https://docs.astropy.org/en/stable/convolution/#using-astropy-s-convolution-to-r
 kernel, see: https://docs.astropy.org/en/stable/convolution/#using-astropy-s-convolution-to-replace-bad-data</p>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/hand/calculate.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">24</span>
+            <summary>Source code in <code>asf_tools/hand/calculate.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">24</span>
 <span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>
@@ -5052,8 +5322,8 @@ kernel, see: https://docs.astropy.org/en/stable/convolution/#using-astropy-s-con
 <span class="normal">35</span>
 <span class="normal">36</span>
 <span class="normal">37</span>
-<span class="normal">38</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">fill_nan</span><span class="p">(</span><span class="n">array</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Replace NaNs with values interpolated from their neighbors</span>
+<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">fill_nan</span><span class="p">(</span><span class="n">array</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Replace NaNs with values interpolated from their neighbors</span>
 
 <span class="sd">    Replace NaNs with values interpolated from their neighbors using a 2D Gaussian</span>
 <span class="sd">    kernel, see: https://docs.astropy.org/en/stable/convolution/#using-astropy-s-convolution-to-replace-bad-data</span>
@@ -5067,8 +5337,7 @@ kernel, see: https://docs.astropy.org/en/stable/convolution/#using-astropy-s-con
             <span class="p">)</span>
 
     <span class="k">return</span> <span class="n">array</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -5153,8 +5422,8 @@ If <code>None</code>, the mean accumulation value is used</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/hand/calculate.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">163</span>
+            <summary>Source code in <code>asf_tools/hand/calculate.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">163</span>
 <span class="normal">164</span>
 <span class="normal">165</span>
 <span class="normal">166</span>
@@ -5173,8 +5442,8 @@ If <code>None</code>, the mean accumulation value is used</p>
 <span class="normal">179</span>
 <span class="normal">180</span>
 <span class="normal">181</span>
-<span class="normal">182</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">make_copernicus_hand</span><span class="p">(</span><span class="n">out_raster</span><span class="p">:</span>  <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">vector_file</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">acc_thresh</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Copernicus GLO-30 Height Above Nearest Drainage (HAND)</span>
+<span class="normal">182</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">make_copernicus_hand</span><span class="p">(</span><span class="n">out_raster</span><span class="p">:</span>  <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">vector_file</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">acc_thresh</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Copernicus GLO-30 Height Above Nearest Drainage (HAND)</span>
 
 <span class="sd">    Make a Height Above Nearest Drainage (HAND) GeoTIFF from the Copernicus GLO-30 DEM</span>
 <span class="sd">    covering the watershed boundaries (hydrobasins) defined in a vector file.</span>
@@ -5193,8 +5462,7 @@ If <code>None</code>, the mean accumulation value is used</p>
     <span class="k">with</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s1">&#39;.vrt&#39;</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">dem_vrt</span><span class="p">:</span>
         <span class="n">prepare_dem_vrt</span><span class="p">(</span><span class="n">dem_vrt</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">geometries</span><span class="p">)</span>
         <span class="n">calculate_hand_for_basins</span><span class="p">(</span><span class="n">out_raster</span><span class="p">,</span> <span class="n">geometries</span><span class="p">,</span> <span class="n">dem_vrt</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">acc_thresh</span><span class="o">=</span><span class="n">acc_thresh</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -5311,8 +5579,8 @@ https://gdal.org/programs/gdalwarp.html#cmdoption-gdalwarp-r</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/hand/prepare.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">52</span>
+            <summary>Source code in <code>asf_tools/hand/prepare.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">52</span>
 <span class="normal">53</span>
 <span class="normal">54</span>
 <span class="normal">55</span>
@@ -5334,9 +5602,9 @@ https://gdal.org/programs/gdalwarp.html#cmdoption-gdalwarp-r</p>
 <span class="normal">71</span>
 <span class="normal">72</span>
 <span class="normal">73</span>
-<span class="normal">74</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">prepare_hand_for_raster</span><span class="p">(</span><span class="n">hand_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">source_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>
+<span class="normal">74</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">prepare_hand_for_raster</span><span class="p">(</span><span class="n">hand_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">source_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>
                             <span class="n">resampling_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;lanczos&#39;</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Create a HAND raster pixel-aligned to a source raster</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a HAND raster pixel-aligned to a source raster</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        hand_raster: Path for the output HAND raster</span>
@@ -5357,8 +5625,7 @@ https://gdal.org/programs/gdalwarp.html#cmdoption-gdalwarp-r</p>
         <span class="n">gdal</span><span class="o">.</span><span class="n">Warp</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">hand_raster</span><span class="p">),</span> <span class="n">hand_vrt</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">dstSRS</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;EPSG:</span><span class="si">{</span><span class="n">get_epsg_code</span><span class="p">(</span><span class="n">info</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
                   <span class="n">outputBounds</span><span class="o">=</span><span class="n">hand_bounds</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
                   <span class="n">resampleAlg</span><span class="o">=</span><span class="n">Resampling</span><span class="p">[</span><span class="n">resampling_method</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -5429,8 +5696,8 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/hand/prepare.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
+            <summary>Source code in <code>asf_tools/hand/prepare.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
@@ -5458,8 +5725,8 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
 <span class="normal">46</span>
 <span class="normal">47</span>
 <span class="normal">48</span>
-<span class="normal">49</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">prepare_hand_vrt</span><span class="p">(</span><span class="n">vrt</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">geometry</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">,</span> <span class="n">BaseGeometry</span><span class="p">]):</span>
-    <span class="sd">&quot;&quot;&quot;Prepare a HAND mosaic VRT covering a given geometry</span>
+<span class="normal">49</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">prepare_hand_vrt</span><span class="p">(</span><span class="n">vrt</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">geometry</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">,</span> <span class="n">BaseGeometry</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Prepare a HAND mosaic VRT covering a given geometry</span>
 
 <span class="sd">    Prepare a Height Above Nearest Drainage (HAND) virtual raster (VRT) covering a given geometry.</span>
 <span class="sd">    The Height Above Nearest Drainage (HAND) mosaic is assembled from the HAND tiles that intersect</span>
@@ -5487,8 +5754,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
         <span class="n">hand_file_paths</span> <span class="o">=</span> <span class="n">vector</span><span class="o">.</span><span class="n">intersecting_feature_properties</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span> <span class="n">tile_features</span><span class="p">,</span> <span class="s1">&#39;file_path&#39;</span><span class="p">)</span>
 
         <span class="n">gdal</span><span class="o">.</span><span class="n">BuildVRT</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">vrt</span><span class="p">),</span> <span class="n">hand_file_paths</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -5551,8 +5817,8 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
       <p>Convert calibrated raster scale between db, amplitude and power</p>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/raster.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">13</span>
+            <summary>Source code in <code>asf_tools/raster.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
 <span class="normal">16</span>
@@ -5579,9 +5845,9 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
 <span class="normal">37</span>
 <span class="normal">38</span>
 <span class="normal">39</span>
-<span class="normal">40</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">convert_scale</span><span class="p">(</span><span class="n">array</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">],</span> <span class="n">in_scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">],</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">convert_scale</span><span class="p">(</span><span class="n">array</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">],</span> <span class="n">in_scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">],</span>
                   <span class="n">out_scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;db&#39;</span><span class="p">,</span> <span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;Convert calibrated raster scale between db, amplitude and power&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert calibrated raster scale between db, amplitude and power&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">in_scale</span> <span class="o">==</span> <span class="n">out_scale</span><span class="p">:</span>
         <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Nothing to do! </span><span class="si">{</span><span class="n">in_scale</span><span class="si">}</span><span class="s1"> is same as </span><span class="si">{</span><span class="n">out_scale</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">array</span>
@@ -5607,8 +5873,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
             <span class="k">return</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">log10</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
 
     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Cannot convert raster of scale </span><span class="si">{</span><span class="n">in_scale</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">out_scale</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -5699,8 +5964,8 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/raster.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">43</span>
+            <summary>Source code in <code>asf_tools/raster.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">43</span>
 <span class="normal">44</span>
 <span class="normal">45</span>
 <span class="normal">46</span>
@@ -5717,8 +5982,8 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
 <span class="normal">57</span>
 <span class="normal">58</span>
 <span class="normal">59</span>
-<span class="normal">60</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">read_as_masked_array</span><span class="p">(</span><span class="n">raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">band</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Reads data from a raster image into memory, masking invalid and NoData values</span>
+<span class="normal">60</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">read_as_masked_array</span><span class="p">(</span><span class="n">raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">band</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reads data from a raster image into memory, masking invalid and NoData values</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        raster: The file path to a raster image</span>
@@ -5735,8 +6000,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
     <span class="k">if</span> <span class="n">nodata</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_values</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">nodata</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">data</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -5865,8 +6129,8 @@ and (3) water, as is often seen in the US Midwest.</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/threshold.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 42</span>
+            <summary>Source code in <code>asf_tools/threshold.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 42</span>
 <span class="normal"> 43</span>
 <span class="normal"> 44</span>
 <span class="normal"> 45</span>
@@ -5965,8 +6229,8 @@ and (3) water, as is often seen in the US Midwest.</p>
 <span class="normal">138</span>
 <span class="normal">139</span>
 <span class="normal">140</span>
-<span class="normal">141</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">expectation_maximization_threshold</span><span class="p">(</span><span class="n">tile</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">number_of_classes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Water threshold Calculation using a multi-mode Expectation Maximization Approach</span>
+<span class="normal">141</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">expectation_maximization_threshold</span><span class="p">(</span><span class="n">tile</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">number_of_classes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Water threshold Calculation using a multi-mode Expectation Maximization Approach</span>
 
 <span class="sd">    Thresholding works best when backscatter tiles are provided on a decibel scale</span>
 <span class="sd">    to get Gaussian distribution that is scaled to a range of 0-255, and performed</span>
@@ -6065,8 +6329,7 @@ and (3) water, as is often seen in the US Midwest.</p>
     <span class="n">dx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">xvec</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">dx</span><span class="p">)]</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -6240,8 +6503,8 @@ tiles.shape
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/tile.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 6</span>
+            <summary>Source code in <code>asf_tools/tile.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 6</span>
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
@@ -6300,9 +6563,9 @@ tiles.shape
 <span class="normal">62</span>
 <span class="normal">63</span>
 <span class="normal">64</span>
-<span class="normal">65</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">tile_array</span><span class="p">(</span><span class="n">array</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">],</span> <span class="n">tile_shape</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
+<span class="normal">65</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">tile_array</span><span class="p">(</span><span class="n">array</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">],</span> <span class="n">tile_shape</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
                <span class="n">pad_value</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;Tile a 2D numpy array</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tile a 2D numpy array</span>
 
 <span class="sd">    Turn a 2D numpy array like:</span>
 <span class="sd">        &gt;&gt;&gt; array = [[0, 0, 1, 1],</span>
@@ -6360,8 +6623,7 @@ tiles.shape
     <span class="n">tiled</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">moveaxis</span><span class="p">(</span><span class="n">dstack</span><span class="p">(</span><span class="n">tile_list</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">tiled</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -6482,8 +6744,8 @@ bottom right padding was added when tiling.</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/tile.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 68</span>
+            <summary>Source code in <code>asf_tools/tile.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 68</span>
 <span class="normal"> 69</span>
 <span class="normal"> 70</span>
 <span class="normal"> 71</span>
@@ -6541,9 +6803,9 @@ bottom right padding was added when tiling.</p>
 <span class="normal">123</span>
 <span class="normal">124</span>
 <span class="normal">125</span>
-<span class="normal">126</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">untile_array</span><span class="p">(</span><span class="n">tiled_array</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">],</span> <span class="n">array_shape</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> \
+<span class="normal">126</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">untile_array</span><span class="p">(</span><span class="n">tiled_array</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">],</span> <span class="n">array_shape</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> \
         <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">]:</span>
-    <span class="sd">&quot;&quot;&quot;Untile a tiled array into a 2D numpy array</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Untile a tiled array into a 2D numpy array</span>
 
 <span class="sd">    This is the reverse of `tile_array` and will turn a tiled array like:</span>
 <span class="sd">        &gt;&gt;&gt; tiled_array = [[[0,0],</span>
@@ -6600,8 +6862,7 @@ bottom right padding was added when tiling.</p>
         <span class="n">untiled</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">(</span><span class="n">untiled</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">untiled_mask</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">untiled</span><span class="p">[:</span><span class="n">array_rows</span><span class="p">,</span> <span class="p">:</span><span class="n">array_columns</span><span class="p">]</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -6657,8 +6918,8 @@ bottom right padding was added when tiling.</p>
       <p>Context manager for setting GDAL config options temporarily</p>
 
             <details class="quote">
-              <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/util.py</code></summary>
-              <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 6</span>
+              <summary>Source code in <code>asf_tools/util.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 6</span>
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
@@ -6677,10 +6938,10 @@ bottom right padding was added when tiling.</p>
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
-<span class="normal">25</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">GDALConfigManager</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Context manager for setting GDAL config options temporarily&quot;&quot;&quot;</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">GDALConfigManager</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Context manager for setting GDAL config options temporarily&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
 <span class="sd">            **options: GDAL Config `option=value` keyword arguments.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -6697,8 +6958,7 @@ bottom right padding was added when tiling.</p>
     <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc_type</span><span class="p">,</span> <span class="n">exc_val</span><span class="p">,</span> <span class="n">exc_tb</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_previous_options</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="n">gdal</span><span class="o">.</span><span class="n">SetConfigOption</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
             </details>
 
   
@@ -6758,22 +7018,21 @@ bottom right padding was added when tiling.</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/util.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
+            <summary>Source code in <code>asf_tools/util.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Args:</span>
 <span class="sd">        **options: GDAL Config `option=value` keyword arguments.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">_previous_options</span> <span class="o">=</span> <span class="p">{}</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -6844,8 +7103,8 @@ Maximization thresholding approach and refined using Fuzzy Logic.</p>
       <p>Ensure raster data is uint8 and set the area outside the valid data to nodata</p>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/water_map.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">136</span>
+            <summary>Source code in <code>asf_tools/water_map.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">136</span>
 <span class="normal">137</span>
 <span class="normal">138</span>
 <span class="normal">139</span>
@@ -6855,8 +7114,8 @@ Maximization thresholding approach and refined using Fuzzy Logic.</p>
 <span class="normal">143</span>
 <span class="normal">144</span>
 <span class="normal">145</span>
-<span class="normal">146</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">format_raster_data</span><span class="p">(</span><span class="n">raster</span><span class="p">,</span> <span class="n">padding_mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nodata</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="normal">146</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">format_raster_data</span><span class="p">(</span><span class="n">raster</span><span class="p">,</span> <span class="n">padding_mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nodata</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Ensure raster data is uint8 and set the area outside the valid data to nodata</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">padding_mask</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -6866,8 +7125,7 @@ Maximization thresholding approach and refined using Fuzzy Logic.</p>
     <span class="n">raster</span><span class="p">[</span><span class="n">padding_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">nodata</span>
 
     <span class="k">return</span> <span class="n">raster</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -7081,8 +7339,8 @@ thresholding</p>
   </table>
 
           <details class="quote">
-            <summary>Source code in <code>/usr/share/miniconda/envs/hyp3-docs/lib/python3.9/site-packages/asf_tools/water_map.py</code></summary>
-            <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">174</span>
+            <summary>Source code in <code>asf_tools/water_map.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">174</span>
 <span class="normal">175</span>
 <span class="normal">176</span>
 <span class="normal">177</span>
@@ -7222,11 +7480,11 @@ thresholding</p>
 <span class="normal">311</span>
 <span class="normal">312</span>
 <span class="normal">313</span>
-<span class="normal">314</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">make_water_map</span><span class="p">(</span><span class="n">out_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">vv_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">vh_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>
+<span class="normal">314</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">make_water_map</span><span class="p">(</span><span class="n">out_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">vv_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">vh_raster</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span>
                    <span class="n">hand_raster</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">tile_shape</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
                    <span class="n">max_vv_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">15.5</span><span class="p">,</span> <span class="n">max_vh_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">23.0</span><span class="p">,</span>
                    <span class="n">hand_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">15.</span><span class="p">,</span> <span class="n">hand_fraction</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">membership_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.45</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Creates a surface water extent map from a Sentinel-1 RTC product</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates a surface water extent map from a Sentinel-1 RTC product</span>
 
 <span class="sd">    Create a surface water extent map from a dual-pol Sentinel-1 RTC product and</span>
 <span class="sd">    a HAND image. The HAND image must be pixel-aligned (same extent and size) to</span>
@@ -7363,8 +7621,7 @@ thresholding</p>
 
     <span class="n">write_cog</span><span class="p">(</span><span class="n">out_raster</span><span class="p">,</span> <span class="n">format_raster_data</span><span class="p">(</span><span class="n">combined_water_map</span><span class="p">,</span> <span class="n">padding_mask</span><span class="p">,</span> <span class="n">nodata</span><span class="p">),</span> <span class="n">transform</span><span class="o">=</span><span class="n">out_transform</span><span class="p">,</span>
               <span class="n">epsg_code</span><span class="o">=</span><span class="n">out_epsg</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Byte</span><span class="p">,</span> <span class="n">nodata_value</span><span class="o">=</span><span class="n">nodata</span><span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
           </details>
   </div>
 
@@ -7384,20 +7641,22 @@ thresholding</p>
   </div>
 
 </div>
-                
-              
-              
-                
 
 
-              
-            </article>
-          </div>
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
+        
       </main>
       
         <!--
-  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to
@@ -7418,30 +7677,38 @@ thresholding</p>
   IN THE SOFTWARE.
 -->
 
+<!-- Adapted from https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/partials/footer.html -->
 
-
-<!-- Application footer -->
+<!-- Footer -->
 <footer class="md-footer">
 
   <!-- Link to previous and/or next page -->
   
-    <div class="md-footer-nav">
+    
+      
       <nav
-        class="md-footer-nav__inner md-grid"
+        class="md-footer__inner md-grid"
         aria-label="Footer"
+        
       >
 
         <!-- Link to previous page -->
         
-          <a href="../asf_tools/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          
+          <a
+            href="../asf_tools/"
+            class="md-footer__link md-footer__link--prev"
+            aria-label="Previous: ASF Tools for Python"
+          >
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
-            <div class="md-footer-nav__title">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
               <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
                 ASF Tools for Python
               </div>
             </div>
@@ -7450,22 +7717,28 @@ thresholding</p>
 
         <!-- Link to next page -->
         
-          <a href="../../how_it_works/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
+          
+          <a
+            href="../../how_it_works/"
+            class="md-footer__link md-footer__link--next"
+            aria-label="Next: Architecture"
+          >
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
               <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
                 Architecture
               </div>
             </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
             </div>
           </a>
         
       </nav>
-
+    
       <!-- ASF Footer information-->
       <div class="md-grid">
         <div class="md-footer-container md-grid">
@@ -7502,38 +7775,13 @@ thresholding</p>
           </div>
         </div>
       </div>
-    </div>
   
 
   <!-- Further information -->
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-
-      <!-- Copyright and theme information -->
-      <div class="md-footer-copyright">
-        <div class="md-footer-copyright__highlight">
-          
-            &copy; <span id="copyright-year"></span>
-            <script type="text/javascript">
-                current_year = new Date().getFullYear();
-                document.getElementById("copyright-year").innerHTML=current_year;
-            </script>
-            Alaska Satellite Facility
-          
-          <!-- ASF non-discrimination disclaimer-->
-          &nbsp;&nbsp;
-          <a href="https://www.alaska.edu/nondiscrimination"
-             target="_blank"
-             class="md-footer-copyright-link">
-            UA is an AA/EO employer and educational institution and prohibits
-            illegal discrimination against any individual
-          </a>
-        </div>
-      </div>
-
-      <!-- Social links -->
       <!--
-  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to
@@ -7554,79 +7802,161 @@ thresholding</p>
   IN THE SOFTWARE.
 -->
 
-<!-- Social links in footer -->
-<div class="md-footer-social">
+<!-- Adapted from https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/partials/copyright.html -->
+
+<!-- Copyright and theme information -->
+<div class="md-copyright">
+  <div class="md-copyright__highlight">
+    
+      &copy; <span id="copyright-year"></span>
+      <script type="text/javascript">
+          current_year = new Date().getFullYear();
+          document.getElementById("copyright-year").innerHTML=current_year;
+      </script>
+      Alaska Satellite Facility
+    
+    <!-- ASF non-discrimination disclaimer-->
+    &nbsp;&nbsp;
+    <a href="https://www.alaska.edu/nondiscrimination"
+       target="_blank"
+       class="md-copyright-link">
+      UA is an AA/EO employer and educational institution and prohibits
+      illegal discrimination against any individual
+    </a>
+  </div>
+</div>
+
+      <!-- Social links -->
+      <!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Adapted from https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/partials/social.html -->
+
+<!-- Social links -->
+<div class="md-social">
+  
+
+    <!-- Automatically set rel=me for Mastodon -->
+    
+    
+
+    <!-- Compute title and render link -->
+    
     
       
       
-        
-        
+    
+    <a
+      href="https://www.facebook.com/AKSatellite"
+      target="_blank" rel="noopener"
+      title="www.facebook.com"
+      class="md-social__link"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m279.14 288 14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+    </a>
+  
+
+    <!-- Automatically set rel=me for Mastodon -->
+    
+    
+
+    <!-- Compute title and render link -->
+    
+    
       
-      <a href="https://www.facebook.com/AKSatellite" target="_blank" rel="noopener" title="www.facebook.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
-      </a>
+      
+    
+    <a
+      href="https://twitter.com/Ak_Satellite"
+      target="_blank" rel="noopener"
+      title="twitter.com"
+      class="md-social__link"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+
+    <!-- Automatically set rel=me for Mastodon -->
+    
+    
+
+    <!-- Compute title and render link -->
+    
     
       
       
-        
-        
-      
-      <a href="https://twitter.com/Ak_Satellite" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
-      </a>
+    
+    <a
+      href="https://www.youtube.com/channel/UChCfI0oVWw4qDwEidnDskJQ"
+      target="_blank" rel="noopener"
+      title="www.youtube.com"
+      class="md-social__link"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+
+    <!-- Automatically set rel=me for Mastodon -->
+    
+    
+
+    <!-- Compute title and render link -->
+    
     
       
       
-        
-        
-      
-      <a href="https://www.youtube.com/channel/UChCfI0oVWw4qDwEidnDskJQ" target="_blank" rel="noopener" title="www.youtube.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
-      </a>
     
-    
-        
-          
-          
-            
-            
-          
-          <a
-            href="https://gitter.im/ASFHyP3/community"
-            target="_blank" rel="noopener"
-            title="gitter.im"
-            class="md-footer-social__link"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M66.4 322.5H16V0h50.4v322.5zM166.9 76.1h-50.4V512h50.4V76.1zm100.6 0h-50.4V512h50.4V76.1zM368 76h-50.4v247H368V76z"/></svg>
-          </a>
-        
-    
+    <a
+      href="https://gitter.im/ASFHyP3/community"
+      target="_blank" rel="noopener"
+      title="gitter.im"
+      class="md-social__link"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M66.4 322.5H16V0h50.4v322.5zM166.9 76.1h-50.4V512h50.4V76.1zm100.6 0h-50.4V512h50.4V76.1zM368 76h-50.4v247H368V76z"/></svg>
+    </a>
+  
 </div>
     </div>
   </div>
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer"], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/vendor.18f0862e.min.js"></script>
-      <script src="../../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing"}</script>
-      
-      <script>
-        app = initialize({
-          base: "../..",
-          features: ['navigation.instant'],
-          search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
-          }, typeof search !== "undefined" && search)
-        })
-      </script>
+    
+      <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../search/main.js"></script>
       
     
     <script src="../../assets/javascripts/expert-rec-search.js"></script>
