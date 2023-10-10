@@ -1516,13 +1516,13 @@ feedback.init({showIcon: false});
 <p>ASF uses DEMs that are publicly available and have wide-ranging coverage. In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. </p>
 <p>With the public release of the <a href="https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model" target="_blank" title="Copernicus DEM">GLO-30 Copernicus DEM</a>, we have changed our default DEM strategy to leverage a <a href="https://registry.opendata.aws/copernicus-dem/" target="_blank" title="https://registry.opendata.aws/copernicus-dem">cloud-hosted copy</a> of the global Copernicus DEM. This is now the default DEM for processing RTC products, and the only option available for processing InSAR products.</p>
 <p>Users still have the option to use the legacy DEMs when processing RTC jobs <a href="https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank" title="Vertex On Demand Documentation">On Demand in Vertex</a> and when using the <a href="https://hyp3-docs.asf.alaska.edu/using/api/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/api">API</a> or <a href="https://hyp3-docs.asf.alaska.edu/using/sdk/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/sdk">SDK</a>, but we recommend using the Copernicus DEM whenever possible.</p>
-<div class="admonition important">
+<div class="admonition tip">
 <p class="admonition-title">Deprecation of Legacy DEMs for RTC Processing</p>
 <p>We are considering eliminating the option to use our legacy DEM dataset (NED/SRTM) as a HyP3 processing option for RTC. We would value your feedback as we decide if we will make this change. How would you be impacted if the NED/SRTM DEM option was no longer available? Would it affect your current workflows? </p>
 <p>Please send your feedback to <a href="mailto:uso@asf.alaska.edu">uso@asf.alaska.edu</a>.</p>
 </div>
 <p>We use the 2022 Release of the <a href="https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model" target="_blank" title="Copernicus DEM">Copernicus GLO-30 Public DEM</a>, <a href="https://registry.opendata.aws/copernicus-dem/" target="_blank" title="Registry of Open Data on AWS - Copernicus DEM">available on AWS</a>. For more information, see the 'Releases' section of <a href="https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model" target="_blank" title="Copernicus DEM">this article</a>.</p>
-<div class="admonition important">
+<div class="admonition tip">
 <p class="admonition-title">Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90</p>
 <p>The Copernicus DEM GLO-30 dataset does not provide coverage over Armenia and Azerbaijan. In the past, we have not supported On Demand product generation over those areas, due to the lack of DEM coverage. We now use the Copernicus DEM GLO-90 to fill those gaps. </p>
 <p>The GLO-90 dataset has a pixel spacing of 90 meters, which is not as detailed as the 30-m pixel spacing in the GLO-30 DEM, but it does allow us to provide On Demand products in these regions, where they were previously unavailable. </p>
@@ -1595,7 +1595,7 @@ feedback.init({showIcon: false});
 <p><img alt="Figure 2" src="../images/cop-missing-100.png" title="Detail of area currently not covered by Copernicus DEM GLO-30. Jobs over this area will be filled with GLO-90." /></p>
 <p><em>Figure 2: Detail of area currently not covered by Copernicus DEM GLO-30. On Demand jobs requested over this area will use the Copernicus DEM GLO-90.</em></p>
 <h2 id="legacy-dems">Legacy DEMs<a class="headerlink" href="#legacy-dems" title="Permanent link">&para;</a></h2>
-<div class="admonition important">
+<div class="admonition tip">
 <p class="admonition-title">Deprecation of Legacy DEMs for RTC Processing</p>
 <p>We are considering eliminating the option to use our legacy DEM dataset (NED/SRTM) as a HyP3 processing option for RTC. We would value your feedback as we decide if we will make this change. How would you be impacted if the NED/SRTM DEM option was no longer available? Would it affect your current workflows? </p>
 <p>Please send your feedback to <a href="mailto:uso@asf.alaska.edu">uso@asf.alaska.edu</a>.</p>

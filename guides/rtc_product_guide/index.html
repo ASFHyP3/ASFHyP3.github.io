@@ -2360,13 +2360,13 @@ feedback.init({showIcon: false});
 <p>SAR datasets inherently contain <a href="#sar-distortions" title="Jump to SAR Distortions section of document">geometric and radiometric distortions</a> due to terrain being imaged by a side-looking instrument. <a href="#radiometric-terrain-correction-workflow" title="Jump to RTC Workflow section of document">Radiometric terrain correction</a> corrects these distortions and creates analysis-ready data suitable for use in GIS applications or time-series analysis. RTC processing is a required first step for many amplitude-based SAR applications.</p>
 <p>ASF's <a href="https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank" title="Vertex On Demand Tutorial">Sentinel-1 On-Demand RTC</a> products are generated using <a href="https://gamma-rs.ch/" target="_blank" title="https://gamma-rs.ch">GAMMA Software</a>. Products are distributed as GeoTIFFs (one for each available polarization) projected to the appropriate UTM Zone for the location of the scene.</p>
 <p>A Digital Elevation Model (DEM) is required for radiometric terrain correction. The <a href="https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model" target="_blank" title="Copernicus DEM">GLO-30 Copernicus DEM</a> is the default DEM used for processing RTC On Demand products. Refer to the <a href="#digital-elevation-models" title="Jump to the DEM Section of this document">Digital Elevation Model section</a> for more information. </p>
-<div class="admonition important">
+<div class="admonition tip">
 <p class="admonition-title">Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90</p>
 <p>The Copernicus DEM GLO-30 dataset does not provide coverage over Armenia and Azerbaijan. In the past, we have not supported On Demand product generation over those areas using the Copernicus DEM option. We now use the Copernicus DEM GLO-90 to fill those gaps. </p>
 <p>Users should be aware that the GLO-90 dataset has a pixel spacing of 90 meters, which is not as detailed as the 30-m pixel spacing in the GLO-30 DEM. </p>
 </div>
 <p>For a step-by-step tutorial on ordering On-Demand RTC Products using Vertex, visit our <a href="https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35" target="_blank" title="RTC On Demand! StoryMap">RTC On Demand! StoryMap</a>, which also includes links to sample workflows using Sentinel-1 RTC products for GIS applications.</p>
-<div class="admonition important">
+<div class="admonition tip">
 <p class="admonition-title">New RTC Pixel Spacing Option Available</p>
 <p>On Demand Sentinel-1 RTC products can now be processed at <a href="#pixel-spacing" target="_blank" title="RTC Pixel Spacing Documentation">20-m pixel spacing</a>. Refer to the <a href="#processing-options-and-optional-files" title="Jump to Processing Options section in document">Processing Options</a> section for more information.</p>
 </div>
@@ -2390,13 +2390,13 @@ feedback.init({showIcon: false});
 <p>The quality of the terrain corrections are related to the quality of the digital elevation models (DEMs) used in the process of geometrically and radiometrically correcting the SAR imagery. We use DEMs that are publicly available and have wide-ranging coverage. </p>
 <p>In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. With the public release of the <a href="https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model" target="_blank" title="Copernicus DEM">GLO-30 Copernicus DEM</a>, we have changed our default DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM. This is now the default DEM for processing RTC products, and the only option available for processing <a href="../insar_product_guide/" target="_blank" title="Sentinel-1 InSAR On Demand Product Guide">InSAR products</a>.</p>
 <p>Users still have the option to use the legacy DEMs when processing RTC jobs <a href="https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank" title="Vertex On Demand Documentation">On Demand in Vertex</a> and when using the <a href="https://hyp3-docs.asf.alaska.edu/using/api/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/api">API</a> or <a href="https://hyp3-docs.asf.alaska.edu/using/sdk/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/sdk">SDK</a>, but we recommend using the Copernicus DEM whenever possible.</p>
-<div class="admonition important">
+<div class="admonition tip">
 <p class="admonition-title">Deprecation of Legacy DEMs for RTC Processing</p>
 <p>We are considering eliminating the option to use our legacy DEM dataset (NED/SRTM) as a HyP3 processing option for RTC. We would value your feedback as we decide if we will make this change. How would you be impacted if the NED/SRTM DEM option was no longer available? Would it affect your current workflows? </p>
 <p>Please send your feedback to <a href="mailto:uso@asf.alaska.edu">uso@asf.alaska.edu</a>.</p>
 </div>
 <p>We use the 2022 Release of the <a href="https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model" target="_blank" title="Copernicus DEM">Copernicus GLO-30 Public DEM</a>, <a href="https://registry.opendata.aws/copernicus-dem/" target="_blank" title="Registry of Open Data on AWS - Copernicus DEM">available on AWS</a>. For more information, see the 'Releases' section of <a href="https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model" target="_blank" title="Copernicus DEM">this article</a>.</p>
-<div class="admonition important">
+<div class="admonition tip">
 <p class="admonition-title">Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90</p>
 <p>The Copernicus DEM GLO-30 dataset does not provide coverage over Armenia and Azerbaijan. In the past, we have not supported On Demand product generation over those areas using the Copernicus DEM option. We now use the Copernicus DEM GLO-90 to fill those gaps. </p>
 <p>Users should be aware that the GLO-90 dataset has a pixel spacing of 90 meters, which is not as detailed as the 30-m pixel spacing in the GLO-30 DEM. </p>
@@ -2468,7 +2468,7 @@ feedback.init({showIcon: false});
 <p><img alt="Figure 3" src="../../images/cop-missing-100.png" title="Detail of area currently not covered by Copernicus DEM GLO-30. Jobs over this area will be filled with GLO-90 tiles." /></p>
 <p><em>Figure 3: Detail of area currently not covered by Copernicus DEM GLO-30. On Demand jobs requested over this area will use the Copernicus DEM GLO-90.</em></p>
 <h3 id="legacy-dems">Legacy DEMs<a class="headerlink" href="#legacy-dems" title="Permanent link">&para;</a></h3>
-<div class="admonition important">
+<div class="admonition tip">
 <p class="admonition-title">Deprecation of Legacy DEMs for RTC Processing</p>
 <p>We are considering eliminating the option to use our legacy DEM dataset (NED/SRTM) as a HyP3 processing option for RTC. We would value your feedback as we decide if we will make this change. How would you be impacted if the NED/SRTM DEM option was no longer available? Would it affect your current workflows? </p>
 <p>Please send your feedback to <a href="mailto:uso@asf.alaska.edu">uso@asf.alaska.edu</a>.</p>
@@ -2487,7 +2487,7 @@ feedback.init({showIcon: false});
 <p><img alt="Figure 4" src="../../images/dem-coverage-map.png" title="Coverage of the various legacy DEM sources used for terrain correction" /></p>
 <p><em>Figure 4: Coverage of the various legacy DEM sources used for terrain correction</em></p>
 <h2 id="pixel-spacing">Pixel Spacing<a class="headerlink" href="#pixel-spacing" title="Permanent link">&para;</a></h2>
-<div class="admonition important">
+<div class="admonition tip">
 <p class="admonition-title">On Demand Sentinel-1 RTC now available at 10-m and 20-m pixel spacing</p>
 <p>There are now three pixel spacing options available for On Demand Sentinel-1 RTC products. Users can choose to output the RTC products at a pixel spacing of 30, 20, or 10 meters.</p>
 </div>
@@ -2903,7 +2903,7 @@ feedback.init({showIcon: false});
 </table>
 <p><em>Table 6: Shapefile files and their extensions</em></p>
 <h2 id="sar-scales">SAR Scales<a class="headerlink" href="#sar-scales" title="Permanent link">&para;</a></h2>
-<div class="admonition important">
+<div class="admonition tip">
 <p class="admonition-title">On Demand Sentinel-1 RTC Products now available in dB scale</p>
 <p>Users can now choose to output Sentinel-1 RTC products in decibel (dB) scale. Previously, the only choices for output scale were power and amplitude. The default scale continues to be power.</p>
 </div>

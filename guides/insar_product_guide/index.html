@@ -2304,7 +2304,7 @@ feedback.init({showIcon: false});
 <p>This process requires <a href="https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1/single-look-complex/interferometric-wide-swath" target="_blank" title="https://sentinels.copernicus.eu">Sentinel-1 IW SLC products</a> as input. Input pairs can be selected in <a href="https://search.asf.alaska.edu/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a> using either the <a href="https://docs.asf.alaska.edu/vertex/baseline/" target="_blank" title="https://docs.asf.alaska.edu/vertex/baseline/">Baseline Tool</a> or the <a href="https://docs.asf.alaska.edu/vertex/sbas/" target="_blank" title="https://docs.asf.alaska.edu/vertex/sbas">SBAS Tool</a> search interfaces. </p>
 <p>For a step-by-step tutorial on ordering On-Demand InSAR Products using Vertex, visit our <a href="https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3" target="_blank" title="InSAR On Demand! https://arcg.is/eiP8G0">InSAR On Demand! StoryMap</a>. To learn more about the files included in the On Demand InSAR product packages and how to work with them, refer to our <a href="https://storymaps.arcgis.com/stories/8be186e4125741518118d0102e6835e5" target="_blank" title="Exploring Sentinel-1 InSAR https://arcg.is/11DaW90">Exploring Sentinel-1 InSAR StoryMap</a>.</p>
 <p>InSAR processing requires a Digital Elevation Model (DEM) for the removal of topographic phase. We use the <a href="https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model" target="_blank" title="Copernicus DEM">GLO-30 Copernicus DEM</a> when processing our On Demand InSAR products. Refer to the <a href="#prepare-the-dem-file" title="Jump to the Prepare the DEM File Section of this document">Prepare the DEM File section</a> for more information. </p>
-<div class="admonition important">
+<div class="admonition tip">
 <p class="admonition-title">Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90</p>
 <p>The Copernicus DEM GLO-30 dataset does not provide coverage over Armenia and Azerbaijan. In the past, we have not supported InSAR product generation over those areas, due to the lack of DEM coverage. We now use the Copernicus DEM GLO-90 to fill those gaps. </p>
 <p>The GLO-90 dataset has a pixel spacing of 90 meters, which is not as detailed as the 30-m pixel spacing in the GLO-30 DEM, but it does allow us to provide InSAR products in these regions, where they were previously unavailable. </p>
@@ -2393,12 +2393,12 @@ feedback.init({showIcon: false});
 </ol>
 <p>To analyze deformation caused by a single discrete event, such as an earthquake, select images that bracket the event as closely in time as possible. Keeping the window narrowly focused on the time of the event will reduce the impacts of other processes that may mask the signal of the event of interest.</p>
 <h3 id="processing-options">Processing Options<a class="headerlink" href="#processing-options" title="Permanent link">&para;</a></h3>
-<div class="admonition important">
+<div class="admonition tip">
 <p class="admonition-title">New Water Masking Approach</p>
 <p>InSAR products can be phase unwrapped using a water mask. The option to "Apply water mask" sets pixels over coastal waters and large inland waterbodies as invalid for phase unwrapping. This reduces phase unwrapping errors and outputs a less noisy unwrapped interferogram.</p>
 <p>As of September 27, 2022, the water mask used for this option is no longer buffered. The original water mask had a 3 km buffer on coastlines and a 5 km buffer on the shorelines of inland waterbodies. This was to reduce the chance that valid land pixels would be excluded from phase unwrapping, but it appears that the inclusion of more water pixels is more detrimental to phase unwrapping than the exclusion of some land pixels. Visit our <a href="https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb" target="_blank" title="InSAR Water Masking StoryMap">InSAR Water Masking Tutorial</a> for more information.</p>
 </div>
-<div class="admonition important">
+<div class="admonition tip">
 <p class="admonition-title">Change in Displacement Map Options</p>
 <p>There is now a single option for including displacement maps. Both line-of-sight and vertical displacement maps will only be added to the product package if the option to "Include Displacement Maps" is selected when submitting On-Demand InSAR jobs. Use caution when referencing the values included in the displacement maps, as the values are calculated relative to an arbitrary reference point. Refer to the <a href="#phase-unwrapping-reference-point" title="Jump to Phase Unwrapping Reference Point part of the Limitations section in this document">Phase Unwrapping Reference Point</a> section for more information. </p>
 </div>
@@ -2470,7 +2470,7 @@ feedback.init({showIcon: false});
 <h4 id="masking">Masking<a class="headerlink" href="#masking" title="Permanent link">&para;</a></h4>
 <p>Another step before unwrapping is to create a validity mask to guide the phase unwrapping process. This mask is generated by applying thresholds to the coherence and/or amplitude (backscatter intensity) values for an image pair. For On Demand InSAR products, we set the amplitude threshold to be 0.0 (in power scale), so that data is only excluded based on the coherence threshold.</p>
 <p>Coherence is estimated from the normalized interferogram. The pixel values in this file range from 0.0 (total decorrelation) to 1.0 (perfectly coherent). Any input pixel with a coherence value less than 0.1 is given a validity mask value of zero and not used during unwrapping.</p>
-<div class="admonition important">
+<div class="admonition tip">
 <p class="admonition-title">Change to Validity Mask Thresholds</p>
 <p>In the past, we also used an amplitude threshold of 0.2 (in power scale) when generating the validity mask. While this approach tends to mask out inland waters, providing a less noisy interferogram in some cases, it also masks arid regions that have low amplitude values but reasonably high coherence. As of March 2022, we have set the amplitude threshold to 0.0, so that coherence is the only driver of the validity mask.</p>
 </div>
