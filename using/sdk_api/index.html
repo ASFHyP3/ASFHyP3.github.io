@@ -92,7 +92,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#hyp3_sdk-v300-api-reference" class="md-skip">
+        <a href="#hyp3_sdk-v310-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -2127,7 +2127,7 @@ feedback.init({showIcon: false});
                   
 
 
-<h1 id="hyp3_sdk-v300-api-reference"><code>hyp3_sdk</code> <em>v3.0.0</em> API Reference<a class="headerlink" href="#hyp3_sdk-v300-api-reference" title="Permanent link">&para;</a></h1>
+<h1 id="hyp3_sdk-v310-api-reference"><code>hyp3_sdk</code> <em>v3.1.0</em> API Reference<a class="headerlink" href="#hyp3_sdk-v310-api-reference" title="Permanent link">&para;</a></h1>
 
 
 <div class="doc doc-object doc-module">
@@ -3295,7 +3295,18 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 <span class="normal">426</span>
 <span class="normal">427</span>
 <span class="normal">428</span>
-<span class="normal">429</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">HyP3</span><span class="p">:</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">HyP3</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A python wrapper around the HyP3 API.</span>
 
 <span class="sd">    Warning: All jobs submitted to HyP3 are publicly visible. For more information, see</span>
@@ -3614,7 +3625,8 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
                          <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                          <span class="n">include_wrapped_phase</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                          <span class="n">apply_water_mask</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                         <span class="n">include_displacement_maps</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+                         <span class="n">include_displacement_maps</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                         <span class="n">phase_filter_parameter</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
 
 <span class="sd">        Args:</span>
@@ -3632,6 +3644,10 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 <span class="sd">            apply_water_mask: Sets pixels over coastal waters and large inland waterbodies</span>
 <span class="sd">                as invalid for phase unwrapping</span>
 <span class="sd">            include_displacement_maps: Include displacement maps (line-of-sight and vertical) in the product package</span>
+<span class="sd">            phase_filter_parameter: Adaptive phase filter parameter.</span>
+<span class="sd">                Useful values fall in the range 0.2 to 1.</span>
+<span class="sd">                Larger values result in stronger filtering.</span>
+<span class="sd">                If zero, adaptive phase filter will be skipped.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            A Batch object containing the InSAR job</span>
@@ -3653,7 +3669,8 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
                           <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                           <span class="n">include_wrapped_phase</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                           <span class="n">apply_water_mask</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                          <span class="n">include_displacement_maps</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+                          <span class="n">include_displacement_maps</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                          <span class="n">phase_filter_parameter</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
 
 <span class="sd">        Args:</span>
@@ -3671,6 +3688,11 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 <span class="sd">            apply_water_mask: Sets pixels over coastal waters and large inland waterbodies</span>
 <span class="sd">                as invalid for phase unwrapping</span>
 <span class="sd">            include_displacement_maps: Include displacement maps (line-of-sight and vertical) in the product package</span>
+<span class="sd">            phase_filter_parameter: Adaptive phase filter parameter.</span>
+<span class="sd">                Useful values fall in the range 0.2 to 1.</span>
+<span class="sd">                Larger values result in stronger filtering.</span>
+<span class="sd">                If zero, adaptive phase filter will be skipped.</span>
+
 <span class="sd">        Returns:</span>
 <span class="sd">            A dictionary containing the prepared InSAR job</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -3904,13 +3926,13 @@ are not provided as keyword parameters</p>
 
           <details class="quote">
             <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">423</span>
-<span class="normal">424</span>
-<span class="normal">425</span>
-<span class="normal">426</span>
-<span class="normal">427</span>
-<span class="normal">428</span>
-<span class="normal">429</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">check_quota</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">check_quota</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns:</span>
 <span class="sd">        The number of jobs left in your quota, or None if you have no quota</span>
@@ -4298,14 +4320,14 @@ are not provided as keyword parameters</p>
 
           <details class="quote">
             <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">414</span>
-<span class="normal">415</span>
-<span class="normal">416</span>
-<span class="normal">417</span>
-<span class="normal">418</span>
-<span class="normal">419</span>
-<span class="normal">420</span>
-<span class="normal">421</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">my_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">425</span>
+<span class="normal">426</span>
+<span class="normal">427</span>
+<span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">my_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns:</span>
 <span class="sd">        Your user information</span>
@@ -4473,7 +4495,7 @@ are not provided as keyword parameters</p>
 
 
 <h4 id="hyp3_sdk.HyP3.prepare_insar_job" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">prepare_insar_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_wrapped_phase</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">apply_water_mask</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_displacement_maps</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">prepare_insar_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_wrapped_phase</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">apply_water_mask</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_displacement_maps</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">phase_filter_parameter</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
@@ -4656,19 +4678,53 @@ as invalid for phase unwrapping</p>
                 <code>False</code>
           </td>
         </tr>
+        <tr>
+          <td><code>phase_filter_parameter</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Adaptive phase filter parameter.
+Useful values fall in the range 0.2 to 1.
+Larger values result in stronger filtering.
+If zero, adaptive phase filter will be skipped.</p>
+            </div>
+          </td>
+          <td>
+                <code>0.6</code>
+          </td>
+        </tr>
     </tbody>
   </table>
-      <p>Returns:
-    A dictionary containing the prepared InSAR job</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A dictionary containing the prepared InSAR job</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
           <details class="quote">
             <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">365</span>
-<span class="normal">366</span>
-<span class="normal">367</span>
-<span class="normal">368</span>
-<span class="normal">369</span>
-<span class="normal">370</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">370</span>
 <span class="normal">371</span>
 <span class="normal">372</span>
 <span class="normal">373</span>
@@ -4710,7 +4766,18 @@ as invalid for phase unwrapping</p>
 <span class="normal">409</span>
 <span class="normal">410</span>
 <span class="normal">411</span>
-<span class="normal">412</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">prepare_insar_job</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span>
                       <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                       <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -4722,7 +4789,8 @@ as invalid for phase unwrapping</p>
                       <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                       <span class="n">include_wrapped_phase</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                       <span class="n">apply_water_mask</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                      <span class="n">include_displacement_maps</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+                      <span class="n">include_displacement_maps</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                      <span class="n">phase_filter_parameter</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
 
 <span class="sd">    Args:</span>
@@ -4740,6 +4808,11 @@ as invalid for phase unwrapping</p>
 <span class="sd">        apply_water_mask: Sets pixels over coastal waters and large inland waterbodies</span>
 <span class="sd">            as invalid for phase unwrapping</span>
 <span class="sd">        include_displacement_maps: Include displacement maps (line-of-sight and vertical) in the product package</span>
+<span class="sd">        phase_filter_parameter: Adaptive phase filter parameter.</span>
+<span class="sd">            Useful values fall in the range 0.2 to 1.</span>
+<span class="sd">            Larger values result in stronger filtering.</span>
+<span class="sd">            If zero, adaptive phase filter will be skipped.</span>
+
 <span class="sd">    Returns:</span>
 <span class="sd">        A dictionary containing the prepared InSAR job</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -5335,7 +5408,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
 
 
 <h4 id="hyp3_sdk.HyP3.submit_insar_job" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">submit_insar_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_wrapped_phase</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">apply_water_mask</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_displacement_maps</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">submit_insar_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_wrapped_phase</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">apply_water_mask</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_displacement_maps</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">phase_filter_parameter</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span></code>
 
 <a href="#hyp3_sdk.HyP3.submit_insar_job" class="headerlink" title="Permanent link">&para;</a></h4>
 
@@ -5514,6 +5587,23 @@ as invalid for phase unwrapping</p>
                 <code>False</code>
           </td>
         </tr>
+        <tr>
+          <td><code>phase_filter_parameter</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Adaptive phase filter parameter.
+Useful values fall in the range 0.2 to 1.
+Larger values result in stronger filtering.
+If zero, adaptive phase filter will be skipped.</p>
+            </div>
+          </td>
+          <td>
+                <code>0.6</code>
+          </td>
+        </tr>
     </tbody>
   </table>
 
@@ -5579,7 +5669,12 @@ as invalid for phase unwrapping</p>
 <span class="normal">360</span>
 <span class="normal">361</span>
 <span class="normal">362</span>
-<span class="normal">363</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">submit_insar_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">submit_insar_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                      <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                      <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                      <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -5590,7 +5685,8 @@ as invalid for phase unwrapping</p>
                      <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                      <span class="n">include_wrapped_phase</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                      <span class="n">apply_water_mask</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                     <span class="n">include_displacement_maps</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+                     <span class="n">include_displacement_maps</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                     <span class="n">phase_filter_parameter</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
 
 <span class="sd">    Args:</span>
@@ -5608,6 +5704,10 @@ as invalid for phase unwrapping</p>
 <span class="sd">        apply_water_mask: Sets pixels over coastal waters and large inland waterbodies</span>
 <span class="sd">            as invalid for phase unwrapping</span>
 <span class="sd">        include_displacement_maps: Include displacement maps (line-of-sight and vertical) in the product package</span>
+<span class="sd">        phase_filter_parameter: Adaptive phase filter parameter.</span>
+<span class="sd">            Useful values fall in the range 0.2 to 1.</span>
+<span class="sd">            Larger values result in stronger filtering.</span>
+<span class="sd">            If zero, adaptive phase filter will be skipped.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A Batch object containing the InSAR job</span>
@@ -7257,7 +7357,18 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 <span class="normal">426</span>
 <span class="normal">427</span>
 <span class="normal">428</span>
-<span class="normal">429</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">HyP3</span><span class="p">:</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">HyP3</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A python wrapper around the HyP3 API.</span>
 
 <span class="sd">    Warning: All jobs submitted to HyP3 are publicly visible. For more information, see</span>
@@ -7576,7 +7687,8 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
                          <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                          <span class="n">include_wrapped_phase</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                          <span class="n">apply_water_mask</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                         <span class="n">include_displacement_maps</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+                         <span class="n">include_displacement_maps</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                         <span class="n">phase_filter_parameter</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
 
 <span class="sd">        Args:</span>
@@ -7594,6 +7706,10 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 <span class="sd">            apply_water_mask: Sets pixels over coastal waters and large inland waterbodies</span>
 <span class="sd">                as invalid for phase unwrapping</span>
 <span class="sd">            include_displacement_maps: Include displacement maps (line-of-sight and vertical) in the product package</span>
+<span class="sd">            phase_filter_parameter: Adaptive phase filter parameter.</span>
+<span class="sd">                Useful values fall in the range 0.2 to 1.</span>
+<span class="sd">                Larger values result in stronger filtering.</span>
+<span class="sd">                If zero, adaptive phase filter will be skipped.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            A Batch object containing the InSAR job</span>
@@ -7615,7 +7731,8 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
                           <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                           <span class="n">include_wrapped_phase</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                           <span class="n">apply_water_mask</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                          <span class="n">include_displacement_maps</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+                          <span class="n">include_displacement_maps</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                          <span class="n">phase_filter_parameter</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
 
 <span class="sd">        Args:</span>
@@ -7633,6 +7750,11 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 <span class="sd">            apply_water_mask: Sets pixels over coastal waters and large inland waterbodies</span>
 <span class="sd">                as invalid for phase unwrapping</span>
 <span class="sd">            include_displacement_maps: Include displacement maps (line-of-sight and vertical) in the product package</span>
+<span class="sd">            phase_filter_parameter: Adaptive phase filter parameter.</span>
+<span class="sd">                Useful values fall in the range 0.2 to 1.</span>
+<span class="sd">                Larger values result in stronger filtering.</span>
+<span class="sd">                If zero, adaptive phase filter will be skipped.</span>
+
 <span class="sd">        Returns:</span>
 <span class="sd">            A dictionary containing the prepared InSAR job</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -7866,13 +7988,13 @@ are not provided as keyword parameters</p>
 
           <details class="quote">
             <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">423</span>
-<span class="normal">424</span>
-<span class="normal">425</span>
-<span class="normal">426</span>
-<span class="normal">427</span>
-<span class="normal">428</span>
-<span class="normal">429</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">check_quota</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">check_quota</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns:</span>
 <span class="sd">        The number of jobs left in your quota, or None if you have no quota</span>
@@ -8260,14 +8382,14 @@ are not provided as keyword parameters</p>
 
           <details class="quote">
             <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">414</span>
-<span class="normal">415</span>
-<span class="normal">416</span>
-<span class="normal">417</span>
-<span class="normal">418</span>
-<span class="normal">419</span>
-<span class="normal">420</span>
-<span class="normal">421</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">my_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">425</span>
+<span class="normal">426</span>
+<span class="normal">427</span>
+<span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">my_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns:</span>
 <span class="sd">        Your user information</span>
@@ -8435,7 +8557,7 @@ are not provided as keyword parameters</p>
 
 
 <h5 id="hyp3_sdk.hyp3.HyP3.prepare_insar_job" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">prepare_insar_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_wrapped_phase</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">apply_water_mask</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_displacement_maps</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">prepare_insar_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_wrapped_phase</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">apply_water_mask</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_displacement_maps</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">phase_filter_parameter</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
@@ -8618,19 +8740,53 @@ as invalid for phase unwrapping</p>
                 <code>False</code>
           </td>
         </tr>
+        <tr>
+          <td><code>phase_filter_parameter</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Adaptive phase filter parameter.
+Useful values fall in the range 0.2 to 1.
+Larger values result in stronger filtering.
+If zero, adaptive phase filter will be skipped.</p>
+            </div>
+          </td>
+          <td>
+                <code>0.6</code>
+          </td>
+        </tr>
     </tbody>
   </table>
-      <p>Returns:
-    A dictionary containing the prepared InSAR job</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A dictionary containing the prepared InSAR job</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
 
           <details class="quote">
             <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">365</span>
-<span class="normal">366</span>
-<span class="normal">367</span>
-<span class="normal">368</span>
-<span class="normal">369</span>
-<span class="normal">370</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">370</span>
 <span class="normal">371</span>
 <span class="normal">372</span>
 <span class="normal">373</span>
@@ -8672,7 +8828,18 @@ as invalid for phase unwrapping</p>
 <span class="normal">409</span>
 <span class="normal">410</span>
 <span class="normal">411</span>
-<span class="normal">412</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span> <span class="nf">prepare_insar_job</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span>
                       <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                       <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -8684,7 +8851,8 @@ as invalid for phase unwrapping</p>
                       <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                       <span class="n">include_wrapped_phase</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                       <span class="n">apply_water_mask</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                      <span class="n">include_displacement_maps</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+                      <span class="n">include_displacement_maps</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                      <span class="n">phase_filter_parameter</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
 
 <span class="sd">    Args:</span>
@@ -8702,6 +8870,11 @@ as invalid for phase unwrapping</p>
 <span class="sd">        apply_water_mask: Sets pixels over coastal waters and large inland waterbodies</span>
 <span class="sd">            as invalid for phase unwrapping</span>
 <span class="sd">        include_displacement_maps: Include displacement maps (line-of-sight and vertical) in the product package</span>
+<span class="sd">        phase_filter_parameter: Adaptive phase filter parameter.</span>
+<span class="sd">            Useful values fall in the range 0.2 to 1.</span>
+<span class="sd">            Larger values result in stronger filtering.</span>
+<span class="sd">            If zero, adaptive phase filter will be skipped.</span>
+
 <span class="sd">    Returns:</span>
 <span class="sd">        A dictionary containing the prepared InSAR job</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -9297,7 +9470,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
 
 
 <h5 id="hyp3_sdk.hyp3.HyP3.submit_insar_job" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">submit_insar_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_wrapped_phase</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">apply_water_mask</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_displacement_maps</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+          <code class="highlight language-python"><span class="n">submit_insar_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_wrapped_phase</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">apply_water_mask</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_displacement_maps</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">phase_filter_parameter</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span></code>
 
 <a href="#hyp3_sdk.hyp3.HyP3.submit_insar_job" class="headerlink" title="Permanent link">&para;</a></h5>
 
@@ -9476,6 +9649,23 @@ as invalid for phase unwrapping</p>
                 <code>False</code>
           </td>
         </tr>
+        <tr>
+          <td><code>phase_filter_parameter</code></td>
+          <td>
+                <code>float</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Adaptive phase filter parameter.
+Useful values fall in the range 0.2 to 1.
+Larger values result in stronger filtering.
+If zero, adaptive phase filter will be skipped.</p>
+            </div>
+          </td>
+          <td>
+                <code>0.6</code>
+          </td>
+        </tr>
     </tbody>
   </table>
 
@@ -9541,7 +9731,12 @@ as invalid for phase unwrapping</p>
 <span class="normal">360</span>
 <span class="normal">361</span>
 <span class="normal">362</span>
-<span class="normal">363</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">submit_insar_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">submit_insar_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                      <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                      <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                      <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -9552,7 +9747,8 @@ as invalid for phase unwrapping</p>
                      <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                      <span class="n">include_wrapped_phase</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                      <span class="n">apply_water_mask</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                     <span class="n">include_displacement_maps</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+                     <span class="n">include_displacement_maps</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                     <span class="n">phase_filter_parameter</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
 
 <span class="sd">    Args:</span>
@@ -9570,6 +9766,10 @@ as invalid for phase unwrapping</p>
 <span class="sd">        apply_water_mask: Sets pixels over coastal waters and large inland waterbodies</span>
 <span class="sd">            as invalid for phase unwrapping</span>
 <span class="sd">        include_displacement_maps: Include displacement maps (line-of-sight and vertical) in the product package</span>
+<span class="sd">        phase_filter_parameter: Adaptive phase filter parameter.</span>
+<span class="sd">            Useful values fall in the range 0.2 to 1.</span>
+<span class="sd">            Larger values result in stronger filtering.</span>
+<span class="sd">            If zero, adaptive phase filter will be skipped.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A Batch object containing the InSAR job</span>
