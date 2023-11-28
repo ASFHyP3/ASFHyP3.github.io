@@ -16,6 +16,10 @@
         <link rel="canonical" href="https://hyp3-docs.asf.alaska.edu/guides/burst_insar_product_guide/">
       
       
+        <link rel="prev" href="./">
+      
+      
+        <link rel="next" href="../../usage_guidelines/">
       
       
       <link rel="icon" href="../../assets/images/favicon.ico">
@@ -23,7 +27,7 @@
     
     
       
-        <title>Burst insar product guide - HyP3</title>
+        <title>Product Guide - HyP3</title>
       
     
     
@@ -178,7 +182,7 @@ feedback.init({showIcon: false});
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Burst insar product guide
+              Product Guide
             
           </span>
         </div>
@@ -513,18 +517,20 @@ feedback.init({showIcon: false});
       
   
   
+    
+  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           
@@ -546,7 +552,7 @@ feedback.init({showIcon: false});
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Products
@@ -744,6 +750,493 @@ feedback.init({showIcon: false});
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Burst InSAR
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Burst InSAR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Product Guide
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Product Guide
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sentinel-1-bursts" class="md-nav__link">
+    Sentinel-1 Bursts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#burst-insar-processing" class="md-nav__link">
+    Burst InSAR Processing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-sentinel-1-burst-insar" class="md-nav__link">
+    Using Sentinel-1 Burst InSAR
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brief-overview-of-insar" class="md-nav__link">
+    Brief Overview of InSAR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wavelengths" class="md-nav__link">
+    Wavelengths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polarizations" class="md-nav__link">
+    Polarizations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baselines" class="md-nav__link">
+    Baselines
+  </a>
+  
+    <nav class="md-nav" aria-label="Baselines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perpendicular-baseline" class="md-nav__link">
+    Perpendicular Baseline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporal-baseline" class="md-nav__link">
+    Temporal Baseline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-baseline" class="md-nav__link">
+    Critical Baseline
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ordering-on-demand-insar-products" class="md-nav__link">
+    Ordering On Demand InSAR Products
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordering On Demand InSAR Products">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vertex" class="md-nav__link">
+    Vertex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3-sdk-and-api" class="md-nav__link">
+    HyP3 SDK and API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#considerations-for-selecting-an-insar-pair" class="md-nav__link">
+    Considerations for Selecting an InSAR Pair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-options" class="md-nav__link">
+    Processing Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#burst-insar-workflow" class="md-nav__link">
+    Burst InSAR Workflow
+  </a>
+  
+    <nav class="md-nav" aria-label="Burst InSAR Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-processing" class="md-nav__link">
+    Pre-Processing
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-bursts" class="md-nav__link">
+    Download Bursts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-the-dem-file" class="md-nav__link">
+    Download the DEM File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-orbit-files-and-calibration-auxiliary-data-files" class="md-nav__link">
+    Download Orbit Files and Calibration Auxiliary Data Files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insar-processing" class="md-nav__link">
+    InSAR Processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-processing" class="md-nav__link">
+    Post-Processing
+  </a>
+  
+    <nav class="md-nav" aria-label="Post-Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apply-water-mask" class="md-nav__link">
+    Apply Water Mask
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#product-creation" class="md-nav__link">
+    Product Creation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-packaging" class="md-nav__link">
+    Product Packaging
+  </a>
+  
+    <nav class="md-nav" aria-label="Product Packaging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-convention" class="md-nav__link">
+    Naming Convention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-files" class="md-nav__link">
+    Image Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-files" class="md-nav__link">
+    Metadata Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Metadata Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#readme-file" class="md-nav__link">
+    README File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insar-parameter-file" class="md-nav__link">
+    InSAR Parameter File
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    Limitations
+  </a>
+  
+    <nav class="md-nav" aria-label="Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baseline-calculation" class="md-nav__link">
+    Baseline Calculation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coherence" class="md-nav__link">
+    Coherence
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#line-of-sight-measurements" class="md-nav__link">
+    Line-of-Sight Measurements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-unwrapping-reference-point" class="md-nav__link">
+    Phase Unwrapping Reference Point
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase Unwrapping Reference Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#displacement-values-from-a-single-interferogram" class="md-nav__link">
+    Displacement Values from a Single Interferogram
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-sources" class="md-nav__link">
+    Error Sources
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Sources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atmospheric-delay" class="md-nav__link">
+    Atmospheric Delay
+  </a>
+  
+    <nav class="md-nav" aria-label="Atmospheric Delay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#turbulent-delay" class="md-nav__link">
+    Turbulent Delay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stratified-delay" class="md-nav__link">
+    Stratified Delay
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dem-errors" class="md-nav__link">
+    DEM Errors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orbit-uncertainties" class="md-nav__link">
+    Orbit Uncertainties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1798,13 +2291,23 @@ feedback.init({showIcon: false});
 
 <h1 id="sentinel-1-burst-insar-product-guide">Sentinel-1 Burst InSAR Product Guide<a class="headerlink" href="#sentinel-1-burst-insar-product-guide" title="Permanent link">&para;</a></h1>
 <p>This document is a guide for users of Sentinel-1 Burst Interferometric Synthetic Aperture Radar (InSAR) products generated by the Alaska Satellite Facility (ASF). </p>
+<div class="admonition tip">
+<p class="admonition-title">Burst-based InSAR available for Sentinel-1 using HyP3 API and SDK</p>
+<p>Users are now able to process burst-based Sentinel-1 InSAR products on demand using ISCE2 software!  </p>
+<p>This functionality is currently only available through the <a href="../../using/api/" target="_blank">HyP3 API</a> and <a href="../../using/sdk/" target="_blank">Python SDK</a>, but is coming soon to <a href="https://search.asf.alaska.edu/" title="https://search.asf.alaska.edu/">Vertex</a>!</p>
+</div>
 <h3 id="sentinel-1-bursts">Sentinel-1 Bursts<a class="headerlink" href="#sentinel-1-bursts" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Sentinel-1 bursts are not available for all SLC granules</p>
+<p><strong>Burst products only are available for Sentinel-1 granules collected after June 9th, 2023.</strong> </p>
+<p>ASF is currently only forward-populating burst products, which means that burst products are only available for Sentinel-1 granules collected after June 9th, 2023. If this affects your ability to utilize burst products to perform your analyses, please <a href="mailto:uso@asf.alaska.edu" title="uso@asf.alaska.edu">Email ASF User Services</a>, and we will try to populate burst products for your region and time period of interest.</p>
+</div>
 <p>Single Look Complex (SLC) data from the Sentinel-1 mission that is suitable for use in interferometry has historically been packaged into Interferometric Wide (IW) SLC products. These IW SLC products include three sub-swaths, each containing many individual burst SLCs. The framing of the IW SLCs is not consistent through time, so when using IW SLCs as the basis for InSAR, scene pairs do not always fully overlap. </p>
 <p>In contrast, working at the burst level of the Sentinel-1 SLC data provides a couple key benefits: </p>
 <p><strong>1. Bursts are consistently geolocated through time</strong><br />
 The coverage of a burst is the same for every orbit of the satellite, so you can be confident that every burst with the same <a href="https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8#ref-n-VYIiUe" target="_blank" title="Sentinel-1 Burst Overview https://arcg.is/zSafi0">Full Burst ID</a> in a stack of acquisitions will cover the same geographic location. </p>
 <p><strong>2. Bursts cover a smaller geographic area</strong><br />
-IW SLC products are extremely large, and in many cases, only a small portion of the image is of interest. You can process only the bursts that cover your specific area of interest, which significantly decreases the time and cost required to generate InSAR products.</p>
+IW SLC products are extremely large, and, in many cases, only a small portion of the image is of interest. You can process only the bursts that cover your specific area of interest, which significantly decreases the time and cost required to generate InSAR products.</p>
 <p>Refer to the <a href="https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8" target="_blank" title="Sentinel-1 Bursts Tutorial https://arcg.is/zSafi0">Sentinel-1 Bursts tutorial</a> to learn more about how <a href="https://sentinel1-burst-documentation.asf.alaska.edu/" target="_blank" title="ASF Sentinel-1 Burst Documentation">ASF extracts burst-level products</a> from Sentinel-1 IW and EW SLCs.</p>
 <h3 id="burst-insar-processing">Burst InSAR Processing<a class="headerlink" href="#burst-insar-processing" title="Permanent link">&para;</a></h3>
 <p>The Sentinel-1 Burst InSAR products are generated using the Jet Propulsion Laboratory's <a href="https://github.com/isce-framework/isce2#readme" target="_blank" title="https://github.com/isce-framework/isce2">ISCE2 software</a>. ASF is committed to transparency in product development, and we are pleased to be able to offer an InSAR product that leverages open-source software for processing. </p>
@@ -1872,12 +2375,12 @@ IW SLC products are extremely large, and in many cases, only a small portion of 
 <h2 id="ordering-on-demand-insar-products">Ordering On Demand InSAR Products<a class="headerlink" href="#ordering-on-demand-insar-products" title="Permanent link">&para;</a></h2>
 <p>All of ASF's On Demand InSAR products are generated using ASF's HyP3 platform. Jobs can be submitted for processing using the <a href="https://search.asf.alaska.edu/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a> data portal, the <a href="https://hyp3-docs.asf.alaska.edu/using/sdk/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/sdk">HyP3 Python SDK</a> or the <a href="https://hyp3-docs.asf.alaska.edu/using/api/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/api">HyP3 API</a>.</p>
 <h3 id="vertex">Vertex<a class="headerlink" href="#vertex" title="Permanent link">&para;</a></h3>
-<p>InSAR pairs are selected in <a href="https://search.asf.alaska.edu/#/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a> using either the <a href="https://docs.asf.alaska.edu/vertex/baseline/" target="_blank" title="https://docs.asf.alaska.edu/vertex/baseline">Baseline Search</a> or the <a href="https://docs.asf.alaska.edu/vertex/sbas/" target="_blank" title="https://docs.asf.alaska.edu/vertex/sbas">SBAS Search</a> interface.</p>
+<p>InSAR pairs are selected in <a href="https://search.asf.alaska.edu/#/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a> using either the <a href="https://docs.asf.alaska.edu/vertex/baseline/" target="_blank" title="https://docs.asf.alaska.edu/vertex/baseline">Baseline Search</a> or the <a href="https://docs.asf.alaska.edu/vertex/sbas/" target="_blank" title="https://docs.asf.alaska.edu/vertex/sbas">SBAS Search</a> interface. The process of selecting pairs is the same for both IW SLC products and individual SLC bursts, but you will need to select the appropriate dataset when searching for content. As illustrated below, select the <strong>Sentinel-1</strong> option in the Dataset menu to search for IW SLC products, and select the <strong>S1 Bursts</strong> option to search for individual SLC bursts. </p>
+<p><img alt="Vertex Dataset Selection" src="../../images/vertex-dataset-selection.png" /></p>
 <p>The <a href="https://docs.asf.alaska.edu/vertex/baseline/" target="_blank" title="https://docs.asf.alaska.edu/vertex/baseline">Baseline</a> tool is the best option for selecting specific InSAR pairs. Use the <a href="https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options" target="_blank" title="https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options">Geographic Search</a> to find an image that covers your time and area of interest, select that item in the results, and click the Baseline button in the center panel. The Baseline tool then displays all of the scenes that could be used to generate an interferogram using the selected image. Scroll through the results to find pairs to add to the On Demand queue, or click on items displayed in the plot to highlight that particular image pair.</p>
 <p>The <a href="https://docs.asf.alaska.edu/vertex/sbas/" target="_blank" title="https://docs.asf.alaska.edu/vertex/sbas">SBAS</a> tool is designed for generating time series of InSAR pairs. As with the Baseline search, you can launch the SBAS search from the center panel of a <a href="https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options" target="_blank" title="https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options">Geographic Search</a> result. It will display all of the valid InSAR pairs through time based on the acquisition location of the input scene. This functionality is designed for processing a series of interferograms to be used in SBAS (Small BAseline Subset) analysis. The results can be adjusted based on baseline criteria (both perpendicular and temporal), and restricted to specific periods of time. Once the list is refined, you have the option to add all of the InSAR pairs displayed in the results to the On Demand queue.</p>
 <h3 id="hyp3-sdk-and-api">HyP3 SDK and API<a class="headerlink" href="#hyp3-sdk-and-api" title="Permanent link">&para;</a></h3>
-<p>The <a href="https://hyp3-docs.asf.alaska.edu/using/sdk/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/sdk">HyP3 SDK</a> provides support for processing nearest-neighbor interferograms for a selected granule. Specifying nearest-neighbor processing will find the next appropriate scene back in time to use as the reference granule for generating an interferogram with the selected granule. You can specify up to 2 nearest neighbors, which will pair the scene closest in time and next-closest in time to the selected granule for generating InSAR products, as demonstrated in this <a href="https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb#Submitting-Sentinel-1-InSAR-jobs" target="_blank" title="https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb#Submitting-Sentinel-1-InSAR-jobs">sample HyP3 SDK Jupyter Notebook</a>.</p>
-<p>You may still find the Geographic, Baseline and SBAS searches in Vertex useful for finding reference scenes or picking specific pairs to use when submitting InSAR jobs via the <a href="https://hyp3-docs.asf.alaska.edu/using/sdk/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/sdk">SDK</a> or <a href="https://hyp3-docs.asf.alaska.edu/using/api/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/api">API</a>.</p>
+<p>The <a href="https://hyp3-docs.asf.alaska.edu/using/sdk/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/sdk">HyP3 SDK</a> and <a href="https://hyp3-docs.asf.alaska.edu/using/api/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/api">API</a> provide support for creating interferograms based on a pair of selected granules. To identify granules you'd like to process, we suggest using the Geographic, Baseline and SBAS search tools in <a href="https://search.asf.alaska.edu/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a>. If you'd prefer to request interferogram processing programmatically, we suggest using Vertex's companion Python package: <a href="https://docs.asf.alaska.edu/asf_search/basics/" target="_blank" title="https://docs.asf.alaska.edu/asf_search/basics"><code>asf_search</code></a>. <a href="https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb#Submitting-Sentinel-1-InSAR-jobs" target="_blank" title="https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb#Submitting-Sentinel-1-InSAR-jobs">This HyP3 SDK Jupyter Notebook</a> provides you with an example of how you can use the <code>asf_search</code> and <code>hyp3_sdk</code> packages together to identify and create stacks of InSAR products.</p>
 <h3 id="considerations-for-selecting-an-insar-pair">Considerations for Selecting an InSAR Pair<a class="headerlink" href="#considerations-for-selecting-an-insar-pair" title="Permanent link">&para;</a></h3>
 <p>When selecting an InSAR pair, observe the following required conditions:</p>
 <ol>
@@ -1956,16 +2459,16 @@ to calculate the actual topographic phase.
 This phase is then removed from the interferogram leaving just the motion or deformation signal
 (plus atmospheric delays and noise).</p>
 <p>The DEM that is used for HyP3 InSAR processing is the
-<a href="https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model" target="_blank" title="Copernicus DEM">2021 Release of the Copernicus GLO-30 Public DEM</a>
+<a href="https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model" target="_blank" title="Copernicus DEM">2022 Release of the Copernicus GLO-30 Public DEM</a>
 dataset
 <a href="https://registry.opendata.aws/copernicus-dem/" target="_blank" title="https://registry.opendata.aws/copernicus-dem">publicly available on AWS</a>,
 which provides global coverage at 30-m pixel spacing (except for an area over Armenia and Azerbaijan, which only has 90-m coverage).
-For more information about the 2021 updates, see the 'Releases' section of
+For more information about the 2022 updates, see the 'Releases' section of
 <a href="https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model" target="_blank" title="Copernicus DEM">this article</a>.</p>
 <p>The portion of the DEM that covers the input bursts is downloaded.</p>
 <h4 id="download-orbit-files-and-calibration-auxiliary-data-files">Download Orbit Files and Calibration Auxiliary Data Files<a class="headerlink" href="#download-orbit-files-and-calibration-auxiliary-data-files" title="Permanent link">&para;</a></h4>
 <p>For Sentinel-1 InSAR processing, ISCE2 requires additional satellite orbit and calibration metadata files. The orbit files are downloaded from the
-<a href="https://scihub.copernicus.eu/gnss/#/home" target="_blank" title="Copernicus Sentinels POD Data Hub">Copernicus Sentinels POD Data Hub</a>. The calibration auxiliary data files are downloaded from the
+<a href="https://documentation.dataspace.copernicus.eu/Data/Sentinel1.html#sentinel-1-precise-orbit-determination-pod-products" target="_blank" title="Copernicus Data Space Ecosystem">Copernicus Data Space Ecosystem</a>. The calibration auxiliary data files are downloaded from the
 <a href="https://sar-mpc.eu/" target="_blank" title="Sentinel-1 Mission Performance Center">Sentinel-1 Mission Performance Center</a>.</p>
 <h3 id="insar-processing">InSAR Processing<a class="headerlink" href="#insar-processing" title="Permanent link">&para;</a></h3>
 <p>The ISCE2 InSAR processing this product uses follows the workflow in <a href="https://github.com/isce-framework/isce2/blob/main/applications/topsApp.py#L982" target="_blank">topsApp.py</a> from steps <code>startup</code> through <code>geocode</code>. These steps perform the following processing:</p>
@@ -1987,7 +2490,7 @@ For more information about the 2021 updates, see the 'Releases' section of
 Hierarchical, High-resolution Geography Database (GSHHG)</a> dataset. This water mask raster is always included with the Burst InSAR products for reference, but is not applied to the interferometry products by default.</p>
 <p>Users can optionally choose to apply the water mask before phase unwrapping. When processing scenes with extensive coverage by coastal waters or large inland waterbodies, there can be erroneous deformation signals or phase jumps introduced if unwrapping proceeds over water as if it were land. In such cases, choosing the option to apply the water mask can improve the results. Visit our <a href="https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb" target="_blank" title="InSAR Water Masking StoryMap">InSAR Water Masking Tutorial</a> for more information.</p>
 <h4 id="product-creation">Product Creation<a class="headerlink" href="#product-creation" title="Permanent link">&para;</a></h4>
-<p>Image files are exported into the widely-used GeoTIFF format in a Universal Transverse Mercator (UTM) projection. Images
+<p>Image files are exported into the widely-used GeoTIFF format in a Universal Transverse Mercator (UTM) Zone projection. Images
 are resampled to a pixel size that reflects the resolution of output image based on the requested number of looks: 80 meters
 for 20x4 looks, 40 meters for 10x2 looks, and 20 meters for 5x1 looks.</p>
 <p>Supporting metadata files are created, as well as a quick-look browse image.</p>
@@ -2008,7 +2511,7 @@ for 20x4 looks, 40 meters for 10x2 looks, and 20 meters for 5x1 looks.</p>
 <p><img alt="Figure 3" src="../../images/asf_burst_insar_names.png" title="Breakdown of ASF InSAR Naming Scheme" /></p>
 <p><em>Figure 3: Breakdown of ASF Burst InSAR naming scheme.</em></p>
 <h3 id="image-files">Image Files<a class="headerlink" href="#image-files" title="Permanent link">&para;</a></h3>
-<p>All of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs. The exceptions to this are the connected components and the water mask, which are both 8-bit unsigned-integer single-band GeoTIFFs.</p>
+<p>All of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs. The exceptions to this are the connected components and the water mask files, which are both 8-bit unsigned-integer single-band GeoTIFFs.</p>
 <ul>
 <li>The <em>coherence</em> file pixel values range from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent. </li>
 <li>The <em>unwrapped phase</em> file shows the results of the phase unwrapping process. Negative values indicate movement towards the sensor, and positive values indicate movement away from the sensor. This is the main interferogram output.</li>
@@ -2201,7 +2704,7 @@ for 20x4 looks, 40 meters for 10x2 looks, and 20 meters for 5x1 looks.</p>
 </tr>
 <tr>
 <td>InSAR phase filter</td>
-<td>Name of the phase filter used</td>
+<td>Was an InSAR phase filter used</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -2265,10 +2768,11 @@ for 20x4 looks, 40 meters for 10x2 looks, and 20 meters for 5x1 looks.</p>
 <p>While SAR signals can penetrate clouds, atmospheric conditions can delay the transmission of the signal. This results in phase differences that can look like surface deformation signals but are actually driven by differences in the atmospheric conditions between the pair of acquisitions used to generate the interferogram.</p>
 <p>In some cases, atmospheric errors can be corrected by using an atmospheric model to remove the impacts of the turbulent delay from the interferogram. Another approach is to use time series analysis to identify outliers.</p>
 <p><strong><em>Always doubt your interferogram first!</em></strong> View the interferogram critically, and consider if fringe patterns could potentially be driven by atmospheric effects. In general, it is best to avoid drawing conclusions from the outcome of a single interferogram.</p>
+<p>Tropospheric phase may be less impactful when considering small-scale deformation. As such, if you are using ASF's <a href="./" target="_blank" title="Sentinel-1 Burst InSAR Product Guide">Sentinel-1 Burst InSAR products</a> to look at deformation signals that are smaller than 1 km&sup2;, you should consider using methods other than the typical atmospheric model-based corrections to remove the effects of atmospheric delay. Potential methods in this case include applying band-pass or high-pass spatial filters, or spatial averaging filters such as the approach outlined in <a href="https://doi.org/10.1016/j.rse.2020.111983" target="_blank" title="https://doi.org/10.1016/j.rse.2020.111983">Bekaert et al., 2020</a>.</p>
 <h4 id="turbulent-delay">Turbulent Delay<a class="headerlink" href="#turbulent-delay" title="Permanent link">&para;</a></h4>
 <p>These delays are generally caused by differences in water vapor distribution from one image to the next. They often manifest as wobbly or sausage-shaped fringes, and can potentially mask the signal of a small earthquake.</p>
 <h4 id="stratified-delay">Stratified Delay<a class="headerlink" href="#stratified-delay" title="Permanent link">&para;</a></h4>
-<p>This type of delay is driven mostly by pressure and temperature differences or gradients through the atmospheric column, and often correlates with topography. This atmospheric signature can be confused with movement caused by volcanic activity. If there are multiple volcanoes in an image and they all exhibit similar patterns, it is likely being driven by this type of atmospheric delay.</p>
+<p>This type of delay is driven mostly by pressure and temperature differences or gradients through the atmospheric column, and often correlates with topography. This atmospheric signature can be confused with movement caused by volcanic activity. If there are multiple volcanoes in an image, and they all exhibit similar patterns, the signal is likely being driven by this type of atmospheric delay.</p>
 <h3 id="dem-errors">DEM Errors<a class="headerlink" href="#dem-errors" title="Permanent link">&para;</a></h3>
 <p>A DEM is used to remove topographic phase impacts, but if there are inaccuracies in the DEM, residual impacts of those errors can remain in the interferogram.</p>
 <h3 id="orbit-uncertainties">Orbit Uncertainties<a class="headerlink" href="#orbit-uncertainties" title="Permanent link">&para;</a></h3>
@@ -2316,6 +2820,60 @@ for 20x4 looks, 40 meters for 10x2 looks, and 20 meters for 5x1 looks.</p>
 
   <!-- Link to previous and/or next page -->
   
+    
+      
+      <nav
+        class="md-footer__inner md-grid"
+        aria-label="Footer"
+        
+      >
+
+        <!-- Link to previous page -->
+        
+          
+          <a
+            href="./"
+            class="md-footer__link md-footer__link--prev"
+            aria-label="Previous: Burst InSAR"
+          >
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Burst InSAR
+              </div>
+            </div>
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+          
+          <a
+            href="../../usage_guidelines/"
+            class="md-footer__link md-footer__link--next"
+            aria-label="Next: Usage Guidelines"
+          >
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Usage Guidelines
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
       <!-- ASF Footer information-->
       <div class="md-grid">

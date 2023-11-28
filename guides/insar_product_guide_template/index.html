@@ -762,6 +762,78 @@ feedback.init({showIcon: false});
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../burst_insar_product_guide/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Burst InSAR
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Burst InSAR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../burst_insar_product_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
     <li class="md-nav__item">
       <a href="https://its-live.jpl.nasa.gov/" target="_blank" class="md-nav__link">
         
@@ -1666,12 +1738,12 @@ feedback.init({showIcon: false});
 <h2 id="ordering-on-demand-insar-products">Ordering On Demand InSAR Products<a class="headerlink" href="#ordering-on-demand-insar-products" title="Permanent link">&para;</a></h2>
 <p>All of ASF's On Demand InSAR products are generated using ASF's HyP3 platform. Jobs can be submitted for processing using the <a href="https://search.asf.alaska.edu/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a> data portal, the <a href="https://hyp3-docs.asf.alaska.edu/using/sdk/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/sdk">HyP3 Python SDK</a> or the <a href="https://hyp3-docs.asf.alaska.edu/using/api/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/api">HyP3 API</a>.</p>
 <h3 id="vertex">Vertex<a class="headerlink" href="#vertex" title="Permanent link">&para;</a></h3>
-<p>InSAR pairs are selected in <a href="https://search.asf.alaska.edu/#/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a> using either the <a href="https://docs.asf.alaska.edu/vertex/baseline/" target="_blank" title="https://docs.asf.alaska.edu/vertex/baseline">Baseline Search</a> or the <a href="https://docs.asf.alaska.edu/vertex/sbas/" target="_blank" title="https://docs.asf.alaska.edu/vertex/sbas">SBAS Search</a> interface.</p>
+<p>InSAR pairs are selected in <a href="https://search.asf.alaska.edu/#/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a> using either the <a href="https://docs.asf.alaska.edu/vertex/baseline/" target="_blank" title="https://docs.asf.alaska.edu/vertex/baseline">Baseline Search</a> or the <a href="https://docs.asf.alaska.edu/vertex/sbas/" target="_blank" title="https://docs.asf.alaska.edu/vertex/sbas">SBAS Search</a> interface. The process of selecting pairs is the same for both IW SLC products and individual SLC bursts, but you will need to select the appropriate dataset when searching for content. As illustrated below, select the <strong>Sentinel-1</strong> option in the Dataset menu to search for IW SLC products, and select the <strong>S1 Bursts</strong> option to search for individual SLC bursts. </p>
+<p><img alt="Vertex Dataset Selection" src="../../images/vertex-dataset-selection.png" /></p>
 <p>The <a href="https://docs.asf.alaska.edu/vertex/baseline/" target="_blank" title="https://docs.asf.alaska.edu/vertex/baseline">Baseline</a> tool is the best option for selecting specific InSAR pairs. Use the <a href="https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options" target="_blank" title="https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options">Geographic Search</a> to find an image that covers your time and area of interest, select that item in the results, and click the Baseline button in the center panel. The Baseline tool then displays all of the scenes that could be used to generate an interferogram using the selected image. Scroll through the results to find pairs to add to the On Demand queue, or click on items displayed in the plot to highlight that particular image pair.</p>
 <p>The <a href="https://docs.asf.alaska.edu/vertex/sbas/" target="_blank" title="https://docs.asf.alaska.edu/vertex/sbas">SBAS</a> tool is designed for generating time series of InSAR pairs. As with the Baseline search, you can launch the SBAS search from the center panel of a <a href="https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options" target="_blank" title="https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options">Geographic Search</a> result. It will display all of the valid InSAR pairs through time based on the acquisition location of the input scene. This functionality is designed for processing a series of interferograms to be used in SBAS (Small BAseline Subset) analysis. The results can be adjusted based on baseline criteria (both perpendicular and temporal), and restricted to specific periods of time. Once the list is refined, you have the option to add all of the InSAR pairs displayed in the results to the On Demand queue.</p>
 <h3 id="hyp3-sdk-and-api">HyP3 SDK and API<a class="headerlink" href="#hyp3-sdk-and-api" title="Permanent link">&para;</a></h3>
-<p>The <a href="https://hyp3-docs.asf.alaska.edu/using/sdk/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/sdk">HyP3 SDK</a> provides support for processing nearest-neighbor interferograms for a selected granule. Specifying nearest-neighbor processing will find the next appropriate scene back in time to use as the reference granule for generating an interferogram with the selected granule. You can specify up to 2 nearest neighbors, which will pair the scene closest in time and next-closest in time to the selected granule for generating InSAR products, as demonstrated in this <a href="https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb#Submitting-Sentinel-1-InSAR-jobs" target="_blank" title="https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb#Submitting-Sentinel-1-InSAR-jobs">sample HyP3 SDK Jupyter Notebook</a>.</p>
-<p>You may still find the Geographic, Baseline and SBAS searches in Vertex useful for finding reference scenes or picking specific pairs to use when submitting InSAR jobs via the <a href="https://hyp3-docs.asf.alaska.edu/using/sdk/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/sdk">SDK</a> or <a href="https://hyp3-docs.asf.alaska.edu/using/api/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/api">API</a>.</p>
+<p>The <a href="https://hyp3-docs.asf.alaska.edu/using/sdk/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/sdk">HyP3 SDK</a> and <a href="https://hyp3-docs.asf.alaska.edu/using/api/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/api">API</a> provide support for creating interferograms based on a pair of selected granules. To identify granules you'd like to process, we suggest using the Geographic, Baseline and SBAS search tools in <a href="https://search.asf.alaska.edu/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a>. If you'd prefer to request interferogram processing programmatically, we suggest using Vertex's companion Python package: <a href="https://docs.asf.alaska.edu/asf_search/basics/" target="_blank" title="https://docs.asf.alaska.edu/asf_search/basics"><code>asf_search</code></a>. <a href="https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb#Submitting-Sentinel-1-InSAR-jobs" target="_blank" title="https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb#Submitting-Sentinel-1-InSAR-jobs">This HyP3 SDK Jupyter Notebook</a> provides you with an example of how you can use the <code>asf_search</code> and <code>hyp3_sdk</code> packages together to identify and create stacks of InSAR products.</p>
 <h3 id="considerations-for-selecting-an-insar-pair">Considerations for Selecting an InSAR Pair<a class="headerlink" href="#considerations-for-selecting-an-insar-pair" title="Permanent link">&para;</a></h3>
 <p>When selecting an InSAR pair, observe the following required conditions:</p>
 <ol>
@@ -1700,10 +1772,11 @@ feedback.init({showIcon: false});
 <p>While SAR signals can penetrate clouds, atmospheric conditions can delay the transmission of the signal. This results in phase differences that can look like surface deformation signals but are actually driven by differences in the atmospheric conditions between the pair of acquisitions used to generate the interferogram.</p>
 <p>In some cases, atmospheric errors can be corrected by using an atmospheric model to remove the impacts of the turbulent delay from the interferogram. Another approach is to use time series analysis to identify outliers.</p>
 <p><strong><em>Always doubt your interferogram first!</em></strong> View the interferogram critically, and consider if fringe patterns could potentially be driven by atmospheric effects. In general, it is best to avoid drawing conclusions from the outcome of a single interferogram.</p>
+<p>Tropospheric phase may be less impactful when considering small-scale deformation. As such, if you are using ASF's <a href="../burst_insar_product_guide/" target="_blank" title="Sentinel-1 Burst InSAR Product Guide">Sentinel-1 Burst InSAR products</a> to look at deformation signals that are smaller than 1 km&sup2;, you should consider using methods other than the typical atmospheric model-based corrections to remove the effects of atmospheric delay. Potential methods in this case include applying band-pass or high-pass spatial filters, or spatial averaging filters such as the approach outlined in <a href="https://doi.org/10.1016/j.rse.2020.111983" target="_blank" title="https://doi.org/10.1016/j.rse.2020.111983">Bekaert et al., 2020</a>.</p>
 <h4 id="turbulent-delay">Turbulent Delay<a class="headerlink" href="#turbulent-delay" title="Permanent link">&para;</a></h4>
 <p>These delays are generally caused by differences in water vapor distribution from one image to the next. They often manifest as wobbly or sausage-shaped fringes, and can potentially mask the signal of a small earthquake.</p>
 <h4 id="stratified-delay">Stratified Delay<a class="headerlink" href="#stratified-delay" title="Permanent link">&para;</a></h4>
-<p>This type of delay is driven mostly by pressure and temperature differences or gradients through the atmospheric column, and often correlates with topography. This atmospheric signature can be confused with movement caused by volcanic activity. If there are multiple volcanoes in an image and they all exhibit similar patterns, it is likely being driven by this type of atmospheric delay.</p>
+<p>This type of delay is driven mostly by pressure and temperature differences or gradients through the atmospheric column, and often correlates with topography. This atmospheric signature can be confused with movement caused by volcanic activity. If there are multiple volcanoes in an image, and they all exhibit similar patterns, the signal is likely being driven by this type of atmospheric delay.</p>
 <h3 id="dem-errors">DEM Errors<a class="headerlink" href="#dem-errors" title="Permanent link">&para;</a></h3>
 <p>A DEM is used to remove topographic phase impacts, but if there are inaccuracies in the DEM, residual impacts of those errors can remain in the interferogram.</p>
 <h3 id="orbit-uncertainties">Orbit Uncertainties<a class="headerlink" href="#orbit-uncertainties" title="Permanent link">&para;</a></h3>
