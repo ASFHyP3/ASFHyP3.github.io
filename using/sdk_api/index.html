@@ -92,7 +92,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#hyp3_sdk-v400-api-reference" class="md-skip">
+        <a href="#hyp3_sdk-v500-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -2247,7 +2247,7 @@ feedback.init({showIcon: false});
                   
 
 
-<h1 id="hyp3_sdk-v400-api-reference"><code>hyp3_sdk</code> <em>v4.0.0</em> API Reference<a class="headerlink" href="#hyp3_sdk-v400-api-reference" title="Permanent link">&para;</a></h1>
+<h1 id="hyp3_sdk-v500-api-reference"><code>hyp3_sdk</code> <em>v5.0.0</em> API Reference<a class="headerlink" href="#hyp3_sdk-v500-api-reference" title="Permanent link">&para;</a></h1>
 
 
 <div class="doc doc-object doc-module">
@@ -3768,7 +3768,7 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
                        <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
                        <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;decibel&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
                        <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                       <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+                       <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
 
 <span class="sd">        Args:</span>
@@ -3785,8 +3785,8 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 <span class="sd">            resolution: Desired output pixel spacing in meters</span>
 <span class="sd">            scale: Scale of output image; power, decibel or amplitude</span>
 <span class="sd">            speckle_filter: Apply an Enhanced Lee speckle filter</span>
-<span class="sd">            dem_name: Name of the DEM to use for processing.  `copernicus` will use the Copernicus GLO-30 Public DEM,</span>
-<span class="sd">                while `legacy` will use the DEM with the best coverage from ASF&#39;s legacy SRTM/NED datasets.</span>
+<span class="sd">            dem_name: Name of the DEM to use for processing. `copernicus` is the only option, and it will use</span>
+<span class="sd">            the Copernicus GLO-30 Public DEM.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            A Batch object containing the RTC job</span>
@@ -3809,7 +3809,7 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
                         <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
                         <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;decibel&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
                         <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                        <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+                        <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
 
 <span class="sd">        Args:</span>
@@ -3826,8 +3826,8 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 <span class="sd">            resolution: Desired output pixel spacing in meters</span>
 <span class="sd">            scale: Scale of output image; power, decibel or amplitude</span>
 <span class="sd">            speckle_filter: Apply an Enhanced Lee speckle filter</span>
-<span class="sd">            dem_name: Name of the DEM to use for processing.  `copernicus` will use the Copernicus GLO-30 Public DEM,</span>
-<span class="sd">                while `legacy` will use the DEM with the best coverage from ASF&#39;s legacy SRTM/NED datasets.</span>
+<span class="sd">            dem_name: Name of the DEM to use for processing. `copernicus` is the only option, and it will use</span>
+<span class="sd">            the Copernicus GLO-30 Public DEM.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            A dictionary containing the prepared RTC job</span>
@@ -5516,12 +5516,11 @@ projected into the look direction (gamma0)</p>
         <tr>
           <td><code>dem_name</code></td>
           <td>
-                <code><span title="typing.Literal">Literal</span>[&#39;copernicus&#39;, &#39;legacy&#39;]</code>
+                <code><span title="typing.Literal">Literal</span>[&#39;copernicus&#39;]</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Name of the DEM to use for processing.  <code>copernicus</code> will use the Copernicus GLO-30 Public DEM,
-while <code>legacy</code> will use the DEM with the best coverage from ASF's legacy SRTM/NED datasets.</p>
+              <p>Name of the DEM to use for processing. <code>copernicus</code> is the only option, and it will use</p>
             </div>
           </td>
           <td>
@@ -5617,7 +5616,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
                     <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
                     <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;decibel&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
                     <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                    <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+                    <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
 
 <span class="sd">    Args:</span>
@@ -5634,8 +5633,8 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
 <span class="sd">        resolution: Desired output pixel spacing in meters</span>
 <span class="sd">        scale: Scale of output image; power, decibel or amplitude</span>
 <span class="sd">        speckle_filter: Apply an Enhanced Lee speckle filter</span>
-<span class="sd">        dem_name: Name of the DEM to use for processing.  `copernicus` will use the Copernicus GLO-30 Public DEM,</span>
-<span class="sd">            while `legacy` will use the DEM with the best coverage from ASF&#39;s legacy SRTM/NED datasets.</span>
+<span class="sd">        dem_name: Name of the DEM to use for processing. `copernicus` is the only option, and it will use</span>
+<span class="sd">        the Copernicus GLO-30 Public DEM.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A dictionary containing the prepared RTC job</span>
@@ -6696,12 +6695,11 @@ projected into the look direction (gamma0)</p>
         <tr>
           <td><code>dem_name</code></td>
           <td>
-                <code><span title="typing.Literal">Literal</span>[&#39;copernicus&#39;, &#39;legacy&#39;]</code>
+                <code><span title="typing.Literal">Literal</span>[&#39;copernicus&#39;]</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Name of the DEM to use for processing.  <code>copernicus</code> will use the Copernicus GLO-30 Public DEM,
-while <code>legacy</code> will use the DEM with the best coverage from ASF's legacy SRTM/NED datasets.</p>
+              <p>Name of the DEM to use for processing. <code>copernicus</code> is the only option, and it will use</p>
             </div>
           </td>
           <td>
@@ -6787,7 +6785,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
                    <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
                    <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;decibel&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
                    <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                   <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+                   <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
 
 <span class="sd">    Args:</span>
@@ -6804,8 +6802,8 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
 <span class="sd">        resolution: Desired output pixel spacing in meters</span>
 <span class="sd">        scale: Scale of output image; power, decibel or amplitude</span>
 <span class="sd">        speckle_filter: Apply an Enhanced Lee speckle filter</span>
-<span class="sd">        dem_name: Name of the DEM to use for processing.  `copernicus` will use the Copernicus GLO-30 Public DEM,</span>
-<span class="sd">            while `legacy` will use the DEM with the best coverage from ASF&#39;s legacy SRTM/NED datasets.</span>
+<span class="sd">        dem_name: Name of the DEM to use for processing. `copernicus` is the only option, and it will use</span>
+<span class="sd">        the Copernicus GLO-30 Public DEM.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A Batch object containing the RTC job</span>
@@ -8324,7 +8322,7 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
                        <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
                        <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;decibel&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
                        <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                       <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+                       <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
 
 <span class="sd">        Args:</span>
@@ -8341,8 +8339,8 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 <span class="sd">            resolution: Desired output pixel spacing in meters</span>
 <span class="sd">            scale: Scale of output image; power, decibel or amplitude</span>
 <span class="sd">            speckle_filter: Apply an Enhanced Lee speckle filter</span>
-<span class="sd">            dem_name: Name of the DEM to use for processing.  `copernicus` will use the Copernicus GLO-30 Public DEM,</span>
-<span class="sd">                while `legacy` will use the DEM with the best coverage from ASF&#39;s legacy SRTM/NED datasets.</span>
+<span class="sd">            dem_name: Name of the DEM to use for processing. `copernicus` is the only option, and it will use</span>
+<span class="sd">            the Copernicus GLO-30 Public DEM.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            A Batch object containing the RTC job</span>
@@ -8365,7 +8363,7 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
                         <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
                         <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;decibel&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
                         <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                        <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+                        <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
 
 <span class="sd">        Args:</span>
@@ -8382,8 +8380,8 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 <span class="sd">            resolution: Desired output pixel spacing in meters</span>
 <span class="sd">            scale: Scale of output image; power, decibel or amplitude</span>
 <span class="sd">            speckle_filter: Apply an Enhanced Lee speckle filter</span>
-<span class="sd">            dem_name: Name of the DEM to use for processing.  `copernicus` will use the Copernicus GLO-30 Public DEM,</span>
-<span class="sd">                while `legacy` will use the DEM with the best coverage from ASF&#39;s legacy SRTM/NED datasets.</span>
+<span class="sd">            dem_name: Name of the DEM to use for processing. `copernicus` is the only option, and it will use</span>
+<span class="sd">            the Copernicus GLO-30 Public DEM.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            A dictionary containing the prepared RTC job</span>
@@ -10072,12 +10070,11 @@ projected into the look direction (gamma0)</p>
         <tr>
           <td><code>dem_name</code></td>
           <td>
-                <code><span title="typing.Literal">Literal</span>[&#39;copernicus&#39;, &#39;legacy&#39;]</code>
+                <code><span title="typing.Literal">Literal</span>[&#39;copernicus&#39;]</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Name of the DEM to use for processing.  <code>copernicus</code> will use the Copernicus GLO-30 Public DEM,
-while <code>legacy</code> will use the DEM with the best coverage from ASF's legacy SRTM/NED datasets.</p>
+              <p>Name of the DEM to use for processing. <code>copernicus</code> is the only option, and it will use</p>
             </div>
           </td>
           <td>
@@ -10173,7 +10170,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
                     <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
                     <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;decibel&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
                     <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                    <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+                    <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
 
 <span class="sd">    Args:</span>
@@ -10190,8 +10187,8 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
 <span class="sd">        resolution: Desired output pixel spacing in meters</span>
 <span class="sd">        scale: Scale of output image; power, decibel or amplitude</span>
 <span class="sd">        speckle_filter: Apply an Enhanced Lee speckle filter</span>
-<span class="sd">        dem_name: Name of the DEM to use for processing.  `copernicus` will use the Copernicus GLO-30 Public DEM,</span>
-<span class="sd">            while `legacy` will use the DEM with the best coverage from ASF&#39;s legacy SRTM/NED datasets.</span>
+<span class="sd">        dem_name: Name of the DEM to use for processing. `copernicus` is the only option, and it will use</span>
+<span class="sd">        the Copernicus GLO-30 Public DEM.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A dictionary containing the prepared RTC job</span>
@@ -11252,12 +11249,11 @@ projected into the look direction (gamma0)</p>
         <tr>
           <td><code>dem_name</code></td>
           <td>
-                <code><span title="typing.Literal">Literal</span>[&#39;copernicus&#39;, &#39;legacy&#39;]</code>
+                <code><span title="typing.Literal">Literal</span>[&#39;copernicus&#39;]</code>
           </td>
           <td>
             <div class="doc-md-description">
-              <p>Name of the DEM to use for processing.  <code>copernicus</code> will use the Copernicus GLO-30 Public DEM,
-while <code>legacy</code> will use the DEM with the best coverage from ASF's legacy SRTM/NED datasets.</p>
+              <p>Name of the DEM to use for processing. <code>copernicus</code> is the only option, and it will use</p>
             </div>
           </td>
           <td>
@@ -11343,7 +11339,7 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
                    <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
                    <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;decibel&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
                    <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-                   <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+                   <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
 
 <span class="sd">    Args:</span>
@@ -11360,8 +11356,8 @@ while <code>legacy</code> will use the DEM with the best coverage from ASF's leg
 <span class="sd">        resolution: Desired output pixel spacing in meters</span>
 <span class="sd">        scale: Scale of output image; power, decibel or amplitude</span>
 <span class="sd">        speckle_filter: Apply an Enhanced Lee speckle filter</span>
-<span class="sd">        dem_name: Name of the DEM to use for processing.  `copernicus` will use the Copernicus GLO-30 Public DEM,</span>
-<span class="sd">            while `legacy` will use the DEM with the best coverage from ASF&#39;s legacy SRTM/NED datasets.</span>
+<span class="sd">        dem_name: Name of the DEM to use for processing. `copernicus` is the only option, and it will use</span>
+<span class="sd">        the Copernicus GLO-30 Public DEM.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A Batch object containing the RTC job</span>
