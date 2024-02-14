@@ -1120,6 +1120,40 @@ feedback.init({showIcon: false});
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#merging-sentinel-1-burst-insar-products" class="md-nav__link">
+    Merging Sentinel-1 Burst InSAR Products
+  </a>
+  
+    <nav class="md-nav" aria-label="Merging Sentinel-1 Burst InSAR Products">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#merge-processing" class="md-nav__link">
+    Merge Processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge-processing-options" class="md-nav__link">
+    Merge Processing Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#product-packaging_1" class="md-nav__link">
+    Product Packaging
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1563,6 +1597,26 @@ feedback.init({showIcon: false});
   
   <span class="md-ellipsis">
     InSAR burst time series with MintPy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-docs/blob/develop/docs/tutorials/hyp3_isce2_burst_merge.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merging burst InSAR products
   </span>
   
 
@@ -2181,6 +2235,40 @@ feedback.init({showIcon: false});
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#merging-sentinel-1-burst-insar-products" class="md-nav__link">
+    Merging Sentinel-1 Burst InSAR Products
+  </a>
+  
+    <nav class="md-nav" aria-label="Merging Sentinel-1 Burst InSAR Products">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#merge-processing" class="md-nav__link">
+    Merge Processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge-processing-options" class="md-nav__link">
+    Merge Processing Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#product-packaging_1" class="md-nav__link">
+    Product Packaging
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2334,6 +2422,7 @@ IW SLC products are extremely large, and, in many cases, only a small portion of
 <p>For those who would prefer to work at the scale of a full IW SLC, our original <a href="../insar_product_guide/" target="_blank">On Demand InSAR</a> products are still available. These products have a larger footprint, and are generated using <a href="https://www.gamma-rs.ch/software" target="_blank">GAMMA software</a>.</p>
 <h3 id="using-sentinel-1-burst-insar">Using Sentinel-1 Burst InSAR<a class="headerlink" href="#using-sentinel-1-burst-insar" title="Permanent link">&para;</a></h3>
 <p>Users can request Sentinel-1 Burst InSAR products <a href="https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank" title="https://search.asf.alaska.edu/#/?topic=onDemand">On Demand</a> in ASF's <a href="https://search.asf.alaska.edu/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a> data portal, or make use of our HyP3 <a href="https://hyp3-docs.asf.alaska.edu/using/sdk/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/sdk">Python SDK</a> or <a href="https://hyp3-docs.asf.alaska.edu/using/api/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/api">API</a>. Input pair selection in Vertex uses either the <a href="https://docs.asf.alaska.edu/vertex/baseline/" target="_blank" title="https://docs.asf.alaska.edu/vertex/baseline/">Baseline Tool</a> or the <a href="https://docs.asf.alaska.edu/vertex/sbas/" target="_blank" title="https://docs.asf.alaska.edu/vertex/sbas">SBAS Tool</a> search interfaces. </p>
+<p>Users can also merge multiple Sentinel-1 Burst InSAR products together if their area of interest covers more than one burst. Please read the section on <a href="#merging-sentinel-1-burst-insar-products" title="Jump to the merge section of this document">Merging Sentinel-1 Burst InSAR Products</a> for more information. </p>
 <p>Users are cautioned to read the sections on <a href="#limitations" title="Jump to the Limitations section of this document">limitations</a> and <a href="#error-sources" title="Jump to the Error Sources section of this document">error sources</a> in InSAR products before attempting to use InSAR data. For a more complete description of the properties of SAR, see our <a href="../introduction_to_sar/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar">Introduction to SAR</a> guide. </p>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>Interferometric Synthetic Aperture Radar (InSAR) processing uses two SAR images collected over the same area to determine geometric properties of the surface. Missions such as Sentinel-1 are <a href="https://sentinel.esa.int/web/sentinel/missions/sentinel-1/mission-objectives" target="_blank" title="https://sentinel.esa.int/web/sentinel/missions/sentinel-1/mission-objectives">designed for</a> monitoring surface deformation using InSAR, which is optimal when acquisitions are made from a consistent location in space (<a href="#baselines" title="Jump to Baselines section of this document">short perpendicular baseline</a>) over regular time intervals.</p>
@@ -2465,7 +2554,7 @@ The pre-processing steps include downloading the burst granules,
 downloading the DEM file,
 and downloading the orbit and auxiliary data files.</p>
 <h4 id="download-bursts">Download Bursts<a class="headerlink" href="#download-bursts" title="Permanent link">&para;</a></h4>
-<p>The burst InSAR workflow accepts as input two
+<p>The Burst InSAR workflow accepts as input two
 <a href="https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath" target="_blank" title="https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath">Interferometric Wide swath Single Look Complex</a>
 (IW SLC) burst granules with the same burst ID.
 The bursts are downloaded using ASF's
@@ -2546,6 +2635,7 @@ for 20x4 looks, 40 meters for 10x2 looks, and 20 meters for 5x1 looks.</p>
 <li>The <em>water mask</em> file indicates coastal waters and large inland waterbodies. Pixel values of 1 indicate land and 0 indicate water. This file is in 8-bit unsigned integer format.</li>
 </ul>
 <p>If the <strong>water mask</strong> option is selected, the water mask is applied before phase unwrapping to exclude potentially invalid pixels from the unwrapping process. The water mask is generated using the <a href="http://www.soest.hawaii.edu/wessel/gshhg" target="_blank" title="http://www.soest.hawaii.edu/wessel/gshhg">GSHHG</a> dataset. To compile the reference shapefile, the full-resolution L1 dataset (boundary between land and ocean) and L5 dataset (boundary between Antarctic ice and ocean) were combined. The L3 dataset (boundary between islands and the lakes they are within) was removed from the L2 dataset (boundary between lakes and land), and this combined dataset was removed from the combined L1/L5 dataset. The GSHHG dataset was last updated in 2017, so there may be discrepancies where shorelines have changed.</p>
+<p>There are also four non-geocoded images that remain in their native range-doppler coordinates. These four images compose the image data needed to merge Burst InSAR products together. These images include a range-doppler version of the wrapped interferogram, a two-band range-doppler look vector image in the native ISCE2 format, and latitude/longitude images that provide the information necessary to map range-doppler images into the geocoded domain.</p>
 <p>A <strong>browse image</strong> is included for the unwrapped (unw_phase) phase file, which is in PNG format and is 2048 pixels wide.</p>
 <p>The tags and extensions used and example file names for each raster are listed in Table 2 below. </p>
 <table>
@@ -2596,6 +2686,26 @@ for 20x4 looks, 40 meters for 10x2 looks, and 20 meters for 5x1 looks.</p>
 <td>_water_mask.tif</td>
 <td>Water mask</td>
 <td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_water_mask.tif</td>
+</tr>
+<tr>
+<td>_lat_rdr.tif</td>
+<td>Range-Doppler latitude coordinates</td>
+<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_lat_rdr.tif</td>
+</tr>
+<tr>
+<td>_lon_rdr.tif</td>
+<td>Range-Doppler longitude coordinates</td>
+<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_lon_rdr.tif</td>
+</tr>
+<tr>
+<td>_los_rdr.tif</td>
+<td>Range-Doppler look vectors</td>
+<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_los_rdr.tif</td>
+</tr>
+<tr>
+<td>_wrapped_phase_rdr.tif</td>
+<td>Wrapped Range-Doppler interferogram</td>
+<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_wrapped_phase_rdr.tif</td>
 </tr>
 <tr>
 <td>_unw_phase.png</td>
@@ -2762,9 +2872,98 @@ for 20x4 looks, 40 meters for 10x2 looks, and 20 meters for 5x1 looks.</p>
 <td>Speckle filter applied</td>
 <td>yes</td>
 </tr>
+<tr>
+<td>Water mask</td>
+<td>Was a water mask used</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Radar n lines</td>
+<td>Number of lines (y coordinate) in range-doppler</td>
+<td>377</td>
+</tr>
+<tr>
+<td>Radar n samples</td>
+<td>Number of samples (x coordinate) in range-doppler</td>
+<td>1272</td>
+</tr>
+<tr>
+<td>Radar first valid line</td>
+<td>First line in range-doppler SLC containing valid data</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Radar n valid lines</td>
+<td>Number of lines in range-doppler SLC containing valid data</td>
+<td>363</td>
+</tr>
+<tr>
+<td>Radar first valid sample</td>
+<td>First sample in range-doppler SLC containing valid data</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Radar n valid samples</td>
+<td>Number of samples in range-doppler SLC containing valid data</td>
+<td>1220</td>
+</tr>
+<tr>
+<td>Multilook Azimuth Time Interval</td>
+<td>Time-based spacing of range-doppler SLC lines after multilooking in seconds</td>
+<td>0.0082222252</td>
+</tr>
+<tr>
+<td>Multilook Range Pixel Size</td>
+<td>Distance-based spacing of range-doppler SLC samples after multilooking in meters</td>
+<td>46.59124229430646</td>
+</tr>
+<tr>
+<td>Radar sensing stop</td>
+<td>Last date and time for data collection</td>
+<td>2020-06-04T02:23:16.030988</td>
+</tr>
 </tbody>
 </table>
 <p><em>Table 4: List of InSAR parameters included in the parameter text file</em></p>
+<h3 id="merging-sentinel-1-burst-insar-products">Merging Sentinel-1 Burst InSAR Products<a class="headerlink" href="#merging-sentinel-1-burst-insar-products" title="Permanent link">&para;</a></h3>
+<p>Burst InSAR products created using the <code>insar_tops_burst</code> workflow can be merged together using the <code>merge_tops_burst</code> workflow. This can be useful when the area of interest you'd like to observe spans multiple bursts. Merging is done using underlying ISCE2 functionality, and steps 8-10 of InSAR processing (filtering, unwrapping, and geocoding) found in the <a href="#insar-processing" title="Jump to the InSAR Processing section of this document">InSAR Processing</a> section are repeated for the merged products to ensure consistent results. Check out the <a href="#merge-processing" title="Jump to the Merge Processing section of this document">Merge Processing</a> section below for more details. Assuming that you have already installed the <a href="https://github.com/ASFHyP3/hyp3-isce2" target="_blank" title="HyP3-ISCE2 Plugin">HyP3-ISCE2 plugin</a> on your local machine, merging can be performed using the following syntax:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>hyp3_isce2<span class="w"> </span>++process<span class="w"> </span>merge_tops_bursts<span class="w"> </span>PATH_TO_UNZIPPED_PRODUCTS
+</code></pre></div>
+<p>Where <code>PATH_TO_UNZIPPED_PRODUCTS</code> is the path to a directory containing <strong>unzipped</strong> Burst InSAR products. For example:</p>
+<div class="highlight"><pre><span></span><code>PATH_TO_UNZIPPED_PRODUCTS
+├─ S1_136232_IW2_20200604_20200616_VV_INT80_663F
+├─ S1_136231_IW2_20200604_20200616_VV_INT80_529D
+</code></pre></div>
+<p>In order to be merging eligible, all burst products must:</p>
+<ul>
+<li>Have the same reference and secondary dates</li>
+<li>Have the same polarization</li>
+<li>Have the same multilooking</li>
+<li>Be from the same relative orbit</li>
+<li>Be contiguous</li>
+</ul>
+<p>The workflow should throw an error if any of these conditions are not met.</p>
+<h4 id="merge-processing">Merge Processing<a class="headerlink" href="#merge-processing" title="Permanent link">&para;</a></h4>
+<p>During normal ISCE2 InSAR processing, initial interferograms are formed on a burst-by-burst basis. These range-doppler burst interferograms are combined during an ISCE2 step called <code>mergebursts</code>, then the remaining steps (filtering, unwrapping and geocoding) are conducted on the merged results.</p>
+<p>By including select range-doppler data (wrapped interferogram, geolocation information, and line-of-sight information) as well as select metadata in our standard Burst InSAR products, we are able to restart ISCE2 processing from the <code>mergebursts</code> step, then proceed with the following steps as if it were a standard ISCE2 InSAR processing run.</p>
+<p>The steps of the workflow are as follows:</p>
+<ol>
+<li>Recreate a pre-<code>mergebursts</code> ISCE2 InSAR processing state using the input Burst InSAR products.</li>
+<li>Run a modified version of ISCE2’s <code>mergebursts</code> step.</li>
+<li>Apply the Goldstein-Werner power spectral filter with a dampening factor of 0.5.</li>
+<li>Unwrap the wrapped phase interferogram using <a href="http://web.stanford.edu/group/radar/softwareandlinks/sw/snaphu/" target="_blank">SNAPHU</a>'s minimum cost flow (MCF) unwrapping algorithm to produce the unwrapped phase interferogram.</li>
+<li>Geocode the output products.</li>
+</ol>
+<p>As mentioned above, this workflow uses underlying ISCE2 functionality to perform these steps so the results of this workflow should be identical to the results obtained by performing a standard multi-burst ISCE2 InSAR run (assuming that the Enhanced Spectral Diversity technique is not used for co-registration).</p>
+<h4 id="merge-processing-options">Merge Processing Options<a class="headerlink" href="#merge-processing-options" title="Permanent link">&para;</a></h4>
+<p>The processing options available for the merging are the same as those available for standard Burst InSAR products. Check out the <a href="#processing-options" title="Jump to the Processing Options section of this document">Processing Options</a> section for more details.</p>
+<p>To learn about the command line argument syntax for this workflow, look at the help documentation using:
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>hyp3_isce2<span class="w"> </span>++process<span class="w"> </span>merge_tops_bursts<span class="w"> </span>--help
+</code></pre></div></p>
+<h4 id="product-packaging_1">Product Packaging<a class="headerlink" href="#product-packaging_1" title="Permanent link">&para;</a></h4>
+<p>The product packaging of merged Burst InSAR products follows the same conventions outlined in the <a href="#product-packaging" title="Jump to the Product Packaging section of this document">Product Packaging</a> section above with two exceptions. First, the four range-doppler images are not included since the products have already been merged. Second, the product name is slightly modified; the burst ID is swapped for the zero-padded relative orbit number, and the swath number is removed. The resulting format is:
+<div class="highlight"><pre><span></span><code>S1_rrr__yyymmdd_yyymmdd_pp_INTn_uuuu
+</code></pre></div></p>
 <h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
 <h3 id="baseline-calculation">Baseline Calculation<a class="headerlink" href="#baseline-calculation" title="Permanent link">&para;</a></h3>
 <p>The baseline is defined as the difference of the platform positions when a given area is imaged. HyP3 baselines are calculated using the best state vectors available. If precise orbits are not yet available for the input granules, restituted orbits will be used. The original predicted orbits are not used for InSAR processing in HyP3. <strong>If no restituted or precise state vectors are available, the process will not run.</strong></p>
