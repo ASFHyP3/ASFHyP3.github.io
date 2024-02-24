@@ -6,6 +6,17 @@ a {
   color: #236192;
 }
 
+/*
+Set tables to max width:
+https://github.com/squidfunk/mkdocs-material/issues/175#issuecomment-616694465
+*/
+.md-typeset__table {
+   min-width: 100%;
+}
+.md-typeset table:not([class]) {
+    display: table;
+}
+
 .md-header a, .md-footer a {
   color: rgba(248, 248, 248, 100);
 }
@@ -115,4 +126,23 @@ a {
 
 .expert-rec-search {
   margin-top: 10px;
+}
+
+#announcement-content {
+  font-weight: bold;
+  text-align: center;
+}
+
+a.announcement-link {
+  color: #33adff;
+  text-decoration: underline;
+}
+
+/*
+Without this block, there is a non-clickable, apparently useless X icon displayed
+on the right-hand side of the announcement bar, near the real X button.
+This block hides that element.
+*/
+i.fa.fa-times::before {
+  display: none;
 }
