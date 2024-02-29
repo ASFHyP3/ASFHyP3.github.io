@@ -92,7 +92,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#hyp3_sdk-v600-api-reference" class="md-skip">
+        <a href="#hyp3_sdk-v610-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -574,6 +574,13 @@ feedback.init({showIcon: false});
           <li class="md-nav__item">
   <a href="#hyp3_sdk.HyP3.check_quota" class="md-nav__link">
     check_quota
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.HyP3.costs" class="md-nav__link">
+    costs
   </a>
   
 </li>
@@ -2043,6 +2050,13 @@ feedback.init({showIcon: false});
 </li>
         
           <li class="md-nav__item">
+  <a href="#hyp3_sdk.HyP3.costs" class="md-nav__link">
+    costs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#hyp3_sdk.HyP3.find_jobs" class="md-nav__link">
     find_jobs
   </a>
@@ -2321,7 +2335,7 @@ feedback.init({showIcon: false});
                   
 
 
-<h1 id="hyp3_sdk-v600-api-reference"><code>hyp3_sdk</code> <em>v6.0.0</em> API Reference<a class="headerlink" href="#hyp3_sdk-v600-api-reference" title="Permanent link">&para;</a></h1>
+<h1 id="hyp3_sdk-v610-api-reference"><code>hyp3_sdk</code> <em>v6.1.0</em> API Reference<a class="headerlink" href="#hyp3_sdk-v610-api-reference" title="Permanent link">&para;</a></h1>
 
 
 <div class="doc doc-object doc-module">
@@ -2511,7 +2525,10 @@ feedback.init({showIcon: false});
 <span class="normal">290</span>
 <span class="normal">291</span>
 <span class="normal">292</span>
-<span class="normal">293</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Batch</span><span class="p">:</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Batch</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jobs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Job</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">jobs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">jobs</span> <span class="o">=</span> <span class="p">[]</span>
@@ -2658,6 +2675,9 @@ feedback.init({showIcon: false});
                 <span class="n">filtered_jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">Batch</span><span class="p">(</span><span class="n">filtered_jobs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">total_credit_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">credit_cost</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span> <span class="k">if</span> <span class="n">job</span><span class="o">.</span><span class="n">credit_cost</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
 
@@ -3614,7 +3634,16 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 <span class="normal">504</span>
 <span class="normal">505</span>
 <span class="normal">506</span>
-<span class="normal">507</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">HyP3</span><span class="p">:</span>
+<span class="normal">507</span>
+<span class="normal">508</span>
+<span class="normal">509</span>
+<span class="normal">510</span>
+<span class="normal">511</span>
+<span class="normal">512</span>
+<span class="normal">513</span>
+<span class="normal">514</span>
+<span class="normal">515</span>
+<span class="normal">516</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">HyP3</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A python wrapper around the HyP3 API.</span>
 
 <span class="sd">    Warning: All jobs submitted to HyP3 are publicly visible. For more information, see</span>
@@ -4102,6 +4131,15 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
         <span class="n">warn</span><span class="p">(</span><span class="s1">&#39;This method is deprecated and will be removed in a future release.</span><span class="se">\n</span><span class="s1">&#39;</span>
              <span class="s1">&#39;Please use `HyP3.check_credits` instead.&#39;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_credits</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">costs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Table of job costs</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/costs&#39;</span><span class="p">))</span>
+        <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
             </details>
 
@@ -4375,6 +4413,67 @@ are not provided as keyword parameters</p>
     <span class="n">warn</span><span class="p">(</span><span class="s1">&#39;This method is deprecated and will be removed in a future release.</span><span class="se">\n</span><span class="s1">&#39;</span>
          <span class="s1">&#39;Please use `HyP3.check_credits` instead.&#39;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_credits</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="hyp3_sdk.HyP3.costs" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">costs</span><span class="p">()</span></code>
+
+<a href="#hyp3_sdk.HyP3.costs" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Table of job costs</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">509</span>
+<span class="normal">510</span>
+<span class="normal">511</span>
+<span class="normal">512</span>
+<span class="normal">513</span>
+<span class="normal">514</span>
+<span class="normal">515</span>
+<span class="normal">516</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">costs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        Table of job costs</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/costs&#39;</span><span class="p">))</span>
+    <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
           </details>
   </div>
@@ -8239,7 +8338,16 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 <span class="normal">504</span>
 <span class="normal">505</span>
 <span class="normal">506</span>
-<span class="normal">507</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">HyP3</span><span class="p">:</span>
+<span class="normal">507</span>
+<span class="normal">508</span>
+<span class="normal">509</span>
+<span class="normal">510</span>
+<span class="normal">511</span>
+<span class="normal">512</span>
+<span class="normal">513</span>
+<span class="normal">514</span>
+<span class="normal">515</span>
+<span class="normal">516</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">HyP3</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A python wrapper around the HyP3 API.</span>
 
 <span class="sd">    Warning: All jobs submitted to HyP3 are publicly visible. For more information, see</span>
@@ -8727,6 +8835,15 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
         <span class="n">warn</span><span class="p">(</span><span class="s1">&#39;This method is deprecated and will be removed in a future release.</span><span class="se">\n</span><span class="s1">&#39;</span>
              <span class="s1">&#39;Please use `HyP3.check_credits` instead.&#39;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_credits</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">costs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Table of job costs</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/costs&#39;</span><span class="p">))</span>
+        <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
             </details>
 
@@ -9000,6 +9117,67 @@ are not provided as keyword parameters</p>
     <span class="n">warn</span><span class="p">(</span><span class="s1">&#39;This method is deprecated and will be removed in a future release.</span><span class="se">\n</span><span class="s1">&#39;</span>
          <span class="s1">&#39;Please use `HyP3.check_credits` instead.&#39;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_credits</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h5 id="hyp3_sdk.hyp3.HyP3.costs" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">costs</span><span class="p">()</span></code>
+
+<a href="#hyp3_sdk.hyp3.HyP3.costs" class="headerlink" title="Permanent link">&para;</a></h5>
+
+
+  <div class="doc doc-contents ">
+  
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Table of job costs</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+          <details class="quote">
+            <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">509</span>
+<span class="normal">510</span>
+<span class="normal">511</span>
+<span class="normal">512</span>
+<span class="normal">513</span>
+<span class="normal">514</span>
+<span class="normal">515</span>
+<span class="normal">516</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">costs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        Table of job costs</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/costs&#39;</span><span class="p">))</span>
+    <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
           </details>
   </div>
@@ -11914,7 +12092,10 @@ projected into the look direction (gamma0)</p>
 <span class="normal">290</span>
 <span class="normal">291</span>
 <span class="normal">292</span>
-<span class="normal">293</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Batch</span><span class="p">:</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Batch</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jobs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Job</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">jobs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">jobs</span> <span class="o">=</span> <span class="p">[]</span>
@@ -12061,6 +12242,9 @@ projected into the look direction (gamma0)</p>
                 <span class="n">filtered_jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">Batch</span><span class="p">(</span><span class="n">filtered_jobs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">total_credit_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">credit_cost</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span> <span class="k">if</span> <span class="n">job</span><span class="o">.</span><span class="n">credit_cost</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
 
