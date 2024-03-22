@@ -1030,6 +1030,26 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
+      <a href="../../water_masking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Water Masking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="https://asf.alaska.edu/information/sar-information/what-is-sar/#sar_faq" target="_blank" class="md-nav__link">
         
   
@@ -1637,6 +1657,13 @@ feedback.init({showIcon: false});
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#water-mask-dataset-generation" class="md-nav__link">
+    Water Mask Dataset Generation
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1773,6 +1800,11 @@ by the <code>water_map</code> tool. </p>
 <div class="highlight"><pre><span></span><code>flood_map --help
 </code></pre></div></p>
 <p>For details on the algorithm see the <code>asf_tools.flood_map.make_flood_map</code> docstring.</p>
+<h3 id="water-mask-dataset-generation">Water Mask Dataset Generation<a class="headerlink" href="#water-mask-dataset-generation" title="Permanent link">&para;</a></h3>
+<p>The <code>asf_tools.watermasking</code> sub-package allows you to create a watermasking dataset 
+over an arbitrary ROI using OpenStreetMap and ESA WorldCover data.
+Note, this program requires <code>osmium-tool</code>. See the <a href="https://github.com/ASFHyP3/asf-tools/blob/main/src/asf_tools/watermasking/README.md">watermasking subpackage readme</a> 
+for more information on setup and usage.</p>
 
 
 
