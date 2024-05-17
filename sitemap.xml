@@ -151,6 +151,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://hyp3-docs.asf.alaska.edu/using/requesting_access/</loc>
+         <lastmod>2024-05-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://hyp3-docs.asf.alaska.edu/using/sdk/</loc>
          <lastmod>2024-05-17</lastmod>
          <changefreq>daily</changefreq>
