@@ -1225,6 +1225,26 @@ feedback.init({showIcon: false});
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://storymaps.arcgis.com/stories/191bf1b6962c402086807390b3ce63b0" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StoryMap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2330,7 +2350,12 @@ feedback.init({showIcon: false});
 
     <div class="doc doc-contents first">
 
-      <p>A python wrapper around the HyP3 API</p>
+        <p>A python wrapper around the HyP3 API</p>
+
+
+
+
+
 
 
 
@@ -2355,6 +2380,11 @@ feedback.init({showIcon: false});
 
 
     <div class="doc doc-contents ">
+
+
+
+
+
 
 
               <details class="quote">
@@ -2684,7 +2714,7 @@ feedback.init({showIcon: false});
 
     <div class="doc doc-contents ">
 
-      <p>Check succeeded jobs for expiration</p>
+        <p>Check succeeded jobs for expiration</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
@@ -2722,7 +2752,7 @@ feedback.init({showIcon: false});
 
     <div class="doc doc-contents ">
 
-      <p>Returns: True if all jobs are complete, otherwise returns False</p>
+        <p>Returns: True if all jobs are complete, otherwise returns False</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
@@ -2772,7 +2802,9 @@ feedback.init({showIcon: false});
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>location</code></td>
+            <td>
+                <code>location</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[<span title="pathlib.Path">Path</span>, str]</code>
             </td>
@@ -2786,7 +2818,9 @@ feedback.init({showIcon: false});
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>create</code></td>
+            <td>
+                <code>create</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -2801,7 +2835,7 @@ feedback.init({showIcon: false});
           </tr>
       </tbody>
     </table>
-      <p>Returns: list of Path objects to downloaded files</p>
+        <p>Returns: list of Path objects to downloaded files</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
@@ -2853,7 +2887,7 @@ feedback.init({showIcon: false});
 
     <div class="doc doc-contents ">
 
-      <p>Filter jobs by status. By default, only succeeded, pending,
+        <p>Filter jobs by status. By default, only succeeded, pending,
 and still running jobs will be in the returned batch.</p>
 
 
@@ -2869,7 +2903,9 @@ and still running jobs will be in the returned batch.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>succeeded</code></td>
+            <td>
+                <code>succeeded</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -2883,7 +2919,9 @@ and still running jobs will be in the returned batch.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>pending</code></td>
+            <td>
+                <code>pending</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -2897,7 +2935,9 @@ and still running jobs will be in the returned batch.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>running</code></td>
+            <td>
+                <code>running</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -2911,7 +2951,9 @@ and still running jobs will be in the returned batch.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>failed</code></td>
+            <td>
+                <code>failed</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -2925,7 +2967,9 @@ and still running jobs will be in the returned batch.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_expired</code></td>
+            <td>
+                <code>include_expired</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -3060,7 +3104,7 @@ and still running jobs will be in the returned batch.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Returns: True if all jobs have succeeded, otherwise returns False</p>
+        <p>Returns: True if all jobs have succeeded, otherwise returns False</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
@@ -3107,9 +3151,14 @@ and still running jobs will be in the returned batch.</p>
     <div class="doc doc-contents ">
 
 
-      <p>A python wrapper around the HyP3 API.</p>
+        <p>A python wrapper around the HyP3 API.</p>
 <p>Warning: All jobs submitted to HyP3 are publicly visible. For more information, see
 https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
+
+
+
+
+
 
               <details class="quote">
                 <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
@@ -4132,7 +4181,7 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 
     <div class="doc doc-contents ">
 
-      <p>If username and password are not provided, attempts to use credentials from a <code>.netrc</code> file.</p>
+        <p>If username and password are not provided, attempts to use credentials from a <code>.netrc</code> file.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4147,7 +4196,9 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>api_url</code></td>
+            <td>
+                <code>api_url</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -4161,7 +4212,9 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>username</code></td>
+            <td>
+                <code>username</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -4176,7 +4229,9 @@ Both username and password must be provided if either is provided.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>password</code></td>
+            <td>
+                <code>password</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -4191,7 +4246,9 @@ Both username and password must be provided if either is provided.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>prompt</code></td>
+            <td>
+                <code>prompt</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -4326,7 +4383,7 @@ are not provided as keyword parameters</p>
 
     <div class="doc doc-contents ">
 
-      <p>Deprecated method for checking your remaining processing credits; replaced by <code>HyP3.check_credits</code></p>
+        <p>Deprecated method for checking your remaining processing credits; replaced by <code>HyP3.check_credits</code></p>
 
 
     <p><span class="doc-section-title">Returns:</span></p>
@@ -4445,7 +4502,7 @@ are not provided as keyword parameters</p>
 
     <div class="doc doc-contents ">
 
-      <p>Gets a Batch of jobs from HyP3 matching the provided search criteria</p>
+        <p>Gets a Batch of jobs from HyP3 matching the provided search criteria</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4460,7 +4517,9 @@ are not provided as keyword parameters</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>start</code></td>
+            <td>
+                <code>start</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[<span title="datetime.datetime">datetime</span>]</code>
             </td>
@@ -4474,7 +4533,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>end</code></td>
+            <td>
+                <code>end</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[<span title="datetime.datetime">datetime</span>]</code>
             </td>
@@ -4488,7 +4549,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>status_code</code></td>
+            <td>
+                <code>status_code</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -4502,7 +4565,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>name</code></td>
+            <td>
+                <code>name</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -4516,7 +4581,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>job_type</code></td>
+            <td>
+                <code>job_type</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -4530,7 +4597,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>user_id</code></td>
+            <td>
+                <code>user_id</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -4671,7 +4740,7 @@ are not provided as keyword parameters</p>
 
     <div class="doc doc-contents ">
 
-      <p>Get job by job ID</p>
+        <p>Get job by job ID</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4686,7 +4755,9 @@ are not provided as keyword parameters</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>job_id</code></td>
+            <td>
+                <code>job_id</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -4831,7 +4902,7 @@ are not provided as keyword parameters</p>
 
     <div class="doc doc-contents ">
 
-      <p>Submit an autoRIFT job</p>
+        <p>Submit an autoRIFT job</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4846,7 +4917,9 @@ are not provided as keyword parameters</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>granule1</code></td>
+            <td>
+                <code>granule1</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -4860,7 +4933,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>granule2</code></td>
+            <td>
+                <code>granule2</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -4874,7 +4949,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>name</code></td>
+            <td>
+                <code>name</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -4973,7 +5050,7 @@ are not provided as keyword parameters</p>
 
     <div class="doc doc-contents ">
 
-      <p>Prepare an InSAR ISCE burst job.</p>
+        <p>Prepare an InSAR ISCE burst job.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -4988,7 +5065,9 @@ are not provided as keyword parameters</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>granule1</code></td>
+            <td>
+                <code>granule1</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -5002,7 +5081,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>granule2</code></td>
+            <td>
+                <code>granule2</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -5016,7 +5097,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>name</code></td>
+            <td>
+                <code>name</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -5030,7 +5113,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>apply_water_mask</code></td>
+            <td>
+                <code>apply_water_mask</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -5045,7 +5130,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>looks</code></td>
+            <td>
+                <code>looks</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;20x4&#39;, &#39;10x2&#39;, &#39;5x1&#39;]</code>
             </td>
@@ -5168,7 +5255,7 @@ as invalid for phase unwrapping</p>
 
     <div class="doc doc-contents ">
 
-      <p>Submit an InSAR job</p>
+        <p>Submit an InSAR job</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -5183,7 +5270,9 @@ as invalid for phase unwrapping</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>granule1</code></td>
+            <td>
+                <code>granule1</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -5197,7 +5286,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>granule2</code></td>
+            <td>
+                <code>granule2</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -5211,7 +5302,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>name</code></td>
+            <td>
+                <code>name</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -5225,7 +5318,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_look_vectors</code></td>
+            <td>
+                <code>include_look_vectors</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -5239,7 +5334,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_los_displacement</code></td>
+            <td>
+                <code>include_los_displacement</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -5255,7 +5352,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_inc_map</code></td>
+            <td>
+                <code>include_inc_map</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -5269,7 +5368,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>looks</code></td>
+            <td>
+                <code>looks</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;20x4&#39;, &#39;10x2&#39;]</code>
             </td>
@@ -5283,7 +5384,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_dem</code></td>
+            <td>
+                <code>include_dem</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -5297,7 +5400,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_wrapped_phase</code></td>
+            <td>
+                <code>include_wrapped_phase</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -5311,7 +5416,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>apply_water_mask</code></td>
+            <td>
+                <code>apply_water_mask</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -5326,7 +5433,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_displacement_maps</code></td>
+            <td>
+                <code>include_displacement_maps</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -5340,7 +5449,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>phase_filter_parameter</code></td>
+            <td>
+                <code>phase_filter_parameter</code>
+            </td>
             <td>
                   <code>float</code>
             </td>
@@ -5512,7 +5623,7 @@ If zero, adaptive phase filter will be skipped.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Submit an RTC job</p>
+        <p>Submit an RTC job</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -5527,7 +5638,9 @@ If zero, adaptive phase filter will be skipped.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>granule</code></td>
+            <td>
+                <code>granule</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -5541,7 +5654,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>name</code></td>
+            <td>
+                <code>name</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -5555,7 +5670,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>dem_matching</code></td>
+            <td>
+                <code>dem_matching</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -5569,7 +5686,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_dem</code></td>
+            <td>
+                <code>include_dem</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -5583,7 +5702,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_inc_map</code></td>
+            <td>
+                <code>include_inc_map</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -5597,7 +5718,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_rgb</code></td>
+            <td>
+                <code>include_rgb</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -5612,7 +5735,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_scattering_area</code></td>
+            <td>
+                <code>include_scattering_area</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -5626,7 +5751,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>radiometry</code></td>
+            <td>
+                <code>radiometry</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;sigma0&#39;, &#39;gamma0&#39;]</code>
             </td>
@@ -5641,7 +5768,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>resolution</code></td>
+            <td>
+                <code>resolution</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[10, 20, 30]</code>
             </td>
@@ -5655,7 +5784,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>scale</code></td>
+            <td>
+                <code>scale</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;amplitude&#39;, &#39;decibel&#39;, &#39;power&#39;]</code>
             </td>
@@ -5669,7 +5800,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>speckle_filter</code></td>
+            <td>
+                <code>speckle_filter</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -5683,7 +5816,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>dem_name</code></td>
+            <td>
+                <code>dem_name</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;copernicus&#39;]</code>
             </td>
@@ -5836,7 +5971,7 @@ projected into the look direction (gamma0)</p>
 
     <div class="doc doc-contents ">
 
-      <p>Refresh each jobs' information</p>
+        <p>Refresh each jobs' information</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -5851,7 +5986,9 @@ projected into the look direction (gamma0)</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>job_or_batch</code></td>
+            <td>
+                <code>job_or_batch</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[<a class="autorefs autorefs-internal" title="hyp3_sdk.jobs.Batch" href="#hyp3_sdk.jobs.Batch">Batch</a>, <a class="autorefs autorefs-internal" title="hyp3_sdk.jobs.Job" href="#hyp3_sdk.jobs.Job">Job</a>]</code>
             </td>
@@ -5930,7 +6067,7 @@ projected into the look direction (gamma0)</p>
 
     <div class="doc doc-contents ">
 
-      <p>Submit an autoRIFT job</p>
+        <p>Submit an autoRIFT job</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -5945,7 +6082,9 @@ projected into the look direction (gamma0)</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>granule1</code></td>
+            <td>
+                <code>granule1</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -5959,7 +6098,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>granule2</code></td>
+            <td>
+                <code>granule2</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -5973,7 +6114,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>name</code></td>
+            <td>
+                <code>name</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -6056,7 +6199,7 @@ projected into the look direction (gamma0)</p>
 
     <div class="doc doc-contents ">
 
-      <p>Submit an InSAR ISCE burst job.</p>
+        <p>Submit an InSAR ISCE burst job.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -6071,7 +6214,9 @@ projected into the look direction (gamma0)</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>granule1</code></td>
+            <td>
+                <code>granule1</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -6085,7 +6230,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>granule2</code></td>
+            <td>
+                <code>granule2</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -6099,7 +6246,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>name</code></td>
+            <td>
+                <code>name</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -6113,7 +6262,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>apply_water_mask</code></td>
+            <td>
+                <code>apply_water_mask</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -6128,7 +6279,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>looks</code></td>
+            <td>
+                <code>looks</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;20x4&#39;, &#39;10x2&#39;, &#39;5x1&#39;]</code>
             </td>
@@ -6231,7 +6384,7 @@ as invalid for phase unwrapping</p>
 
     <div class="doc doc-contents ">
 
-      <p>Submit an InSAR job</p>
+        <p>Submit an InSAR job</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -6246,7 +6399,9 @@ as invalid for phase unwrapping</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>granule1</code></td>
+            <td>
+                <code>granule1</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -6260,7 +6415,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>granule2</code></td>
+            <td>
+                <code>granule2</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -6274,7 +6431,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>name</code></td>
+            <td>
+                <code>name</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -6288,7 +6447,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_look_vectors</code></td>
+            <td>
+                <code>include_look_vectors</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -6302,7 +6463,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_los_displacement</code></td>
+            <td>
+                <code>include_los_displacement</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -6318,7 +6481,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_inc_map</code></td>
+            <td>
+                <code>include_inc_map</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -6332,7 +6497,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>looks</code></td>
+            <td>
+                <code>looks</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;20x4&#39;, &#39;10x2&#39;]</code>
             </td>
@@ -6346,7 +6513,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_dem</code></td>
+            <td>
+                <code>include_dem</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -6360,7 +6529,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_wrapped_phase</code></td>
+            <td>
+                <code>include_wrapped_phase</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -6374,7 +6545,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>apply_water_mask</code></td>
+            <td>
+                <code>apply_water_mask</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -6389,7 +6562,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_displacement_maps</code></td>
+            <td>
+                <code>include_displacement_maps</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -6403,7 +6578,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>phase_filter_parameter</code></td>
+            <td>
+                <code>phase_filter_parameter</code>
+            </td>
             <td>
                   <code>float</code>
             </td>
@@ -6547,7 +6724,7 @@ If zero, adaptive phase filter will be skipped.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Submit a prepared job dictionary, or list of prepared job dictionaries</p>
+        <p>Submit a prepared job dictionary, or list of prepared job dictionaries</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -6562,7 +6739,9 @@ If zero, adaptive phase filter will be skipped.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>prepared_jobs</code></td>
+            <td>
+                <code>prepared_jobs</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[dict, <span title="typing.List">List</span>[dict]]</code>
             </td>
@@ -6661,7 +6840,7 @@ If zero, adaptive phase filter will be skipped.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Submit an RTC job</p>
+        <p>Submit an RTC job</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -6676,7 +6855,9 @@ If zero, adaptive phase filter will be skipped.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>granule</code></td>
+            <td>
+                <code>granule</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -6690,7 +6871,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>name</code></td>
+            <td>
+                <code>name</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -6704,7 +6887,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>dem_matching</code></td>
+            <td>
+                <code>dem_matching</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -6718,7 +6903,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_dem</code></td>
+            <td>
+                <code>include_dem</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -6732,7 +6919,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_inc_map</code></td>
+            <td>
+                <code>include_inc_map</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -6746,7 +6935,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_rgb</code></td>
+            <td>
+                <code>include_rgb</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -6761,7 +6952,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_scattering_area</code></td>
+            <td>
+                <code>include_scattering_area</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -6775,7 +6968,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>radiometry</code></td>
+            <td>
+                <code>radiometry</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;sigma0&#39;, &#39;gamma0&#39;]</code>
             </td>
@@ -6790,7 +6985,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>resolution</code></td>
+            <td>
+                <code>resolution</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[10, 20, 30]</code>
             </td>
@@ -6804,7 +7001,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>scale</code></td>
+            <td>
+                <code>scale</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;amplitude&#39;, &#39;decibel&#39;, &#39;power&#39;]</code>
             </td>
@@ -6818,7 +7017,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>speckle_filter</code></td>
+            <td>
+                <code>speckle_filter</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -6832,7 +7033,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>dem_name</code></td>
+            <td>
+                <code>dem_name</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;copernicus&#39;]</code>
             </td>
@@ -6967,7 +7170,7 @@ projected into the look direction (gamma0)</p>
 
     <div class="doc doc-contents ">
 
-      <p>Watch jobs until they complete</p>
+        <p>Watch jobs until they complete</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -6982,7 +7185,9 @@ projected into the look direction (gamma0)</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>job_or_batch</code></td>
+            <td>
+                <code>job_or_batch</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[<a class="autorefs autorefs-internal" title="hyp3_sdk.jobs.Batch" href="#hyp3_sdk.jobs.Batch">Batch</a>, <a class="autorefs autorefs-internal" title="hyp3_sdk.jobs.Job" href="#hyp3_sdk.jobs.Job">Job</a>]</code>
             </td>
@@ -6996,7 +7201,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>timeout</code></td>
+            <td>
+                <code>timeout</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -7010,7 +7217,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>interval</code></td>
+            <td>
+                <code>interval</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[int, float]</code>
             </td>
@@ -7104,6 +7313,11 @@ projected into the look direction (gamma0)</p>
 
 
     <div class="doc doc-contents ">
+
+
+
+
+
 
 
               <details class="quote">
@@ -7411,7 +7625,9 @@ projected into the look direction (gamma0)</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>location</code></td>
+            <td>
+                <code>location</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[<span title="pathlib.Path">Path</span>, str]</code>
             </td>
@@ -7425,7 +7641,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>create</code></td>
+            <td>
+                <code>create</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -7440,7 +7658,7 @@ projected into the look direction (gamma0)</p>
           </tr>
       </tbody>
     </table>
-      <p>Returns: list of Path objects to downloaded files</p>
+        <p>Returns: list of Path objects to downloaded files</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
@@ -7531,7 +7749,12 @@ projected into the look direction (gamma0)</p>
 
     <div class="doc doc-contents ">
 
-      <p>Errors and exceptions to raise when the SDK runs into problems</p>
+        <p>Errors and exceptions to raise when the SDK runs into problems</p>
+
+
+
+
+
 
 
 
@@ -7560,7 +7783,12 @@ projected into the look direction (gamma0)</p>
               Bases: <code><a class="autorefs autorefs-internal" title="hyp3_sdk.exceptions.HyP3SDKError" href="#hyp3_sdk.exceptions.HyP3SDKError">HyP3SDKError</a></code></p>
 
 
-      <p>Raise for errors when using the ASF Search module</p>
+        <p>Raise for errors when using the ASF Search module</p>
+
+
+
+
+
 
               <details class="quote">
                 <summary>Source code in <code>hyp3_sdk/exceptions.py</code></summary>
@@ -7590,7 +7818,12 @@ projected into the look direction (gamma0)</p>
               Bases: <code><a class="autorefs autorefs-internal" title="hyp3_sdk.exceptions.HyP3SDKError" href="#hyp3_sdk.exceptions.HyP3SDKError">HyP3SDKError</a></code></p>
 
 
-      <p>Raise when authentication does not succeed</p>
+        <p>Raise when authentication does not succeed</p>
+
+
+
+
+
 
               <details class="quote">
                 <summary>Source code in <code>hyp3_sdk/exceptions.py</code></summary>
@@ -7620,7 +7853,12 @@ projected into the look direction (gamma0)</p>
               Bases: <code><a class="autorefs autorefs-internal" title="hyp3_sdk.exceptions.HyP3SDKError" href="#hyp3_sdk.exceptions.HyP3SDKError">HyP3SDKError</a></code></p>
 
 
-      <p>Raise for errors when using the HyP3 module</p>
+        <p>Raise for errors when using the HyP3 module</p>
+
+
+
+
+
 
               <details class="quote">
                 <summary>Source code in <code>hyp3_sdk/exceptions.py</code></summary>
@@ -7650,7 +7888,12 @@ projected into the look direction (gamma0)</p>
               Bases: <code>Exception</code></p>
 
 
-      <p>Base Exception for the HyP3 SDK</p>
+        <p>Base Exception for the HyP3 SDK</p>
+
+
+
+
+
 
               <details class="quote">
                 <summary>Source code in <code>hyp3_sdk/exceptions.py</code></summary>
@@ -7680,7 +7923,12 @@ projected into the look direction (gamma0)</p>
               Bases: <code><a class="autorefs autorefs-internal" title="hyp3_sdk.exceptions.HyP3SDKError" href="#hyp3_sdk.exceptions.HyP3SDKError">HyP3SDKError</a></code></p>
 
 
-      <p>Raise when the HyP3 SDK encounters a server error</p>
+        <p>Raise when the HyP3 SDK encounters a server error</p>
+
+
+
+
+
 
               <details class="quote">
                 <summary>Source code in <code>hyp3_sdk/exceptions.py</code></summary>
@@ -7717,6 +7965,11 @@ projected into the look direction (gamma0)</p>
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -7740,9 +7993,14 @@ projected into the look direction (gamma0)</p>
     <div class="doc doc-contents ">
 
 
-      <p>A python wrapper around the HyP3 API.</p>
+        <p>A python wrapper around the HyP3 API.</p>
 <p>Warning: All jobs submitted to HyP3 are publicly visible. For more information, see
 https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
+
+
+
+
+
 
               <details class="quote">
                 <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
@@ -8765,7 +9023,7 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 
     <div class="doc doc-contents ">
 
-      <p>If username and password are not provided, attempts to use credentials from a <code>.netrc</code> file.</p>
+        <p>If username and password are not provided, attempts to use credentials from a <code>.netrc</code> file.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -8780,7 +9038,9 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>api_url</code></td>
+            <td>
+                <code>api_url</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -8794,7 +9054,9 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>username</code></td>
+            <td>
+                <code>username</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -8809,7 +9071,9 @@ Both username and password must be provided if either is provided.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>password</code></td>
+            <td>
+                <code>password</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -8824,7 +9088,9 @@ Both username and password must be provided if either is provided.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>prompt</code></td>
+            <td>
+                <code>prompt</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -8959,7 +9225,7 @@ are not provided as keyword parameters</p>
 
     <div class="doc doc-contents ">
 
-      <p>Deprecated method for checking your remaining processing credits; replaced by <code>HyP3.check_credits</code></p>
+        <p>Deprecated method for checking your remaining processing credits; replaced by <code>HyP3.check_credits</code></p>
 
 
     <p><span class="doc-section-title">Returns:</span></p>
@@ -9078,7 +9344,7 @@ are not provided as keyword parameters</p>
 
     <div class="doc doc-contents ">
 
-      <p>Gets a Batch of jobs from HyP3 matching the provided search criteria</p>
+        <p>Gets a Batch of jobs from HyP3 matching the provided search criteria</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -9093,7 +9359,9 @@ are not provided as keyword parameters</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>start</code></td>
+            <td>
+                <code>start</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[<span title="datetime.datetime">datetime</span>]</code>
             </td>
@@ -9107,7 +9375,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>end</code></td>
+            <td>
+                <code>end</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[<span title="datetime.datetime">datetime</span>]</code>
             </td>
@@ -9121,7 +9391,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>status_code</code></td>
+            <td>
+                <code>status_code</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -9135,7 +9407,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>name</code></td>
+            <td>
+                <code>name</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -9149,7 +9423,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>job_type</code></td>
+            <td>
+                <code>job_type</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -9163,7 +9439,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>user_id</code></td>
+            <td>
+                <code>user_id</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -9304,7 +9582,7 @@ are not provided as keyword parameters</p>
 
     <div class="doc doc-contents ">
 
-      <p>Get job by job ID</p>
+        <p>Get job by job ID</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -9319,7 +9597,9 @@ are not provided as keyword parameters</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>job_id</code></td>
+            <td>
+                <code>job_id</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -9464,7 +9744,7 @@ are not provided as keyword parameters</p>
 
     <div class="doc doc-contents ">
 
-      <p>Submit an autoRIFT job</p>
+        <p>Submit an autoRIFT job</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -9479,7 +9759,9 @@ are not provided as keyword parameters</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>granule1</code></td>
+            <td>
+                <code>granule1</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -9493,7 +9775,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>granule2</code></td>
+            <td>
+                <code>granule2</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -9507,7 +9791,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>name</code></td>
+            <td>
+                <code>name</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -9606,7 +9892,7 @@ are not provided as keyword parameters</p>
 
     <div class="doc doc-contents ">
 
-      <p>Prepare an InSAR ISCE burst job.</p>
+        <p>Prepare an InSAR ISCE burst job.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -9621,7 +9907,9 @@ are not provided as keyword parameters</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>granule1</code></td>
+            <td>
+                <code>granule1</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -9635,7 +9923,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>granule2</code></td>
+            <td>
+                <code>granule2</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -9649,7 +9939,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>name</code></td>
+            <td>
+                <code>name</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -9663,7 +9955,9 @@ are not provided as keyword parameters</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>apply_water_mask</code></td>
+            <td>
+                <code>apply_water_mask</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -9678,7 +9972,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>looks</code></td>
+            <td>
+                <code>looks</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;20x4&#39;, &#39;10x2&#39;, &#39;5x1&#39;]</code>
             </td>
@@ -9801,7 +10097,7 @@ as invalid for phase unwrapping</p>
 
     <div class="doc doc-contents ">
 
-      <p>Submit an InSAR job</p>
+        <p>Submit an InSAR job</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -9816,7 +10112,9 @@ as invalid for phase unwrapping</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>granule1</code></td>
+            <td>
+                <code>granule1</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -9830,7 +10128,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>granule2</code></td>
+            <td>
+                <code>granule2</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -9844,7 +10144,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>name</code></td>
+            <td>
+                <code>name</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -9858,7 +10160,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_look_vectors</code></td>
+            <td>
+                <code>include_look_vectors</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -9872,7 +10176,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_los_displacement</code></td>
+            <td>
+                <code>include_los_displacement</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -9888,7 +10194,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_inc_map</code></td>
+            <td>
+                <code>include_inc_map</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -9902,7 +10210,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>looks</code></td>
+            <td>
+                <code>looks</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;20x4&#39;, &#39;10x2&#39;]</code>
             </td>
@@ -9916,7 +10226,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_dem</code></td>
+            <td>
+                <code>include_dem</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -9930,7 +10242,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_wrapped_phase</code></td>
+            <td>
+                <code>include_wrapped_phase</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -9944,7 +10258,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>apply_water_mask</code></td>
+            <td>
+                <code>apply_water_mask</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -9959,7 +10275,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_displacement_maps</code></td>
+            <td>
+                <code>include_displacement_maps</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -9973,7 +10291,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>phase_filter_parameter</code></td>
+            <td>
+                <code>phase_filter_parameter</code>
+            </td>
             <td>
                   <code>float</code>
             </td>
@@ -10145,7 +10465,7 @@ If zero, adaptive phase filter will be skipped.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Submit an RTC job</p>
+        <p>Submit an RTC job</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -10160,7 +10480,9 @@ If zero, adaptive phase filter will be skipped.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>granule</code></td>
+            <td>
+                <code>granule</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -10174,7 +10496,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>name</code></td>
+            <td>
+                <code>name</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -10188,7 +10512,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>dem_matching</code></td>
+            <td>
+                <code>dem_matching</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -10202,7 +10528,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_dem</code></td>
+            <td>
+                <code>include_dem</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -10216,7 +10544,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_inc_map</code></td>
+            <td>
+                <code>include_inc_map</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -10230,7 +10560,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_rgb</code></td>
+            <td>
+                <code>include_rgb</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -10245,7 +10577,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_scattering_area</code></td>
+            <td>
+                <code>include_scattering_area</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -10259,7 +10593,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>radiometry</code></td>
+            <td>
+                <code>radiometry</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;sigma0&#39;, &#39;gamma0&#39;]</code>
             </td>
@@ -10274,7 +10610,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>resolution</code></td>
+            <td>
+                <code>resolution</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[10, 20, 30]</code>
             </td>
@@ -10288,7 +10626,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>scale</code></td>
+            <td>
+                <code>scale</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;amplitude&#39;, &#39;decibel&#39;, &#39;power&#39;]</code>
             </td>
@@ -10302,7 +10642,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>speckle_filter</code></td>
+            <td>
+                <code>speckle_filter</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -10316,7 +10658,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>dem_name</code></td>
+            <td>
+                <code>dem_name</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;copernicus&#39;]</code>
             </td>
@@ -10469,7 +10813,7 @@ projected into the look direction (gamma0)</p>
 
     <div class="doc doc-contents ">
 
-      <p>Refresh each jobs' information</p>
+        <p>Refresh each jobs' information</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -10484,7 +10828,9 @@ projected into the look direction (gamma0)</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>job_or_batch</code></td>
+            <td>
+                <code>job_or_batch</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[<a class="autorefs autorefs-internal" title="hyp3_sdk.jobs.Batch" href="#hyp3_sdk.jobs.Batch">Batch</a>, <a class="autorefs autorefs-internal" title="hyp3_sdk.jobs.Job" href="#hyp3_sdk.jobs.Job">Job</a>]</code>
             </td>
@@ -10563,7 +10909,7 @@ projected into the look direction (gamma0)</p>
 
     <div class="doc doc-contents ">
 
-      <p>Submit an autoRIFT job</p>
+        <p>Submit an autoRIFT job</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -10578,7 +10924,9 @@ projected into the look direction (gamma0)</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>granule1</code></td>
+            <td>
+                <code>granule1</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -10592,7 +10940,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>granule2</code></td>
+            <td>
+                <code>granule2</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -10606,7 +10956,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>name</code></td>
+            <td>
+                <code>name</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -10689,7 +11041,7 @@ projected into the look direction (gamma0)</p>
 
     <div class="doc doc-contents ">
 
-      <p>Submit an InSAR ISCE burst job.</p>
+        <p>Submit an InSAR ISCE burst job.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -10704,7 +11056,9 @@ projected into the look direction (gamma0)</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>granule1</code></td>
+            <td>
+                <code>granule1</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -10718,7 +11072,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>granule2</code></td>
+            <td>
+                <code>granule2</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -10732,7 +11088,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>name</code></td>
+            <td>
+                <code>name</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -10746,7 +11104,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>apply_water_mask</code></td>
+            <td>
+                <code>apply_water_mask</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -10761,7 +11121,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>looks</code></td>
+            <td>
+                <code>looks</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;20x4&#39;, &#39;10x2&#39;, &#39;5x1&#39;]</code>
             </td>
@@ -10864,7 +11226,7 @@ as invalid for phase unwrapping</p>
 
     <div class="doc doc-contents ">
 
-      <p>Submit an InSAR job</p>
+        <p>Submit an InSAR job</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -10879,7 +11241,9 @@ as invalid for phase unwrapping</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>granule1</code></td>
+            <td>
+                <code>granule1</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -10893,7 +11257,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>granule2</code></td>
+            <td>
+                <code>granule2</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -10907,7 +11273,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>name</code></td>
+            <td>
+                <code>name</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -10921,7 +11289,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_look_vectors</code></td>
+            <td>
+                <code>include_look_vectors</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -10935,7 +11305,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_los_displacement</code></td>
+            <td>
+                <code>include_los_displacement</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -10951,7 +11323,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_inc_map</code></td>
+            <td>
+                <code>include_inc_map</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -10965,7 +11339,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>looks</code></td>
+            <td>
+                <code>looks</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;20x4&#39;, &#39;10x2&#39;]</code>
             </td>
@@ -10979,7 +11355,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_dem</code></td>
+            <td>
+                <code>include_dem</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -10993,7 +11371,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_wrapped_phase</code></td>
+            <td>
+                <code>include_wrapped_phase</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -11007,7 +11387,9 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>apply_water_mask</code></td>
+            <td>
+                <code>apply_water_mask</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -11022,7 +11404,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_displacement_maps</code></td>
+            <td>
+                <code>include_displacement_maps</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -11036,7 +11420,9 @@ as invalid for phase unwrapping</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>phase_filter_parameter</code></td>
+            <td>
+                <code>phase_filter_parameter</code>
+            </td>
             <td>
                   <code>float</code>
             </td>
@@ -11180,7 +11566,7 @@ If zero, adaptive phase filter will be skipped.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Submit a prepared job dictionary, or list of prepared job dictionaries</p>
+        <p>Submit a prepared job dictionary, or list of prepared job dictionaries</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -11195,7 +11581,9 @@ If zero, adaptive phase filter will be skipped.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>prepared_jobs</code></td>
+            <td>
+                <code>prepared_jobs</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[dict, <span title="typing.List">List</span>[dict]]</code>
             </td>
@@ -11294,7 +11682,7 @@ If zero, adaptive phase filter will be skipped.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Submit an RTC job</p>
+        <p>Submit an RTC job</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -11309,7 +11697,9 @@ If zero, adaptive phase filter will be skipped.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>granule</code></td>
+            <td>
+                <code>granule</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -11323,7 +11713,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>name</code></td>
+            <td>
+                <code>name</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[str]</code>
             </td>
@@ -11337,7 +11729,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>dem_matching</code></td>
+            <td>
+                <code>dem_matching</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -11351,7 +11745,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_dem</code></td>
+            <td>
+                <code>include_dem</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -11365,7 +11761,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_inc_map</code></td>
+            <td>
+                <code>include_inc_map</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -11379,7 +11777,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_rgb</code></td>
+            <td>
+                <code>include_rgb</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -11394,7 +11794,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_scattering_area</code></td>
+            <td>
+                <code>include_scattering_area</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -11408,7 +11810,9 @@ If zero, adaptive phase filter will be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>radiometry</code></td>
+            <td>
+                <code>radiometry</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;sigma0&#39;, &#39;gamma0&#39;]</code>
             </td>
@@ -11423,7 +11827,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>resolution</code></td>
+            <td>
+                <code>resolution</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[10, 20, 30]</code>
             </td>
@@ -11437,7 +11843,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>scale</code></td>
+            <td>
+                <code>scale</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;amplitude&#39;, &#39;decibel&#39;, &#39;power&#39;]</code>
             </td>
@@ -11451,7 +11859,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>speckle_filter</code></td>
+            <td>
+                <code>speckle_filter</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -11465,7 +11875,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>dem_name</code></td>
+            <td>
+                <code>dem_name</code>
+            </td>
             <td>
                   <code><span title="typing.Literal">Literal</span>[&#39;copernicus&#39;]</code>
             </td>
@@ -11600,7 +12012,7 @@ projected into the look direction (gamma0)</p>
 
     <div class="doc doc-contents ">
 
-      <p>Watch jobs until they complete</p>
+        <p>Watch jobs until they complete</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -11615,7 +12027,9 @@ projected into the look direction (gamma0)</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>job_or_batch</code></td>
+            <td>
+                <code>job_or_batch</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[<a class="autorefs autorefs-internal" title="hyp3_sdk.jobs.Batch" href="#hyp3_sdk.jobs.Batch">Batch</a>, <a class="autorefs autorefs-internal" title="hyp3_sdk.jobs.Job" href="#hyp3_sdk.jobs.Job">Job</a>]</code>
             </td>
@@ -11629,7 +12043,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>timeout</code></td>
+            <td>
+                <code>timeout</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -11643,7 +12059,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>interval</code></td>
+            <td>
+                <code>interval</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[int, float]</code>
             </td>
@@ -11748,6 +12166,11 @@ projected into the look direction (gamma0)</p>
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -11769,6 +12192,11 @@ projected into the look direction (gamma0)</p>
 
 
     <div class="doc doc-contents ">
+
+
+
+
+
 
 
               <details class="quote">
@@ -12098,7 +12526,7 @@ projected into the look direction (gamma0)</p>
 
     <div class="doc doc-contents ">
 
-      <p>Check succeeded jobs for expiration</p>
+        <p>Check succeeded jobs for expiration</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
@@ -12136,7 +12564,7 @@ projected into the look direction (gamma0)</p>
 
     <div class="doc doc-contents ">
 
-      <p>Returns: True if all jobs are complete, otherwise returns False</p>
+        <p>Returns: True if all jobs are complete, otherwise returns False</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
@@ -12186,7 +12614,9 @@ projected into the look direction (gamma0)</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>location</code></td>
+            <td>
+                <code>location</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[<span title="pathlib.Path">Path</span>, str]</code>
             </td>
@@ -12200,7 +12630,9 @@ projected into the look direction (gamma0)</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>create</code></td>
+            <td>
+                <code>create</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -12215,7 +12647,7 @@ projected into the look direction (gamma0)</p>
           </tr>
       </tbody>
     </table>
-      <p>Returns: list of Path objects to downloaded files</p>
+        <p>Returns: list of Path objects to downloaded files</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
@@ -12267,7 +12699,7 @@ projected into the look direction (gamma0)</p>
 
     <div class="doc doc-contents ">
 
-      <p>Filter jobs by status. By default, only succeeded, pending,
+        <p>Filter jobs by status. By default, only succeeded, pending,
 and still running jobs will be in the returned batch.</p>
 
 
@@ -12283,7 +12715,9 @@ and still running jobs will be in the returned batch.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>succeeded</code></td>
+            <td>
+                <code>succeeded</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -12297,7 +12731,9 @@ and still running jobs will be in the returned batch.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>pending</code></td>
+            <td>
+                <code>pending</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -12311,7 +12747,9 @@ and still running jobs will be in the returned batch.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>running</code></td>
+            <td>
+                <code>running</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -12325,7 +12763,9 @@ and still running jobs will be in the returned batch.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>failed</code></td>
+            <td>
+                <code>failed</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -12339,7 +12779,9 @@ and still running jobs will be in the returned batch.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>include_expired</code></td>
+            <td>
+                <code>include_expired</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -12474,7 +12916,7 @@ and still running jobs will be in the returned batch.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Returns: True if all jobs have succeeded, otherwise returns False</p>
+        <p>Returns: True if all jobs have succeeded, otherwise returns False</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
@@ -12519,6 +12961,11 @@ and still running jobs will be in the returned batch.</p>
 
 
     <div class="doc doc-contents ">
+
+
+
+
+
 
 
               <details class="quote">
@@ -12826,7 +13273,9 @@ and still running jobs will be in the returned batch.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>location</code></td>
+            <td>
+                <code>location</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[<span title="pathlib.Path">Path</span>, str]</code>
             </td>
@@ -12840,7 +13289,9 @@ and still running jobs will be in the returned batch.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>create</code></td>
+            <td>
+                <code>create</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -12855,7 +13306,7 @@ and still running jobs will be in the returned batch.</p>
           </tr>
       </tbody>
     </table>
-      <p>Returns: list of Path objects to downloaded files</p>
+        <p>Returns: list of Path objects to downloaded files</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
@@ -12953,7 +13404,12 @@ and still running jobs will be in the returned batch.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Extra utilities for working with HyP3</p>
+        <p>Extra utilities for working with HyP3</p>
+
+
+
+
+
 
 
 
@@ -12978,7 +13434,7 @@ and still running jobs will be in the returned batch.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Split a sequence into small chunks</p>
+        <p>Split a sequence into small chunks</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -12993,7 +13449,9 @@ and still running jobs will be in the returned batch.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>itr</code></td>
+            <td>
+                <code>itr</code>
+            </td>
             <td>
                   <code><span title="typing.Sequence">Sequence</span>[<span title="typing.Any">Any</span>]</code>
             </td>
@@ -13007,7 +13465,9 @@ and still running jobs will be in the returned batch.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>n</code></td>
+            <td>
+                <code>n</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -13065,7 +13525,7 @@ and still running jobs will be in the returned batch.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Download a file
+        <p>Download a file
 Args:
     url: URL of the file to download
     filepath: Location to place file into
@@ -13159,7 +13619,7 @@ Returns:
 
     <div class="doc doc-contents ">
 
-      <p>Extract a zipped HyP3 product</p>
+        <p>Extract a zipped HyP3 product</p>
 <p>Extract a zipped HyP3 product to the same directory as the zipped HyP3 product, optionally
 deleting <code>zip file</code> afterward.</p>
 
@@ -13176,7 +13636,9 @@ deleting <code>zip file</code> afterward.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>zip_file</code></td>
+            <td>
+                <code>zip_file</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -13190,7 +13652,9 @@ deleting <code>zip file</code> afterward.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>delete</code></td>
+            <td>
+                <code>delete</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -13289,7 +13753,7 @@ deleting <code>zip file</code> afterward.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Log into HyP3 using credentials for <code>urs.earthdata.nasa.gov</code> from either the provided
+        <p>Log into HyP3 using credentials for <code>urs.earthdata.nasa.gov</code> from either the provided
  credentials or a <code>.netrc</code> file.</p>
 
 

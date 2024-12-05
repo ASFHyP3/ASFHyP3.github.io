@@ -825,6 +825,26 @@ feedback.init({showIcon: false});
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://storymaps.arcgis.com/stories/191bf1b6962c402086807390b3ce63b0" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StoryMap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1718,13 +1738,6 @@ feedback.init({showIcon: false});
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#asf_tools.watermasking.fill_missing_tiles" class="md-nav__link">
-    fill_missing_tiles
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#asf_tools.watermasking.generate_osm_tiles" class="md-nav__link">
     generate_osm_tiles
   </a>
@@ -2418,13 +2431,6 @@ feedback.init({showIcon: false});
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#asf_tools.watermasking.fill_missing_tiles" class="md-nav__link">
-    fill_missing_tiles
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#asf_tools.watermasking.generate_osm_tiles" class="md-nav__link">
     generate_osm_tiles
   </a>
@@ -2591,7 +2597,12 @@ feedback.init({showIcon: false});
 <a id="asf_tools"></a>
     <div class="doc doc-contents first">
 
-      <p>Tools developed by ASF for working with SAR data</p>
+        <p>Tools developed by ASF for working with SAR data</p>
+
+
+
+
+
 
 
 
@@ -2618,7 +2629,7 @@ feedback.init({showIcon: false});
 
     <div class="doc doc-contents ">
 
-      <p>Create a local-resolution-weighted composite from Sentinel-1 RTC products.</p>
+        <p>Create a local-resolution-weighted composite from Sentinel-1 RTC products.</p>
 <p>Create a local-resolution-weighted composite from a set of Sentinel-1 RTC
 products (D. Small, 2012). The local resolution, defined as the inverse of the
 local contributing (scattering) area, is used to weight each RTC products'
@@ -2631,6 +2642,11 @@ the number of rasters contributing to each composite pixel is created.</p>
   <summary>References</summary>
   <p>David Small, 2012: <a href="https://doi.org/10.1109/IGARSS.2012.6350465">https://doi.org/10.1109/IGARSS.2012.6350465</a></p>
 </details>
+
+
+
+
+
 
 
   <div class="doc doc-children">
@@ -2654,7 +2670,7 @@ the number of rasters contributing to each composite pixel is created.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Determine the path of the area raster for a given backscatter raster based on naming conventions for HyP3 RTC
+        <p>Determine the path of the area raster for a given backscatter raster based on naming conventions for HyP3 RTC
 products</p>
 
 
@@ -2670,7 +2686,9 @@ products</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>raster</code></td>
+            <td>
+                <code>raster</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -2749,7 +2767,7 @@ products</p>
 
     <div class="doc doc-contents ">
 
-      <p>Determine the corner coordinates and geotransform for the full extent of a set of rasters</p>
+        <p>Determine the corner coordinates and geotransform for the full extent of a set of rasters</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -2764,7 +2782,9 @@ products</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>raster_info</code></td>
+            <td>
+                <code>raster_info</code>
+            </td>
             <td>
                   <code>dict</code>
             </td>
@@ -2900,7 +2920,7 @@ products</p>
 
     <div class="doc doc-contents ">
 
-      <p>Determine the target UTM EPSG projection for the output composite</p>
+        <p>Determine the target UTM EPSG projection for the output composite</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -2915,7 +2935,9 @@ products</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>codes</code></td>
+            <td>
+                <code>codes</code>
+            </td>
             <td>
                   <code><span title="typing.List">List</span>[int]</code>
             </td>
@@ -3024,7 +3046,7 @@ products</p>
 
     <div class="doc doc-contents ">
 
-      <p>Creates a local-resolution-weighted composite from Sentinel-1 RTC products</p>
+        <p>Creates a local-resolution-weighted composite from Sentinel-1 RTC products</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -3039,7 +3061,9 @@ products</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>out_name</code></td>
+            <td>
+                <code>out_name</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -3053,7 +3077,9 @@ products</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>rasters</code></td>
+            <td>
+                <code>rasters</code>
+            </td>
             <td>
                   <code><span title="typing.List">List</span>[str]</code>
             </td>
@@ -3067,7 +3093,9 @@ products</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>resolution</code></td>
+            <td>
+                <code>resolution</code>
+            </td>
             <td>
                   <code>float</code>
             </td>
@@ -3302,7 +3330,7 @@ products</p>
 
     <div class="doc doc-contents ">
 
-      <p>Reprojects a set of raster images to a common projection and resolution</p>
+        <p>Reprojects a set of raster images to a common projection and resolution</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -3317,7 +3345,9 @@ products</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>raster_info</code></td>
+            <td>
+                <code>raster_info</code>
+            </td>
             <td>
                   <code>dict</code>
             </td>
@@ -3331,7 +3361,9 @@ products</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>target_epsg_code</code></td>
+            <td>
+                <code>target_epsg_code</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -3345,7 +3377,9 @@ products</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>target_resolution</code></td>
+            <td>
+                <code>target_resolution</code>
+            </td>
             <td>
                   <code>float</code>
             </td>
@@ -3359,7 +3393,9 @@ products</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>directory</code></td>
+            <td>
+                <code>directory</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -3501,7 +3537,12 @@ products</p>
 
     <div class="doc doc-contents ">
 
-      <p>Prepare a Copernicus GLO-30 DEM virtual raster (VRT) covering a given geometry</p>
+        <p>Prepare a Copernicus GLO-30 DEM virtual raster (VRT) covering a given geometry</p>
+
+
+
+
+
 
 
 
@@ -3526,7 +3567,7 @@ products</p>
 
     <div class="doc doc-contents ">
 
-      <p>Create a DEM mosaic VRT covering a given geometry</p>
+        <p>Create a DEM mosaic VRT covering a given geometry</p>
 <p>The DEM mosaic is assembled from the Copernicus GLO-30 DEM tiles that intersect the geometry.</p>
 <p>Note: <code>asf_tools</code> does not currently support geometries that cross the antimeridian.</p>
 
@@ -3543,7 +3584,9 @@ products</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>vrt</code></td>
+            <td>
+                <code>vrt</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -3557,7 +3600,9 @@ products</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>geometry</code></td>
+            <td>
+                <code>geometry</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[<span title="osgeo.ogr.Geometry">Geometry</span>, <span title="shapely.geometry.base.BaseGeometry">BaseGeometry</span>]</code>
             </td>
@@ -3656,6 +3701,11 @@ products</p>
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -3679,13 +3729,18 @@ products</p>
 
     <div class="doc doc-contents ">
 
-      <p>Generate flood depth map from surface water extent map.</p>
+        <p>Generate flood depth map from surface water extent map.</p>
 <p>Create a flood depth map from a surface water extent map and
 a HAND image. The HAND image must be pixel-aligned (same extent and size) to
 the water extent map, and the surface water extent map should be a byte GeoTIFF
 indicating water (true), not water (false). Flood depth maps are estimated
 using either a numerical, normalized median absolute deviation, logarithmic
 or iterative approach.</p>
+
+
+
+
+
 
 
 
@@ -3710,7 +3765,7 @@ or iterative approach.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Calculate a function in logarithmic scale and return in linear scale.
+        <p>Calculate a function in logarithmic scale and return in linear scale.
 INF values inside the data array are set to nan.</p>
 
 
@@ -3726,7 +3781,9 @@ INF values inside the data array are set to nan.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>data</code></td>
+            <td>
+                <code>data</code>
+            </td>
             <td>
                   <code><span title="numpy.ndarray">ndarray</span></code>
             </td>
@@ -3740,7 +3797,9 @@ INF values inside the data array are set to nan.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>func</code></td>
+            <td>
+                <code>func</code>
+            </td>
             <td>
                   <code><span title="typing.Callable">Callable</span></code>
             </td>
@@ -3755,7 +3814,7 @@ INF values inside the data array are set to nan.</p>
           </tr>
       </tbody>
     </table>
-      <p>Returns:
+        <p>Returns:
     statistic: statistic of data in linear scale</p>
 
             <details class="quote">
@@ -3804,7 +3863,7 @@ INF values inside the data array are set to nan.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Create a flood depth map from a surface water extent map.</p>
+        <p>Create a flood depth map from a surface water extent map.</p>
 <p>WARNING: This functionality is still under active development and the products
 created using this function are likely to change in the future.</p>
 <p>Create a flood depth map from a single surface water extent map and
@@ -3837,7 +3896,9 @@ distributions.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>out_raster</code></td>
+            <td>
+                <code>out_raster</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -3851,7 +3912,9 @@ distributions.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>vv_raster</code></td>
+            <td>
+                <code>vv_raster</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -3865,7 +3928,9 @@ distributions.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>water_raster</code></td>
+            <td>
+                <code>water_raster</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -3879,7 +3944,9 @@ distributions.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>hand_raster</code></td>
+            <td>
+                <code>hand_raster</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -3893,7 +3960,9 @@ distributions.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>estimator</code></td>
+            <td>
+                <code>estimator</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -3907,7 +3976,9 @@ distributions.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>water_level_sigma</code></td>
+            <td>
+                <code>water_level_sigma</code>
+            </td>
             <td>
                   <code>float</code>
             </td>
@@ -3921,7 +3992,9 @@ distributions.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>known_water_threshold</code></td>
+            <td>
+                <code>known_water_threshold</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[float]</code>
             </td>
@@ -3936,7 +4009,9 @@ If <code>None</code>, the threshold is calculated.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>iterative_bounds</code></td>
+            <td>
+                <code>iterative_bounds</code>
+            </td>
             <td>
                   <code><span title="typing.Tuple">Tuple</span>[int, int]</code>
             </td>
@@ -3951,7 +4026,9 @@ used in the iterative estimator</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>iterative_min_size</code></td>
+            <td>
+                <code>iterative_min_size</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -3966,7 +4043,9 @@ iterative estimator. Waterbodies smaller than this wll be skipped.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>minimization_metric</code></td>
+            <td>
+                <code>minimization_metric</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -4249,6 +4328,11 @@ Options include a Fowlkes-Mallows index (fmi) or a threat score (ts).</p>
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -4270,7 +4354,7 @@ Options include a Fowlkes-Mallows index (fmi) or a threat score (ts).</p>
 
     <div class="doc doc-contents ">
 
-      <p>Calculate the Height Above Nearest Drainage (HAND) for watershed boundaries (hydrobasins).</p>
+        <p>Calculate the Height Above Nearest Drainage (HAND) for watershed boundaries (hydrobasins).</p>
 <p>For watershed boundaries, see: https://www.hydrosheds.org/page/hydrobasins</p>
 
 
@@ -4286,7 +4370,9 @@ Options include a Fowlkes-Mallows index (fmi) or a threat score (ts).</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>out_raster</code></td>
+            <td>
+                <code>out_raster</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -4300,7 +4386,9 @@ Options include a Fowlkes-Mallows index (fmi) or a threat score (ts).</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>geometries</code></td>
+            <td>
+                <code>geometries</code>
+            </td>
             <td>
                   <code><span title="shapely.geometry.GeometryCollection">GeometryCollection</span></code>
             </td>
@@ -4314,7 +4402,9 @@ Options include a Fowlkes-Mallows index (fmi) or a threat score (ts).</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>dem_file</code></td>
+            <td>
+                <code>dem_file</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -4328,7 +4418,9 @@ Options include a Fowlkes-Mallows index (fmi) or a threat score (ts).</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>acc_thresh</code></td>
+            <td>
+                <code>acc_thresh</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[int]</code>
             </td>
@@ -4411,7 +4503,7 @@ If <code>None</code>, the mean accumulation value is used</p>
 
     <div class="doc doc-contents ">
 
-      <p>Copernicus GLO-30 Height Above Nearest Drainage (HAND)</p>
+        <p>Copernicus GLO-30 Height Above Nearest Drainage (HAND)</p>
 <p>Make a Height Above Nearest Drainage (HAND) GeoTIFF from the Copernicus GLO-30 DEM
 covering the watershed boundaries (hydrobasins) defined in a vector file.</p>
 <p>For watershed boundaries, see: https://www.hydrosheds.org/page/hydrobasins</p>
@@ -4429,7 +4521,9 @@ covering the watershed boundaries (hydrobasins) defined in a vector file.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>out_raster</code></td>
+            <td>
+                <code>out_raster</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -4443,7 +4537,9 @@ covering the watershed boundaries (hydrobasins) defined in a vector file.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>vector_file</code></td>
+            <td>
+                <code>vector_file</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -4457,7 +4553,9 @@ covering the watershed boundaries (hydrobasins) defined in a vector file.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>acc_thresh</code></td>
+            <td>
+                <code>acc_thresh</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[int]</code>
             </td>
@@ -4532,7 +4630,7 @@ If <code>None</code>, the mean accumulation value is used</p>
 
     <div class="doc doc-contents ">
 
-      <p>Prepare a HAND mosaic VRT covering a given geometry</p>
+        <p>Prepare a HAND mosaic VRT covering a given geometry</p>
 <p>Prepare a Height Above Nearest Drainage (HAND) virtual raster (VRT) covering a given geometry.
 The Height Above Nearest Drainage (HAND) mosaic is assembled from the HAND tiles that intersect
 the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
@@ -4551,7 +4649,9 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>vrt</code></td>
+            <td>
+                <code>vrt</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -4565,7 +4665,9 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>geometry</code></td>
+            <td>
+                <code>geometry</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[<span title="osgeo.ogr.Geometry">Geometry</span>, <span title="shapely.geometry.base.BaseGeometry">BaseGeometry</span>]</code>
             </td>
@@ -4659,7 +4761,12 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Calculate Height Above Nearest Drainage (HAND) from the Copernicus GLO-30 DEM</p>
+        <p>Calculate Height Above Nearest Drainage (HAND) from the Copernicus GLO-30 DEM</p>
+
+
+
+
+
 
 
 
@@ -4684,7 +4791,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Calculate the Height Above Nearest Drainage (HAND)</p>
+        <p>Calculate the Height Above Nearest Drainage (HAND)</p>
 <p>Calculate the Height Above Nearest Drainage (HAND) using pySHEDS library. Because HAND
  is tied to watershed boundaries (hydrobasins), clipped/cut basins will produce weird edge
  effects, and incomplete basins should be masked out. For watershed boundaries,
@@ -4714,7 +4821,9 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>dem_array</code></td>
+            <td>
+                <code>dem_array</code>
+            </td>
             <td>
             </td>
             <td>
@@ -4727,7 +4836,9 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>dem_crs</code></td>
+            <td>
+                <code>dem_crs</code>
+            </td>
             <td>
                   <code><span title="rasterio.crs.CRS">CRS</span></code>
             </td>
@@ -4741,7 +4852,9 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>dem_affine</code></td>
+            <td>
+                <code>dem_affine</code>
+            </td>
             <td>
                   <code><span title="rasterio.Affine">Affine</span></code>
             </td>
@@ -4755,7 +4868,9 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>basin_mask</code></td>
+            <td>
+                <code>basin_mask</code>
+            </td>
             <td>
             </td>
             <td>
@@ -4769,7 +4884,9 @@ https://numpy.org/doc/stable/reference/maskedarray.generic.html#what-is-a-masked
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>acc_thresh</code></td>
+            <td>
+                <code>acc_thresh</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[int]</code>
             </td>
@@ -4958,7 +5075,7 @@ If <code>None</code>, the mean accumulation value is used</p>
 
     <div class="doc doc-contents ">
 
-      <p>Calculate the Height Above Nearest Drainage (HAND) for watershed boundaries (hydrobasins).</p>
+        <p>Calculate the Height Above Nearest Drainage (HAND) for watershed boundaries (hydrobasins).</p>
 <p>For watershed boundaries, see: https://www.hydrosheds.org/page/hydrobasins</p>
 
 
@@ -4974,7 +5091,9 @@ If <code>None</code>, the mean accumulation value is used</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>out_raster</code></td>
+            <td>
+                <code>out_raster</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -4988,7 +5107,9 @@ If <code>None</code>, the mean accumulation value is used</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>geometries</code></td>
+            <td>
+                <code>geometries</code>
+            </td>
             <td>
                   <code><span title="shapely.geometry.GeometryCollection">GeometryCollection</span></code>
             </td>
@@ -5002,7 +5123,9 @@ If <code>None</code>, the mean accumulation value is used</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>dem_file</code></td>
+            <td>
+                <code>dem_file</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -5016,7 +5139,9 @@ If <code>None</code>, the mean accumulation value is used</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>acc_thresh</code></td>
+            <td>
+                <code>acc_thresh</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[int]</code>
             </td>
@@ -5099,7 +5224,7 @@ If <code>None</code>, the mean accumulation value is used</p>
 
     <div class="doc doc-contents ">
 
-      <p>Replace NaNs in a HAND array with values interpolated from their neighbor's HOND</p>
+        <p>Replace NaNs in a HAND array with values interpolated from their neighbor's HOND</p>
 <p>Replace NaNs in a HAND array with values interpolated from their neighbor's HOND (height of nearest drainage)
 using a 2D Gaussian kernel. Here, HOND is defined as the DEM value less the HAND value. For the kernel, see:
 https://docs.astropy.org/en/stable/convolution/#using-astropy-s-convolution-to-replace-bad-data</p>
@@ -5152,7 +5277,7 @@ https://docs.astropy.org/en/stable/convolution/#using-astropy-s-convolution-to-r
 
     <div class="doc doc-contents ">
 
-      <p>Replace NaNs with values interpolated from their neighbors</p>
+        <p>Replace NaNs with values interpolated from their neighbors</p>
 <p>Replace NaNs with values interpolated from their neighbors using a 2D Gaussian
 kernel, see: https://docs.astropy.org/en/stable/convolution/#using-astropy-s-convolution-to-replace-bad-data</p>
 
@@ -5204,7 +5329,7 @@ kernel, see: https://docs.astropy.org/en/stable/convolution/#using-astropy-s-con
 
     <div class="doc doc-contents ">
 
-      <p>Copernicus GLO-30 Height Above Nearest Drainage (HAND)</p>
+        <p>Copernicus GLO-30 Height Above Nearest Drainage (HAND)</p>
 <p>Make a Height Above Nearest Drainage (HAND) GeoTIFF from the Copernicus GLO-30 DEM
 covering the watershed boundaries (hydrobasins) defined in a vector file.</p>
 <p>For watershed boundaries, see: https://www.hydrosheds.org/page/hydrobasins</p>
@@ -5222,7 +5347,9 @@ covering the watershed boundaries (hydrobasins) defined in a vector file.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>out_raster</code></td>
+            <td>
+                <code>out_raster</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -5236,7 +5363,9 @@ covering the watershed boundaries (hydrobasins) defined in a vector file.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>vector_file</code></td>
+            <td>
+                <code>vector_file</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -5250,7 +5379,9 @@ covering the watershed boundaries (hydrobasins) defined in a vector file.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>acc_thresh</code></td>
+            <td>
+                <code>acc_thresh</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[int]</code>
             </td>
@@ -5334,7 +5465,12 @@ If <code>None</code>, the mean accumulation value is used</p>
 
     <div class="doc doc-contents ">
 
-      <p>Prepare a Height Above Nearest Drainage (HAND) virtual raster (VRT) covering a given geometry</p>
+        <p>Prepare a Height Above Nearest Drainage (HAND) virtual raster (VRT) covering a given geometry</p>
+
+
+
+
+
 
 
 
@@ -5359,7 +5495,7 @@ If <code>None</code>, the mean accumulation value is used</p>
 
     <div class="doc doc-contents ">
 
-      <p>Create a HAND raster pixel-aligned to a source raster</p>
+        <p>Create a HAND raster pixel-aligned to a source raster</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -5374,7 +5510,9 @@ If <code>None</code>, the mean accumulation value is used</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>hand_raster</code></td>
+            <td>
+                <code>hand_raster</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -5388,7 +5526,9 @@ If <code>None</code>, the mean accumulation value is used</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>source_raster</code></td>
+            <td>
+                <code>source_raster</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -5402,7 +5542,9 @@ If <code>None</code>, the mean accumulation value is used</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>resampling_method</code></td>
+            <td>
+                <code>resampling_method</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -5483,7 +5625,7 @@ https://gdal.org/programs/gdalwarp.html#cmdoption-gdalwarp-r</p>
 
     <div class="doc doc-contents ">
 
-      <p>Prepare a HAND mosaic VRT covering a given geometry</p>
+        <p>Prepare a HAND mosaic VRT covering a given geometry</p>
 <p>Prepare a Height Above Nearest Drainage (HAND) virtual raster (VRT) covering a given geometry.
 The Height Above Nearest Drainage (HAND) mosaic is assembled from the HAND tiles that intersect
 the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
@@ -5502,7 +5644,9 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>vrt</code></td>
+            <td>
+                <code>vrt</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -5516,7 +5660,9 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>geometry</code></td>
+            <td>
+                <code>geometry</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[<span title="osgeo.ogr.Geometry">Geometry</span>, <span title="shapely.geometry.base.BaseGeometry">BaseGeometry</span>]</code>
             </td>
@@ -5626,6 +5772,11 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -5647,7 +5798,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Water threshold Calculation using a multi-mode Expectation Maximization Approach</p>
+        <p>Water threshold Calculation using a multi-mode Expectation Maximization Approach</p>
 <p>Thresholding works best when backscatter tiles are provided on a decibel scale
 to get Gaussian distribution that is scaled to a range of 0-255, and performed
 on a small tile that is likely to have a transition between water and not water.</p>
@@ -5665,7 +5816,9 @@ on a small tile that is likely to have a transition between water and not water.
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>tile</code></td>
+            <td>
+                <code>tile</code>
+            </td>
             <td>
                   <code><span title="numpy.ndarray">ndarray</span></code>
             </td>
@@ -5679,7 +5832,9 @@ on a small tile that is likely to have a transition between water and not water.
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>number_of_classes</code></td>
+            <td>
+                <code>number_of_classes</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -5947,11 +6102,16 @@ and (3) water, as is often seen in the US Midwest.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Generate surface water maps from Sentinel-1 RTC products</p>
+        <p>Generate surface water maps from Sentinel-1 RTC products</p>
 <p>Create a surface water extent map from a dual-pol Sentinel-1 RTC product and
 a HAND image. The HAND image must be pixel-aligned (same extent and size) to
 the RTC images. The water extent maps are created using an adaptive Expectation
 Maximization thresholding approach and refined using Fuzzy Logic.</p>
+
+
+
+
+
 
 
 
@@ -5976,7 +6136,7 @@ Maximization thresholding approach and refined using Fuzzy Logic.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Ensure raster data is uint8 and set the area outside the valid data to nodata</p>
+        <p>Ensure raster data is uint8 and set the area outside the valid data to nodata</p>
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/hydrosar/water_map.py</code></summary>
@@ -6018,7 +6178,7 @@ Maximization thresholding approach and refined using Fuzzy Logic.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Creates a surface water extent map from a Sentinel-1 RTC product</p>
+        <p>Creates a surface water extent map from a Sentinel-1 RTC product</p>
 <p>Create a surface water extent map from a dual-pol Sentinel-1 RTC product and
 a HAND image. The HAND image must be pixel-aligned (same extent and size) to
 the RTC images. The water extent maps are created using an adaptive Expectation
@@ -6066,7 +6226,9 @@ from both masks, and the combined water map will be written to <code>out_raster<
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>out_raster</code></td>
+            <td>
+                <code>out_raster</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -6080,7 +6242,9 @@ from both masks, and the combined water map will be written to <code>out_raster<
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>vv_raster</code></td>
+            <td>
+                <code>vv_raster</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -6094,7 +6258,9 @@ from both masks, and the combined water map will be written to <code>out_raster<
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>vh_raster</code></td>
+            <td>
+                <code>vh_raster</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -6108,7 +6274,9 @@ from both masks, and the combined water map will be written to <code>out_raster<
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>hand_raster</code></td>
+            <td>
+                <code>hand_raster</code>
+            </td>
             <td>
                   <code><span title="typing.Optional">Optional</span>[<span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]]</code>
             </td>
@@ -6122,7 +6290,9 @@ from both masks, and the combined water map will be written to <code>out_raster<
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>tile_shape</code></td>
+            <td>
+                <code>tile_shape</code>
+            </td>
             <td>
                   <code><span title="typing.Tuple">Tuple</span>[int, int]</code>
             </td>
@@ -6136,7 +6306,9 @@ from both masks, and the combined water map will be written to <code>out_raster<
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>max_vv_threshold</code></td>
+            <td>
+                <code>max_vv_threshold</code>
+            </td>
             <td>
                   <code>float</code>
             </td>
@@ -6150,7 +6322,9 @@ from both masks, and the combined water map will be written to <code>out_raster<
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>max_vh_threshold</code></td>
+            <td>
+                <code>max_vh_threshold</code>
+            </td>
             <td>
                   <code>float</code>
             </td>
@@ -6164,7 +6338,9 @@ from both masks, and the combined water map will be written to <code>out_raster<
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>hand_threshold</code></td>
+            <td>
+                <code>hand_threshold</code>
+            </td>
             <td>
                   <code>float</code>
             </td>
@@ -6179,7 +6355,9 @@ a pixel valid</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>hand_fraction</code></td>
+            <td>
+                <code>hand_fraction</code>
+            </td>
             <td>
                   <code>float</code>
             </td>
@@ -6194,7 +6372,9 @@ thresholding</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>membership_threshold</code></td>
+            <td>
+                <code>membership_threshold</code>
+            </td>
             <td>
                   <code>float</code>
             </td>
@@ -6528,6 +6708,11 @@ thresholding</p>
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -6549,7 +6734,7 @@ thresholding</p>
 
     <div class="doc doc-contents ">
 
-      <p>Convert calibrated raster scale between db, amplitude and power</p>
+        <p>Convert calibrated raster scale between db, amplitude and power</p>
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/raster.py</code></summary>
@@ -6625,7 +6810,7 @@ thresholding</p>
 
     <div class="doc doc-contents ">
 
-      <p>Reads data from a raster image into memory</p>
+        <p>Reads data from a raster image into memory</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -6640,7 +6825,9 @@ thresholding</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>raster</code></td>
+            <td>
+                <code>raster</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -6654,7 +6841,9 @@ thresholding</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>band</code></td>
+            <td>
+                <code>band</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -6741,7 +6930,7 @@ thresholding</p>
 
     <div class="doc doc-contents ">
 
-      <p>Reads data from a raster image into memory, masking invalid and NoData values</p>
+        <p>Reads data from a raster image into memory, masking invalid and NoData values</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -6756,7 +6945,9 @@ thresholding</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>raster</code></td>
+            <td>
+                <code>raster</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -6770,7 +6961,9 @@ thresholding</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>band</code></td>
+            <td>
+                <code>band</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -6865,7 +7058,7 @@ thresholding</p>
 
     <div class="doc doc-contents ">
 
-      <p>Creates a Cloud Optimized GeoTIFF</p>
+        <p>Creates a Cloud Optimized GeoTIFF</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -6880,7 +7073,9 @@ thresholding</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>file_name</code></td>
+            <td>
+                <code>file_name</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[str, <span title="pathlib.Path">Path</span>]</code>
             </td>
@@ -6894,7 +7089,9 @@ thresholding</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>data</code></td>
+            <td>
+                <code>data</code>
+            </td>
             <td>
                   <code><span title="numpy.ndarray">ndarray</span></code>
             </td>
@@ -6908,7 +7105,9 @@ thresholding</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>transform</code></td>
+            <td>
+                <code>transform</code>
+            </td>
             <td>
                   <code><span title="typing.List">List</span>[float]</code>
             </td>
@@ -6922,7 +7121,9 @@ thresholding</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>epsg_code</code></td>
+            <td>
+                <code>epsg_code</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -6936,7 +7137,9 @@ thresholding</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>dtype</code></td>
+            <td>
+                <code>dtype</code>
+            </td>
             <td>
             </td>
             <td>
@@ -6949,7 +7152,9 @@ thresholding</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>nodata_value</code></td>
+            <td>
+                <code>nodata_value</code>
+            </td>
             <td>
             </td>
             <td>
@@ -7079,6 +7284,11 @@ thresholding</p>
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -7100,7 +7310,7 @@ thresholding</p>
 
     <div class="doc doc-contents ">
 
-      <p>Tile a 2D numpy array</p>
+        <p>Tile a 2D numpy array</p>
 
 
 <details class="turn-a-2d-numpy-array-like" open>
@@ -7153,7 +7363,9 @@ tiles.shape
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>array</code></td>
+            <td>
+                <code>array</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[<span title="numpy.ndarray">ndarray</span>, <span title="numpy.ma.MaskedArray">MaskedArray</span>]</code>
             </td>
@@ -7167,7 +7379,9 @@ tiles.shape
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>tile_shape</code></td>
+            <td>
+                <code>tile_shape</code>
+            </td>
             <td>
                   <code><span title="typing.Tuple">Tuple</span>[int, int]</code>
             </td>
@@ -7181,7 +7395,9 @@ tiles.shape
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>pad_value</code></td>
+            <td>
+                <code>pad_value</code>
+            </td>
             <td>
                   <code>float</code>
             </td>
@@ -7358,7 +7574,7 @@ tiles.shape
 
     <div class="doc doc-contents ">
 
-      <p>Untile a tiled array into a 2D numpy array</p>
+        <p>Untile a tiled array into a 2D numpy array</p>
 <p>This is the reverse of <code>tile_array</code> and will turn a tiled array like:
     &gt;&gt;&gt; tiled_array = [[[0,0],
     ...                 [0,0]],
@@ -7402,7 +7618,9 @@ array.shape
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>tiled_array</code></td>
+            <td>
+                <code>tiled_array</code>
+            </td>
             <td>
                   <code><span title="typing.Union">Union</span>[<span title="numpy.ndarray">ndarray</span>, <span title="numpy.ma.MaskedArray">MaskedArray</span>]</code>
             </td>
@@ -7416,7 +7634,9 @@ array.shape
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>array_shape</code></td>
+            <td>
+                <code>array_shape</code>
+            </td>
             <td>
                   <code><span title="typing.Tuple">Tuple</span>[int, int]</code>
             </td>
@@ -7604,6 +7824,11 @@ bottom right padding was added when tiling.</p>
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -7627,7 +7852,12 @@ bottom right padding was added when tiling.</p>
     <div class="doc doc-contents ">
 
 
-      <p>Context manager for setting GDAL config options temporarily</p>
+        <p>Context manager for setting GDAL config options temporarily</p>
+
+
+
+
+
 
               <details class="quote">
                 <summary>Source code in <code>asf_tools/util.py</code></summary>
@@ -7710,7 +7940,9 @@ bottom right padding was added when tiling.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>**options</code></td>
+            <td>
+                <code>**options</code>
+            </td>
             <td>
             </td>
             <td>
@@ -7766,7 +7998,7 @@ bottom right padding was added when tiling.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Get the WKT representation of a projection from its EPSG code</p>
+        <p>Get the WKT representation of a projection from its EPSG code</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -7781,7 +8013,9 @@ bottom right padding was added when tiling.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>epsg_code</code></td>
+            <td>
+                <code>epsg_code</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -7862,7 +8096,7 @@ bottom right padding was added when tiling.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Get the corner coordinates from a GDAL Info dictionary</p>
+        <p>Get the corner coordinates from a GDAL Info dictionary</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -7877,7 +8111,9 @@ bottom right padding was added when tiling.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>info</code></td>
+            <td>
+                <code>info</code>
+            </td>
             <td>
                   <code>dict</code>
             </td>
@@ -7958,7 +8194,7 @@ bottom right padding was added when tiling.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Get the EPSG code from a GDAL Info dictionary</p>
+        <p>Get the EPSG code from a GDAL Info dictionary</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -7973,7 +8209,9 @@ bottom right padding was added when tiling.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>info</code></td>
+            <td>
+                <code>info</code>
+            </td>
             <td>
                   <code>dict</code>
             </td>
@@ -8065,28 +8303,8 @@ bottom right padding was added when tiling.</p>
 
 
 
-  <div class="doc doc-children">
 
 
-
-
-
-
-
-
-
-
-<div class="doc doc-object doc-module">
-
-
-
-<h3 id="asf_tools.watermasking.fill_missing_tiles" class="doc doc-heading">
-            <code>fill_missing_tiles</code>
-
-
-<a href="#asf_tools.watermasking.fill_missing_tiles" class="headerlink" title="Permanent link">&para;</a></h3>
-
-    <div class="doc doc-contents ">
 
 
 
@@ -8100,13 +8318,6 @@ bottom right padding was added when tiling.</p>
 
 
 
-
-
-  </div>
-
-    </div>
-
-</div>
 
 <div class="doc doc-object doc-module">
 
@@ -8119,6 +8330,11 @@ bottom right padding was added when tiling.</p>
 <a href="#asf_tools.watermasking.generate_osm_tiles" class="headerlink" title="Permanent link">&para;</a></h3>
 
     <div class="doc doc-contents ">
+
+
+
+
+
 
 
 
@@ -8143,7 +8359,7 @@ bottom right padding was added when tiling.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Rasterize a water tile from the processed global PBF file.</p>
+        <p>Rasterize a water tile from the processed global PBF file.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -8158,7 +8374,9 @@ bottom right padding was added when tiling.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>water_file</code></td>
+            <td>
+                <code>water_file</code>
+            </td>
             <td>
             </td>
             <td>
@@ -8171,7 +8389,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>lat</code></td>
+            <td>
+                <code>lat</code>
+            </td>
             <td>
             </td>
             <td>
@@ -8184,7 +8404,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>lon</code></td>
+            <td>
+                <code>lon</code>
+            </td>
             <td>
             </td>
             <td>
@@ -8197,7 +8419,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>tile_width_deg</code></td>
+            <td>
+                <code>tile_width_deg</code>
+            </td>
             <td>
             </td>
             <td>
@@ -8210,7 +8434,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>tile_height_deg</code></td>
+            <td>
+                <code>tile_height_deg</code>
+            </td>
             <td>
             </td>
             <td>
@@ -8347,7 +8573,7 @@ bottom right padding was added when tiling.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Merge the interior water tiles and ocean water tiles.</p>
+        <p>Merge the interior water tiles and ocean water tiles.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -8362,7 +8588,9 @@ bottom right padding was added when tiling.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>interior_tile_dir</code></td>
+            <td>
+                <code>interior_tile_dir</code>
+            </td>
             <td>
             </td>
             <td>
@@ -8375,7 +8603,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>ocean_tile_dir</code></td>
+            <td>
+                <code>ocean_tile_dir</code>
+            </td>
             <td>
             </td>
             <td>
@@ -8388,7 +8618,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>merged_tile_dir</code></td>
+            <td>
+                <code>merged_tile_dir</code>
+            </td>
             <td>
             </td>
             <td>
@@ -8523,7 +8755,7 @@ bottom right padding was added when tiling.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Process and crop OSM ocean polygons into a tif tile.</p>
+        <p>Process and crop OSM ocean polygons into a tif tile.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -8538,7 +8770,9 @@ bottom right padding was added when tiling.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>ocean_polygons_path</code></td>
+            <td>
+                <code>ocean_polygons_path</code>
+            </td>
             <td>
             </td>
             <td>
@@ -8551,7 +8785,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>lat</code></td>
+            <td>
+                <code>lat</code>
+            </td>
             <td>
             </td>
             <td>
@@ -8564,7 +8800,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>lon</code></td>
+            <td>
+                <code>lon</code>
+            </td>
             <td>
             </td>
             <td>
@@ -8577,7 +8815,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>tile_width_deg</code></td>
+            <td>
+                <code>tile_width_deg</code>
+            </td>
             <td>
             </td>
             <td>
@@ -8590,7 +8830,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>tile_height_deg</code></td>
+            <td>
+                <code>tile_height_deg</code>
+            </td>
             <td>
             </td>
             <td>
@@ -8693,7 +8935,7 @@ bottom right padding was added when tiling.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Process the global PBF file so that it only contains water features.</p>
+        <p>Process the global PBF file so that it only contains water features.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -8708,7 +8950,9 @@ bottom right padding was added when tiling.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>planet_file</code></td>
+            <td>
+                <code>planet_file</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -8722,7 +8966,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>output_file</code></td>
+            <td>
+                <code>output_file</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -8809,6 +9055,11 @@ bottom right padding was added when tiling.</p>
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -8830,7 +9081,7 @@ bottom right padding was added when tiling.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Main function for generating a dataset with worldcover tiles.</p>
+        <p>Main function for generating a dataset with worldcover tiles.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -8845,7 +9096,9 @@ bottom right padding was added when tiling.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>worldcover_tile_dir</code></td>
+            <td>
+                <code>worldcover_tile_dir</code>
+            </td>
             <td>
             </td>
             <td>
@@ -8858,7 +9111,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>lat_range</code></td>
+            <td>
+                <code>lat_range</code>
+            </td>
             <td>
             </td>
             <td>
@@ -8871,7 +9126,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>lon_range</code></td>
+            <td>
+                <code>lon_range</code>
+            </td>
             <td>
             </td>
             <td>
@@ -8884,7 +9141,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>out_degrees</code></td>
+            <td>
+                <code>out_degrees</code>
+            </td>
             <td>
             </td>
             <td>
@@ -8959,7 +9218,7 @@ bottom right padding was added when tiling.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Check for, and build, tiles that may be missing from WorldCover, such as over the ocean.</p>
+        <p>Check for, and build, tiles that may be missing from WorldCover, such as over the ocean.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -8974,7 +9233,9 @@ bottom right padding was added when tiling.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>lat_range</code></td>
+            <td>
+                <code>lat_range</code>
+            </td>
             <td>
             </td>
             <td>
@@ -8987,7 +9248,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>lon_range</code></td>
+            <td>
+                <code>lon_range</code>
+            </td>
             <td>
             </td>
             <td>
@@ -9001,7 +9264,7 @@ bottom right padding was added when tiling.</p>
           </tr>
       </tbody>
     </table>
-      <p>Returns:
+        <p>Returns:
     current_existing_tiles: The list of tiles that exist after the function has completed.</p>
 
             <details class="quote">
@@ -9110,7 +9373,7 @@ bottom right padding was added when tiling.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Crop the merged tiles</p>
+        <p>Crop the merged tiles</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -9125,7 +9388,9 @@ bottom right padding was added when tiling.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>tile</code></td>
+            <td>
+                <code>tile</code>
+            </td>
             <td>
             </td>
             <td>
@@ -9202,7 +9467,7 @@ bottom right padding was added when tiling.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Get a list of the worldcover tile locations necessary to fully cover an OSM tile.</p>
+        <p>Get a list of the worldcover tile locations necessary to fully cover an OSM tile.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -9217,7 +9482,9 @@ bottom right padding was added when tiling.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>osm_tile_coord</code></td>
+            <td>
+                <code>osm_tile_coord</code>
+            </td>
             <td>
                   <code>tuple</code>
             </td>
@@ -9231,7 +9498,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>wc_tile_width</code></td>
+            <td>
+                <code>wc_tile_width</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -9245,7 +9514,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>tile_width</code></td>
+            <td>
+                <code>tile_width</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -9359,7 +9630,7 @@ bottom right padding was added when tiling.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Get a list of the Worldcover tile filenames that are necessary to overlap an OSM tile.</p>
+        <p>Get a list of the Worldcover tile filenames that are necessary to overlap an OSM tile.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -9374,7 +9645,9 @@ bottom right padding was added when tiling.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>osm_tile</code></td>
+            <td>
+                <code>osm_tile</code>
+            </td>
             <td>
             </td>
             <td>
@@ -9387,7 +9660,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>wc_tile_width</code></td>
+            <td>
+                <code>wc_tile_width</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -9401,7 +9676,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>tile_width</code></td>
+            <td>
+                <code>tile_width</code>
+            </td>
             <td>
                   <code>int</code>
             </td>
@@ -9489,7 +9766,7 @@ bottom right padding was added when tiling.</p>
 
     <div class="doc doc-contents ">
 
-      <p>The worldcover tiles have lots of unnecessary classes, these need to be removed first.
+        <p>The worldcover tiles have lots of unnecessary classes, these need to be removed first.
    Note: make a back-up copy of this directory.</p>
 
 
@@ -9505,7 +9782,9 @@ bottom right padding was added when tiling.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>tile_dir</code></td>
+            <td>
+                <code>tile_dir</code>
+            </td>
             <td>
             </td>
             <td>
@@ -9685,6 +9964,11 @@ bottom right padding was added when tiling.</p>
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -9706,7 +9990,7 @@ bottom right padding was added when tiling.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Get the name of the tile with lower left corner (lat, lon).</p>
+        <p>Get the name of the tile with lower left corner (lat, lon).</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -9721,7 +10005,9 @@ bottom right padding was added when tiling.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>lat</code></td>
+            <td>
+                <code>lat</code>
+            </td>
             <td>
             </td>
             <td>
@@ -9734,7 +10020,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>lon</code></td>
+            <td>
+                <code>lon</code>
+            </td>
             <td>
             </td>
             <td>
@@ -9747,7 +10035,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>is_worldcover</code></td>
+            <td>
+                <code>is_worldcover</code>
+            </td>
             <td>
                   <code>bool</code>
             </td>
@@ -9761,7 +10051,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>postfix</code></td>
+            <td>
+                <code>postfix</code>
+            </td>
             <td>
                   <code>str</code>
             </td>
@@ -9861,7 +10153,7 @@ bottom right padding was added when tiling.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Merge tiles via buildvrt and translate.</p>
+        <p>Merge tiles via buildvrt and translate.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -9876,7 +10168,9 @@ bottom right padding was added when tiling.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>tiles</code></td>
+            <td>
+                <code>tiles</code>
+            </td>
             <td>
             </td>
             <td>
@@ -9889,7 +10183,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>out_format</code></td>
+            <td>
+                <code>out_format</code>
+            </td>
             <td>
             </td>
             <td>
@@ -9902,7 +10198,9 @@ bottom right padding was added when tiling.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>out_filename</code></td>
+            <td>
+                <code>out_filename</code>
+            </td>
             <td>
             </td>
             <td>
@@ -9983,7 +10281,7 @@ bottom right padding was added when tiling.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Remove each file in a list of files.</p>
+        <p>Remove each file in a list of files.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -9998,7 +10296,9 @@ bottom right padding was added when tiling.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>temp_files</code></td>
+            <td>
+                <code>temp_files</code>
+            </td>
             <td>
                   <code>list</code>
             </td>
@@ -10054,7 +10354,7 @@ bottom right padding was added when tiling.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Setup the directories necessary for running the script.</p>
+        <p>Setup the directories necessary for running the script.</p>
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/watermasking/utils.py</code></summary>
