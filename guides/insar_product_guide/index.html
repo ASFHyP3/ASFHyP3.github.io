@@ -2590,7 +2590,21 @@ feedback.init({showIcon: false});
 <p>There are several options users can set when ordering InSAR On Demand products, including setting some processing parameters and selecting additional files to include in the output product package.</p>
 <div class="admonition tip">
 <p class="admonition-title">New: Adaptive Phase Filter parameter is now customizable!</p>
-<p>There is now an option to adjust the adaptive phase filter parameter value when submitting On Demand InSAR jobs. This option is available in <a href="https://search.asf.alaska.edu/" target="_blank" title="https://search.asf.alaska.edu/">Vertex</a>, as well as in the <a href="../../using/api/" target="_blank">HyP3 API</a> and <a href="../../using/sdk/" target="_blank">Python SDK</a>! Refer to the <a href="#adaptive-phase-filter">Adaptive Phase Filter section</a> for more information.</p>
+<p>There is now an option to adjust the adaptive phase filter parameter value when submitting On Demand InSAR jobs.
+This option is available in 
+<a href="https://search.asf.alaska.edu/" target="_blank" title="https://search.asf.alaska.edu/">Vertex</a>, 
+as well as in the <a href="../../using/api/" target="_blank">HyP3 API</a> and <a href="../../using/sdk/" target="_blank">Python SDK</a>! 
+Refer to the <a href="#adaptive-phase-filter">Adaptive Phase Filter section</a> for more information.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Connected Components file not available for GAMMA-generated InSAR products from ASF</p>
+<p>ASF uses GAMMA software's <a href="#phase-unwrapping">Minimum Cost Flow (MCF) algorithm</a> to phase unwrap full-scene 
+Sentinel-1 InSAR products. This workflow does not generate a connected components file, such as what is generated 
+when using <a href="https://web.stanford.edu/group/radar/softwareandlinks/sw/snaphu/" target="_blank" title="https://web.stanford.edu/group/radar/softwareandlinks/sw/snaphu/">SNAPHU</a> for phase unwrapping.</p>
+<p>If you require connected components files for your analysis, consider using ASF's 
+<a href="../burst_insar_product_guide/">Burst InSAR On Demand</a> option, which uses the ISCE2 software package 
+to process individual Sentinel-1 SLC bursts to InSAR products. The 
+<a href="../burst_insar_product_guide/#image-files">Burst InSAR product package</a> contains a connected components file.</p>
 </div>
 <h4 id="processing-options">Processing Options<a class="headerlink" href="#processing-options" title="Permanent link">&para;</a></h4>
 <p>When submitting jobs for processing, there are a number of parameters that can be set by the user.</p>
@@ -2668,6 +2682,7 @@ Hierarchical, High-resolution Geography Database (GSHHG)</a> dataset, but we tra
 <h3 id="phase-unwrapping">Phase Unwrapping<a class="headerlink" href="#phase-unwrapping" title="Permanent link">&para;</a></h3>
 <p>All of the phase differences in wrapped interferograms lie between -π and π. Phase unwrapping attempts to assign multiples of 2π to add to each pixel in the interferogram to restrict the number of 2π jumps in the phase to the regions where they may actually occur. These regions are areas of radar layover or areas of deformation exceeding half a wavelength in the sensor's line of sight. Thermal noise and interferometric decorrelation can also result in these 2π phase discontinuities called <em>residues</em>. </p>
 <p>The phase unwrapping algorithm used for these products is Minimum Cost Flow (MCF) and Triangulation. Refer to this <a href="https://www.gamma-rs.ch/uploads/media/2002-5_TR_Phase_Unwrapping.pdf" target="_blank" title="https://www.gamma-rs.ch/uploads/media/2002-5_TR_Phase_Unwrapping.pdf">Technical Report from GAMMA Remote Sensing</a> for more information on the MCF phase unwrapping approach.</p>
+<p>Note that the MCF algorithm does not generate a connected components file. If you require this file, consider using ASF's <a href="./">Burst InSAR On Demand</a> option, which includes a connected components file in each output product package.</p>
 <h4 id="filtering">Filtering<a class="headerlink" href="#filtering" title="Permanent link">&para;</a></h4>
 <p>Before the interferogram can be unwrapped, it must be filtered to remove noise. This is accomplished using an adaptive spectral filtering algorithm. This adaptive interferogram filtering aims to reduce phase noise, increase the accuracy of the interferometric phase, and reduce the number of interferogram residues as an aid to phase unwrapping. In this case, residues are points in the interferogram where the sum of the phase differences between pixels around a closed path is not 0.0, which indicates a jump in phase.</p>
 <h4 id="masking">Masking<a class="headerlink" href="#masking" title="Permanent link">&para;</a></h4>
@@ -2684,6 +2699,8 @@ Hierarchical, High-resolution Geography Database (GSHHG)</a> dataset, but we tra
 <p>Ideally, the reference point for phase unwrapping would be located in an area with high coherence in a stable region close to an area with surface deformation. Choosing an optimal reference point requires knowledge of the site characteristics and examination of the interferogram, which is not practical in an automated, global workflow. </p>
 <p>By default, ASF's On Demand InSAR products use the location of the pixel with the highest coherence value as the reference point. The coherence map is examined to determine the maximum value, and all pixels with this value are examined using a 9-pixel window. The pixel with the highest sum of values within its 9-pixel window is selected as the reference point. If more than one pixel has the same 9-pixel sum, the pixel closest to the origin pixel (bottom left corner for ascending scenes, top right corner for descending scenes) is selected.</p>
 <p>This may be an appropriate reference point location in many cases, as it meets the criteria of having high coherence, and stable areas have higher coherence than areas undergoing significant deformation. If a user wants to set a different location as the phase unwrapping reference point, however, a correction can be applied to the unwrapped interferogram.</p>
+<p>The location of the reference point is included in the product readme file, as well as the parameter metadata text file, 
+both of which are included in the product package by default.</p>
 <p>For more information on the impact of the phase unwrapping reference point location on unwrapped phase and displacement measurements, refer to the <a href="#phase-unwrapping-reference-point" title="Jump to Phase Unwrapping Reference Point part of the Limitations section in this document">Limitations</a> section of this document, which also includes instructions for applying a correction based on a custom reference point. </p>
 <h3 id="geocoding-and-product-creation">Geocoding and Product Creation<a class="headerlink" href="#geocoding-and-product-creation" title="Permanent link">&para;</a></h3>
 <p>After the phase is unwrapped, the final steps are geocoding and product creation.  </p>
