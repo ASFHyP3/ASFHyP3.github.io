@@ -92,7 +92,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#hyp3_sdk-v703-api-reference" class="md-skip">
+        <a href="#hyp3_sdk-v710-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -587,6 +587,13 @@ feedback.init({showIcon: false});
 </li>
         
           <li class="md-nav__item">
+  <a href="#hyp3_sdk.HyP3.prepare_aria_s1_gunw_job" class="md-nav__link">
+    prepare_aria_s1_gunw_job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#hyp3_sdk.HyP3.prepare_autorift_job" class="md-nav__link">
     prepare_autorift_job
   </a>
@@ -617,6 +624,13 @@ feedback.init({showIcon: false});
           <li class="md-nav__item">
   <a href="#hyp3_sdk.HyP3.refresh" class="md-nav__link">
     refresh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.HyP3.submit_aria_s1_gunw_job" class="md-nav__link">
+    submit_aria_s1_gunw_job
   </a>
   
 </li>
@@ -2078,6 +2092,13 @@ feedback.init({showIcon: false});
 </li>
         
           <li class="md-nav__item">
+  <a href="#hyp3_sdk.HyP3.prepare_aria_s1_gunw_job" class="md-nav__link">
+    prepare_aria_s1_gunw_job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#hyp3_sdk.HyP3.prepare_autorift_job" class="md-nav__link">
     prepare_autorift_job
   </a>
@@ -2108,6 +2129,13 @@ feedback.init({showIcon: false});
           <li class="md-nav__item">
   <a href="#hyp3_sdk.HyP3.refresh" class="md-nav__link">
     refresh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.HyP3.submit_aria_s1_gunw_job" class="md-nav__link">
+    submit_aria_s1_gunw_job
   </a>
   
 </li>
@@ -2335,7 +2363,7 @@ feedback.init({showIcon: false});
                   
 
 
-<h1 id="hyp3_sdk-v703-api-reference"><code>hyp3_sdk</code> <em>v7.0.3</em> API Reference<a class="headerlink" href="#hyp3_sdk-v703-api-reference" title="Permanent link">&para;</a></h1>
+<h1 id="hyp3_sdk-v710-api-reference"><code>hyp3_sdk</code> <em>v7.1.0</em> API Reference<a class="headerlink" href="#hyp3_sdk-v710-api-reference" title="Permanent link">&para;</a></h1>
 
 
 <div class="doc doc-object doc-module">
@@ -2389,7 +2417,8 @@ feedback.init({showIcon: false});
 
               <details class="quote">
                 <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">154</span>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">153</span>
+<span class="normal">154</span>
 <span class="normal">155</span>
 <span class="normal">156</span>
 <span class="normal">157</span>
@@ -2536,8 +2565,7 @@ feedback.init({showIcon: false});
 <span class="normal">298</span>
 <span class="normal">299</span>
 <span class="normal">300</span>
-<span class="normal">301</span>
-<span class="normal">302</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Batch</span><span class="p">:</span>
+<span class="normal">301</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Batch</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jobs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Job</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">jobs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">jobs</span> <span class="o">=</span> <span class="p">[]</span>
@@ -2716,15 +2744,15 @@ feedback.init({showIcon: false});
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">251</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">250</span>
+<span class="normal">251</span>
 <span class="normal">252</span>
 <span class="normal">253</span>
 <span class="normal">254</span>
 <span class="normal">255</span>
 <span class="normal">256</span>
 <span class="normal">257</span>
-<span class="normal">258</span>
-<span class="normal">259</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">any_expired</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="normal">258</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">any_expired</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Check succeeded jobs for expiration&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
@@ -2754,12 +2782,12 @@ feedback.init({showIcon: false});
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">221</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">220</span>
+<span class="normal">221</span>
 <span class="normal">222</span>
 <span class="normal">223</span>
 <span class="normal">224</span>
-<span class="normal">225</span>
-<span class="normal">226</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">complete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="normal">225</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">complete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns: True if all jobs are complete, otherwise returns False&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">job</span><span class="o">.</span><span class="n">complete</span><span class="p">():</span>
@@ -2800,7 +2828,7 @@ feedback.init({showIcon: false});
                 <code>location</code>
             </td>
             <td>
-                  <code><span title="pathlib.Path">Path</span> | str</code>
+                  <code><span title="pathlib.Path">Path</span> | <span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -2816,7 +2844,7 @@ feedback.init({showIcon: false});
                 <code>create</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -2833,7 +2861,8 @@ feedback.init({showIcon: false});
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">235</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">234</span>
+<span class="normal">235</span>
 <span class="normal">236</span>
 <span class="normal">237</span>
 <span class="normal">238</span>
@@ -2846,8 +2875,7 @@ feedback.init({showIcon: false});
 <span class="normal">245</span>
 <span class="normal">246</span>
 <span class="normal">247</span>
-<span class="normal">248</span>
-<span class="normal">249</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">create</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+<span class="normal">248</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">create</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Args:</span>
 <span class="sd">        location: Directory location to put files into</span>
 <span class="sd">        create: Create `location` if it does not point to an existing directory</span>
@@ -2899,7 +2927,7 @@ and still running jobs will be in the returned batch.</p>
                 <code>succeeded</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -2915,7 +2943,7 @@ and still running jobs will be in the returned batch.</p>
                 <code>pending</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -2931,7 +2959,7 @@ and still running jobs will be in the returned batch.</p>
                 <code>running</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -2947,7 +2975,7 @@ and still running jobs will be in the returned batch.</p>
                 <code>failed</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -2963,7 +2991,7 @@ and still running jobs will be in the returned batch.</p>
                 <code>include_expired</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -3002,7 +3030,8 @@ and still running jobs will be in the returned batch.</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">261</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">260</span>
+<span class="normal">261</span>
 <span class="normal">262</span>
 <span class="normal">263</span>
 <span class="normal">264</span>
@@ -3039,8 +3068,7 @@ and still running jobs will be in the returned batch.</p>
 <span class="normal">295</span>
 <span class="normal">296</span>
 <span class="normal">297</span>
-<span class="normal">298</span>
-<span class="normal">299</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">filter_jobs</span><span class="p">(</span>
+<span class="normal">298</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">filter_jobs</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">succeeded</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">pending</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
@@ -3100,12 +3128,12 @@ and still running jobs will be in the returned batch.</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">228</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">227</span>
+<span class="normal">228</span>
 <span class="normal">229</span>
 <span class="normal">230</span>
 <span class="normal">231</span>
-<span class="normal">232</span>
-<span class="normal">233</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">succeeded</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="normal">232</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">succeeded</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns: True if all jobs have succeeded, otherwise returns False&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">job</span><span class="o">.</span><span class="n">succeeded</span><span class="p">():</span>
@@ -3668,7 +3696,53 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 <span class="normal">536</span>
 <span class="normal">537</span>
 <span class="normal">538</span>
-<span class="normal">539</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">HyP3</span><span class="p">:</span>
+<span class="normal">539</span>
+<span class="normal">540</span>
+<span class="normal">541</span>
+<span class="normal">542</span>
+<span class="normal">543</span>
+<span class="normal">544</span>
+<span class="normal">545</span>
+<span class="normal">546</span>
+<span class="normal">547</span>
+<span class="normal">548</span>
+<span class="normal">549</span>
+<span class="normal">550</span>
+<span class="normal">551</span>
+<span class="normal">552</span>
+<span class="normal">553</span>
+<span class="normal">554</span>
+<span class="normal">555</span>
+<span class="normal">556</span>
+<span class="normal">557</span>
+<span class="normal">558</span>
+<span class="normal">559</span>
+<span class="normal">560</span>
+<span class="normal">561</span>
+<span class="normal">562</span>
+<span class="normal">563</span>
+<span class="normal">564</span>
+<span class="normal">565</span>
+<span class="normal">566</span>
+<span class="normal">567</span>
+<span class="normal">568</span>
+<span class="normal">569</span>
+<span class="normal">570</span>
+<span class="normal">571</span>
+<span class="normal">572</span>
+<span class="normal">573</span>
+<span class="normal">574</span>
+<span class="normal">575</span>
+<span class="normal">576</span>
+<span class="normal">577</span>
+<span class="normal">578</span>
+<span class="normal">579</span>
+<span class="normal">580</span>
+<span class="normal">581</span>
+<span class="normal">582</span>
+<span class="normal">583</span>
+<span class="normal">584</span>
+<span class="normal">585</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">HyP3</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A python wrapper around the HyP3 API.</span>
 
 <span class="sd">    Warning: All jobs submitted to HyP3 are publicly visible. For more information, see</span>
@@ -4151,6 +4225,52 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
             <span class="n">job_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
         <span class="k">return</span> <span class="n">job_dict</span>
 
+    <span class="k">def</span><span class="w"> </span><span class="nf">submit_aria_s1_gunw_job</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">secondary</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Submit an ARIA S1 GUNW job.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            reference: The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</span>
+<span class="sd">            secondary: The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</span>
+<span class="sd">            frame_id: Subset GUNW products to this frame</span>
+<span class="sd">            name: A name for the job (optional)</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A Batch object containing the ARIA S1 GUNW job</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arguments</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">arguments</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;self&#39;</span><span class="p">)</span>
+        <span class="n">job_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_aria_s1_gunw_job</span><span class="p">(</span><span class="o">**</span><span class="n">arguments</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">submit_prepared_jobs</span><span class="p">(</span><span class="n">prepared_jobs</span><span class="o">=</span><span class="n">job_dict</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">prepare_aria_s1_gunw_job</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">secondary</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Prepare an ARIA S1 GUNW job.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            reference: The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</span>
+<span class="sd">            secondary: The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</span>
+<span class="sd">            frame_id: Subset GUNW products to this frame</span>
+<span class="sd">            name: A name for the job</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A dictionary containing the prepared ARIA S1 GUNW job</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">job_parameters</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="s1">&#39;reference&#39;</span><span class="p">,</span> <span class="s1">&#39;secondary&#39;</span><span class="p">,</span> <span class="s1">&#39;frame_id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]:</span>
+            <span class="n">job_parameters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+        <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">,</span> <span class="s1">&#39;secondary&#39;</span><span class="p">:</span> <span class="n">secondary</span><span class="p">,</span> <span class="s1">&#39;frame_id&#39;</span><span class="p">:</span> <span class="n">frame_id</span><span class="p">,</span> <span class="o">**</span><span class="n">job_parameters</span><span class="p">},</span>
+            <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="s1">&#39;ARIA_S1_GUNW&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">job_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">return</span> <span class="n">job_dict</span>
+
     <span class="k">def</span><span class="w"> </span><span class="nf">my_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns:</span>
 <span class="sd">        Your user information</span>
@@ -4232,7 +4352,7 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
                 <code>api_url</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -4248,7 +4368,7 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
                 <code>username</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -4265,7 +4385,7 @@ Both username and password must be provided if either is provided.</p>
                 <code>password</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -4282,7 +4402,7 @@ Both username and password must be provided if either is provided.</p>
                 <code>prompt</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -4374,12 +4494,12 @@ Your remaining processing credits, or None if you have no processing limit</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">512</span>
-<span class="normal">513</span>
-<span class="normal">514</span>
-<span class="normal">515</span>
-<span class="normal">516</span>
-<span class="normal">517</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">check_credits</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">558</span>
+<span class="normal">559</span>
+<span class="normal">560</span>
+<span class="normal">561</span>
+<span class="normal">562</span>
+<span class="normal">563</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">check_credits</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns:</span>
 <span class="sd">    Your remaining processing credits, or None if you have no processing limit</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -4416,7 +4536,7 @@ Your remaining processing credits, or None if you have no processing limit</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code>float | int | None</code>
+                  <code><span title="float">float</span> | <span title="int">int</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -4429,19 +4549,19 @@ Your remaining processing credits, or None if you have no processing limit</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">519</span>
-<span class="normal">520</span>
-<span class="normal">521</span>
-<span class="normal">522</span>
-<span class="normal">523</span>
-<span class="normal">524</span>
-<span class="normal">525</span>
-<span class="normal">526</span>
-<span class="normal">527</span>
-<span class="normal">528</span>
-<span class="normal">529</span>
-<span class="normal">530</span>
-<span class="normal">531</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">check_quota</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">565</span>
+<span class="normal">566</span>
+<span class="normal">567</span>
+<span class="normal">568</span>
+<span class="normal">569</span>
+<span class="normal">570</span>
+<span class="normal">571</span>
+<span class="normal">572</span>
+<span class="normal">573</span>
+<span class="normal">574</span>
+<span class="normal">575</span>
+<span class="normal">576</span>
+<span class="normal">577</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">check_quota</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Deprecated method for checking your remaining processing credits; replaced by `HyP3.check_credits`</span>
 
 <span class="sd">    Returns:</span>
@@ -4476,13 +4596,13 @@ Table of job costs</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">533</span>
-<span class="normal">534</span>
-<span class="normal">535</span>
-<span class="normal">536</span>
-<span class="normal">537</span>
-<span class="normal">538</span>
-<span class="normal">539</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">costs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">579</span>
+<span class="normal">580</span>
+<span class="normal">581</span>
+<span class="normal">582</span>
+<span class="normal">583</span>
+<span class="normal">584</span>
+<span class="normal">585</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">costs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns:</span>
 <span class="sd">    Table of job costs</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -4557,7 +4677,7 @@ Table of job costs</p>
                 <code>status_code</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -4573,7 +4693,7 @@ Table of job costs</p>
                 <code>name</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -4589,7 +4709,7 @@ Table of job costs</p>
                 <code>job_type</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -4605,7 +4725,7 @@ Table of job costs</p>
                 <code>user_id</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -4767,7 +4887,7 @@ Table of job costs</p>
                 <code>job_id</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -4853,19 +4973,197 @@ Your user information</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">504</span>
-<span class="normal">505</span>
-<span class="normal">506</span>
-<span class="normal">507</span>
-<span class="normal">508</span>
-<span class="normal">509</span>
-<span class="normal">510</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">my_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">550</span>
+<span class="normal">551</span>
+<span class="normal">552</span>
+<span class="normal">553</span>
+<span class="normal">554</span>
+<span class="normal">555</span>
+<span class="normal">556</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">my_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns:</span>
 <span class="sd">    Your user information</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/user&#39;</span><span class="p">))</span>
     <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="hyp3_sdk.HyP3.prepare_aria_s1_gunw_job" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">prepare_aria_s1_gunw_job</span><span class="p">(</span><span class="n">reference</span><span class="p">,</span> <span class="n">secondary</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+<a href="#hyp3_sdk.HyP3.prepare_aria_s1_gunw_job" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Prepare an ARIA S1 GUNW job.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>reference</code>
+            </td>
+            <td>
+                  <code><span title="list">list</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>secondary</code>
+            </td>
+            <td>
+                  <code><span title="list">list</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>frame_id</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Subset GUNW products to this frame</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A name for the job</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A dictionary containing the prepared ARIA S1 GUNW job</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">523</span>
+<span class="normal">524</span>
+<span class="normal">525</span>
+<span class="normal">526</span>
+<span class="normal">527</span>
+<span class="normal">528</span>
+<span class="normal">529</span>
+<span class="normal">530</span>
+<span class="normal">531</span>
+<span class="normal">532</span>
+<span class="normal">533</span>
+<span class="normal">534</span>
+<span class="normal">535</span>
+<span class="normal">536</span>
+<span class="normal">537</span>
+<span class="normal">538</span>
+<span class="normal">539</span>
+<span class="normal">540</span>
+<span class="normal">541</span>
+<span class="normal">542</span>
+<span class="normal">543</span>
+<span class="normal">544</span>
+<span class="normal">545</span>
+<span class="normal">546</span>
+<span class="normal">547</span>
+<span class="normal">548</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">prepare_aria_s1_gunw_job</span><span class="p">(</span>
+    <span class="bp">cls</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">secondary</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Prepare an ARIA S1 GUNW job.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        reference: The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</span>
+<span class="sd">        secondary: The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</span>
+<span class="sd">        frame_id: Subset GUNW products to this frame</span>
+<span class="sd">        name: A name for the job</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A dictionary containing the prepared ARIA S1 GUNW job</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">job_parameters</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="s1">&#39;reference&#39;</span><span class="p">,</span> <span class="s1">&#39;secondary&#39;</span><span class="p">,</span> <span class="s1">&#39;frame_id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]:</span>
+        <span class="n">job_parameters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+    <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">,</span> <span class="s1">&#39;secondary&#39;</span><span class="p">:</span> <span class="n">secondary</span><span class="p">,</span> <span class="s1">&#39;frame_id&#39;</span><span class="p">:</span> <span class="n">frame_id</span><span class="p">,</span> <span class="o">**</span><span class="n">job_parameters</span><span class="p">},</span>
+        <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="s1">&#39;ARIA_S1_GUNW&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">job_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="k">return</span> <span class="n">job_dict</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -4906,7 +5204,7 @@ Your user information</p>
                 <code>granule1</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -4922,7 +5220,7 @@ Your user information</p>
                 <code>granule2</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -4938,7 +5236,7 @@ Your user information</p>
                 <code>name</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -4964,7 +5262,7 @@ Your user information</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code>dict</code>
+                  <code><span title="dict">dict</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5054,7 +5352,7 @@ Your user information</p>
                 <code>granule1</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5070,7 +5368,7 @@ Your user information</p>
                 <code>granule2</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5086,7 +5384,7 @@ Your user information</p>
                 <code>name</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5102,7 +5400,7 @@ Your user information</p>
                 <code>apply_water_mask</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5145,7 +5443,7 @@ as invalid for phase unwrapping</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code>dict</code>
+                  <code><span title="dict">dict</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5263,7 +5561,7 @@ as invalid for phase unwrapping</p>
                 <code>granule1</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5279,7 +5577,7 @@ as invalid for phase unwrapping</p>
                 <code>granule2</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5295,7 +5593,7 @@ as invalid for phase unwrapping</p>
                 <code>name</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5311,7 +5609,7 @@ as invalid for phase unwrapping</p>
                 <code>include_look_vectors</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5327,7 +5625,7 @@ as invalid for phase unwrapping</p>
                 <code>include_los_displacement</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5345,7 +5643,7 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
                 <code>include_inc_map</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5377,7 +5675,7 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
                 <code>include_dem</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5393,7 +5691,7 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
                 <code>include_wrapped_phase</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5409,7 +5707,7 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
                 <code>apply_water_mask</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5426,7 +5724,7 @@ as invalid for phase unwrapping</p>
                 <code>include_displacement_maps</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5442,7 +5740,7 @@ as invalid for phase unwrapping</p>
                 <code>phase_filter_parameter</code>
             </td>
             <td>
-                  <code>float</code>
+                  <code><span title="float">float</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5471,7 +5769,7 @@ If zero, adaptive phase filter will be skipped.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code>dict</code>
+                  <code><span title="dict">dict</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5641,7 +5939,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>granule</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5657,7 +5955,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>name</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5673,7 +5971,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>dem_matching</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5689,7 +5987,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>include_dem</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5705,7 +6003,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>include_inc_map</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5721,7 +6019,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>include_rgb</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5738,7 +6036,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>include_scattering_area</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5803,7 +6101,7 @@ projected into the look direction (gamma0)</p>
                 <code>speckle_filter</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -5845,7 +6143,7 @@ projected into the look direction (gamma0)</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code>dict</code>
+                  <code><span title="dict">dict</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6062,6 +6360,164 @@ projected into the look direction (gamma0)</p>
 <div class="doc doc-object doc-function">
 
 
+<h4 id="hyp3_sdk.HyP3.submit_aria_s1_gunw_job" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">submit_aria_s1_gunw_job</span><span class="p">(</span><span class="n">reference</span><span class="p">,</span> <span class="n">secondary</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#hyp3_sdk.HyP3.submit_aria_s1_gunw_job" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Submit an ARIA S1 GUNW job.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>reference</code>
+            </td>
+            <td>
+                  <code><span title="list">list</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>secondary</code>
+            </td>
+            <td>
+                  <code><span title="list">list</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>frame_id</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Subset GUNW products to this frame</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A name for the job (optional)</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="hyp3_sdk.jobs.Batch" href="#hyp3_sdk.jobs.Batch">Batch</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A Batch object containing the ARIA S1 GUNW job</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">504</span>
+<span class="normal">505</span>
+<span class="normal">506</span>
+<span class="normal">507</span>
+<span class="normal">508</span>
+<span class="normal">509</span>
+<span class="normal">510</span>
+<span class="normal">511</span>
+<span class="normal">512</span>
+<span class="normal">513</span>
+<span class="normal">514</span>
+<span class="normal">515</span>
+<span class="normal">516</span>
+<span class="normal">517</span>
+<span class="normal">518</span>
+<span class="normal">519</span>
+<span class="normal">520</span>
+<span class="normal">521</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">submit_aria_s1_gunw_job</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">secondary</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Submit an ARIA S1 GUNW job.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        reference: The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</span>
+<span class="sd">        secondary: The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</span>
+<span class="sd">        frame_id: Subset GUNW products to this frame</span>
+<span class="sd">        name: A name for the job (optional)</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A Batch object containing the ARIA S1 GUNW job</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">arguments</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">arguments</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;self&#39;</span><span class="p">)</span>
+    <span class="n">job_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_aria_s1_gunw_job</span><span class="p">(</span><span class="o">**</span><span class="n">arguments</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">submit_prepared_jobs</span><span class="p">(</span><span class="n">prepared_jobs</span><span class="o">=</span><span class="n">job_dict</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h4 id="hyp3_sdk.HyP3.submit_autorift_job" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">submit_autorift_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
@@ -6089,7 +6545,7 @@ projected into the look direction (gamma0)</p>
                 <code>granule1</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6105,7 +6561,7 @@ projected into the look direction (gamma0)</p>
                 <code>granule2</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6121,7 +6577,7 @@ projected into the look direction (gamma0)</p>
                 <code>name</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6221,7 +6677,7 @@ projected into the look direction (gamma0)</p>
                 <code>granule1</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6237,7 +6693,7 @@ projected into the look direction (gamma0)</p>
                 <code>granule2</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6253,7 +6709,7 @@ projected into the look direction (gamma0)</p>
                 <code>name</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6269,7 +6725,7 @@ projected into the look direction (gamma0)</p>
                 <code>apply_water_mask</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6410,7 +6866,7 @@ as invalid for phase unwrapping</p>
                 <code>granule1</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6426,7 +6882,7 @@ as invalid for phase unwrapping</p>
                 <code>granule2</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6442,7 +6898,7 @@ as invalid for phase unwrapping</p>
                 <code>name</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6458,7 +6914,7 @@ as invalid for phase unwrapping</p>
                 <code>include_look_vectors</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6474,7 +6930,7 @@ as invalid for phase unwrapping</p>
                 <code>include_los_displacement</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6492,7 +6948,7 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
                 <code>include_inc_map</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6524,7 +6980,7 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
                 <code>include_dem</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6540,7 +6996,7 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
                 <code>include_wrapped_phase</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6556,7 +7012,7 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
                 <code>apply_water_mask</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6573,7 +7029,7 @@ as invalid for phase unwrapping</p>
                 <code>include_displacement_maps</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6589,7 +7045,7 @@ as invalid for phase unwrapping</p>
                 <code>phase_filter_parameter</code>
             </td>
             <td>
-                  <code>float</code>
+                  <code><span title="float">float</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6754,7 +7210,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>prepared_jobs</code>
             </td>
             <td>
-                  <code>dict | list[dict]</code>
+                  <code><span title="dict">dict</span> | <span title="list">list</span>[<span title="dict">dict</span>]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6870,7 +7326,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>granule</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6886,7 +7342,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>name</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6902,7 +7358,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>dem_matching</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6918,7 +7374,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>include_dem</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6934,7 +7390,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>include_inc_map</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6950,7 +7406,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>include_rgb</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -6967,7 +7423,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>include_scattering_area</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -7032,7 +7488,7 @@ projected into the look direction (gamma0)</p>
                 <code>speckle_filter</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -7220,7 +7676,7 @@ projected into the look direction (gamma0)</p>
                 <code>timeout</code>
             </td>
             <td>
-                  <code>int</code>
+                  <code><span title="int">int</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -7236,7 +7692,7 @@ projected into the look direction (gamma0)</p>
                 <code>interval</code>
             </td>
             <td>
-                  <code>int | float</code>
+                  <code><span title="int">int</span> | <span title="float">float</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -7469,8 +7925,7 @@ projected into the look direction (gamma0)</p>
 <span class="normal">147</span>
 <span class="normal">148</span>
 <span class="normal">149</span>
-<span class="normal">150</span>
-<span class="normal">151</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Job</span><span class="p">:</span>
+<span class="normal">150</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Job</span><span class="p">:</span>
     <span class="n">_attributes_for_resubmit</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;job_parameters&#39;</span><span class="p">,</span> <span class="s1">&#39;job_type&#39;</span><span class="p">}</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
@@ -7586,8 +8041,7 @@ projected into the look direction (gamma0)</p>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">expired</span><span class="p">():</span>
             <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
             <span class="k">raise</span> <span class="n">HyP3SDKError</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s1">&#39;Expired jobs cannot be downloaded; &#39;</span>
-                <span class="sa">f</span><span class="s1">&#39;job expired </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s2">&quot;seconds&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span>
+                <span class="sa">f</span><span class="s1">&#39;Expired jobs cannot be downloaded; job expired </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s2">&quot;seconds&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span>
             <span class="p">)</span>
 
         <span class="k">if</span> <span class="n">create</span><span class="p">:</span>
@@ -7650,7 +8104,7 @@ projected into the look direction (gamma0)</p>
                 <code>location</code>
             </td>
             <td>
-                  <code><span title="pathlib.Path">Path</span> | str</code>
+                  <code><span title="pathlib.Path">Path</span> | <span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -7666,7 +8120,7 @@ projected into the look direction (gamma0)</p>
                 <code>create</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -7715,8 +8169,7 @@ projected into the look direction (gamma0)</p>
 <span class="normal">147</span>
 <span class="normal">148</span>
 <span class="normal">149</span>
-<span class="normal">150</span>
-<span class="normal">151</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">create</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+<span class="normal">150</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">create</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Args:</span>
 <span class="sd">        location: Directory location to put files into</span>
 <span class="sd">        create: Create `location` if it does not point to an existing directory</span>
@@ -7730,8 +8183,7 @@ projected into the look direction (gamma0)</p>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">expired</span><span class="p">():</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">raise</span> <span class="n">HyP3SDKError</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s1">&#39;Expired jobs cannot be downloaded; &#39;</span>
-            <span class="sa">f</span><span class="s1">&#39;job expired </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s2">&quot;seconds&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span>
+            <span class="sa">f</span><span class="s1">&#39;Expired jobs cannot be downloaded; job expired </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s2">&quot;seconds&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span>
         <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">create</span><span class="p">:</span>
@@ -7914,7 +8366,7 @@ projected into the look direction (gamma0)</p>
 
     <div class="doc doc-contents ">
             <p class="doc doc-class-bases">
-              Bases: <code>Exception</code></p>
+              Bases: <code><span title="Exception">Exception</span></code></p>
 
 
         <p>Base Exception for the HyP3 SDK</p>
@@ -8551,7 +9003,53 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 <span class="normal">536</span>
 <span class="normal">537</span>
 <span class="normal">538</span>
-<span class="normal">539</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">HyP3</span><span class="p">:</span>
+<span class="normal">539</span>
+<span class="normal">540</span>
+<span class="normal">541</span>
+<span class="normal">542</span>
+<span class="normal">543</span>
+<span class="normal">544</span>
+<span class="normal">545</span>
+<span class="normal">546</span>
+<span class="normal">547</span>
+<span class="normal">548</span>
+<span class="normal">549</span>
+<span class="normal">550</span>
+<span class="normal">551</span>
+<span class="normal">552</span>
+<span class="normal">553</span>
+<span class="normal">554</span>
+<span class="normal">555</span>
+<span class="normal">556</span>
+<span class="normal">557</span>
+<span class="normal">558</span>
+<span class="normal">559</span>
+<span class="normal">560</span>
+<span class="normal">561</span>
+<span class="normal">562</span>
+<span class="normal">563</span>
+<span class="normal">564</span>
+<span class="normal">565</span>
+<span class="normal">566</span>
+<span class="normal">567</span>
+<span class="normal">568</span>
+<span class="normal">569</span>
+<span class="normal">570</span>
+<span class="normal">571</span>
+<span class="normal">572</span>
+<span class="normal">573</span>
+<span class="normal">574</span>
+<span class="normal">575</span>
+<span class="normal">576</span>
+<span class="normal">577</span>
+<span class="normal">578</span>
+<span class="normal">579</span>
+<span class="normal">580</span>
+<span class="normal">581</span>
+<span class="normal">582</span>
+<span class="normal">583</span>
+<span class="normal">584</span>
+<span class="normal">585</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">HyP3</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A python wrapper around the HyP3 API.</span>
 
 <span class="sd">    Warning: All jobs submitted to HyP3 are publicly visible. For more information, see</span>
@@ -9034,6 +9532,52 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
             <span class="n">job_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
         <span class="k">return</span> <span class="n">job_dict</span>
 
+    <span class="k">def</span><span class="w"> </span><span class="nf">submit_aria_s1_gunw_job</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">secondary</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Submit an ARIA S1 GUNW job.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            reference: The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</span>
+<span class="sd">            secondary: The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</span>
+<span class="sd">            frame_id: Subset GUNW products to this frame</span>
+<span class="sd">            name: A name for the job (optional)</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A Batch object containing the ARIA S1 GUNW job</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">arguments</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">arguments</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;self&#39;</span><span class="p">)</span>
+        <span class="n">job_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_aria_s1_gunw_job</span><span class="p">(</span><span class="o">**</span><span class="n">arguments</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">submit_prepared_jobs</span><span class="p">(</span><span class="n">prepared_jobs</span><span class="o">=</span><span class="n">job_dict</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">prepare_aria_s1_gunw_job</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">secondary</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Prepare an ARIA S1 GUNW job.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            reference: The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</span>
+<span class="sd">            secondary: The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</span>
+<span class="sd">            frame_id: Subset GUNW products to this frame</span>
+<span class="sd">            name: A name for the job</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            A dictionary containing the prepared ARIA S1 GUNW job</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">job_parameters</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="s1">&#39;reference&#39;</span><span class="p">,</span> <span class="s1">&#39;secondary&#39;</span><span class="p">,</span> <span class="s1">&#39;frame_id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]:</span>
+            <span class="n">job_parameters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+        <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">,</span> <span class="s1">&#39;secondary&#39;</span><span class="p">:</span> <span class="n">secondary</span><span class="p">,</span> <span class="s1">&#39;frame_id&#39;</span><span class="p">:</span> <span class="n">frame_id</span><span class="p">,</span> <span class="o">**</span><span class="n">job_parameters</span><span class="p">},</span>
+            <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="s1">&#39;ARIA_S1_GUNW&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">job_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">return</span> <span class="n">job_dict</span>
+
     <span class="k">def</span><span class="w"> </span><span class="nf">my_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns:</span>
 <span class="sd">        Your user information</span>
@@ -9115,7 +9659,7 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
                 <code>api_url</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -9131,7 +9675,7 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
                 <code>username</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -9148,7 +9692,7 @@ Both username and password must be provided if either is provided.</p>
                 <code>password</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -9165,7 +9709,7 @@ Both username and password must be provided if either is provided.</p>
                 <code>prompt</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -9257,12 +9801,12 @@ Your remaining processing credits, or None if you have no processing limit</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">512</span>
-<span class="normal">513</span>
-<span class="normal">514</span>
-<span class="normal">515</span>
-<span class="normal">516</span>
-<span class="normal">517</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">check_credits</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">558</span>
+<span class="normal">559</span>
+<span class="normal">560</span>
+<span class="normal">561</span>
+<span class="normal">562</span>
+<span class="normal">563</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">check_credits</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns:</span>
 <span class="sd">    Your remaining processing credits, or None if you have no processing limit</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -9299,7 +9843,7 @@ Your remaining processing credits, or None if you have no processing limit</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code>float | int | None</code>
+                  <code><span title="float">float</span> | <span title="int">int</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -9312,19 +9856,19 @@ Your remaining processing credits, or None if you have no processing limit</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">519</span>
-<span class="normal">520</span>
-<span class="normal">521</span>
-<span class="normal">522</span>
-<span class="normal">523</span>
-<span class="normal">524</span>
-<span class="normal">525</span>
-<span class="normal">526</span>
-<span class="normal">527</span>
-<span class="normal">528</span>
-<span class="normal">529</span>
-<span class="normal">530</span>
-<span class="normal">531</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">check_quota</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">565</span>
+<span class="normal">566</span>
+<span class="normal">567</span>
+<span class="normal">568</span>
+<span class="normal">569</span>
+<span class="normal">570</span>
+<span class="normal">571</span>
+<span class="normal">572</span>
+<span class="normal">573</span>
+<span class="normal">574</span>
+<span class="normal">575</span>
+<span class="normal">576</span>
+<span class="normal">577</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">check_quota</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Deprecated method for checking your remaining processing credits; replaced by `HyP3.check_credits`</span>
 
 <span class="sd">    Returns:</span>
@@ -9359,13 +9903,13 @@ Table of job costs</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">533</span>
-<span class="normal">534</span>
-<span class="normal">535</span>
-<span class="normal">536</span>
-<span class="normal">537</span>
-<span class="normal">538</span>
-<span class="normal">539</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">costs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">579</span>
+<span class="normal">580</span>
+<span class="normal">581</span>
+<span class="normal">582</span>
+<span class="normal">583</span>
+<span class="normal">584</span>
+<span class="normal">585</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">costs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns:</span>
 <span class="sd">    Table of job costs</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -9440,7 +9984,7 @@ Table of job costs</p>
                 <code>status_code</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -9456,7 +10000,7 @@ Table of job costs</p>
                 <code>name</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -9472,7 +10016,7 @@ Table of job costs</p>
                 <code>job_type</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -9488,7 +10032,7 @@ Table of job costs</p>
                 <code>user_id</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -9650,7 +10194,7 @@ Table of job costs</p>
                 <code>job_id</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -9736,19 +10280,197 @@ Your user information</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">504</span>
-<span class="normal">505</span>
-<span class="normal">506</span>
-<span class="normal">507</span>
-<span class="normal">508</span>
-<span class="normal">509</span>
-<span class="normal">510</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">my_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">550</span>
+<span class="normal">551</span>
+<span class="normal">552</span>
+<span class="normal">553</span>
+<span class="normal">554</span>
+<span class="normal">555</span>
+<span class="normal">556</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">my_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns:</span>
 <span class="sd">    Your user information</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/user&#39;</span><span class="p">))</span>
     <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="hyp3_sdk.hyp3.HyP3.prepare_aria_s1_gunw_job" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">prepare_aria_s1_gunw_job</span><span class="p">(</span><span class="n">reference</span><span class="p">,</span> <span class="n">secondary</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+<a href="#hyp3_sdk.hyp3.HyP3.prepare_aria_s1_gunw_job" class="headerlink" title="Permanent link">&para;</a></h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Prepare an ARIA S1 GUNW job.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>reference</code>
+            </td>
+            <td>
+                  <code><span title="list">list</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>secondary</code>
+            </td>
+            <td>
+                  <code><span title="list">list</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>frame_id</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Subset GUNW products to this frame</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A name for the job</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A dictionary containing the prepared ARIA S1 GUNW job</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">523</span>
+<span class="normal">524</span>
+<span class="normal">525</span>
+<span class="normal">526</span>
+<span class="normal">527</span>
+<span class="normal">528</span>
+<span class="normal">529</span>
+<span class="normal">530</span>
+<span class="normal">531</span>
+<span class="normal">532</span>
+<span class="normal">533</span>
+<span class="normal">534</span>
+<span class="normal">535</span>
+<span class="normal">536</span>
+<span class="normal">537</span>
+<span class="normal">538</span>
+<span class="normal">539</span>
+<span class="normal">540</span>
+<span class="normal">541</span>
+<span class="normal">542</span>
+<span class="normal">543</span>
+<span class="normal">544</span>
+<span class="normal">545</span>
+<span class="normal">546</span>
+<span class="normal">547</span>
+<span class="normal">548</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">prepare_aria_s1_gunw_job</span><span class="p">(</span>
+    <span class="bp">cls</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">secondary</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Prepare an ARIA S1 GUNW job.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        reference: The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</span>
+<span class="sd">        secondary: The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</span>
+<span class="sd">        frame_id: Subset GUNW products to this frame</span>
+<span class="sd">        name: A name for the job</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A dictionary containing the prepared ARIA S1 GUNW job</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">job_parameters</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="s1">&#39;reference&#39;</span><span class="p">,</span> <span class="s1">&#39;secondary&#39;</span><span class="p">,</span> <span class="s1">&#39;frame_id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]:</span>
+        <span class="n">job_parameters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+    <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">,</span> <span class="s1">&#39;secondary&#39;</span><span class="p">:</span> <span class="n">secondary</span><span class="p">,</span> <span class="s1">&#39;frame_id&#39;</span><span class="p">:</span> <span class="n">frame_id</span><span class="p">,</span> <span class="o">**</span><span class="n">job_parameters</span><span class="p">},</span>
+        <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="s1">&#39;ARIA_S1_GUNW&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">job_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="k">return</span> <span class="n">job_dict</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -9789,7 +10511,7 @@ Your user information</p>
                 <code>granule1</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -9805,7 +10527,7 @@ Your user information</p>
                 <code>granule2</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -9821,7 +10543,7 @@ Your user information</p>
                 <code>name</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -9847,7 +10569,7 @@ Your user information</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code>dict</code>
+                  <code><span title="dict">dict</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -9937,7 +10659,7 @@ Your user information</p>
                 <code>granule1</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -9953,7 +10675,7 @@ Your user information</p>
                 <code>granule2</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -9969,7 +10691,7 @@ Your user information</p>
                 <code>name</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -9985,7 +10707,7 @@ Your user information</p>
                 <code>apply_water_mask</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10028,7 +10750,7 @@ as invalid for phase unwrapping</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code>dict</code>
+                  <code><span title="dict">dict</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10146,7 +10868,7 @@ as invalid for phase unwrapping</p>
                 <code>granule1</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10162,7 +10884,7 @@ as invalid for phase unwrapping</p>
                 <code>granule2</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10178,7 +10900,7 @@ as invalid for phase unwrapping</p>
                 <code>name</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10194,7 +10916,7 @@ as invalid for phase unwrapping</p>
                 <code>include_look_vectors</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10210,7 +10932,7 @@ as invalid for phase unwrapping</p>
                 <code>include_los_displacement</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10228,7 +10950,7 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
                 <code>include_inc_map</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10260,7 +10982,7 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
                 <code>include_dem</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10276,7 +10998,7 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
                 <code>include_wrapped_phase</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10292,7 +11014,7 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
                 <code>apply_water_mask</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10309,7 +11031,7 @@ as invalid for phase unwrapping</p>
                 <code>include_displacement_maps</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10325,7 +11047,7 @@ as invalid for phase unwrapping</p>
                 <code>phase_filter_parameter</code>
             </td>
             <td>
-                  <code>float</code>
+                  <code><span title="float">float</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10354,7 +11076,7 @@ If zero, adaptive phase filter will be skipped.</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code>dict</code>
+                  <code><span title="dict">dict</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10524,7 +11246,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>granule</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10540,7 +11262,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>name</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10556,7 +11278,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>dem_matching</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10572,7 +11294,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>include_dem</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10588,7 +11310,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>include_inc_map</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10604,7 +11326,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>include_rgb</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10621,7 +11343,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>include_scattering_area</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10686,7 +11408,7 @@ projected into the look direction (gamma0)</p>
                 <code>speckle_filter</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10728,7 +11450,7 @@ projected into the look direction (gamma0)</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                  <code>dict</code>
+                  <code><span title="dict">dict</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10945,6 +11667,164 @@ projected into the look direction (gamma0)</p>
 <div class="doc doc-object doc-function">
 
 
+<h5 id="hyp3_sdk.hyp3.HyP3.submit_aria_s1_gunw_job" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">submit_aria_s1_gunw_job</span><span class="p">(</span><span class="n">reference</span><span class="p">,</span> <span class="n">secondary</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#hyp3_sdk.hyp3.HyP3.submit_aria_s1_gunw_job" class="headerlink" title="Permanent link">&para;</a></h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Submit an ARIA S1 GUNW job.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>reference</code>
+            </td>
+            <td>
+                  <code><span title="list">list</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>secondary</code>
+            </td>
+            <td>
+                  <code><span title="list">list</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>frame_id</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Subset GUNW products to this frame</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A name for the job (optional)</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="hyp3_sdk.jobs.Batch" href="#hyp3_sdk.jobs.Batch">Batch</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A Batch object containing the ARIA S1 GUNW job</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">504</span>
+<span class="normal">505</span>
+<span class="normal">506</span>
+<span class="normal">507</span>
+<span class="normal">508</span>
+<span class="normal">509</span>
+<span class="normal">510</span>
+<span class="normal">511</span>
+<span class="normal">512</span>
+<span class="normal">513</span>
+<span class="normal">514</span>
+<span class="normal">515</span>
+<span class="normal">516</span>
+<span class="normal">517</span>
+<span class="normal">518</span>
+<span class="normal">519</span>
+<span class="normal">520</span>
+<span class="normal">521</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">submit_aria_s1_gunw_job</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">secondary</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Submit an ARIA S1 GUNW job.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        reference: The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</span>
+<span class="sd">        secondary: The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</span>
+<span class="sd">        frame_id: Subset GUNW products to this frame</span>
+<span class="sd">        name: A name for the job (optional)</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A Batch object containing the ARIA S1 GUNW job</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">arguments</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">arguments</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;self&#39;</span><span class="p">)</span>
+    <span class="n">job_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_aria_s1_gunw_job</span><span class="p">(</span><span class="o">**</span><span class="n">arguments</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">submit_prepared_jobs</span><span class="p">(</span><span class="n">prepared_jobs</span><span class="o">=</span><span class="n">job_dict</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h5 id="hyp3_sdk.hyp3.HyP3.submit_autorift_job" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">submit_autorift_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
@@ -10972,7 +11852,7 @@ projected into the look direction (gamma0)</p>
                 <code>granule1</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10988,7 +11868,7 @@ projected into the look direction (gamma0)</p>
                 <code>granule2</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11004,7 +11884,7 @@ projected into the look direction (gamma0)</p>
                 <code>name</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11104,7 +11984,7 @@ projected into the look direction (gamma0)</p>
                 <code>granule1</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11120,7 +12000,7 @@ projected into the look direction (gamma0)</p>
                 <code>granule2</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11136,7 +12016,7 @@ projected into the look direction (gamma0)</p>
                 <code>name</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11152,7 +12032,7 @@ projected into the look direction (gamma0)</p>
                 <code>apply_water_mask</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11293,7 +12173,7 @@ as invalid for phase unwrapping</p>
                 <code>granule1</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11309,7 +12189,7 @@ as invalid for phase unwrapping</p>
                 <code>granule2</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11325,7 +12205,7 @@ as invalid for phase unwrapping</p>
                 <code>name</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11341,7 +12221,7 @@ as invalid for phase unwrapping</p>
                 <code>include_look_vectors</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11357,7 +12237,7 @@ as invalid for phase unwrapping</p>
                 <code>include_los_displacement</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11375,7 +12255,7 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
                 <code>include_inc_map</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11407,7 +12287,7 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
                 <code>include_dem</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11423,7 +12303,7 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
                 <code>include_wrapped_phase</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11439,7 +12319,7 @@ along the Line-Of-Sight (LOS). This parameter has been deprecated in favor of
                 <code>apply_water_mask</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11456,7 +12336,7 @@ as invalid for phase unwrapping</p>
                 <code>include_displacement_maps</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11472,7 +12352,7 @@ as invalid for phase unwrapping</p>
                 <code>phase_filter_parameter</code>
             </td>
             <td>
-                  <code>float</code>
+                  <code><span title="float">float</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11637,7 +12517,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>prepared_jobs</code>
             </td>
             <td>
-                  <code>dict | list[dict]</code>
+                  <code><span title="dict">dict</span> | <span title="list">list</span>[<span title="dict">dict</span>]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11753,7 +12633,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>granule</code>
             </td>
             <td>
-                  <code>str</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11769,7 +12649,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>name</code>
             </td>
             <td>
-                  <code>str | None</code>
+                  <code><span title="str">str</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11785,7 +12665,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>dem_matching</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11801,7 +12681,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>include_dem</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11817,7 +12697,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>include_inc_map</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11833,7 +12713,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>include_rgb</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11850,7 +12730,7 @@ If zero, adaptive phase filter will be skipped.</p>
                 <code>include_scattering_area</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -11915,7 +12795,7 @@ projected into the look direction (gamma0)</p>
                 <code>speckle_filter</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -12103,7 +12983,7 @@ projected into the look direction (gamma0)</p>
                 <code>timeout</code>
             </td>
             <td>
-                  <code>int</code>
+                  <code><span title="int">int</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -12119,7 +12999,7 @@ projected into the look direction (gamma0)</p>
                 <code>interval</code>
             </td>
             <td>
-                  <code>int | float</code>
+                  <code><span title="int">int</span> | <span title="float">float</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -12255,7 +13135,8 @@ projected into the look direction (gamma0)</p>
 
               <details class="quote">
                 <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">154</span>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">153</span>
+<span class="normal">154</span>
 <span class="normal">155</span>
 <span class="normal">156</span>
 <span class="normal">157</span>
@@ -12402,8 +13283,7 @@ projected into the look direction (gamma0)</p>
 <span class="normal">298</span>
 <span class="normal">299</span>
 <span class="normal">300</span>
-<span class="normal">301</span>
-<span class="normal">302</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Batch</span><span class="p">:</span>
+<span class="normal">301</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Batch</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jobs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Job</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">jobs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">jobs</span> <span class="o">=</span> <span class="p">[]</span>
@@ -12582,15 +13462,15 @@ projected into the look direction (gamma0)</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">251</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">250</span>
+<span class="normal">251</span>
 <span class="normal">252</span>
 <span class="normal">253</span>
 <span class="normal">254</span>
 <span class="normal">255</span>
 <span class="normal">256</span>
 <span class="normal">257</span>
-<span class="normal">258</span>
-<span class="normal">259</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">any_expired</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="normal">258</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">any_expired</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Check succeeded jobs for expiration&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
@@ -12620,12 +13500,12 @@ projected into the look direction (gamma0)</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">221</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">220</span>
+<span class="normal">221</span>
 <span class="normal">222</span>
 <span class="normal">223</span>
 <span class="normal">224</span>
-<span class="normal">225</span>
-<span class="normal">226</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">complete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="normal">225</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">complete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns: True if all jobs are complete, otherwise returns False&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">job</span><span class="o">.</span><span class="n">complete</span><span class="p">():</span>
@@ -12666,7 +13546,7 @@ projected into the look direction (gamma0)</p>
                 <code>location</code>
             </td>
             <td>
-                  <code><span title="pathlib.Path">Path</span> | str</code>
+                  <code><span title="pathlib.Path">Path</span> | <span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -12682,7 +13562,7 @@ projected into the look direction (gamma0)</p>
                 <code>create</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -12699,7 +13579,8 @@ projected into the look direction (gamma0)</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">235</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">234</span>
+<span class="normal">235</span>
 <span class="normal">236</span>
 <span class="normal">237</span>
 <span class="normal">238</span>
@@ -12712,8 +13593,7 @@ projected into the look direction (gamma0)</p>
 <span class="normal">245</span>
 <span class="normal">246</span>
 <span class="normal">247</span>
-<span class="normal">248</span>
-<span class="normal">249</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">create</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+<span class="normal">248</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">create</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Args:</span>
 <span class="sd">        location: Directory location to put files into</span>
 <span class="sd">        create: Create `location` if it does not point to an existing directory</span>
@@ -12765,7 +13645,7 @@ and still running jobs will be in the returned batch.</p>
                 <code>succeeded</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -12781,7 +13661,7 @@ and still running jobs will be in the returned batch.</p>
                 <code>pending</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -12797,7 +13677,7 @@ and still running jobs will be in the returned batch.</p>
                 <code>running</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -12813,7 +13693,7 @@ and still running jobs will be in the returned batch.</p>
                 <code>failed</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -12829,7 +13709,7 @@ and still running jobs will be in the returned batch.</p>
                 <code>include_expired</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -12868,7 +13748,8 @@ and still running jobs will be in the returned batch.</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">261</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">260</span>
+<span class="normal">261</span>
 <span class="normal">262</span>
 <span class="normal">263</span>
 <span class="normal">264</span>
@@ -12905,8 +13786,7 @@ and still running jobs will be in the returned batch.</p>
 <span class="normal">295</span>
 <span class="normal">296</span>
 <span class="normal">297</span>
-<span class="normal">298</span>
-<span class="normal">299</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">filter_jobs</span><span class="p">(</span>
+<span class="normal">298</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">filter_jobs</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">succeeded</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">pending</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
@@ -12966,12 +13846,12 @@ and still running jobs will be in the returned batch.</p>
 
             <details class="quote">
               <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">228</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">227</span>
+<span class="normal">228</span>
 <span class="normal">229</span>
 <span class="normal">230</span>
 <span class="normal">231</span>
-<span class="normal">232</span>
-<span class="normal">233</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">succeeded</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="normal">232</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">succeeded</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns: True if all jobs have succeeded, otherwise returns False&quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">job</span><span class="o">.</span><span class="n">succeeded</span><span class="p">():</span>
@@ -13146,8 +14026,7 @@ and still running jobs will be in the returned batch.</p>
 <span class="normal">147</span>
 <span class="normal">148</span>
 <span class="normal">149</span>
-<span class="normal">150</span>
-<span class="normal">151</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Job</span><span class="p">:</span>
+<span class="normal">150</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Job</span><span class="p">:</span>
     <span class="n">_attributes_for_resubmit</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;job_parameters&#39;</span><span class="p">,</span> <span class="s1">&#39;job_type&#39;</span><span class="p">}</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
@@ -13263,8 +14142,7 @@ and still running jobs will be in the returned batch.</p>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">expired</span><span class="p">():</span>
             <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
             <span class="k">raise</span> <span class="n">HyP3SDKError</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s1">&#39;Expired jobs cannot be downloaded; &#39;</span>
-                <span class="sa">f</span><span class="s1">&#39;job expired </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s2">&quot;seconds&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span>
+                <span class="sa">f</span><span class="s1">&#39;Expired jobs cannot be downloaded; job expired </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s2">&quot;seconds&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span>
             <span class="p">)</span>
 
         <span class="k">if</span> <span class="n">create</span><span class="p">:</span>
@@ -13327,7 +14205,7 @@ and still running jobs will be in the returned batch.</p>
                 <code>location</code>
             </td>
             <td>
-                  <code><span title="pathlib.Path">Path</span> | str</code>
+                  <code><span title="pathlib.Path">Path</span> | <span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -13343,7 +14221,7 @@ and still running jobs will be in the returned batch.</p>
                 <code>create</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -13392,8 +14270,7 @@ and still running jobs will be in the returned batch.</p>
 <span class="normal">147</span>
 <span class="normal">148</span>
 <span class="normal">149</span>
-<span class="normal">150</span>
-<span class="normal">151</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">create</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+<span class="normal">150</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">create</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Args:</span>
 <span class="sd">        location: Directory location to put files into</span>
 <span class="sd">        create: Create `location` if it does not point to an existing directory</span>
@@ -13407,8 +14284,7 @@ and still running jobs will be in the returned batch.</p>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">expired</span><span class="p">():</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">raise</span> <span class="n">HyP3SDKError</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s1">&#39;Expired jobs cannot be downloaded; &#39;</span>
-            <span class="sa">f</span><span class="s1">&#39;job expired </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s2">&quot;seconds&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span>
+            <span class="sa">f</span><span class="s1">&#39;Expired jobs cannot be downloaded; job expired </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s2">&quot;seconds&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span>
         <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">create</span><span class="p">:</span>
@@ -13527,7 +14403,7 @@ and still running jobs will be in the returned batch.</p>
                 <code>n</code>
             </td>
             <td>
-                  <code>int</code>
+                  <code><span title="int">int</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -13706,7 +14582,7 @@ deleting <code>zip file</code> afterward.</p>
                 <code>zip_file</code>
             </td>
             <td>
-                  <code>str | <span title="pathlib.Path">Path</span></code>
+                  <code><span title="str">str</span> | <span title="pathlib.Path">Path</span></code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -13722,7 +14598,7 @@ deleting <code>zip file</code> afterward.</p>
                 <code>delete</code>
             </td>
             <td>
-                  <code>bool</code>
+                  <code><span title="bool">bool</span></code>
             </td>
             <td>
               <div class="doc-md-description">
