@@ -528,6 +528,13 @@ feedback.init({showIcon: false});
 </li>
       
         <li class="md-nav__item">
+  <a href="#submitting-sentinel-1-burst-insar-jobs" class="md-nav__link">
+    Submitting Sentinel-1 Burst InSAR jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#submitting-aria-s1-gunw-jobs" class="md-nav__link">
     Submitting ARIA-S1-GUNW jobs
   </a>
@@ -1756,6 +1763,13 @@ feedback.init({showIcon: false});
 </li>
       
         <li class="md-nav__item">
+  <a href="#submitting-sentinel-1-burst-insar-jobs" class="md-nav__link">
+    Submitting Sentinel-1 Burst InSAR jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#submitting-aria-s1-gunw-jobs" class="md-nav__link">
     Submitting ARIA-S1-GUNW jobs
   </a>
@@ -1898,6 +1912,39 @@ A minimal job list for a single Sentinel-1 RTC job would look like:</p>
 <span class="w">        </span><span class="nt">&quot;looks&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10x2&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;include_look_vectors&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;include_los_displacement&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="submitting-sentinel-1-burst-insar-jobs">Submitting Sentinel-1 Burst InSAR jobs<a class="headerlink" href="#submitting-sentinel-1-burst-insar-jobs" title="Permanent link">&para;</a></h2>
+<p>You can submit InSAR jobs using the <code>INSAR_ISCE_BURST</code> job type, which takes a single pair of <a href="https://sentiwiki.copernicus.eu/web/s1-products#S1Products-BurstIDMapsS1-Products-Burst-ID-Maps" target="_blank">ESA granule burst IDs</a>, or use the <code>INSAR_ISCE_MULTI_BURST</code> job type, which accepts lists of up to 15 contiguous along-track burst IDs that will be merged together to produce reference and secondary files.
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;jobs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;job_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INSAR_ISCE_BURST&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;single-burst-example&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;job_parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;granules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="s2">&quot;S1_136231_IW2_20200604T022312_VV_7C85-BURST&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;S1_136231_IW2_20200616T022313_VV_5D11-BURST&quot;</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;job_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INSAR_ISCE_MULTI_BURST&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;multi-burst-example&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;job_parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="s2">&quot;S1_136231_IW2_20200604T022312_VV_7C85-BURST&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;S1_136232_IW2_20200604T022315_VV_7C85-BURST&quot;</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;secondary&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="s2">&quot;S1_136231_IW2_20200616T022313_VV_5D11-BURST&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;S1_136232_IW2_20200616T022316_VV_5D11-BURST&quot;</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;apply_water_mask&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;looks&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5x1&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">]</span>
