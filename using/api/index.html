@@ -1918,7 +1918,7 @@ A minimal job list for a single Sentinel-1 RTC job would look like:</p>
 <span class="p">}</span>
 </code></pre></div></p>
 <h2 id="submitting-sentinel-1-burst-insar-jobs">Submitting Sentinel-1 Burst InSAR jobs<a class="headerlink" href="#submitting-sentinel-1-burst-insar-jobs" title="Permanent link">&para;</a></h2>
-<p>You can submit InSAR jobs using the <code>INSAR_ISCE_BURST</code> job type, which takes a single pair of <a href="https://sentiwiki.copernicus.eu/web/s1-products#S1Products-BurstIDMapsS1-Products-Burst-ID-Maps" target="_blank">ESA granule burst IDs</a>, or use the <code>INSAR_ISCE_MULTI_BURST</code> job type, which accepts lists of up to 15 contiguous along-track burst IDs that will be merged together to produce reference and secondary files.
+<p>You can submit InSAR jobs using the <code>INSAR_ISCE_BURST</code> job type, which takes a single pair of <a href="https://sentiwiki.copernicus.eu/web/s1-products#S1Products-BurstIDMapsS1-Products-Burst-ID-Maps" target="_blank">ESA granule burst IDs</a>, or use the <code>INSAR_ISCE_MULTI_BURST</code> job type, which accepts lists of up to 15 contiguous along-track burst IDs that will be merged together to produce reference and secondary input SLCs.
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;jobs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
