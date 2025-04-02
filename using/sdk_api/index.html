@@ -92,7 +92,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#hyp3_sdk-v721-api-reference" class="md-skip">
+        <a href="#hyp3_sdk-v730-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -408,7 +408,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank" class="md-nav__link">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -680,6 +680,13 @@ feedback.init({showIcon: false});
           <li class="md-nav__item">
   <a href="#hyp3_sdk.HyP3.submit_rtc_job" class="md-nav__link">
     submit_rtc_job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.HyP3.update_jobs" class="md-nav__link">
+    update_jobs
   </a>
   
 </li>
@@ -1601,7 +1608,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank" class="md-nav__link">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1621,11 +1628,31 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb" target="_blank" class="md-nav__link">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb" target="_blank" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Search another user's jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_job_name_change.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Update existing job name
   </span>
   
 
@@ -1661,7 +1688,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank" class="md-nav__link">
+      <a href="https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2276,6 +2303,13 @@ feedback.init({showIcon: false});
 </li>
         
           <li class="md-nav__item">
+  <a href="#hyp3_sdk.HyP3.update_jobs" class="md-nav__link">
+    update_jobs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#hyp3_sdk.HyP3.watch" class="md-nav__link">
     watch
   </a>
@@ -2463,7 +2497,7 @@ feedback.init({showIcon: false});
                   
 
 
-<h1 id="hyp3_sdk-v721-api-reference"><code>hyp3_sdk</code> <em>v7.2.1</em> API Reference<a class="headerlink" href="#hyp3_sdk-v721-api-reference" title="Permanent link">&para;</a></h1>
+<h1 id="hyp3_sdk-v730-api-reference"><code>hyp3_sdk</code> <em>v7.3.0</em> API Reference<a class="headerlink" href="#hyp3_sdk-v730-api-reference" title="Permanent link">&para;</a></h1>
 
 
 <div class="doc doc-object doc-module">
@@ -3902,7 +3936,32 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 <span class="normal">642</span>
 <span class="normal">643</span>
 <span class="normal">644</span>
-<span class="normal">645</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">HyP3</span><span class="p">:</span>
+<span class="normal">645</span>
+<span class="normal">646</span>
+<span class="normal">647</span>
+<span class="normal">648</span>
+<span class="normal">649</span>
+<span class="normal">650</span>
+<span class="normal">651</span>
+<span class="normal">652</span>
+<span class="normal">653</span>
+<span class="normal">654</span>
+<span class="normal">655</span>
+<span class="normal">656</span>
+<span class="normal">657</span>
+<span class="normal">658</span>
+<span class="normal">659</span>
+<span class="normal">660</span>
+<span class="normal">661</span>
+<span class="normal">662</span>
+<span class="normal">663</span>
+<span class="normal">664</span>
+<span class="normal">665</span>
+<span class="normal">666</span>
+<span class="normal">667</span>
+<span class="normal">668</span>
+<span class="normal">669</span>
+<span class="normal">670</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">HyP3</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A python wrapper around the HyP3 API.</span>
 
 <span class="sd">    Warning: All jobs submitted to HyP3 are publicly visible. For more information, see</span>
@@ -4527,6 +4586,31 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
         <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/costs&#39;</span><span class="p">))</span>
         <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jobs</span><span class="p">:</span> <span class="n">Batch</span> <span class="o">|</span> <span class="n">Job</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span> <span class="o">|</span> <span class="n">Job</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update the name of one or more previously-submitted jobs.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            jobs: The job(s) to update</span>
+<span class="sd">            kwargs:</span>
+<span class="sd">                name: The new name, or None to remove the name</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The updated job(s)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">jobs</span><span class="p">,</span> <span class="n">Batch</span><span class="p">):</span>
+            <span class="n">batch</span> <span class="o">=</span> <span class="n">hyp3_sdk</span><span class="o">.</span><span class="n">Batch</span><span class="p">()</span>
+            <span class="n">tqdm</span> <span class="o">=</span> <span class="n">hyp3_sdk</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">get_tqdm_progress_bar</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">jobs</span><span class="p">):</span>
+                <span class="n">batch</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_jobs</span><span class="p">(</span><span class="n">job</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">batch</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">jobs</span><span class="p">,</span> <span class="n">Job</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;jobs&#39; has type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">jobs</span><span class="p">)</span><span class="si">}</span><span class="s2">, must be </span><span class="si">{</span><span class="n">Batch</span><span class="si">}</span><span class="s2"> or </span><span class="si">{</span><span class="n">Job</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;/jobs/</span><span class="si">{</span><span class="n">jobs</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">),</span> <span class="n">json</span><span class="o">=</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 </code></pre></div></td></tr></table></div>
               </details>
 
@@ -8251,6 +8335,144 @@ projected into the look direction (gamma0)</p>
 <div class="doc doc-object doc-function">
 
 
+<h4 id="hyp3_sdk.HyP3.update_jobs" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">update_jobs</span><span class="p">(</span><span class="n">jobs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#hyp3_sdk.HyP3.update_jobs" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Update the name of one or more previously-submitted jobs.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>jobs</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="hyp3_sdk.jobs.Batch" href="#hyp3_sdk.jobs.Batch">Batch</a> | <a class="autorefs autorefs-internal" title="hyp3_sdk.jobs.Job" href="#hyp3_sdk.jobs.Job">Job</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The job(s) to update</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>kwargs</code>
+            </td>
+            <td>
+                  <code><span title="object">object</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>name: The new name, or None to remove the name</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="hyp3_sdk.jobs.Batch" href="#hyp3_sdk.jobs.Batch">Batch</a> | <a class="autorefs autorefs-internal" title="hyp3_sdk.jobs.Job" href="#hyp3_sdk.jobs.Job">Job</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The updated job(s)</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">647</span>
+<span class="normal">648</span>
+<span class="normal">649</span>
+<span class="normal">650</span>
+<span class="normal">651</span>
+<span class="normal">652</span>
+<span class="normal">653</span>
+<span class="normal">654</span>
+<span class="normal">655</span>
+<span class="normal">656</span>
+<span class="normal">657</span>
+<span class="normal">658</span>
+<span class="normal">659</span>
+<span class="normal">660</span>
+<span class="normal">661</span>
+<span class="normal">662</span>
+<span class="normal">663</span>
+<span class="normal">664</span>
+<span class="normal">665</span>
+<span class="normal">666</span>
+<span class="normal">667</span>
+<span class="normal">668</span>
+<span class="normal">669</span>
+<span class="normal">670</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">update_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jobs</span><span class="p">:</span> <span class="n">Batch</span> <span class="o">|</span> <span class="n">Job</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span> <span class="o">|</span> <span class="n">Job</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Update the name of one or more previously-submitted jobs.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        jobs: The job(s) to update</span>
+<span class="sd">        kwargs:</span>
+<span class="sd">            name: The new name, or None to remove the name</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The updated job(s)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">jobs</span><span class="p">,</span> <span class="n">Batch</span><span class="p">):</span>
+        <span class="n">batch</span> <span class="o">=</span> <span class="n">hyp3_sdk</span><span class="o">.</span><span class="n">Batch</span><span class="p">()</span>
+        <span class="n">tqdm</span> <span class="o">=</span> <span class="n">hyp3_sdk</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">get_tqdm_progress_bar</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">jobs</span><span class="p">):</span>
+            <span class="n">batch</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_jobs</span><span class="p">(</span><span class="n">job</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">batch</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">jobs</span><span class="p">,</span> <span class="n">Job</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;jobs&#39; has type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">jobs</span><span class="p">)</span><span class="si">}</span><span class="s2">, must be </span><span class="si">{</span><span class="n">Batch</span><span class="si">}</span><span class="s2"> or </span><span class="si">{</span><span class="n">Job</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;/jobs/</span><span class="si">{</span><span class="n">jobs</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">),</span> <span class="n">json</span><span class="o">=</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h4 id="hyp3_sdk.HyP3.watch" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">watch</span><span class="p">(</span><span class="n">job_or_batch</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10800</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span></code>
 
@@ -9727,7 +9949,32 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 <span class="normal">642</span>
 <span class="normal">643</span>
 <span class="normal">644</span>
-<span class="normal">645</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">HyP3</span><span class="p">:</span>
+<span class="normal">645</span>
+<span class="normal">646</span>
+<span class="normal">647</span>
+<span class="normal">648</span>
+<span class="normal">649</span>
+<span class="normal">650</span>
+<span class="normal">651</span>
+<span class="normal">652</span>
+<span class="normal">653</span>
+<span class="normal">654</span>
+<span class="normal">655</span>
+<span class="normal">656</span>
+<span class="normal">657</span>
+<span class="normal">658</span>
+<span class="normal">659</span>
+<span class="normal">660</span>
+<span class="normal">661</span>
+<span class="normal">662</span>
+<span class="normal">663</span>
+<span class="normal">664</span>
+<span class="normal">665</span>
+<span class="normal">666</span>
+<span class="normal">667</span>
+<span class="normal">668</span>
+<span class="normal">669</span>
+<span class="normal">670</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">HyP3</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A python wrapper around the HyP3 API.</span>
 
 <span class="sd">    Warning: All jobs submitted to HyP3 are publicly visible. For more information, see</span>
@@ -10352,6 +10599,31 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
         <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/costs&#39;</span><span class="p">))</span>
         <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jobs</span><span class="p">:</span> <span class="n">Batch</span> <span class="o">|</span> <span class="n">Job</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span> <span class="o">|</span> <span class="n">Job</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update the name of one or more previously-submitted jobs.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            jobs: The job(s) to update</span>
+<span class="sd">            kwargs:</span>
+<span class="sd">                name: The new name, or None to remove the name</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The updated job(s)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">jobs</span><span class="p">,</span> <span class="n">Batch</span><span class="p">):</span>
+            <span class="n">batch</span> <span class="o">=</span> <span class="n">hyp3_sdk</span><span class="o">.</span><span class="n">Batch</span><span class="p">()</span>
+            <span class="n">tqdm</span> <span class="o">=</span> <span class="n">hyp3_sdk</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">get_tqdm_progress_bar</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">jobs</span><span class="p">):</span>
+                <span class="n">batch</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_jobs</span><span class="p">(</span><span class="n">job</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">batch</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">jobs</span><span class="p">,</span> <span class="n">Job</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;jobs&#39; has type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">jobs</span><span class="p">)</span><span class="si">}</span><span class="s2">, must be </span><span class="si">{</span><span class="n">Batch</span><span class="si">}</span><span class="s2"> or </span><span class="si">{</span><span class="n">Job</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;/jobs/</span><span class="si">{</span><span class="n">jobs</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">),</span> <span class="n">json</span><span class="o">=</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 </code></pre></div></td></tr></table></div>
               </details>
 
@@ -14067,6 +14339,144 @@ projected into the look direction (gamma0)</p>
     <span class="n">arguments</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;self&#39;</span><span class="p">)</span>
     <span class="n">job_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_rtc_job</span><span class="p">(</span><span class="o">**</span><span class="n">arguments</span><span class="p">)</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">submit_prepared_jobs</span><span class="p">(</span><span class="n">prepared_jobs</span><span class="o">=</span><span class="n">job_dict</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="hyp3_sdk.hyp3.HyP3.update_jobs" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">update_jobs</span><span class="p">(</span><span class="n">jobs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+<a href="#hyp3_sdk.hyp3.HyP3.update_jobs" class="headerlink" title="Permanent link">&para;</a></h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Update the name of one or more previously-submitted jobs.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>jobs</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="hyp3_sdk.jobs.Batch" href="#hyp3_sdk.jobs.Batch">Batch</a> | <a class="autorefs autorefs-internal" title="hyp3_sdk.jobs.Job" href="#hyp3_sdk.jobs.Job">Job</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The job(s) to update</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>kwargs</code>
+            </td>
+            <td>
+                  <code><span title="object">object</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>name: The new name, or None to remove the name</p>
+              </div>
+            </td>
+            <td>
+                  <code>{}</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="hyp3_sdk.jobs.Batch" href="#hyp3_sdk.jobs.Batch">Batch</a> | <a class="autorefs autorefs-internal" title="hyp3_sdk.jobs.Job" href="#hyp3_sdk.jobs.Job">Job</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The updated job(s)</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">647</span>
+<span class="normal">648</span>
+<span class="normal">649</span>
+<span class="normal">650</span>
+<span class="normal">651</span>
+<span class="normal">652</span>
+<span class="normal">653</span>
+<span class="normal">654</span>
+<span class="normal">655</span>
+<span class="normal">656</span>
+<span class="normal">657</span>
+<span class="normal">658</span>
+<span class="normal">659</span>
+<span class="normal">660</span>
+<span class="normal">661</span>
+<span class="normal">662</span>
+<span class="normal">663</span>
+<span class="normal">664</span>
+<span class="normal">665</span>
+<span class="normal">666</span>
+<span class="normal">667</span>
+<span class="normal">668</span>
+<span class="normal">669</span>
+<span class="normal">670</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">update_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jobs</span><span class="p">:</span> <span class="n">Batch</span> <span class="o">|</span> <span class="n">Job</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span> <span class="o">|</span> <span class="n">Job</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Update the name of one or more previously-submitted jobs.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        jobs: The job(s) to update</span>
+<span class="sd">        kwargs:</span>
+<span class="sd">            name: The new name, or None to remove the name</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The updated job(s)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">jobs</span><span class="p">,</span> <span class="n">Batch</span><span class="p">):</span>
+        <span class="n">batch</span> <span class="o">=</span> <span class="n">hyp3_sdk</span><span class="o">.</span><span class="n">Batch</span><span class="p">()</span>
+        <span class="n">tqdm</span> <span class="o">=</span> <span class="n">hyp3_sdk</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">get_tqdm_progress_bar</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">jobs</span><span class="p">):</span>
+            <span class="n">batch</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_jobs</span><span class="p">(</span><span class="n">job</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">batch</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">jobs</span><span class="p">,</span> <span class="n">Job</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;jobs&#39; has type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">jobs</span><span class="p">)</span><span class="si">}</span><span class="s2">, must be </span><span class="si">{</span><span class="n">Batch</span><span class="si">}</span><span class="s2"> or </span><span class="si">{</span><span class="n">Job</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;/jobs/</span><span class="si">{</span><span class="n">jobs</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">),</span> <span class="n">json</span><span class="o">=</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
