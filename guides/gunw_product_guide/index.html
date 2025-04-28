@@ -1992,12 +1992,17 @@ feedback.init({showIcon: false});
 <p>The <a href="https://aria.jpl.nasa.gov/products/standard-displacement-products.html" target="_blank">ARIA Sentinel-1 Geocoded Unwrapped Phase (ARIA-S1-GUNW)</a> product is a standardized interferometric SAR (InSAR) dataset that enables rapid analysis of surface deformation using Sentinel-1 SAR data. Produced by <a href="https://aria.jpl.nasa.gov/" target="_blank">JPL’s ARIA</a> project and hosted at the <a href="https://www.earthdata.nasa.gov/centers/asf-daac" target="_blank">Alaska Satellite Facility (ASF) DAAC</a>, it provides CF-compliant NetCDF files at 90-m pixel spacing, containing unwrapped interferometric phase measurements, imaging geometry, various correction layers, and metadata. </p>
 <p>With over 1.1 million (and growing!) freely available products covering major fault systems, volcanic regions, and coastal zones, ARIA-S1-GUNW products facilitate scientific research and disaster response by simplifying access to centimeter-scale ground displacement measurements. Generated through an open-source, cloud-based <a href="https://github.com/parosen/Geo-SInC/blob/main/EarthScope2024/2.2_TOPS_Data_Processing/topsApp.ipynb" target="_blank">ISCE2 TopsApp processing pipeline</a>, these products support applications such as earthquake impact assessment, volcanic monitoring, and long-term land motion studies, with ongoing improvements enhancing their accuracy and usability.</p>
 <p>The ARIA project also maintains the <a href="https://doi.org/10.1029/2020GL090013" target="_blank">ARIA-tools</a> software, which is a suite of open-source tools which automates the seamless download, post-processing manipulation, aggregation, and management of ARIA-S1-GUNW products. Users may refer to the dedicated <a href="https://github.com/aria-tools/ARIA-tools" target="_blank">GitHub</a> page for a more exhaustive overview and installation instructions, and <a href="https://www.youtube.com/watch?v=_a9T59VTz7Q&amp;t=12734s" target="_blank">EarthScope Consortium led tutorials</a> which demonstrate practical applications.</p>
-<div class="admonition warning">
+<div class="admonition tip">
 <p class="admonition-title">ARIA-S1-GUNW products are not produced globally</p>
 <p>ARIA-S1-GUNW products are routinely produced only for specific locations, so the ASF archive may not contain products in your area of interest. See the <a href="#ordering-on-demand-products" title="Jump to Ordering On Demand Products section of this document">Ordering On Demand Products section</a> for information on ordering ARIA-S1-GUNW products for specific Sentinel-1 acquisitions.</p>
 </div>
 <h2 id="archived-and-on-demand-products">Archived and On-Demand Products<a class="headerlink" href="#archived-and-on-demand-products" title="Permanent link">&para;</a></h2>
 <p>While there is a large archive of ARIA-S1-GUNW products that have already been generated and are <a href="#accessing-existing-products" title="Jump to Accessing Existing Products section of this document">ready for download</a>, they may not cover your area of interest. In addition, the archived products may not include the full range of temporal baseline pairings required for your analysis. If you are interested in ARIA-S1-GUNW products that are not already represented in the archive, ASF provides the ability to <a href="#ordering-on-demand-products" title="Jump to Ordering On Demand Products section of this document">generate these products using specific Sentinel-1 SLC pairings</a>. </p>
+<div class="admonition warning">
+<p class="admonition-title">ARIA-S1-GUNW On-Demand processing not supported for Alaska</p>
+<p>ARIA-S1-GUNW products rely on RAiDER software for atmospheric delay correction. This software does not currently 
+support processing acquisitions over Alaska, causing On-Demand ARIA-S1-GUNW jobs submitted over Alaska to fail. </p>
+</div>
 <p>The On Demand ARIA-S1-GUNW products are generated using the same code that is used to generate the archived products, so they are fully interoperable.</p>
 <h2 id="accessing-existing-products">Accessing Existing Products<a class="headerlink" href="#accessing-existing-products" title="Permanent link">&para;</a></h2>
 <p>You can download existing ARIA-S1-GUNW products from the Alaska Satellite Facility’s (ASF) <a href="https://search.asf.alaska.edu/#/?dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA)" target="_blank">Vertex</a> search portal by following these steps: </p>
@@ -2010,6 +2015,12 @@ feedback.init({showIcon: false});
 </ol>
 <h2 id="ordering-on-demand-products">Ordering On-Demand Products<a class="headerlink" href="#ordering-on-demand-products" title="Permanent link">&para;</a></h2>
 <p>If the ARIA-S1-GUNW products you need are not available in the archive, you can use ASF's On Demand platform to submit custom ARIA-S1-GUNW jobs for processing. </p>
+<div class="admonition warning">
+<p class="admonition-title">Sentinel-1C acquisitions not yet supported</p>
+<p>ISCE2 software, which is used for processing ARIA-S1-GUNW products, does not currently support processing 
+SLCs acquired by the newly launched Sentinel-1C platform. Until the software package is updated, users will 
+not be able to submit ARIA-S1-GUNW jobs that include Sentinel-1C acquisitions for On-Demand processing.</p>
+</div>
 <h3 id="aria-frame-ids">ARIA Frame IDs<a class="headerlink" href="#aria-frame-ids" title="Permanent link">&para;</a></h3>
 <p>Sentinel-1 IW SLC products are not created in a way that ensures that granules for the same relative orbit and location always fully overlap over time. This results in inconsistent framing of the Sentinel-1 IW SLCs that can make it difficult to create longer series of Sentinel-1 InSAR products.</p>
 <p>In the image below, Sentinel-1 footprints acquired over an area of interest are displayed. Over the full period of record of the mission, the SLC framing has shifted considerably, resulting in some acquisitions that hardly overlap at all. </p>

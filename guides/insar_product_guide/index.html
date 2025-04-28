@@ -2589,11 +2589,9 @@ feedback.init({showIcon: false});
 <p>For a step-by-step tutorial on ordering On-Demand InSAR Products using Vertex, visit our <a href="https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3" target="_blank" title="InSAR On Demand! https://arcg.is/eiP8G0">InSAR On Demand! StoryMap</a>. To learn more about the files included in the On Demand InSAR product packages and how to work with them, refer to our <a href="https://storymaps.arcgis.com/stories/8be186e4125741518118d0102e6835e5" target="_blank" title="Exploring Sentinel-1 InSAR https://arcg.is/11DaW90">Exploring Sentinel-1 InSAR StoryMap</a>.</p>
 <p>InSAR processing requires a Digital Elevation Model (DEM) for the removal of topographic phase. We use the <a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM" target="_blank" title="Copernicus DEM">GLO-30 Copernicus DEM</a> when processing our On Demand InSAR products. Refer to the <a href="#prepare-the-dem-file" title="Jump to the Prepare the DEM File Section of this document">Prepare the DEM File section</a> for more information. </p>
 <div class="admonition tip">
-<p class="admonition-title">Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90</p>
-<p>The Copernicus DEM GLO-30 dataset does not provide coverage over Armenia and Azerbaijan. In the past, we have not supported InSAR product generation over those areas, due to the lack of DEM coverage. We now use the Copernicus DEM GLO-90 to fill those gaps. </p>
-<p>The GLO-90 dataset has a pixel spacing of 90 meters, which is not as detailed as the 30-m pixel spacing in the GLO-30 DEM, but it does allow us to provide InSAR products in these regions, where they were previously unavailable. </p>
-</div>
+<p class="admonition-title">On-Demand Burst-Based InSAR Now Available</p>
 <p>ASF also offers burst-based Sentinel-1 InSAR products. This on-demand processing option allows users to submit InSAR jobs for <a href="https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8" target="_blank" title="Sentinel-1 Bursts Tutorial https://arcg.is/zSafi0">individual SLC bursts</a> rather than the full <a href="https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1/single-look-complex/interferometric-wide-swath" target="_blank" title="https://sentinels.copernicus.eu">Sentinel-1 IW SLC products</a>. Refer to our <a href="../burst_insar_product_guide/">Sentinel-1 Burst InSAR Product Guide</a> for more information on this option.</p>
+</div>
 <p>Users are cautioned to read the sections on <a href="#limitations" title="Jump to the Limitations section of this document">limitations</a> and <a href="#error-sources" title="Jump to the Error Sources section of this document">error sources</a> in InSAR products before attempting to use InSAR data. For a more complete description of the properties of SAR, see our <a href="../introduction_to_sar/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar">Introduction to SAR</a> guide. </p>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>Interferometric Synthetic Aperture Radar (InSAR) processing uses two SAR images collected over the same area to determine geometric properties of the surface. Missions such as Sentinel-1 are <a href="https://sentinel.esa.int/web/sentinel/missions/sentinel-1/mission-objectives" target="_blank" title="https://sentinel.esa.int/web/sentinel/missions/sentinel-1/mission-objectives">designed for</a> monitoring surface deformation using InSAR, which is optimal when acquisitions are made from a consistent location in space (<a href="#baselines" title="Jump to Baselines section of this document">short perpendicular baseline</a>) over regular time intervals.</p>
@@ -2655,6 +2653,12 @@ feedback.init({showIcon: false});
 <p>For deformation mapping, it is best to minimize the perpendicular baseline whenever possible, but there may be tradeoffs in terms of finding suitable temporal baselines. In most cases, however, pairs selected for deformation mapping will have perpendicular baselines <em>much</em> smaller than the critical baseline.</p>
 <h2 id="ordering-on-demand-insar-products">Ordering On Demand InSAR Products<a class="headerlink" href="#ordering-on-demand-insar-products" title="Permanent link">&para;</a></h2>
 <p>All of ASF's On Demand InSAR products are generated using the <a href="https://hyp3-docs.asf.alaska.edu/products/" target="_blank" title="hyp3-docs.asf.alaska.edu">HyP3 platform</a>. Jobs can be submitted for processing using the <a href="https://search.asf.alaska.edu/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a> data portal, the <a href="https://hyp3-docs.asf.alaska.edu/using/sdk/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/sdk">HyP3 Python SDK</a> or the <a href="https://hyp3-docs.asf.alaska.edu/using/api/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/api">HyP3 API</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Sentinel-1C Support for InSAR Processing</p>
+<p>GAMMA software supports Sentinel-1C acquisitions as input for InSAR processing, but ISCE2 software currently does 
+not. Until ISCE2 is updated, users will only be able to submit jobs including Sentinel-1C SLCs for processing 
+using <a href="./">On Demand InSAR</a>, not <a href="../burst_insar_product_guide/">On Demand Burst InSAR</a>.</p>
+</div>
 <h3 id="vertex">Vertex<a class="headerlink" href="#vertex" title="Permanent link">&para;</a></h3>
 <p>InSAR pairs are selected in <a href="https://search.asf.alaska.edu/#/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a> using either the <a href="https://docs.asf.alaska.edu/vertex/baseline/" target="_blank" title="https://docs.asf.alaska.edu/vertex/baseline">Baseline Search</a> or the <a href="https://docs.asf.alaska.edu/vertex/sbas/" target="_blank" title="https://docs.asf.alaska.edu/vertex/sbas">SBAS Search</a> interface. The process of selecting pairs is the same for both IW SLC products and individual SLC bursts, but you will need to select the appropriate dataset when searching for content. As illustrated below, select the <strong>Sentinel-1</strong> option in the Dataset menu to search for IW SLC products, and select the <strong>S1 Bursts</strong> option to search for individual SLC bursts.</p>
 <p><img alt="Vertex Dataset Selection" src="../../images/vertex-dataset-selection.png" /></p>
@@ -2803,15 +2807,25 @@ both of which are included in the product package by default.</p>
 <h2 id="product-packaging">Product Packaging<a class="headerlink" href="#product-packaging" title="Permanent link">&para;</a></h2>
 <p>HyP3 InSAR output is a zip file containing various files, including GeoTIFFs, PNG browse images with geolocation information, Google Earth KMZ files, a metadata file, and a README file.</p>
 <h3 id="naming-convention">Naming Convention<a class="headerlink" href="#naming-convention" title="Permanent link">&para;</a></h3>
-<p>The InSAR product names are packed with information pertaining to the processing of the data, presented in the following order, as illustrated in Figure 4. </p>
+<p>The InSAR product names are packed with information pertaining to the processing of the data, presented in the 
+following order, as illustrated in Figure 4. </p>
 <ul>
-<li>The platform names, either Sentinel-1A or Sentinel-1B, are abbreviated "A" or "B", indicating the reference and secondary granule's imaging platform</li>
-<li>The reference start date and time and the secondary start date and time, with the date and time separated by the letter T</li>
+<li>The platform names, one of Sentinel-1A, Sentinel-1B, or Sentinel-1C, are abbreviated with the letters <code>A</code>, <code>B</code>, or <code>C</code><ul>
+<li>Two of these letters follow <code>S1</code>, indicating the platform(s) used to acquire the reference and 
+  secondary images, in that order (<code>S1AA</code>, <code>S1BA</code>, <code>S1AC</code>, etc.)</li>
+</ul>
+</li>
+<li>The reference start date and time and the secondary start date and time, with the date and time 
+  separated by the letter T</li>
 <li>The polarizations for the pair, either HH or VV, the orbit type, and the days of separation for the pair</li>
-<li>The product type (always INT for InSAR) and the pixel spacing, which will be either 80 or 40, based upon the number of looks selected when the job was submitted for processing</li>
+<li>The product type (always INT for InSAR) and the pixel spacing, which will be either 80 or 40, based upon the 
+  number of looks selected when the job was submitted for processing</li>
 <li>The software package used for processing is always GAMMA for GAMMA InSAR products</li>
-<li>User-defined options are denoted by three characters indicating whether the product is water masked (w) or not (u), the scene is clipped (e for entire area, c for clipped), and whether a single sub-swath was processed or the entire granule (either 1, 2, 3, or F for full swath)<ul>
-<li><em>Currently, only the water masking is available as a user-selected option; the products always include the full granule extent with all three sub-swaths</em></li>
+<li>User-defined options are denoted by three characters indicating whether the product is water masked (w) or not (u), 
+  the scene is clipped (e for entire area, c for clipped), and whether a single sub-swath was processed or the entire 
+  granule (either 1, 2, 3, or F for full swath)<ul>
+<li><em>Currently, only the water masking is available as a user-selected option; the products always include the 
+  full granule extent with all three sub-swaths</em></li>
 </ul>
 </li>
 <li>The filename ends with the ASF product ID, a 4 digit hexadecimal number</li>
