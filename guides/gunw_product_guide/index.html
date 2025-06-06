@@ -1028,6 +1028,13 @@ feedback.init({showIcon: false});
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#accessing-on-demand-aria-s1-gunw-products" class="md-nav__link">
+    Accessing On-Demand ARIA-S1-GUNW Products
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1912,6 +1919,13 @@ feedback.init({showIcon: false});
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#accessing-on-demand-aria-s1-gunw-products" class="md-nav__link">
+    Accessing On-Demand ARIA-S1-GUNW Products
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1988,28 +2002,67 @@ feedback.init({showIcon: false});
 
 
 <h1 id="aria-sentinel-1-gunw-product-guide">ARIA Sentinel-1 GUNW Product Guide<a class="headerlink" href="#aria-sentinel-1-gunw-product-guide" title="Permanent link">&para;</a></h1>
-<p>This document is a guide for users of <a href="https://www.earthdata.nasa.gov/data/catalog/asf-aria-s1-gunw-1" target="_blank">ARIA Sentinel-1 Geocoded Unwrapped (GUNW) Interferograms</a>.</p>
-<p>The <a href="https://aria.jpl.nasa.gov/products/standard-displacement-products.html" target="_blank">ARIA Sentinel-1 Geocoded Unwrapped Phase (ARIA-S1-GUNW)</a> product is a standardized interferometric SAR (InSAR) dataset that enables rapid analysis of surface deformation using Sentinel-1 SAR data. Produced by <a href="https://aria.jpl.nasa.gov/" target="_blank">JPL’s ARIA</a> project and hosted at the <a href="https://www.earthdata.nasa.gov/centers/asf-daac" target="_blank">Alaska Satellite Facility (ASF) DAAC</a>, it provides CF-compliant NetCDF files at 90-m pixel spacing, containing unwrapped interferometric phase measurements, imaging geometry, various correction layers, and metadata. </p>
-<p>With over 1.1 million (and growing!) freely available products covering major fault systems, volcanic regions, and coastal zones, ARIA-S1-GUNW products facilitate scientific research and disaster response by simplifying access to centimeter-scale ground displacement measurements. Generated through an open-source, cloud-based <a href="https://github.com/parosen/Geo-SInC/blob/main/EarthScope2024/2.2_TOPS_Data_Processing/topsApp.ipynb" target="_blank">ISCE2 TopsApp processing pipeline</a>, these products support applications such as earthquake impact assessment, volcanic monitoring, and long-term land motion studies, with ongoing improvements enhancing their accuracy and usability.</p>
-<p>The ARIA project also maintains the <a href="https://doi.org/10.1029/2020GL090013" target="_blank">ARIA-tools</a> software, which is a suite of open-source tools which automates the seamless download, post-processing manipulation, aggregation, and management of ARIA-S1-GUNW products. Users may refer to the dedicated <a href="https://github.com/aria-tools/ARIA-tools" target="_blank">GitHub</a> page for a more exhaustive overview and installation instructions, and <a href="https://www.youtube.com/watch?v=_a9T59VTz7Q&amp;t=12734s" target="_blank">EarthScope Consortium led tutorials</a> which demonstrate practical applications.</p>
+<p>This document is a guide for users of 
+<a href="https://www.earthdata.nasa.gov/data/catalog/asf-aria-s1-gunw-1" target="_blank" title="ASF-ARIA-S1-GUNW Products">ARIA Sentinel-1 Geocoded Unwrapped (GUNW) Interferograms</a>.</p>
+<p>The 
+<a href="https://aria.jpl.nasa.gov/products/standard-displacement-products.html" target="_blank" title="ARIA Standard Displacement Products">ARIA Sentinel-1 Geocoded Unwrapped Interferogram (ARIA-S1-GUNW)</a> 
+product is a standardized interferometric SAR (InSAR) dataset that enables rapid analysis of surface deformation 
+using Sentinel-1 SAR data. Produced by 
+<a href="https://aria.jpl.nasa.gov/" target="_blank" title="aria.jpl.nasa.gov">JPL’s ARIA</a> 
+project and hosted at the 
+<a href="https://www.earthdata.nasa.gov/centers/asf-daac" target="_blank" title="www.earthdata.nasa.gov/centers/asf-daac">Alaska Satellite Facility (ASF) DAAC</a>, 
+it provides CF-compliant NetCDF files at 90-m pixel spacing, containing unwrapped interferometric phase measurements, 
+imaging geometry, various correction layers, and metadata. Products are available for VV polarization only.</p>
+<p>With over 1.1 million (and growing!) freely available products covering major fault systems, volcanic regions, 
+and coastal zones, ARIA-S1-GUNW products facilitate scientific research and disaster response by simplifying access 
+to centimeter-scale ground displacement measurements. Generated through an open-source, cloud-based 
+<a href="https://github.com/parosen/Geo-SInC/blob/main/EarthScope2024/2.2_TOPS_Data_Processing/topsApp.ipynb" target="_blank" title="ISCE2 GitHub repository">ISCE2 TopsApp processing pipeline</a>, 
+these products support applications such as earthquake impact assessment, volcanic monitoring, and long-term land 
+motion studies, with ongoing improvements enhancing their accuracy and usability.</p>
+<p>The ARIA project also maintains the <a href="https://doi.org/10.1029/2020GL090013" target="_blank">ARIA-tools</a> software, 
+which is a suite of open-source tools which automates the seamless download, post-processing manipulation, 
+aggregation, and management of ARIA-S1-GUNW products. Users may refer to the dedicated 
+<a href="https://github.com/aria-tools/ARIA-tools" target="_blank" title="ARIA-tools GitHub repository">GitHub</a> 
+page for a more exhaustive overview and installation instructions, and 
+<a href="https://www.youtube.com/watch?v=_a9T59VTz7Q&amp;t=12734s" target="_blank" title="EarthScope Tutorials on YouTube">tutorials led by EarthScope Consortium</a>, 
+which demonstrate practical applications.</p>
 <div class="admonition tip">
 <p class="admonition-title">ARIA-S1-GUNW products are not produced globally</p>
-<p>ARIA-S1-GUNW products are routinely produced only for specific locations, so the ASF archive may not contain products in your area of interest. See the <a href="#ordering-on-demand-products" title="Jump to Ordering On Demand Products section of this document">Ordering On Demand Products section</a> for information on ordering ARIA-S1-GUNW products for specific Sentinel-1 acquisitions.</p>
+<p>ARIA-S1-GUNW products are routinely produced only for specific locations, so the ASF archive may not contain 
+products in your area of interest. See the 
+<a href="#ordering-on-demand-products" title="Jump to Ordering On Demand Products section of this document">Ordering On Demand Products section</a> 
+for information on ordering ARIA-S1-GUNW products for specific Sentinel-1 acquisitions.</p>
 </div>
 <h2 id="archived-and-on-demand-products">Archived and On-Demand Products<a class="headerlink" href="#archived-and-on-demand-products" title="Permanent link">&para;</a></h2>
-<p>While there is a large archive of ARIA-S1-GUNW products that have already been generated and are <a href="#accessing-existing-products" title="Jump to Accessing Existing Products section of this document">ready for download</a>, they may not cover your area of interest. In addition, the archived products may not include the full range of temporal baseline pairings required for your analysis. If you are interested in ARIA-S1-GUNW products that are not already represented in the archive, ASF provides the ability to <a href="#ordering-on-demand-products" title="Jump to Ordering On Demand Products section of this document">generate these products using specific Sentinel-1 SLC pairings</a>. </p>
-<p>The On Demand ARIA-S1-GUNW products are generated using the same code that is used to generate the archived products, so they are fully interoperable.</p>
+<p>While there is a large archive of ARIA-S1-GUNW products that have already been generated and are 
+<a href="#accessing-existing-products" title="Jump to Accessing Existing Products section of this document">ready for download</a>, 
+they may not cover your area of interest. In addition, the archived products may not include the full range of 
+temporal baseline pairings required for your analysis. If you are interested in ARIA-S1-GUNW products that are not 
+already represented in the archive, ASF provides the ability to 
+<a href="#ordering-on-demand-products" title="Jump to Ordering On Demand Products section of this document">generate these products using specific Sentinel-1 SLC pairings</a>. </p>
+<p>On Demand ARIA-S1-GUNW products are generated using the same code used by the ARIA project, and have been validated 
+to ensure that products generated On Demand and those generated by the ARIA team at JPL are fully interoperable.</p>
 <h2 id="accessing-existing-products">Accessing Existing Products<a class="headerlink" href="#accessing-existing-products" title="Permanent link">&para;</a></h2>
-<p>You can download existing ARIA-S1-GUNW products from the Alaska Satellite Facility’s (ASF) <a href="https://search.asf.alaska.edu/#/?dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA)" target="_blank">Vertex</a> search portal by following these steps: </p>
+<p>You can download existing ARIA-S1-GUNW products from the Alaska Satellite Facility’s (ASF) 
+<a href="https://search.asf.alaska.edu/#/?dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA)" target="_blank" title="Vertex ARIA-S1-GUNW Search">Vertex</a> 
+search portal by following these steps: </p>
 <ol>
-<li><strong>Access Vertex</strong> – Go to the ASF Vertex website: <a href="https://search.asf.alaska.edu" target="blank">https://search.asf.alaska.edu</a>.</li>
-<li><strong>Search for ARIA-S1-GUNW Products</strong> – In the dataset selector, click on “ARIA S1 GUNW” to filter for these specific products. You can refine results by specifying a geographic region, date range, or other criteria using the search filters in the “filters” panel.
+<li><strong>Access Vertex</strong> – Go to the ASF Vertex website: 
+   <a href="https://search.asf.alaska.edu" target="blank" title="search.asf.alaska.edu">https://search.asf.alaska.edu</a>.</li>
+<li><strong>Search for ARIA-S1-GUNW Products</strong> – In the dataset selector, click on “ARIA S1 GUNW” to filter for these 
+   specific products. You can refine results by specifying a geographic region, date range, or other criteria 
+   using the search filters in the “filters” panel.
 <img alt="Vertex ARIA S1 GUNW Dataset Selection" src="../../images/vertex-GUNW-dataset-selection.png" /></li>
-<li><strong>Preview and Select Products</strong> – Click on individual results to view metadata, including coverage area and acquisition details.</li>
-<li><strong>Download Data</strong> – To download, first add ARIA-S1-GUNW products to your download queue using the shopping cart icon next to each product, then download your selected products using the “download” panel.</li>
+<li><strong>Preview and Select Products</strong> – Click on individual results to view metadata, including coverage area and 
+   acquisition details.</li>
+<li><strong>Download Data</strong> – To download, first add ARIA-S1-GUNW products to your download queue using the shopping 
+   cart icon next to each product, then download your selected products using the “download” panel.</li>
 </ol>
 <h2 id="ordering-on-demand-products">Ordering On-Demand Products<a class="headerlink" href="#ordering-on-demand-products" title="Permanent link">&para;</a></h2>
-<p>If the ARIA-S1-GUNW products you need are not available in the archive, you can use ASF's On Demand platform to submit custom ARIA-S1-GUNW jobs for processing. </p>
+<p>If the ARIA-S1-GUNW products you need are not available in the archive, you can use ASF's On Demand platform to submit 
+custom ARIA-S1-GUNW jobs for processing. Once processing is complete, you can access them as you would any other 
+<a href="#accessing-on-demand-aria-s1-gunw-products" title="Jump to the Accessing On Demand ARIA S1 GUNW Products section of this document">On-Demand</a> 
+products from ASF. The download links provided will be active for 14 days.</p>
 <div class="admonition warning">
 <p class="admonition-title">Sentinel-1C acquisitions not yet supported</p>
 <p>ISCE2 software, which is used for processing ARIA-S1-GUNW products, does not currently support processing 
@@ -2017,60 +2070,94 @@ SLCs acquired by the newly launched Sentinel-1C platform. Until the software pac
 not be able to submit ARIA-S1-GUNW jobs that include Sentinel-1C acquisitions for On-Demand processing.</p>
 </div>
 <h3 id="aria-frame-ids">ARIA Frame IDs<a class="headerlink" href="#aria-frame-ids" title="Permanent link">&para;</a></h3>
-<p>Sentinel-1 IW SLC products are not created in a way that ensures that granules for the same relative orbit and location always fully overlap over time. This results in inconsistent framing of the Sentinel-1 IW SLCs that can make it difficult to create longer series of Sentinel-1 InSAR products.</p>
-<p>In the image below, Sentinel-1 footprints acquired over an area of interest are displayed. Over the full period of record of the mission, the SLC framing has shifted considerably, resulting in some acquisitions that hardly overlap at all. </p>
+<p>Sentinel-1 IW SLC products are not created in a way that ensures that granules for the same relative orbit and 
+location always fully overlap over time. This results in inconsistent framing of the Sentinel-1 IW SLCs that can 
+make it difficult to create longer series of Sentinel-1 InSAR products.</p>
+<p>In the image below, Sentinel-1 footprints acquired over an area of interest are displayed. Over the full period of 
+record of the mission, the SLC framing has shifted considerably, resulting in some acquisitions that hardly 
+overlap at all. </p>
 <p><img alt="Shifting of Sentinel-1 SLC frames over time" src="../../images/slc_jitter.png" title="Illustration of the shifting extent of Sentinel-1 SLC footprints over time." /></p>
-<p>To address this issue, the ARIA team defined a standard set of geographic footprints, called frames, that set the geographic extent for each ARIA-S1-GUNW product. This is possible because while the Sentinel-1 IW SLC products are not consistently framed along the orbit path, the smaller burst SLCs that comprise each Sentinel-1 IW SLC product <em>do</em> have consistent footprints. </p>
-<p>Each ARIA frame is defined by the extent of a specific collection of these individual burst SLCs. Each ARIA-S1-GUNW product is processed to the extent of one of these frames, which results in output products with consistent footprints through time. <strong>ARIA-S1-GUNW products containing the same bursts, and thus sharing the same geographic footprint, are said to have the same <em>ARIA Frame ID</em>.</strong></p>
-<p>To ensure that ARIA-S1-GUNW products are always created using standard footprints, the ARIA Frame ID needs to be provided along with the reference and secondary granules that intersect this footprint for a given date in order to create a new ARIA-S1-GUNW product (see figure below).</p>
+<p>To address this issue, the ARIA team defined a standard set of geographic footprints, called frames, that set the 
+geographic extent for each ARIA-S1-GUNW product. This is possible because while the Sentinel-1 IW SLC products are 
+not consistently framed along the orbit path, the smaller burst SLCs that comprise each Sentinel-1 IW SLC product 
+<em>do</em> have consistent footprints. </p>
+<p>Each ARIA frame is defined by the extent of a specific collection of these individual burst SLCs. Each ARIA-S1-GUNW 
+product is processed to the extent of one of these frames, which results in output products with consistent footprints 
+through time. <strong>ARIA-S1-GUNW products containing the same bursts, and thus sharing the same geographic footprint, are 
+said to have the same <em>ARIA Frame ID</em>.</strong></p>
+<p>To ensure that ARIA-S1-GUNW products are always created using standard footprints, the ARIA Frame ID needs to be 
+provided along with the reference and secondary granules that cover this footprint for a given date in order to 
+create a new ARIA-S1-GUNW product (see figure below).</p>
 <p><img alt="Frame vs granule geographic footprint" src="../../images/frame_granule_overlap.png" title="Example of a frame that spans three granules." /></p>
 <h4 id="aria-frame-id-maps">ARIA Frame ID Maps<a class="headerlink" href="#aria-frame-id-maps" title="Permanent link">&para;</a></h4>
-<p>It can be tricky to find all of the appropriate granules for a given ARIA Frame ID for both the reference and secondary acquisition dates. In the future, ASF plans to create utilities to simplify this process. In the meantime, there are geojson files indicating the extent of each ARIA Frame ID that can be downloaded and used for reference.</p>
-<p>There are different ARIA Frame ID maps for the ascending and descending orbit directions. Make sure that you are using the appropriate geojson file. </p>
+<p>It can be tricky to find all of the appropriate granules for a given ARIA Frame ID for both the reference and 
+secondary acquisition dates. In the future, ASF plans to create utilities to simplify this process. In the meantime, 
+there are geojson files indicating the extent of each ARIA Frame ID that can be downloaded and used for reference.</p>
+<p>There are different ARIA Frame ID maps for the ascending and descending orbit directions. Make sure that you are 
+using the appropriate geojson file. </p>
 <ul>
-<li><a href="https://d3g9emy65n853h.cloudfront.net/ARIA_S1_GUNW/ascending.geojson" target="_blank">Ascending ARIA Frame IDs</a> </li>
-<li><a href="https://d3g9emy65n853h.cloudfront.net/ARIA_S1_GUNW/descending.geojson" target="_blank">Descending ARIA Frame IDs</a></li>
+<li><a href="https://d3g9emy65n853h.cloudfront.net/ARIA_S1_GUNW/ascending.geojson" target="_blank" title="ARIA-S1-GUNW Ascending Frame IDs GeoJSON">Ascending ARIA Frame IDs</a> </li>
+<li><a href="https://d3g9emy65n853h.cloudfront.net/ARIA_S1_GUNW/descending.geojson" target="_blank" title="ARIA-S1-GUNW Descending Frame IDs GeoJSON">Descending ARIA Frame IDs</a></li>
 </ul>
 <h3 id="search-for-sentinel-1-slcs-for-an-aria-frame-id">Search for Sentinel-1 SLCs for an ARIA Frame ID<a class="headerlink" href="#search-for-sentinel-1-slcs-for-an-aria-frame-id" title="Permanent link">&para;</a></h3>
-<p>Use a <a href="https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options" target="_blank">Geographic Search</a> for Sentinel-1 SLC IW products in your area of interest in <a href="https://search.asf.alaska.edu/#/" target="_blank">Vertex</a>, setting the Area of Interest to the desired ARIA Frame ID, as delineated in the <a href="#aria-frame-id-maps">ARIA Frame ID maps</a>. You may want to apply a search filter for the orbit direction that matches the ARIA Frame ID extent that you are using.</p>
-<p>For each footprint that intersects the ARIA Frame ID, use the <a href="https://docs.asf.alaska.edu/vertex/sbas/" target="_blank">SBAS</a> or <a href="https://docs.asf.alaska.edu/vertex/baseline/" target="_blank">Baseline</a> tool in Vertex to find other acquisitions to pair with the reference acquisition.</p>
+<p>Use a <a href="https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options" target="_blank">Geographic Search</a> for 
+Sentinel-1 SLC IW products in your area of interest in <a href="https://search.asf.alaska.edu/#/" target="_blank">Vertex</a>, 
+setting the Area of Interest to the desired ARIA Frame ID, as delineated in the 
+<a href="#aria-frame-id-maps">ARIA Frame ID maps</a>. You may want to apply a search filter for the orbit direction that 
+matches the ARIA Frame ID extent that you are using.</p>
+<p>For each footprint that intersects the ARIA Frame ID, use the 
+<a href="https://docs.asf.alaska.edu/vertex/sbas/" target="_blank">SBAS</a> or 
+<a href="https://docs.asf.alaska.edu/vertex/baseline/" target="_blank">Baseline</a> tool in Vertex 
+to find other acquisitions to pair with the reference acquisition.</p>
 <ul>
-<li>You will need to repeat the process of finding pairs for each footprint along the Sentinel-1 orbit path that intersects the ARIA Frame ID extent.</li>
+<li>You will need to repeat the process of finding pairs for each footprint along the Sentinel-1 orbit path 
+    that intersects the ARIA Frame ID extent.</li>
 </ul>
 <h4 id="sentinel-1-slc-selection-constraints">Sentinel-1 SLC Selection Constraints<a class="headerlink" href="#sentinel-1-slc-selection-constraints" title="Permanent link">&para;</a></h4>
-<p>There are a number of conditions that must be met when selecting suitable sets of Sentinel-1 IW SLCs for processing to ARIA-S1-GUNW: </p>
-<p><strong><em>1. All scenes (reference and secondary) must be from the same relative orbit</em></strong></p>
+<p>There are a number of conditions that must be met when selecting suitable sets of Sentinel-1 IW SLCs for 
+processing to ARIA-S1-GUNW: </p>
+<p><strong><em>1. All scenes must be in VV polarization</em></strong></p>
+<ul>
+<li>ARIA S1 GUNW jobs do not support acquisitions in HH polarization</li>
+<li>cross-polarized returns (VH or HV) are not supported</li>
+</ul>
+<p><strong><em>2. All scenes (reference and secondary) must be from the same relative orbit</em></strong></p>
 <ul>
 <li>they must all have the same path number, which matches the path of the extent of the desired ARIA Frame ID</li>
 <li>note that the ARIA frames are each constrained to a single path</li>
-<li>consider adding a filter to your geographic search to limit the returns to acquisitions with the same path number as the ARIA Frame ID</li>
+<li>consider adding a filter to your geographic search to limit the returns to acquisitions with the same path 
+    number as the ARIA Frame ID</li>
 </ul>
-<p><strong><em>2. All scenes must have the same orbit direction (ascending/descending)</em></strong></p>
+<p><strong><em>3. All scenes must have the same orbit direction (ascending/descending)</em></strong></p>
 <ul>
 <li>the orbit direction must match the orbit direction of the ARIA Frame ID you are using</li>
-<li>consider adding a filter to your geographic search to limit the returns to acquisitions with the same orbit direction as the ARIA Frame ID</li>
+<li>consider adding a filter to your geographic search to limit the returns to acquisitions with the same orbit 
+    direction as the ARIA Frame ID</li>
 </ul>
-<p><strong><em>3. All reference scenes must be from the same absolute orbit</em></strong></p>
+<p><strong><em>4. All reference scenes must be from the same absolute orbit</em></strong></p>
 <ul>
 <li>they must all be from the same pass of the satellite</li>
 <li>acquisitions from different dates cannot be combined</li>
 </ul>
-<p><strong><em>4. All secondary scenes must be from the same absolute orbit</em></strong></p>
+<p><strong><em>5. All secondary scenes must be from the same absolute orbit</em></strong></p>
 <ul>
 <li>they must all be from the same pass of the satellite</li>
 <li>acquisitions from different dates cannot be combined</li>
 </ul>
-<p><strong><em>5. Reference scenes must be acquired after the secondary scenes</em></strong></p>
+<p><strong><em>6. Reference scenes must be acquired after the secondary scenes</em></strong></p>
 <ul>
-<li>the list of reference scenes are from the most recent pass, and the secondary scenes are from the earlier pass that will be compared to the reference scenes</li>
+<li>the list of reference scenes are from the most recent pass, and the secondary scenes are from the earlier 
+    pass that will be compared to the reference scenes</li>
 </ul>
-<p><strong><em>6. Reference and secondary scenes should overlap the frame geometry</em></strong></p>
+<p><strong><em>7. Reference and secondary scenes must overlap the frame geometry</em></strong></p>
 <ul>
 <li>all of the scenes listed must overlap the ARIA Frame ID extent</li>
-<li>do not include any acquisitions where valid pixel data is wholly outside the extent of the ARIA frame, even if the no-data padding around the edges overlaps the frame extent</li>
+<li>do not include any acquisitions where valid pixel data is wholly outside the extent of the ARIA frame, 
+    even if the no-data padding around the edges overlaps the frame extent</li>
 </ul>
 <h4 id="compile-a-list-of-sentinel-1-slcs">Compile a List of Sentinel-1 SLCs<a class="headerlink" href="#compile-a-list-of-sentinel-1-slcs" title="Permanent link">&para;</a></h4>
-<p>Based on your search results, create a list of the reference and secondary Sentinel-1 IW SLCs that intersect with the ARIA Frame ID extent. </p>
+<p>Based on your search results, create a list of the reference and secondary Sentinel-1 IW SLCs that intersect 
+with the ARIA Frame ID extent. </p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code> &quot;reference&quot;: [
       &quot;S1A_IW_SLC__1SDV_20250127T010136_20250127T010203_057623_07199D_4B63&quot;,
@@ -2086,13 +2173,29 @@ not be able to submit ARIA-S1-GUNW jobs that include Sentinel-1C acquisitions fo
 <h3 id="submit-on-demand-aria-s1-gunw-jobs">Submit On-Demand ARIA-S1-GUNW Jobs<a class="headerlink" href="#submit-on-demand-aria-s1-gunw-jobs" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">On Demand support not currently available in Vertex for ARIA-S1-GUNW products</p>
-<p>On-demand ARIA S1 GUNW products cannot currently be submitted directly from Vertex, but we plan to make this feature available in the second half of 2025. Vertex is still very useful for selecting Sentinel-1 SLC pairs to submit for processing, but once you identify scene pairs, you will need to submit them using the <a href="../../using/sdk/" target="_blank">HyP3 Python SDK</a> or <a href="../../using/api/" target="_blank">HyP3 API</a>.</p>
+<p>On-demand ARIA S1 GUNW products cannot currently be submitted directly from Vertex, but we plan to make 
+this feature available in the second half of 2025. Vertex is still very useful for selecting Sentinel-1 SLC 
+pairs to submit for processing, but once you identify scene pairs, you will need to submit them using the 
+<a href="../../using/sdk/" target="_blank">HyP3 Python SDK</a> or <a href="../../using/api/" target="_blank">HyP3 API</a>.</p>
 </div>
-<p>On-Demand ARIA-S1-GUNW jobs can be submitted using the <code>ARIA_S1_GUNW</code> job type via the <a href="../../using/api/#submitting-aria-s1-gunw-jobs" target="_blank">HyP3 API</a>, or via the <a href="../../using/sdk/" target="_blank">HyP3 Python SDK</a> using the <code>submit_aria_s1_gunw_job</code> method of the <code>HyP3</code> class.</p>
-<p>Unlike our other On-Demand InSAR workflows, customizable processing options (multilooking, filter strength, etc.) are not available for ARIA-S1-GUNW jobs.</p>
+<p>On-Demand ARIA-S1-GUNW jobs can be submitted using the <code>ARIA_S1_GUNW</code> job type via the 
+<a href="../../using/api/#submitting-aria-s1-gunw-jobs" target="_blank">HyP3 API</a>, or via the 
+<a href="../../using/sdk/" target="_blank">HyP3 Python SDK</a> 
+using the <code>submit_aria_s1_gunw_job</code> method of the <code>HyP3</code> class.</p>
+<p>Unlike our other On-Demand InSAR workflows, customizable processing options (multilooking, filter strength, etc.) 
+are not available for ARIA-S1-GUNW jobs.</p>
+<h3 id="accessing-on-demand-aria-s1-gunw-products">Accessing On-Demand ARIA-S1-GUNW Products<a class="headerlink" href="#accessing-on-demand-aria-s1-gunw-products" title="Permanent link">&para;</a></h3>
+<p>To access the products you submitted On Demand, use the 
+<a href="https://search.asf.alaska.edu/#/?maxResults=1000&amp;searchType=On%20Demand" target="_blank" title="On Demand Vertex Search">On Demand Search Type in Vertex</a>. 
+Once processing is complete, the download links available in this interface are active for 14 days.</p>
+<p>You can also search for your On Demand products programmatically, using the 
+<a href="https://hyp3-docs.asf.alaska.edu/using/api/#querying-jobs" target="_blank" title="hyp3-docs.asf.alaska.edu/using/api/#querying-jobs">HyP3 API</a><br />
+or the 
+<a href="https://hyp3-docs.asf.alaska.edu/using/sdk/#finding-existing-jobs" target="_blank" title="hyp3-docs.asf.alaska.edu/using/sdk/#finding-existing-jobs">HyP3 Python SDK</a>.</p>
 <h2 id="product-packaging">Product Packaging<a class="headerlink" href="#product-packaging" title="Permanent link">&para;</a></h2>
 <h3 id="naming-convention">Naming convention<a class="headerlink" href="#naming-convention" title="Permanent link">&para;</a></h3>
-<p>The ARIA-S1-GUNW product names contain detailed information about their acquisition and processing, as illustrated in the figure below.</p>
+<p>The ARIA-S1-GUNW product names contain detailed information about their acquisition and processing, 
+as illustrated in the figure below.</p>
 <p>GUNW naming convention includes:</p>
 <ul>
 <li>Satellite orientation. A for ascending or D for descending</li>
@@ -2106,7 +2209,12 @@ not be able to submit ARIA-S1-GUNW jobs that include Sentinel-1C acquisitions fo
 </ul>
 <p><img alt="GUNW naming scheme" src="../../images/asf_gunw_names.png" title="Breakdown of ARIA-S1-GUNW Naming Scheme" /></p>
 <h3 id="product-elements">Product Elements<a class="headerlink" href="#product-elements" title="Permanent link">&para;</a></h3>
-<p>The product is packaged as a NetCDF4 file, with its top-level group named <code>science</code>. Within the science group, there is a <code>grids</code> group, which is further divided into three subgroups: <code>data</code>, <code>imagingGeometry</code>, and <code>corrections</code>. The <code>data</code> group contains 2D datasets at a resolution of 3 arc-seconds (~90 m) and the <code>imagingGeometry</code> group includes 3D datasets posted laterally at 0.1-degree intervals (~11 km). The <code>corrections</code> group provides ionospheric and solid Earth corrections, and if a weather model is available, the corresponding tropospheric correction layer (<code>HRRR/reference/troposphereWet</code>) will be included here. All 2D and 3D datasets are in the EPSG:4326 projection.</p>
+<p>The product is packaged as a NetCDF4 file, with its top-level group named <code>science</code>. Within the science group, 
+there is a <code>grids</code> group, which is further divided into three subgroups: <code>data</code>, <code>imagingGeometry</code>, and <code>corrections</code>. 
+The <code>data</code> group contains 2D datasets at a resolution of 3 arc-seconds (~90 m) and the <code>imagingGeometry</code> group 
+includes 3D datasets posted laterally at 0.1-degree intervals (~11 km). The <code>corrections</code> group provides ionospheric 
+and solid Earth corrections, and if a weather model is available, the corresponding tropospheric correction layer 
+(<code>HRRR/reference/troposphereWet</code>) will be included here. All 2D and 3D datasets are in the EPSG:4326 projection.</p>
 <p>The output netCDF file will include the layers listed in the table below.</p>
 <table>
 <thead>
@@ -2229,17 +2337,39 @@ not be able to submit ARIA-S1-GUNW jobs that include Sentinel-1C acquisitions fo
 </tbody>
 </table>
 <h3 id="ionospheric-correction-layers">Ionospheric Correction Layers<a class="headerlink" href="#ionospheric-correction-layers" title="Permanent link">&para;</a></h3>
-<p>Although the ionospheric effects for C-band SAR are only about one-sixteenth of those at L-band, the measurement accuracy of Sentinel-1 C-band SAR data can still be degraded by long-wavelength ionospheric signals. Utilizing the <a href="https://doi.org/10.1109/TGRS.2019.2908494" target="_blank">range-split spectrum methodology</a> available within ISCE2, ARIA-S1-GUNW products include ionospheric correction layers for both the reference and secondary input data.</p>
+<p>Although the ionospheric effects for C-band SAR are only about one-sixteenth of those at L-band, the measurement 
+accuracy of Sentinel-1 C-band SAR data can still be degraded by long-wavelength ionospheric signals. Utilizing the 
+<a href="https://doi.org/10.1109/TGRS.2019.2908494" target="_blank">range-split spectrum methodology</a> available within ISCE2, 
+ARIA-S1-GUNW products include ionospheric correction layers for both the reference and secondary input data.</p>
 <h3 id="solid-earth-tides-correction-layers">Solid Earth Tides Correction Layers<a class="headerlink" href="#solid-earth-tides-correction-layers" title="Permanent link">&para;</a></h3>
-<p><a href="https://doi.org/10.1109/TGRS.2022.3168509" target="_blank">Solid Earth tides</a> (SET) are periodic deformations of the Earth's crust caused by gravitational forces from the Moon and Sun, resulting in surface displacements of up to several centimeters. Correcting for SET in InSAR is crucial to prevent these predictable, cyclic motions from being misinterpreted as real ground deformation. ARIA-S1-GUNW products include an SET correction layer for both the reference and secondary input data that are created using the <a href="https://github.com/insarlab/PySolid?tab=readme-ov-file" target="_blank">PySolid</a> python package.</p>
+<p><a href="https://doi.org/10.1109/TGRS.2022.3168509" target="_blank">Solid Earth tides</a> (SET) are periodic deformations of the 
+Earth's crust caused by gravitational forces from the Moon and Sun, resulting in surface displacements of up to 
+several centimeters. Correcting for SET in InSAR is crucial to prevent these predictable, cyclic motions from being 
+misinterpreted as real ground deformation. ARIA-S1-GUNW products include an SET correction layer for both the 
+reference and secondary input data that are created using the 
+<a href="https://github.com/insarlab/PySolid?tab=readme-ov-file" target="_blank" title="PySolid GitHub repository">PySolid</a> 
+python package.</p>
 <h3 id="tropospheric-delay-correction-layers">Tropospheric Delay Correction Layers<a class="headerlink" href="#tropospheric-delay-correction-layers" title="Permanent link">&para;</a></h3>
-<p>Tropospheric delay correction is essential for many InSAR applications because atmospheric variations in temperature, pressure, and humidity can distort phase measurements, mimicking ground deformation and reducing accuracy. ARIA-S1-GUNW products for both the continental U.S. and Alaska also contain a tropospheric delay correction layer that is produced via the Raytracing Atmospheric Delay Estimation for RADAR (<a href="https://github.com/dbekaert/RAiDER" target="_blank">RAiDER</a>) Python package.</p>
-<p>RAiDER uses the <a href="https://rapidrefresh.noaa.gov/hrrr/" target="blank">NOAA High-Resolution Rapid Refresh</a> weather model to calculate the tropospheric delay correction at a spatial resolution of approximately 3 km. If the HRRR weather model is not available for a location of interest, (e.g. outside of the continental U.S. and Alaska) the tropospheric delay correction layer will not be included in the ARIA-S1-GUNW product. The wet and hydrostatic tropospheric delay correction are provided for both the reference and secondary input data.</p>
+<p>Tropospheric delay correction is essential for many InSAR applications because atmospheric variations in temperature, 
+pressure, and humidity can distort phase measurements, mimicking ground deformation and reducing accuracy. 
+ARIA-S1-GUNW products for both the continental U.S. and Alaska also contain a tropospheric delay correction layer 
+that is produced via the Raytracing Atmospheric Delay Estimation for RADAR 
+(<a href="https://github.com/dbekaert/RAiDER" target="_blank" title="RAiDER GitHub repository">RAiDER</a>) Python package.</p>
+<p>RAiDER uses the 
+<a href="https://rapidrefresh.noaa.gov/hrrr/" target="blank" title="rapidrefresh.noaa.gov/hrrr">NOAA High-Resolution Rapid Refresh</a> 
+weather model to calculate the tropospheric delay correction at a spatial resolution of approximately 3 km. If the 
+HRRR weather model is not available for a location of interest, (i.e. outside of the continental U.S. and Alaska) the 
+tropospheric delay correction layer will not be included in the ARIA-S1-GUNW product. The wet and hydrostatic 
+tropospheric delay correction are provided for both the reference and secondary input data.</p>
 <h3 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
-<p>Bekaert, David, et al. "The ARIA-S1-GUNW: The ARIA Sentinel-1 Geocoded Unwrapped Phase Product for Open InSAR Science and Disaster Response." IGARSS 2023-2023 IEEE International Geoscience and Remote Sensing Symposium. IEEE (2023).</p>
-<p>Buzzanga, Brett, et al. "Toward sustained monitoring of subsidence at the coast using InSAR and GPS: An application in Hampton Roads, Virginia." Geophysical Research Letters 47.18 (2020): e2020GL090013.</p>
-<p>Liang, Cunren, et al. "Ionospheric correction of InSAR time series analysis of C-band Sentinel-1 TOPS data." IEEE Transactions on Geoscience and Remote Sensing 57.9 (2019): 6755-6773.</p>
-<p>Yunjun, Zhang, et al. "Range geolocation accuracy of C-/L-band SAR and its implications for operational stack coregistration." IEEE Transactions on Geoscience and Remote Sensing 60 (2022): 1-19.</p>
+<p>Bekaert, David, et al. "The ARIA-S1-GUNW: The ARIA Sentinel-1 Geocoded Unwrapped Phase Product for Open InSAR Science 
+and Disaster Response." IGARSS 2023-2023 IEEE International Geoscience and Remote Sensing Symposium. IEEE (2023).</p>
+<p>Buzzanga, Brett, et al. "Toward sustained monitoring of subsidence at the coast using InSAR and GPS: An application 
+in Hampton Roads, Virginia." Geophysical Research Letters 47.18 (2020): e2020GL090013.</p>
+<p>Liang, Cunren, et al. "Ionospheric correction of InSAR time series analysis of C-band Sentinel-1 TOPS data." 
+IEEE Transactions on Geoscience and Remote Sensing 57.9 (2019): 6755-6773.</p>
+<p>Yunjun, Zhang, et al. "Range geolocation accuracy of C-/L-band SAR and its implications for operational stack 
+coregistration." IEEE Transactions on Geoscience and Remote Sensing 60 (2022): 1-19.</p>
 
 
 
