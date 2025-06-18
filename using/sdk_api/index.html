@@ -92,7 +92,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#hyp3_sdk-v750-api-reference" class="md-skip">
+        <a href="#hyp3_sdk-v760-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -2558,7 +2558,7 @@ feedback.init({showIcon: false});
                   
 
 
-<h1 id="hyp3_sdk-v750-api-reference"><code>hyp3_sdk</code> <em>v7.5.0</em> API Reference<a class="headerlink" href="#hyp3_sdk-v750-api-reference" title="Permanent link">&para;</a></h1>
+<h1 id="hyp3_sdk-v760-api-reference"><code>hyp3_sdk</code> <em>v7.6.0</em> API Reference<a class="headerlink" href="#hyp3_sdk-v760-api-reference" title="Permanent link">&para;</a></h1>
 
 
 <div class="doc doc-object doc-module">
@@ -4624,13 +4624,13 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
         <span class="k">return</span> <span class="n">job_dict</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">submit_aria_s1_gunw_job</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">secondary</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">reference_date</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">secondary_date</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Submit an ARIA S1 GUNW job.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            reference: The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</span>
-<span class="sd">            secondary: The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</span>
+<span class="sd">            reference_date: Date of reference scenes for InSAR processing in YYYY-MM-DD format</span>
+<span class="sd">            secondary_date: Date of secondary scenes for InSAR processing in YYYY-MM-DD format</span>
 <span class="sd">            frame_id: Subset GUNW products to this frame</span>
 <span class="sd">            name: A name for the job (optional)</span>
 
@@ -4644,13 +4644,13 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">prepare_aria_s1_gunw_job</span><span class="p">(</span>
-        <span class="bp">cls</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">secondary</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">reference_date</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">secondary_date</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Prepare an ARIA S1 GUNW job.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            reference: The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</span>
-<span class="sd">            secondary: The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</span>
+<span class="sd">            reference_date: Date of reference scenes for InSAR processing in YYYY-MM-DD format</span>
+<span class="sd">            secondary_date: Date of secondary scenes for InSAR processing in YYYY-MM-DD format</span>
 <span class="sd">            frame_id: Subset GUNW products to this frame</span>
 <span class="sd">            name: A name for the job</span>
 
@@ -4658,11 +4658,11 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 <span class="sd">            A dictionary containing the prepared ARIA S1 GUNW job</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">job_parameters</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="s1">&#39;reference&#39;</span><span class="p">,</span> <span class="s1">&#39;secondary&#39;</span><span class="p">,</span> <span class="s1">&#39;frame_id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]:</span>
             <span class="n">job_parameters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
         <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">,</span> <span class="s1">&#39;secondary&#39;</span><span class="p">:</span> <span class="n">secondary</span><span class="p">,</span> <span class="s1">&#39;frame_id&#39;</span><span class="p">:</span> <span class="n">frame_id</span><span class="p">,</span> <span class="o">**</span><span class="n">job_parameters</span><span class="p">},</span>
+            <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="n">job_parameters</span><span class="p">,</span>
             <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="s1">&#39;ARIA_S1_GUNW&#39;</span><span class="p">,</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -5467,7 +5467,7 @@ Your user information</p>
 
 
 <h4 id="hyp3_sdk.HyP3.prepare_aria_s1_gunw_job" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">prepare_aria_s1_gunw_job</span><span class="p">(</span><span class="n">reference</span><span class="p">,</span> <span class="n">secondary</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">prepare_aria_s1_gunw_job</span><span class="p">(</span><span class="n">reference_date</span><span class="p">,</span> <span class="n">secondary_date</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
@@ -5494,14 +5494,14 @@ Your user information</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>reference</code>
+                <code>reference_date</code>
             </td>
             <td>
-                  <code><span title="list">list</span>[<span title="str">str</span>]</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</p>
+                <p>Date of reference scenes for InSAR processing in YYYY-MM-DD format</p>
               </div>
             </td>
             <td>
@@ -5510,14 +5510,14 @@ Your user information</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>secondary</code>
+                <code>secondary_date</code>
             </td>
             <td>
-                  <code><span title="list">list</span>[<span title="str">str</span>]</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</p>
+                <p>Date of secondary scenes for InSAR processing in YYYY-MM-DD format</p>
               </div>
             </td>
             <td>
@@ -5611,13 +5611,13 @@ Your user information</p>
 <span class="normal">617</span>
 <span class="normal">618</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">prepare_aria_s1_gunw_job</span><span class="p">(</span>
-    <span class="bp">cls</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">secondary</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">cls</span><span class="p">,</span> <span class="n">reference_date</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">secondary_date</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Prepare an ARIA S1 GUNW job.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        reference: The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</span>
-<span class="sd">        secondary: The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</span>
+<span class="sd">        reference_date: Date of reference scenes for InSAR processing in YYYY-MM-DD format</span>
+<span class="sd">        secondary_date: Date of secondary scenes for InSAR processing in YYYY-MM-DD format</span>
 <span class="sd">        frame_id: Subset GUNW products to this frame</span>
 <span class="sd">        name: A name for the job</span>
 
@@ -5625,11 +5625,11 @@ Your user information</p>
 <span class="sd">        A dictionary containing the prepared ARIA S1 GUNW job</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">job_parameters</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="s1">&#39;reference&#39;</span><span class="p">,</span> <span class="s1">&#39;secondary&#39;</span><span class="p">,</span> <span class="s1">&#39;frame_id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]:</span>
         <span class="n">job_parameters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
     <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">,</span> <span class="s1">&#39;secondary&#39;</span><span class="p">:</span> <span class="n">secondary</span><span class="p">,</span> <span class="s1">&#39;frame_id&#39;</span><span class="p">:</span> <span class="n">frame_id</span><span class="p">,</span> <span class="o">**</span><span class="n">job_parameters</span><span class="p">},</span>
+        <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="n">job_parameters</span><span class="p">,</span>
         <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="s1">&#39;ARIA_S1_GUNW&#39;</span><span class="p">,</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -7179,7 +7179,7 @@ projected into the look direction (gamma0)</p>
 
 
 <h4 id="hyp3_sdk.HyP3.submit_aria_s1_gunw_job" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">submit_aria_s1_gunw_job</span><span class="p">(</span><span class="n">reference</span><span class="p">,</span> <span class="n">secondary</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">submit_aria_s1_gunw_job</span><span class="p">(</span><span class="n">reference_date</span><span class="p">,</span> <span class="n">secondary_date</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#hyp3_sdk.HyP3.submit_aria_s1_gunw_job" class="headerlink" title="Permanent link">&para;</a></h4>
 
@@ -7202,14 +7202,14 @@ projected into the look direction (gamma0)</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>reference</code>
+                <code>reference_date</code>
             </td>
             <td>
-                  <code><span title="list">list</span>[<span title="str">str</span>]</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</p>
+                <p>Date of reference scenes for InSAR processing in YYYY-MM-DD format</p>
               </div>
             </td>
             <td>
@@ -7218,14 +7218,14 @@ projected into the look direction (gamma0)</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>secondary</code>
+                <code>secondary_date</code>
             </td>
             <td>
-                  <code><span title="list">list</span>[<span title="str">str</span>]</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</p>
+                <p>Date of secondary scenes for InSAR processing in YYYY-MM-DD format</p>
               </div>
             </td>
             <td>
@@ -7310,13 +7310,13 @@ projected into the look direction (gamma0)</p>
 <span class="normal">589</span>
 <span class="normal">590</span>
 <span class="normal">591</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">submit_aria_s1_gunw_job</span><span class="p">(</span>
-    <span class="bp">self</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">secondary</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">reference_date</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">secondary_date</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Submit an ARIA S1 GUNW job.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        reference: The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</span>
-<span class="sd">        secondary: The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</span>
+<span class="sd">        reference_date: Date of reference scenes for InSAR processing in YYYY-MM-DD format</span>
+<span class="sd">        secondary_date: Date of secondary scenes for InSAR processing in YYYY-MM-DD format</span>
 <span class="sd">        frame_id: Subset GUNW products to this frame</span>
 <span class="sd">        name: A name for the job (optional)</span>
 
@@ -11034,13 +11034,13 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
         <span class="k">return</span> <span class="n">job_dict</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">submit_aria_s1_gunw_job</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">secondary</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">reference_date</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">secondary_date</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Submit an ARIA S1 GUNW job.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            reference: The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</span>
-<span class="sd">            secondary: The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</span>
+<span class="sd">            reference_date: Date of reference scenes for InSAR processing in YYYY-MM-DD format</span>
+<span class="sd">            secondary_date: Date of secondary scenes for InSAR processing in YYYY-MM-DD format</span>
 <span class="sd">            frame_id: Subset GUNW products to this frame</span>
 <span class="sd">            name: A name for the job (optional)</span>
 
@@ -11054,13 +11054,13 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">prepare_aria_s1_gunw_job</span><span class="p">(</span>
-        <span class="bp">cls</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">secondary</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">reference_date</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">secondary_date</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Prepare an ARIA S1 GUNW job.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            reference: The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</span>
-<span class="sd">            secondary: The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</span>
+<span class="sd">            reference_date: Date of reference scenes for InSAR processing in YYYY-MM-DD format</span>
+<span class="sd">            secondary_date: Date of secondary scenes for InSAR processing in YYYY-MM-DD format</span>
 <span class="sd">            frame_id: Subset GUNW products to this frame</span>
 <span class="sd">            name: A name for the job</span>
 
@@ -11068,11 +11068,11 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 <span class="sd">            A dictionary containing the prepared ARIA S1 GUNW job</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">job_parameters</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="s1">&#39;reference&#39;</span><span class="p">,</span> <span class="s1">&#39;secondary&#39;</span><span class="p">,</span> <span class="s1">&#39;frame_id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]:</span>
             <span class="n">job_parameters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
         <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">,</span> <span class="s1">&#39;secondary&#39;</span><span class="p">:</span> <span class="n">secondary</span><span class="p">,</span> <span class="s1">&#39;frame_id&#39;</span><span class="p">:</span> <span class="n">frame_id</span><span class="p">,</span> <span class="o">**</span><span class="n">job_parameters</span><span class="p">},</span>
+            <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="n">job_parameters</span><span class="p">,</span>
             <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="s1">&#39;ARIA_S1_GUNW&#39;</span><span class="p">,</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -11877,7 +11877,7 @@ Your user information</p>
 
 
 <h5 id="hyp3_sdk.hyp3.HyP3.prepare_aria_s1_gunw_job" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">prepare_aria_s1_gunw_job</span><span class="p">(</span><span class="n">reference</span><span class="p">,</span> <span class="n">secondary</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">prepare_aria_s1_gunw_job</span><span class="p">(</span><span class="n">reference_date</span><span class="p">,</span> <span class="n">secondary_date</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
@@ -11904,14 +11904,14 @@ Your user information</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>reference</code>
+                <code>reference_date</code>
             </td>
             <td>
-                  <code><span title="list">list</span>[<span title="str">str</span>]</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</p>
+                <p>Date of reference scenes for InSAR processing in YYYY-MM-DD format</p>
               </div>
             </td>
             <td>
@@ -11920,14 +11920,14 @@ Your user information</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>secondary</code>
+                <code>secondary_date</code>
             </td>
             <td>
-                  <code><span title="list">list</span>[<span title="str">str</span>]</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</p>
+                <p>Date of secondary scenes for InSAR processing in YYYY-MM-DD format</p>
               </div>
             </td>
             <td>
@@ -12021,13 +12021,13 @@ Your user information</p>
 <span class="normal">617</span>
 <span class="normal">618</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@classmethod</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">prepare_aria_s1_gunw_job</span><span class="p">(</span>
-    <span class="bp">cls</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">secondary</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">cls</span><span class="p">,</span> <span class="n">reference_date</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">secondary_date</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Prepare an ARIA S1 GUNW job.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        reference: The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</span>
-<span class="sd">        secondary: The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</span>
+<span class="sd">        reference_date: Date of reference scenes for InSAR processing in YYYY-MM-DD format</span>
+<span class="sd">        secondary_date: Date of secondary scenes for InSAR processing in YYYY-MM-DD format</span>
 <span class="sd">        frame_id: Subset GUNW products to this frame</span>
 <span class="sd">        name: A name for the job</span>
 
@@ -12035,11 +12035,11 @@ Your user information</p>
 <span class="sd">        A dictionary containing the prepared ARIA S1 GUNW job</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">job_parameters</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="s1">&#39;reference&#39;</span><span class="p">,</span> <span class="s1">&#39;secondary&#39;</span><span class="p">,</span> <span class="s1">&#39;frame_id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]:</span>
         <span class="n">job_parameters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
     <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">,</span> <span class="s1">&#39;secondary&#39;</span><span class="p">:</span> <span class="n">secondary</span><span class="p">,</span> <span class="s1">&#39;frame_id&#39;</span><span class="p">:</span> <span class="n">frame_id</span><span class="p">,</span> <span class="o">**</span><span class="n">job_parameters</span><span class="p">},</span>
+        <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="n">job_parameters</span><span class="p">,</span>
         <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="s1">&#39;ARIA_S1_GUNW&#39;</span><span class="p">,</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -13589,7 +13589,7 @@ projected into the look direction (gamma0)</p>
 
 
 <h5 id="hyp3_sdk.hyp3.HyP3.submit_aria_s1_gunw_job" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">submit_aria_s1_gunw_job</span><span class="p">(</span><span class="n">reference</span><span class="p">,</span> <span class="n">secondary</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">submit_aria_s1_gunw_job</span><span class="p">(</span><span class="n">reference_date</span><span class="p">,</span> <span class="n">secondary_date</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 <a href="#hyp3_sdk.hyp3.HyP3.submit_aria_s1_gunw_job" class="headerlink" title="Permanent link">&para;</a></h5>
 
@@ -13612,14 +13612,14 @@ projected into the look direction (gamma0)</p>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <code>reference</code>
+                <code>reference_date</code>
             </td>
             <td>
-                  <code><span title="list">list</span>[<span title="str">str</span>]</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</p>
+                <p>Date of reference scenes for InSAR processing in YYYY-MM-DD format</p>
               </div>
             </td>
             <td>
@@ -13628,14 +13628,14 @@ projected into the look direction (gamma0)</p>
           </tr>
           <tr class="doc-section-item">
             <td>
-                <code>secondary</code>
+                <code>secondary_date</code>
             </td>
             <td>
-                  <code><span title="list">list</span>[<span title="str">str</span>]</code>
+                  <code><span title="str">str</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</p>
+                <p>Date of secondary scenes for InSAR processing in YYYY-MM-DD format</p>
               </div>
             </td>
             <td>
@@ -13720,13 +13720,13 @@ projected into the look direction (gamma0)</p>
 <span class="normal">589</span>
 <span class="normal">590</span>
 <span class="normal">591</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">submit_aria_s1_gunw_job</span><span class="p">(</span>
-    <span class="bp">self</span><span class="p">,</span> <span class="n">reference</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">secondary</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">reference_date</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">secondary_date</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">frame_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Submit an ARIA S1 GUNW job.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        reference: The names of the Sentinel-1 SLC granules to use as reference scenes for InSAR processing</span>
-<span class="sd">        secondary: The names of the Sentinel-1 SLC granules to use as secondary scenes for InSAR processing</span>
+<span class="sd">        reference_date: Date of reference scenes for InSAR processing in YYYY-MM-DD format</span>
+<span class="sd">        secondary_date: Date of secondary scenes for InSAR processing in YYYY-MM-DD format</span>
 <span class="sd">        frame_id: Subset GUNW products to this frame</span>
 <span class="sd">        name: A name for the job (optional)</span>
 
