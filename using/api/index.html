@@ -19,7 +19,7 @@
         <link rel="prev" href="../sdk_api/">
       
       
-        <link rel="next" href="../credits/">
+        <link rel="next" href="../authentication/">
       
       
       <link rel="icon" href="../../assets/images/favicon.ico">
@@ -507,9 +507,22 @@ feedback.init({showIcon: false});
 </li>
       
         <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#confirm-you-are-authenticated" class="md-nav__link">
     Confirm you are authenticated
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -566,6 +579,26 @@ feedback.init({showIcon: false});
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authentication
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1317,6 +1350,26 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_authentication.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authenticate HyP3 in the SDK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb" target="_blank" class="md-nav__link">
         
   
@@ -1788,9 +1841,22 @@ feedback.init({showIcon: false});
 </li>
       
         <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#confirm-you-are-authenticated" class="md-nav__link">
     Confirm you are authenticated
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1859,15 +1925,22 @@ feedback.init({showIcon: false});
 
 
 <h1 id="using-the-hyp3-api">Using the HyP3 API<a class="headerlink" href="#using-the-hyp3-api" title="Permanent link">&para;</a></h1>
-<p>The HyP3 API is built on <a href="https://www.openapis.org/" target="_blank" title="https://www.openapis.org/">OpenAPI</a> and <a href="https://swagger.io/" target="_blank" title="https://swagger.io/">Swagger</a>.
-A friendly interface for exploring the API is available at:</p>
+<p>The HyP3 API is built on <a href="https://www.openapis.org/" target="_blank" title="https://www.openapis.org/">OpenAPI</a> 
+and <a href="https://swagger.io/" target="_blank" title="https://swagger.io/">Swagger</a>.</p>
+<p>A friendly interface for exploring the API is available at:</p>
 <h4 id="httpshyp3-apiasfalaskaeduui"><a href="https://hyp3-api.asf.alaska.edu/ui/" target="_blank">https://hyp3-api.asf.alaska.edu/ui/</a><a class="headerlink" href="#httpshyp3-apiasfalaskaeduui" title="Permanent link">&para;</a></h4>
-<p>In order to use the API, you'll need a <code>asf-urs</code> session cookie, which you can get
-by <a href="https://search.asf.alaska.edu/#/" target="_blank">signing in to Vertex</a></p>
+<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
+<p>In order to use the API, you'll need an <code>asf-urs</code> session cookie, which you can get
+by <a href="https://search.asf.alaska.edu/#/" target="_blank">signing in to Vertex</a>.</p>
 <p><img alt="vertex sign in" src="../../images/vertex-sign-in.png" /></p>
+<p>Alternatively, you can 
+<a href="https://urs.earthdata.nasa.gov/documentation/for_users/user_token" target="_blank" title="urs.earthdata.nasa.gov/documentation/for_users/user_token">generate an Earthdata Login user token</a>, 
+and enter it in the <code>BearerAuth</code> field by clicking the <code>Authorize</code> button in the Swagger UI. </p>
+<p>Refer to the <a href="../authentication/#authentication-with-the-hyp3-api" title="Jump to Authentication page">Authentication</a> 
+page for more detailed guidance on authentication methods.</p>
 <h3 id="confirm-you-are-authenticated">Confirm you are authenticated<a class="headerlink" href="#confirm-you-are-authenticated" title="Permanent link">&para;</a></h3>
 <p>To confirm you are authenticated, you can run a <code>GET</code> request to our <code>/user</code> endpoint.
-Select the blue <code>GET</code> button next to <code>/user</code> and click the <code>Try it out</code> button
+Select the blue <code>GET</code> button next to <code>/user</code> and click the <code>Try it out</code> button.
 <img alt="GET /user try" src="../../images/get_user_try.png" /></p>
 <p>Then, execute the request and look at the response
 <img alt="GET /user execute" src="../../images/get_user_execute.png" /></p>
@@ -1886,7 +1959,8 @@ Select the blue <code>GET</code> button next to <code>/user</code> and click the
 <h2 id="submitting-sentinel-1-rtc-jobs">Submitting Sentinel-1 RTC jobs<a class="headerlink" href="#submitting-sentinel-1-rtc-jobs" title="Permanent link">&para;</a></h2>
 <p>Jobs are submitted through the API by providing a JSON payload with a list of job
 definitions.</p>
-<p>Sentinel-1 jobs are submitted using <a href="https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention" target="_blank">ESA granule IDs</a>.
+<p>Sentinel-1 jobs are submitted using 
+<a href="https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention" target="_blank">ESA granule IDs</a>.
 A minimal job list for a single Sentinel-1 RTC job would look like:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;jobs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
@@ -2222,16 +2296,16 @@ JSON response with a jobs list for every job you've submitted.</p>
         
           
           <a
-            href="../credits/"
+            href="../authentication/"
             class="md-footer__link md-footer__link--next"
-            aria-label="Next: Credits"
+            aria-label="Next: Authentication"
           >
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Credits
+                Authentication
               </div>
             </div>
             <div class="md-footer__button md-icon">

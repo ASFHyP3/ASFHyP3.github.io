@@ -472,6 +472,26 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
+      <a href="../using/authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../using/credits/" class="md-nav__link">
         
   
@@ -1214,6 +1234,26 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_authentication.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authenticate HyP3 in the SDK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb" target="_blank" class="md-nav__link">
         
   
@@ -1741,10 +1781,10 @@ feedback.init({showIcon: false});
 
 
 <h1 id="available-hyp3-products">Available HyP3 Products<a class="headerlink" href="#available-hyp3-products" title="Permanent link">&para;</a></h1>
-<p>On-demand SAR products generated using HyP3 are currently available for the 
+<p>On Demand SAR products generated using HyP3 are currently available for the 
 <a href="../sentinel1/" title="Sentinel-1 Mission">Sentinel-1 mission</a> 
-only. Unless otherwise noted, On-Demand products are available for 14 days after they have been processed.</p>
-<p>A Digital Elevation Model (DEM) is required to generate each of the On-Demand products offered by ASF, and we 
+only. Unless otherwise noted, On Demand products are available for 14 days after they have been processed.</p>
+<p>A Digital Elevation Model (DEM) is required to generate each of the On Demand products offered by ASF, and we 
 generally use the 
 <a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM" target="_blank" title="Copernicus DEM">GLO-30 Copernicus DEM</a> 
 in our processing workflows. For more information, refer to our 
@@ -1766,7 +1806,7 @@ and in
 Users also have the option to 
 <a href="../guides/rtc_product_guide/#speckle-filter" title="RTC Speckle Filter Documentation">apply a speckle filter</a>. 
 To learn more, refer to the <a href="../guides/rtc_product_guide/" title="Sentinel-1 RTC Product Guide">Sentinel-1 RTC Product Guide</a>.</p>
-<p>For step-by-step instructions on searching for, ordering, downloading and using On-Demand RTC products, visit our 
+<p>For step-by-step instructions on searching for, ordering, downloading and using On Demand RTC products, visit our 
 <a href="https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35" target="_blank" title="RTC On Demand! StoryMap">RTC On Demand!</a> 
 tutorial.</p>
 <h2 id="insar">InSAR<a class="headerlink" href="#insar" title="Permanent link">&para;</a></h2>
@@ -1774,7 +1814,7 @@ tutorial.</p>
 same area to identify regions where the distance between the sensor and the Earth's 
 surface has changed. This allows for the detection and quantification of surface 
 deformation or ground movement. </p>
-<p>There are three different processing approaches available for generating On-Demand InSAR products from Sentinel-1: </p>
+<p>There are three different processing approaches available for generating On Demand InSAR products from Sentinel-1: </p>
 <ul>
 <li><a href="#full-scene-insar-gamma">Full-scene processing using GAMMA software</a> </li>
 <li><a href="#burst-based-insar-isce2">Burst-based processing using ISCE2 software</a></li>
@@ -1804,17 +1844,17 @@ for more information.</p>
 tutorial.</p>
 <h3 id="aria-sentinel-1-gunw-products-isce2">ARIA Sentinel-1 GUNW Products (ISCE2)<a class="headerlink" href="#aria-sentinel-1-gunw-products-isce2" title="Permanent link">&para;</a></h3>
 <p>There is an extensive archive of 
-<a href="https://aria.jpl.nasa.gov/products/standard-displacement-products.html" target="_blank" title="https://aria.jpl.nasa.gov">ARIA S1 GUNW</a> 
-(Geocoded Unwrapped Interferogram) products 
+<a href="https://aria.jpl.nasa.gov/products/standard-displacement-products.html" target="_blank" title="https://aria.jpl.nasa.gov">ARIA-S1-GUNW</a> 
+(ARIA Sentinel-1 Geocoded Unwrapped Interferogram) products 
 <a href="https://search.asf.alaska.edu/#/?maxResults=1000&amp;dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA)" target="_blank" title="Vertex search for ARIA S1 GUNW">available from ASF</a>, 
 but they are only generated in specific geographic locations. If the existing archive does not provide the 
-products you need, you can generate ARIA GUNW products On Demand. </p>
-<p>ARIA S1 GUNW products are delivered as netCDF files with 90-m pixel spacing. Products generated On Demand use the same 
+products you need, you can generate ARIA-S1-GUNW products On Demand. </p>
+<p>ARIA-S1-GUNW products are delivered as netCDF files with 90-m pixel spacing. Products generated On Demand use the same 
 <a href="https://github.com/isce-framework/isce2#readme" target="_blank" title="https://github.com/isce-framework/isce2">ISCE2</a>-based 
 code used to generate the archived products to ensure interoperability, and ARIA S1 GUNW products generated On Demand 
 are automatically added to the archive. This allows all users to access products generated On Demand indefinitely, 
-in contrast to the 14-day availability period that applies to most On-Demand products generated by ASF.</p>
-<p>The ARIA S1 GUNW products use a set <a href="../guides/gunw_product_guide/#aria-frame-ids" title="ARIA Sentinel-1 GUNW  Product Guide: ARIA Frame IDs">framing system</a> to select consistent bursts from input Sentinel-1 IW SLCs to generate interferograms. 
+in contrast to the 14-day availability period that applies to most On Demand products generated by ASF.</p>
+<p>The ARIA-S1-GUNW products use a set <a href="../guides/gunw_product_guide/#aria-frame-ids" title="ARIA Sentinel-1 GUNW  Product Guide: ARIA Frame IDs">framing system</a> to select consistent bursts from input Sentinel-1 IW SLCs to generate interferograms. 
 Refer to the 
 <a href="../guides/gunw_product_guide/" title="ARIA Sentinel-1 GUNW Product Guide">ARIA Sentinel-1 GUNW Product Guide</a> 
 for more information.</p>

@@ -528,6 +528,26 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
+      <a href="../authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../credits/" class="md-nav__link">
         
   
@@ -1268,6 +1288,26 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_authentication.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authenticate HyP3 in the SDK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb" target="_blank" class="md-nav__link">
         
   
@@ -1761,33 +1801,65 @@ feedback.init({showIcon: false});
 
 
 <h1 id="on-demand-sentinel-1-processing-in-vertex">On Demand Sentinel-1 Processing in Vertex<a class="headerlink" href="#on-demand-sentinel-1-processing-in-vertex" title="Permanent link">&para;</a></h1>
-<p>The Alaska Satellite Facility offers <a href="https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank" title="Vertex On Demand Documentation">On Demand processing of Sentinel-1 datasets to Radiometric Terrain Correction (RTC) or Interferometric SAR (InSAR) products through Vertex</a>, ASF's Data Search web portal.  You can submit scenes to be processed into higher-level products, avoiding the cost and complexity of performing such processing yourself.</p>
+<p>The Alaska Satellite Facility offers 
+<a href="https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank" title="Vertex On Demand Documentation">On Demand processing of Sentinel-1 datasets to Radiometric Terrain Correction (RTC) or Interferometric SAR (InSAR) products through Vertex</a>, 
+ASF's Data Search web portal. You can submit scenes to be processed into higher-level products, avoiding the 
+cost and complexity of performing such processing yourself.</p>
 <p><a href="https://search.asf.alaska.edu/" target="_blank" title="https://search.asf.alaska.edu"><img alt="Vertex Image" src="../../images/vertex.png" title="Click to open Vertex in a new tab" /></a></p>
-<p>On Demand Sentinel-1 products are generated using ASF's HyP3 processing platform, leveraging GAMMA Software. Products are distributed as UTM-projected GeoTIFFs. To learn more about the finished products, refer to the Product Guides:</p>
-<ul>
-<li><a href="../../guides/rtc_product_guide/">ASF Sentinel-1 RTC Product Guide</a></li>
-<li><a href="../../guides/insar_product_guide/">ASF Sentinel-1 InSAR Product Guide</a></li>
-</ul>
+<p>On Demand products are generated using ASF's 
+<a href="../../" title="Jump to the HyP3 landing page of this documentation">HyP3 processing platform</a>. Refer to the 
+<a href="../../products/" title="Jump to the Products page of the documentation">Products</a> page for more information about the 
+various On Demand products ASF offers. </p>
 <h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
-<p>To request On Demand products, visit <a href="https://search.asf.alaska.edu" target="_blank" title="https://search.asf.alaska.edu">ASF Data Search - Vertex</a>.</p>
+<p>To request On Demand products, visit 
+<a href="https://search.asf.alaska.edu" target="_blank" title="https://search.asf.alaska.edu">ASF Data Search - Vertex</a> 
+and <a href="../authentication/#authentication-in-vertex">Sign In with your Earthdata Login credentials</a>.</p>
 <ol>
 <li>
-<p><strong>Select your scenes</strong> - RTC processing is available for Sentinel-1 GRD-H and SLC scenes with a beam mode of IW. InSAR processing requires pairs of IW SLC scenes. Use the Geographic Search in Vertex to find individual scenes to submit for RTC processing, or reference scenes to use for generating InSAR pairs. For InSAR, once you find a reference scene, use either the <a href="https://docs.asf.alaska.edu/vertex/baseline/" target="_blank" title="Vertex Baseline Documentation">Baseline</a> or <a href="https://docs.asf.alaska.edu/vertex/sbas/" target="_blank" title="Vertex SBAS Documentation">SBAS</a> Search to find scene pairs to submit for processing. </p>
+<p><strong>Select your scenes</strong> - RTC processing is available for Sentinel-1 GRD-H and SLC scenes with a beam mode of IW. 
+   InSAR processing requires pairs of IW SLC scenes or bursts. Use the Geographic Search in Vertex to find individual 
+   scenes to submit for RTC processing, or to find reference scenes to use for generating InSAR pairs. </p>
+<ul>
+<li>For InSAR, once 
+  you find a reference scene or burst, use either the 
+  <a href="https://docs.asf.alaska.edu/vertex/baseline/" target="_blank" title="Vertex Baseline Documentation">Baseline</a> 
+  or <a href="https://docs.asf.alaska.edu/vertex/sbas/" target="_blank" title="Vertex SBAS Documentation">SBAS</a> 
+  Search to find SLC pairs to submit for processing. </li>
+</ul>
 </li>
 <li>
-<p><strong>Submit your request</strong> - After selecting your scenes, access the  <em>On Demand</em> <img width="30" src="https://user-images.githubusercontent.com/17994518/95892024-588b9280-0d32-11eb-8734-f1a54a9d2a20.png" /> queue to submit your processing request. You may process jobs worth up to a total of 10,000 credits per month. See our <a href="../credits/">Credits</a> page for more details.</p>
+<p><strong>Submit your request</strong> - After selecting your scenes, access the  <em>On Demand</em> 
+   <img width="30" src="https://user-images.githubusercontent.com/17994518/95892024-588b9280-0d32-11eb-8734-f1a54a9d2a20.png" /> 
+   queue to submit your processing request. You may process jobs worth up to a total of 10,000 
+   credits per month. See our <a href="../credits/" title="Jump to the Credits page of this documentation">Credits</a> page f
+   or more details.</p>
 </li>
 <li>
-<p><strong>Monitor your request</strong> - The <em>On Demand Products</em> search type displays your running and completed requests. New requests are typically available for download within an hour, but wait time will depend on processing load.</p>
+<p><strong>Monitor your request</strong> - The 
+   <a href="https://docs.asf.alaska.edu/vertex/manual/#on-demand-products-search-options" target="_blank" title="Vertex Manual: On Demand Search Options"><em>On Demand Products</em></a> 
+   Search Type displays your running and completed requests. 
+   New requests are typically available for download within an hour, but wait time will depend on processing load.</p>
 </li>
 <li>
-<p><strong>Download your data</strong> - Finished On Demand products can be downloaded after an <em>On Demand Products</em> search either directly <img width="25" src="https://user-images.githubusercontent.com/17994518/95271858-6ea5ca00-07eb-11eb-9217-a280ca57a5e6.png" /> or via your download queue <img width="25" src="https://user-images.githubusercontent.com/17994518/95271856-6d749d00-07eb-11eb-81d8-365a6221e4f1.png" />. On Demand products are retained and available to download for two weeks after processing.</p>
+<p><strong>Download your data</strong> - Finished On Demand products listed in the results of an <em>On Demand Products</em> search 
+   can be downloaded individually through your browser 
+   <img width="25" src="https://user-images.githubusercontent.com/17994518/95271858-6ea5ca00-07eb-11eb-9217-a280ca57a5e6.png" /> 
+   or by adding them to the  <em>Download Queue</em> 
+   <img width="25" src="https://user-images.githubusercontent.com/17994518/95271856-6d749d00-07eb-11eb-81d8-365a6221e4f1.png" />.  </p>
+<ul>
+<li>Refer to the 
+  <a href="../downloading/#on-demand-search-in-vertex" title="Jump to the On Demand Search in Vertex section of the Downloads page">Downloads</a> 
+  page for more information about download options. </li>
+<li>On Demand products are retained and available to download for two weeks (14 days) after processing.</li>
+</ul>
 </li>
 </ol>
 <h2 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h2>
-<p>Refer to our step-by-step tutorials for ordering and accessing <a href="https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35" target="_blank" title="RTC On Demand StoryMap">RTC</a> and <a href="https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3" target="_blank" title="InSAR On Demand StoryMap">InSAR</a> products in Vertex.</p>
-<p><a href="https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35" target="_blank" title="RTC On Demand!"><img alt="RTC On Demand Image" src="../../images/rtc-tutorial.png" title="Click to open RTC On Demand! tutorial" /></a>
-<a href="https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3" target="_blank" title="InSAR On Demand!"><img alt="InSAR On Demand Image" src="../../images/insar-tutorial.png" title="Click to open InSAR On Demand! tutorial" /></a></p>
+<p>Refer to our 
+<a href="https://asf-daac.maps.arcgis.com/home/index.html" target="_blank" title="https://asf-daac.maps.arcgis.com/home/index.html">StoryMap Tutorials</a> 
+for step-by-step guidance on submitting, downloading, and working with many of the different On Demand products 
+available from ASF.</p>
+<p><a href="https://asf-daac.maps.arcgis.com/home/index.html" target="_blank" title="https://asf-daac.maps.arcgis.com/home/index.html"><img alt="StoryMap Tutorials" src="../../images/story-map-tutorials.png" title="Click to open ASF AGOL Homepage" /></a></p>
 
 
 
