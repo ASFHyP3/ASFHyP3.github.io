@@ -1549,13 +1549,6 @@ feedback.init({showIcon: false});
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#asf_tools" class="md-nav__link">
-    asf_tools
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#asf_tools.composite" class="md-nav__link">
     composite
   </a>
@@ -2242,13 +2235,6 @@ feedback.init({showIcon: false});
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#asf_tools" class="md-nav__link">
-    asf_tools
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#asf_tools.composite" class="md-nav__link">
     composite
   </a>
@@ -2745,10 +2731,11 @@ feedback.init({showIcon: false});
 
 
 
-<a id="asf_tools"></a>
+
     <div class="doc doc-contents first">
 
         <p>Tools developed by ASF for working with SAR data</p>
+
 
 
 
@@ -2793,6 +2780,7 @@ the number of rasters contributing to each composite pixel is created.</p>
   <summary>References</summary>
   <p>David Small, 2012: <a href="https://doi.org/10.1109/IGARSS.2012.6350465">https://doi.org/10.1109/IGARSS.2012.6350465</a></p>
 </details>
+
 
 
 
@@ -2877,6 +2865,7 @@ products</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/composite.py</code></summary>
@@ -2990,6 +2979,7 @@ products</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/composite.py</code></summary>
@@ -3126,6 +3116,7 @@ products</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/composite.py</code></summary>
@@ -3292,6 +3283,7 @@ products</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/composite.py</code></summary>
@@ -3609,6 +3601,7 @@ products</p>
       </tbody>
     </table>
 
+
             <details class="quote">
               <summary>Source code in <code>asf_tools/composite.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">106</span>
@@ -3737,6 +3730,7 @@ products</p>
 
 
 
+
   <div class="doc doc-children">
 
 
@@ -3808,6 +3802,7 @@ products</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/dem.py</code></summary>
@@ -3897,6 +3892,7 @@ products</p>
 
 
 
+
   <div class="doc doc-children">
 
 
@@ -3927,6 +3923,7 @@ the water extent map, and the surface water extent map should be a byte GeoTIFF
 indicating water (true), not water (false). Flood depth maps are estimated
 using either a numerical, normalized median absolute deviation, logarithmic
 or iterative approach.</p>
+
 
 
 
@@ -4007,6 +4004,7 @@ INF values inside the data array are set to nan.</p>
     </table>
         <p>Returns:
     statistic: statistic of data in linear scale</p>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/hydrosar/flood_map.py</code></summary>
@@ -4258,6 +4256,7 @@ Options include a Fowlkes-Mallows index (fmi) or a threat score (ts).</p>
   <summary>References</summary>
   <p>Jean-Francios Pekel, Andrew Cottam, Noel Gorelik, Alan S. Belward. 2016. <a href="https://doi:10.1038/nature20584">https://doi:10.1038/nature20584</a></p>
 </details>
+
             <details class="quote">
               <summary>Source code in <code>asf_tools/hydrosar/flood_map.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">183</span>
@@ -4586,6 +4585,7 @@ Options include a Fowlkes-Mallows index (fmi) or a threat score (ts).</p>
 
 
 
+
   <div class="doc doc-children">
 
 
@@ -4689,6 +4689,7 @@ If <code>None</code>, the mean accumulation value is used</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/hydrosar/hand/calculate.py</code></summary>
@@ -4841,6 +4842,7 @@ If <code>None</code>, the mean accumulation value is used</p>
       </tbody>
     </table>
 
+
             <details class="quote">
               <summary>Source code in <code>asf_tools/hydrosar/hand/calculate.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">179</span>
@@ -4960,6 +4962,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
       </tbody>
     </table>
 
+
             <details class="quote">
               <summary>Source code in <code>asf_tools/hydrosar/hand/prepare.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
@@ -5039,6 +5042,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
     <div class="doc doc-contents ">
 
         <p>Calculate Height Above Nearest Drainage (HAND) from the Copernicus GLO-30 DEM</p>
+
 
 
 
@@ -5179,6 +5183,7 @@ If <code>None</code>, the mean accumulation value is used</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/hydrosar/hand/calculate.py</code></summary>
@@ -5453,6 +5458,7 @@ If <code>None</code>, the mean accumulation value is used</p>
       </tbody>
     </table>
 
+
             <details class="quote">
               <summary>Source code in <code>asf_tools/hydrosar/hand/calculate.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">145</span>
@@ -5540,6 +5546,7 @@ If <code>None</code>, the mean accumulation value is used</p>
 using a 2D Gaussian kernel. Here, HOND is defined as the DEM value less the HAND value. For the kernel, see:
 https://docs.astropy.org/en/stable/convolution/#using-astropy-s-convolution-to-replace-bad-data</p>
 
+
             <details class="quote">
               <summary>Source code in <code>asf_tools/hydrosar/hand/calculate.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">40</span>
@@ -5591,6 +5598,7 @@ https://docs.astropy.org/en/stable/convolution/#using-astropy-s-convolution-to-r
         <p>Replace NaNs with values interpolated from their neighbors</p>
 <p>Replace NaNs with values interpolated from their neighbors using a 2D Gaussian
 kernel, see: https://docs.astropy.org/en/stable/convolution/#using-astropy-s-convolution-to-replace-bad-data</p>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/hydrosar/hand/calculate.py</code></summary>
@@ -5705,6 +5713,7 @@ If <code>None</code>, the mean accumulation value is used</p>
       </tbody>
     </table>
 
+
             <details class="quote">
               <summary>Source code in <code>asf_tools/hydrosar/hand/calculate.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">179</span>
@@ -5781,6 +5790,7 @@ If <code>None</code>, the mean accumulation value is used</p>
     <div class="doc doc-contents ">
 
         <p>Prepare a Height Above Nearest Drainage (HAND) virtual raster (VRT) covering a given geometry</p>
+
 
 
 
@@ -5875,6 +5885,7 @@ https://gdal.org/programs/gdalwarp.html#cmdoption-gdalwarp-r</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/hydrosar/hand/prepare.py</code></summary>
@@ -6015,6 +6026,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
       </tbody>
     </table>
 
+
             <details class="quote">
               <summary>Source code in <code>asf_tools/hydrosar/hand/prepare.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">21</span>
@@ -6106,6 +6118,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
 <a href="#asf_tools.hydrosar.threshold" class="headerlink" title="Permanent link">&para;</a></h3>
 
     <div class="doc doc-contents ">
+
 
 
 
@@ -6211,6 +6224,7 @@ and (3) water, as is often seen in the US Midwest.</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/hydrosar/threshold.py</code></summary>
@@ -6440,6 +6454,7 @@ Maximization thresholding approach and refined using Fuzzy Logic.</p>
 
 
 
+
   <div class="doc doc-children">
 
 
@@ -6462,6 +6477,7 @@ Maximization thresholding approach and refined using Fuzzy Logic.</p>
     <div class="doc doc-contents ">
 
         <p>Ensure raster data is uint8 and set the area outside the valid data to nodata</p>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/hydrosar/water_map.py</code></summary>
@@ -6710,6 +6726,7 @@ thresholding</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/hydrosar/water_map.py</code></summary>
@@ -7096,6 +7113,7 @@ thresholding</p>
 
 
 
+
   <div class="doc doc-children">
 
 
@@ -7118,6 +7136,7 @@ thresholding</p>
     <div class="doc doc-contents ">
 
         <p>Convert calibrated raster scale between db, amplitude and power</p>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/raster.py</code></summary>
@@ -7271,6 +7290,7 @@ thresholding</p>
       </tbody>
     </table>
 
+
             <details class="quote">
               <summary>Source code in <code>asf_tools/raster.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">71</span>
@@ -7390,6 +7410,7 @@ thresholding</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/raster.py</code></summary>
@@ -7580,6 +7601,7 @@ thresholding</p>
       </tbody>
     </table>
 
+
             <details class="quote">
               <summary>Source code in <code>asf_tools/raster.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 88</span>
@@ -7692,6 +7714,7 @@ thresholding</p>
 <a href="#asf_tools.tile" class="headerlink" title="Permanent link">&para;</a></h2>
 
     <div class="doc doc-contents ">
+
 
 
 
@@ -7846,6 +7869,7 @@ tiles.shape
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/tile.py</code></summary>
@@ -8096,6 +8120,7 @@ bottom right padding was added when tiling.</p>
       </tbody>
     </table>
 
+
             <details class="quote">
               <summary>Source code in <code>asf_tools/tile.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 70</span>
@@ -8262,6 +8287,7 @@ bottom right padding was added when tiling.</p>
 
 
 
+
   <div class="doc doc-children">
 
 
@@ -8286,6 +8312,7 @@ bottom right padding was added when tiling.</p>
 
 
         <p>Context manager for setting GDAL config options temporarily</p>
+
 
 
 
@@ -8361,6 +8388,7 @@ bottom right padding was added when tiling.</p>
 
         <p>Args:
 **options: GDAL Config <code>option=value</code> keyword arguments.</p>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/util.py</code></summary>
@@ -8456,6 +8484,7 @@ bottom right padding was added when tiling.</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/util.py</code></summary>
@@ -8555,6 +8584,7 @@ bottom right padding was added when tiling.</p>
       </tbody>
     </table>
 
+
             <details class="quote">
               <summary>Source code in <code>asf_tools/util.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">43</span>
@@ -8653,6 +8683,7 @@ bottom right padding was added when tiling.</p>
       </tbody>
     </table>
 
+
             <details class="quote">
               <summary>Source code in <code>asf_tools/util.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">29</span>
@@ -8711,6 +8742,7 @@ bottom right padding was added when tiling.</p>
 
 
 
+
   <div class="doc doc-children">
 
 
@@ -8733,6 +8765,7 @@ bottom right padding was added when tiling.</p>
 <a href="#asf_tools.watermasking.generate_osm_tiles" class="headerlink" title="Permanent link">&para;</a></h3>
 
     <div class="doc doc-contents ">
+
 
 
 
@@ -8853,6 +8886,7 @@ bottom right padding was added when tiling.</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/watermasking/generate_osm_tiles.py</code></summary>
@@ -9051,6 +9085,7 @@ bottom right padding was added when tiling.</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/watermasking/generate_osm_tiles.py</code></summary>
@@ -9264,6 +9299,7 @@ bottom right padding was added when tiling.</p>
       </tbody>
     </table>
 
+
             <details class="quote">
               <summary>Source code in <code>asf_tools/watermasking/generate_osm_tiles.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">46</span>
@@ -9411,6 +9447,7 @@ bottom right padding was added when tiling.</p>
       </tbody>
     </table>
 
+
             <details class="quote">
               <summary>Source code in <code>asf_tools/watermasking/generate_osm_tiles.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">24</span>
@@ -9477,6 +9514,7 @@ bottom right padding was added when tiling.</p>
 <a href="#asf_tools.watermasking.generate_worldcover_tiles" class="headerlink" title="Permanent link">&para;</a></h3>
 
     <div class="doc doc-contents ">
+
 
 
 
@@ -9582,6 +9620,7 @@ bottom right padding was added when tiling.</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/watermasking/generate_worldcover_tiles.py</code></summary>
@@ -9711,6 +9750,7 @@ bottom right padding was added when tiling.</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/watermasking/generate_worldcover_tiles.py</code></summary>
@@ -9851,6 +9891,7 @@ bottom right padding was added when tiling.</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/watermasking/generate_worldcover_tiles.py</code></summary>
@@ -10000,6 +10041,7 @@ bottom right padding was added when tiling.</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/watermasking/generate_worldcover_tiles.py</code></summary>
@@ -10161,6 +10203,7 @@ bottom right padding was added when tiling.</p>
       </tbody>
     </table>
 
+
             <details class="quote">
               <summary>Source code in <code>asf_tools/watermasking/generate_worldcover_tiles.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">173</span>
@@ -10243,6 +10286,7 @@ bottom right padding was added when tiling.</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/watermasking/generate_worldcover_tiles.py</code></summary>
@@ -10412,6 +10456,7 @@ bottom right padding was added when tiling.</p>
 
 
 
+
   <div class="doc doc-children">
 
 
@@ -10533,6 +10578,7 @@ bottom right padding was added when tiling.</p>
           </tr>
       </tbody>
     </table>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/watermasking/utils.py</code></summary>
@@ -10658,6 +10704,7 @@ bottom right padding was added when tiling.</p>
       </tbody>
     </table>
 
+
             <details class="quote">
               <summary>Source code in <code>asf_tools/watermasking/utils.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">31</span>
@@ -10763,6 +10810,7 @@ bottom right padding was added when tiling.</p>
       </tbody>
     </table>
 
+
             <details class="quote">
               <summary>Source code in <code>asf_tools/watermasking/utils.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">60</span>
@@ -10804,6 +10852,7 @@ bottom right padding was added when tiling.</p>
     <div class="doc doc-contents ">
 
         <p>Setup the directories necessary for running the script.</p>
+
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/watermasking/utils.py</code></summary>
