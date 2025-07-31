@@ -92,7 +92,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#hyp3_sdk-v771-api-reference" class="md-skip">
+        <a href="#hyp3_sdk-v772-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -2598,7 +2598,7 @@ feedback.init({showIcon: false});
                   
 
 
-<h1 id="hyp3_sdk-v771-api-reference"><code>hyp3_sdk</code> <em>v7.7.1</em> API Reference<a class="headerlink" href="#hyp3_sdk-v771-api-reference" title="Permanent link">&para;</a></h1>
+<h1 id="hyp3_sdk-v772-api-reference"><code>hyp3_sdk</code> <em>v7.7.2</em> API Reference<a class="headerlink" href="#hyp3_sdk-v772-api-reference" title="Permanent link">&para;</a></h1>
 
 
 <div class="doc doc-object doc-module">
@@ -4177,7 +4177,7 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 
         <span class="n">hostname</span> <span class="o">=</span> <span class="n">urlsplit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">hostname</span>
         <span class="k">assert</span> <span class="n">hostname</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">hostname</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.asf.alaska.edu&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">hostname</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.asf.alaska.edu&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="s1">&#39;asf-urs&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">cookies</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;asf-urs&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">cookies</span><span class="p">[</span><span class="s1">&#39;asf-urs&#39;</span><span class="p">],</span> <span class="n">domain</span><span class="o">=</span><span class="n">hostname</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">_get_endpoint_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -5056,7 +5056,7 @@ Both username and password must be provided if either is provided.</p>
 
     <span class="n">hostname</span> <span class="o">=</span> <span class="n">urlsplit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">hostname</span>
     <span class="k">assert</span> <span class="n">hostname</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">hostname</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.asf.alaska.edu&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">hostname</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.asf.alaska.edu&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="s1">&#39;asf-urs&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">cookies</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;asf-urs&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">cookies</span><span class="p">[</span><span class="s1">&#39;asf-urs&#39;</span><span class="p">],</span> <span class="n">domain</span><span class="o">=</span><span class="n">hostname</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
@@ -10662,7 +10662,7 @@ https://hyp3-docs.asf.alaska.edu/#public-visibility-of-jobs</p>
 
         <span class="n">hostname</span> <span class="o">=</span> <span class="n">urlsplit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">hostname</span>
         <span class="k">assert</span> <span class="n">hostname</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">hostname</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.asf.alaska.edu&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">hostname</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.asf.alaska.edu&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="s1">&#39;asf-urs&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">cookies</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;asf-urs&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">cookies</span><span class="p">[</span><span class="s1">&#39;asf-urs&#39;</span><span class="p">],</span> <span class="n">domain</span><span class="o">=</span><span class="n">hostname</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">_get_endpoint_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -11541,7 +11541,7 @@ Both username and password must be provided if either is provided.</p>
 
     <span class="n">hostname</span> <span class="o">=</span> <span class="n">urlsplit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">hostname</span>
     <span class="k">assert</span> <span class="n">hostname</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">hostname</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.asf.alaska.edu&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">hostname</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.asf.alaska.edu&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="s1">&#39;asf-urs&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">cookies</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;asf-urs&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">cookies</span><span class="p">[</span><span class="s1">&#39;asf-urs&#39;</span><span class="p">],</span> <span class="n">domain</span><span class="o">=</span><span class="n">hostname</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
