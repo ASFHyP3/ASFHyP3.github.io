@@ -392,6 +392,40 @@ feedback.init({showIcon: false});
     Getting Started
   </a>
   
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-select-your-scenes" class="md-nav__link">
+    1. Select your scenes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-submit-your-request" class="md-nav__link">
+    2. Submit your request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-monitor-your-request" class="md-nav__link">
+    3. Monitor your request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-download-your-data" class="md-nav__link">
+    4. Download your data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1776,6 +1810,40 @@ feedback.init({showIcon: false});
     Getting Started
   </a>
   
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-select-your-scenes" class="md-nav__link">
+    1. Select your scenes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-submit-your-request" class="md-nav__link">
+    2. Submit your request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-monitor-your-request" class="md-nav__link">
+    3. Monitor your request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-download-your-data" class="md-nav__link">
+    4. Download your data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1814,46 +1882,55 @@ various On Demand products ASF offers. </p>
 <p>To request On Demand products, visit 
 <a href="https://search.asf.alaska.edu" target="_blank" title="https://search.asf.alaska.edu">ASF Data Search - Vertex</a> 
 and <a href="../authentication/#authentication-in-vertex">Sign In with your Earthdata Login credentials</a>.</p>
-<ol>
-<li>
-<p><strong>Select your scenes</strong> - RTC processing is available for Sentinel-1 GRD-H and SLC scenes with a beam mode of IW. 
-   InSAR processing requires pairs of IW SLC scenes or bursts. Use the Geographic Search in Vertex to find individual 
-   scenes to submit for RTC processing, or to find reference scenes to use for generating InSAR pairs. </p>
+<h3 id="1-select-your-scenes">1. Select your scenes<a class="headerlink" href="#1-select-your-scenes" title="Permanent link">&para;</a></h3>
+<p>RTC processing is available for Sentinel-1 GRD-H and SLC scenes acquired using the 
+<a href="https://sentiwiki.copernicus.eu/web/s1-products" target="_blank" title="https://sentiwiki.copernicus.eu/web/s1-products">Interferometric Wide Swath (IW)</a> mode. 
+InSAR processing requires pairs of IW SLC scenes or bursts. </p>
+<p>Use the <a href="https://docs.asf.alaska.edu/vertex/manual/" target="_blank" title="https://docs.asf.alaska.edu/vertex/manual/"><strong>Geographic Search</strong></a> 
+in Vertex to find individual scenes to submit for RTC processing, or to find reference scenes to use for generating 
+InSAR pairs. </p>
 <ul>
 <li>For InSAR, once 
-  you find a reference scene or burst, use either the 
-  <a href="https://docs.asf.alaska.edu/vertex/baseline/" target="_blank" title="Vertex Baseline Documentation">Baseline</a> 
-  or <a href="https://docs.asf.alaska.edu/vertex/sbas/" target="_blank" title="Vertex SBAS Documentation">SBAS</a> 
-  Search to find SLC pairs to submit for processing. </li>
+   you find a reference scene or burst, use either the 
+   <a href="https://docs.asf.alaska.edu/vertex/baseline/" target="_blank" title="Vertex Baseline Documentation">Baseline</a> 
+   or <a href="https://docs.asf.alaska.edu/vertex/sbas/" target="_blank" title="Vertex SBAS Documentation">SBAS</a> 
+   Search to find SLC pairs to submit for processing. </li>
+<li>For burst-based InSAR processing, search for the <strong>Sentinel-1 Bursts</strong> Dataset instead of <strong>Sentinel-1</strong>.</li>
+<li>To process ARIA S1 GUNW products On Demand, search for the <strong>ARIA S1 GUNW Dataset</strong> instead of <strong>Sentinel-1</strong>, 
+   and <a href="../../guides/gunw_product_guide/#aria-frame-id-maps" title="Jump to the ARIA S1 GUNW Product Guide">activate the On Demand toggle to view the ARIA Frames</a>.</li>
 </ul>
-</li>
-<li>
-<p><strong>Submit your request</strong> - After selecting your scenes, access the  <em>On Demand</em> 
-   <img width="30" src="https://user-images.githubusercontent.com/17994518/95892024-588b9280-0d32-11eb-8734-f1a54a9d2a20.png" /> 
-   queue to submit your processing request. You may process jobs worth up to a total of 10,000 
-   credits per month. See our <a href="../credits/" title="Jump to the Credits page of this documentation">Credits</a> page f
-   or more details.</p>
-</li>
-<li>
-<p><strong>Monitor your request</strong> - The 
-   <a href="https://docs.asf.alaska.edu/vertex/manual/#on-demand-products-search-options" target="_blank" title="Vertex Manual: On Demand Search Options"><em>On Demand Products</em></a> 
-   Search Type displays your running and completed requests. 
-   New requests are typically available for download within an hour, but wait time will depend on processing load.</p>
-</li>
-<li>
-<p><strong>Download your data</strong> - Finished On Demand products listed in the results of an <em>On Demand Products</em> search 
-   can be downloaded individually through your browser 
-   <img width="25" src="https://user-images.githubusercontent.com/17994518/95271858-6ea5ca00-07eb-11eb-9217-a280ca57a5e6.png" /> 
-   or by adding them to the  <em>Download Queue</em> 
-   <img width="25" src="https://user-images.githubusercontent.com/17994518/95271856-6d749d00-07eb-11eb-81d8-365a6221e4f1.png" />.  </p>
+<p>Click the <strong>On Demand icon</strong>
+<img width="20" src="https://raw.githubusercontent.com/ASFHyP3/hyp3-docs/6ba90fdafcf60ec017b3f4a83738334a5574be71/docs/images/HyP3-graphic-only.png" /> 
+displayed next to valid source granules or pairs to select the job type and add them to the On Demand queue.</p>
+<h3 id="2-submit-your-request">2. Submit your request<a class="headerlink" href="#2-submit-your-request" title="Permanent link">&para;</a></h3>
+<p>After selecting your scenes, access the <strong>On Demand Queue</strong> 
+<img width="30" src="https://user-images.githubusercontent.com/17994518/95892024-588b9280-0d32-11eb-8734-f1a54a9d2a20.png" /> 
+to submit your processing requests. There is a separate tab for each job type, which displays available processing 
+options.</p>
+<p>When you submit jobs for processing, you will have the option to add a Project Name, which makes it easier to search 
+for and manage your On Demand products. </p>
+<p>If you have multiple job types in your queue, you can choose which job types to submit for processing under that 
+project name. If you deselect any of the job types, they will remain in your queue, but will not be 
+submitted for processing.</p>
+<p>You may process jobs worth up to a total of 10,000 
+credits per month. See our <a href="../credits/" title="Jump to the Credits page of this documentation">Credits</a> 
+page for more details.</p>
+<h3 id="3-monitor-your-request">3. Monitor your request<a class="headerlink" href="#3-monitor-your-request" title="Permanent link">&para;</a></h3>
+<p>The <a href="https://docs.asf.alaska.edu/vertex/manual/#on-demand-products-search-options" target="_blank" title="Vertex Manual: On Demand Search Options"><strong>On Demand Products</strong></a> 
+Search Type displays your running and completed requests. New requests are typically available for download 
+within an hour or two, but wait time will depend on processing load and product type.</p>
+<h3 id="4-download-your-data">4. Download your data<a class="headerlink" href="#4-download-your-data" title="Permanent link">&para;</a></h3>
+<p>Once On Demand products have been processed, download options will be available in the results of an 
+<strong>On Demand Products</strong> search. Products can be downloaded individually through your browser 
+<img width="22" src="https://user-images.githubusercontent.com/17994518/95271858-6ea5ca00-07eb-11eb-9217-a280ca57a5e6.png" /> 
+or by adding them to the <strong>Download Queue</strong> 
+<img width="20" src="https://user-images.githubusercontent.com/17994518/95271856-6d749d00-07eb-11eb-81d8-365a6221e4f1.png" />.</p>
 <ul>
 <li>Refer to the 
-  <a href="../downloading/#on-demand-search-in-vertex" title="Jump to the On Demand Search in Vertex section of the Downloads page">Downloads</a> 
-  page for more information about download options. </li>
+   <a href="../downloading/#on-demand-search-in-vertex" title="Jump to the On Demand Search in Vertex section of the Downloads page">Downloads</a> 
+   page for more information about download options. </li>
 <li>On Demand products are retained and available to download for two weeks (14 days) after processing.</li>
 </ul>
-</li>
-</ol>
 <h2 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h2>
 <p>Refer to our 
 <a href="https://asf-daac.maps.arcgis.com/home/index.html" target="_blank" title="https://asf-daac.maps.arcgis.com/home/index.html">StoryMap Tutorials</a> 
