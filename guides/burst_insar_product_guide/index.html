@@ -1230,39 +1230,6 @@ feedback.init({showIcon: false});
     Merging Sentinel-1 Single-Burst InSAR Products
   </a>
   
-    <nav class="md-nav" aria-label="Merging Sentinel-1 Single-Burst InSAR Products">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#merge-processing" class="md-nav__link">
-    Merge Processing
-  </a>
-  
-    <nav class="md-nav" aria-label="Merge Processing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#merge-processing-options" class="md-nav__link">
-    Merge Processing Options
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merged-product-packaging" class="md-nav__link">
-    Merged Product Packaging
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1854,26 +1821,6 @@ feedback.init({showIcon: false});
   
   <span class="md-ellipsis">
     InSAR burst time series with MintPy
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="https://github.com/ASFHyP3/hyp3-docs/blob/develop/docs/tutorials/hyp3_isce2_burst_merge.ipynb" target="_blank" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Merging burst InSAR products
   </span>
   
 
@@ -2561,39 +2508,6 @@ feedback.init({showIcon: false});
   <a href="#merging-sentinel-1-single-burst-insar-products" class="md-nav__link">
     Merging Sentinel-1 Single-Burst InSAR Products
   </a>
-  
-    <nav class="md-nav" aria-label="Merging Sentinel-1 Single-Burst InSAR Products">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#merge-processing" class="md-nav__link">
-    Merge Processing
-  </a>
-  
-    <nav class="md-nav" aria-label="Merge Processing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#merge-processing-options" class="md-nav__link">
-    Merge Processing Options
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merged-product-packaging" class="md-nav__link">
-    Merged Product Packaging
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3554,83 +3468,13 @@ Once processing is complete, download links for On Demand products are valid for
 section of the 
 <a href="https://storymaps.arcgis.com/stories/191bf1b6962c402086807390b3ce63b0" target="_blank" title="Burst-Based InSAR for Sentinel-1 On Demand StoryMap Tutorial">Burst-Based InSAR for Sentinel-1 On Demand</a> interactive StoryMap tutorial.</p>
 <h2 id="merging-sentinel-1-single-burst-insar-products">Merging Sentinel-1 Single-Burst InSAR Products<a class="headerlink" href="#merging-sentinel-1-single-burst-insar-products" title="Permanent link">&para;</a></h2>
-<p>Burst InSAR products generated using the <code>INSAR_ISCE_BURST</code> job type can be merged together manually using the 
-<a href="https://github.com/ASFHyP3/hyp3-isce2/blob/main/src/hyp3_isce2/merge_tops_bursts.py" target="_blank"><code>merge_tops_burst</code></a> 
-workflow. </p>
-<p>This requires software installation and sufficient compute resources. It is much easier to submit 
-<a href="#multi-burst-insar" title="Jump to the Multi-Burst InSAR section of this document"><code>INSAR_ISCE_MULTI_BURST</code></a> 
-jobs, which do the merging for you, but manual merging is an option if you have a specific use case that is not 
-supported by the multi-burst on-demand products.</p>
 <div class="admonition warning">
-<p class="admonition-title">This workflow is only for products generated using the <code>INSAR_ISCE_BURST</code> job type</p>
-<p>This functionality is not available for products generated using the 
-<code>INSAR_ISCE_MULTI_BURST</code> job type, even if the products include only one burst. </p>
+<p class="admonition-title">The merge_tops_burst workflow is no longer available</p>
+<p>In the past, Burst InSAR products generated using the <code>INSAR_ISCE_BURST</code> job type could be merged together
+manually using the <code>merge_tops_burst.py</code> workflow. This Python script is no longer supported. Please use the
+<a href="#multi-burst-insar" title="Jump to the Multi-Burst InSAR section of this document"><code>INSAR_ISCE_MULTI_BURST</code></a> job type
+to generate interferograms that span multiple bursts.</p>
 </div>
-<p>Merging is done using underlying ISCE2 functionality, and steps 9-11 of the InSAR processing workflow 
-(filtering, unwrapping, and geocoding) found in the 
-<a href="#burst-insar-processing" title="Jump to the Burst InSAR Processing section of this document">Burst InSAR Processing</a> 
-section are repeated to ensure consistent results. You will need to install the 
-<a href="https://github.com/ASFHyP3/hyp3-isce2" target="_blank" title="HyP3-ISCE2 Plugin">HyP3-ISCE2 plugin</a> 
-on your local machine, at which point merging can be performed using the following syntax:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>hyp3_isce2<span class="w"> </span>++process<span class="w"> </span>merge_tops_bursts<span class="w"> </span>PATH_TO_UNZIPPED_PRODUCTS
-</code></pre></div>
-<p>Where <code>PATH_TO_UNZIPPED_PRODUCTS</code> is the path to a directory containing <strong>unzipped</strong> Burst InSAR products generated 
-using the <code>INSAR_ISCE_BURST</code> job type. For example:</p>
-<div class="highlight"><pre><span></span><code>PATH_TO_UNZIPPED_PRODUCTS
-├─ S1_136232_IW2_20200604_20200616_VV_INT80_663F
-├─ S1_136231_IW2_20200604_20200616_VV_INT80_529D
-</code></pre></div>
-<p>In order to be eligible for merging, all burst products must:</p>
-<ul>
-<li>Have the same reference and secondary dates</li>
-<li>Have the same polarization</li>
-<li>Have the same multilooking settings (20x4, 10x2 or 5x1)</li>
-<li>Be from the same relative orbit</li>
-<li>Be contiguous</li>
-<li>Have been generated using the single-burst approach (<code>INSAR_ISCE_BURST</code> job type)</li>
-</ul>
-<p>The workflow should throw an error if any of these conditions are not met.</p>
-<h3 id="merge-processing">Merge Processing<a class="headerlink" href="#merge-processing" title="Permanent link">&para;</a></h3>
-<p>During normal ISCE2 InSAR processing, initial interferograms are formed on a burst-by-burst basis. These range-doppler 
-burst interferograms are combined during an ISCE2 step called <code>mergebursts</code>, then the remaining steps 
-(filtering, unwrapping and geocoding) are conducted on the merged results.</p>
-<p>By including select range-doppler data (wrapped interferogram, geolocation information, and line-of-sight information) 
-and select metadata in our standard Burst InSAR products, we are able to restart ISCE2 processing from the 
-<code>mergebursts</code> step, then proceed with the following steps as if it were a standard ISCE2 InSAR processing run. </p>
-<p>This is essentially what's happening behind the scenes when multi-burst interferograms are generated using the 
-<code>INSAR_ISCE_MULTI_BURST</code> job type.</p>
-<p>The steps of the workflow are as follows:</p>
-<ol>
-<li>Recreate a pre-<code>mergebursts</code> ISCE2 InSAR processing state using the input Burst InSAR products.</li>
-<li>Run a modified version of ISCE2’s <code>mergebursts</code> step.</li>
-<li>Apply the Goldstein-Werner power spectral filter with a dampening factor of 0.5.</li>
-<li>Unwrap the wrapped phase interferogram using <a href="http://web.stanford.edu/group/radar/softwareandlinks/sw/snaphu/" target="_blank">SNAPHU</a>'s minimum cost flow (MCF) unwrapping algorithm to produce the unwrapped phase interferogram.</li>
-<li>Geocode the output products.</li>
-</ol>
-<p>As mentioned above, this workflow uses underlying ISCE2 functionality to perform these steps so the results of this 
-workflow should be identical to the results obtained by performing a standard multi-burst ISCE2 InSAR run 
-(assuming that the Enhanced Spectral Diversity technique is not used for co-registration).</p>
-<h4 id="merge-processing-options">Merge Processing Options<a class="headerlink" href="#merge-processing-options" title="Permanent link">&para;</a></h4>
-<p>The processing options available for the merging are the same as those available for standard Burst InSAR products. 
-Check out the <a href="#processing-options" title="Jump to the Processing Options section of this document">Processing Options</a> 
-section for more details.</p>
-<p>To learn about the command line argument syntax for this workflow, look at the help documentation using:
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>hyp3_isce2<span class="w"> </span>++process<span class="w"> </span>merge_tops_bursts<span class="w"> </span>--help
-</code></pre></div></p>
-<h4 id="merged-product-packaging">Merged Product Packaging<a class="headerlink" href="#merged-product-packaging" title="Permanent link">&para;</a></h4>
-<p>The product packaging of merged Burst InSAR products generated using the <code>merge_tops_bursts.py</code> script follows the 
-same conventions used for single-burst products (<code>INSAR_ISCE_BURST</code> job type) outlined in the 
-<a href="#product-packaging" title="Jump to the Product Packaging section of this document">Product Packaging</a> section 
-with two exceptions:</p>
-<ul>
-<li>The four range-doppler images are not included since the products have already been merged</li>
-<li>The product name is slightly modified<ul>
-<li>The burst ID (<code>bbbbbb</code>) is swapped for the zero-padded relative orbit number (<code>rrr</code>)</li>
-<li>The sub-swath number is removed </li>
-<li>The resulting format is <code>S1_rrr__yyymmdd_yyymmdd_pp_INTn_uuuu</code></li>
-</ul>
-</li>
-</ul>
 <h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
 <h3 id="baseline-calculation">Baseline Calculation<a class="headerlink" href="#baseline-calculation" title="Permanent link">&para;</a></h3>
 <p>The baseline is defined as the difference of the platform positions when a given area is imaged. HyP3 baselines are calculated using the best state vectors available. If precise orbits are not yet available for the input granules, restituted orbits will be used. The original predicted orbits are not used for InSAR processing in HyP3. <strong>If no restituted or precise state vectors are available, the process will not run.</strong></p>
