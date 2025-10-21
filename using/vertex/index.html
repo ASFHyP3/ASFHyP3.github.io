@@ -22,7 +22,7 @@
         <link rel="next" href="../sdk/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.ico">
+      <link rel="icon" href="../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
     
     
@@ -31,33 +31,15 @@
       
     
     
-    
       <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
       
       
 
 
     
-    <link rel="stylesheet" href="../../assets/stylesheets/asf.css">
-
     
-
       
     
-<script src="https://fbm.earthdata.nasa.gov/for/ASF/feedback.js" type="text/javascript"></script>
-<script type="text/javascript">
- // This prevents the FBM flyout banner from appearing on the side of the page.
-feedback.init({showIcon: false});
-</script>
-
-<script src="https://cdn.earthdata.nasa.gov/tophat2/tophat2.js"
-        id="earthdata-tophat-script"
-        data-show-fbm="true"
-        data-show-status="false"
-        data-fbm-subject-line="How can we help you?"
-        data-current-daac="ASF DAAC">
-</script>
-
     
       
         
@@ -69,6 +51,8 @@ feedback.init({showIcon: false});
     
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/asf.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -148,7 +132,7 @@ feedback.init({showIcon: false});
       aria-label="ASF"
       data-md-component="logo"
     >
-      <img src="../../assets/images/ASFLogo-Blue2.png" alt="logo" />
+      <img src="../../images/ASFLogo-Blue2.png" alt="logo" />
     </a>
     
 
@@ -243,19 +227,19 @@ feedback.init({showIcon: false});
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    
+                    <!-- Extends https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/base.html -->
 
 
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
+<!--  <label class="md-nav__title" for="__drawer">
     <a href="../.." title="HyP3" class="md-nav__button md-logo" aria-label="HyP3" data-md-component="logo">
       
   <img src="../../images/HyP3-graphic-only.png" alt="logo">
 
     </a>
     HyP3
-  </label>
+  </label> -->
   
     <div class="md-nav__source">
       <a href="https://github.com/ASFHyP3" title="Go to repository" class="md-source" data-md-component="source">
@@ -276,16 +260,140 @@ feedback.init({showIcon: false});
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../about/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    HyP3
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            HyP3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../about/hyp3_basic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Home
+    HyP3 Basic
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../about/hyp3_plus/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    HyP3+
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            HyP3+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/hyp3_plus_terms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terms of Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -396,29 +504,36 @@ feedback.init({showIcon: false});
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-select-your-scenes" class="md-nav__link">
-    1. Select your scenes
+  <a href="#1-select-your-hyp3-api-optional" class="md-nav__link">
+    1. Select your HyP3 API (OPTIONAL)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-submit-your-request" class="md-nav__link">
-    2. Submit your request
+  <a href="#2-select-your-scenes" class="md-nav__link">
+    2. Select your scenes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-monitor-your-request" class="md-nav__link">
-    3. Monitor your request
+  <a href="#3-submit-your-request" class="md-nav__link">
+    3. Submit your request
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-download-your-data" class="md-nav__link">
-    4. Download your data
+  <a href="#4-monitor-your-request" class="md-nav__link">
+    4. Monitor your request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-download-your-data" class="md-nav__link">
+    5. Download your data
   </a>
   
 </li>
@@ -622,11 +737,11 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../subscriptions/" class="md-nav__link">
+      <a href="../../usage_guidelines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Subscriptions
+    How to Cite HyP3
   </span>
   
 
@@ -1066,26 +1181,6 @@ feedback.init({showIcon: false});
   
   <span class="md-ellipsis">
     AutoRIFT
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../usage_guidelines/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Usage Guidelines
   </span>
   
 
@@ -1726,16 +1821,68 @@ feedback.init({showIcon: false});
   
   
   
-    <li class="md-nav__item">
-      <a href="../../whats_new/" class="md-nav__link">
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../whats_new/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     What's New
   </span>
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            What's New
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../news/hyp3_plus_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducing HyP3+
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1794,29 +1941,36 @@ feedback.init({showIcon: false});
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-select-your-scenes" class="md-nav__link">
-    1. Select your scenes
+  <a href="#1-select-your-hyp3-api-optional" class="md-nav__link">
+    1. Select your HyP3 API (OPTIONAL)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-submit-your-request" class="md-nav__link">
-    2. Submit your request
+  <a href="#2-select-your-scenes" class="md-nav__link">
+    2. Select your scenes
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-monitor-your-request" class="md-nav__link">
-    3. Monitor your request
+  <a href="#3-submit-your-request" class="md-nav__link">
+    3. Submit your request
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-download-your-data" class="md-nav__link">
-    4. Download your data
+  <a href="#4-monitor-your-request" class="md-nav__link">
+    4. Monitor your request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-download-your-data" class="md-nav__link">
+    5. Download your data
   </a>
   
 </li>
@@ -1855,14 +2009,33 @@ ASF's Data Search web portal. You can submit scenes to be processed into higher-
 cost and complexity of performing such processing yourself.</p>
 <p><a href="https://search.asf.alaska.edu/" target="_blank" title="https://search.asf.alaska.edu"><img alt="Vertex Image" src="../../images/vertex.png" title="Click to open Vertex in a new tab" /></a></p>
 <p>On Demand products are generated using ASF's 
-<a href="../../" title="Jump to the HyP3 landing page of this documentation">HyP3 processing platform</a>. Refer to the 
+<a href="../../about/" title="Jump to the HyP3 landing page of this documentation">HyP3 processing platform</a>. Refer to the
 <a href="../../products/" title="Jump to the Products page of the documentation">Products</a> page for more information about the 
 various On Demand products ASF offers. </p>
 <h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
 <p>To request On Demand products, visit 
 <a href="https://search.asf.alaska.edu" target="_blank" title="https://search.asf.alaska.edu">ASF Data Search - Vertex</a> 
-and <a href="../authentication/#authentication-in-vertex">Sign In with your Earthdata Login credentials</a>.</p>
-<h3 id="1-select-your-scenes">1. Select your scenes<a class="headerlink" href="#1-select-your-scenes" title="Permanent link">&para;</a></h3>
+and <a href="../authentication/#authentication-in-vertex" title="Jump to Authentication in Vertex Documentation">Sign In with your Earthdata Login credentials</a>.</p>
+<h3 id="1-select-your-hyp3-api-optional">1. Select your HyP3 API (<em>OPTIONAL</em>)<a class="headerlink" href="#1-select-your-hyp3-api-optional" title="Permanent link">&para;</a></h3>
+<p>Vertex supports requesting On Demand products through both 
+<a href="../../about/hyp3_basic/" title="Jump to HyP3 Basic Documentation">HyP3 Basic (default)</a> and 
+<a href="../../about/hyp3_plus/" title="Jump to HyP3+ Documentation">HyP3+</a> by changing the HyP3 API URL. </p>
+<p><strong>If you are only using the free <a href="../../about/hyp3_basic/" title="Jump to HyP3 Basic Documentation">HyP3 Basic</a> service, 
+you do not need to make any changes to the HyP3 API in Vertex.</strong> </p>
+<p>To change the HyP3 API in Vertex:</p>
+<ol style="list-style-type: decimal;" type="1">
+<li>Click on your username icon and select <strong>Preferences</strong>.
+   <img alt="Open Vertex Preferences" src="../../images/vertex-preferences.png" title="Open Vertex Preferences" /></li>
+<li>Enter your desired HyP3 API URL in the <strong>HyP3 API URL</strong> field.
+   <img alt="Set API for Vertex" src="../../images/vertex-set-api.png" title="Set API URL in Vertex Preferences" /><ul>
+<li>HyP3 Basic: <a href="https://hyp3-api.asf.alaska.edu" target="_blank">https://hyp3-api.asf.alaska.edu</a></li>
+<li>HyP3+: <a href="https://hyp3-plus.asf.alaska.edu" target="_blank">https://hyp3-plus.asf.alaska.edu</a></li>
+<li>URLs that are entered in this field will be available as a drop-down menu item for future use.</li>
+</ul>
+</li>
+<li>Click <strong>Done</strong> to exit the Preferences page.</li>
+</ol>
+<h3 id="2-select-your-scenes">2. Select your scenes<a class="headerlink" href="#2-select-your-scenes" title="Permanent link">&para;</a></h3>
 <p>RTC processing is available for Sentinel-1 GRD-H and SLC scenes acquired using the 
 <a href="https://sentiwiki.copernicus.eu/web/s1-products" target="_blank" title="https://sentiwiki.copernicus.eu/web/s1-products">Interferometric Wide Swath (IW)</a> mode. 
 InSAR processing requires pairs of IW SLC scenes or bursts. </p>
@@ -1882,7 +2055,7 @@ InSAR pairs. </p>
 <p>Click the <strong>On Demand icon</strong>
 <img width="20" src="https://raw.githubusercontent.com/ASFHyP3/hyp3-docs/6ba90fdafcf60ec017b3f4a83738334a5574be71/docs/images/HyP3-graphic-only.png" /> 
 displayed next to valid source granules or pairs to select the job type and add them to the On Demand queue.</p>
-<h3 id="2-submit-your-request">2. Submit your request<a class="headerlink" href="#2-submit-your-request" title="Permanent link">&para;</a></h3>
+<h3 id="3-submit-your-request">3. Submit your request<a class="headerlink" href="#3-submit-your-request" title="Permanent link">&para;</a></h3>
 <p>After selecting your scenes, access the <strong>On Demand Queue</strong> 
 <img width="30" src="https://user-images.githubusercontent.com/17994518/95892024-588b9280-0d32-11eb-8734-f1a54a9d2a20.png" /> 
 to submit your processing requests. There is a separate tab for each job type, which displays available processing 
@@ -1895,24 +2068,24 @@ submitted for processing.</p>
 <p>You may process jobs worth up to a total of 10,000 
 credits per month. See our <a href="../credits/" title="Jump to the Credits page of this documentation">Credits</a> 
 page for more details.</p>
-<h3 id="3-monitor-your-request">3. Monitor your request<a class="headerlink" href="#3-monitor-your-request" title="Permanent link">&para;</a></h3>
+<h3 id="4-monitor-your-request">4. Monitor your request<a class="headerlink" href="#4-monitor-your-request" title="Permanent link">&para;</a></h3>
 <p>The <a href="https://docs.asf.alaska.edu/vertex/manual/#on-demand-products-search-options" target="_blank" title="Vertex Manual: On Demand Search Options"><strong>On Demand Products</strong></a> 
 Search Type displays your running and completed requests. New requests are typically available for download 
 within an hour or two, but wait time will depend on processing load and product type.</p>
-<h3 id="4-download-your-data">4. Download your data<a class="headerlink" href="#4-download-your-data" title="Permanent link">&para;</a></h3>
+<h3 id="5-download-your-data">5. Download your data<a class="headerlink" href="#5-download-your-data" title="Permanent link">&para;</a></h3>
 <p>Once On Demand products have been processed, download options will be available in the results of an 
 <strong>On Demand Products</strong> search. Products can be downloaded individually through your browser 
 <img width="22" src="https://user-images.githubusercontent.com/17994518/95271858-6ea5ca00-07eb-11eb-9217-a280ca57a5e6.png" /> 
 or by adding them to the <strong>Download Queue</strong> 
 <img width="20" src="https://user-images.githubusercontent.com/17994518/95271856-6d749d00-07eb-11eb-81d8-365a6221e4f1.png" />.</p>
 <ul>
-<li>Refer to the 
+<li>Refer to the
    <a href="../downloading/#on-demand-search-in-vertex" title="Jump to the On Demand Search in Vertex section of the Downloads page">Downloads</a> 
    page for more information about download options. </li>
 <li>On Demand products are retained and available to download for two weeks (14 days) after processing.</li>
 </ul>
 <h2 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h2>
-<p>Refer to our 
+<p>Refer to our
 <a href="https://asf-daac.maps.arcgis.com/home/index.html" target="_blank" title="https://asf-daac.maps.arcgis.com/home/index.html">StoryMap Tutorials</a> 
 for step-by-step guidance on submitting, downloading, and working with many of the different On Demand products 
 available from ASF.</p>
@@ -2019,7 +2192,7 @@ available from ASF.</p>
       <div class="md-grid">
         <div class="md-footer-container md-grid">
           <div class="md-footer-container-item">
-            <img src="../../assets/images/asf-logo-blue-nav.png"
+            <img src="../../images/asf-logo-blue-nav.png"
                  alt="ASF Logo"
                  class="md-footer-logo">
           </div>
@@ -2103,114 +2276,55 @@ available from ASF.</p>
 </div>
 
       <!-- Social links -->
-      <!--
-  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to
-  deal in the Software without restriction, including without limitation the
-  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-  sell copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in
-  all copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-  IN THE SOFTWARE.
--->
-
-<!-- Adapted from https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/partials/social.html -->
-
-<!-- Social links -->
-<div class="md-social">
+      
+        <div class="md-social">
   
-
-    <!-- Automatically set rel=me for Mastodon -->
     
     
-
-    <!-- Compute title and render link -->
     
     
       
       
     
-    <a
-      href="https://www.facebook.com/AKSatellite"
-      target="_blank" rel="noopener"
-      title="www.facebook.com"
-      class="md-social__link"
-    >
+    <a href="https://www.facebook.com/AKSatellite" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m279.14 288 14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
     </a>
   
-
-    <!-- Automatically set rel=me for Mastodon -->
     
     
-
-    <!-- Compute title and render link -->
     
     
       
       
     
-    <a
-      href="https://twitter.com/Ak_Satellite"
-      target="_blank" rel="noopener"
-      title="twitter.com"
-      class="md-social__link"
-    >
+    <a href="https://twitter.com/Ak_Satellite" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
     </a>
   
-
-    <!-- Automatically set rel=me for Mastodon -->
     
     
-
-    <!-- Compute title and render link -->
     
     
       
       
     
-    <a
-      href="https://www.youtube.com/channel/UChCfI0oVWw4qDwEidnDskJQ"
-      target="_blank" rel="noopener"
-      title="www.youtube.com"
-      class="md-social__link"
-    >
+    <a href="https://www.youtube.com/channel/UChCfI0oVWw4qDwEidnDskJQ" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
     </a>
   
-
-    <!-- Automatically set rel=me for Mastodon -->
     
     
-
-    <!-- Compute title and render link -->
     
     
       
       
     
-    <a
-      href="https://gitter.im/ASFHyP3/community"
-      target="_blank" rel="noopener"
-      title="gitter.im"
-      class="md-social__link"
-    >
+    <a href="https://gitter.im/ASFHyP3/community" target="_blank" rel="noopener" title="gitter.im" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M66.4 322.5H16V0h50.4v322.5zM166.9 76.1h-50.4V512h50.4V76.1zm100.6 0h-50.4V512h50.4V76.1zM368 76h-50.4v247H368V76z"/></svg>
     </a>
   
 </div>
+      
     </div>
   </div>
 </footer>
@@ -2232,10 +2346,8 @@ available from ASF.</p>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../search/main.js"></script>
-      
     
-    <script src="../../assets/javascripts/expert-rec-search.js"></script>
+    <script src="../../javascripts/expert-rec-search.js"></script>
 
   </body>
 </html>
