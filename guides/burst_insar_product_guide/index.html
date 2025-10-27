@@ -3063,10 +3063,10 @@ reference and secondary SAFE files: </p>
 </ul>
 <p>When selecting input bursts that span across sub-swaths in the same relative path, you must also take care not to 
 leave gaps. The bursts in neighboring sub-swaths can only be offset along the path by one burst. </p>
-<p>For example, the grouping of bursts shown in the image on the left in Figure 4 can be submitted for processing, 
+<p>For example, the grouping of bursts shown in the image on the left in Figure 3 can be submitted for processing,
 while the grouping in the image on the right would not be valid.</p>
-<p><img alt="Figure 4" src="../../images/burst-contiguity.png" title="Illustration of acceptable offsets for bursts across sub-swaths" /></p>
-<p><em>Figure 4: Illustration of acceptable maximum offsets for bursts across sub-swaths.</em></p>
+<p><img alt="Figure 3" src="../../images/burst-contiguity.png" title="Illustration of acceptable offsets for bursts across sub-swaths" /></p>
+<p><em>Figure 3: Illustration of acceptable maximum offsets for bursts across sub-swaths.</em></p>
 <h4 id="download-the-dem-file">Download the DEM File<a class="headerlink" href="#download-the-dem-file" title="Permanent link">&para;</a></h4>
 <p>In order to create differential InSAR products that show motion on the ground, one must subtract the topographic 
 phase from the interferogram. The topographic phase, in this case, is replicated by using an 
@@ -3157,7 +3157,7 @@ looks: 80 meters for 20x4 looks, 40 meters for 10x2 looks, and 20 meters for 5x1
 a metadata file, and a README file.</p>
 <h3 id="naming-convention-insar_isce_burst">Naming Convention: INSAR_ISCE_BURST<a class="headerlink" href="#naming-convention-insar_isce_burst" title="Permanent link">&para;</a></h3>
 <p>The Burst InSAR product names are packed with information pertaining to the processing of the data, presented in 
-the following order, as illustrated in Figure 3.</p>
+the following order, as illustrated in Figure 4.</p>
 <ul>
 <li>The imaging platform name, always S1 for Sentinel-1.</li>
 <li>Relative burst ID values assigned by ESA. Each value identifies a consistent burst footprint; relative burst ID 
@@ -3171,88 +3171,43 @@ the following order, as illustrated in Figure 3.</p>
   was submitted for processing.</li>
 <li>The filename ends with the ASF product ID, a 4 digit hexadecimal number.</li>
 </ul>
-<p><img alt="Figure 3" src="../../images/asf_burst_insar_names.png" title="Breakdown of ASF InSAR Naming Scheme" /></p>
-<p><em>Figure 3: Breakdown of ASF Burst InSAR naming scheme.</em></p>
+<p><img alt="Figure 4" src="../../images/asf_burst_insar_names.png" title="Breakdown of ASF InSAR Naming Scheme" /></p>
+<p><em>Figure 4: Breakdown of ASF Burst InSAR naming scheme.</em></p>
 <h3 id="naming-convention-insar_isce_multi_burst">Naming Convention: INSAR_ISCE_MULTI_BURST<a class="headerlink" href="#naming-convention-insar_isce_multi_burst" title="Permanent link">&para;</a></h3>
-<p>The naming scheme for products generated using the <code>INSAR_ISCE_MULTI_BURST</code> job type is very different from what was 
-used for <code>INSAR_ISCE_BURST</code>.</p>
-<p>The basename of the multi-burst InSAR files follows this naming convention: </p>
-<p><strong>S1s_rrr_lonl_f_lal_f_lonu_f_lau_f_yyyymmdd_yyyymmdd_pp_INTzz_cccc</strong></p>
-<p>For example: </p>
-<p>S1A_064_E053_1_N27_3_E054_1_N27_8_20200604_20200616_VV_INT80_7EB5</p>
-<p>Table 2 describes the individual components:</p>
-<table>
-<thead>
-<tr>
-<th>Component</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>S1s</strong></td>
-<td>SAR Platform. S1 for Sentinel-1, followed by the letter of the sensor that collected the reference image.</td>
-<td>S1A</td>
-</tr>
-<tr>
-<td><strong>rrr</strong></td>
-<td>Relative orbit ID values assigned by ESA. Merged burst InSAR products can contain many relative burst IDs, so the relative orbit ID is used in lieu of relative burst IDs for these products.</td>
-<td>064</td>
-</tr>
-<tr>
-<td><strong>lonl_f</strong></td>
-<td>Minimum longitude of the output interferogram. Starts with a letter indicating hemisphere (E or W), followed by longitude to one decimal (000.0) with the decimal replaced by an underscore.</td>
-<td>E053_1</td>
-</tr>
-<tr>
-<td><strong>lal_f</strong></td>
-<td>Minimum latitude of the output interferogram. Starts with a letter indicating hemisphere (N or S), followed by latitude to one decimal (00.0) with the decimal replaced by an underscore.</td>
-<td>N27_3</td>
-</tr>
-<tr>
-<td><strong>lonu_f</strong></td>
-<td>Maximum longitude of the output interferogram. Starts with a letter indicating hemisphere (E or W), followed by longitude to one decimal (000.0) with the decimal replaced by an underscore.</td>
-<td>E054_1</td>
-</tr>
-<tr>
-<td><strong>lau_f</strong></td>
-<td>Maximum latitude of the output interferogram. Starts with a letter indicating hemisphere (N or S), followed by latitude to one decimal (00.0) with the decimal replaced by an underscore.</td>
-<td>N27_8</td>
-</tr>
-<tr>
-<td><strong>yyyymmdd</strong></td>
-<td>Acquisition date of the reference image</td>
-<td>20200604</td>
-</tr>
-<tr>
-<td><strong>yyyymmdd</strong></td>
-<td>Acquisition date of the secondary image</td>
-<td>20200616</td>
-</tr>
-<tr>
-<td><strong>pp</strong></td>
-<td>Two character combination indicating the product polarization. The first character represents the transmit polarization and the second character represents the receive polarization. Note that these products only support co-polarized inputs, so the product polarization will either be VV or HH.</td>
-<td>VV</td>
-</tr>
-<tr>
-<td><strong>INT</strong></td>
-<td>The product type (always INT for InSAR)</td>
-<td>INT</td>
-</tr>
-<tr>
-<td><strong>zz</strong></td>
-<td>The pixel spacing of the output image</td>
-<td>80</td>
-</tr>
-<tr>
-<td><strong>cccc</strong></td>
-<td>4-character unique product identifier</td>
-<td>FD6A</td>
-</tr>
-</tbody>
-</table>
-<p><em>Table 2: Naming scheme for multi-burst InSAR products</em></p>
+<p>The base filename for <code>INSAR_ISCE_MULTI_BURST</code> products follows the naming convention below, 
+as illustrated in Figure 5.</p>
+<p><strong>S1_rrr_bbbbbbs1ntt-bbbbbbs2ntt-bbbbbbs3ntt_IW_yyyymmdd_yyyymmdd_pp_INTzz_uuuu</strong></p>
+<ul>
+<li>each file starts with <strong>S1</strong>, indicating that the data was acquired by Sentinel-1</li>
+<li><strong>rrr</strong> is the relative path (or orbit) number for the bursts included in the product</li>
+<li><strong>bbbbbb</strong> indicates the first burst ID for each sub-swath<ul>
+<li>if there are no bursts included for a given sub-swath, the value of <strong>bbbbbb</strong> would be <code>000000</code></li>
+</ul>
+</li>
+<li>the number following <strong>s</strong> indicates the sub-swath associated with the burst IDs<ul>
+<li>for example, <code>s1</code> indicates the first sub-swath</li>
+<li>there is a placeholder for each of the three sub-swaths, even if there aren't bursts included from all three </li>
+</ul>
+</li>
+<li><strong>ntt</strong> indicates the number of bursts included in the product for the given sub-swath<ul>
+<li>for example, <code>n02</code> indicates that there are 2 bursts included for that sub-swath</li>
+<li>if there are no bursts included from that sub-swath, the value of <strong>tt</strong> would be <code>00</code></li>
+</ul>
+</li>
+<li><strong>IW</strong> indicates the beam mode (interferometric wide swath)</li>
+<li>the first <strong>yyyymmdd</strong> indicates the date the reference bursts were acquired</li>
+<li>the second <strong>yyyymmdd</strong> indicates the date the secondary bursts were acquired</li>
+<li><strong>pp</strong> indicates the polarization of the input bursts</li>
+<li><strong>INT</strong> indicates that the product is an interferogram</li>
+<li><strong>zz</strong> indicates the pixel spacing of the output InSAR product (20, 40, or 80 meters)</li>
+<li><strong>uuuu</strong> is the unique product identifier</li>
+</ul>
+<p><img alt="Figure 5" src="../../images/asf_multi_burst_insar_names.png" title="Breakdown of ASF Multi-Burst InSAR Naming Scheme" /></p>
+<p><em>Figure 5: Breakdown of ASF Multi-Burst InSAR naming scheme.</em></p>
+<p>As an example, the filename for a VV interferogram with 80-m pixel spacing containing bursts 
+111111_IW1, 111112_IW1, and 111111_IW2 from path 123 for the reference date of January 1, 2024 and the 
+secondary date of January 15, 2024, would have the following product name:</p>
+<p>S1_123_111111s1n02-111111s2n01-000000s3n00_IW_20240101_20240115_VV_INT80_AEB4</p>
 <h3 id="image-files">Image Files<a class="headerlink" href="#image-files" title="Permanent link">&para;</a></h3>
 <p>Most of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs. The exceptions to this are the 
 connected components and the water mask files, which are both 8-bit unsigned-integer single-band GeoTIFFs.</p>
@@ -3293,7 +3248,7 @@ Burst InSAR products together, and include:</p>
 as the individual bursts are already merged together.</p>
 <p>An <em>unwrapped phase browse image</em> is included for the unwrapped (unw_phase) phase file, which is in PNG format 
 and is 2048 pixels wide.</p>
-<p>The tags and extensions used and example file names for each raster are listed in Table 3 below.</p>
+<p>The tags and extensions used and example file names for each raster are listed in Table 2 below.</p>
 <table>
 <thead>
 <tr>
@@ -3370,7 +3325,7 @@ and is 2048 pixels wide.</p>
 </tr>
 </tbody>
 </table>
-<p><em>Table 3: Image files in product package</em></p>
+<p><em>Table 2: Image files in product package</em></p>
 <h3 id="metadata-files">Metadata Files<a class="headerlink" href="#metadata-files" title="Permanent link">&para;</a></h3>
 <p>The product package also includes a number of metadata files.</p>
 <table>
@@ -3394,14 +3349,14 @@ and is 2048 pixels wide.</p>
 </tr>
 </tbody>
 </table>
-<p><em>Table 4: Metadata files in product package</em></p>
+<p><em>Table 3: Metadata files in product package</em></p>
 <h4 id="readme-file">README File<a class="headerlink" href="#readme-file" title="Permanent link">&para;</a></h4>
 <p>The text file with extension <code>.README.md.txt</code> explains the files included in the folder, and is customized to reflect 
 that particular product. Users unfamiliar with InSAR products should start by reading this README file, which will 
 give some background on each of the files included in the product folder.</p>
 <h4 id="insar-parameter-file">InSAR Parameter File<a class="headerlink" href="#insar-parameter-file" title="Permanent link">&para;</a></h4>
 <p>The text file with the base filename followed directly by a <code>.txt</code> extension includes processing parameters used to 
-generate the InSAR product as well as metadata attributes for the InSAR pair. These are detailed in Table 5.</p>
+generate the InSAR product as well as metadata attributes for the InSAR pair. These are detailed in Table 4.</p>
 <table>
 <thead>
 <tr>
@@ -3413,12 +3368,12 @@ generate the InSAR product as well as metadata attributes for the InSAR pair. Th
 <tbody>
 <tr>
 <td>Reference Granule</td>
-<td>Granule name for reference burst (of the two scenes in the pair, the dataset with the oldest timestamp)</td>
+<td>Granule name(s) for reference burst or list of bursts (of the two acquisitions in the pair, the dataset with the oldest timestamp)</td>
 <td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604T022312<wbr>_VV<wbr>_7C85-BURST</td>
 </tr>
 <tr>
 <td>Secondary Granule</td>
-<td>Granule name for secondary burst (of the two scenes in the pair, the dataset with the newest timestamp)</td>
+<td>Granule name(s) for secondary burst or list of bursts (of the two acquisitions in the pair, the dataset with the newest timestamp)</td>
 <td>S1<wbr>_136231<wbr>_IW2<wbr>_20200616T022313<wbr>_VV<wbr>_5D11-BURST</td>
 </tr>
 <tr>
@@ -3447,7 +3402,7 @@ generate the InSAR product as well as metadata attributes for the InSAR pair. Th
 <td>58.3898</td>
 </tr>
 <tr>
-<td>UTCTime</td>
+<td>UTC time</td>
 <td>Time in the UTC time zone in seconds</td>
 <td>12360.691361</td>
 </tr>
@@ -3538,9 +3493,9 @@ generate the InSAR product as well as metadata attributes for the InSAR pair. Th
 </tr>
 </tbody>
 </table>
-<p><em>Table 5: List of InSAR parameters included in the parameter text file for all Burst InSAR products</em></p>
+<p><em>Table 4: List of InSAR parameters included in the parameter text file for all Burst InSAR products</em></p>
 <p>For jobs processed using the <code>INSAR_ISCE_BURST</code> job type, the parameter file will also include some additional entries, 
-as indicated in Table 6. These additional entries are not included in the parameter file for <code>INSAR_ISCE_MULTI_BURST</code> 
+as indicated in Table 5. These additional entries are not included in the parameter file for <code>INSAR_ISCE_MULTI_BURST</code>
 files. </p>
 <table>
 <thead>
@@ -3598,7 +3553,7 @@ files. </p>
 </tr>
 </tbody>
 </table>
-<p><em>Table 6: List of additional InSAR parameters included in the parameter text file <code>INSAR_ISCE_BURST</code> job types.</em></p>
+<p><em>Table 5: List of additional InSAR parameters included in the parameter text file <code>INSAR_ISCE_BURST</code> job types.</em></p>
 <h2 id="data-access">Data Access<a class="headerlink" href="#data-access" title="Permanent link">&para;</a></h2>
 <p>Refer to the <a href="../../using/downloading/" title="hyp3-docs.asf.alaska.edu/using/downloading">Downloads</a> 
 page for more information on viewing and downloading On Demand InSAR products in Vertex or programmatically. 
