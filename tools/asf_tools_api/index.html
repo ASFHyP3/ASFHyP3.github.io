@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#asf_tools-v083-api-reference" class="md-skip">
+        <a href="#asf_tools-v084-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -2844,7 +2844,7 @@
                   
 
 
-<h1 id="asf_tools-v083-api-reference"><code>asf_tools</code> <em>v0.8.3</em> API Reference<a class="headerlink" href="#asf_tools-v083-api-reference" title="Permanent link">&para;</a></h1>
+<h1 id="asf_tools-v084-api-reference"><code>asf_tools</code> <em>v0.8.4</em> API Reference<a class="headerlink" href="#asf_tools-v084-api-reference" title="Permanent link">&para;</a></h1>
 
 
 <div class="doc doc-object doc-module">
@@ -3952,7 +3952,8 @@ products</p>
 <span class="normal">41</span>
 <span class="normal">42</span>
 <span class="normal">43</span>
-<span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">prepare_dem_vrt</span><span class="p">(</span><span class="n">vrt</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span> <span class="n">geometry</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span> <span class="o">|</span> <span class="n">BaseGeometry</span><span class="p">):</span>
+<span class="normal">44</span>
+<span class="normal">45</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">prepare_dem_vrt</span><span class="p">(</span><span class="n">vrt</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span> <span class="n">geometry</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span> <span class="o">|</span> <span class="n">BaseGeometry</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a DEM mosaic VRT covering a given geometry</span>
 
 <span class="sd">    The DEM mosaic is assembled from the Copernicus GLO-30 DEM tiles that intersect the geometry.</span>
@@ -3968,6 +3969,7 @@ products</p>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span> <span class="n">BaseGeometry</span><span class="p">):</span>
             <span class="n">geometry</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkb</span><span class="p">(</span><span class="n">geometry</span><span class="o">.</span><span class="n">wkb</span><span class="p">)</span>
 
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">)</span>
         <span class="n">min_lon</span><span class="p">,</span> <span class="n">max_lon</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">geometry</span><span class="o">.</span><span class="n">GetEnvelope</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">min_lon</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">160.0</span> <span class="ow">and</span> <span class="n">max_lon</span> <span class="o">&gt;</span> <span class="mf">160.0</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;asf_tools does not currently support geometries that cross the antimeridian: </span><span class="si">{</span><span class="n">geometry</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -4525,7 +4527,9 @@ Options include a Fowlkes-Mallows index (fmi) or a threat score (ts).</p>
 <span class="normal">326</span>
 <span class="normal">327</span>
 <span class="normal">328</span>
-<span class="normal">329</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">make_flood_map</span><span class="p">(</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">make_flood_map</span><span class="p">(</span>
     <span class="n">out_raster</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">vv_raster</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">water_raster</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
@@ -4605,7 +4609,9 @@ Options include a Fowlkes-Mallows index (fmi) or a threat score (ts).</p>
     <span class="n">padding_mask</span> <span class="o">=</span> <span class="n">vv_array</span><span class="o">.</span><span class="n">mask</span>
     <span class="k">del</span> <span class="n">vv_array</span>
 
-    <span class="n">labeled_flood_mask</span><span class="p">,</span> <span class="n">num_labels</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">flood_mask</span><span class="p">)</span>
+    <span class="c1"># The return type annotation for ndimage.label is int, which seems incorrect,</span>
+    <span class="c1"># since the documentation shows an example of unpacking the return value, like we do here.</span>
+    <span class="n">labeled_flood_mask</span><span class="p">,</span> <span class="n">num_labels</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">flood_mask</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
     <span class="n">object_slices</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">find_objects</span><span class="p">(</span><span class="n">labeled_flood_mask</span><span class="p">)</span>
     <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Detected </span><span class="si">{</span><span class="n">num_labels</span><span class="si">}</span><span class="s1"> waterbodies...&#39;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">estimator</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;iterative&#39;</span><span class="p">:</span>
@@ -5113,7 +5119,8 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
 <span class="normal">46</span>
 <span class="normal">47</span>
 <span class="normal">48</span>
-<span class="normal">49</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">prepare_hand_vrt</span><span class="p">(</span><span class="n">vrt</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span> <span class="n">geometry</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span> <span class="o">|</span> <span class="n">BaseGeometry</span><span class="p">):</span>
+<span class="normal">49</span>
+<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">prepare_hand_vrt</span><span class="p">(</span><span class="n">vrt</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span> <span class="n">geometry</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span> <span class="o">|</span> <span class="n">BaseGeometry</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Prepare a HAND mosaic VRT covering a given geometry</span>
 
 <span class="sd">    Prepare a Height Above Nearest Drainage (HAND) virtual raster (VRT) covering a given geometry.</span>
@@ -5131,6 +5138,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span> <span class="n">BaseGeometry</span><span class="p">):</span>
             <span class="n">geometry</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkb</span><span class="p">(</span><span class="n">geometry</span><span class="o">.</span><span class="n">wkb</span><span class="p">)</span>
 
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">)</span>
         <span class="n">min_lon</span><span class="p">,</span> <span class="n">max_lon</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">geometry</span><span class="o">.</span><span class="n">GetEnvelope</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">min_lon</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">160.0</span> <span class="ow">and</span> <span class="n">max_lon</span> <span class="o">&gt;</span> <span class="mf">160.0</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;asf_tools does not currently support geometries that cross the antimeridian: </span><span class="si">{</span><span class="n">geometry</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -6009,8 +6017,7 @@ https://gdal.org/programs/gdalwarp.html#cmdoption-gdalwarp-r</p>
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/hydrosar/hand/prepare.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">52</span>
-<span class="normal">53</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">53</span>
 <span class="normal">54</span>
 <span class="normal">55</span>
 <span class="normal">56</span>
@@ -6042,7 +6049,8 @@ https://gdal.org/programs/gdalwarp.html#cmdoption-gdalwarp-r</p>
 <span class="normal">82</span>
 <span class="normal">83</span>
 <span class="normal">84</span>
-<span class="normal">85</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">prepare_hand_for_raster</span><span class="p">(</span>
+<span class="normal">85</span>
+<span class="normal">86</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">prepare_hand_for_raster</span><span class="p">(</span>
     <span class="n">hand_raster</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">source_raster</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">resampling_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;lanczos&#39;</span><span class="p">,</span>
@@ -6177,7 +6185,8 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
 <span class="normal">46</span>
 <span class="normal">47</span>
 <span class="normal">48</span>
-<span class="normal">49</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">prepare_hand_vrt</span><span class="p">(</span><span class="n">vrt</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span> <span class="n">geometry</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span> <span class="o">|</span> <span class="n">BaseGeometry</span><span class="p">):</span>
+<span class="normal">49</span>
+<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">prepare_hand_vrt</span><span class="p">(</span><span class="n">vrt</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span> <span class="n">geometry</span><span class="p">:</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span> <span class="o">|</span> <span class="n">BaseGeometry</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Prepare a HAND mosaic VRT covering a given geometry</span>
 
 <span class="sd">    Prepare a Height Above Nearest Drainage (HAND) virtual raster (VRT) covering a given geometry.</span>
@@ -6195,6 +6204,7 @@ the geometry, using a HAND derived from the Copernicus GLO-30 DEM.</p>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span> <span class="n">BaseGeometry</span><span class="p">):</span>
             <span class="n">geometry</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">CreateGeometryFromWkb</span><span class="p">(</span><span class="n">geometry</span><span class="o">.</span><span class="n">wkb</span><span class="p">)</span>
 
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Geometry</span><span class="p">)</span>
         <span class="n">min_lon</span><span class="p">,</span> <span class="n">max_lon</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">geometry</span><span class="o">.</span><span class="n">GetEnvelope</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">min_lon</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">160.0</span> <span class="ow">and</span> <span class="n">max_lon</span> <span class="o">&gt;</span> <span class="mf">160.0</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;asf_tools does not currently support geometries that cross the antimeridian: </span><span class="si">{</span><span class="n">geometry</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -7413,10 +7423,7 @@ thresholding</p>
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/raster.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">74</span>
 <span class="normal">75</span>
 <span class="normal">76</span>
 <span class="normal">77</span>
@@ -7427,7 +7434,10 @@ thresholding</p>
 <span class="normal">82</span>
 <span class="normal">83</span>
 <span class="normal">84</span>
-<span class="normal">85</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">read_as_array</span><span class="p">(</span><span class="n">raster</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">band</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">read_as_array</span><span class="p">(</span><span class="n">raster</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">band</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Reads data from a raster image into memory</span>
 
 <span class="sd">    Args:</span>
@@ -7519,7 +7529,7 @@ thresholding</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-<td><code>data</code></td>            <td>
+<td><code>raster_array</code></td>            <td>
                   <code><span title="numpy.ma.MaskedArray">MaskedArray</span></code>
             </td>
             <td>
@@ -7552,7 +7562,10 @@ thresholding</p>
 <span class="normal">65</span>
 <span class="normal">66</span>
 <span class="normal">67</span>
-<span class="normal">68</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">read_as_masked_array</span><span class="p">(</span><span class="n">raster</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span> <span class="n">band</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">:</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">read_as_masked_array</span><span class="p">(</span><span class="n">raster</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span> <span class="n">band</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Reads data from a raster image into memory, masking invalid and NoData values</span>
 
 <span class="sd">    Args:</span>
@@ -7560,17 +7573,20 @@ thresholding</p>
 <span class="sd">        band: The raster band to read</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        data: The raster pixel data as a numpy MaskedArray</span>
+<span class="sd">        raster_array: The raster pixel data as a numpy MaskedArray</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Reading raster values from </span><span class="si">{</span><span class="n">raster</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">ds</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">raster</span><span class="p">))</span>
     <span class="n">raster_band</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="n">band</span><span class="p">)</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_invalid</span><span class="p">(</span><span class="n">raster_band</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">())</span>
+    <span class="n">raster_array</span> <span class="o">=</span> <span class="n">raster_band</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+
     <span class="n">nodata</span> <span class="o">=</span> <span class="n">raster_band</span><span class="o">.</span><span class="n">GetNoDataValue</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">nodata</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_values</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">nodata</span><span class="p">)</span>
+        <span class="n">raster_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_values</span><span class="p">(</span><span class="n">raster_array</span><span class="p">,</span> <span class="n">nodata</span><span class="p">)</span>
+    <span class="n">raster_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_invalid</span><span class="p">(</span><span class="n">raster_array</span><span class="p">)</span>
+
     <span class="k">del</span> <span class="n">ds</span>  <span class="c1"># How to close w/ gdal</span>
-    <span class="k">return</span> <span class="n">data</span>
+    <span class="k">return</span> <span class="n">raster_array</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -7724,10 +7740,7 @@ thresholding</p>
 
             <details class="quote">
               <summary>Source code in <code>asf_tools/raster.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 88</span>
-<span class="normal"> 89</span>
-<span class="normal"> 90</span>
-<span class="normal"> 91</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 91</span>
 <span class="normal"> 92</span>
 <span class="normal"> 93</span>
 <span class="normal"> 94</span>
@@ -7766,7 +7779,10 @@ thresholding</p>
 <span class="normal">127</span>
 <span class="normal">128</span>
 <span class="normal">129</span>
-<span class="normal">130</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">write_cog</span><span class="p">(</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">write_cog</span><span class="p">(</span>
     <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
     <span class="n">data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
     <span class="n">transform</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span>
@@ -8370,7 +8386,7 @@ bottom right padding was added when tiling.</p>
 
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tiled_array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">):</span>
         <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">untiled</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
-        <span class="n">untiled_mask</span> <span class="o">=</span> <span class="n">untile_array</span><span class="p">(</span><span class="n">tiled_array</span><span class="o">.</span><span class="n">mask</span><span class="p">,</span> <span class="n">untiled</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+        <span class="n">untiled_mask</span> <span class="o">=</span> <span class="n">untile_array</span><span class="p">(</span><span class="n">tiled_array</span><span class="o">.</span><span class="n">mask</span><span class="p">,</span> <span class="n">untiled</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># type: ignore[arg-type]</span>
         <span class="n">untiled</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">(</span><span class="n">untiled</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">untiled_mask</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">untiled</span><span class="p">[:</span><span class="n">array_rows</span><span class="p">,</span> <span class="p">:</span><span class="n">array_columns</span><span class="p">]</span>
