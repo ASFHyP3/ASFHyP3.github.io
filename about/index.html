@@ -2239,7 +2239,7 @@ clicks away.</p>
 <div class="admonition tip">
 <p class="admonition-title">HyP3+ is now available!</p>
 <p><img _=";" alt="&quot;HyP3+ logo&quot;" src="../images/HyP3%2B_Logo_Icon_Only.png" style="float: left;" width="100" /></p>
-<p>For users who need more processing than the 8,000 credit limit allows, ASF now hosts 
+<p>For users who need more processing than the 4,000 credit limit allows, ASF now hosts 
 <a href="hyp3_plus/" title="Jump to the HyP3+ Landing Page">HyP3+</a>, a user-supported 
 version of HyP3 that allows you to purchase as many credits as you need. </p>
 <p><a href="../news/hyp3_plus_introduction/" title="Jump to the HyP3+ Introduction">Get to know HyP3+!</a></p>
@@ -2270,7 +2270,7 @@ our user-supported service that lets you take your application global. Need help
       </td>
     </tr>
     <tr>
-      <td class="tg-0pky">8,000 <a href="/using/credits" title="Jump to Credits Documentation">Credits</a> per month free*</td>
+      <td class="tg-0pky">4,000 <a href="/using/credits" title="Jump to Credits Documentation">Credits</a> per month free*</td>
       <td class="tg-0pky">1 Credit = $0.05</td>
     </tr>
   </tbody>
@@ -2317,17 +2317,17 @@ our user-supported service that lets you take your application global. Need help
 <a href="mailto:uso@asf.alaska.edu">uso@asf.alaska.edu</a></p>
 <h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
 <p>On Demand products processed by HyP3 can be requested quickly and easily, either by
-using the <a href="#web-access" title="Jump to Web Access section">Vertex web interface</a> 
-or <a href="#programmatic-access" title="Jump to Programmatic Access section">programmatically</a>. 
+using the <a href="#web-access" title="Web Access Documentation">Vertex web interface</a> 
+or <a href="#programmatic-access" title="Programmatic Access Documentation">programmatically</a>. 
 These services are currently only available for 
-<a href="../sentinel1/" target="_blank" title="Sentinel-1 Mission">Sentinel-1 datasets</a>.</p>
+<a href="../sentinel1/" title="Sentinel-1 Mission Documentation">Sentinel-1 datasets</a>.</p>
 <p>Different HyP3 job types consume different credit amounts. In 
-<a href="hyp3_basic/" title="Jump to HyP3 Basic Documentation">HyP3 Basic</a>, 
-users are allotted 8,000 credits per month for free. Refer to the
-<a href="../using/credits/" title="Jump to the Credits documentation page">Credits page</a> 
+<a href="hyp3_basic/" title="HyP3 Basic Documentation">HyP3 Basic</a>, 
+users are allotted 4,000 credits per month for free. Refer to the
+<a href="../using/credits/" title="Credits Documentation">Credits page</a> 
 for more information. </p>
 <p>If you do not have enough credits to generate all the products you need for your 
-project, you can purchase additional credits in <a href="hyp3_plus/" title="Jump to HyP3+ Documentation">HyP3+</a>.</p>
+project, you can purchase additional credits in <a href="hyp3_plus/" title="HyP3+ Documentation">HyP3+</a>.</p>
 <!-- TODO TOOL-2787: uncomment this block and update snippet language if we ever decide to require that new users 
 request access to HyP3 Basic:
 !!! warning "New On Demand users must request HyP3 access"
@@ -2346,15 +2346,16 @@ On Demand services are provided at no cost to the user, and anyone can request a
 <p>HyP3 users must authenticate with 
 <a href="https://urs.earthdata.nasa.gov/" target="_blank" title="https://urs.earthdata.nasa.gov/">Earthdata Login (EDL)</a> 
 credentials before they can submit jobs to HyP3 (either HyP3 Basic or HyP3+) for processing or access information 
-about the resulting <a href="../products/" title="hyp3-docs.asf.alaska.edu/products">On Demand products</a>. Refer to our 
-<a href="../using/authentication/" title="Jump to Authentication Documentation">Authentication</a> page for guidance.</p>
+about the resulting <a href="../products/" title="Products Documentation">On Demand products</a>. Refer to our 
+<a href="../using/authentication/" title="Authentication Documentation">Authentication</a> page for guidance.</p>
 <h3 id="web-access">Web Access<a class="headerlink" href="#web-access" title="Permanent link">&para;</a></h3>
-<p>ASF's Data Search Vertex portal provides a rich interface to explore Sentinel-1
-acquisitions and find images to submit for On Demand processing. It also provides
-tools for selecting pairs and stacks for InSAR analysis.</p>
-<ul>
-<li><a href="../using/vertex/" title="Using Vertex">Vertex</a></li>
-</ul>
+<p>ASF's Data Search <a href="../using/vertex/" title="Using Vertex Documentation">Vertex</a> portal provides a rich interface to explore Sentinel-1
+acquisitions and find images to submit for <a href="about/hyp3_basic" title="HyP3 Basic Documentation">HyP3 Basic</a> 
+On Demand processing. It also provides tools for selecting pairs and stacks for InSAR analysis.</p>
+<p>The <a href="../using/vertex/#vertex_1" title="Vertex Deployments Documentation">Vertex+</a> 
+interface is optimized for <a href="hyp3_plus/" title="HyP3+ Documentation">HyP3+</a> users. It provides the same 
+functionality as the standard Vertex portal, but connects to the 
+<a href="hyp3_plus/#hyp3-api-endpoint" title="HyP3 API Endpoint Documentation">HyP3+ API Endpoint</a> by default.</p>
 <h3 id="programmatic-access">Programmatic Access<a class="headerlink" href="#programmatic-access" title="Permanent link">&para;</a></h3>
 <p>Requesting and downloading On Demand products can also be done programmatically:</p>
 <ul>
@@ -2362,20 +2363,21 @@ tools for selecting pairs and stacks for InSAR analysis.</p>
 <li><a href="../using/api/" title="Using API">HyP3 REST API</a></li>
 </ul>
 <h3 id="hyp3-api-rest-endpoints">HyP3 API REST Endpoints<a class="headerlink" href="#hyp3-api-rest-endpoints" title="Permanent link">&para;</a></h3>
-<p>The <a href="../using/api/" title="Jump to Using HyP3 API Documentation">HyP3 API REST Endpoints</a> 
-are different for HyP3 Basic and HyP3+. Even though the same 
-<a href="../using/authentication/#earthdata-login-edl" title="Jump to Earthdata Login Documentation">EDL username</a> 
+<p>The <a href="../using/api/" title="Using HyP3 API Documentation">HyP3 API REST Endpoints</a> 
+are different for <a href="hyp3_basic/" title="HyP3 Basic Documentation">HyP3 Basic</a>
+and <a href="hyp3_plus/" title="HyP3+ Documentation">HyP3+</a>. Even though the same 
+<a href="../using/authentication/#earthdata-login-edl" title="Earthdata Login Documentation">EDL username</a> 
 can be used to process On Demand products in 
-<a href="hyp3_basic/" title="Jump to HyP3 Basic Documentation">HyP3 Basic</a> and 
-<a href="hyp3_plus/" title="Jump to HyP3+ Documentation">HyP3+</a> 
+<a href="hyp3_basic/" title="HyP3 Basic Documentation">HyP3 Basic</a> and 
+<a href="hyp3_plus/" title="HyP3+ Documentation">HyP3+</a> 
 deployments, you will not be able to search for products across both APIs. </p>
 <p>If you generate products for a single project using both the 
-<a href="hyp3_basic/" title="Jump to HyP3 Basic Documentation">HyP3 Basic</a> 
-and <a href="hyp3_plus/" title="Jump to HyP3+ Documentation">HyP3+</a> deployments, 
+<a href="hyp3_basic/" title="HyP3 Basic Documentation">HyP3 Basic</a> 
+and <a href="hyp3_plus/" title="HyP3+ Documentation">HyP3+</a> deployments, 
 you will need to use two separate searches to access all of your products, even if the project names are the same, 
-when using <a href="../using/vertex/" title="Jump to Using Vertex Documentation">Vertex</a> or the 
-<a href="../using/api/" title="Jump to Using HyP3 API Documentation">HyP3 API</a>.</p>
-<p>When using the <a href="../using/sdk/" title="Jump to Using HyP3 SDK Documentation">HyP3 SDK for Python</a>, you can combine your results 
+when using <a href="../using/vertex/" title="Using Vertex Documentation">Vertex</a> or the 
+<a href="../using/api/" title="Using HyP3 API Documentation">HyP3 API</a>.</p>
+<p>When using the <a href="../using/sdk/" title="Using HyP3 SDK Documentation">HyP3 SDK for Python</a>, you can combine your results 
 into one list using the following approach:
 <div class="highlight"><pre><span></span><code>import hyp3_sdk as sdk
 hyp3 = sdk.HyP3()

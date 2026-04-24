@@ -2128,6 +2128,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#vertex" class="md-nav__link">
+    Vertex+
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hyp3-api-endpoint" class="md-nav__link">
     HyP3+ API Endpoint
   </a>
@@ -2192,24 +2199,39 @@
 
 <h1 id="hyp3">HyP3+<a class="headerlink" href="#hyp3" title="Permanent link">&para;</a></h1>
 <p>For users who need to process more
-<a href="../../products/" title="Jump to the Products landing page of the documentation">On Demand products</a> than their
-<a href="../../using/credits/" title="Jump to the Credits page of the documentation">HyP3 Basic credit limit</a>
+<a href="../../products/" title="Products Documentation">On Demand products</a> than their
+<a href="../../using/credits/" title="Credits Documentation">HyP3 Basic credit limit</a>
 allows, ASF provides HyP3+, a separate
-<a href="../">HyP3 deployment</a> where users can purchase additional credits.</p>
+<a href="../" title="About HyP3">HyP3 deployment</a> where users can purchase additional credits.</p>
 <p>HyP3+ offers the same
-<a href="../../products/" title="Jump to the Products landing page of the documentation">On Demand products</a>
-as <a href="../hyp3_basic/" title="Jump to HyP3 Basic Documentation">HyP3 Basic</a>, 
+<a href="../../products/" title="Products Documentation">On Demand products</a>
+as <a href="../hyp3_basic/" title="HyP3 Basic Documentation">HyP3 Basic</a>, 
 and users access their purchased credits by logging in with the same 
-<a href="../../using/authentication/#earthdata-login-edl">Earthdata Login Credentials</a>
+<a href="../../using/authentication/#earthdata-login-edl" title="Earthdata Login Documentation">Earthdata Login Credentials</a>
 used for ordering free On Demand products from HyP3 Basic.</p>
+<h2 id="vertex">Vertex+<a class="headerlink" href="#vertex" title="Permanent link">&para;</a></h2>
+<p><a href="https://vertex-plus.asf.alaska.edu/" target="_blank" title="https://vertex-plus.asf.alaska.edu">Vertex+</a> 
+is a separate deployment of ASF's Data Search Vertex interface, designed specifically for working with HyP3+. It 
+provides the same functionality as the standard deployment of Vertex, but is set to use the 
+<a href="#hyp3-api-endpoint" title="HyP3 API Endpoint Documentation">HyP3+ API Endpoint</a>. </p>
+<p>You can use the Vertex+ interface to search for available datasets, submit HyP3+ On Demand jobs for processing, 
+and access finished products. </p>
 <h2 id="hyp3-api-endpoint">HyP3+ API Endpoint<a class="headerlink" href="#hyp3-api-endpoint" title="Permanent link">&para;</a></h2>
-<p>HyP3+ has a different API Endpoint than the standard HyP3 Basic deployment:<br />
+<p>The lowest-level interface for using HyP3 is the Application Programming Interface (API). All other access methods, 
+including Vertex and the HyP3 Python SDK, are built upon the 
+<a href="../../using/api/" title="Using HyP3 API Documentation">HyP3 API</a>. </p>
+<p>HyP3+ has a different API Endpoint than the standard HyP3 Basic deployment, so HyP3+ users will interact with the 
+following API URL:<br />
 <a href="https://hyp3-plus.asf.alaska.edu">https://hyp3-plus.asf.alaska.edu</a></p>
 <p>Users can interact with HyP3+ using the same methods as HyP3 Basic, but will need to change the API URL. 
-See the <a href="../../using/">Using HyP3</a> section for more information on how to request On Demand products with HyP3+ using 
-<a href="../../using/vertex/#1-select-your-hyp3-api-optional" title="Jump to Using Vertex Documentation">Vertex</a>, the 
-<a href="https://hyp3-docs.asf.alaska.edu/using/sdk/#connect-to-the-hyp3-api" title="Jump to Using SDK Documentation">HyP3 Python SDK</a>, 
-or by using the <a href="../../using/api/" title="Jump to Using API Documentation">HyP3 API</a> directly.</p>
+See <a href="../../using/" title="Using HyP3 Documentation">Using HyP3</a> 
+for more information on how to request On Demand products with HyP3+ using the 
+<a href="https://hyp3-docs.asf.alaska.edu/using/sdk/#connect-to-the-hyp3-api" title="Using SDK Documentation">HyP3 Python SDK</a> 
+or by using the <a href="../../using/api/" title="Using API Documentation">HyP3 API</a> directly.</p>
+<p>You can also submit jobs to HyP3+ using the standard version of Vertex by 
+<a href="../../using/vertex/#hyp3-api-endpoints" title="Update API Documentation">updating the HyP3 API in Vertex</a>. 
+It is more straightforward to use Vertex+ to interact with HyP3+ jobs, however, as it eliminates the 
+need to manually set the API Endpoint. </p>
 <h2 id="purchasing-credits">Purchasing Credits<a class="headerlink" href="#purchasing-credits" title="Permanent link">&para;</a></h2>
 <p>Credits can be purchased at
 <a href="https://epay.alaska.edu/C21563_ustores/web/product_detail.jsp?PRODUCTID=7604&amp;SINGLESTORE=true" target="_blank" title="https://epay.alaska.edu">ASF's Web Store</a>.
@@ -2224,7 +2246,7 @@ Credit purchases will be processed within two business days, and purchased credi
 <p>Enter the desired quantity of 1000-credit bundles, and click the <strong>Add to Cart</strong> button. 
    <img alt="Credit purchase interface" src="../../images/hyp3-credit-purchase.png" title="Credit purchase interface" />
    Refer to the
-   <a href="../../using/credits/#credit-cost-table">credit cost table</a>
+   <a href="../../using/credits/#credit-cost-table" title="Credit Cost Table">credit cost table</a>
    to calculate the number of credits you will need to process the products you require.</p>
 </li>
 <li>
@@ -2232,7 +2254,7 @@ Credit purchases will be processed within two business days, and purchased credi
    <a href="../../using/authentication/#earthdata-login-edl">Earthdata Login (EDL)</a> username. 
    <strong>It is very important to enter your username correctly</strong>, as the credits you purchase will be associated with 
    this username. Type <code>yes</code> in the <strong>terms of service field</strong> to indicate that you accept the HyP3+ 
-   <a href="../hyp3_plus_terms/" title="Jump to HyP3+ Terms of Service page">Terms of Service</a>, then click <strong>Continue</strong>.
+   <a href="../hyp3_plus_terms/" title="HyP3+ Terms of Service">Terms of Service</a>, then click <strong>Continue</strong>.
    <img alt="Enter EDL Prompt" src="../../images/purchase-credits-edl.png" title="Enter EDL Username when prompted" /></p>
 <ul>
 <li>You can purchase credits for multiple EDL usernames in one order. To add additional credits linked to a
@@ -2278,7 +2300,7 @@ place additional orders as necessary when your credit balance is depleted.</p>
 ASF User Services, <a href="mailto:uso@asf.alaska.edu" title="uso@asf.alaska.edu">uso@asf.alaska.edu</a>, and we will work with 
 you to understand and resolve the issue. Any refunds granted will be credited to the original method of payment.</p>
 <p>For more information about the HyP3+ refund policy, refer to the 
-<a href="../hyp3_plus_terms/#6-refunds" title="Jump to HyP3+ Terms of Service">HyP3+ Terms of Service</a>.</p>
+<a href="../hyp3_plus_terms/#6-refunds" title="HyP3+ Terms of Service">HyP3+ Terms of Service</a>.</p>
 <h2 id="contact-us">Contact Us<a class="headerlink" href="#contact-us" title="Permanent link">&para;</a></h2>
 <p>If you have any questions or concerns about using HyP3+, or have any suggestions about how
 we might improve this service, email ASF User Services: <a href="mailto:uso@asf.alaska.edu" title="uso@asf.alaska.edu">uso@asf.alaska.edu</a>.</p>
