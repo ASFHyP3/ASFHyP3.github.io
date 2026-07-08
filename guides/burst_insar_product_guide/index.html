@@ -3077,13 +3077,10 @@ that leverages open-source software for processing.</p>
 <a href="../insar_product_guide/" target="_blank">On Demand InSAR</a> products are still available. These products have a larger 
 footprint, and are generated using <a href="https://www.gamma-rs.ch/software" target="_blank">GAMMA software</a>.  If unsure of which InSAR processing option best fits your needs, visit our <a href="https://storymaps.arcgis.com/stories/6cb4f1c18558441bb9b4b11337515b53" target="_blank" title="ASF Sentinel-1 InSAR On Demand Product Comparison">ASF Sentinel-1 InSAR on Demand Product Comparison StoryMap</a> to explore the capabilities, characteristics, and available products for each of ASF's On Demand InSAR options. </p>
 <div class="admonition tip">
-<p class="admonition-title">Sentinel-1D acquisitions not yet supported</p>
-<p>ISCE2 software does not currently support processing Sentinel-1D acquisitions. Until the software package is 
-updated, users will not be able to include Sentinel-1D bursts in pairs submitted for Burst InSAR 
-processing. </p>
-<p>Users can submit full IW Sentinel-1D granules for processing to InSAR using the 
-<a href="../insar_product_guide/" title="Sentinel-1 InSAR Product Guide">On Demand InSAR</a> option, which leverages 
-GAMMA software rather than ISCE2. </p>
+<p class="admonition-title">Sentinel-1D acquisitions now supported!</p>
+<p>ISCE2 has been updated to support processing of data collected by Sentinel-1D. Users can now submit 
+burst-based InSAR jobs for any available bursts from Sentinel-1 IW SLCs, regardless of the platform used 
+to acquire the data.</p>
 </div>
 <h2 id="burst-insar-job-types">Burst InSAR Job Types<a class="headerlink" href="#burst-insar-job-types" title="Permanent link">&para;</a></h2>
 <p>There are currently two different <a href="#sentinel-1-bursts" title="Jump to the Sentinel-1 Bursts section of this document">burst-based</a> 
@@ -3235,11 +3232,12 @@ Jobs can be submitted for processing using the
 <a href="https://search.asf.alaska.edu/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a> data portal, the 
 <a href="https://hyp3-docs.asf.alaska.edu/using/sdk/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/sdk">HyP3 Python SDK</a> 
 or the <a href="https://hyp3-docs.asf.alaska.edu/using/api/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/api">HyP3 API</a>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Sentinel-1D Support for InSAR Processing</p>
-<p>GAMMA software supports Sentinel-1D acquisitions as input for InSAR processing, but ISCE2 software currently does 
-not. Until ISCE2 is updated, users will only be able to submit jobs including Sentinel-1D SLCs for processing 
-using <a href="../insar_product_guide/">On Demand InSAR</a>, not <a href="./">On Demand Burst InSAR</a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">InSAR Processing Now Supports Sentinel-1D!</p>
+<p>GAMMA and ISCE2 software have both been updated to support Sentinel-1D acquisitions as input for InSAR processing. 
+Users can now use any Sentinel-1 IW SLCs in the archive, including those acquired by Sentinel-1D, as input for 
+either <a href="../insar_product_guide/">On Demand InSAR</a> or <a href="./">On Demand Burst InSAR</a> 
+processing.</p>
 </div>
 <h3 id="vertex">Vertex<a class="headerlink" href="#vertex" title="Permanent link">&para;</a></h3>
 <p>InSAR pairs are selected in <a href="https://search.asf.alaska.edu/#/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a> using either the <a href="https://docs.asf.alaska.edu/vertex/baseline/" target="_blank" title="https://docs.asf.alaska.edu/vertex/baseline">Baseline Search</a> or the <a href="https://docs.asf.alaska.edu/vertex/sbas/" target="_blank" title="https://docs.asf.alaska.edu/vertex/sbas">SBAS Search</a> interface. The process of selecting pairs is the same for both IW SLC products and individual SLC bursts, but you will need to select the appropriate dataset when searching for content. As illustrated below, select the <strong>Sentinel-1</strong> option in the Dataset menu to search for IW SLC products, and select the <strong>S1 Bursts</strong> option to search for individual SLC bursts.</p>
