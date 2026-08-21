@@ -2381,7 +2381,7 @@ when using <a href="../using/vertex/" title="Using Vertex Documentation">Vertex<
 into one list using the following approach:
 <div class="highlight"><pre><span></span><code>import hyp3_sdk as sdk
 hyp3 = sdk.HyP3()
-hyp3_plus = sdk.HyP3(&#39;https://hyp3-plus.asf.alaska.edu&#39;)
+hyp3_plus = sdk.HyP3('https://hyp3-plus.asf.alaska.edu')
 jobs = hyp3.find_jobs(...)
 jobs += hyp3_plus.find_jobs(...)
 jobs.download_files()

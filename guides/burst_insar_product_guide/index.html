@@ -3539,7 +3539,7 @@ Burst InSAR products together, and include:</p>
 <p>These range-doppler files are not included in products generated using <code>INSAR_ISCE_MULTI_BURST</code>, 
 as the individual bursts are already merged together.</p>
 <p>An <em>unwrapped phase browse image</em> is included for the unwrapped (unw_phase) phase file, which is in PNG format 
-and is 2048 pixels wide.</p>
+and is 2048 pixels wide. For jobs processed using <code>INSAR_ISCE_MULTI_BURST</code>, the final product includes the interferogram amplitude as a single-band GeoTIFF along with browse KMZ files for both the wrapped phase and amplitude.</p>
 <p>The tags and extensions used and example file names for each raster are listed in Table 2 below.</p>
 <table>
 <thead>
@@ -3551,44 +3551,49 @@ and is 2048 pixels wide.</p>
 </thead>
 <tbody>
 <tr>
+<td>_amp.tif</td>
+<td>Amplitude file</td>
+<td>S1<wbr>_044<wbr>_092582s1n01-092581s2n03-000000s3n00<wbr>_IW<wbr>_20251004<wbr>_20251121<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_amp.tif</td>
+</tr>
+<tr>
 <td>_conncomp.tif</td>
 <td>Connected Components</td>
-<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_conncomp.tif<br/>⸻<br/>S1A<wbr>_064<wbr>_E053_1<wbr>_N27_3<wbr>_E054_1<wbr>_N27_8<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_conncomp.tif</td>
+<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_conncomp.tif<br/>⸻<br/>S1<wbr>_044<wbr>_092582s1n01-092581s2n03-000000s3n00<wbr>_IW<wbr>_20251004<wbr>_20251121<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_conncomp.tif</td>
 </tr>
 <tr>
 <td>_corr.tif</td>
 <td>Normalized coherence file</td>
-<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_corr.tif<br/>⸻<br/>S1A<wbr>_064<wbr>_E053_1<wbr>_N27_3<wbr>_E054_1<wbr>_N27_8<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_corr.tif</td>
+<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_corr.tif<br/>⸻<br/>S1<wbr>_044<wbr>_092582s1n01-092581s2n03-000000s3n00<wbr>_IW<wbr>_20251004<wbr>_20251121<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_corr.tif</td>
 </tr>
 <tr>
 <td>_unw_phase.tif</td>
 <td>Unwrapped geocoded interferogram</td>
-<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_unw_phase.tif<br/>⸻<br/>S1A<wbr>_064<wbr>_E053_1<wbr>_N27_3<wbr>_E054_1<wbr>_N27_8<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_unw_phase.tif</td>
+<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_unw_phase.tif<br/>⸻<br/>S1<wbr>_044<wbr>_092582s1n01-092581s2n03-000000s3n00<wbr>_IW<wbr>_20251004<wbr>_20251121<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_unw_phase.tif</td>
 </tr>
 <tr>
 <td>_wrapped_phase.tif</td>
 <td>Wrapped geocoded interferogram</td>
-<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_wrapped_phase.tif<br/>⸻<br/>S1A<wbr>_064<wbr>_E053_1<wbr>_N27_3<wbr>_E054_1<wbr>_N27_8<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_wrapped_phase.tif</td>
+<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_wrapped_phase.tif<br/>⸻<br/>S1<wbr>_044<wbr>_092582s1n01-092581s2n03-000000s3n00<wbr>_IW<wbr>_20251004<wbr>_20251121<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_wrapped_phase.tif</td>
 </tr>
 <tr>
 <td>_lv_phi.tif</td>
 <td>Look vector φ (orientation)</td>
-<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_lv_phi.tif<br/>⸻<br/>S1A<wbr>_064<wbr>_E053_1<wbr>_N27_3<wbr>_E054_1<wbr>_N27_8<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_lv_phi.tif</td>
+<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_lv_phi.tif<br/>⸻<br/>S1<wbr>_044<wbr>_092582s1n01-092581s2n03-000000s3n00<wbr>_IW<wbr>_20251004<wbr>_20251121<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_lv_phi.tif</td>
 </tr>
 <tr>
 <td>_lv_theta.tif</td>
 <td>Look vector θ (elevation)</td>
-<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_lv_theta.tif<br/>⸻<br/>S1A<wbr>_064<wbr>_E053_1<wbr>_N27_3<wbr>_E054_1<wbr>_N27_8<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_lv_theta.tif</td>
+<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_lv_theta.tif<br/>⸻<br/>S1<wbr>_044<wbr>_092582s1n01-092581s2n03-000000s3n00<wbr>_IW<wbr>_20251004<wbr>_20251121<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_lv_theta.tif</td>
 </tr>
 <tr>
 <td>_dem.tif</td>
 <td>Digital elevation model</td>
-<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_dem.tif<br/>⸻<br/>S1A<wbr>_064<wbr>_E053_1<wbr>_N27_3<wbr>_E054_1<wbr>_N27_8<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_dem.tif</td>
+<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_dem.tif<br/>⸻<br/>S1<wbr>_044<wbr>_092582s1n01-092581s2n03-000000s3n00<wbr>_IW<wbr>_20251004<wbr>_20251121<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_dem.tif</td>
 </tr>
 <tr>
 <td>_water_mask.tif</td>
 <td>Water mask</td>
-<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_water_mask.tif<br/>⸻<br/>S1A<wbr>_064<wbr>_E053_1<wbr>_N27_3<wbr>_E054_1<wbr>_N27_8<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_water_mask.tif</td>
+<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_water_mask.tif<br/>⸻<br/>S1<wbr>_044<wbr>_092582s1n01-092581s2n03-000000s3n00<wbr>_IW<wbr>_20251004<wbr>_20251121<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_water_mask.tif</td>
 </tr>
 <tr>
 <td>_lat_rdr.tif</td>
@@ -3613,7 +3618,17 @@ and is 2048 pixels wide.</p>
 <tr>
 <td>_unw_phase.png</td>
 <td>Unwrapped phase browse image</td>
-<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_unw_phase.png<br/>⸻<br/>S1A<wbr>_064<wbr>_E053_1<wbr>_N27_3<wbr>_E054_1<wbr>_N27_8<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_unw_phase.png</td>
+<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>_unw_phase.png<br/>⸻<br/>S1<wbr>_044<wbr>_092582s1n01-092581s2n03-000000s3n00<wbr>_IW<wbr>_20251004<wbr>_20251121<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_unw_phase.png</td>
+</tr>
+<tr>
+<td>_amp.kmz</td>
+<td>Amplitude KMZ browse image</td>
+<td>S1<wbr>_044<wbr>_092582s1n01-092581s2n03-000000s3n00<wbr>_IW<wbr>_20251004<wbr>_20251121<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_amp.kmz</td>
+</tr>
+<tr>
+<td>_wrapped_phase.kmz</td>
+<td>Wrapped phase KMZ browse image</td>
+<td>S1<wbr>_044<wbr>_092582s1n01-092581s2n03-000000s3n00<wbr>_IW<wbr>_20251004<wbr>_20251121<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>_wrapped_phase.kmz</td>
 </tr>
 </tbody>
 </table>
@@ -3632,12 +3647,12 @@ and is 2048 pixels wide.</p>
 <tr>
 <td>.README.md.txt</td>
 <td>Main README file for Burst InSAR products</td>
-<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>.README.md.txt<br/>⸻<br/>S1A<wbr>_064<wbr>_E053_1<wbr>_N27_3<wbr>_E054_1<wbr>_N27_8<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>.README.md.txt</td>
+<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>.README.md.txt<br/>⸻<br/>S1<wbr>_044<wbr>_092582s1n01-092581s2n03-000000s3n00<wbr>_IW<wbr>_20251004<wbr>_20251121<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>.README.md.txt</td>
 </tr>
 <tr>
 <td>.txt</td>
 <td>Parameters and metadata for the InSAR pair</td>
-<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>.txt<br/>⸻<br/>S1A<wbr>_064<wbr>_E053_1<wbr>_N27_3<wbr>_E054_1<wbr>_N27_8<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>.txt</td>
+<td>S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>.txt<br/>⸻<br/>S1<wbr>_044<wbr>_092582s1n01-092581s2n03-000000s3n00<wbr>_IW<wbr>_20251004<wbr>_20251121<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>.txt</td>
 </tr>
 </tbody>
 </table>
