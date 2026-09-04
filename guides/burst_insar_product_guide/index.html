@@ -3509,6 +3509,7 @@ output product:</p>
 <li>The <em>normalized coherence</em> file contains pixel values that range from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent.</li>
 <li>The <em>unwrapped geocoded interferogram</em> file shows the results of the phase unwrapping process. Negative values indicate movement towards the sensor, and positive values indicate movement away from the sensor. This is the main interferogram output.</li>
 <li>The <em>wrapped geocoded interferogram</em> file indicates the interferogram phase after applying the adaptive filter immediately before unwrapping. Values range from negative pi to positive pi.</li>
+<li>An interferogram <em>amplitude</em> image is included for products generated using the <code>INSAR_ISCE_MULTI_BURST</code> job type.</li>
 <li>The <em>connected components</em> file delineates regions unwrapped as contiguous units by the SNAPHU unwrapping algorithm.</li>
 <li>The <em>look vectors</em> theta (θ) and phi (φ) describe the elevation and orientation angles of the look vector in radians. The look vectors refer to the look direction back towards the sensor.<ul>
 <li>The <em>lv_theta</em> (θ) file indicates the SAR look vector elevation angle (in radians) at each pixel, ranging from -π/2 (down) to π/2 (up). The look vector elevation angle is defined as the angle between the horizontal surface and the look vector with positive angles indicating sensor positions above the surface.</li>
@@ -3539,7 +3540,8 @@ Burst InSAR products together, and include:</p>
 <p>These range-doppler files are not included in products generated using <code>INSAR_ISCE_MULTI_BURST</code>, 
 as the individual bursts are already merged together.</p>
 <p>An <em>unwrapped phase browse image</em> is included for the unwrapped (unw_phase) phase file, which is in PNG format 
-and is 2048 pixels wide. For jobs processed using <code>INSAR_ISCE_MULTI_BURST</code>, the final product includes the interferogram amplitude as a single-band GeoTIFF along with browse KMZ files for both the wrapped phase and amplitude.</p>
+and is 2048 pixels wide.</p>
+<p>For jobs processed using <code>INSAR_ISCE_MULTI_BURST</code>, <strong>KMZ browse images</strong> are included for the <strong>wrapped phase</strong> and <strong>amplitude</strong> images.</p>
 <p>The tags and extensions used and example file names for each raster are listed in Table 2 below.</p>
 <table>
 <thead>
